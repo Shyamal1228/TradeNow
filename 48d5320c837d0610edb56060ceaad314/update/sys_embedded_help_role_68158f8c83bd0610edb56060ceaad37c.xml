@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_1383179_tradenow.item_list_user" name="x_1383179_tradenow.item_list_user">a4158f8c83bd0610edb56060ceaad37b</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-21 18:38:35</sys_created_on>
+        <sys_id>68158f8c83bd0610edb56060ceaad37c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>a4158f8c83bd0610edb56060ceaad37b</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_embedded_help_role_68158f8c83bd0610edb56060ceaad37c</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-21 18:38:35</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1383179_tradenow_item_list</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_1383179_tradenow_item_list">reserve=true^EQ<item endquery="false" field="reserve" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message><![CDATA[<p>Thanks for Reserving the Item.</p>]]></message>
+        <name>Business Rules for Storing Reserve item </name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	if (current.reserve == true) {
+		// gs.info('Buisness Rules runs successfully');
+		var ReservedTable = new GlideRecord('x_1383179_tradenow_reserved_item');
+		ReservedTable.initialize();
+		ReservedTable.item_id=current.number;
+		ReservedTable.name=current.item_name;
+		ReservedTable.condition=current.condition;
+		ReservedTable.category=current.category;
+		ReservedTable.description=current.description;
+		ReservedTable.insert();
+	}
+
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-22 07:01:56</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>53bee5dc83b94610edb56060ceaad363</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Business Rules for Storing Reserve item </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_53bee5dc83b94610edb56060ceaad363</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-22 14:39:00</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=53bee5dc83b94610edb56060ceaad363"/>
+</record_update>

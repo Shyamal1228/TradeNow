@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1383179_tradenow_reserved_item</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_1383179_tradenow_reserved_item">status=cancel reservation^EQ<item display_value="Cancel Reservation" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="cancel reservation"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>BR to delete record when cancel reserve</name>
+        <order>200</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    var reservationID = current.number;
+    var itemID = current.item_id;
+    if (current.status == 'cancel reservation') {
+        // Deleteing record from reserved table when someone click on cancel reservation.
+        var recordToBeDeleted = new GlideRecord('x_1383179_tradenow_reserved_item');
+        recordToBeDeleted.addQuery('number', reservationID);
+        recordToBeDeleted.query();
+        while (recordToBeDeleted.next()) {
+            recordToBeDeleted.deleteRecord();
+        }
+        gs.addInfoMessage('Item has been removed from Reservation List !');
+
+        // Setting item list state to available when someone click on cancel reservation.
+        var itemTableStatusUpdate = new GlideRecord('x_1383179_tradenow_item_list');
+        itemTableStatusUpdate.addQuery('number', itemID);
+        itemTableStatusUpdate.query();
+        // while (recordToBeDeleted.next()) {
+        itemTableStatusUpdate.reserve = false;
+
+        itemTableStatusUpdate.withdraw_item=true;
+        itemTableStatusUpdate.update();
+        // }
+
+        // itemTableStatusUpdate.status = 'Available';
+    }
+
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-23 05:24:35</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>afefd2648331c610edb56060ceaad31f</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>BR to delete record when cancel reserve</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_afefd2648331c610edb56060ceaad31f</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-23 06:33:35</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=afefd2648331c610edb56060ceaad31f"/>
+</record_update>

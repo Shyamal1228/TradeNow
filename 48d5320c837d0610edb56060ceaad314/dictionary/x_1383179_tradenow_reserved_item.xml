@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="8f40195883394610edb56060ceaad3f6" label="Reserved Item" max_length="40" name="x_1383179_tradenow_reserved_item" type="collection">
-        <element label="Category" max_length="40" name="category" type="string"/>
-        <element label="Condition" max_length="40" name="condition" type="string"/>
-        <element label="Description" max_length="1000" name="description" type="string"/>
+        <element label="Category" max_length="40" name="category" read_only="true" type="string"/>
+        <element label="Condition" max_length="40" name="condition" read_only="true" reference_qual="null" reference_qual_condition="null" type="string"/>
+        <element label="Description" max_length="1000" name="description" read_only="true" type="string"/>
         <element label="Item id" max_length="40" name="item_id" type="string"/>
-        <element label="Name" max_length="40" name="name" type="string"/>
+        <element label="Name" max_length="40" name="name" read_only="true" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Reservation id" max_length="40" name="number" type="string"/>
         <element choice="1" label="Status" max_length="40" name="status" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Pending" sequence="0" value="pending"/>
-                <element inactive_on_update="false" label="Confirmed" sequence="1" value="confirmed"/>
+                <element inactive_on_update="false" label="Get Item" sequence="0" value="get item"/>
+                <element inactive_on_update="false" label="Reserved" sequence="1" value="reserved"/>
+                <element inactive_on_update="false" label="Cancel Reservation" sequence="2" value="cancel reservation"/>
             </choice>
         </element>
         <element label="User id" max_length="40" name="user_id" type="string"/>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1383179_tradenow.UserUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>UserUtils</name>
+        <script><![CDATA[var UserUtils = Class.create();
+
+UserUtils.prototype = {
+    initialize: function() {},
+
+    // Method to retrieve user details (location and email) based on the user's sys_id
+    getUserDetails: function(userId) {
+        var userDetails = {};
+        var userGR = new GlideRecord('sys_user');
+        if (userGR.get(userId)) {
+            userDetails.location = userGR.getValue('location');
+            userDetails.email = userGR.getValue('email');
+        }
+        return userDetails;
+    },
+
+    type: 'UserUtils'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-23 19:43:16</sys_created_on>
+        <sys_id>ae462dbc83bdc610edb56060ceaad398</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>UserUtils</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_include_ae462dbc83bdc610edb56060ceaad398</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-23 19:43:16</sys_updated_on>
+    </sys_script_include>
+</record_update>

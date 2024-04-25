@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1383179_tradenow.UserDetailScriptInclude</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>UserDetailScriptInclude</name>
+        <script><![CDATA[var UserDetailsScriptInclude = Class.create();
+UserDetailsScriptInclude.prototype = {
+    initialize: function() {},
+
+    getUserDetails: function(userName) {
+        var userGR = new GlideRecord('sys_user');
+        userGR.addQuery('name', userName);
+        userGR.query();
+        if (userGR.next()) {
+            var userDetails = {
+                location: userGR.getValue('location'),
+                email: userGR.getValue('email')
+            };
+            return userDetails;
+        }
+        return null;
+    },
+
+    type: 'UserDetailsScriptInclude'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-23 19:18:16</sys_created_on>
+        <sys_id>33e0a17883bdc610edb56060ceaad32b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>UserDetailScriptInclude</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_include_33e0a17883bdc610edb56060ceaad32b</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-23 19:22:34</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_script_include_33e0a17883bdc610edb56060ceaad32b</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1383179_tradenow.UserDetailScriptInclude&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;UserDetailScriptInclude&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var UserDetailsScriptInclude = Class.create();
+UserDetailsScriptInclude.prototype = {
+    initialize: function() {},
+
+    getUserDetails: function(userName) {
+        var userGR = new GlideRecord('sys_user');
+        userGR.addQuery('name', userName);
+        userGR.query();
+        if (userGR.next()) {
+            var userDetails = {
+                location: userGR.getValue('location'),
+                email: userGR.getValue('email')
+            };
+            return userDetails;
+        }
+        return null;
+    },
+
+    type: 'UserDetailsScriptInclude'
+};
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;jagriti&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-04-23 19:18:16&lt;/sys_created_on&gt;&lt;sys_id&gt;33e0a17883bdc610edb56060ceaad32b&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;UserDetailScriptInclude&lt;/sys_name&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_33e0a17883bdc610edb56060ceaad32b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;jagriti&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-04-23 19:22:34&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-27682060</payload_hash>
+        <record_name>UserDetailScriptInclude</record_name>
+        <reverted_from/>
+        <source>f1d15a2083fd8610edb56060ceaad34e</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-23 19:22:34</sys_created_on>
+        <sys_id>5852ed7883bdc610edb56060ceaad322</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f0c68edc80000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-23 19:22:34</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>1052ed78aebdc6109ddcdd85f6117422</update_guid>
+        <update_guid_history>1052ed78aebdc6109ddcdd85f6117422:-27682060,beb1a1b8fdbdc610f6c54b46a2f7e17e:-2044744622,3d51e57825bdc61024ffc33c70397cd8:-365922754</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-23 19:30:00</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>1f54ee03d4a44bc797280de212d31b01</sys_id>
+        <sys_metadata>33e0a17883bdc610edb56060ceaad32b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>UserDetailScriptInclude</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_script_include_33e0a17883bdc610edb56060ceaad32b</sys_update_name>
+        <sys_update_version display_value="sys_script_include_33e0a17883bdc610edb56060ceaad32b">5852ed7883bdc610edb56060ceaad322</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-23 19:30:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

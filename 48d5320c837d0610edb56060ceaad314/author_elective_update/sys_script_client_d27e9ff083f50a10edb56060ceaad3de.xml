@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Client Script for autopopulating user</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+//    var userData=g_form.getUser();
+//    alert(userData);
+alert("Running");
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-24 04:26:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d27e9ff083f50a10edb56060ceaad3de</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Client Script for autopopulating user</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_client_d27e9ff083f50a10edb56060ceaad3de</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-24 04:33:53</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_script_client_d27e9ff083f50a10edb56060ceaad3de</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Client Script for autopopulating user&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+//    var userData=g_form.getUser();
+//    alert(userData);
+alert("Running");
+   
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;jagriti&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-04-24 04:26:23&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;d27e9ff083f50a10edb56060ceaad3de&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Client Script for autopopulating user&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_d27e9ff083f50a10edb56060ceaad3de&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;jagriti&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-04-24 04:33:53&lt;/sys_updated_on&gt;&lt;table&gt;x_1383179_tradenow_item_list&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-180519073</payload_hash>
+        <record_name>Client Script for autopopulating user</record_name>
+        <reverted_from/>
+        <source>f1d15a2083fd8610edb56060ceaad34e</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-24 04:33:53</sys_created_on>
+        <sys_id>9c80673883f50a10edb56060ceaad355</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f0e61adec0000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-24 04:33:53</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>5480673825f50a106af0a8d757d82b55</update_guid>
+        <update_guid_history>5480673825f50a106af0a8d757d82b55:-180519073,9feed774e0f50a105184c750199a93b3:-955274420,12ce97b413f50a107377cdc7da75baa2:305982671</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-24 04:39:25</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>520de03d42d5419c9d4a827c04d42790</sys_id>
+        <sys_metadata>d27e9ff083f50a10edb56060ceaad3de</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Client Script for autopopulating user</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Item List">205187c883bd0610edb56060ceaad3cf</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_script_client_d27e9ff083f50a10edb56060ceaad3de</sys_update_name>
+        <sys_update_version display_value="sys_script_client_d27e9ff083f50a10edb56060ceaad3de">9c80673883f50a10edb56060ceaad355</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-24 04:39:25</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

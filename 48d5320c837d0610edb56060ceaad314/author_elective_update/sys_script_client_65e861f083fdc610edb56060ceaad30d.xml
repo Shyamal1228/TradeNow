@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>name</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Auto Populated User Client Script</name>
+        <order/>
+        <script><![CDATA[function onChange(){
+     console.info("hi i am done");
+     onChangeUser();
+}
+function onChangeUser() {
+    var userId = g_form.getValue('name');
+    fetchUserDetails(userId);
+}
+
+function fetchUserDetails(userId) {
+    var ga = new GlideAjax('UserUtils');
+    ga.addParam('sysparm_name', 'getUserDetails');
+    ga.addParam('userId', userId);
+    ga.getXMLAnswer(function(response) {
+        var userDetails = JSON.parse(response);
+        g_form.setValue('location', UserUtils.location); // Assuming 'location' is the name of the location field in the custom table
+        g_form.setValue('email', UserUtils.email); // Assuming 'email' is the name of the email field in the custom table
+    });
+}
+
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-23 19:58:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>65e861f083fdc610edb56060ceaad30d</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>Auto Populated User Client Script</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_client_65e861f083fdc610edb56060ceaad30d</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-24 04:23:10</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_script_client_65e861f083fdc610edb56060ceaad30d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;name&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Auto Populated User Client Script&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(){
+     console.info("hi i am done");
+     onChangeUser();
+}
+function onChangeUser() {
+    var userId = g_form.getValue('name');
+    fetchUserDetails(userId);
+}
+
+function fetchUserDetails(userId) {
+    var ga = new GlideAjax('UserUtils');
+    ga.addParam('sysparm_name', 'getUserDetails');
+    ga.addParam('userId', userId);
+    ga.getXMLAnswer(function(response) {
+        var userDetails = JSON.parse(response);
+        g_form.setValue('location', UserUtils.location); // Assuming 'location' is the name of the location field in the custom table
+        g_form.setValue('email', UserUtils.email); // Assuming 'email' is the name of the email field in the custom table
+    });
+}
+
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;jagriti&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-04-23 19:58:14&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;65e861f083fdc610edb56060ceaad30d&lt;/sys_id&gt;&lt;sys_mod_count&gt;24&lt;/sys_mod_count&gt;&lt;sys_name&gt;Auto Populated User Client Script&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_65e861f083fdc610edb56060ceaad30d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;jagriti&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-04-24 04:23:10&lt;/sys_updated_on&gt;&lt;table&gt;x_1383179_tradenow_item_list&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1620355988</payload_hash>
+        <record_name>Auto Populated User Client Script</record_name>
+        <reverted_from/>
+        <source>f1d15a2083fd8610edb56060ceaad34e</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-24 04:23:11</sys_created_on>
+        <sys_id>2b0e1b7483f50a10edb56060ceaad3e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f0e57dfe60000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-24 04:23:11</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>e70e537415f50a10210b5522f500ecd6</update_guid>
+        <update_guid_history>e70e537415f50a10210b5522f500ecd6:-1620355988,da0a71747a310a10637b2ad0bc23695e:1420403999,07d9b1f418310a1093754152e3050cc9:1899226645,a5e8f9b469310a1047e5da97972f94a7:1935449266,116835b4fa310a105841353e535dba39:371441696,cf08f1b434310a10f0517765602b14db:-51978786,02a7b534bf310a100ff3ed1cff02cc02:610004489,208779f005310a10c92e06a92229b786:-1442099927,27663d34cc310a1064246b78853f60ed:694620315,7246fdb011310a1084e361a4445df72b:-1400409501,bbf571f06f310a10b75eac87d6127dec:-1838918891,725579f029310a1023c63f512f481d7d:-732985718,23f471f030310a106888e1700a371085:141355325,52d4b5704d310a10342712ff1562e5a2:921531677,50d4fd7013310a107d890929ead3df6d:-1785905390,7cc4b5b0f2310a10a279bf4dc4497c5a:792325243,1cb431b082310a10e448ea2e3ad8f830:5807462,109439b05d310a10ec1e61a42c7cff3e:792325243,7474f13069310a10d485c14ae012574c:258728144,2f343d70b9310a10ae717892f63dada4:1365097680,5424353025310a100f03cea0dc1fc6e7:1898694779,cff379302a310a102febffd72872df20:792325243,54a3b9bc4cfdc610ed980c4066d5cb93:1242655289,11cca9f447fdc610b035a4729a9c3cee:-477942189,8f7aa934defdc6103689b3eba559be0b:-1025351617</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-24 04:39:36</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>1d96a21b5a874e049e822689802440f9</sys_id>
+        <sys_metadata>65e861f083fdc610edb56060ceaad30d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Auto Populated User Client Script</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Item List">205187c883bd0610edb56060ceaad3cf</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_script_client_65e861f083fdc610edb56060ceaad30d</sys_update_name>
+        <sys_update_version display_value="sys_script_client_65e861f083fdc610edb56060ceaad30d">2b0e1b7483f50a10edb56060ceaad3e2</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-24 04:39:36</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="New Section" section_id="6fd2f3fc83390a10edb56060ceaad391" sys_domain="global" table="x_1383179_tradenow_item_list" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>description</element>
+            <position>0</position>
+            <sys_created_by>jagriti</sys_created_by>
+            <sys_created_on>2024-04-24 05:54:07</sys_created_on>
+            <sys_id>a3d2f3fc83390a10edb56060ceaad3ba</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="New Section" display_value="New Section" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">6fd2f3fc83390a10edb56060ceaad391</sys_ui_section>
+            <sys_updated_by>jagriti</sys_updated_by>
+            <sys_updated_on>2024-04-24 05:54:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>image</element>
+            <position>1</position>
+            <sys_created_by>jagriti</sys_created_by>
+            <sys_created_on>2024-04-24 05:54:07</sys_created_on>
+            <sys_id>27d2f3fc83390a10edb56060ceaad3ba</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="New Section" display_value="New Section" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">6fd2f3fc83390a10edb56060ceaad391</sys_ui_section>
+            <sys_updated_by>jagriti</sys_updated_by>
+            <sys_updated_on>2024-04-24 05:54:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption>New Section</caption>
+            <header>false</header>
+            <name>x_1383179_tradenow_item_list</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>jagriti</sys_created_by>
+            <sys_created_on>2024-04-24 05:54:06</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6fd2f3fc83390a10edb56060ceaad391</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383179_tradenow_item_list</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+            <sys_update_name>sys_ui_section_6fd2f3fc83390a10edb56060ceaad391</sys_update_name>
+            <sys_updated_by>jagriti</sys_updated_by>
+            <sys_updated_on>2024-04-24 05:54:06</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_ui_section_6fd2f3fc83390a10edb56060ceaad391</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="New Section" section_id="6fd2f3fc83390a10edb56060ceaad391" sys_domain="global" table="x_1383179_tradenow_item_list" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>description</element><position>0</position><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-04-24 05:54:07</sys_created_on><sys_id>a3d2f3fc83390a10edb56060ceaad3ba</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="New Section" display_value="New Section" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">6fd2f3fc83390a10edb56060ceaad391</sys_ui_section><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-04-24 05:54:07</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>image</element><position>1</position><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-04-24 05:54:07</sys_created_on><sys_id>27d2f3fc83390a10edb56060ceaad3ba</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="New Section" display_value="New Section" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">6fd2f3fc83390a10edb56060ceaad391</sys_ui_section><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-04-24 05:54:07</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption>New Section</caption><header>false</header><name>x_1383179_tradenow_item_list</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-04-24 05:54:06</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>6fd2f3fc83390a10edb56060ceaad391</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1383179_tradenow_item_list</sys_name><sys_overrides/><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_ui_section_6fd2f3fc83390a10edb56060ceaad391</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-04-24 05:54:06</sys_updated_on><sys_user/><title>false</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>678256835</payload_hash>
+        <record_name>Item List</record_name>
+        <reverted_from/>
+        <source>f1d15a2083fd8610edb56060ceaad34e</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-24 05:54:07</sys_created_on>
+        <sys_id>a3d2f3fc83390a10edb56060ceaad3bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f0eab21fd0000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-24 05:54:07</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>2bd2f3fccc390a104703080d6cfeb5bb</update_guid>
+        <update_guid_history>2bd2f3fccc390a104703080d6cfeb5bb:678256835</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-24 05:54:25</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>549f16fb2ee54ad3911eb0351e0f66c1</sys_id>
+        <sys_metadata>6fd2f3fc83390a10edb56060ceaad391</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Section</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Item List">205187c883bd0610edb56060ceaad3cf</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_ui_section_6fd2f3fc83390a10edb56060ceaad391</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_6fd2f3fc83390a10edb56060ceaad391">a3d2f3fc83390a10edb56060ceaad3bc</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-24 05:54:25</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

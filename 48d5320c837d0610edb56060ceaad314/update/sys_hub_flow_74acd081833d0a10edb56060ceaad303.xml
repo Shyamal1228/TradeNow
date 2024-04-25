@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>labelCacheCleanUpExecuted=true</attributes>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>flow_for_change_state_after_5_min</internal_name>
+        <label_cache>[]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <name>Flow for change state after 5 min</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-24 08:56:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>74acd081833d0a10edb56060ceaad303</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Flow for change state after 5 min</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_hub_flow_74acd081833d0a10edb56060ceaad303</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-24 08:56:37</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=74acd081833d0a10edb56060ceaad303"/>
+    <sys_variable_value action="delete_multiple" query="document_key=74acd081833d0a10edb56060ceaad303"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=74acd081833d0a10edb56060ceaad303"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=74acd081833d0a10edb56060ceaad303"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=74acd081833d0a10edb56060ceaad303^sys_idNOT INb0acd081833d0a10edb56060ceaad306"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>74acd081833d0a10edb56060ceaad303</id>
+        <name>Flow for change state after 5 min</name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-24 08:56:37</sys_created_on>
+        <sys_id>b0acd081833d0a10edb56060ceaad306</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-24 08:56:37</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=b0acd081833d0a10edb56060ceaad306"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=74acd081833d0a10edb56060ceaad303"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=74acd081833d0a10edb56060ceaad303"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=74acd081833d0a10edb56060ceaad303"/>
+    <sys_hub_action_instance action="delete_multiple" query="flow=74acd081833d0a10edb56060ceaad303"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=74acd081833d0a10edb56060ceaad303"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=74acd081833d0a10edb56060ceaad303"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=74acd081833d0a10edb56060ceaad303"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=74acd081833d0a10edb56060ceaad303"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_74acd081833d0a10edb56060ceaad303"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_74acd081833d0a10edb56060ceaad303"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_74acd081833d0a10edb56060ceaad303"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_74acd081833d0a10edb56060ceaad303"/>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=74acd081833d0a10edb56060ceaad303"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=74acd081833d0a10edb56060ceaad303"/>
+</record_update>

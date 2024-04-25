@@ -3,7 +3,7 @@
         <element label="Charity id" max_length="40" name="charity_id" type="string"/>
         <element label="Charity name" mandatory="true" max_length="40" name="charity_name" type="string"/>
         <element label="Description" mandatory="true" max_length="1000" name="description" type="string"/>
-        <element label="Donation link" mandatory="true" max_length="100" name="donation_link" type="string"/>
+        <element label="Donation link" mandatory="true" max_length="100" name="donation_link" type="url"/>
         <element label="Email" max_length="40" name="email" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Charity id" max_length="40" name="number" read_only="true" type="string"/>
         <element choice="1" label="Payment Mode" max_length="40" name="payment_mode" type="choice">

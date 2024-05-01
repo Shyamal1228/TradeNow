@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Client Script to Show /hide Button</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    // var fieldValue=g_form.getValue('status');
+    // alert(fieldValue);
+    // if (g_form.getValue('status') == "Available") {
+        // g_form.setDisplay('sysverb_cancel_reservation', false);
+        // g_form.setVisible('sysverb_cancel_reservation', false);
+		g_form.removeOption('sysverb_cancel_reservation');
+    // } else {
+    //     // g_form.setDisplay('sysverb_cancel_reservation', true);
+    //     g_form.setVisible('sysverb_cancel_reservation', true);
+    // }
+
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-23 11:13:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>66e0fbe483b5c610edb56060ceaad39d</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Client Script to Show /hide Button</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_client_66e0fbe483b5c610edb56060ceaad39d</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-30 15:01:51</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_script_client_66e0fbe483b5c610edb56060ceaad39d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Client Script to Show /hide Button&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+    // var fieldValue=g_form.getValue('status');
+    // alert(fieldValue);
+    // if (g_form.getValue('status') == "Available") {
+        // g_form.setDisplay('sysverb_cancel_reservation', false);
+        // g_form.setVisible('sysverb_cancel_reservation', false);
+		g_form.removeOption('sysverb_cancel_reservation');
+    // } else {
+    //     // g_form.setDisplay('sysverb_cancel_reservation', true);
+    //     g_form.setVisible('sysverb_cancel_reservation', true);
+    // }
+
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-04-23 11:13:45&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;66e0fbe483b5c610edb56060ceaad39d&lt;/sys_id&gt;&lt;sys_mod_count&gt;11&lt;/sys_mod_count&gt;&lt;sys_name&gt;Client Script to Show /hide Button&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_66e0fbe483b5c610edb56060ceaad39d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-04-30 15:01:51&lt;/sys_updated_on&gt;&lt;table&gt;x_1383179_tradenow_item_list&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>254653909</payload_hash>
+        <record_name>Client Script to Show /hide Button</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-30 15:01:51</sys_created_on>
+        <sys_id>6dc9600b83b90210edb56060ceaad306</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f2f86c0840000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-30 15:01:51</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>a5c9608760b9021071161fb5a157b90e</update_guid>
+        <update_guid_history>a5c9608760b9021071161fb5a157b90e:254653909,989fe87cebb9c610f7958171cc0718af:170462210,a218a470fdb9c610f31a6b3de97849d4:-1014792698,749628fcee79c610442e72d9341c1755:-356698639,6cb46cfc5379c610c7887e3f8203bfd0:-1521430780,618328fce279c610e69de0e2e67d9f5f:-356698639,9413e4305af5c610ac46bb59a3aa16b5:-1130406855,47c677ac82b5c6102ecf25f8cb43d08d:1236363170,6095376c3db5c61011a2eb261a03b7e9:-1408185157,b1e3ff6878b5c6109537ab5ef178a529:-606113478,53923be479b5c610fb910b8182c59c57:1811192581,4c72fb288ab5c610498498bf32ab613f:-347760638</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-30 15:03:13</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>0ac5eb7df27c4974adc6c3cc46b2c190</sys_id>
+        <sys_metadata>66e0fbe483b5c610edb56060ceaad39d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Client Script to Show /hide Button</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Item List">205187c883bd0610edb56060ceaad3cf</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_script_client_66e0fbe483b5c610edb56060ceaad39d</sys_update_name>
+        <sys_update_version display_value="sys_script_client_66e0fbe483b5c610edb56060ceaad39d">6dc9600b83b90210edb56060ceaad306</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-30 15:03:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

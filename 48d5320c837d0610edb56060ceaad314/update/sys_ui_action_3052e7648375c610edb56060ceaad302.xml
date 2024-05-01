@@ -31,6 +31,8 @@
         <onclick/>
         <order>300</order>
         <script><![CDATA[current.status="Available";
+current.claimer='';
+current.claimer_email='';
 current.update();]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -42,7 +44,7 @@ current.update();]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3052e7648375c610edb56060ceaad302</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Cancel Reservation</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -50,7 +52,7 @@ current.update();]]></script>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_ui_action_3052e7648375c610edb56060ceaad302</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-04-23 18:12:46</sys_updated_on>
+        <sys_updated_on>2024-04-30 16:09:21</sys_updated_on>
         <table>x_1383179_tradenow_item_list</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

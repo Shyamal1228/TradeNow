@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="77328f0883bd0610edb56060ceaad38b" label="Charity List" max_length="40" name="x_1383179_tradenow_charity_list" type="collection">
+        <element label="Add Payment Proof" max_length="40" name="add_payment_proof" type="user_image"/>
         <element label="Charity id" max_length="40" name="charity_id" type="string"/>
         <element label="Charity name" mandatory="true" max_length="40" name="charity_name" type="string"/>
         <element label="Description" mandatory="true" max_length="1000" name="description" type="string"/>

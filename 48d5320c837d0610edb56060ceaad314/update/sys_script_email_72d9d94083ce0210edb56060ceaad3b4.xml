@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>OpenGoogleMap</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript( /* GlideRecord */ current, /* TemplatePrinter */ template,
+    /* Optional EmailOutbound */
+    email, /* Optional GlideRecord */ email_action,
+    /* Optional GlideRecord */
+    event) {
+
+    // View map Link
+    /*
+    var linkText = "View on Maps";
+    var mapUrl = "https://www.google.com/maps?q=" + current.lister_name.location.latitude + "," + current.lister_name.location.longitude;
+    template.print('<a href="' + mapUrl + '">' + linkText + '</a>');
+	*/
+
+    // View map button
+    var linkText = "Show Location";
+    var mapUrl = "https://www.google.com/maps?q=" + current.lister_name.location.latitude + "," + current.lister_name.location.longitude;
+
+    var notificationUtil = new TradeNowNotificationUtil();
+    notificationUtil.notificationAction(template, mapUrl, linkText, '#4F52BD', '#ffffff', '6px', '16px');
+
+
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-03 21:10:12</sys_created_on>
+        <sys_id>72d9d94083ce0210edb56060ceaad3b4</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>OpenGoogleMap</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_email_72d9d94083ce0210edb56060ceaad3b4</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-04 13:22:10</sys_updated_on>
+    </sys_script_email>
+</record_update>

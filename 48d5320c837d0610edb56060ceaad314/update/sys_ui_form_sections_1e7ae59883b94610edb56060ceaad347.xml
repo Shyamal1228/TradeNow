@@ -28,20 +28,6 @@
             <sys_updated_by>shyamal</sys_updated_by>
             <sys_updated_on>2024-04-30 10:25:25</sys_updated_on>
         </sys_ui_form_section>
-        <sys_ui_form_section action="INSERT_OR_UPDATE">
-            <position>2</position>
-            <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-03 09:25:14</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_id>f7797af783350210edb56060ceaad321</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_overrides/>
-            <sys_ui_form display_value="x_1383179_tradenow_item_list" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">1e7ae59883b94610edb56060ceaad347</sys_ui_form>
-            <sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section>
-            <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-03 09:25:14</sys_updated_on>
-        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_1383179_tradenow_item_list</name>
             <roles/>

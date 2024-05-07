@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
         <action_name/>
-        <active>true</active>
+        <active>false</active>
         <client>true</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
 
@@ -29,7 +29,7 @@
         <messages/>
         <name>Show Address</name>
         <onclick>onClickClientScript()</onclick>
-        <order>100</order>
+        <order>300</order>
         <script><![CDATA[function onClickClientScript() {
     // g_form.setSectionDisplay('claimer_details',true);
     g_form.setSectionDisplay('pickup_location', true);
@@ -53,7 +53,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b53e17ff83750210edb56060ceaad31e</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Show Address</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -61,7 +61,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_ui_action_b53e17ff83750210edb56060ceaad31e</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-04 08:06:43</sys_updated_on>
+        <sys_updated_on>2024-05-06 21:28:38</sys_updated_on>
         <table>x_1383179_tradenow_item_list</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

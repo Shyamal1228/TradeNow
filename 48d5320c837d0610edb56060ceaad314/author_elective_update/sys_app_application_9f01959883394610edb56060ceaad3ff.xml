@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="DELETE">
+        <active>true</active>
+        <category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <name>Reserved Item</name>
+        <order>100</order>
+        <roles>x_1383179_tradenow.reserved_item_user</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-22 04:50:09</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9f01959883394610edb56060ceaad3ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Reserved Item</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_app_application_9f01959883394610edb56060ceaad3ff</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-22 04:50:09</sys_updated_on>
+        <title>Reserved Item</title>
+        <view_name/>
+    </sys_app_application>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_app_application_9f01959883394610edb56060ceaad3ff</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application"><sys_app_application action="INSERT_OR_UPDATE"><active>true</active><category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category><description/><device_type>browser</device_type><hint/><name>Reserved Item</name><order>100</order><roles>x_1383179_tradenow.reserved_item_user</roles><sys_class_name>sys_app_application</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-04-22 04:50:09</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>9f01959883394610edb56060ceaad3ff</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Reserved Item</sys_name><sys_overrides/><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_app_application_9f01959883394610edb56060ceaad3ff</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-04-22 04:50:09</sys_updated_on><title>Reserved Item</title><view_name/></sys_app_application></record_update>]]></payload>
+        <payload_hash>2101708276</payload_hash>
+        <record_name>Reserved Item</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-22 04:50:09</sys_created_on>
+        <sys_id>5301d59883394610edb56060ceaad303</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f0423db030000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-22 04:50:09</sys_updated_on>
+        <type>Application Menu</type>
+        <update_guid>9701d5981d394610db4acb57e0341302</update_guid>
+        <update_guid_history>9701d5981d394610db4acb57e0341302:2101708276</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Reserved Item">13549a3c830a0610edb56060ceaad3b7</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-06 09:16:55</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_application">sys_app_application</sys_db_object>
+        <sys_id>04cec2662c0d45fa80a5c544171e67e4</sys_id>
+        <sys_metadata>9f01959883394610edb56060ceaad3ff</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Reserved Item</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_app_application_9f01959883394610edb56060ceaad3ff</sys_update_name>
+        <sys_update_version display_value="sys_app_application_9f01959883394610edb56060ceaad3ff">5301d59883394610edb56060ceaad303</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-06 09:16:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

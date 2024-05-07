@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>GlideModal</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    var listername = g_form.getValue('location.name');
+    alert(listername);
+    //Type appropriate comment here, and begin script below
+    // alert(g_form.getValue('status'));
+    if (g_form.getValue('status') == 'Ready to Pick-up') {
+        // alert(g_form.getValue('status'));
+        var gm = new GlideModal("glide_info", true, 600);
+        gm.setTitle("Pick-Up Location");
+
+        // var location=g_form.getValue('lister_name').location;
+        gm.setPreference("title", "Test");
+        // gm.setPreference("onPromptComplete", function() {
+        //     alert("You clicked on 'Ok'");
+        // });
+        gm.render();
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-02 07:02:44</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>280f89638331c210edb56060ceaad30a</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>GlideModal</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_client_280f89638331c210edb56060ceaad30a</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-03 09:08:51</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_script_client_280f89638331c210edb56060ceaad30a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;GlideModal&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+    var listername = g_form.getValue('location.name');
+    alert(listername);
+    //Type appropriate comment here, and begin script below
+    // alert(g_form.getValue('status'));
+    if (g_form.getValue('status') == 'Ready to Pick-up') {
+        // alert(g_form.getValue('status'));
+        var gm = new GlideModal("glide_info", true, 600);
+        gm.setTitle("Pick-Up Location");
+
+        // var location=g_form.getValue('lister_name').location;
+        gm.setPreference("title", "Test");
+        // gm.setPreference("onPromptComplete", function() {
+        //     alert("You clicked on 'Ok'");
+        // });
+        gm.render();
+    }
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-02 07:02:44&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;280f89638331c210edb56060ceaad30a&lt;/sys_id&gt;&lt;sys_mod_count&gt;24&lt;/sys_mod_count&gt;&lt;sys_name&gt;GlideModal&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_280f89638331c210edb56060ceaad30a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-03 09:08:51&lt;/sys_updated_on&gt;&lt;table&gt;x_1383179_tradenow_item_list&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-144459023</payload_hash>
+        <record_name>GlideModal</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-03 09:08:51</sys_created_on>
+        <sys_id>8cc536fb83f10210edb56060ceaad395</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f3db6a84e0000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-03 09:08:51</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>04c536fbcaf10210f626b895ae62da95</update_guid>
+        <update_guid_history>04c536fbcaf10210f626b895ae62da95:-144459023,16f2ea3ff4b102108a0e96c7000978ff:1208238180,0ad2a23fd0b1021093f89baaabac92dc:-1348745403,65c2e63ff5b1021071766fbc84244928:-606759402,3a92e6bbacb10210d403ec73a9d192ad:-572981929,0e62a2fbf7b10210d29b720f08233e65:-472599722,84c1a6fb32b102109904627080fac7e7:-127978110,08a126fbbdb10210dd2c6fa049a1b02f:-792161531,cd81a2fbf7b10210b9c2f4eae3361c0b:-1015112772,4a5122bb7ab10210961dd8d87e766c87:1585409488,7931e6bbb0b102105a550d9f477ce762:123808337,e8d0a2bb87b10210b7a7d2b0c54bee1d:407012704,d2806e7b83b10210e56bc05825e2f2a4:-569016417,d070623bf3b1021020440f366f4398bd:1126477531,28cf523b54b102100334503fe10c0cb6:-1015112772,318f163b3db102103a8687940694f60f:-1728798781,5e6f1ebfd971021042aa3af23fd40284:194761593,4d4f163b79b1021024f4c477804e4608:2110595283,005ffd6b6cf1c2101c48199303eb06a1:-1642134401,61ce792b4cf1c21052efb0da2a52bb4b:-1932045257,d58eb1a330f1c21028ad58e22bf61d6b:946153857,2c0ef5e769f1c210528c95321e6f1d70:-1592758111,086bb927a8f1c2107f7947f14948eb2d:-1721533360,b32bb167e0f1c21087b96948f7eaaa49:-167657574,4b4f85273831c210d9b6eaaea36ff1e4:724392532</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-06 04:02:01</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>3013cd34e39744e4a6be37693f7fbda4</sys_id>
+        <sys_metadata>280f89638331c210edb56060ceaad30a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GlideModal</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Item">205187c883bd0610edb56060ceaad3cf</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_script_client_280f89638331c210edb56060ceaad30a</sys_update_name>
+        <sys_update_version display_value="sys_script_client_280f89638331c210edb56060ceaad30a">8cc536fb83f10210edb56060ceaad395</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-06 04:02:01</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="" section_id="90525dd883394610edb56060ceaad384" sys_domain="global" table="x_1383179_tradenow_reserved_item" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>0</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-04-22 06:03:28</sys_created_on>
+            <sys_id>99d1611083b94610edb56060ceaad3b1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_reserved_item" sys_domain="global" view="Default view">90525dd883394610edb56060ceaad384</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-04-22 06:03:28</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>user_id</element>
+            <position>1</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-04-22 06:03:28</sys_created_on>
+            <sys_id>11d1611083b94610edb56060ceaad3b2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_reserved_item" sys_domain="global" view="Default view">90525dd883394610edb56060ceaad384</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-04-22 06:03:28</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-04-22 06:03:28</sys_created_on>
+            <sys_id>91d1611083b94610edb56060ceaad3b2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_reserved_item" sys_domain="global" view="Default view">90525dd883394610edb56060ceaad384</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-04-22 06:03:28</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>item_id</element>
+            <position>3</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-04-22 06:03:28</sys_created_on>
+            <sys_id>15d1611083b94610edb56060ceaad3b2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_reserved_item" sys_domain="global" view="Default view">90525dd883394610edb56060ceaad384</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-04-22 06:03:28</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>status</element>
+            <position>4</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-04-22 06:03:28</sys_created_on>
+            <sys_id>95d1611083b94610edb56060ceaad3b2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_reserved_item" sys_domain="global" view="Default view">90525dd883394610edb56060ceaad384</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-04-22 06:03:28</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption/>
+            <header>false</header>
+            <name>x_1383179_tradenow_reserved_item</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-04-22 04:55:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>90525dd883394610edb56060ceaad384</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383179_tradenow_reserved_item</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+            <sys_update_name>sys_ui_section_90525dd883394610edb56060ceaad384</sys_update_name>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-04-22 04:55:41</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_ui_section_90525dd883394610edb56060ceaad384</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="" section_id="90525dd883394610edb56060ceaad384" sys_domain="global" table="x_1383179_tradenow_reserved_item" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>number</element><position>0</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-04-22 06:03:28</sys_created_on><sys_id>99d1611083b94610edb56060ceaad3b1</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_reserved_item" sys_domain="global" view="Default view">90525dd883394610edb56060ceaad384</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-04-22 06:03:28</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>user_id</element><position>1</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-04-22 06:03:28</sys_created_on><sys_id>11d1611083b94610edb56060ceaad3b2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_reserved_item" sys_domain="global" view="Default view">90525dd883394610edb56060ceaad384</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-04-22 06:03:28</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>2</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-04-22 06:03:28</sys_created_on><sys_id>91d1611083b94610edb56060ceaad3b2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_reserved_item" sys_domain="global" view="Default view">90525dd883394610edb56060ceaad384</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-04-22 06:03:28</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>item_id</element><position>3</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-04-22 06:03:28</sys_created_on><sys_id>15d1611083b94610edb56060ceaad3b2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_reserved_item" sys_domain="global" view="Default view">90525dd883394610edb56060ceaad384</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-04-22 06:03:28</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>status</element><position>4</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-04-22 06:03:28</sys_created_on><sys_id>95d1611083b94610edb56060ceaad3b2</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_reserved_item" sys_domain="global" view="Default view">90525dd883394610edb56060ceaad384</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-04-22 06:03:28</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption/><header>false</header><name>x_1383179_tradenow_reserved_item</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-04-22 04:55:41</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>90525dd883394610edb56060ceaad384</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1383179_tradenow_reserved_item</sys_name><sys_overrides/><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_ui_section_90525dd883394610edb56060ceaad384</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-04-22 04:55:41</sys_updated_on><sys_user/><title>true</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>419646458</payload_hash>
+        <record_name>Reserved Item</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-22 06:03:28</sys_created_on>
+        <sys_id>19d1611083b94610edb56060ceaad3b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f0466fae00000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-22 06:03:28</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>ddd161106db94610eb1131dbfb56e3b3</update_guid>
+        <update_guid_history>ddd161106db94610eb1131dbfb56e3b3:419646458,f7f06d5c47794610d542eb30e08fb176:-886663168,7ff06d5ce3794610c983aff6956b4a61:-2121602732,37f06d5c6279461021702ecef95bad59:-51899775,6b5f5dd83c7946109affd1a3f43818c9:-2002191624,1c52951c9039461052339eccc3f1f5d5:344818433,d4525dd81a394610abdd943935191b87:2087258108</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-06 03:58:31</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>0a5605761d9b49528716ccf657418b59</sys_id>
+        <sys_metadata>90525dd883394610edb56060ceaad384</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383179_tradenow_reserved_item</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="">8f40195883394610edb56060ceaad3f6</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_ui_section_90525dd883394610edb56060ceaad384</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_90525dd883394610edb56060ceaad384">19d1611083b94610edb56060ceaad3b4</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-06 03:58:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

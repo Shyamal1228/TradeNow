@@ -4,13 +4,13 @@
             <element>claimer</element>
             <position>0</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-04-30 15:54:42</sys_created_on>
-            <sys_id>f7d5b00783f90210edb56060ceaad362</sys_id>
+            <sys_created_on>2024-05-06 20:04:25</sys_created_on>
+            <sys_id>c098e04583c24610edb56060ceaad3d5</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Claimer Details" display_value="Claimer Details" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">188aefb283b50210edb56060ceaad344</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-04-30 15:54:42</sys_updated_on>
+            <sys_updated_on>2024-05-06 20:04:25</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,27 +18,27 @@
             <element>.split</element>
             <position>1</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-04-30 15:54:42</sys_created_on>
-            <sys_id>7bd5b00783f90210edb56060ceaad362</sys_id>
+            <sys_created_on>2024-05-06 20:04:25</sys_created_on>
+            <sys_id>4498e04583c24610edb56060ceaad3d5</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Claimer Details" display_value="Claimer Details" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">188aefb283b50210edb56060ceaad344</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-04-30 15:54:42</sys_updated_on>
+            <sys_updated_on>2024-05-06 20:04:25</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>claimer_email</element>
+            <element>claimer.email</element>
             <position>2</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-04-30 15:54:42</sys_created_on>
-            <sys_id>fbd5b00783f90210edb56060ceaad362</sys_id>
+            <sys_created_on>2024-05-06 20:04:25</sys_created_on>
+            <sys_id>c498e04583c24610edb56060ceaad3d5</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Claimer Details" display_value="Claimer Details" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">188aefb283b50210edb56060ceaad344</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-04-30 15:54:42</sys_updated_on>
+            <sys_updated_on>2024-05-06 20:04:25</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

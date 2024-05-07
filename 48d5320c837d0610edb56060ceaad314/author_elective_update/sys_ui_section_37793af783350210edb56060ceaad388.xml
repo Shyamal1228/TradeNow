@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="Pickup Location" section_id="37793af783350210edb56060ceaad388" sys_domain="global" table="x_1383179_tradenow_item_list" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>lister_name.email</element>
+            <position>0</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-03 21:32:05</sys_created_on>
+            <sys_id>c7df1d8c83ce0210edb56060ceaad340</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-03 21:32:05</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>lister_name.mobile_phone</element>
+            <position>1</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-03 21:32:05</sys_created_on>
+            <sys_id>4bdf1d8c83ce0210edb56060ceaad340</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-03 21:32:05</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>lister_name.location</element>
+            <position>2</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-03 21:32:05</sys_created_on>
+            <sys_id>cbdf1d8c83ce0210edb56060ceaad340</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-03 21:32:05</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-03 21:32:05</sys_created_on>
+            <sys_id>4fdf1d8c83ce0210edb56060ceaad340</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-03 21:32:05</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>lister_name.state</element>
+            <position>4</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-03 21:32:05</sys_created_on>
+            <sys_id>cfdf1d8c83ce0210edb56060ceaad340</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-03 21:32:05</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>lister_name.city</element>
+            <position>5</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-03 21:32:05</sys_created_on>
+            <sys_id>43df1d8c83ce0210edb56060ceaad341</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-03 21:32:05</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>lister_name.street</element>
+            <position>6</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-03 21:32:05</sys_created_on>
+            <sys_id>c3df1d8c83ce0210edb56060ceaad341</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-03 21:32:05</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption>Pickup Location</caption>
+            <header>false</header>
+            <name>x_1383179_tradenow_item_list</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-03 09:25:14</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>37793af783350210edb56060ceaad388</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_name>x_1383179_tradenow_item_list</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+            <sys_update_name>sys_ui_section_37793af783350210edb56060ceaad388</sys_update_name>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-03 12:26:45</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_ui_section_37793af783350210edb56060ceaad388</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="Pickup Location" section_id="37793af783350210edb56060ceaad388" sys_domain="global" table="x_1383179_tradenow_item_list" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>lister_name.email</element><position>0</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-03 21:32:05</sys_created_on><sys_id>c7df1d8c83ce0210edb56060ceaad340</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-03 21:32:05</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>lister_name.mobile_phone</element><position>1</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-03 21:32:05</sys_created_on><sys_id>4bdf1d8c83ce0210edb56060ceaad340</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-03 21:32:05</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>lister_name.location</element><position>2</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-03 21:32:05</sys_created_on><sys_id>cbdf1d8c83ce0210edb56060ceaad340</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-03 21:32:05</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>3</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-03 21:32:05</sys_created_on><sys_id>4fdf1d8c83ce0210edb56060ceaad340</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-03 21:32:05</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>lister_name.state</element><position>4</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-03 21:32:05</sys_created_on><sys_id>cfdf1d8c83ce0210edb56060ceaad340</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-03 21:32:05</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>lister_name.city</element><position>5</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-03 21:32:05</sys_created_on><sys_id>43df1d8c83ce0210edb56060ceaad341</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-03 21:32:05</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>lister_name.street</element><position>6</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-03 21:32:05</sys_created_on><sys_id>c3df1d8c83ce0210edb56060ceaad341</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Pickup Location" display_value="Pickup Location" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">37793af783350210edb56060ceaad388</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-03 21:32:05</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption>Pickup Location</caption><header>false</header><name>x_1383179_tradenow_item_list</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-03 09:25:14</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>37793af783350210edb56060ceaad388</sys_id><sys_mod_count>2</sys_mod_count><sys_name>x_1383179_tradenow_item_list</sys_name><sys_overrides/><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_ui_section_37793af783350210edb56060ceaad388</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-03 12:26:45</sys_updated_on><sys_user/><title>false</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>497935681</payload_hash>
+        <record_name>Item List</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-03 21:32:05</sys_created_on>
+        <sys_id>47df1d8c83ce0210edb56060ceaad343</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f405f19410000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-03 21:32:05</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>0fdf1d8c51ce0210e3e43d336be31d42</update_guid>
+        <update_guid_history>0fdf1d8c51ce0210e3e43d336be31d42:497935681,e3bf598c60ce02105f6a2900091b59a0:-2090327359,a4afd58ccbce02109a7947107ad57a81:1323213622,be03eb771bf502100a1ea54c6df45ca2:-72232110,f782637767f50210da2723a818b5a6c9:-1526634538,cbca4bbb637502106778ddeb6feff3ba:636108534,28bafe3b33350210dc9db06c0bcb0856:1293430964,0c6afaf794350210730d7397b8f11366:-890506260,08897af73c350210af7eaa74be72f037:1363028767</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-06 16:58:28</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>8dbcaa91caf74147abffe8d8675684c1</sys_id>
+        <sys_metadata>37793af783350210edb56060ceaad388</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Pickup Location</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Item">205187c883bd0610edb56060ceaad3cf</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_ui_section_37793af783350210edb56060ceaad388</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_37793af783350210edb56060ceaad388">47df1d8c83ce0210edb56060ceaad343</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-06 16:58:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

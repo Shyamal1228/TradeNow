@@ -7,7 +7,7 @@
 
 }]]></client_script_v2>
         <comments/>
-        <condition>current.status == "Available"</condition>
+        <condition>current.status == 'available'</condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
         <form_button_v2>false</form_button_v2>
@@ -28,15 +28,39 @@
         <list_style/>
         <messages/>
         <name>Get Item</name>
-        <onclick/>
+        <onclick>onClickClientScript()</onclick>
         <order>100</order>
         <script><![CDATA[// current.status="Claimed";
-current.status="Ready to Pick-up";
+// var preStatus = previous.status;
+
+
+// actual code 
+current.status="readypickup";
 current.claimer=gs.getUserDisplayName();
-current.claimer_email=gs.getUser().getEmail();
+// current.email=gs.getUser().getEmail();
 current.update();
 
-action.setRedirectURL(current);]]></script>
+action.setRedirectURL(current);
+
+
+// if (preStatus=='' && g_form.getValue('status') == 'Ready to Pick-up') {
+//         var gm = new GlideModal("glide_warn", true, 600);
+//         gm.setTitle("Pick-Up Location");
+//         gm.setPreference("title", "Pick-Up Location has been sent to your notification.");
+//         gm.render();
+//     }
+
+// function onClickClientScript() {
+// 	g_form.setValue('status','readypickup');
+// 	g_form.save();
+// 	// if (statusField === 'Available') {
+//     //     // Show the UI action button
+//     //     showUIAction('Get Item');
+//     // } else {
+//     //     // Hide the UI action button
+//     //     hideUIAction('Get Item');
+//     // }
+// }]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
@@ -47,7 +71,7 @@ action.setRedirectURL(current);]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0f5295f4837dc610edb56060ceaad34c</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_name>Get Item</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -55,7 +79,7 @@ action.setRedirectURL(current);]]></script>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_ui_action_0f5295f4837dc610edb56060ceaad34c</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-03 12:43:45</sys_updated_on>
+        <sys_updated_on>2024-05-06 21:49:46</sys_updated_on>
         <table>x_1383179_tradenow_item_list</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

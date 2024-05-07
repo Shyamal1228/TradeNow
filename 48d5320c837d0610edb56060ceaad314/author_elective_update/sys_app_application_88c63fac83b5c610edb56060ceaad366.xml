@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="DELETE">
+        <active>true</active>
+        <category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <name>Category Lookup</name>
+        <order>100</order>
+        <roles>x_1383179_tradenow.category_lookup_user</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-23 11:32:35</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>88c63fac83b5c610edb56060ceaad366</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Category Lookup</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_app_application_88c63fac83b5c610edb56060ceaad366</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-23 11:32:35</sys_updated_on>
+        <title>Category Lookup</title>
+        <view_name/>
+    </sys_app_application>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_app_application_88c63fac83b5c610edb56060ceaad366</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application"><sys_app_application action="INSERT_OR_UPDATE"><active>true</active><category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category><description/><device_type>browser</device_type><hint/><name>Category Lookup</name><order>100</order><roles>x_1383179_tradenow.category_lookup_user</roles><sys_class_name>sys_app_application</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-04-23 11:32:35</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>88c63fac83b5c610edb56060ceaad366</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Category Lookup</sys_name><sys_overrides/><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_app_application_88c63fac83b5c610edb56060ceaad366</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-04-23 11:32:35</sys_updated_on><title>Category Lookup</title><view_name/></sys_app_application></record_update>]]></payload>
+        <payload_hash>-519495180</payload_hash>
+        <record_name>Category Lookup</record_name>
+        <reverted_from/>
+        <source>f1d15a2083fd8610edb56060ceaad34e</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-23 11:32:35</sys_created_on>
+        <sys_id>0cc63fac83b5c610edb56060ceaad369</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f0abaa7510000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-23 11:32:35</sys_updated_on>
+        <type>Application Menu</type>
+        <update_guid>40c63fac11b5c610285509d1e9594e69</update_guid>
+        <update_guid_history>40c63fac11b5c610285509d1e9594e69:-519495180</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Category Lookup">f4341a3c830a0610edb56060ceaad37f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-06 09:16:12</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_application">sys_app_application</sys_db_object>
+        <sys_id>c3f460f825724fcea930e2e7bf7c96c4</sys_id>
+        <sys_metadata>88c63fac83b5c610edb56060ceaad366</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Category Lookup</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_app_application_88c63fac83b5c610edb56060ceaad366</sys_update_name>
+        <sys_update_version display_value="sys_app_application_88c63fac83b5c610edb56060ceaad366">0cc63fac83b5c610edb56060ceaad369</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-06 09:16:12</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

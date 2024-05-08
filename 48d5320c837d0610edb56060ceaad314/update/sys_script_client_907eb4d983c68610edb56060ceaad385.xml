@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Populate points</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+    if (g_form.isNewRecord()) {
+        var ga = new GlideAjax('TradeNowClientUtils');
+        ga.addParam('sysparm_name', 'populateUserPoints');
+        ga.addParam('sysparm_user_name', g_form.getValue('lister_name'));
+        ga.getXML(getResponse);
+    }
+
+    function getResponse(response) {
+        var res = response.responseXML.documentElement.getAttribute('answer');
+        g_form.addInfoMessage(res);
+    }
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-07 16:21:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>907eb4d983c68610edb56060ceaad385</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Populate points</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_client_907eb4d983c68610edb56060ceaad385</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-07 17:06:04</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

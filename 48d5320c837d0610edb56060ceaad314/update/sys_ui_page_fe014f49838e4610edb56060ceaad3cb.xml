@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description>UI Page to Display the the information and details about the logged in user.</description>
+        <direct>false</direct>
+        <endpoint>x_1383179_tradenow_My Profile.do</endpoint>
+        <html><![CDATA[<html>
+<head>
+    <title>My Profile</title>
+    <script>
+        // Function to fetch and display user profile information
+        function displayProfileInfo() {
+            // Use Glide API to get the current user's details
+            var currentUser = gs.getUser();
+
+            // Display user information in HTML elements
+            document.getElementById('username').innerText = currentUser.getName();
+            document.getElementById('useremail').innerText = currentUser.getEmail();
+            
+            // Assume you have a custom script to fetch user points dynamically
+            var userPoints = getUserPoints(); // Custom function to fetch points
+
+            // Display user points
+            document.getElementById('userpoints').innerText = userPoints;
+        }
+
+        // Function to simulate fetching user points (replace this with actual logic)
+        function getUserPoints() {
+            // Simulate fetching points (replace this with actual Glide API or business logic)
+            return 100; // Example points value
+        }
+
+        // Call displayProfileInfo function when the page loads
+        window.onload = function() {
+            displayProfileInfo();
+        };
+    </script>
+</head>
+<body>
+    <h1>Welcome <span id="username"></span></h1>
+    <p>Email: <span id="useremail"></span></p>
+    <p>Points: <span id="userpoints"></span></p>
+</body>
+</html>]]></html>
+        <name>My Profile</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-07 09:33:40</sys_created_on>
+        <sys_id>fe014f49838e4610edb56060ceaad3cb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Profile</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_ui_page_fe014f49838e4610edb56060ceaad3cb</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-07 09:33:40</sys_updated_on>
+    </sys_ui_page>
+</record_update>

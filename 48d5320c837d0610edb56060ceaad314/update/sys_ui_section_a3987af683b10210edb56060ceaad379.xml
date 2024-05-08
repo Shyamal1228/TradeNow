@@ -3,226 +3,268 @@
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
             <position>0</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>706ba7bc838e0610edb56060ceaad3dc</sys_id>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>c685f3d58306c610edb56060ceaad3bd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
             <position>1</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>f46ba7bc838e0610edb56060ceaad3dc</sys_id>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>4a85f3d58306c610edb56060ceaad3bd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.begin_split</element>
             <position>2</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>786ba7bc838e0610edb56060ceaad3dc</sys_id>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>ca85f3d58306c610edb56060ceaad3bd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>lister_name</element>
             <position>3</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>f86ba7bc838e0610edb56060ceaad3dc</sys_id>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>4e85f3d58306c610edb56060ceaad3bd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>lister_name.location</element>
             <position>4</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>7c6ba7bc838e0610edb56060ceaad3dc</sys_id>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>ce85f3d58306c610edb56060ceaad3bd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>number</element>
             <position>5</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>fc6ba7bc838e0610edb56060ceaad3dc</sys_id>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>4285f3d58306c610edb56060ceaad3be</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>item_name</element>
             <position>6</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>706ba7bc838e0610edb56060ceaad3dd</sys_id>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>c285f3d58306c610edb56060ceaad3be</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>lister_name.email</element>
+            <position>7</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>4685f3d58306c610edb56060ceaad3be</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>7</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>f06ba7bc838e0610edb56060ceaad3dd</sys_id>
+            <position>8</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>c685f3d58306c610edb56060ceaad3be</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>status</element>
-            <position>8</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>746ba7bc838e0610edb56060ceaad3dd</sys_id>
+            <position>9</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>4a85f3d58306c610edb56060ceaad3be</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>condition</element>
-            <position>9</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>f46ba7bc838e0610edb56060ceaad3dd</sys_id>
+            <position>10</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>ca85f3d58306c610edb56060ceaad3be</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>category</element>
-            <position>10</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>786ba7bc838e0610edb56060ceaad3dd</sys_id>
+            <position>11</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>4e85f3d58306c610edb56060ceaad3be</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>reservation_time</element>
-            <position>11</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>f86ba7bc838e0610edb56060ceaad3dd</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>points</element>
             <position>12</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>7c6ba7bc838e0610edb56060ceaad3dd</sys_id>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>ce85f3d58306c610edb56060ceaad3be</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
             <position>13</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>fc6ba7bc838e0610edb56060ceaad3dd</sys_id>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>4285f3d58306c610edb56060ceaad3bf</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>description</element>
             <position>14</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>706ba7bc838e0610edb56060ceaad3de</sys_id>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>c285f3d58306c610edb56060ceaad3bf</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>image</element>
             <position>15</position>
-            <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-05-06 15:37:08</sys_created_on>
-            <sys_id>f06ba7bc838e0610edb56060ceaad3de</sys_id>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>4685f3d58306c610edb56060ceaad3bf</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
-            <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-05-06 15:37:08</sys_updated_on>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
             <sys_user/>
             <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>16</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>c685f3d58306c610edb56060ceaad3bf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>live_views</element>
+            <position>17</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>4a85f3d58306c610edb56060ceaad3bf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>18</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-08 05:38:25</sys_created_on>
+            <sys_id>ca85f3d58306c610edb56060ceaad3bf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 05:38:25</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
         </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>

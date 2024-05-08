@@ -10,31 +10,31 @@
         <image/>
         <link_type>NEW</link_type>
         <map_page/>
-        <mobile_title>Add Charity</mobile_title>
+        <mobile_title>My Profile</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
-        <name>x_1383179_tradenow_charity_list</name>
-        <order>1000</order>
+        <name>sys_user</name>
+        <order>20</order>
         <override_menu_roles>false</override_menu_roles>
-        <query/>
+        <query>https://dev245733.service-now.com/now/nav/ui/classic/params/target/sys_app_module.do%3Fsys_id%3D79ea7acd834e4610edb56060ceaad3d6</query>
         <report/>
-        <roles>x_1383179_tradenow.charity_coordinator</roles>
+        <roles/>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
-        <sys_created_on>2024-05-06 09:12:01</sys_created_on>
+        <sys_created_on>2024-05-07 06:46:45</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>a9c21678830a0610edb56060ceaad3a2</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Add</sys_name>
+        <sys_id>79ea7acd834e4610edb56060ceaad3d6</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>My Profile</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sys_app_module_a9c21678830a0610edb56060ceaad3a2</sys_update_name>
+        <sys_update_name>sys_app_module_79ea7acd834e4610edb56060ceaad3d6</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-07 06:48:36</sys_updated_on>
+        <sys_updated_on>2024-05-07 17:14:31</sys_updated_on>
         <timeline_page/>
-        <title>Add</title>
+        <title>My Profile</title>
         <uncancelable>false</uncancelable>
         <view_name/>
         <window_name/>

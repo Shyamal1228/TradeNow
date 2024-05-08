@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
-        <action_name/>
+        <action_name>confirm_pick_up</action_name>
         <active>true</active>
         <client>true</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
@@ -28,14 +28,34 @@
         <list_style/>
         <messages/>
         <name>Confirm Pick-Up</name>
-        <onclick>onClickClientScript()</onclick>
+        <onclick>confirmPickUp()</onclick>
         <order>200</order>
-        <script><![CDATA[// current.status="Claimed";
-// current.update();
+        <script><![CDATA[function confirmPickUp() {
+    var answer = confirm("Are you sure you want to confirm the pick up?");
 
-function onClickClientScript() {
-	g_form.setValue('status','claimed');
-	g_form.save();
+    if (answer == true) {
+        gsftSubmit(null, g_form.getFormElement(), 'confirm_pick_up');
+    } else {
+        return false;
+    }
+}
+
+if (typeof window == 'undefined') {
+    populatePoints();
+}
+
+function populatePoints() {
+	var userGr = new GlideRecord('sys_user');
+    userGr.addQuery('sys_id', current.getValue('claimer'));
+    userGr.query();
+    if (userGr.next()) {
+        userGr.u_points += 50;
+        userGr.update();
+    }
+    current.setValue('status', 'claimed');
+	current.update();
+	action.setRedirectURL(current);
+	gs.addInfoMessage("Order picked up and points added");
 }]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -47,15 +67,15 @@ function onClickClientScript() {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>179613fa83350210edb56060ceaad354</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Confirm Pick-Up</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_ui_action_179613fa83350210edb56060ceaad354</sys_update_name>
-        <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-06 21:32:39</sys_updated_on>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-07 16:57:28</sys_updated_on>
         <table>x_1383179_tradenow_item_list</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

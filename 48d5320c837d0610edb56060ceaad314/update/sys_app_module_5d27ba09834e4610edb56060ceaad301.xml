@@ -5,36 +5,36 @@
         <assessment/>
         <device_type/>
         <filter/>
-        <hint/>
+        <hint>User's Dashboard</hint>
         <homepage/>
         <image/>
-        <link_type>NEW</link_type>
+        <link_type>SEPARATOR</link_type>
         <map_page/>
-        <mobile_title>Add Charity</mobile_title>
+        <mobile_title>My Dashboard</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
-        <name>x_1383179_tradenow_charity_list</name>
-        <order>1000</order>
+        <name/>
+        <order>10</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>
-        <roles>x_1383179_tradenow.charity_coordinator</roles>
+        <roles/>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
-        <sys_created_on>2024-05-06 09:12:01</sys_created_on>
+        <sys_created_on>2024-05-07 06:29:10</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>a9c21678830a0610edb56060ceaad3a2</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Add</sys_name>
+        <sys_id>5d27ba09834e4610edb56060ceaad301</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>My Dashboard</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sys_app_module_a9c21678830a0610edb56060ceaad3a2</sys_update_name>
+        <sys_update_name>sys_app_module_5d27ba09834e4610edb56060ceaad301</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-07 06:48:36</sys_updated_on>
+        <sys_updated_on>2024-05-07 06:43:24</sys_updated_on>
         <timeline_page/>
-        <title>Add</title>
+        <title>My Dashboard</title>
         <uncancelable>false</uncancelable>
         <view_name/>
         <window_name/>

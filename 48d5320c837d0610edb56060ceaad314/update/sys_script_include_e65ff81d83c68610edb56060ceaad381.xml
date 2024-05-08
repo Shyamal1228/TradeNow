@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1383179_tradenow.TradeNowClientUtils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>TradeNowClientUtils</name>
+        <script><![CDATA[var TradeNowClientUtils = Class.create();
+TradeNowClientUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	populateUserPoints: function(){
+		var user_id = this.getParameter('sysparm_user_name');
+		var userGr = new GlideRecord('sys_user');
+		userGr.addQuery('sys_id', user_id);
+		userGr.query();
+		if(userGr.next()){
+			userGr.u_points += 100;
+			userGr.update(); 
+			return "Points added to user";
+		}
+		else{
+			return "User not found";
+		}
+
+	},
+
+    type: 'TradeNowClientUtils'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-07 16:27:55</sys_created_on>
+        <sys_id>e65ff81d83c68610edb56060ceaad381</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TradeNowClientUtils</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_include_e65ff81d83c68610edb56060ceaad381</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-07 16:27:55</sys_updated_on>
+    </sys_script_include>
+</record_update>

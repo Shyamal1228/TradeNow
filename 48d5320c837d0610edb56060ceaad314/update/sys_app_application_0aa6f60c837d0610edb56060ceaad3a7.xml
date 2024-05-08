@@ -7,14 +7,14 @@
         <hint/>
         <name/>
         <order/>
-        <roles/>
+        <roles>x_1383179_tradenow.charity_coordinator,x_1383179_tradenow.item_list_user</roles>
         <sys_class_name>sys_app_application</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-04-21 17:35:36</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0aa6f60c837d0610edb56060ceaad3a7</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>TradeNow</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -22,7 +22,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_app_application_0aa6f60c837d0610edb56060ceaad3a7</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-06 10:50:10</sys_updated_on>
+        <sys_updated_on>2024-05-07 10:47:40</sys_updated_on>
         <title>TradeNow</title>
         <view_name/>
     </sys_app_application>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>false</cleared>
+        <disabled>true</disabled>
+        <field>charity_id</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-22 04:30:40</sys_created_on>
+        <sys_id>d36cc11483394610edb56060ceaad393</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>charity_id</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_ui_policy_action_d36cc11483394610edb56060ceaad393</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-22 04:30:40</sys_updated_on>
+        <table>x_1383179_tradenow_charity_list</table>
+        <ui_policy display_value="Mandatory and Read-only Field for Charity Table">912c4dd083394610edb56060ceaad3ef</ui_policy>
+        <visible>ignore</visible>
+    </sys_ui_policy_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_ui_policy_action_d36cc11483394610edb56060ceaad393</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action"><sys_ui_policy_action action="INSERT_OR_UPDATE"><cleared>false</cleared><disabled>true</disabled><field>charity_id</field><mandatory>ignore</mandatory><sys_class_name>sys_ui_policy_action</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-04-22 04:30:40</sys_created_on><sys_id>d36cc11483394610edb56060ceaad393</sys_id><sys_mod_count>0</sys_mod_count><sys_name>charity_id</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_ui_policy_action_d36cc11483394610edb56060ceaad393</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-04-22 04:30:40</sys_updated_on><table>x_1383179_tradenow_charity_list</table><ui_policy display_value="Mandatory and Read-only Field for Charity Table">912c4dd083394610edb56060ceaad3ef</ui_policy><visible>ignore</visible></sys_ui_policy_action></record_update>]]></payload>
+        <payload_hash>-1884745679</payload_hash>
+        <record_name>charity_id</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-22 04:30:40</sys_created_on>
+        <sys_id>b99c851483394610edb56060ceaad3f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f041203010000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-22 04:30:40</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>fd9cc19094394610de84b80e81ca0f2d</update_guid>
+        <update_guid_history>fd9cc19094394610de84b80e81ca0f2d:-1884745679</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-08 18:49:49</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>4e8f699627df4c649c4124f6339da649</sys_id>
+        <sys_metadata>d36cc11483394610edb56060ceaad393</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>charity_id</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Mandatory and Read-only Field for Charity Table">912c4dd083394610edb56060ceaad3ef</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_d36cc11483394610edb56060ceaad393</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_d36cc11483394610edb56060ceaad393">b99c851483394610edb56060ceaad3f0</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-08 18:49:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -36,7 +36,7 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p>Dear ${claimer.first_name} ${claimer.last_name},</p>
+        <message_html><![CDATA[<p>Dear ${claimer_name},</p>
 <p>We regret to inform you that your reservation for the ${item_name} has been canceled. We apologize for any inconvenience this may cause.</p>
 <p>Thank you for your understanding.</p>
 <p><code><span style="font-family: verdana, geneva;">Thank you,</span><br /><span style="font-family: verdana, geneva;">TradeNow Team</span></code></p>]]></message_html>
@@ -46,7 +46,7 @@
         <omit_watermark>false</omit_watermark>
         <order>100</order>
         <push_message_only>false</push_message_only>
-        <recipient_fields>claimer.email</recipient_fields>
+        <recipient_fields>claimer_email</recipient_fields>
         <recipient_groups/>
         <recipient_users/>
         <reply_to/>
@@ -61,7 +61,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>bfcbcdd9830a8610edb56060ceaad301</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Reservation cancel notification</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -69,7 +69,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sysevent_email_action_bfcbcdd9830a8610edb56060ceaad301</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:44:50</sys_updated_on>
+        <sys_updated_on>2024-05-09 05:01:28</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Tradenow notification Template">89f3e454834e4210edb56060ceaad319</template>
         <type>email</type>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_dictionary action="DELETE" element="live_views" table="x_1383179_tradenow_item_list">
+        <active>true</active>
+        <array>false</array>
+        <attributes/>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Total Views</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>live_views</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <internal_type display_value="String">string</internal_type>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <name>x_1383179_tradenow_item_list</name>
+        <next_element/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_dictionary</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-08 06:32:17</sys_created_on>
+        <sys_id>3cc108e58346c610edb56060ceaad35f</sys_id>
+        <sys_name>Total Views</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_dictionary_x_1383179_tradenow_item_list_live_views</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-08 09:28:20</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_dictionary>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_dictionary_x_1383179_tradenow_item_list_live_views</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update&gt;&lt;sys_dictionary action="INSERT_OR_UPDATE" element="live_views" table="x_1383179_tradenow_item_list"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes/&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Total Views&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;live_views&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;40&lt;/max_length&gt;&lt;name&gt;x_1383179_tradenow_item_list&lt;/name&gt;&lt;next_element/&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_dictionary&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-08 06:32:17&lt;/sys_created_on&gt;&lt;sys_id&gt;3cc108e58346c610edb56060ceaad35f&lt;/sys_id&gt;&lt;sys_name&gt;Total Views&lt;/sys_name&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_dictionary_x_1383179_tradenow_item_list_live_views&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-08 09:28:20&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_dictionary&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>728277782</payload_hash>
+        <record_name>Item.Total Views</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-08 09:28:20</sys_created_on>
+        <sys_id>8a2aece9830ac610edb56060ceaad3ee</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f578848370000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-08 09:28:20</sys_updated_on>
+        <type>Dictionary</type>
+        <update_guid>422aece9920ac61065e17e846751a0ee</update_guid>
+        <update_guid_history>422aece9920ac61065e17e846751a0ee:728277782,d969aca95d0ac6103f1f0c58c36dc2eb:910842394,8a396ca9770ac6101acae0e295539843:789661578,501968a9910ac6107c3071c21262131e:-1297439892,c988ac69ae0ac610246ea139220c19a3:-150022837,15252c652c0ac610f07831bf9825d3d1:1619324815,7d152c65800ac61024d08e50356abe8e:910842394,385f98ad34c6c6108097cda9e8cd3c4f:-1695657285,2f3f18adc1c6c6101a3967bf0b32ab3c:-1602983269,412f586d1bc6c61096afa93aaa35219a:279666111,2c3e942d01c6c610f8156fdc24726b5b:-1695657285,2afa1c29eac6c610346008ec12eb3927:-2146172358,2e0fcca97186c6103fe83e647c6ed229:-1170012088,c5cd44695086c6106a511e2038c9550c:-1499459987,937ac0256786c6101c67f35a67c25564:-1661191557,ef4ac0655986c610f397ffa0f477797b:-703838103,f15448e91846c6109c829f7762f4a11a:-1661191557,b5e244692e46c61060e7d27f7128f2c6:845633082,a95248297f46c6104a1fc68797b76d74:-1661191557,054200292d46c610df71bb7c9846fe3b:910842394,653244295e46c610e5c7f6347e937a10:-540028163,5d0200293a46c610a395b294b0615731:1806663455,69f18ce59c46c61050570cbc943dc133:-1661191557,9fd1c8e59b46c6102c1dafd47c208d95:910842394,aeb1c4e5f746c610ee29fea73157abce:412492672,5b9104e5ed46c6109adc39382bbc57a2:201634996,51cab79d8306c610c3efd3dbf39edf62:-417166081,999a339dc306c6103905c4f4c335c151:1272998887,95197fd9fc06c6104fc507fb57b0210d:-1916796715,ff683b99a106c610f9f49582af43395f:1272998887,40d6ff191006c610b49ab2c6aa3ae5c5:-1916796715,da1633195706c610cb5804eb5c625477:201634996,6d06b3d5f506c610341c3ecb76bab0b1:-1916796715,b035b7955306c610179663881b45b010:201634996</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-08 09:28:55</sys_created_on>
+        <sys_db_object display_value="" name="sys_dictionary">sys_dictionary</sys_db_object>
+        <sys_id>1a597b1208b94396857f5263432a08a4</sys_id>
+        <sys_metadata>3cc108e58346c610edb56060ceaad35f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Total Views</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Item">205187c883bd0610edb56060ceaad3cf</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_dictionary_x_1383179_tradenow_item_list_live_views</sys_update_name>
+        <sys_update_version display_value="sys_dictionary_x_1383179_tradenow_item_list_live_views">8a2aece9830ac610edb56060ceaad3ee</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-08 09:28:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -15,14 +15,20 @@
         <reverse_if_false>true</reverse_if_false>
         <run_scripts>true</run_scripts>
         <script_false><![CDATA[function onCondition() {
+// var claimerEmail=g_form.getValue('claimer');
+// g_form.setValue('claimer_email',claimerEmail);
 g_form.clearValue('claimer');
 g_form.clearValue('email');
 }]]></script_false>
         <script_true><![CDATA[function onCondition() {
-// Get the sys_id of the current logged-in user
+    // Get the sys_id of the current logged-in user
     var currentUserSysId = g_user.userID;
     // Set the value of the reference user field to the sys_id of the current user
     g_form.setValue('claimer', currentUserSysId);
+    // var claimerEmail = g_form.getValue('claimer.email');
+    // g_form.setValue('claimer_email', claimerEmail);
+	// var e=g_form.getDisplayBox('claimer.email').value;
+	// g_form.setValue('claimer_email', e);
 }]]></script_true>
         <set_values/>
         <short_description>UI Policy to reset claimer details when state is available</short_description>
@@ -32,7 +38,7 @@ g_form.clearValue('email');
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a302c3c9838e4610edb56060ceaad386</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>UI Policy to reset claimer details when state is available</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -40,7 +46,7 @@ g_form.clearValue('email');
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_ui_policy_a302c3c9838e4610edb56060ceaad386</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 07:18:35</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:47:17</sys_updated_on>
         <table>x_1383179_tradenow_item_list</table>
         <ui_type>0</ui_type>
         <view/>

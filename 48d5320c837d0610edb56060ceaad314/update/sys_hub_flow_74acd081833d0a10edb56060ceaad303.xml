@@ -4,14 +4,14 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1155056000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1281694000,viewActivatedIn=naturalLanguage</attributes>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
         <copied_from/>
         <copied_from_name/>
         <description/>
         <internal_name>flow_for_change_state_after_5_min</internal_name>
-        <label_cache>[{"name":"Updated_1.current.claimer.email","label":"Trigger - Record Updated➛Item List Record➛Claimer➛Claimer Email","reference":"","reference_display":"Claimer Email","type":"email","base_type":"email","parent_table_name":"sys_user","column_name":"email"},{"name":"Updated_1.current.first_name","label":"Trigger - Record Updated➛Item List Record➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"first_name"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.image","label":"2 - Update Record➛Item List Record➛Image","reference":"","reference_display":"Image","type":"user_image","base_type":"user_image","parent_table_name":"x_1383179_tradenow_item_list","column_name":"image"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.first_name","label":"2 - Update Record➛Item List Record➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"first_name"},{"name":"Updated_1.current.claimer.company.contact.name","label":"Trigger - Record Updated➛Item List Record➛Claimer➛Company➛Contact➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.item_name","label":"2 - Update Record➛Item List Record➛Item name","reference":"","reference_display":"Item name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"item_name"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.last_name","label":"2 - Update Record➛Item List Record➛Last name","reference":"","reference_display":"Last name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"last_name"},{"name":"Updated_1.current.claimer.first_name","label":"Trigger - Record Updated➛Item List Record➛Claimer➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"first_name"},{"name":"Updated_1.current.claimer","label":"Trigger - Record Updated➛Item List Record➛Claimer","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383179_tradenow_item_list","column_name":"claimer"},{"name":"Updated_1.current.item_name","label":"Trigger - Record Updated➛Item List Record➛Item name","reference":"","reference_display":"Item name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"item_name"},{"name":"Updated_1.current.claimer_email","label":"Trigger - Record Updated➛Item List Record➛Claimer Email","reference":"","reference_display":"Claimer Email","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"claimer_email"},{"name":"Updated_1.current.sys_updated_on","label":"Trigger - Record Updated➛Item List Record➛Updated","reference":"","reference_display":"Updated","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1383179_tradenow_item_list","column_name":"sys_updated_on"},{"name":"Updated_1.current.status","label":"Trigger - Record Updated➛Item List Record➛Status","reference":"","reference_display":"Status","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"status","choices":[{"label":"Available","rawLabel":"Available","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"available","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Ready to Pickup","rawLabel":"Ready to Pickup","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"readypickup","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Reserved","rawLabel":"Reserved","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"reserved","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Claimed","rawLabel":"Claimed","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"claimed","parameters":{"name":"x_1383179_tradenow_item_list"}}]},{"name":"Updated_1.current","label":"Trigger - Record Updated➛Item Record","reference":"x_1383179_tradenow_item_list","reference_display":"Item","type":"reference","base_type":"reference","attributes":{}}]</label_cache>
+        <label_cache>[{"name":"Updated_1.current.claimer.name","label":"Trigger - Record Updated➛Item Record➛Claimer➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name"},{"name":"Updated_1.current.claimer.email","label":"Trigger - Record Updated➛Item Record➛Claimer➛Email","reference":"","reference_display":"Email","type":"email","base_type":"email","parent_table_name":"sys_user","column_name":"email"},{"name":"Updated_1.current.first_name","label":"Trigger - Record Updated➛Item List Record➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"first_name"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.image","label":"2 - Update Record➛Item List Record➛Image","reference":"","reference_display":"Image","type":"user_image","base_type":"user_image","parent_table_name":"x_1383179_tradenow_item_list","column_name":"image"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.first_name","label":"2 - Update Record➛Item List Record➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"first_name"},{"name":"Updated_1.current.claimer.company.contact.name","label":"Trigger - Record Updated➛Item List Record➛Claimer➛Company➛Contact➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.item_name","label":"2 - Update Record➛Item List Record➛Item name","reference":"","reference_display":"Item name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"item_name"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.last_name","label":"2 - Update Record➛Item List Record➛Last name","reference":"","reference_display":"Last name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"last_name"},{"name":"Updated_1.current.claimer.first_name","label":"Trigger - Record Updated➛Item List Record➛Claimer➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"first_name"},{"name":"Updated_1.current.claimer","label":"Trigger - Record Updated➛Item List Record➛Claimer","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383179_tradenow_item_list","column_name":"claimer"},{"name":"Updated_1.current.item_name","label":"Trigger - Record Updated➛Item List Record➛Item name","reference":"","reference_display":"Item name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"item_name"},{"name":"Updated_1.current.claimer_email","label":"Trigger - Record Updated➛Item List Record➛Claimer Email","reference":"","reference_display":"Claimer Email","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"claimer_email"},{"name":"Updated_1.current.sys_updated_on","label":"Trigger - Record Updated➛Item List Record➛Updated","reference":"","reference_display":"Updated","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1383179_tradenow_item_list","column_name":"sys_updated_on"},{"name":"Updated_1.current.status","label":"Trigger - Record Updated➛Item List Record➛Status","reference":"","reference_display":"Status","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"status","choices":[{"label":"Available","rawLabel":"Available","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"available","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Ready to Pickup","rawLabel":"Ready to Pickup","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"readypickup","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Reserved","rawLabel":"Reserved","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"reserved","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Claimed","rawLabel":"Claimed","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"claimed","parameters":{"name":"x_1383179_tradenow_item_list"}}]},{"name":"Updated_1.current","label":"Trigger - Record Updated➛Item Record","reference":"x_1383179_tradenow_item_list","reference_display":"Item","type":"reference","base_type":"reference","attributes":{}}]</label_cache>
         <master_snapshot>7dc2e51583350210edb56060ceaad35c</master_snapshot>
         <name>Flow for change state after 5 min</name>
         <natlang/>
@@ -30,7 +30,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>74acd081833d0a10edb56060ceaad303</sys_id>
-        <sys_mod_count>53</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_name>Flow for change state after 5 min</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -38,7 +38,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_hub_flow_74acd081833d0a10edb56060ceaad303</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:37</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:14</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=74acd081833d0a10edb56060ceaad303"/>
@@ -75,14 +75,14 @@
         <identifier>74acd081833d0a10edb56060ceaad303</identifier>
         <runner>FDTriggerRunner</runner>
         <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-05-07 17:47:36</sys_created_on>
-        <sys_id>f5d25515834a8610edb56060ceaad37b</sys_id>
+        <sys_created_on>2024-05-09 04:58:13</sys_created_on>
+        <sys_id>43e5b83983ca0a10edb56060ceaad332</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:36</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:13</sys_updated_on>
         <trigger display_value="">c2c2e51583350210edb56060ceaad3a7</trigger>
     </sys_trigger_runner_mapping>
-    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=74acd081833d0a10edb56060ceaad303^sys_idNOT INf5d25515834a8610edb56060ceaad37b"/>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=74acd081833d0a10edb56060ceaad303^sys_idNOT IN43e5b83983ca0a10edb56060ceaad332"/>
     <sys_hub_trigger_instance action="delete_multiple" query="flow=74acd081833d0a10edb56060ceaad303^sys_idNOT IN56ed599d83f10210edb56060ceaad37e"/>
     <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
         <comment/>
@@ -93,10 +93,10 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:20:16</sys_created_on>
         <sys_id>56ed599d83f10210edb56060ceaad37e</sys_id>
-        <sys_mod_count>53</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:37</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:13</sys_updated_on>
         <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -224,14 +224,14 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:20:15</sys_created_on>
         <sys_id>4eed599d83f10210edb56060ceaad36e</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name/>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:37</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:13</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -308,14 +308,14 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:20:16</sys_created_on>
         <sys_id>9eed599d83f10210edb56060ceaad379</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name/>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:37</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:13</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -431,10 +431,10 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-07 17:39:17</sys_created_on>
         <sys_id>b7e09951834a8610edb56060ceaad3ae</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>32</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:48:11</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:25</sys_updated_on>
         <ui_id>3c916336-0f76-4c2a-bf41-dfd9d64e4a73</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=b7e09951834a8610edb56060ceaad3ae"/>
@@ -520,10 +520,10 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:40:23</sys_created_on>
         <sys_id>c182a11583350210edb56060ceaad341</sys_id>
-        <sys_mod_count>120</sys_mod_count>
+        <sys_mod_count>136</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:48:11</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:25</sys_updated_on>
         <ui_id>1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=c182a11583350210edb56060ceaad341"/>
@@ -535,10 +535,10 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:40:23</sys_created_on>
         <sys_id>0d82a11583350210edb56060ceaad342</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-06 20:29:32</sys_updated_on>
-        <value>status=available</value>
+        <sys_updated_on>2024-05-09 04:52:17</sys_updated_on>
+        <value/>
         <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -586,11 +586,11 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:40:23</sys_created_on>
         <sys_id>c582a11583350210edb56060ceaad342</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-04-25 08:40:23</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:05</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value/>
+        <value>status=available^claimer_email={{Updated_1.current.claimer.email}}^claimer_name={{Updated_1.current.claimer.name}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=c182a11583350210edb56060ceaad341"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=c182a11583350210edb56060ceaad341"/>
@@ -619,10 +619,10 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:40:23</sys_created_on>
         <sys_id>4982a11583350210edb56060ceaad336</sys_id>
-        <sys_mod_count>45</sys_mod_count>
+        <sys_mod_count>51</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:37</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:14</sys_updated_on>
         <ui_id>cc22a42b-2d88-4acd-94bf-68b52ea41290</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1026,7 +1026,7 @@
         <copied_from_name/>
         <description/>
         <internal_name>flow_for_change_state_after_5_min</internal_name>
-        <label_cache>[{"name":"Updated_1.current.claimer.email","label":"Trigger - Record Updated➛Item List Record➛Claimer➛Claimer Email","reference":"","reference_display":"Claimer Email","type":"email","base_type":"email","parent_table_name":"sys_user","column_name":"email"},{"name":"Updated_1.current.first_name","label":"Trigger - Record Updated➛Item List Record➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"first_name"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.image","label":"2 - Update Record➛Item List Record➛Image","reference":"","reference_display":"Image","type":"user_image","base_type":"user_image","parent_table_name":"x_1383179_tradenow_item_list","column_name":"image"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.first_name","label":"2 - Update Record➛Item List Record➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"first_name"},{"name":"Updated_1.current.claimer.company.contact.name","label":"Trigger - Record Updated➛Item List Record➛Claimer➛Company➛Contact➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.item_name","label":"2 - Update Record➛Item List Record➛Item name","reference":"","reference_display":"Item name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"item_name"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.last_name","label":"2 - Update Record➛Item List Record➛Last name","reference":"","reference_display":"Last name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"last_name"},{"name":"Updated_1.current.claimer.first_name","label":"Trigger - Record Updated➛Item List Record➛Claimer➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"first_name"},{"name":"Updated_1.current.claimer","label":"Trigger - Record Updated➛Item List Record➛Claimer","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383179_tradenow_item_list","column_name":"claimer"},{"name":"Updated_1.current.item_name","label":"Trigger - Record Updated➛Item List Record➛Item name","reference":"","reference_display":"Item name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"item_name"},{"name":"Updated_1.current.claimer_email","label":"Trigger - Record Updated➛Item List Record➛Claimer Email","reference":"","reference_display":"Claimer Email","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"claimer_email"},{"name":"Updated_1.current.sys_updated_on","label":"Trigger - Record Updated➛Item List Record➛Updated","reference":"","reference_display":"Updated","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1383179_tradenow_item_list","column_name":"sys_updated_on"},{"name":"Updated_1.current.status","label":"Trigger - Record Updated➛Item List Record➛Status","reference":"","reference_display":"Status","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"status","choices":[{"label":"Available","rawLabel":"Available","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"available","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Ready to Pickup","rawLabel":"Ready to Pickup","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"readypickup","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Reserved","rawLabel":"Reserved","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"reserved","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Claimed","rawLabel":"Claimed","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"claimed","parameters":{"name":"x_1383179_tradenow_item_list"}}]},{"name":"Updated_1.current","label":"Trigger - Record Updated➛Item Record","reference":"x_1383179_tradenow_item_list","reference_display":"Item","type":"reference","base_type":"reference","attributes":{}}]</label_cache>
+        <label_cache>[{"name":"Updated_1.current.claimer.name","label":"Trigger - Record Updated➛Item Record➛Claimer➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name"},{"name":"Updated_1.current.claimer.email","label":"Trigger - Record Updated➛Item Record➛Claimer➛Email","reference":"","reference_display":"Email","type":"email","base_type":"email","parent_table_name":"sys_user","column_name":"email"},{"name":"Updated_1.current.first_name","label":"Trigger - Record Updated➛Item List Record➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"first_name"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.image","label":"2 - Update Record➛Item List Record➛Image","reference":"","reference_display":"Image","type":"user_image","base_type":"user_image","parent_table_name":"x_1383179_tradenow_item_list","column_name":"image"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.first_name","label":"2 - Update Record➛Item List Record➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"first_name"},{"name":"Updated_1.current.claimer.company.contact.name","label":"Trigger - Record Updated➛Item List Record➛Claimer➛Company➛Contact➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.item_name","label":"2 - Update Record➛Item List Record➛Item name","reference":"","reference_display":"Item name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"item_name"},{"name":"1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a.record.last_name","label":"2 - Update Record➛Item List Record➛Last name","reference":"","reference_display":"Last name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"last_name"},{"name":"Updated_1.current.claimer.first_name","label":"Trigger - Record Updated➛Item List Record➛Claimer➛First name","reference":"","reference_display":"First name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"first_name"},{"name":"Updated_1.current.claimer","label":"Trigger - Record Updated➛Item List Record➛Claimer","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383179_tradenow_item_list","column_name":"claimer"},{"name":"Updated_1.current.item_name","label":"Trigger - Record Updated➛Item List Record➛Item name","reference":"","reference_display":"Item name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"item_name"},{"name":"Updated_1.current.claimer_email","label":"Trigger - Record Updated➛Item List Record➛Claimer Email","reference":"","reference_display":"Claimer Email","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"claimer_email"},{"name":"Updated_1.current.sys_updated_on","label":"Trigger - Record Updated➛Item List Record➛Updated","reference":"","reference_display":"Updated","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1383179_tradenow_item_list","column_name":"sys_updated_on"},{"name":"Updated_1.current.status","label":"Trigger - Record Updated➛Item List Record➛Status","reference":"","reference_display":"Status","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"status","choices":[{"label":"Available","rawLabel":"Available","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"available","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Ready to Pickup","rawLabel":"Ready to Pickup","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"readypickup","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Reserved","rawLabel":"Reserved","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"reserved","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Claimed","rawLabel":"Claimed","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"claimed","parameters":{"name":"x_1383179_tradenow_item_list"}}]},{"name":"Updated_1.current","label":"Trigger - Record Updated➛Item Record","reference":"x_1383179_tradenow_item_list","reference_display":"Item","type":"reference","base_type":"reference","attributes":{}}]</label_cache>
         <master>true</master>
         <name>Flow for change state after 5 min</name>
         <natlang/>
@@ -1043,7 +1043,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7dc2e51583350210edb56060ceaad35c</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -1051,7 +1051,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name/>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:36</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:13</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow_snapshot>
     <sys_translated_text action="delete_multiple" query="documentkey=7dc2e51583350210edb56060ceaad35c"/>
@@ -1066,10 +1066,10 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:41:33</sys_created_on>
         <sys_id>42c2e51583350210edb56060ceaad390</sys_id>
-        <sys_mod_count>44</sys_mod_count>
+        <sys_mod_count>50</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:37</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:13</sys_updated_on>
         <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -1281,14 +1281,14 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:41:32</sys_created_on>
         <sys_id>71c2e51583350210edb56060ceaad35e</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name/>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:36</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:12</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1365,14 +1365,14 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:41:32</sys_created_on>
         <sys_id>8ec2e51583350210edb56060ceaad375</sys_id>
-        <sys_mod_count>27</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name/>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:35</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:12</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1404,10 +1404,10 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:41:33</sys_created_on>
         <sys_id>42c2e51583350210edb56060ceaad38e</sys_id>
-        <sys_mod_count>58</sys_mod_count>
+        <sys_mod_count>66</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:36</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:13</sys_updated_on>
         <ui_id>1fb91ecb-d091-44e1-bda3-76bd3ef2bd1a</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=42c2e51583350210edb56060ceaad38e"/>
@@ -1433,10 +1433,10 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:41:33</sys_created_on>
         <sys_id>8ac2e51583350210edb56060ceaad38f</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-06 20:29:41</sys_updated_on>
-        <value>status=available</value>
+        <sys_updated_on>2024-05-09 04:52:27</sys_updated_on>
+        <value/>
         <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=42c2e51583350210edb56060ceaad38e"/>
@@ -1470,11 +1470,11 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:41:33</sys_created_on>
         <sys_id>46c2e51583350210edb56060ceaad38f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-04-25 08:41:33</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:12</sys_updated_on>
         <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
-        <value/>
+        <value>status=available^claimer_email={{Updated_1.current.claimer.email}}^claimer_name={{Updated_1.current.claimer.name}}</value>
     </sys_element_mapping>
     <sys_hub_input_scripts action="delete_multiple" query="instance=42c2e51583350210edb56060ceaad38e"/>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=42c2e51583350210edb56060ceaad38e"/>
@@ -1493,10 +1493,10 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-07 17:39:28</sys_created_on>
         <sys_id>eef01d51834a8610edb56060ceaad3df</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:36</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:13</sys_updated_on>
         <ui_id>3c916336-0f76-4c2a-bf41-dfd9d64e4a73</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=eef01d51834a8610edb56060ceaad3df"/>
@@ -1592,10 +1592,10 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:41:32</sys_created_on>
         <sys_id>4ac2e51583350210edb56060ceaad380</sys_id>
-        <sys_mod_count>30</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:36</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:13</sys_updated_on>
         <ui_id>cc22a42b-2d88-4acd-94bf-68b52ea41290</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1997,17 +1997,17 @@
         <binding_strategy>com.snc.process_flow.engine.binding.Every</binding_strategy>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"06c2e51583350210edb56060ceaad3a9","name":"plan","plan_signature":null}}</plan>
         <plan_id>74acd081833d0a10edb56060ceaad303</plan_id>
-        <snapshot>c6f25915834a8610edb56060ceaad320</snapshot>
+        <snapshot>7df5f83983ca0a10edb56060ceaad3d2</snapshot>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-25 08:41:33</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>06c2e51583350210edb56060ceaad3a9</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:47:36</sys_updated_on>
+        <sys_updated_on>2024-05-09 04:58:13</sys_updated_on>
         <trigger display_value="">c2c2e51583350210edb56060ceaad3a7</trigger>
     </sys_flow_trigger_plan>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=74acd081833d0a10edb56060ceaad303"/>

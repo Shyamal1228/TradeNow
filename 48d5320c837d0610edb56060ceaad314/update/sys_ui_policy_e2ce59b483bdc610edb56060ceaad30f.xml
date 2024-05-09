@@ -18,16 +18,31 @@
     g_form.setValue('reservation_time', "");
 }]]></script_false>
         <script_true><![CDATA[function onCondition() {
-    var d = new Date();
-    var text = d.toLocaleString();
-    var minutes = text.substr(13, 2);
-    var convertToNumber = Number(minutes) + 5;
-    var convertToString = String(convertToNumber);
-    var strArray = text.split('');
-    strArray[13] = convertToString.charAt(0);
-    strArray[14] = convertToString.charAt(1);
-    var newStr = strArray.join('');
-    g_form.setValue('reservation_time', newStr);
+    // var d = new Date();
+    // var text = d.toLocaleString();
+    // var minutes = text.substr(13, 2);
+    // var convertToNumber = Number(minutes) + 5;
+    // var convertToString = String(convertToNumber);
+    // var strArray = text.split('');
+    // strArray[13] = convertToString.charAt(0);
+    // strArray[14] = convertToString.charAt(1);
+    // var newStr = strArray.join('');
+    // g_form.setValue('reservation_time', newStr);
+
+    // var current_time=new GlideDateTime();
+    // var reservation_end=current_time.addSeconds(300);
+    // g_form.setValue('reservation_time', reservation_end);
+
+    // var reservationUtils = new ReservationUtils();
+    // var reservationEnd = reservationUtils.setReservationEndTime(5); // Assuming you want to add 5 minutes
+    // g_form.setValue('reservation_time', reservationEnd);
+	var currentTime = new Date();
+    // Add 5 minutes
+    currentTime.setTime(currentTime.getTime() + (5 * 60 * 1000)); // 5 minutes in milliseconds
+
+    // Set the value of the field to the new time
+    g_form.setValue('reservation_time', currentTime);
+
 }]]></script_true>
         <set_values/>
         <short_description>UI Policy to make  reservation time visible</short_description>
@@ -37,7 +52,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e2ce59b483bdc610edb56060ceaad30f</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>UI Policy to make  reservation time visible</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -45,7 +60,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_ui_policy_e2ce59b483bdc610edb56060ceaad30f</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 17:07:26</sys_updated_on>
+        <sys_updated_on>2024-05-09 07:12:53</sys_updated_on>
         <table>x_1383179_tradenow_item_list</table>
         <ui_type>0</ui_type>
         <view/>

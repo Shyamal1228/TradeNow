@@ -19,24 +19,24 @@
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>
-        <roles/>
+        <roles>x_1383179_tradenow.tradenow_user</roles>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-04-24 09:43:29</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7be4ecc9833d0a10edb56060ceaad373</sys_id>
-        <sys_mod_count>8</sys_mod_count>
-        <sys_name>Listed by me</sys_name>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Items Listed</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_app_module_7be4ecc9833d0a10edb56060ceaad373</sys_update_name>
-        <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-07 06:51:32</sys_updated_on>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-09 11:05:26</sys_updated_on>
         <timeline_page/>
-        <title>Listed by me</title>
+        <title>Items Listed</title>
         <uncancelable>false</uncancelable>
         <view_name/>
         <window_name/>

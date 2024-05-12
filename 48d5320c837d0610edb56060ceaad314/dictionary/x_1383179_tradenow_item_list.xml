@@ -22,9 +22,9 @@
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Location" max_length="32" name="location" reference="sys_user" type="reference"/>
         <element label="longitude" max_length="40" name="longitude" type="float"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
-        <element label="Reservation Time Ends" max_length="40" name="reservation_time" type="string"/>
+        <element label="Reservation time ends" max_length="40" name="reservation_time" type="string"/>
         <element label="Short description" mandatory="true" max_length="100" name="short_description" type="string"/>
-        <element choice="3" default="available" label="Status" max_length="40" name="status" reference_qual="null" reference_qual_condition="null" type="choice">
+        <element choice="3" default="available" label="Status" max_length="40" name="status" read_only="true" reference_qual="null" reference_qual_condition="null" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Available" sequence="0" value="available"/>
                 <element inactive_on_update="false" label="Ready to Pickup" sequence="1" value="readypickup"/>
@@ -32,7 +32,7 @@
                 <element inactive_on_update="false" label="Claimed" sequence="3" value="claimed"/>
             </choice>
         </element>
-        <element default="0" label="Total Views" max_length="40" name="total_views" read_only="true" type="integer"/>
+        <element default="0" label="Total views" max_length="40" name="total_views" read_only="true" type="integer"/>
         <element label="User id" max_length="40" name="user_id" type="string"/>
         <element label="Watching" max_length="40" name="watching" type="boolean"/>
         <element label="Withdraw item" max_length="40" name="withdraw_item" type="boolean"/>

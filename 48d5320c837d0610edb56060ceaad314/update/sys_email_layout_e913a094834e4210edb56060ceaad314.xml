@@ -210,7 +210,7 @@
 <table style="margin: 0 auto;">
 <tbody>
 <tr>
-<td height="34"><img style="height: 34px;" src="/sys_attachment.do?sys_id=38932894834e4210edb56060ceaad327" height="34" /></td>
+<td height="34"><img style="height: 34px;" src="x_1383179_tradenow.pngx" height="34" /></td>
 </tr>
 <tr>
 <td height="16"></td>
@@ -278,7 +278,7 @@
 <td style="background-color: #27284a;" height="36"></td>
 </tr>
 <tr>
-<td style="background-color: #27284a;" align="center" valign="top" height="38"><img style="height: 34px;" src="/sys_attachment.do?sys_id=e2b3e894834e4210edb56060ceaad3c6" height="20" /></td>
+<td style="background-color: #27284a;" align="center" valign="top" height="38"><img style="height: 34px;" src="x_1383179_tradenow.pngx" height="20" /></td>
 </tr>
 <tr>
 <td style="background-color: #27284a; color: #fff;">
@@ -323,13 +323,13 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-04 11:45:02</sys_created_on>
         <sys_id>e913a094834e4210edb56060ceaad314</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Tradenow notification layout</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_email_layout_e913a094834e4210edb56060ceaad314</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-04 13:13:30</sys_updated_on>
+        <sys_updated_on>2024-05-09 20:27:16</sys_updated_on>
     </sys_email_layout>
 </record_update>

@@ -33,7 +33,7 @@
         <script><![CDATA[current.total_views-=1;
 current.watching=false;
 current.update();
-// action.setRedirectURL(current);]]></script>
+action.setRedirectURL(current);]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
@@ -44,7 +44,7 @@ current.update();
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a723f4e5834ac610edb56060ceaad3ca</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Unwatch</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -52,7 +52,7 @@ current.update();
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_ui_action_a723f4e5834ac610edb56060ceaad3ca</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-08 10:11:28</sys_updated_on>
+        <sys_updated_on>2024-05-10 09:22:37</sys_updated_on>
         <table>x_1383179_tradenow_item_list</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

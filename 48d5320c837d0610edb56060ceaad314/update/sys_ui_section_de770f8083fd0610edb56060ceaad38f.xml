@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="Payment" section_id="de770f8083fd0610edb56060ceaad38f" sys_domain="global" table="x_1383179_tradenow_charity_list" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>amount</element>
+            <element>donation_link</element>
             <position>0</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-08 11:06:05</sys_created_on>
-            <sys_id>f9808da5838ac610edb56060ceaad3d5</sys_id>
+            <sys_created_on>2024-05-09 21:02:18</sys_created_on>
+            <sys_id>d19258c683ca4a10edb56060ceaad364</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Payment" display_value="Payment" name="x_1383179_tradenow_charity_list" sys_domain="global" view="Default view">de770f8083fd0610edb56060ceaad38f</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-08 11:06:05</sys_updated_on>
+            <sys_updated_on>2024-05-09 21:02:18</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>donation_link</element>
+            <element>amount</element>
             <position>1</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-08 11:06:05</sys_created_on>
-            <sys_id>7d808da5838ac610edb56060ceaad3d5</sys_id>
+            <sys_created_on>2024-05-09 21:02:18</sys_created_on>
+            <sys_id>559258c683ca4a10edb56060ceaad364</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Payment" display_value="Payment" name="x_1383179_tradenow_charity_list" sys_domain="global" view="Default view">de770f8083fd0610edb56060ceaad38f</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-08 11:06:05</sys_updated_on>
+            <sys_updated_on>2024-05-09 21:02:18</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>payment_mode</element>
+            <element>.split</element>
             <position>2</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-08 11:06:05</sys_created_on>
-            <sys_id>fd808da5838ac610edb56060ceaad3d5</sys_id>
+            <sys_created_on>2024-05-09 21:02:18</sys_created_on>
+            <sys_id>d59258c683ca4a10edb56060ceaad364</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Payment" display_value="Payment" name="x_1383179_tradenow_charity_list" sys_domain="global" view="Default view">de770f8083fd0610edb56060ceaad38f</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-08 11:06:05</sys_updated_on>
+            <sys_updated_on>2024-05-09 21:02:18</sys_updated_on>
             <sys_user/>
-            <type/>
+            <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>qr_code</element>
             <position>3</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-08 11:06:05</sys_created_on>
-            <sys_id>71808da5838ac610edb56060ceaad3d6</sys_id>
+            <sys_created_on>2024-05-09 21:02:18</sys_created_on>
+            <sys_id>599258c683ca4a10edb56060ceaad364</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Payment" display_value="Payment" name="x_1383179_tradenow_charity_list" sys_domain="global" view="Default view">de770f8083fd0610edb56060ceaad38f</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-08 11:06:05</sys_updated_on>
+            <sys_updated_on>2024-05-09 21:02:18</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

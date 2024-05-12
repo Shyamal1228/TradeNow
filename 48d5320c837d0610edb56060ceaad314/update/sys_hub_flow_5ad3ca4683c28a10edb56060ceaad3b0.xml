@@ -1,0 +1,1724 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=747000,viewActivatedIn=naturalLanguage</attributes>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>flow_for_making_item_available_after_certain_time</internal_name>
+        <label_cache>[{"name":"Updated_1.current.claimer_name","label":"Trigger - Record Updated➛Item Record➛Claimer Name","reference":"","reference_display":"Claimer Name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"claimer_name"},{"name":"Updated_1.current.claimer_email","label":"Trigger - Record Updated➛Item Record➛Claimer Email","reference":"","reference_display":"Claimer Email","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"claimer_email"},{"name":"Updated_1.current","label":"Trigger - Record Updated➛Item Record","reference":"x_1383179_tradenow_item_list","reference_display":"Item","type":"reference","base_type":"reference","attributes":{}},{"name":"Updated_1.current.status","label":"Trigger - Record Updated➛Item Record➛Status","reference":"","reference_display":"Status","type":"choice","base_type":"choice","parent_table_name":"x_1383179_tradenow_item_list","column_name":"status","choices":[{"label":"Available","rawLabel":"Available","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"available","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Ready to Pickup","rawLabel":"Ready to Pickup","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"readypickup","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Reserved","rawLabel":"Reserved","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"reserved","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Claimed","rawLabel":"Claimed","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"claimed","parameters":{"name":"x_1383179_tradenow_item_list"}}]},{"name":"Updated_1.current.sys_updated_on","label":"Trigger - Record Updated➛Item Record➛Updated","reference":"","reference_display":"Updated","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1383179_tradenow_item_list","column_name":"sys_updated_on"}]</label_cache>
+        <master_snapshot>78b6064a83c28a10edb56060ceaad3aa</master_snapshot>
+        <name>Flow for making item available after certain time</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>c2c2e51583350210edb56060ceaad3a7</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:17:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5ad3ca4683c28a10edb56060ceaad3b0</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Flow for making item available after certain time</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_hub_flow_5ad3ca4683c28a10edb56060ceaad3b0</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=5ad3ca4683c28a10edb56060ceaad3b0"/>
+    <sys_variable_value action="delete_multiple" query="document_key=5ad3ca4683c28a10edb56060ceaad3b0"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_1383179_tradenow_item_list">statusCHANGESTOreserved<item display_value="Reserved" endquery="false" field="status" goto="false" newquery="false" operator="CHANGESTO" or="false" value="reserved"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>false</on_insert>
+        <on_update>true</on_update>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-25 08:41:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c2c2e51583350210edb56060ceaad3a7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-06 20:29:43</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>5ad3ca4683c28a10edb56060ceaad3b0</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:39</sys_created_on>
+        <sys_id>cdb6464a83c28a10edb56060ceaad330</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <trigger display_value="">c2c2e51583350210edb56060ceaad3a7</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=5ad3ca4683c28a10edb56060ceaad3b0^sys_idNOT INcdb6464a83c28a10edb56060ceaad330"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=5ad3ca4683c28a10edb56060ceaad3b0^sys_idNOT IN1c96024a83c28a10edb56060ceaad3f8"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Flow for making item available after certain time">5ad3ca4683c28a10edb56060ceaad3b0</flow>
+        <name>Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:02</sys_created_on>
+        <sys_id>1c96024a83c28a10edb56060ceaad3f8</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=1c96024a83c28a10edb56060ceaad3f8"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>1c96024a83c28a10edb56060ceaad3f8</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:02</sys_created_on>
+        <sys_id>1496024a83c28a10edb56060ceaad3fa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:02</sys_updated_on>
+        <value>x_1383179_tradenow_item_list</value>
+        <variable display_value="Table">1dda12e0c31322002841b63b12d3aea8</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>1c96024a83c28a10edb56060ceaad3f8</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:02</sys_created_on>
+        <sys_id>5096024a83c28a10edb56060ceaad3fa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:02</sys_updated_on>
+        <value>statusCHANGESTOreserved</value>
+        <variable display_value="Condition">bb9adea0c31322002841b63b12d3ae67</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>1c96024a83c28a10edb56060ceaad3f8</document_key>
+        <order>101</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:02</sys_created_on>
+        <sys_id>9896024a83c28a10edb56060ceaad3f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:02</sys_updated_on>
+        <value>every</value>
+        <variable display_value="Run Trigger">c19523d8c31932002841b63b12d3aea1</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_trigger_output_bb695e60c31322002841b63b12d3aea5^id=1c96024a83c28a10edb56060ceaad3f8"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=5ad3ca4683c28a10edb56060ceaad3b0"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=5ad3ca4683c28a10edb56060ceaad3b0^sys_idNOT IN96d3ca4683c28a10edb56060ceaad3b2"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>5ad3ca4683c28a10edb56060ceaad3b0</id>
+        <name>Flow for making item available after certain time</name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:17:10</sys_created_on>
+        <sys_id>96d3ca4683c28a10edb56060ceaad3b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:17:10</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=96d3ca4683c28a10edb56060ceaad3b2"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=5ad3ca4683c28a10edb56060ceaad3b0^sys_idNOT IN1496024a83c28a10edb56060ceaad3ed,1496024a83c28a10edb56060ceaad3f4,5496024a83c28a10edb56060ceaad3f1"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Flow for making item available after certain time">5ad3ca4683c28a10edb56060ceaad3b0</model>
+        <model_id>5ad3ca4683c28a10edb56060ceaad3b0</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_5ad3ca4683c28a10edb56060ceaad3b0</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:02</sys_created_on>
+        <sys_id>1496024a83c28a10edb56060ceaad3ed</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=1496024a83c28a10edb56060ceaad3ed"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Flow for making item available after certain time">5ad3ca4683c28a10edb56060ceaad3b0</model>
+        <model_id>5ad3ca4683c28a10edb56060ceaad3b0</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_5ad3ca4683c28a10edb56060ceaad3b0</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:02</sys_created_on>
+        <sys_id>1496024a83c28a10edb56060ceaad3f4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=1496024a83c28a10edb56060ceaad3f4"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Flow for making item available after certain time">5ad3ca4683c28a10edb56060ceaad3b0</model>
+        <model_id>5ad3ca4683c28a10edb56060ceaad3b0</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_5ad3ca4683c28a10edb56060ceaad3b0</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:02</sys_created_on>
+        <sys_id>5496024a83c28a10edb56060ceaad3f1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=5496024a83c28a10edb56060ceaad3f1"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=5ad3ca4683c28a10edb56060ceaad3b0"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5ad3ca4683c28a10edb56060ceaad3b0"/>
+    <sys_hub_action_instance action="delete_multiple" query="flow=5ad3ca4683c28a10edb56060ceaad3b0^sys_idNOT IN5096424a83c28a10edb56060ceaad312,d496424a83c28a10edb56060ceaad30b"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Flow for making item available after certain time">5ad3ca4683c28a10edb56060ceaad3b0</flow>
+        <order>4</order>
+        <parent_ui_id>44953dec-a616-4401-b8ed-707939411e03</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>5096424a83c28a10edb56060ceaad312</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:30:08</sys_updated_on>
+        <ui_id>e91040e5-b89e-4459-8e78-c4ba72d0a155</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=5096424a83c28a10edb56060ceaad312"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5096424a83c28a10edb56060ceaad312</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>5096424a83c28a10edb56060ceaad314</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <value>x_1383179_tradenow_item_list</value>
+        <variable display_value="Table">818dd9f10f11101051218e8ebc767e32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5096424a83c28a10edb56060ceaad312</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>9c96424a83c28a10edb56060ceaad313</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <value>bfcbcdd9830a8610edb56060ceaad301</value>
+        <variable display_value="Notification">418dd9f10f11101051218e8ebc767e38</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=5096424a83c28a10edb56060ceaad312"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>notification</field>
+        <id>5096424a83c28a10edb56060ceaad312</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>9496424a83c28a10edb56060ceaad313</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>5096424a83c28a10edb56060ceaad312</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>1c96424a83c28a10edb56060ceaad313</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value>{{Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>5096424a83c28a10edb56060ceaad312</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>5896424a83c28a10edb56060ceaad313</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=5096424a83c28a10edb56060ceaad312"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5096424a83c28a10edb56060ceaad312"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Flow for making item available after certain time">5ad3ca4683c28a10edb56060ceaad3b0</flow>
+        <order>3</order>
+        <parent_ui_id>44953dec-a616-4401-b8ed-707939411e03</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>d496424a83c28a10edb56060ceaad30b</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:30:08</sys_updated_on>
+        <ui_id>274cc5d7-3555-4bca-804a-8d43b3d90894</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=d496424a83c28a10edb56060ceaad30b"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>d496424a83c28a10edb56060ceaad30b</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>9c96424a83c28a10edb56060ceaad30d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <value>x_1383179_tradenow_item_list</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=d496424a83c28a10edb56060ceaad30b"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>d496424a83c28a10edb56060ceaad30b</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>1c96424a83c28a10edb56060ceaad30d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>d496424a83c28a10edb56060ceaad30b</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>9496424a83c28a10edb56060ceaad30d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>d496424a83c28a10edb56060ceaad30b</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>5896424a83c28a10edb56060ceaad30d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>status=available^claimer_email={{Updated_1.current.claimer_email}}^claimer_name={{Updated_1.current.claimer_name}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=d496424a83c28a10edb56060ceaad30b"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d496424a83c28a10edb56060ceaad30b"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=5ad3ca4683c28a10edb56060ceaad3b0"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=5ad3ca4683c28a10edb56060ceaad3b0^sys_idNOT IN9896424a83c28a10edb56060ceaad303,dc96024a83c28a10edb56060ceaad3fb"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">d496424a83c28a10edb56060ceaad303</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Flow for making item available after certain time">5ad3ca4683c28a10edb56060ceaad3b0</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>9896424a83c28a10edb56060ceaad303</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <ui_id>44953dec-a616-4401-b8ed-707939411e03</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=9896424a83c28a10edb56060ceaad303"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>9896424a83c28a10edb56060ceaad303</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>dc96424a83c28a10edb56060ceaad306</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <value>Item is still Reserved</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=9896424a83c28a10edb56060ceaad303"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>9896424a83c28a10edb56060ceaad303</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>5c96424a83c28a10edb56060ceaad306</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{Updated_1.current.status}}=reserved</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>9896424a83c28a10edb56060ceaad303</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>9896424a83c28a10edb56060ceaad306</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=9896424a83c28a10edb56060ceaad303"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=9896424a83c28a10edb56060ceaad303"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">1896024a83c28a10edb56060ceaad3fb</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Flow for making item available after certain time">5ad3ca4683c28a10edb56060ceaad3b0</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="Wait for a duration of time">fdb2541473031300b61e66476bf6a70e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:02</sys_created_on>
+        <sys_id>dc96024a83c28a10edb56060ceaad3fb</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <ui_id>4dfe99a7-6f4f-4215-a91f-710409df8ff2</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=dc96024a83c28a10edb56060ceaad3fb"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>dc96024a83c28a10edb56060ceaad3fb</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>1c96424a83c28a10edb56060ceaad302</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <value/>
+        <variable display_value="Timer relative date time">1f25d05473031300b61e66476bf6a773</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>dc96024a83c28a10edb56060ceaad3fb</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>5896424a83c28a10edb56060ceaad302</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <value>relative_duration</value>
+        <variable display_value="Duration Type">4973581473031300b61e66476bf6a785</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>dc96024a83c28a10edb56060ceaad3fb</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>9496424a83c28a10edb56060ceaad302</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <value>1970-01-01 00:00:20</value>
+        <variable display_value="Duration">ef145c1473031300b61e66476bf6a7be</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>dc96024a83c28a10edb56060ceaad3fb</document_key>
+        <order>500</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>dc96424a83c28a10edb56060ceaad302</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <value>38fa64edc0a8016400f4a5724b0434b8</value>
+        <variable display_value="During the following schedule">fb55145473031300b61e66476bf6a762</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=dc96024a83c28a10edb56060ceaad3fb"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>duration_type</field>
+        <id>dc96024a83c28a10edb56060ceaad3fb</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>9c96424a83c28a10edb56060ceaad301</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_fdb2541473031300b61e66476bf6a70e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>timer_duration</field>
+        <id>dc96024a83c28a10edb56060ceaad3fb</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>d496424a83c28a10edb56060ceaad301</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_fdb2541473031300b61e66476bf6a70e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>timer_relative_duration_datetime</field>
+        <id>dc96024a83c28a10edb56060ceaad3fb</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>5096424a83c28a10edb56060ceaad302</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_fdb2541473031300b61e66476bf6a70e</table>
+        <value>{{Updated_1.current.sys_updated_on}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>timer_schedule</field>
+        <id>dc96024a83c28a10edb56060ceaad3fb</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:03</sys_created_on>
+        <sys_id>1496424a83c28a10edb56060ceaad302</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:03</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_fdb2541473031300b61e66476bf6a70e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=dc96024a83c28a10edb56060ceaad3fb"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=dc96024a83c28a10edb56060ceaad3fb"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=5ad3ca4683c28a10edb56060ceaad3b0"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=5ad3ca4683c28a10edb56060ceaad3b0"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_5ad3ca4683c28a10edb56060ceaad3b0^sys_idNOT IN5896024a83c28a10edb56060ceaad3f3,9896024a83c28a10edb56060ceaad3f0,d096024a83c28a10edb56060ceaad3f6"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_5ad3ca4683c28a10edb56060ceaad3b0</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:02</sys_created_on>
+        <sys_id>5896024a83c28a10edb56060ceaad3f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_5ad3ca4683c28a10edb56060ceaad3b0</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:02</sys_created_on>
+        <sys_id>9896024a83c28a10edb56060ceaad3f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_5ad3ca4683c28a10edb56060ceaad3b0</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:02</sys_created_on>
+        <sys_id>d096024a83c28a10edb56060ceaad3f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:02</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_5ad3ca4683c28a10edb56060ceaad3b0"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_5ad3ca4683c28a10edb56060ceaad3b0"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_5ad3ca4683c28a10edb56060ceaad3b0"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <internal_name>flow_for_making_item_available_after_certain_time</internal_name>
+        <label_cache>[{"name":"Updated_1.current.claimer_name","label":"Trigger - Record Updated➛Item Record➛Claimer Name","reference":"","reference_display":"Claimer Name","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"claimer_name"},{"name":"Updated_1.current.claimer_email","label":"Trigger - Record Updated➛Item Record➛Claimer Email","reference":"","reference_display":"Claimer Email","type":"string","base_type":"string","parent_table_name":"x_1383179_tradenow_item_list","column_name":"claimer_email"},{"name":"Updated_1.current","label":"Trigger - Record Updated➛Item Record","reference":"x_1383179_tradenow_item_list","reference_display":"Item","type":"reference","base_type":"reference","attributes":{}},{"name":"Updated_1.current.status","label":"Trigger - Record Updated➛Item Record➛Status","reference":"","reference_display":"Status","type":"choice","base_type":"choice","parent_table_name":"x_1383179_tradenow_item_list","column_name":"status","choices":[{"label":"Available","rawLabel":"Available","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"available","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Ready to Pickup","rawLabel":"Ready to Pickup","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"readypickup","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Reserved","rawLabel":"Reserved","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"reserved","parameters":{"name":"x_1383179_tradenow_item_list"}},{"label":"Claimed","rawLabel":"Claimed","selected":false,"missing":false,"image":"","used":false,"reference":false,"value":"claimed","parameters":{"name":"x_1383179_tradenow_item_list"}}]},{"name":"Updated_1.current.sys_updated_on","label":"Trigger - Record Updated➛Item Record➛Updated","reference":"","reference_display":"Updated","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1383179_tradenow_item_list","column_name":"sys_updated_on"}]</label_cache>
+        <master>true</master>
+        <name>Flow for making item available after certain time</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Flow for making item available after certain time">5ad3ca4683c28a10edb56060ceaad3b0</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>78b6064a83c28a10edb56060ceaad3aa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=78b6064a83c28a10edb56060ceaad3aa"/>
+    <sys_variable_value action="delete_multiple" query="document_key=78b6064a83c28a10edb56060ceaad3aa"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=78b6064a83c28a10edb56060ceaad3aa^sys_idNOT IN09b6464a83c28a10edb56060ceaad30b"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Flow for making item available after certain time">78b6064a83c28a10edb56060ceaad3aa</flow>
+        <name>Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:39</sys_created_on>
+        <sys_id>09b6464a83c28a10edb56060ceaad30b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=09b6464a83c28a10edb56060ceaad30b"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>09b6464a83c28a10edb56060ceaad30b</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:39</sys_created_on>
+        <sys_id>05b6464a83c28a10edb56060ceaad30d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <value>x_1383179_tradenow_item_list</value>
+        <variable display_value="Table">1dda12e0c31322002841b63b12d3aea8</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>09b6464a83c28a10edb56060ceaad30b</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:39</sys_created_on>
+        <sys_id>41b6464a83c28a10edb56060ceaad30d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <value>statusCHANGESTOreserved</value>
+        <variable display_value="Condition">bb9adea0c31322002841b63b12d3ae67</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>09b6464a83c28a10edb56060ceaad30b</document_key>
+        <order>101</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:39</sys_created_on>
+        <sys_id>8db6464a83c28a10edb56060ceaad30c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <value>every</value>
+        <variable display_value="Run Trigger">c19523d8c31932002841b63b12d3aea1</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_trigger_output_bb695e60c31322002841b63b12d3aea5^id=09b6464a83c28a10edb56060ceaad30b"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=78b6064a83c28a10edb56060ceaad3aa"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=78b6064a83c28a10edb56060ceaad3aa^sys_idNOT IN74b6064a83c28a10edb56060ceaad3ab"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>78b6064a83c28a10edb56060ceaad3aa</id>
+        <name>Flow for making item available after certain time</name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>74b6064a83c28a10edb56060ceaad3ab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=74b6064a83c28a10edb56060ceaad3ab"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=78b6064a83c28a10edb56060ceaad3aa^sys_idNOT IN0db6064a83c28a10edb56060ceaad3de,45b6064a83c28a10edb56060ceaad3e6,fcb6064a83c28a10edb56060ceaad3b8"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Flow for making item available after certain time">78b6064a83c28a10edb56060ceaad3aa</model>
+        <model_id>78b6064a83c28a10edb56060ceaad3aa</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_78b6064a83c28a10edb56060ceaad3aa</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>0db6064a83c28a10edb56060ceaad3de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=0db6064a83c28a10edb56060ceaad3de"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Flow for making item available after certain time">78b6064a83c28a10edb56060ceaad3aa</model>
+        <model_id>78b6064a83c28a10edb56060ceaad3aa</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_78b6064a83c28a10edb56060ceaad3aa</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>45b6064a83c28a10edb56060ceaad3e6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=45b6064a83c28a10edb56060ceaad3e6"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Flow for making item available after certain time">78b6064a83c28a10edb56060ceaad3aa</model>
+        <model_id>78b6064a83c28a10edb56060ceaad3aa</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_78b6064a83c28a10edb56060ceaad3aa</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>fcb6064a83c28a10edb56060ceaad3b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=fcb6064a83c28a10edb56060ceaad3b8"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=78b6064a83c28a10edb56060ceaad3aa"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=78b6064a83c28a10edb56060ceaad3aa"/>
+    <sys_hub_action_instance action="delete_multiple" query="flow=78b6064a83c28a10edb56060ceaad3aa^sys_idNOT IN05b6464a83c28a10edb56060ceaad302,09b6464a83c28a10edb56060ceaad309"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Flow for making item available after certain time">78b6064a83c28a10edb56060ceaad3aa</flow>
+        <order>3</order>
+        <parent_ui_id>44953dec-a616-4401-b8ed-707939411e03</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>05b6464a83c28a10edb56060ceaad302</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <ui_id>274cc5d7-3555-4bca-804a-8d43b3d90894</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=05b6464a83c28a10edb56060ceaad302"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>05b6464a83c28a10edb56060ceaad302</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>4db6464a83c28a10edb56060ceaad303</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <value>x_1383179_tradenow_item_list</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=05b6464a83c28a10edb56060ceaad302"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>05b6464a83c28a10edb56060ceaad302</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>c9b6464a83c28a10edb56060ceaad303</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>05b6464a83c28a10edb56060ceaad302</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>45b6464a83c28a10edb56060ceaad303</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>05b6464a83c28a10edb56060ceaad302</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>09b6464a83c28a10edb56060ceaad303</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>status=available^claimer_email={{Updated_1.current.claimer_email}}^claimer_name={{Updated_1.current.claimer_name}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=05b6464a83c28a10edb56060ceaad302"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=05b6464a83c28a10edb56060ceaad302"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Flow for making item available after certain time">78b6064a83c28a10edb56060ceaad3aa</flow>
+        <order>4</order>
+        <parent_ui_id>44953dec-a616-4401-b8ed-707939411e03</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:39</sys_created_on>
+        <sys_id>09b6464a83c28a10edb56060ceaad309</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <ui_id>e91040e5-b89e-4459-8e78-c4ba72d0a155</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=09b6464a83c28a10edb56060ceaad309"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>09b6464a83c28a10edb56060ceaad309</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:39</sys_created_on>
+        <sys_id>05b6464a83c28a10edb56060ceaad30b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <value>x_1383179_tradenow_item_list</value>
+        <variable display_value="Table">818dd9f10f11101051218e8ebc767e32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>09b6464a83c28a10edb56060ceaad309</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:39</sys_created_on>
+        <sys_id>41b6464a83c28a10edb56060ceaad30b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <value>bfcbcdd9830a8610edb56060ceaad301</value>
+        <variable display_value="Notification">418dd9f10f11101051218e8ebc767e38</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=09b6464a83c28a10edb56060ceaad309"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>notification</field>
+        <id>09b6464a83c28a10edb56060ceaad309</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:39</sys_created_on>
+        <sys_id>49b6464a83c28a10edb56060ceaad30a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>09b6464a83c28a10edb56060ceaad309</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:39</sys_created_on>
+        <sys_id>cdb6464a83c28a10edb56060ceaad30a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value>{{Updated_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>09b6464a83c28a10edb56060ceaad309</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:39</sys_created_on>
+        <sys_id>0db6464a83c28a10edb56060ceaad30a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <table>var__m_sys_hub_action_input_0d8dd9f10f11101051218e8ebc767e27</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=09b6464a83c28a10edb56060ceaad309"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=09b6464a83c28a10edb56060ceaad309"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=78b6064a83c28a10edb56060ceaad3aa"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=78b6064a83c28a10edb56060ceaad3aa^sys_idNOT IN41b6064a83c28a10edb56060ceaad3f1,49b6064a83c28a10edb56060ceaad3f8"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">1896024a83c28a10edb56060ceaad3fb</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Flow for making item available after certain time">78b6064a83c28a10edb56060ceaad3aa</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="Wait for a duration of time">fdb2541473031300b61e66476bf6a70e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>41b6064a83c28a10edb56060ceaad3f1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <ui_id>4dfe99a7-6f4f-4215-a91f-710409df8ff2</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=41b6064a83c28a10edb56060ceaad3f1"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>41b6064a83c28a10edb56060ceaad3f1</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>09b6064a83c28a10edb56060ceaad3f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <value>1970-01-01 00:00:20</value>
+        <variable display_value="Duration">ef145c1473031300b61e66476bf6a7be</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>41b6064a83c28a10edb56060ceaad3f1</document_key>
+        <order>500</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>41b6064a83c28a10edb56060ceaad3f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <value>38fa64edc0a8016400f4a5724b0434b8</value>
+        <variable display_value="During the following schedule">fb55145473031300b61e66476bf6a762</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>41b6064a83c28a10edb56060ceaad3f1</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>8db6064a83c28a10edb56060ceaad3f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <value/>
+        <variable display_value="Timer relative date time">1f25d05473031300b61e66476bf6a773</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>41b6064a83c28a10edb56060ceaad3f1</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>c9b6064a83c28a10edb56060ceaad3f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <value>relative_duration</value>
+        <variable display_value="Duration Type">4973581473031300b61e66476bf6a785</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=41b6064a83c28a10edb56060ceaad3f1"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>duration_type</field>
+        <id>41b6064a83c28a10edb56060ceaad3f1</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>01b6064a83c28a10edb56060ceaad3f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_fdb2541473031300b61e66476bf6a70e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>timer_duration</field>
+        <id>41b6064a83c28a10edb56060ceaad3f1</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>4db6064a83c28a10edb56060ceaad3f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_fdb2541473031300b61e66476bf6a70e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>timer_relative_duration_datetime</field>
+        <id>41b6064a83c28a10edb56060ceaad3f1</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>c1b6064a83c28a10edb56060ceaad3f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_fdb2541473031300b61e66476bf6a70e</table>
+        <value>{{Updated_1.current.sys_updated_on}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>timer_schedule</field>
+        <id>41b6064a83c28a10edb56060ceaad3f1</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>85b6064a83c28a10edb56060ceaad3f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_fdb2541473031300b61e66476bf6a70e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=41b6064a83c28a10edb56060ceaad3f1"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=41b6064a83c28a10edb56060ceaad3f1"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">d496424a83c28a10edb56060ceaad303</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Flow for making item available after certain time">78b6064a83c28a10edb56060ceaad3aa</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>49b6064a83c28a10edb56060ceaad3f8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <ui_id>44953dec-a616-4401-b8ed-707939411e03</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=49b6064a83c28a10edb56060ceaad3f8"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>49b6064a83c28a10edb56060ceaad3f8</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>0db6064a83c28a10edb56060ceaad3fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <value>Item is still Reserved</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=49b6064a83c28a10edb56060ceaad3f8"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>49b6064a83c28a10edb56060ceaad3f8</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>89b6064a83c28a10edb56060ceaad3fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{Updated_1.current.status}}=reserved</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>49b6064a83c28a10edb56060ceaad3f8</id>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>c5b6064a83c28a10edb56060ceaad3fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=49b6064a83c28a10edb56060ceaad3f8"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=49b6064a83c28a10edb56060ceaad3f8"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=78b6064a83c28a10edb56060ceaad3aa"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=78b6064a83c28a10edb56060ceaad3aa"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_78b6064a83c28a10edb56060ceaad3aa^sys_idNOT IN01b6064a83c28a10edb56060ceaad3e3,85b6064a83c28a10edb56060ceaad3ea,c5b6064a83c28a10edb56060ceaad3db"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_78b6064a83c28a10edb56060ceaad3aa</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>01b6064a83c28a10edb56060ceaad3e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_78b6064a83c28a10edb56060ceaad3aa</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>85b6064a83c28a10edb56060ceaad3ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_78b6064a83c28a10edb56060ceaad3aa</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:38</sys_created_on>
+        <sys_id>c5b6064a83c28a10edb56060ceaad3db</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:38</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_78b6064a83c28a10edb56060ceaad3aa"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_78b6064a83c28a10edb56060ceaad3aa"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_78b6064a83c28a10edb56060ceaad3aa"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>5ad3ca4683c28a10edb56060ceaad3b0</sys_id>
+        <latest_snapshot>78b6064a83c28a10edb56060ceaad3aa</latest_snapshot>
+        <compiler_build>glide-vancouver-07-06-2023__patch2-hotfix1-10-04-2023_10-06-2023_1235.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=5ad3ca4683c28a10edb56060ceaad3b0^sys_idNOT IN09b6464a83c28a10edb56060ceaad331"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.Every</binding_strategy>
+        <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"09b6464a83c28a10edb56060ceaad331","name":"plan","plan_signature":null}}</plan>
+        <plan_id>5ad3ca4683c28a10edb56060ceaad3b0</plan_id>
+        <snapshot>98d60a4a83c28a10edb56060ceaad39a</snapshot>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-10 05:29:39</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>09b6464a83c28a10edb56060ceaad331</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-10 05:29:39</sys_updated_on>
+        <trigger display_value="">c2c2e51583350210edb56060ceaad3a7</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=5ad3ca4683c28a10edb56060ceaad3b0"/>
+</record_update>

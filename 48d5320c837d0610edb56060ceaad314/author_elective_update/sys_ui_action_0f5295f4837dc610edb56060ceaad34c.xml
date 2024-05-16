@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="DELETE">
+        <action_name/>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>current.status == 'available' || current.status == 'reserved'</condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style>unstyled</form_style>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint>Button for Claim Item</hint>
+        <isolate_script>false</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Get Item</name>
+        <onclick>onClickScript()</onclick>
+        <order>100</order>
+        <script><![CDATA[// current.status="Claimed";
+// var preStatus = previous.status;
+//   gs.setValue('status', 'readypickup');
+// current.status = 'readypickup';
+
+
+// actual code 
+// current.status = "readypickup";
+// current.claimer = gs.getUserDisplayName();
+// // current.email=gs.getUser().getEmail();
+//  current.update();
+
+//  action.setRedirectURL(current);
+
+
+// if (preStatus=='' && g_form.getValue('status') == 'Ready to Pick-up') {
+//         var gm = new GlideModal("glide_warn", true, 600);
+//         gm.setTitle("Pick-Up Location");
+//         gm.setPreference("title", "Pick-Up Location has been sent to your notification.");
+//         gm.render();
+//     }
+
+function onClickScript() {
+   // g_form.setValue('status', 'readypickup');
+    g_form.setValue('status', 'readypickup');
+    var gm = new GlideModal("glide_warn", true, 600);
+    gm.setTitle("Pick-Up Location");
+    gm.setPreference("title", "Pick-Up Location has been sent to your Email notification.");
+    gm.render();
+
+	//g_form.save();
+}
+
+if (typeof window == 'undefined')
+    updateTask();
+
+function updateTask() {
+    g_form.save();
+}]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-23 18:15:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0f5295f4837dc610edb56060ceaad34c</sys_id>
+        <sys_mod_count>89</sys_mod_count>
+        <sys_name>Get Item</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_ui_action_0f5295f4837dc610edb56060ceaad34c</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-12 19:07:21</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_ui_action_0f5295f4837dc610edb56060ceaad34c</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_action"&gt;&lt;sys_ui_action action="INSERT_OR_UPDATE"&gt;&lt;action_name/&gt;&lt;active&gt;true&lt;/active&gt;&lt;client&gt;true&lt;/client&gt;&lt;client_script_v2&gt;&lt;![CDATA[function onClick(g_form) {
+
+}]]&gt;&lt;/client_script_v2&gt;&lt;comments/&gt;&lt;condition&gt;current.status == 'available' || current.status == 'reserved'&lt;/condition&gt;&lt;form_action&gt;true&lt;/form_action&gt;&lt;form_button&gt;true&lt;/form_button&gt;&lt;form_button_v2&gt;false&lt;/form_button_v2&gt;&lt;form_context_menu&gt;false&lt;/form_context_menu&gt;&lt;form_link&gt;false&lt;/form_link&gt;&lt;form_menu_button_v2&gt;false&lt;/form_menu_button_v2&gt;&lt;form_style&gt;unstyled&lt;/form_style&gt;&lt;format_for_configurable_workspace&gt;false&lt;/format_for_configurable_workspace&gt;&lt;hint&gt;Button for Claim Item&lt;/hint&gt;&lt;isolate_script&gt;false&lt;/isolate_script&gt;&lt;list_action&gt;false&lt;/list_action&gt;&lt;list_banner_button&gt;false&lt;/list_banner_button&gt;&lt;list_button&gt;false&lt;/list_button&gt;&lt;list_choice&gt;false&lt;/list_choice&gt;&lt;list_context_menu&gt;false&lt;/list_context_menu&gt;&lt;list_link&gt;false&lt;/list_link&gt;&lt;list_save_with_form_button&gt;false&lt;/list_save_with_form_button&gt;&lt;list_style/&gt;&lt;messages/&gt;&lt;name&gt;Get Item&lt;/name&gt;&lt;onclick&gt;onClickScript()&lt;/onclick&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[// current.status="Claimed";
+// var preStatus = previous.status;
+//   gs.setValue('status', 'readypickup');
+// current.status = 'readypickup';
+
+
+// actual code 
+// current.status = "readypickup";
+// current.claimer = gs.getUserDisplayName();
+// // current.email=gs.getUser().getEmail();
+//  current.update();
+
+//  action.setRedirectURL(current);
+
+
+// if (preStatus=='' &amp;&amp; g_form.getValue('status') == 'Ready to Pick-up') {
+//         var gm = new GlideModal("glide_warn", true, 600);
+//         gm.setTitle("Pick-Up Location");
+//         gm.setPreference("title", "Pick-Up Location has been sent to your notification.");
+//         gm.render();
+//     }
+
+function onClickScript() {
+   // g_form.setValue('status', 'readypickup');
+    g_form.setValue('status', 'readypickup');
+    var gm = new GlideModal("glide_warn", true, 600);
+    gm.setTitle("Pick-Up Location");
+    gm.setPreference("title", "Pick-Up Location has been sent to your Email notification.");
+    gm.render();
+
+	//g_form.save();
+}
+
+if (typeof window == 'undefined')
+    updateTask();
+
+function updateTask() {
+    g_form.save();
+}]]&gt;&lt;/script&gt;&lt;show_insert&gt;false&lt;/show_insert&gt;&lt;show_multiple_update&gt;false&lt;/show_multiple_update&gt;&lt;show_query&gt;false&lt;/show_query&gt;&lt;show_update&gt;true&lt;/show_update&gt;&lt;sys_class_name&gt;sys_ui_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-04-23 18:15:11&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;0f5295f4837dc610edb56060ceaad34c&lt;/sys_id&gt;&lt;sys_mod_count&gt;89&lt;/sys_mod_count&gt;&lt;sys_name&gt;Get Item&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_action_0f5295f4837dc610edb56060ceaad34c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-12 19:07:21&lt;/sys_updated_on&gt;&lt;table&gt;x_1383179_tradenow_item_list&lt;/table&gt;&lt;ui11_compatible&gt;true&lt;/ui11_compatible&gt;&lt;ui16_compatible&gt;false&lt;/ui16_compatible&gt;&lt;/sys_ui_action&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>481708083</payload_hash>
+        <record_name>Get Item</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-12 19:07:21</sys_created_on>
+        <sys_id>7a0553fe834e4e10edb56060ceaad3cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f6e33d52b0000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-12 19:07:21</sys_updated_on>
+        <type>UI Action</type>
+        <update_guid>320553fe974e4e101b82878af8ca9fcc</update_guid>
+        <update_guid_history>320553fe974e4e101b82878af8ca9fcc:481708083,f6c4d3fed14e4e10f3b758448257ebf7:-704301947,3764d3fe5c4e4e10fd0af8b603dcbbf2:1729799778,59b35b3ec54e4e102ddd2b936c9016a9:-974842860,c9435f7ea74e4e10596925ca4c53cd2a:-561226811,59f25b3e804e4e10f6804655bcfebc4f:-1709536800,6712173e584e4e1092c45bbeaeed5364:-1314624471,85f19bfa444e4e10aeabe664ecebab30:624162265,57ee4b3ae14e4e10dce49c5bdb4bbd2d:905931114,147e433a474e4e10b36776f49771c0f8:-1736277110,ec4c8776104e4e109db8f061c5954ec7:905931114,f91c0f36884e4e108ec96e34e47e5b02:-1814240182,c6ebcf36a54e4e10681db17e6f676c1a:2053257130,22abcff2164e4e101c14ce9cae58dd95:473584452,8c8b43363e4e4e10b6fb24c014c3cb56:117170084,d14b8f723a4e4e1025e065cebf055675:857220378,5eca4fb2104e4e10a66ae2a70d9edda2:-1664409670,cdc515bd444e0a105eba51644de02ad4:-1210704279,f233870dc08e46105613f05c8c5fd721:-2113952438,bea1c7892b8e46106c9eee5c6ec1e9aa:-1812924669,e7514749b08e461083df539b5de10b77:1391735142,56cf7209ba8e461033340fc2acef340e:1631642051,5d4f7645378e4610b2e144ede6958792:-731570308,568dbec1708e4610f3983c6ac6438509:-87502541,b79cb681498e46100b9ef3ea6e4cd34b:87335029,b55c3281d88e4610100be697a954869c:710135318,58eaf6cde94e4610e8379f60285b63f9:-2086617266,363ab28dad4e4610294731b2ffbce54a:-202672521,62897ec9924e4610018fcfbb4a1dcd82:-1625251881,3f29be896c4e461005fee0dd6ee092e3:157984442,57b872c9b34e4610f792c54bc99f5717:-1514670672,3a8732493b4e4610f9d029e2a58f1ab3:43241102,a247f609784e46100a30306409d80413:-182257608,eb0736096c4e4610853a7c4d322ec663:-2044525567,7db6bac5b14e46100d56bbf00b6bc617:131543178,6555fe81e84e4610fa446d65cbe3b08d:-86698379,fe10b2cd960e4610bd4e03138c438649:1701849375,82dfe2cdfa0e46109be3cf4c166ed0b9:820689944,198f2e4d430e46108a24c662bcccab14:-212648503,649eaa0ddc0e46102d9e0fc04c80fc97:-1646718472,ee4d2ac9530e4610ccb4ace3e6cdb52b:2026629903,df5c2a49c30e4610ddd15c403caee88c:-562106042,b4dae649ba0e4610e8a2e22fbf6c394e:1728493478,5da9ae85d50e461031bd798bac93fb44:-91490300,ef26a6c1040e461031a76f6e4529ea7e:926779495,9db5ae01680e4610d4799ca022a26444:-955506018,c424aacdd3ca461035e4b822306a69b5:-351209893,17a045c1c24646102b6bb3ef883a8eed:1666657883,ca9ffc01df464610012bfecfcb242138:627361229,336fb80118464610f04041596672219c:-1942177021,142bb40d030646109e2176ce2b2862c2:1910716410,58cafc8981064610dfbafd8fc8907f48:63201586,4c6a34c9a7064610a43f97961232aca9:-651990310,10f97889e9064610902699969a609c3c:-2017787387,0e4938c5a006461049adaf233aa0cf9d:-2069755565,ea57f8c56e064610768e901584e0a452:-1346028385,f996b085c20646109be298b2fc328952:1712707974,d9f57c45fd064610c49f4ca888457b5e:73581950,8e457805b5064610a6923693d5677bef:-1346028385,10f3fc817e064610df49106207174f66:466759476,3550a0c964824610446d0165f972ba63:-181521018,e90024892a82461073311c72e6feddfc:94747543,3caf94898f824610905c95479660554f:1331551666,249fdc0919824610481425a9019334b8:32293330,bc7f5089b7824610842a970cc4130c9e:1331551666,e95f9c49b08246100918e0f49babc9f1:32293330,fc3f9c092482461060d74113da58fe5a:618438587,838e5c09448246105b50a1af2392e97b:-224471052,fb4e980993824610365bc921a07f2565:1563888865,249dd8457e824610b53b6c1e290884c9:-224471052,0b4cdc451382461017a3332576608542:1235073879,b0ebd845f7824610cb33b781a80495d9:-2002924,18e41489fb4246104ec9021cc9419b6b:-2009373302,de4cc441d242461068944a5a9be51f61:962151447,09eb4ccd1702461091c6787b7232b57b:-572323295,69cb08cd90024610a44a65cb477e5454:-1546131253,dda7c08d4e0246109a0c379e10e15af5:-351094281,c4b6400d8b0246108dfe5d0ed4cacc6c:-922038349,bbe623bbcff5021039530e3ad3e37b54:-351094281,e8c66f7bc9f50210cec27090a483f6ef:-921197182,4c86e3f7f4f502100c76ca72d46d734b:708260716,d08fa2fb21f102106cba47655d15ced6:-351094281,fab4eebfe6b102108fb392ec33e1275b:948216865,73a4aebfd4b10210ebc138dc5232a43e:1869180701,da8cc5ef90fd82101379d93544ee8dde:1081555425,06c6f087edf902106208873644442505:1344255039,0e475bba813502100bfb6d42809a6f42:-160949630,48a597ba4f3502106854e14618a51652:245460001,eab815fc8c7dc61099073f70c8d6433a:-459745820,ade2d1f4ff7dc6102f8afb3ee093f2f8:1752604304</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-12 19:11:38</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_action">sys_ui_action</sys_db_object>
+        <sys_id>714f48acb19d400b90fff77e6400f869</sys_id>
+        <sys_metadata>0f5295f4837dc610edb56060ceaad34c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Item</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Item">205187c883bd0610edb56060ceaad3cf</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_ui_action_0f5295f4837dc610edb56060ceaad34c</sys_update_name>
+        <sys_update_version display_value="sys_ui_action_0f5295f4837dc610edb56060ceaad34c">7a0553fe834e4e10edb56060ceaad3cc</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-12 19:11:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

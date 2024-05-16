@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>status</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Client Script to populate Claimer</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+    if (g_form.getValue('status') == 'Reserved') {
+        var userName = g_user.getFullName();
+		alert(userName);
+        // var userEmail = g_user.getUserName();
+
+        // Set field values
+        // g_form.setValue('claimer', userName);
+        // g_form.setValue('user_email_field', userEmail);
+    }
+
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-30 15:18:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3e1ae40b83b90210edb56060ceaad3f5</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Client Script to populate Claimer</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_client_3e1ae40b83b90210edb56060ceaad3f5</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-30 15:32:59</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_script_client_3e1ae40b83b90210edb56060ceaad3f5</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;status&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Client Script to populate Claimer&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+    if (g_form.getValue('status') == 'Reserved') {
+        var userName = g_user.getFullName();
+		alert(userName);
+        // var userEmail = g_user.getUserName();
+
+        // Set field values
+        // g_form.setValue('claimer', userName);
+        // g_form.setValue('user_email_field', userEmail);
+    }
+
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-04-30 15:18:20&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;3e1ae40b83b90210edb56060ceaad3f5&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Client Script to populate Claimer&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_3e1ae40b83b90210edb56060ceaad3f5&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-04-30 15:32:59&lt;/sys_updated_on&gt;&lt;table&gt;x_1383179_tradenow_item_list&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1725353706</payload_hash>
+        <record_name>Client Script to populate Claimer</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-04-30 15:32:59</sys_created_on>
+        <sys_id>b1e0f44f83b90210edb56060ceaad379</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f2fa342ea0000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-04-30 15:32:59</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>79e0f44f9eb9021068edea767db28478</update_guid>
+        <update_guid_history>79e0f44f9eb9021068edea767db28478:-1725353706,02aee44ff7b90210e6bc20330d5ae314:-1871019767,078da00fc3b90210aefd12108d2dbbdc:483831347</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-16 14:29:17</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>7247dd319b324bb7add31cc796c8d3c1</sys_id>
+        <sys_metadata>3e1ae40b83b90210edb56060ceaad3f5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Client Script to populate Claimer</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Item">205187c883bd0610edb56060ceaad3cf</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_script_client_3e1ae40b83b90210edb56060ceaad3f5</sys_update_name>
+        <sys_update_version display_value="sys_script_client_3e1ae40b83b90210edb56060ceaad3f5">b1e0f44f83b90210edb56060ceaad379</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-16 14:29:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

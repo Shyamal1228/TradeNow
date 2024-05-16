@@ -32,7 +32,7 @@
                 <element inactive_on_update="false" label="Claimed" sequence="3" value="claimed"/>
             </choice>
         </element>
-        <element default="0" label="Total views" max_length="40" name="total_views" read_only="true" type="integer"/>
+        <element default="0" label="Total watchers" max_length="40" name="total_watchers" type="integer"/>
         <element label="User id" max_length="40" name="user_id" type="string"/>
         <element label="Watching" max_length="40" name="watching" type="boolean"/>
         <element label="Withdraw item" max_length="40" name="withdraw_item" type="boolean"/>

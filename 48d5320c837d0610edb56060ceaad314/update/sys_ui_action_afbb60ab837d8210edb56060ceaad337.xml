@@ -14,7 +14,7 @@
         <form_context_menu>false</form_context_menu>
         <form_link>false</form_link>
         <form_menu_button_v2>false</form_menu_button_v2>
-        <form_style>destructive</form_style>
+        <form_style>primary</form_style>
         <format_for_configurable_workspace>false</format_for_configurable_workspace>
         <hint/>
         <isolate_script>true</isolate_script>
@@ -31,24 +31,19 @@
         <onclick>onClickClientScript()</onclick>
         <order>100</order>
         <script><![CDATA[function onClickClientScript() {
-    var gm = new GlideModal("glide_prompt", true, 600);
-    gm.setTitle("Donation");
-    gm.setPreference("title", "Enter your amount to donate");
-    gm.setPreference("onPromptComplete", function(value) {
-		// g_form.setSectionDisplay('payment', false);
-		// if(g_form.getValue('hide_field')){
-        g_form.setSectionDisplay('payment', true);
-        g_form.setSectionDisplay('payment_proof', true);
-		g_form.setVisible('amount', true);
-		g_form.setValue('amount',value);
-		g_form.setValue(false);
-		// }
-        // alert("You clicked on 'Ok', value was: " + value);
-    });
-    // gm.setPreference("onPromptCancel", function(value) {
-    //     alert("You clicked on 'Cancel', value was: " + value);
+	var url = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr.do?sys_id=-1&sysparm_query=x_1383179_tradenow_charity_list=' + g_form.getUniqueValue();
+	// action.setRedirectURL(url);
+	top.window.location=url;
+    // var gm = new GlideModal("glide_prompt", true, 600);
+    // gm.setTitle("Donation");
+    // gm.setPreference("title", "Enter your amount to donate");
+    // gm.setPreference("onPromptComplete", function(value) {
+    //     g_form.setSectionDisplay('payment', true);
+    //     g_form.setSectionDisplay('payment_proof', true);
+	// 	g_form.setVisible('amount', true);
+	// 	g_form.setValue('amount',value);
     // });
-    gm.render();
+    // gm.render();
 
     // function onClickClientScript() {
     // g_form.setSectionDisplay('payment_mode', true);
@@ -65,7 +60,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>afbb60ab837d8210edb56060ceaad337</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Donate</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -73,7 +68,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_ui_action_afbb60ab837d8210edb56060ceaad337</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-10 04:47:46</sys_updated_on>
+        <sys_updated_on>2024-05-21 06:43:39</sys_updated_on>
         <table>x_1383179_tradenow_charity_list</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

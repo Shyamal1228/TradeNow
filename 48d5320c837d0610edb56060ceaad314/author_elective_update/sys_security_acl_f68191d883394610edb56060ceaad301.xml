@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <condition/>
+        <description>Default access control on x_1383179_tradenow_donation_history</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_1383179_tradenow_donation_history</name>
+        <operation display_value="write">write</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-22 04:52:18</sys_created_on>
+        <sys_id>f68191d883394610edb56060ceaad301</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383179_tradenow_donation_history</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_security_acl_f68191d883394610edb56060ceaad301</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-22 04:52:18</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_security_acl_f68191d883394610edb56060ceaad301</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Default access control on x_1383179_tradenow_donation_history</description><local_or_existing>Local</local_or_existing><name>x_1383179_tradenow_donation_history</name><operation display_value="write">write</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-04-22 04:52:18</sys_created_on><sys_id>f68191d883394610edb56060ceaad301</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1383179_tradenow_donation_history</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_security_acl_f68191d883394610edb56060ceaad301</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-04-22 04:52:18</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+        <payload_hash>-1676956124</payload_hash>
+        <record_name>x_1383179_tradenow_donation_history</record_name>
+        <reverted_from/>
+        <source>f62a07c083fd0610edb56060ceaad34f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-04-22 04:52:18</sys_created_on>
+        <sys_id>be8191d883394610edb56060ceaad303</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f0425d38a0000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-04-22 04:52:18</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>f28191d87e394610b89534e7ef843403</update_guid>
+        <update_guid_history>f28191d87e394610b89534e7ef843403:-1676956124</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-20 20:00:10</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>2e98a428f9ef4f6c9bbf6aa93a1210c4</sys_id>
+        <sys_metadata>f68191d883394610edb56060ceaad301</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383179_tradenow_donation_history</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="">b68191d883394610edb56060ceaad319</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_security_acl_f68191d883394610edb56060ceaad301</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_f68191d883394610edb56060ceaad301">be8191d883394610edb56060ceaad303</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-20 20:00:10</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

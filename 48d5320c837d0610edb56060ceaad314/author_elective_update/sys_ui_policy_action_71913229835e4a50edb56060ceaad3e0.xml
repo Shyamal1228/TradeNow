@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>transaction_time</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-21 05:36:13</sys_created_on>
+        <sys_id>71913229835e4a50edb56060ceaad3e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>transaction_time</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_ui_policy_action_71913229835e4a50edb56060ceaad3e0</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-21 05:36:13</sys_updated_on>
+        <table>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</table>
+        <ui_policy display_value="UI Policy to make  transaction time visible">9951b2a5835e4a50edb56060ceaad3fc</ui_policy>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_ui_policy_action_71913229835e4a50edb56060ceaad3e0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action"><sys_ui_policy_action action="INSERT_OR_UPDATE"><cleared>false</cleared><disabled>ignore</disabled><field>transaction_time</field><mandatory>ignore</mandatory><sys_class_name>sys_ui_policy_action</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-21 05:36:13</sys_created_on><sys_id>71913229835e4a50edb56060ceaad3e0</sys_id><sys_mod_count>0</sys_mod_count><sys_name>transaction_time</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_ui_policy_action_71913229835e4a50edb56060ceaad3e0</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-21 05:36:13</sys_updated_on><table>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</table><ui_policy display_value="UI Policy to make  transaction time visible">9951b2a5835e4a50edb56060ceaad3fc</ui_policy><visible>true</visible></sys_ui_policy_action></record_update>]]></payload>
+        <payload_hash>-1315804721</payload_hash>
+        <record_name>transaction_time</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-21 05:36:13</sys_created_on>
+        <sys_id>70b1b229835e4a50edb56060ceaad3d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f99a673b30000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-21 05:36:13</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>b4b1b229b25e4a509034897b89e95cd2</update_guid>
+        <update_guid_history>b4b1b229b25e4a509034897b89e95cd2:-1315804721</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-21 06:07:59</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>681c81bd86ec4d079efddec8b6620949</sys_id>
+        <sys_metadata>71913229835e4a50edb56060ceaad3e0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>transaction_time</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="">9951b2a5835e4a50edb56060ceaad3fc</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_71913229835e4a50edb56060ceaad3e0</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_71913229835e4a50edb56060ceaad3e0">70b1b229835e4a50edb56060ceaad3d3</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-21 06:07:59</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

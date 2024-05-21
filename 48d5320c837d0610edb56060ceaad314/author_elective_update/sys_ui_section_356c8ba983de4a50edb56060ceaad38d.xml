@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="Charity Coordinator" section_id="356c8ba983de4a50edb56060ceaad38d" sys_domain="global" table="x_1383179_tradenow_charity_list" version="3" view="admin_view">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>0</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-21 07:34:11</sys_created_on>
+            <sys_id>a4bc03a983de4a50edb56060ceaad350</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-21 07:34:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>website</element>
+            <position>1</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-21 07:34:11</sys_created_on>
+            <sys_id>28bc03a983de4a50edb56060ceaad350</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-21 07:34:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>charity_name</element>
+            <position>2</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-21 07:34:11</sys_created_on>
+            <sys_id>a8bc03a983de4a50edb56060ceaad350</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-21 07:34:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>phone</element>
+            <position>3</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-21 07:34:11</sys_created_on>
+            <sys_id>2cbc03a983de4a50edb56060ceaad350</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-21 07:34:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_reference_1</element>
+            <position>4</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-21 07:34:11</sys_created_on>
+            <sys_id>acbc03a983de4a50edb56060ceaad350</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-21 07:34:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>email</element>
+            <position>5</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-21 07:34:11</sys_created_on>
+            <sys_id>20bc03a983de4a50edb56060ceaad351</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-21 07:34:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>description</element>
+            <position>6</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-21 07:34:11</sys_created_on>
+            <sys_id>a0bc03a983de4a50edb56060ceaad351</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-21 07:34:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>donation_link</element>
+            <position>7</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-21 07:34:11</sys_created_on>
+            <sys_id>24bc03a983de4a50edb56060ceaad351</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-21 07:34:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>qr_code</element>
+            <position>8</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-21 07:34:11</sys_created_on>
+            <sys_id>a4bc03a983de4a50edb56060ceaad351</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-21 07:34:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption>Charity Coordinator</caption>
+            <header>false</header>
+            <name>x_1383179_tradenow_charity_list</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-05-21 07:32:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>356c8ba983de4a50edb56060ceaad38d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383179_tradenow_charity_list</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+            <sys_update_name>sys_ui_section_356c8ba983de4a50edb56060ceaad38d</sys_update_name>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-21 07:32:54</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Admin View" name="admin_view">b2dc6c709f002200f45c7b9ac42e70e5</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_ui_section_356c8ba983de4a50edb56060ceaad38d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="Charity Coordinator" section_id="356c8ba983de4a50edb56060ceaad38d" sys_domain="global" table="x_1383179_tradenow_charity_list" version="3" view="admin_view"><sys_ui_element action="INSERT_OR_UPDATE"><element>number</element><position>0</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-21 07:34:11</sys_created_on><sys_id>a4bc03a983de4a50edb56060ceaad350</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-21 07:34:11</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>website</element><position>1</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-21 07:34:11</sys_created_on><sys_id>28bc03a983de4a50edb56060ceaad350</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-21 07:34:11</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>charity_name</element><position>2</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-21 07:34:11</sys_created_on><sys_id>a8bc03a983de4a50edb56060ceaad350</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-21 07:34:11</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>phone</element><position>3</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-21 07:34:11</sys_created_on><sys_id>2cbc03a983de4a50edb56060ceaad350</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-21 07:34:11</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>u_reference_1</element><position>4</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-21 07:34:11</sys_created_on><sys_id>acbc03a983de4a50edb56060ceaad350</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-21 07:34:11</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>email</element><position>5</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-21 07:34:11</sys_created_on><sys_id>20bc03a983de4a50edb56060ceaad351</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-21 07:34:11</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>description</element><position>6</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-21 07:34:11</sys_created_on><sys_id>a0bc03a983de4a50edb56060ceaad351</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-21 07:34:11</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>donation_link</element><position>7</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-21 07:34:11</sys_created_on><sys_id>24bc03a983de4a50edb56060ceaad351</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-21 07:34:11</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>qr_code</element><position>8</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-21 07:34:11</sys_created_on><sys_id>a4bc03a983de4a50edb56060ceaad351</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Charity Coordinator" display_value="Charity Coordinator" name="x_1383179_tradenow_charity_list" sys_domain="global" view="b2dc6c709f002200f45c7b9ac42e70e5">356c8ba983de4a50edb56060ceaad38d</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-21 07:34:11</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption>Charity Coordinator</caption><header>false</header><name>x_1383179_tradenow_charity_list</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-05-21 07:32:54</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>356c8ba983de4a50edb56060ceaad38d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1383179_tradenow_charity_list</sys_name><sys_overrides/><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_ui_section_356c8ba983de4a50edb56060ceaad38d</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-21 07:32:54</sys_updated_on><sys_user/><title>false</title><view display_value="Admin View" name="admin_view">b2dc6c709f002200f45c7b9ac42e70e5</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>-924720383</payload_hash>
+        <record_name>Charity</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-21 07:34:11</sys_created_on>
+        <sys_id>6cbc03a983de4a50edb56060ceaad353</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18f9a1272c30000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-21 07:34:11</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>e0bc03a94cde4a500257e97ec606ea53</update_guid>
+        <update_guid_history>e0bc03a94cde4a500257e97ec606ea53:-924720383</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-21 07:37:11</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>138297c2896841608ee3f74cb13cc269</sys_id>
+        <sys_metadata>356c8ba983de4a50edb56060ceaad38d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Charity Coordinator</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Charity">77328f0883bd0610edb56060ceaad38b</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_ui_section_356c8ba983de4a50edb56060ceaad38d</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_356c8ba983de4a50edb56060ceaad38d">6cbc03a983de4a50edb56060ceaad353</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-21 07:37:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

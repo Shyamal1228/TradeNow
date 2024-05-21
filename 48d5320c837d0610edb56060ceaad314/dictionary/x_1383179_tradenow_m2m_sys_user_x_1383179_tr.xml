@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="c0c41e4d838a4610edb56060ceaad3ca" label="x_1383179_tradenow_m2m_Users_Charities" max_length="40" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" type="collection">
-        <element label="Donation Amount" max_length="40" name="donation_amount" type="float"/>
+    <element db_object_id="c0c41e4d838a4610edb56060ceaad3ca" label="Donation History" max_length="40" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" type="collection">
+        <element label="Checked" max_length="40" name="checked" type="boolean"/>
+        <element label="Donation amount" max_length="20" name="donation_amount" type="currency"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Transaction id" max_length="40" name="number" read_only="true" type="string"/>
-        <element attributes="encode_utf8=false" label="Users" max_length="32" name="sys_user" reference="sys_user" type="reference"/>
+        <element label="Payment proof" max_length="40" name="payment_proof" type="user_image"/>
+        <element attributes="encode_utf8=false" default="javascript: gs.getUserID();" label="User" max_length="32" name="sys_user" reference="sys_user" type="reference"/>
         <element label="Transaction time" max_length="40" name="transaction_time" type="glide_date_time"/>
-        <element attributes="encode_utf8=false" label="Charities" max_length="32" name="x_1383179_tradenow_charity_list" reference="x_1383179_tradenow_charity_list" type="reference"/>
+        <element attributes="encode_utf8=false" label="Charity organization" max_length="32" name="x_1383179_tradenow_charity_list" reference="x_1383179_tradenow_charity_list" type="reference"/>
         <index name="index">
             <element name="sys_user"/>
         </index>

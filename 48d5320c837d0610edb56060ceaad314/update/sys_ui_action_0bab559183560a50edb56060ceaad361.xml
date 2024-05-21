@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name/>
+        <active>true</active>
+        <client>false</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>current.amount&gt;0 &amp;&amp; add_payment_proof</condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Confirm Donation</name>
+        <onclick/>
+        <order>100</order>
+        <script><![CDATA[var DonationTable = new GlideRecord('x_1383179_tradenow_m2m_sys_user_x_1383179_tr');
+		DonationTable.initialize();
+		DonationTable.sys_user = gs.getUserID();
+		DonationTable.x_1383179_tradenow_charity_list = current.sys_id;
+		DonationTable.donation_amount=current.amount;
+		DonationTable.payment_proof=current.add_payment_proof;
+		DonationTable.transaction_time=new GlideDateTime();
+		DonationTable.insert();
+		var gr = new GlideRecord('x_1383179_tradenow_charity_list');
+		var fieldValue = ' ';
+        if (gr.get(current.sys_id)) {
+            gr.amount = '';
+			gr.setValue('add_payment_proof', fieldValue);
+			
+            gr.update();
+        }
+		// current.payment.add_payment_proof='';
+		// current.payment.amount='';
+		action.setRedirectURL(current);]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-20 05:02:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0bab559183560a50edb56060ceaad361</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>Confirm Donation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_ui_action_0bab559183560a50edb56060ceaad361</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-20 08:46:08</sys_updated_on>
+        <table>x_1383179_tradenow_charity_list</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

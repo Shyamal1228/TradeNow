@@ -14,34 +14,6 @@
             <sys_updated_by>shyamal</sys_updated_by>
             <sys_updated_on>2024-04-21 18:49:05</sys_updated_on>
         </sys_ui_form_section>
-        <sys_ui_form_section action="INSERT_OR_UPDATE">
-            <position>1</position>
-            <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-04-21 18:49:05</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_id>6e770f8083fd0610edb56060ceaad394</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_overrides/>
-            <sys_ui_form display_value="x_1383179_tradenow_charity_list" name="x_1383179_tradenow_charity_list" sys_domain="global" view="Default view">de770f8083fd0610edb56060ceaad390</sys_ui_form>
-            <sys_ui_section caption="Payment Mode" display_value="Payment Mode" name="x_1383179_tradenow_charity_list" sys_domain="global" view="Default view">de770f8083fd0610edb56060ceaad38f</sys_ui_section>
-            <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-04-21 18:49:05</sys_updated_on>
-        </sys_ui_form_section>
-        <sys_ui_form_section action="INSERT_OR_UPDATE">
-            <position>2</position>
-            <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-02 05:02:13</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_id>adb3b0e383bd8210edb56060ceaad30f</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_overrides/>
-            <sys_ui_form display_value="x_1383179_tradenow_charity_list" name="x_1383179_tradenow_charity_list" sys_domain="global" view="Default view">de770f8083fd0610edb56060ceaad390</sys_ui_form>
-            <sys_ui_section caption="Payment Proof" display_value="Payment Proof" name="x_1383179_tradenow_charity_list" sys_domain="global" view="Default view">51b3b0e383bd8210edb56060ceaad30c</sys_ui_section>
-            <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-02 05:02:13</sys_updated_on>
-        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_1383179_tradenow_charity_list</name>
             <roles/>

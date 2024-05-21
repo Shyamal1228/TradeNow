@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_1383179_tradenow_m2m_sys_user_x_1383179_tr">checked=true^status=verified^EQ<item endquery="false" field="checked" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item display_value="Verified" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="verified"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>BR to add total amount to charities</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+    var userGr = new GlideRecord('x_1383179_tradenow_charity_list');
+    userGr.get(current.getValue('x_1383179_tradenow_charity_list'));
+    var amount = current.donation_amount;
+    var numberConvert = Number(amount);
+    var prevAmount = Number(userGr.total_amount_raised);
+    var newAmount = numberConvert + prevAmount;
+    // gs.info('total: ' + newAmount);
+    userGr.total_amount_raised = String(newAmount);
+    userGr.update();
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-21 10:57:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5e793bad83928a50edb56060ceaad3c8</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>BR to add total amount to charities</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_5e793bad83928a50edb56060ceaad3c8</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-21 17:50:42</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=5e793bad83928a50edb56060ceaad3c8"/>
+</record_update>

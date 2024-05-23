@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="Claimer Details" section_id="188aefb283b50210edb56060ceaad344" sys_domain="global" table="x_1383179_tradenow_item_list" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>claimer</element>
+            <position>0</position>
+            <sys_created_by>jagriti</sys_created_by>
+            <sys_created_on>2024-05-23 05:44:18</sys_created_on>
+            <sys_id>6eb68dd6839a0210edb56060ceaad34b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Claimer Details" display_value="Claimer Details" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">188aefb283b50210edb56060ceaad344</sys_ui_section>
+            <sys_updated_by>jagriti</sys_updated_by>
+            <sys_updated_on>2024-05-23 05:44:18</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>1</position>
+            <sys_created_by>jagriti</sys_created_by>
+            <sys_created_on>2024-05-23 05:44:18</sys_created_on>
+            <sys_id>eeb68dd6839a0210edb56060ceaad34b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Claimer Details" display_value="Claimer Details" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">188aefb283b50210edb56060ceaad344</sys_ui_section>
+            <sys_updated_by>jagriti</sys_updated_by>
+            <sys_updated_on>2024-05-23 05:44:18</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>location</element>
+            <position>2</position>
+            <sys_created_by>jagriti</sys_created_by>
+            <sys_created_on>2024-05-23 05:44:18</sys_created_on>
+            <sys_id>62b68dd6839a0210edb56060ceaad34c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Claimer Details" display_value="Claimer Details" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">188aefb283b50210edb56060ceaad344</sys_ui_section>
+            <sys_updated_by>jagriti</sys_updated_by>
+            <sys_updated_on>2024-05-23 05:44:18</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption>Claimer Details</caption>
+            <header>false</header>
+            <name>x_1383179_tradenow_item_list</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-04-30 10:25:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>188aefb283b50210edb56060ceaad344</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_name>x_1383179_tradenow_item_list</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+            <sys_update_name>sys_ui_section_188aefb283b50210edb56060ceaad344</sys_update_name>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-05-08 18:31:36</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_ui_section_188aefb283b50210edb56060ceaad344</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="Claimer Details" section_id="188aefb283b50210edb56060ceaad344" sys_domain="global" table="x_1383179_tradenow_item_list" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>claimer</element><position>0</position><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-05-23 05:44:18</sys_created_on><sys_id>6eb68dd6839a0210edb56060ceaad34b</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Claimer Details" display_value="Claimer Details" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">188aefb283b50210edb56060ceaad344</sys_ui_section><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-05-23 05:44:18</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>1</position><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-05-23 05:44:18</sys_created_on><sys_id>eeb68dd6839a0210edb56060ceaad34b</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Claimer Details" display_value="Claimer Details" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">188aefb283b50210edb56060ceaad344</sys_ui_section><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-05-23 05:44:18</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>location</element><position>2</position><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-05-23 05:44:18</sys_created_on><sys_id>62b68dd6839a0210edb56060ceaad34c</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Claimer Details" display_value="Claimer Details" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">188aefb283b50210edb56060ceaad344</sys_ui_section><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-05-23 05:44:18</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption>Claimer Details</caption><header>false</header><name>x_1383179_tradenow_item_list</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-04-30 10:25:25</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>188aefb283b50210edb56060ceaad344</sys_id><sys_mod_count>2</sys_mod_count><sys_name>x_1383179_tradenow_item_list</sys_name><sys_overrides/><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_ui_section_188aefb283b50210edb56060ceaad344</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-05-08 18:31:36</sys_updated_on><sys_user/><title>false</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>1878258696</payload_hash>
+        <record_name>Item</record_name>
+        <reverted_from/>
+        <source>94111d0783468e10edb56060ceaad3a5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-23 05:44:18</sys_created_on>
+        <sys_id>22b68dd6839a0210edb56060ceaad34e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fa3fa90040000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-23 05:44:18</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>e6b68dd6129a0210e2533670f25b064d</update_guid>
+        <update_guid_history>e6b68dd6129a0210e2533670f25b064d:1878258696,1d7649d6589a02108096eed18144ff7a:993312844,986685d6849a0210e03c2a0bf71795e3:-1379145784,8446c1d6a19a0210377300cfa66f07ea:1878258696,bc2db3fd6b16ca509356d42f6f0da9e5:993312844,88866aa9e0420a1093e691bfc7ce9e5f:-160327414,86d1ee250d420a10c58db5c5d050de52:-1534893106,705f98ad4ec6c610f68937318d0b3456:-160327414,848dd42d2dc6c610873e224ef26b8c04:904076548,4c98e0455ec24610a35fe023a3e3b2d6:-160327414,0ac724059bc24610a343755491d1e80b:-1530273210,6297a841abc246108b9ae7e6660842df:-2113052835,7fd5f087e6f902105aa48dbcfe85df92:1301458107,5965b847c7f902107477788a3d40375a:-160327414,8115344762f902106a5cf780d67b2a2d:-408864324,e08aefb2f3b5021045bbc48bda4e865c:1301458107</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-23 05:45:59</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>5f83e7d117344268bc324077d76e75b1</sys_id>
+        <sys_metadata>188aefb283b50210edb56060ceaad344</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Claimer Details</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Item">205187c883bd0610edb56060ceaad3cf</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_ui_section_188aefb283b50210edb56060ceaad344</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_188aefb283b50210edb56060ceaad344">22b68dd6839a0210edb56060ceaad34e</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-23 05:45:59</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

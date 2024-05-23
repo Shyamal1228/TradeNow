@@ -4,8 +4,13 @@
         <element label="Donation amount" max_length="20" name="donation_amount" type="currency"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Transaction id" max_length="40" name="number" read_only="true" type="string"/>
         <element label="Payment proof" max_length="40" name="payment_proof" type="user_image"/>
-        <element choice="3" default="unverified" label="Status" max_length="40" name="status" read_only="true" type="choice">
-            <choice/>
+        <element choice="3" default="draft" label="Status" max_length="40" name="status" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Unverified" sequence="0" value="unverified"/>
+                <element inactive_on_update="false" label="Verified" sequence="1" value="verified"/>
+                <element inactive_on_update="false" label="Rejected" sequence="2" value="rejected"/>
+                <element inactive_on_update="false" label="Draft" sequence="3" value="draft"/>
+            </choice>
         </element>
         <element attributes="encode_utf8=false" default="javascript: gs.getUserID();" label="User" max_length="32" name="sys_user" reference="sys_user" type="reference"/>
         <element label="Transaction time" max_length="40" name="transaction_time" type="glide_date_time"/>

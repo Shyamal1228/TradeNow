@@ -13,7 +13,7 @@
         <mobile_title>All</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
         <name>x_1383179_tradenow_charity_list</name>
-        <order>11000</order>
+        <order>1100</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>
@@ -24,15 +24,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7183d2f8830a0610edb56060ceaad36d</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>All</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_app_module_7183d2f8830a0610edb56060ceaad36d</sys_update_name>
-        <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-07 10:32:52</sys_updated_on>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-21 15:17:00</sys_updated_on>
         <timeline_page/>
         <title>All</title>
         <uncancelable>false</uncancelable>

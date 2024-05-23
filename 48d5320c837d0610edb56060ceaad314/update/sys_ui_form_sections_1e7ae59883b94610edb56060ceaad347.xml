@@ -3,30 +3,16 @@
         <sys_ui_form_section action="INSERT_OR_UPDATE">
             <position>0</position>
             <sys_created_by>jagriti</sys_created_by>
-            <sys_created_on>2024-04-30 06:47:28</sys_created_on>
+            <sys_created_on>2024-05-22 05:52:48</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>6b987af683b10210edb56060ceaad3d6</sys_id>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_id>d11f33b18356ca50edb56060ceaad3f5</sys_id>
+            <sys_mod_count>1</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="x_1383179_tradenow_item_list" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">1e7ae59883b94610edb56060ceaad347</sys_ui_form>
-            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">a3987af683b10210edb56060ceaad379</sys_ui_section>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>jagriti</sys_updated_by>
-            <sys_updated_on>2024-04-30 06:47:28</sys_updated_on>
-        </sys_ui_form_section>
-        <sys_ui_form_section action="INSERT_OR_UPDATE">
-            <position>1</position>
-            <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-04-30 10:25:25</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_id>5c8aefb283b50210edb56060ceaad346</sys_id>
-            <sys_mod_count>2</sys_mod_count>
-            <sys_overrides/>
-            <sys_ui_form display_value="x_1383179_tradenow_item_list" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">1e7ae59883b94610edb56060ceaad347</sys_ui_form>
-            <sys_ui_section caption="Claimer Details" display_value="Claimer Details" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">188aefb283b50210edb56060ceaad344</sys_ui_section>
-            <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-08 05:38:24</sys_updated_on>
+            <sys_updated_on>2024-05-22 05:52:48</sys_updated_on>
         </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_1383179_tradenow_item_list</name>

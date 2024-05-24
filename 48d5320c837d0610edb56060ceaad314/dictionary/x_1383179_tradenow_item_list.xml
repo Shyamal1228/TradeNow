@@ -5,7 +5,7 @@
         <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Claimer" max_length="32" name="claimer" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element label="Claimer Email" max_length="40" name="claimer_email" type="string"/>
         <element label="Claimer id" max_length="500" name="claimer_id" type="string"/>
-        <element label="Claimer Name" max_length="40" name="claimer_name" type="string"/>
+        <element label="Claimer Name" max_length="32" name="claimer_name" reference="sys_user" type="reference"/>
         <element choice="1" label="Condition" max_length="40" name="condition" type="choice">
             <choice>
                 <element inactive_on_update="false" label="New" sequence="0" value="new"/>
@@ -44,9 +44,12 @@
             <element name="claimer"/>
         </index>
         <index name="index3">
-            <element name="lister_name"/>
+            <element name="claimer_name"/>
         </index>
         <index name="index4">
+            <element name="lister_name"/>
+        </index>
+        <index name="index5">
             <element name="location"/>
         </index>
     </element>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
     <sys_ui_policy action="INSERT_OR_UPDATE">
-        <active>true</active>
+        <active>false</active>
         <conditions table="x_1383179_tradenow_m2m_sys_user_x_1383179_tr">status=verified^ORstatus=rejected^ORstatus=unverified^EQ<item display_value="Verified" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="verified"/>
             <item display_value="Rejected" endquery="false" field="status" goto="false" newquery="false" operator="=" or="true" value="rejected"/>
             <item display_value="Unverified" endquery="false" field="status" goto="false" newquery="false" operator="=" or="true" value="unverified"/>
@@ -30,15 +30,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>dc60951683da0210edb56060ceaad3dd</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Make fields read only when the record is inserted</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_ui_policy_dc60951683da0210edb56060ceaad3dd</sys_update_name>
-        <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-23 06:35:14</sys_updated_on>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-24 04:42:18</sys_updated_on>
         <table>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</table>
         <ui_type>0</ui_type>
         <view/>

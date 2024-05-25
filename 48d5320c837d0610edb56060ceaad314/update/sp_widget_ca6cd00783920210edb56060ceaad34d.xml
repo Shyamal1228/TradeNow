@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.carousel-inner .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  text-align: left;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.carousel-caption h1 {
+  margin: 0;
+}
+
+.carousel-caption .button-container,h1 {
+  display: flex;
+
+  justify-content: flex-start;
+}
+
+.carousel-caption .button-container {
+  margin-top: 25px;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 50px;
+}
+
+.shade{
+  box-shadow: inset 0 0 0 2000px rgba(41, 62, 64, 0.3);
+}
+
+// button style
+
+.bn3637 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+  text-transform: uppercase;
+}
+
+.bn37 {
+  border-color: transparent;
+  background-color: #fff;
+  color: #000;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+  
+.bn37:hover {
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>homepage_carousel</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Homepage carousel</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-25 10:34:50</sys_created_on>
+        <sys_id>ca6cd00783920210edb56060ceaad34d</sys_id>
+        <sys_mod_count>108</sys_mod_count>
+        <sys_name>Homepage carousel</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_ca6cd00783920210edb56060ceaad34d</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-25 13:46:25</sys_updated_on>
+        <template><![CDATA[<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="homepage carousel 1.jpg" alt="...">
+            <div class="carousel-caption">
+               <h1 class="poppins-bold">Your Donation <br>
+									is Others Inspiration
+							</h1>
+                
+              <div class="button-container">
+                    <a href="#" class="bn3637 bn37">Donate now</a>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="homepage carousel 2.jpg" alt="...">
+            <div class="carousel-caption">
+                 <h1 class="poppins-bold">Giveaway An <br>Item
+							</h1>
+                <div class="button-container">
+                    <a href="https://dev245733.service-now.com/tradenow?id=add_item" class="bn3637 bn37">Giveaway now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

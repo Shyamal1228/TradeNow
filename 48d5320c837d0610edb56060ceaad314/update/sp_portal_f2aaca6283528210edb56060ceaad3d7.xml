@@ -6,7 +6,7 @@
         <enable_ais>false</enable_ais>
         <enable_favorites>false</enable_favorites>
         <hide_portal_name>false</hide_portal_name>
-        <homepage display_value="tr_index">0229dae283928210edb56060ceaad3cc</homepage>
+        <homepage display_value="tradenow_index">b71f208f83d20210edb56060ceaad337</homepage>
         <icon/>
         <kb_knowledge_base/>
         <kb_knowledge_page/>
@@ -26,14 +26,14 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-24 05:22:20</sys_created_on>
         <sys_id>f2aaca6283528210edb56060ceaad3d7</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Tradenow Portal</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_portal_f2aaca6283528210edb56060ceaad3d7</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-24 06:34:54</sys_updated_on>
+        <sys_updated_on>2024-05-25 11:57:50</sys_updated_on>
         <theme display_value="La Jolla">a7a6e78277002300a6e592718a10617a</theme>
         <title>Tradenow Portal</title>
         <ts_index_group/>

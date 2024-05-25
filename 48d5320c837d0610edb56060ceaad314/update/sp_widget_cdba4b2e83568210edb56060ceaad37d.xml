@@ -47,21 +47,21 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-24 09:59:24</sys_created_on>
         <sys_id>cdba4b2e83568210edb56060ceaad37d</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>Item List</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_cdba4b2e83568210edb56060ceaad37d</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-24 11:06:32</sys_updated_on>
+        <sys_updated_on>2024-05-25 08:57:43</sys_updated_on>
         <template><![CDATA[<div class="row">
-  <div class="col-sm-6 col-md-4" ng-repeat="item in data.items">
+  <div class="col-sm-4 col-md-3" ng-repeat="item in data.items">
     <div class="thumbnail">
-      <img src={{item.image_url}} alt="...">
+      <img src={{item.image_url}} width="60%" alt="...">
       <div class="caption">
         <h3>{{item.name}}</h3>
-        <p>{{item.description}}</p>
+        <dl>{{item.description}}</dl>
         <p><a href="#" class="btn btn-primary" role="button">View Item</a></p>
       </div>
     </div>

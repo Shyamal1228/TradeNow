@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	c.loadFile = function(event) {
+    var reader = new FileReader();
+    reader.onload = function() {
+      var image = document.getElementById('output');
+      image.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+};]]></client_script>
         <controller_as>c</controller_as>
         <css/>
         <data_table>sp_instance</data_table>
@@ -23,32 +34,34 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-24 07:48:51</sys_created_on>
         <sys_id>f4dce2aa83d28210edb56060ceaad307</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>42</sys_mod_count>
         <sys_name>Add item widget</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_f4dce2aa83d28210edb56060ceaad307</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-24 08:45:48</sys_updated_on>
+        <sys_updated_on>2024-05-25 14:42:41</sys_updated_on>
         <template><![CDATA[<form class="form-horizontal">
   <h3>Add an Item</h3>
   <div class="form-group">
     <div class="col-md-12">
-      <input id="item_name" name="item_name" type="text" placeholder="Item Name" class="form-control input-md">
+      <label>Item Name </label>
+      <input id="item_name" name="item_name" type="text" placeholder="Enter item name" class="form-control input-md">
     </div>
   </div>
   
   <div class="form-group">
     <div class="col-md-12">
-      <input id="item_description" name="item_description" type="text" placeholder="Item Description" class="form-control input-md">
+      <label>Item Description </label>
+      <input id="item_description" name="item_description" type="text" placeholder="Enter item description" class="form-control input-md">
     </div>
   </div>
   
   <div class="form-group">
     <div class="col-md-12">
+      <label>Select Condition</label>
       <select id="select_condition" name="select_condition" class="form-control">
-        <option value="none">Select Condition</option>
         <option value="new">New</option>
         <option value="used">Used</option>
       </select>
@@ -57,8 +70,8 @@
   
   <div class="form-group">
     <div class="col-md-12">
+      <label>Select Category</label>
       <select id="select_category" name="select_category" class="form-control">
-        <option value="none">Select Category</option>
         <option value="art">Art and craft supplies</option>
         <option value="books">Books</option>
         <option value="clothing">Clothing and Accessories</option>
@@ -74,7 +87,12 @@
   
   <div class="form-group">
     <div class="col-md-12">
-    <label>Select a file: <input type="file" name="myFile"> </label>
+      <label>Upload Image<input type="file" accept="image/*" onchange="angular.element(this).scope().c.loadFile(event)"></label>
+  
+  <!-- Image element to display the uploaded image -->
+  <img id="output" style="max-width: 100%; height: auto;"/>
+
+    <!-- <label>Select a file: <input type="file" name="img" accept="image/*" > </label> -->
     </div>
   </div>
   

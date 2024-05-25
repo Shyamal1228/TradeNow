@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>add_item_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Add item widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-24 07:48:51</sys_created_on>
+        <sys_id>f4dce2aa83d28210edb56060ceaad307</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Add item widget</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_f4dce2aa83d28210edb56060ceaad307</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-24 08:45:48</sys_updated_on>
+        <template><![CDATA[<form class="form-horizontal">
+  <h3>Add an Item</h3>
+  <div class="form-group">
+    <div class="col-md-12">
+      <input id="item_name" name="item_name" type="text" placeholder="Item Name" class="form-control input-md">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-md-12">
+      <input id="item_description" name="item_description" type="text" placeholder="Item Description" class="form-control input-md">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-md-12">
+      <select id="select_condition" name="select_condition" class="form-control">
+        <option value="none">Select Condition</option>
+        <option value="new">New</option>
+        <option value="used">Used</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-md-12">
+      <select id="select_category" name="select_category" class="form-control">
+        <option value="none">Select Category</option>
+        <option value="art">Art and craft supplies</option>
+        <option value="books">Books</option>
+        <option value="clothing">Clothing and Accessories</option>
+        <option value="electronics">Electronics</option>
+        <option value="furniture">Furniture</option>
+        <option value="home">Home and Kitchen Appliances</option>
+        <option value="shoes">Shoes</option>
+        <option value="toys">Toys and Games</option>
+        <option value="watch">Watch</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-md-12">
+    <label>Select a file: <input type="file" name="myFile"> </label>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-md-4">
+      <button id="button" name="submit" class="btn btn-primary"> Add </button>
+    </div>
+  </div>
+  
+  
+</form>]]></template>
+    </sp_widget>
+</record_update>

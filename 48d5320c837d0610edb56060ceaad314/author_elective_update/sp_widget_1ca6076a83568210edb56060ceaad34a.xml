@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script/>
+        <controller_as>c</controller_as>
+        <css>.setWidth{
+  width:30%;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>item_list</id>
+        <internal>false</internal>
+        <link/>
+        <name>Item list</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+		data.load_config = options.load_config;
+		if (data.load_config === "async" && !input)
+			return;
+		data.quickLinkHeader = gs.getMessage(options.title);
+		data.instanceId = $sp.getDisplayValue("sys_id");
+		var quickLinkId = $sp.getParameter("quick_link_id");
+		var pageId = $sp.getParameter("id");
+
+		setOptions(options);
+		if(quickLinkId && pageId == "quick_link_preview") {
+			data.json_data = new sn_ex_sp.QuickLinkUtil().fetchQuicklinksForHomePage(quickLinkId);
+		} else if(options.quick_links) {
+			data.json_data = new sn_ex_sp.QuickLinkUtil().fetchQuicklinksForHomePage(options.quick_links);
+		}
+
+		function setOptions(customOptions) {
+			var cardSizes = { "Small": "card-small", "Medium": "card-medium" };
+
+			data.card_type = customOptions.card_type;
+			data.card_size = cardSizes[customOptions.card_size];
+			data.text_alignment = customOptions.text_alignment;
+
+			data.show_background = customOptions.show_background;
+			data.show_icon = customOptions.show_icon;
+			data.show_description = customOptions.show_description;
+
+			data.background_color = customOptions.background_color;
+			data.background_hexcode = customOptions.background_hexcode;
+
+			data.icon_background_color = customOptions.icon_background_color;
+			data.icon_background_hexcode = customOptions.icon_background_hexcode;
+
+			data.show_text_overlay = customOptions.show_text_overlay;
+			data.text_overlay_hexcode = customOptions.text_overlay_hexcode;
+
+			data.text_color = customOptions.text_color;
+			data.text_color_hexcode = customOptions.text_color_hexcode;
+			data.showEmptyState = options.show_empty_state;
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-24 09:41:35</sys_created_on>
+        <sys_id>1ca6076a83568210edb56060ceaad34a</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Item list</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_1ca6076a83568210edb56060ceaad34a</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-24 09:56:14</sys_updated_on>
+        <template><![CDATA[<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="tradenow_homepage_background_image.jpg" alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>z
+  
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="tradenow_homepage_background_image.jpg" alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="tradenow_homepage_background_image.jpg" alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sp_widget_1ca6076a83568210edb56060ceaad34a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script/&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.setWidth{
+  width:30%;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;item_list&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link/&gt;&lt;name&gt;Item list&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+		data.load_config = options.load_config;
+		if (data.load_config === "async" &amp;&amp; !input)
+			return;
+		data.quickLinkHeader = gs.getMessage(options.title);
+		data.instanceId = $sp.getDisplayValue("sys_id");
+		var quickLinkId = $sp.getParameter("quick_link_id");
+		var pageId = $sp.getParameter("id");
+
+		setOptions(options);
+		if(quickLinkId &amp;&amp; pageId == "quick_link_preview") {
+			data.json_data = new sn_ex_sp.QuickLinkUtil().fetchQuicklinksForHomePage(quickLinkId);
+		} else if(options.quick_links) {
+			data.json_data = new sn_ex_sp.QuickLinkUtil().fetchQuicklinksForHomePage(options.quick_links);
+		}
+
+		function setOptions(customOptions) {
+			var cardSizes = { "Small": "card-small", "Medium": "card-medium" };
+
+			data.card_type = customOptions.card_type;
+			data.card_size = cardSizes[customOptions.card_size];
+			data.text_alignment = customOptions.text_alignment;
+
+			data.show_background = customOptions.show_background;
+			data.show_icon = customOptions.show_icon;
+			data.show_description = customOptions.show_description;
+
+			data.background_color = customOptions.background_color;
+			data.background_hexcode = customOptions.background_hexcode;
+
+			data.icon_background_color = customOptions.icon_background_color;
+			data.icon_background_hexcode = customOptions.icon_background_hexcode;
+
+			data.show_text_overlay = customOptions.show_text_overlay;
+			data.text_overlay_hexcode = customOptions.text_overlay_hexcode;
+
+			data.text_color = customOptions.text_color;
+			data.text_color_hexcode = customOptions.text_color_hexcode;
+			data.showEmptyState = options.show_empty_state;
+	}
+
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-24 09:41:35&lt;/sys_created_on&gt;&lt;sys_id&gt;1ca6076a83568210edb56060ceaad34a&lt;/sys_id&gt;&lt;sys_mod_count&gt;8&lt;/sys_mod_count&gt;&lt;sys_name&gt;Item list&lt;/sys_name&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_1ca6076a83568210edb56060ceaad34a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-24 09:56:14&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="row"&gt;
+  &lt;div class="col-sm-6 col-md-4"&gt;
+    &lt;div class="thumbnail"&gt;
+      &lt;img src="tradenow_homepage_background_image.jpg" alt="..."&gt;
+      &lt;div class="caption"&gt;
+        &lt;h3&gt;Thumbnail label&lt;/h3&gt;
+        &lt;p&gt;...&lt;/p&gt;
+        &lt;p&gt;&lt;a href="#" class="btn btn-primary" role="button"&gt;Button&lt;/a&gt; &lt;a href="#" class="btn btn-default" role="button"&gt;Button&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;z
+  
+  &lt;div class="col-sm-6 col-md-4"&gt;
+    &lt;div class="thumbnail"&gt;
+      &lt;img src="tradenow_homepage_background_image.jpg" alt="..."&gt;
+      &lt;div class="caption"&gt;
+        &lt;h3&gt;Thumbnail label&lt;/h3&gt;
+        &lt;p&gt;...&lt;/p&gt;
+        &lt;p&gt;&lt;a href="#" class="btn btn-primary" role="button"&gt;Button&lt;/a&gt; &lt;a href="#" class="btn btn-default" role="button"&gt;Button&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="col-sm-6 col-md-4"&gt;
+    &lt;div class="thumbnail"&gt;
+      &lt;img src="tradenow_homepage_background_image.jpg" alt="..."&gt;
+      &lt;div class="caption"&gt;
+        &lt;h3&gt;Thumbnail label&lt;/h3&gt;
+        &lt;p&gt;...&lt;/p&gt;
+        &lt;p&gt;&lt;a href="#" class="btn btn-primary" role="button"&gt;Button&lt;/a&gt; &lt;a href="#" class="btn btn-default" role="button"&gt;Button&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-777267646</payload_hash>
+        <record_name>Item list</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-24 09:56:14</sys_created_on>
+        <sys_id>bef9836e83568210edb56060ceaad3a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18faa0794c70000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-24 09:56:14</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>76f9836e90568210786b7cd8451f40a3</update_guid>
+        <update_guid_history>76f9836e90568210786b7cd8451f40a3:-777267646,6ae9076e52568210a5aa25f4889a06ea:-1773515116,80d98b6edd56821058c8b441dd85e953:572814057,94890bea9c56821003be4e1708b600d4:848829656,574987eaf65682104c8b5ea0e9cad005:-1436571617,b1e70faa225682106dec268b7a93834e:-1574977596,05d747eabd5682107332e2c7e4dc92cb:-162164697,08b7c7aa60568210ab2113fa012115c9:685430488,14a6076aa2568210d2b1594517b9754c:-2029082307</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Item list">ff5a07ae83568210edb56060ceaad3a2</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-24 09:57:57</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>02eb5e4afd2f47e18f9e7c73ebb75e91</sys_id>
+        <sys_metadata>1ca6076a83568210edb56060ceaad34a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Item list</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sp_widget_1ca6076a83568210edb56060ceaad34a</sys_update_name>
+        <sys_update_version display_value="sp_widget_1ca6076a83568210edb56060ceaad34a">bef9836e83568210edb56060ceaad3a3</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-24 09:57:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

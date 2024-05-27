@@ -97,14 +97,14 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-25 10:34:50</sys_created_on>
         <sys_id>ca6cd00783920210edb56060ceaad34d</sys_id>
-        <sys_mod_count>108</sys_mod_count>
+        <sys_mod_count>130</sys_mod_count>
         <sys_name>Homepage carousel</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_ca6cd00783920210edb56060ceaad34d</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-25 13:46:25</sys_updated_on>
+        <sys_updated_on>2024-05-27 16:01:02</sys_updated_on>
         <template><![CDATA[<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -132,18 +132,18 @@
                  <h1 class="poppins-bold">Giveaway An <br>Item
 							</h1>
                 <div class="button-container">
-                    <a href="https://dev245733.service-now.com/tradenow?id=add_item" class="bn3637 bn37">Giveaway now</a>
+                    <a href="/tradenow?id=add_item&table=x_1383179_tradenow_item_list&sys_id=-1&view=portal" class="bn3637 bn37">Giveaway now</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <a class="left carousel-control" href="tradenow?id=tradenow_index#carousel-example-generic" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <a class="right carousel-control" href="tradenow?id=tradenow_index#carousel-example-generic" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>

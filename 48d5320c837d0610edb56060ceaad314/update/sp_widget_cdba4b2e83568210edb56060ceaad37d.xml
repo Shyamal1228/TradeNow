@@ -3,7 +3,109 @@
         <category>custom</category>
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>.thumbnail {
+    width: 250px;
+    height: 400px;
+    overflow: hidden; 
+  }
+
+  .thumbnail img {
+    width: 100%; 
+    height: 200px;
+    object-fit: cover; 
+  }
+
+  .caption {
+    text-align: center; 
+  }
+
+  .caption h3 {
+    font-size: 1.2em; 
+    margin: 10px 0; 
+  }
+
+  .caption span {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    height: 3em;
+  }
+
+  .caption p {
+    margin-top: 10px; /* Add some margin above the button */
+  }
+
+  .btn-primary {
+    width: 100px; /* Set a fixed width for the button */
+    margin: 0 auto; /* Center the button */
+  }
+
+.search-box {
+  display:flex;
+  justify-content:right;
+  margin-bottom: 20px;
+}
+.input-group {
+  width: auto; /* Ensures the input group expands to fit content */
+}
+
+.form-control {
+  width: 300px; /* Adjust the width as needed */
+}
+
+.container{
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+/* Align items to the right */ 
+.align-right { 
+  margin-left: auto; 
+} 
+
+.dropdown{
+	margin-bottom: 20px;
+}
+.select-dropdown{
+  margin-bottom: 20px;
+}
+.select-dropdown select {
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none; /* Remove default arrow in Safari */
+  -moz-appearance: none; /* Remove default arrow in Firefox */
+  
+  width: auto; /* Make the select box full width */
+  max-width: 300px; /* Optional: Set a max-width */
+  // padding: 10px; /* Add some padding */
+  padding:10px 80px;
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 4px; /* Round the corners */
+  background-color: #fff; /* White background */
+  font-size: 14px; /* Adjust the font size */
+  color: #333; /* Text color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.select-dropdown {
+  position: relative; /* Ensure the container is positioned */
+}
+
+.select-dropdown::after {
+  content: "▼"; /* Unicode character for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none; /* Allow clicking through the arrow */
+  font-size: 12px; /* Adjust the size of the arrow */
+  color: #333; /* Arrow color */
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -23,11 +125,13 @@
 	data.table = 'x_1383179_tradenow_item_list';
 	data.items = [];
   var gr = new GlideRecord(data.table);
+	gr.setLimit(4);
   gr.query();
 	while (gr.next()) {
 		var obj={
 			name:gr.getValue('item_name'),
 			description:gr.getValue('description'),
+			category:gr.getValue('category'),
 			image_url: null
 		};
 		var attachmentGr = new GlideRecord('sys_attachment');
@@ -47,26 +151,62 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-24 09:59:24</sys_created_on>
         <sys_id>cdba4b2e83568210edb56060ceaad37d</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>155</sys_mod_count>
         <sys_name>Item List</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_cdba4b2e83568210edb56060ceaad37d</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-25 08:57:43</sys_updated_on>
-        <template><![CDATA[<div class="row">
-  <div class="col-sm-4 col-md-3" ng-repeat="item in data.items">
+        <sys_updated_on>2024-05-26 19:51:54</sys_updated_on>
+        <template><![CDATA[
+
+<div class="container">
+  <!--<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Dropdown
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a href="#">Electronics</a></li>
+      <li><a href="#">Furniture</a></li>
+    </ul>
+  </div>-->
+ <div class="select-dropdown">
+	<!--<select ng-model="selectedCategory">
+		<option value="Option 1">First Option</option>
+		<option value="electronics">Electronics</option>
+		<option value="furniture">Furniture</option>
+	</select>-->
+   <select ng-model="selectedCategory" ng-options="category for category in c.data.items">
+  <option value="">Select Category</option>
+</select>
+
+ </div>
+  <p>
+    {{selectedCategory}}
+  </p>
+  
+  <div class="search-box align-right">
+    <div class="input-group">
+      <input type="text" class="form-control" ng-model="test" placeholder="Search for items...">
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <!--<div class="col-sm-4 col-md-3" ng-repeat="item in data.items | filter: {name: test} | filter: {category: selectedCategory} ">-->
+  <div class="col-sm-4 col-md-3" ng-repeat="item in data.items |filter: {category: selectedCategory} ">
     <div class="thumbnail">
-      <img src={{item.image_url}} width="60%" alt="...">
+      <img src="{{item.image_url}}" alt="...">
       <div class="caption">
         <h3>{{item.name}}</h3>
-        <dl>{{item.description}}</dl>
+        <span>{{item.description}}</span>
         <p><a href="#" class="btn btn-primary" role="button">View Item</a></p>
       </div>
     </div>
   </div>
-</div
-]]></template>
+</div>]]></template>
     </sp_widget>
 </record_update>

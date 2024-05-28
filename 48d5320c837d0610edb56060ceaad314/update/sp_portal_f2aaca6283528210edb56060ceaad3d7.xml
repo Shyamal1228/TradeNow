@@ -21,20 +21,20 @@
         <search_application/>
         <search_results_configuration/>
         <sp_chat_queue/>
-        <sp_rectangle_menu display_value="SP Header Menu">d150fd31cb10020000f8d856634c9ce6</sp_rectangle_menu>
+        <sp_rectangle_menu display_value="TradeNow menu">183defb783960610edb56060ceaad383</sp_rectangle_menu>
         <sys_class_name>sp_portal</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-24 05:22:20</sys_created_on>
         <sys_id>f2aaca6283528210edb56060ceaad3d7</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Tradenow Portal</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_portal_f2aaca6283528210edb56060ceaad3d7</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-25 11:57:50</sys_updated_on>
-        <theme display_value="La Jolla">a7a6e78277002300a6e592718a10617a</theme>
+        <sys_updated_on>2024-05-28 10:50:31</sys_updated_on>
+        <theme display_value="TradeNow Theme">591cfbf783d60610edb56060ceaad3a6</theme>
         <title>Tradenow Portal</title>
         <ts_index_group/>
         <url_suffix>tradenow</url_suffix>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="INSERT_OR_UPDATE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Homepage - Container 2</name>
+        <order>2</order>
+        <semantic_tag/>
+        <sp_page display_value="tradenow_index">b71f208f83d20210edb56060ceaad337</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-28 11:47:26</sys_created_on>
+        <sys_id>66c98884832a0610edb56060ceaad361</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Homepage - Container 2</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_container_66c98884832a0610edb56060ceaad361</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-28 11:47:26</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+</record_update>

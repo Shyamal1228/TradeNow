@@ -14,20 +14,6 @@
             <sys_updated_by>jagriti</sys_updated_by>
             <sys_updated_on>2024-05-22 05:52:48</sys_updated_on>
         </sys_ui_form_section>
-        <sys_ui_form_section action="INSERT_OR_UPDATE">
-            <position>1</position>
-            <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-27 15:43:39</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_id>05463fef8316c210edb56060ceaad329</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_overrides/>
-            <sys_ui_form display_value="x_1383179_tradenow_item_list" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">1e7ae59883b94610edb56060ceaad347</sys_ui_form>
-            <sys_ui_section caption="portal" display_value="portal" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">45463fef8316c210edb56060ceaad327</sys_ui_section>
-            <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-27 15:43:39</sys_updated_on>
-        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_1383179_tradenow_item_list</name>
             <roles/>

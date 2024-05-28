@@ -24,13 +24,13 @@
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
         <element label="Reservation time ends" max_length="40" name="reservation_time" read_only="true" type="string"/>
         <element label="Short description" mandatory="true" max_length="100" name="short_description" type="string"/>
-        <element choice="3" default="draft" label="Status" max_length="40" name="status" read_only="true" reference_qual="null" reference_qual_condition="null" type="choice">
+        <element choice="3" default="draft" label="Status" max_length="40" name="status" reference_qual="null" reference_qual_condition="null" type="choice">
             <choice>
+                <element inactive_on_update="false" label="Draft" sequence="-1" value="draft"/>
                 <element inactive_on_update="false" label="Available" sequence="0" value="available"/>
                 <element inactive_on_update="false" label="Ready to Pickup" sequence="1" value="readypickup"/>
                 <element inactive_on_update="false" label="Reserved" sequence="2" value="reserved"/>
                 <element inactive_on_update="false" label="Claimed" sequence="3" value="claimed"/>
-                <element inactive_on_update="false" label="Draft" sequence="4" value="draft"/>
             </choice>
         </element>
         <element default="0" label="Total watchers" max_length="40" name="total_watchers" type="integer"/>

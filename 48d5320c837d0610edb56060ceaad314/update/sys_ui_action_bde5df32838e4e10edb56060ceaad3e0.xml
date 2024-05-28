@@ -2,7 +2,7 @@
     <sys_ui_action action="INSERT_OR_UPDATE">
         <action_name/>
         <active>true</active>
-        <client>true</client>
+        <client>false</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
 
 }]]></client_script_v2>
@@ -30,54 +30,10 @@
         <name>Get Item</name>
         <onclick>onClickGetScript()</onclick>
         <order>100</order>
-        <script><![CDATA[  function onClickGetScript(){
-  g_form.setValue('status', 'readypickup');
-  g_form.save();
-  }
-
-  // current.status="Claimed";
-  // var preStatus = previous.status;
-  //   gs.setValue('status', 'readypickup');
-  // current.status = 'readypickup';
-
-
-  // actual code 
-  // current.status = "readypickup";
-  // current.claimer = gs.getUserDisplayName();
-  // // current.email=gs.getUser().getEmail();
-  //  current.update();
-
-  //  action.setRedirectURL(current);
-
-
-  // if (preStatus=='' && g_form.getValue('status') == 'Ready to Pick-up') {
-  //         var gm = new GlideModal("glide_warn", true, 600);
-  //         gm.setTitle("Pick-Up Location");
-  //         gm.setPreference("title", "Pick-Up Location has been sent to your notification.");
-  //         gm.render();
-  //     }
-
-  // function onClickGetScript() {
-  //   popModel();
-  // }
-
-  // function popModel(){
-  //  	var gm = new GlideModal("glide_warn", true, 600);
-  //     gm.setTitle("Pick-Up Location");
-  //     gm.setPreference("title", "Pick-Up Location has been sent to your Email notification.");
-  //     gm.render();
-  // 	g_form.save();
-  // }
-
-  // if (typeof window == 'undefined')
-  //     updateTask();
-
-
-  //  function updateTask() {
-  //   g_form.setValue('status', 'readypickup');
-  // 	g_form.save();
-
-  // }]]></script>
+        <script><![CDATA[current.status = "readypickup";
+current.update();
+action.setRedirectURL(current);
+]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
@@ -88,7 +44,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>bde5df32838e4e10edb56060ceaad3e0</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Get Item</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -96,7 +52,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_ui_action_bde5df32838e4e10edb56060ceaad3e0</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-12 19:49:03</sys_updated_on>
+        <sys_updated_on>2024-05-28 05:25:58</sys_updated_on>
         <table>x_1383179_tradenow_item_list</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

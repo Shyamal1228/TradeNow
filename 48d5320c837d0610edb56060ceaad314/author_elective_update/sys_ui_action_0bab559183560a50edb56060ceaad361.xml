@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="DELETE">
+        <action_name/>
+        <active>false</active>
+        <client>false</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition>current.amount&gt;0 &amp;&amp; add_payment_proof</condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Confirm Donation</name>
+        <onclick/>
+        <order>100</order>
+        <script><![CDATA[var DonationTable = new GlideRecord('x_1383179_tradenow_m2m_sys_user_x_1383179_tr');
+		DonationTable.initialize();
+		DonationTable.sys_user = gs.getUserID();
+		DonationTable.x_1383179_tradenow_charity_list = current.sys_id;
+		DonationTable.donation_amount=current.amount;
+		DonationTable.payment_proof=current.add_payment_proof;
+		DonationTable.transaction_time=new GlideDateTime();
+		DonationTable.insert();
+		var gr = new GlideRecord('x_1383179_tradenow_charity_list');
+		var fieldValue = ' ';
+        if (gr.get(current.sys_id)) {
+            gr.amount = '';
+			gr.setValue('add_payment_proof', fieldValue);
+			
+            gr.update();
+        }
+		action.setRedirectURL(current);]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-20 05:02:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0bab559183560a50edb56060ceaad361</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>Confirm Donation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_ui_action_0bab559183560a50edb56060ceaad361</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:22:40</sys_updated_on>
+        <table>x_1383179_tradenow_charity_list</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_ui_action_0bab559183560a50edb56060ceaad361</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_action"&gt;&lt;sys_ui_action action="INSERT_OR_UPDATE"&gt;&lt;action_name/&gt;&lt;active&gt;false&lt;/active&gt;&lt;client&gt;false&lt;/client&gt;&lt;client_script_v2&gt;&lt;![CDATA[function onClick(g_form) {
+
+}]]&gt;&lt;/client_script_v2&gt;&lt;comments/&gt;&lt;condition&gt;current.amount&amp;gt;0 &amp;amp;&amp;amp; add_payment_proof&lt;/condition&gt;&lt;form_action&gt;true&lt;/form_action&gt;&lt;form_button&gt;true&lt;/form_button&gt;&lt;form_button_v2&gt;false&lt;/form_button_v2&gt;&lt;form_context_menu&gt;false&lt;/form_context_menu&gt;&lt;form_link&gt;false&lt;/form_link&gt;&lt;form_menu_button_v2&gt;false&lt;/form_menu_button_v2&gt;&lt;form_style/&gt;&lt;format_for_configurable_workspace&gt;false&lt;/format_for_configurable_workspace&gt;&lt;hint/&gt;&lt;isolate_script&gt;false&lt;/isolate_script&gt;&lt;list_action&gt;false&lt;/list_action&gt;&lt;list_banner_button&gt;false&lt;/list_banner_button&gt;&lt;list_button&gt;false&lt;/list_button&gt;&lt;list_choice&gt;false&lt;/list_choice&gt;&lt;list_context_menu&gt;false&lt;/list_context_menu&gt;&lt;list_link&gt;false&lt;/list_link&gt;&lt;list_save_with_form_button&gt;false&lt;/list_save_with_form_button&gt;&lt;list_style/&gt;&lt;messages/&gt;&lt;name&gt;Confirm Donation&lt;/name&gt;&lt;onclick/&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[var DonationTable = new GlideRecord('x_1383179_tradenow_m2m_sys_user_x_1383179_tr');
+		DonationTable.initialize();
+		DonationTable.sys_user = gs.getUserID();
+		DonationTable.x_1383179_tradenow_charity_list = current.sys_id;
+		DonationTable.donation_amount=current.amount;
+		DonationTable.payment_proof=current.add_payment_proof;
+		DonationTable.transaction_time=new GlideDateTime();
+		DonationTable.insert();
+		var gr = new GlideRecord('x_1383179_tradenow_charity_list');
+		var fieldValue = ' ';
+        if (gr.get(current.sys_id)) {
+            gr.amount = '';
+			gr.setValue('add_payment_proof', fieldValue);
+			
+            gr.update();
+        }
+		action.setRedirectURL(current);]]&gt;&lt;/script&gt;&lt;show_insert&gt;false&lt;/show_insert&gt;&lt;show_multiple_update&gt;false&lt;/show_multiple_update&gt;&lt;show_query&gt;false&lt;/show_query&gt;&lt;show_update&gt;true&lt;/show_update&gt;&lt;sys_class_name&gt;sys_ui_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-20 05:02:45&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;0bab559183560a50edb56060ceaad361&lt;/sys_id&gt;&lt;sys_mod_count&gt;26&lt;/sys_mod_count&gt;&lt;sys_name&gt;Confirm Donation&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_action_0bab559183560a50edb56060ceaad361&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-28 05:22:40&lt;/sys_updated_on&gt;&lt;table&gt;x_1383179_tradenow_charity_list&lt;/table&gt;&lt;ui11_compatible&gt;true&lt;/ui11_compatible&gt;&lt;ui16_compatible&gt;false&lt;/ui16_compatible&gt;&lt;/sys_ui_action&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>314897308</payload_hash>
+        <record_name>Confirm Donation</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-28 05:22:40</sys_created_on>
+        <sys_id>92b1b67f83520610edb56060ceaad3eb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fbda68d940000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:22:40</sys_updated_on>
+        <type>UI Action</type>
+        <update_guid>5ab1b67f75520610dadf775e2e79b0ea</update_guid>
+        <update_guid_history>5ab1b67f75520610dadf775e2e79b0ea:314897308,2941b23f925206108ccf469ee559b6b7:1339607017,fc931295235a0a50987bbc210873dd6a:-1020601288,9f7252d1d85a0a50601cef03898f4625:-1152617938,1cf092d1765a0a503824a856339997fc:664581194,c54f825d031a0a5023e24009fe7b8c3c:679111153,fcfcca9df61a0a50a3e7c2450f689ccf:1244253922,f48b4e55cd1a0a50a13723b65b3efd16:751721339,9de44edd51d60a506528d891d8b6aa21:-1852696754,7784c615601a0a5074a8c65fdd790797:1902649196,344b7dd5e4d60a5074b8ebc4d939593b:-1852696754,b83ab595c9d60a500d45610f11d0bfe4:583944245,7338bd91add60a50afdad9782b7c5c3b:-1930567179,f897399dee960a5033b8601027dc52fd:1460426884,73177dddb3960a504025987bece8d08c:-258654830,f9b47dddc6960a501653d5e7a7b2fa84:356109657,1a6371d5f5960a50629598ea2914665d:-1972069079,5b53399d3a960a505a8262a5a9502816:-1630287039,27ace91527960a5030b15397ff1b3624:-1972466973,1e3c61954c960a501a95cbd1154476c2:1429123603,57caa5d1d4960a50461e8ff1249ac3f9:-555437456,0ebae5d10c960a5063dbb4cbda9ac5bb:-337152171,57a9659dbd560a5097eb5cdf96cce806:-470085481,e18669dd86560a50638a7769b40a7f0c:1759860524,0926ed5deb560a503ceca704201117ac:1656208094,fb032599b2560a50be8711d5da8de2cb:-138986919,f87029d51c560a50cd1d63af5f456ace:989313006</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-28 05:22:57</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_action">sys_ui_action</sys_db_object>
+        <sys_id>7419e3eda3b740188bc88edc87d78790</sys_id>
+        <sys_metadata>0bab559183560a50edb56060ceaad361</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Confirm Donation</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Charity">77328f0883bd0610edb56060ceaad38b</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_ui_action_0bab559183560a50edb56060ceaad361</sys_update_name>
+        <sys_update_version display_value="sys_ui_action_0bab559183560a50edb56060ceaad361">92b1b67f83520610edb56060ceaad3eb</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:22:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,1550 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=347148000,viewActivatedIn=naturalLanguage</attributes>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Flow for approving or rejecting donation's</description>
+        <internal_name>donations_approval_flow_for_charity_coordinator</internal_name>
+        <label_cache>[{"name":"Created_1.current.sys_user","label":"Trigger - Record Created➛Donation History Record➛User","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"sys_user"},{"name":"eceabef8-3efd-4f47-99ef-009dc9c84cc9.approval_state","label":"1 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current","label":"Trigger - Record Created➛Donation History Record","reference":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","reference_display":"Donation History","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.status","label":"Trigger - Record Created➛Donation History Record➛Status","reference":"","reference_display":"Status","type":"choice","base_type":"choice","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"status","choices":[{"label":"Unverified","used":false,"reference":false,"image":"","rawLabel":"Unverified","selected":false,"missing":false,"value":"unverified","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Verified","used":false,"reference":false,"image":"","rawLabel":"Verified","selected":false,"missing":false,"value":"verified","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Rejected","used":false,"reference":false,"image":"","rawLabel":"Rejected","selected":false,"missing":false,"value":"rejected","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Draft","used":false,"reference":false,"image":"","rawLabel":"Draft","selected":false,"missing":false,"value":"draft","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}}]},{"name":"{{static.1e0a1ef0834a0610edb56060ceaad30d}}","label":"Charity Coordinators","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"Created_1.current.sys_created_on","label":"Trigger - Record Created➛Donation History Record➛Created","reference":"","reference_display":"Created","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"sys_created_on"}]</label_cache>
+        <master_snapshot>5576323783920610edb56060ceaad34c</master_snapshot>
+        <name>Donation's Approval Flow For Charity Coordinator</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>a976323783920610edb56060ceaad3e6</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 05:41:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cbbf4ee683528210edb56060ceaad36e</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Donation's Approval Flow For Charity Coordinator</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_hub_flow_cbbf4ee683528210edb56060ceaad36e</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:37</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=cbbf4ee683528210edb56060ceaad36e"/>
+    <sys_variable_value action="delete_multiple" query="document_key=cbbf4ee683528210edb56060ceaad36e"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_1383179_tradenow_m2m_sys_user_x_1383179_tr">^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>false</on_update>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a976323783920610edb56060ceaad3e6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <table>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</table>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>cbbf4ee683528210edb56060ceaad36e</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 06:07:36</sys_created_on>
+        <sys_id>f40c363f83920610edb56060ceaad33d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <trigger display_value="">a976323783920610edb56060ceaad3e6</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=cbbf4ee683528210edb56060ceaad36e^sys_idNOT INf40c363f83920610edb56060ceaad33d"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=cbbf4ee683528210edb56060ceaad36e^sys_idNOT IN0369d22683928210edb56060ceaad347"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Donation's Approval Flow For Charity Coordinator">cbbf4ee683528210edb56060ceaad36e</flow>
+        <name>Created</name>
+        <remote_sys_id/>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>0369d22683928210edb56060ceaad347</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=0369d22683928210edb56060ceaad347"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>0369d22683928210edb56060ceaad347</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>4369d22683928210edb56060ceaad348</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <value>^EQ</value>
+        <variable display_value="Condition">66aadea0c31322002841b63b12d3aebf</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>0369d22683928210edb56060ceaad347</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>4b69d22683928210edb56060ceaad348</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <value>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</value>
+        <variable display_value="Table">cfca92e0c31322002841b63b12d3ae00</variable>
+    </sys_variable_value>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=cbbf4ee683528210edb56060ceaad36e"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=cbbf4ee683528210edb56060ceaad36e^sys_idNOT INc7bf4ee683528210edb56060ceaad36f"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>cbbf4ee683528210edb56060ceaad36e</id>
+        <name>Donation's Approval Flow For Charity Coordinator</name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 05:41:45</sys_created_on>
+        <sys_id>c7bf4ee683528210edb56060ceaad36f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 05:41:45</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=c7bf4ee683528210edb56060ceaad36f"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=cbbf4ee683528210edb56060ceaad36e^sys_idNOT IN0b69d22683928210edb56060ceaad342,4b69d22683928210edb56060ceaad33b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Donation's Approval Flow For Charity Coordinator">cbbf4ee683528210edb56060ceaad36e</model>
+        <model_id>cbbf4ee683528210edb56060ceaad36e</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_cbbf4ee683528210edb56060ceaad36e</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>0b69d22683928210edb56060ceaad342</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=0b69d22683928210edb56060ceaad342"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Donation's Approval Flow For Charity Coordinator">cbbf4ee683528210edb56060ceaad36e</model>
+        <model_id>cbbf4ee683528210edb56060ceaad36e</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_cbbf4ee683528210edb56060ceaad36e</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>4b69d22683928210edb56060ceaad33b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4b69d22683928210edb56060ceaad33b"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=cbbf4ee683528210edb56060ceaad36e"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=cbbf4ee683528210edb56060ceaad36e"/>
+    <sys_hub_action_instance action="delete_multiple" query="flow=cbbf4ee683528210edb56060ceaad36e^sys_idNOT IN4769d22683928210edb56060ceaad35b,5b69d22683928210edb56060ceaad368,5f69d22683928210edb56060ceaad37b"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Donation's Approval Flow For Charity Coordinator">cbbf4ee683528210edb56060ceaad36e</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>4769d22683928210edb56060ceaad35b</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <ui_id>eceabef8-3efd-4f47-99ef-009dc9c84cc9</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=4769d22683928210edb56060ceaad35b"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>4769d22683928210edb56060ceaad35b</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>0369d22683928210edb56060ceaad35f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <value>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</value>
+        <variable display_value="Table">bcf2e9920b10030085c083eb37673acc</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>4769d22683928210edb56060ceaad35b</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>4f69d22683928210edb56060ceaad35e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <value/>
+        <variable display_value="Due Date">c5f2e9920b10030085c083eb37673af9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>4769d22683928210edb56060ceaad35b</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 06:04:15</sys_created_on>
+        <sys_id>ef3bb2fb83920610edb56060ceaad3b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:04:15</sys_updated_on>
+        <value>donation_amount</value>
+        <variable display_value="Approval Field">01f2e9920b10030085c083eb37673ad8</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=4769d22683928210edb56060ceaad35b"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_conditions</field>
+        <id>4769d22683928210edb56060ceaad35b</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>0b69d22683928210edb56060ceaad35e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>ApprovesRejectsAnyG[{{static.1e0a1ef0834a0610edb56060ceaad30d}}]</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_field</field>
+        <id>4769d22683928210edb56060ceaad35b</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 06:04:15</sys_created_on>
+        <sys_id>6b3bb2fb83920610edb56060ceaad3b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:04:15</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>due_date</field>
+        <id>4769d22683928210edb56060ceaad35b</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>4769d22683928210edb56060ceaad35e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{"action":"none","date_type":"actual","date":"{{}}","duration":1,"duration_type":"days","schedule":"","schedule_label":""}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>4769d22683928210edb56060ceaad35b</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>4f69d22683928210edb56060ceaad35d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>4769d22683928210edb56060ceaad35b</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>cb69d22683928210edb56060ceaad35e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=4769d22683928210edb56060ceaad35b"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4769d22683928210edb56060ceaad35b"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Donation's Approval Flow For Charity Coordinator">cbbf4ee683528210edb56060ceaad36e</flow>
+        <order>3</order>
+        <parent_ui_id>065651cb-94a5-4779-9a1a-500255932aa1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>5b69d22683928210edb56060ceaad368</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:37</sys_updated_on>
+        <ui_id>5aaa0055-1d7f-43b0-b26d-bb5658d0b94a</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=5b69d22683928210edb56060ceaad368"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5b69d22683928210edb56060ceaad368</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>1b69d22683928210edb56060ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <value>status=verified</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5b69d22683928210edb56060ceaad368</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>db69d22683928210edb56060ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <value>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=5b69d22683928210edb56060ceaad368"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>5b69d22683928210edb56060ceaad368</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>9769d22683928210edb56060ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>5b69d22683928210edb56060ceaad368</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>1369d22683928210edb56060ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>5b69d22683928210edb56060ceaad368</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>d369d22683928210edb56060ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=5b69d22683928210edb56060ceaad368"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5b69d22683928210edb56060ceaad368"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Donation's Approval Flow For Charity Coordinator">cbbf4ee683528210edb56060ceaad36e</flow>
+        <order>5</order>
+        <parent_ui_id>cdce6240-0b80-4741-bcde-561cef839dc0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:06</sys_created_on>
+        <sys_id>5f69d22683928210edb56060ceaad37b</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:37</sys_updated_on>
+        <ui_id>35ff72e5-bcc3-496a-96fb-b34472fb31d6</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=5f69d22683928210edb56060ceaad37b"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5f69d22683928210edb56060ceaad37b</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:06</sys_created_on>
+        <sys_id>5b69d22683928210edb56060ceaad37d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:06</sys_updated_on>
+        <value>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5f69d22683928210edb56060ceaad37b</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:06</sys_created_on>
+        <sys_id>9769d22683928210edb56060ceaad37d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:06</sys_updated_on>
+        <value>status=rejected</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=5f69d22683928210edb56060ceaad37b"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>5f69d22683928210edb56060ceaad37b</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:06</sys_created_on>
+        <sys_id>1769d22683928210edb56060ceaad37d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>5f69d22683928210edb56060ceaad37b</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:06</sys_created_on>
+        <sys_id>9f69d22683928210edb56060ceaad37c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>5f69d22683928210edb56060ceaad37b</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:06</sys_created_on>
+        <sys_id>5369d22683928210edb56060ceaad37d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:06</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=5f69d22683928210edb56060ceaad37b"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5f69d22683928210edb56060ceaad37b"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=cbbf4ee683528210edb56060ceaad36e"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=cbbf4ee683528210edb56060ceaad36e^sys_idNOT IN8369d22683928210edb56060ceaad360,d769d22683928210edb56060ceaad375"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">8769d22683928210edb56060ceaad35f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Donation's Approval Flow For Charity Coordinator">cbbf4ee683528210edb56060ceaad36e</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>8369d22683928210edb56060ceaad360</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:37</sys_updated_on>
+        <ui_id>065651cb-94a5-4779-9a1a-500255932aa1</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=8369d22683928210edb56060ceaad360"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>8369d22683928210edb56060ceaad360</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>cf69d22683928210edb56060ceaad363</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <value>If Approved</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=8369d22683928210edb56060ceaad360"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>8369d22683928210edb56060ceaad360</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>4f69d22683928210edb56060ceaad363</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:21:39</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{eceabef8-3efd-4f47-99ef-009dc9c84cc9.approval_state}}=approved</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>8369d22683928210edb56060ceaad360</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>8b69d22683928210edb56060ceaad363</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=8369d22683928210edb56060ceaad360"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=8369d22683928210edb56060ceaad360"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">1369d22683928210edb56060ceaad375</block>
+        <comment/>
+        <connected_to>065651cb-94a5-4779-9a1a-500255932aa1</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Donation's Approval Flow For Charity Coordinator">cbbf4ee683528210edb56060ceaad36e</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:06</sys_created_on>
+        <sys_id>d769d22683928210edb56060ceaad375</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:37</sys_updated_on>
+        <ui_id>cdce6240-0b80-4741-bcde-561cef839dc0</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=d769d22683928210edb56060ceaad375"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=d769d22683928210edb56060ceaad375"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=d769d22683928210edb56060ceaad375"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=cbbf4ee683528210edb56060ceaad36e"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=cbbf4ee683528210edb56060ceaad36e"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_cbbf4ee683528210edb56060ceaad36e^sys_idNOT INc369d22683928210edb56060ceaad341,cb69d22683928210edb56060ceaad344"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_cbbf4ee683528210edb56060ceaad36e</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>c369d22683928210edb56060ceaad341</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_cbbf4ee683528210edb56060ceaad36e</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-24 06:24:05</sys_created_on>
+        <sys_id>cb69d22683928210edb56060ceaad344</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-24 06:24:05</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_cbbf4ee683528210edb56060ceaad36e"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_cbbf4ee683528210edb56060ceaad36e"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_cbbf4ee683528210edb56060ceaad36e"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Flow for approving or rejecting donation's</description>
+        <internal_name>donations_approval_flow_for_charity_coordinator</internal_name>
+        <label_cache>[{"name":"Created_1.current.sys_user","label":"Trigger - Record Created➛Donation History Record➛User","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"sys_user"},{"name":"eceabef8-3efd-4f47-99ef-009dc9c84cc9.approval_state","label":"1 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current","label":"Trigger - Record Created➛Donation History Record","reference":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","reference_display":"Donation History","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.status","label":"Trigger - Record Created➛Donation History Record➛Status","reference":"","reference_display":"Status","type":"choice","base_type":"choice","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"status","choices":[{"label":"Unverified","used":false,"reference":false,"image":"","rawLabel":"Unverified","selected":false,"missing":false,"value":"unverified","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Verified","used":false,"reference":false,"image":"","rawLabel":"Verified","selected":false,"missing":false,"value":"verified","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Rejected","used":false,"reference":false,"image":"","rawLabel":"Rejected","selected":false,"missing":false,"value":"rejected","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Draft","used":false,"reference":false,"image":"","rawLabel":"Draft","selected":false,"missing":false,"value":"draft","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}}]},{"name":"{{static.1e0a1ef0834a0610edb56060ceaad30d}}","label":"Charity Coordinators","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"Created_1.current.sys_created_on","label":"Trigger - Record Created➛Donation History Record➛Created","reference":"","reference_display":"Created","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"sys_created_on"}]</label_cache>
+        <master>true</master>
+        <name>Donation's Approval Flow For Charity Coordinator</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Donation's Approval Flow For Charity Coordinator">cbbf4ee683528210edb56060ceaad36e</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5576323783920610edb56060ceaad34c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=5576323783920610edb56060ceaad34c"/>
+    <sys_variable_value action="delete_multiple" query="document_key=5576323783920610edb56060ceaad34c"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=5576323783920610edb56060ceaad34c^sys_idNOT IN5576323783920610edb56060ceaad3c9"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Donation's Approval Flow For Charity Coordinator">5576323783920610edb56060ceaad34c</flow>
+        <name>Created</name>
+        <remote_sys_id/>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>5576323783920610edb56060ceaad3c9</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=5576323783920610edb56060ceaad3c9"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>5576323783920610edb56060ceaad3c9</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>5176323783920610edb56060ceaad3cb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <value>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</value>
+        <variable display_value="Table">cfca92e0c31322002841b63b12d3ae00</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>5576323783920610edb56060ceaad3c9</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>9d76323783920610edb56060ceaad3ca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <value>^EQ</value>
+        <variable display_value="Condition">66aadea0c31322002841b63b12d3aebf</variable>
+    </sys_variable_value>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=5576323783920610edb56060ceaad34c"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=5576323783920610edb56060ceaad34c^sys_idNOT INd176323783920610edb56060ceaad34d"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>5576323783920610edb56060ceaad34c</id>
+        <name>Donation's Approval Flow For Charity Coordinator</name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:20</sys_created_on>
+        <sys_id>d176323783920610edb56060ceaad34d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:20</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=d176323783920610edb56060ceaad34d"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=5576323783920610edb56060ceaad34c^sys_idNOT IN9576323783920610edb56060ceaad34e,9976323783920610edb56060ceaad36b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Donation's Approval Flow For Charity Coordinator">5576323783920610edb56060ceaad34c</model>
+        <model_id>5576323783920610edb56060ceaad34c</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_5576323783920610edb56060ceaad34c</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:20</sys_created_on>
+        <sys_id>9576323783920610edb56060ceaad34e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9576323783920610edb56060ceaad34e"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Donation's Approval Flow For Charity Coordinator">5576323783920610edb56060ceaad34c</model>
+        <model_id>5576323783920610edb56060ceaad34c</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_5576323783920610edb56060ceaad34c</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:20</sys_created_on>
+        <sys_id>9976323783920610edb56060ceaad36b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9976323783920610edb56060ceaad36b"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=5576323783920610edb56060ceaad34c"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5576323783920610edb56060ceaad34c"/>
+    <sys_hub_action_instance action="delete_multiple" query="flow=5576323783920610edb56060ceaad34c^sys_idNOT IN1176323783920610edb56060ceaad3ab,5576323783920610edb56060ceaad3c7,d976323783920610edb56060ceaad3c0"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Donation's Approval Flow For Charity Coordinator">5576323783920610edb56060ceaad34c</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>1176323783920610edb56060ceaad3ab</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:35</sys_updated_on>
+        <ui_id>eceabef8-3efd-4f47-99ef-009dc9c84cc9</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=1176323783920610edb56060ceaad3ab"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>1176323783920610edb56060ceaad3ab</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>1576323783920610edb56060ceaad3ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <value>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</value>
+        <variable display_value="Table">bcf2e9920b10030085c083eb37673acc</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>1176323783920610edb56060ceaad3ab</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 06:07:35</sys_created_on>
+        <sys_id>2c0cf23f83920610edb56060ceaad3d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:35</sys_updated_on>
+        <value>donation_amount</value>
+        <variable display_value="Approval Field">01f2e9920b10030085c083eb37673ad8</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>1176323783920610edb56060ceaad3ab</document_key>
+        <order>5</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>5176323783920610edb56060ceaad3ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <value/>
+        <variable display_value="Due Date">c5f2e9920b10030085c083eb37673af9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=1176323783920610edb56060ceaad3ab"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_conditions</field>
+        <id>1176323783920610edb56060ceaad3ab</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>1d76323783920610edb56060ceaad3b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>ApprovesRejectsAnyG[{{static.1e0a1ef0834a0610edb56060ceaad30d}}]</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approval_field</field>
+        <id>1176323783920610edb56060ceaad3ab</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 06:07:35</sys_created_on>
+        <sys_id>a40cf23f83920610edb56060ceaad3d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:35</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>due_date</field>
+        <id>1176323783920610edb56060ceaad3ab</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>5976323783920610edb56060ceaad3b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{"action":"none","date_type":"actual","date":"{{}}","duration":1,"duration_type":"days","schedule":"","schedule_label":""}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>1176323783920610edb56060ceaad3ab</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>9576323783920610edb56060ceaad3b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>1176323783920610edb56060ceaad3ab</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>dd76323783920610edb56060ceaad3b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f8f2e9920b10030085c083eb37673abd</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=1176323783920610edb56060ceaad3ab"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=1176323783920610edb56060ceaad3ab"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Donation's Approval Flow For Charity Coordinator">5576323783920610edb56060ceaad34c</flow>
+        <order>5</order>
+        <parent_ui_id>cdce6240-0b80-4741-bcde-561cef839dc0</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>5576323783920610edb56060ceaad3c7</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <ui_id>35ff72e5-bcc3-496a-96fb-b34472fb31d6</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=5576323783920610edb56060ceaad3c7"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5576323783920610edb56060ceaad3c7</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>5176323783920610edb56060ceaad3c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <value>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>5576323783920610edb56060ceaad3c7</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>9d76323783920610edb56060ceaad3c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <value>status=rejected</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=5576323783920610edb56060ceaad3c7"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>5576323783920610edb56060ceaad3c7</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>1d76323783920610edb56060ceaad3c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>5576323783920610edb56060ceaad3c7</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>9576323783920610edb56060ceaad3c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>5576323783920610edb56060ceaad3c7</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>5976323783920610edb56060ceaad3c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=5576323783920610edb56060ceaad3c7"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5576323783920610edb56060ceaad3c7"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="Donation's Approval Flow For Charity Coordinator">5576323783920610edb56060ceaad34c</flow>
+        <order>3</order>
+        <parent_ui_id>065651cb-94a5-4779-9a1a-500255932aa1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>d976323783920610edb56060ceaad3c0</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <ui_id>5aaa0055-1d7f-43b0-b26d-bb5658d0b94a</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=d976323783920610edb56060ceaad3c0"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>d976323783920610edb56060ceaad3c0</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>1976323783920610edb56060ceaad3c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <value>status=verified</value>
+        <variable display_value="Fields">02d01916c31332002841b63b12d3aeee</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>d976323783920610edb56060ceaad3c0</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>d976323783920610edb56060ceaad3c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <value>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=d976323783920610edb56060ceaad3c0"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>d976323783920610edb56060ceaad3c0</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>9576323783920610edb56060ceaad3c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{Created_1.current}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>d976323783920610edb56060ceaad3c0</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>1176323783920610edb56060ceaad3c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>d976323783920610edb56060ceaad3c0</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_id>d176323783920610edb56060ceaad3c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:21</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=d976323783920610edb56060ceaad3c0"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d976323783920610edb56060ceaad3c0"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=5576323783920610edb56060ceaad34c"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=5576323783920610edb56060ceaad34c^sys_idNOT IN9176323783920610edb56060ceaad383,9176323783920610edb56060ceaad3a1"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">8769d22683928210edb56060ceaad35f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Donation's Approval Flow For Charity Coordinator">5576323783920610edb56060ceaad34c</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:20</sys_created_on>
+        <sys_id>9176323783920610edb56060ceaad383</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <ui_id>065651cb-94a5-4779-9a1a-500255932aa1</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=9176323783920610edb56060ceaad383"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>9176323783920610edb56060ceaad383</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:20</sys_created_on>
+        <sys_id>1176323783920610edb56060ceaad3a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:20</sys_updated_on>
+        <value>If Approved</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=9176323783920610edb56060ceaad383"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>9176323783920610edb56060ceaad383</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:20</sys_created_on>
+        <sys_id>9d76323783920610edb56060ceaad39f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:20</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{eceabef8-3efd-4f47-99ef-009dc9c84cc9.approval_state}}=approved</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>9176323783920610edb56060ceaad383</id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:20</sys_created_on>
+        <sys_id>d576323783920610edb56060ceaad39f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:20</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=9176323783920610edb56060ceaad383"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=9176323783920610edb56060ceaad383"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">1369d22683928210edb56060ceaad375</block>
+        <comment/>
+        <connected_to>065651cb-94a5-4779-9a1a-500255932aa1</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Donation's Approval Flow For Charity Coordinator">5576323783920610edb56060ceaad34c</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:20</sys_created_on>
+        <sys_id>9176323783920610edb56060ceaad3a1</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <ui_id>cdce6240-0b80-4741-bcde-561cef839dc0</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=9176323783920610edb56060ceaad3a1"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=9176323783920610edb56060ceaad3a1"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=9176323783920610edb56060ceaad3a1"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=5576323783920610edb56060ceaad34c"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=5576323783920610edb56060ceaad34c"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_5576323783920610edb56060ceaad34c^sys_idNOT IN5176323783920610edb56060ceaad368,5576323783920610edb56060ceaad37c"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_5576323783920610edb56060ceaad34c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:20</sys_created_on>
+        <sys_id>5176323783920610edb56060ceaad368</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:20</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_5576323783920610edb56060ceaad34c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:20</sys_created_on>
+        <sys_id>5576323783920610edb56060ceaad37c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 05:43:20</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_5576323783920610edb56060ceaad34c"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_5576323783920610edb56060ceaad34c"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_5576323783920610edb56060ceaad34c"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>cbbf4ee683528210edb56060ceaad36e</sys_id>
+        <latest_snapshot>5576323783920610edb56060ceaad34c</latest_snapshot>
+        <compiler_build>glide-vancouver-07-06-2023__patch2-hotfix1-10-04-2023_10-06-2023_1235.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=cbbf4ee683528210edb56060ceaad36e^sys_idNOT INe976323783920610edb56060ceaad3e8"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"e976323783920610edb56060ceaad3e8","name":"plan","plan_signature":null}}</plan>
+        <plan_id>cbbf4ee683528210edb56060ceaad36e</plan_id>
+        <snapshot>5576323783920610edb56060ceaad34c</snapshot>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-28 05:43:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e976323783920610edb56060ceaad3e8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <trigger display_value="">a976323783920610edb56060ceaad3e6</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=cbbf4ee683528210edb56060ceaad36e"/>
+</record_update>

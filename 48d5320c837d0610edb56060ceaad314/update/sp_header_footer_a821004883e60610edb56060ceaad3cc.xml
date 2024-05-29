@@ -7,26 +7,29 @@
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 .carousel {
-    margin-bottom: 40px; /* Adjust this value as needed */
+    position: relative;
+    z-index: 1;
 }
 
 .footer {
+    position: relative;
     background-color: #293e40;
     color: white;
     padding: 20px 0;
-  position:relative;
-  margin:auto;
+    margin-top: 0px; // maring top of footer
+    z-index: 0;
 }
 
 .footer-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
@@ -37,6 +40,8 @@
 .footer-column {
     flex: 1;
     text-align: center;
+    padding: 10px;
+    min-width: 200px;
 }
 
 .footer-logo {
@@ -46,6 +51,7 @@
 .footer-nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-nav ul li {
@@ -62,31 +68,44 @@
     color: #a8dadc;
 }
 
-.footer-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-column {
+        text-align: left;
+        padding: 10px 0;
+    }
 }
 
-.footer-form input[type="email"] {
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.footer-form button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #a8dadc;
-    color: #293e40;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
 }
 
-.footer-form button:hover {
-    background-color: #457b9d;
+.bg-lightgray{
+  background-color: lightgray;
+}
+.copyrights{
+  margin-top:25px;
+  padding-bottom:10px;
+}
+
+.logo-p
+{
+    margin-top:10px;
+  font-size:1.7rem;
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -115,45 +134,64 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-28 11:10:27</sys_created_on>
         <sys_id>a821004883e60610edb56060ceaad3cc</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>126</sys_mod_count>
         <sys_name>Tradenow Footer</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_header_footer_a821004883e60610edb56060ceaad3cc</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-28 18:08:50</sys_updated_on>
-        <template><![CDATA[
+        <sys_updated_on>2024-05-29 06:37:14</sys_updated_on>
+        <template><![CDATA[<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+</style>
 <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
                 <img src="x_1383179_tradenow.png" alt="Logo" class="footer-logo">
+              <p class="logo-p">Empowering People To Giveaway, Donate And Support.
+                    </p>
             </div>
             <div class="footer-column">
                 <nav class="footer-nav">
+                  <h3 class="poppins-regular">
+                   Useful Links
+                  </h3>
                     <ul>
                         <li><a href="#">Home</a></li>
+                      	<li><a href="#">Charities</a></li>
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
             </div>
-            <div class="footer-column">
-                <form class="footer-form">
-                    <label for="email">Subscribe to our newsletter:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email">
-                    <button type="submit">Subscribe</button>
-                </form>
+          <div class="footer-column">
+                <nav class="footer-nav">
+                  <h3 class="poppins-regular">
+                    Follow Us
+                  </h3>
+                  
+                  
+                    <ul>
+                        <li><i class="fa fa-facebook-square"></i> <a class="footer-link"
+                                href="#"
+                                target="_blank">Facebook</a></li>
+                        <li><i class="fa fa-twitter"></i><a class="footer-link"
+                                href="#" target="_blank">Twitter</a></li>
+                        <li> <i class="fa fa-instagram"></i> <a class="footer-link"
+                                href="#" target="_blank">Instagram</a></li>
+                        <li><i class="fa fa-linkedin-square"></i> <a class="footer-link"
+                                href="#" target="_blank">Linkdin</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </footer>
 <footer class="container-fluid text-center bg-lightgray">
 
-        <div class="copyrights" style="margin-top:25px;">
-            <p>TradeNow © 2024, All Rights Reserved
-                <br>
-            <p><a href="https://www.linkedin.com/in/michael-clark-webdeveloper" target="_blank">Linkedin <i class="fa fa-linkedin-square" aria-hidden="true"></i> </a></p>
+        <div class="copyrights">
+          <p>TradeNow © 2024, All Rights Reserved</p>
         </div>
 </footer>]]></template>
     </sp_header_footer>

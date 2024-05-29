@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.testimonials {
+  margin-top: 15px;
+  color: #1f8476;
+  text-align: center;
+}
+.line{
+  border: none;
+  height: 5px;
+  width: 20%;
+  background-color:#1f8476;
+ 	margin-butom: 7px;
+}
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+figure.snip1390 {
+  font-family: 'Roboto', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: calc(50% - 20px); /* Two testimonials per row */
+  max-width: 315px;
+  color: #000000;
+  text-align: center;
+  font-size: 16px;
+  background-color: #293e40;
+  padding: 30px;
+  background-image: linear-gradient(-25deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+  box-sizing: border-box;
+}
+
+figure.snip1390 *,
+figure.snip1390 *:before,
+figure.snip1390 *:after {
+  box-sizing: border-box;
+  transition: all 0.35s ease;
+}
+
+figure.snip1390 figcaption {
+  width: 100%;
+}
+
+figure.snip1390 h2,
+figure.snip1390 h4,
+figure.snip1390 blockquote {
+  margin: 0;
+}
+
+figure.snip1390 h2,
+figure.snip1390 h4 {
+  font-weight: 300;
+  color: #ffffff;
+}
+
+figure.snip1390 h4 {
+  color: #a6a6a6;
+}
+
+figure.snip1390 blockquote {
+  font-size: 1em;
+  padding: 45px 20px 40px 50px;
+  margin-top: 30px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: inset -1.4px -1.4px 2px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  position: relative;
+}
+
+figure.snip1390 blockquote:before {
+  content: "\201C";
+  position: absolute;
+  font-size: 70px;
+  opacity: 0.25;
+  font-style: normal;
+  top: 0px;
+  left: 20px;
+}
+
+figure.snip1390 .profile {
+  width: 80px;
+  height: 80px; /* Adjust as needed */
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
+  border: solid 5px #A6A57A;
+}
+
+@media (max-width: 767px) {
+  figure.snip1390 {
+    width: calc(100% - 20px); /* One testimonial per row */
+    max-width: none;
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>testimonial</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>testimonial</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-29 07:04:41</sys_created_on>
+        <sys_id>22a29cd483aa4610edb56060ceaad389</sys_id>
+        <sys_mod_count>31</sys_mod_count>
+        <sys_name>testimonial</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_22a29cd483aa4610edb56060ceaad389</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-29 09:01:37</sys_updated_on>
+        <template><![CDATA[<div class="testimonials">
+  <h2 style="font-weight: bold;">Testimonials</h2>
+  <hr class="line" />
+</div>
+<div class="testimonial-container">
+<figure class="snip1390">
+  <img src="https://img.freepik.com/free-photo/3d-render-little-boy-with-eyeglasses-blue-shirt_1142-50994.jpg?t=st=1716967111~exp=1716970711~hmac=37767667d0ab9db20c423b6a1f77f84ae7ddf44815abb9d19841a0647c855475&w=740" alt="profile-sample3" class="profile" />
+  <figcaption>
+    <h2>Shyamal Das</h2>
+    <h4>Servicenow Intern</h4>
+    <blockquote>Using this app has been a game-changer for me! Not only did I find the items I needed, but I also got to contribute to meaningful causes effortlessly.</blockquote>
+  </figcaption>
+</figure>
+<figure class="snip1390 hover"><img src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671140.jpg?w=740&t=st=1716967270~exp=1716967870~hmac=69e2c1b6495d858aba2d4ba6d2122bf66355163a93d6cb32797368508ac7f819" alt="profile-sample5" class="profile" />
+  <figcaption>
+    <h2>Sukh Gill</h2>
+    <h4>Senior Technical Consultant</h4>
+    <blockquote>I've never felt more connected to giving back until I started using this app. It's easy to use, and knowing that my donations are making a difference is incredibly fulfilling. </blockquote>
+  </figcaption>
+</figure>
+<figure class="snip1390"><img src="https://img.freepik.com/free-psd/3d-illustration-person-with-long-hair_23-2149436197.jpg?size=626&ext=jpg&ga=GA1.1.1795288707.1716529742&semt=sph" alt="profile-sample6" class="profile" />
+  <figcaption>
+    <h2>Jagriti Rai</h2>
+    <h4>Servicenow Intern</h4>
+    <blockquote>This app is a win-win! I got the items I required without any hassle, and knowing that my donations are supporting charities makes me proud to be part of such a noble cause.</blockquote>
+  </figcaption>
+</figure>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

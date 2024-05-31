@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
+        <sp_dependency display_value="item.paginate">7bd41bec83aa0210edb56060ceaad3b9</sp_dependency>
+        <sp_widget display_value="Item list clone">5f0353e483aa0210edb56060ceaad337</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-30 15:54:26</sys_created_on>
+        <sys_id>d485d72083ea0210edb56060ceaad3c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>item.paginate.Item list clone</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_d485d72083ea0210edb56060ceaad3c0</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-30 15:54:26</sys_updated_on>
+    </m2m_sp_widget_dependency>
+</record_update>

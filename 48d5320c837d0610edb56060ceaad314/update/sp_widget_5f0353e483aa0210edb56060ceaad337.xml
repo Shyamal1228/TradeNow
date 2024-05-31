@@ -108,6 +108,80 @@
   font-size: 12px; /* Adjust the size of the arrow */
   color: #333; /* Arrow color */
 }
+
+
+
+// pagination
+.pagination {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-link {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 3px;
+}
+
+.page-link:hover {
+  background-color: #e9ecef;
+}
+
+.page-item.active .page-link {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+ul.dirPagination.ng-scope{
+display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  border-radius: 0.25rem;
+}
+
+
+// 1 2 3
+a.ng-binding{
+ display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #2fa14d;
+  background-color: #fff;
+  border: 1px solid #4484c5;
+  border-radius: 3px;
+  margin: 0px 2.5px;
+}
+a.ng-binding:hover{
+  background-color: #2ECC71;
+  border-color: #145926;
+  color: #fff;
+}
+.ng-scope&gt;a{
+ display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #2fa14d;
+  background-color: #fff;
+  border: 1px solid #2fa14d;
+  border-radius: 3px;
+  margin: 0px 5px
+}
+.ng-scope&gt;a:hover{
+  background-color: #2ECC71;
+  border-color: #145926;
+  color: #fff;
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -115,10 +189,10 @@
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>item_list</id>
+        <id>item_list_clone</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>Item List</name>
+        <name>Item list clone</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -128,7 +202,7 @@
 	data.table = 'x_1383179_tradenow_item_list';
 	data.items = [];
   var gr = new GlideRecord(data.table);
-	gr.setLimit(4);
+	//gr.setLimit(4);
   gr.query();
 	while (gr.next()) {
 		var obj={
@@ -165,16 +239,16 @@
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-05-24 09:59:24</sys_created_on>
-        <sys_id>cdba4b2e83568210edb56060ceaad37d</sys_id>
-        <sys_mod_count>214</sys_mod_count>
-        <sys_name>Item List</sys_name>
+        <sys_created_on>2024-05-30 15:43:43</sys_created_on>
+        <sys_id>5f0353e483aa0210edb56060ceaad337</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>Item list clone</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_widget_cdba4b2e83568210edb56060ceaad37d</sys_update_name>
+        <sys_update_name>sp_widget_5f0353e483aa0210edb56060ceaad337</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-30 15:24:06</sys_updated_on>
+        <sys_updated_on>2024-05-31 05:51:31</sys_updated_on>
         <template><![CDATA[
 
 <div class="container">
@@ -211,7 +285,7 @@
 
 <div class="row">
   <!--<div class="col-sm-4 col-md-3" ng-repeat="item in data.items | filter: {name: test} | filter: {category: selectedCategory} ">-->
-  <div class="col-sm-4 col-md-3" ng-repeat="item in data.items |filter: {category: selectedCategory.sys_id} | filter: {name: test} ">
+  <div class="col-sm-4 col-md-3" dir-paginate="item in data.items |filter: {category: selectedCategory.sys_id} | filter: {name: test} |itemsPerPage: 8">
     <div class="thumbnail">
       <img src="{{item.image_url}}" alt="...">
       <div class="caption">
@@ -222,6 +296,8 @@
     </div>
   </div>
 </div>
+<dir-pagination-controls></dir-pagination-controls>
+
 
   <!-- Display message when no items are found -->
   <div class="col-md-12" ng-if="Object.keys(item).length === 0">

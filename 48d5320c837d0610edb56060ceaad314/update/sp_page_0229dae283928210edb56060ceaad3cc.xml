@@ -6,6 +6,7 @@
   min-height: 100%;
   padding-top: 0px !important;
   box-shadow: inset 0 0 0 2000px rgba(41, 62, 64, 0.3);
+  
 }
 
 @media(max-width: 767px) {
@@ -21,6 +22,7 @@ section.page {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #3A3F50;
+  
 }
 
 section.page main.body:before {
@@ -50,14 +52,14 @@ section.page main.body:before {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-24 06:22:55</sys_created_on>
         <sys_id>0229dae283928210edb56060ceaad3cc</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>tr_index</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_page_0229dae283928210edb56060ceaad3cc</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-24 07:17:59</sys_updated_on>
+        <sys_updated_on>2024-05-30 07:51:37</sys_updated_on>
         <title>Homepage</title>
         <use_seo_script>false</use_seo_script>
     </sp_page>

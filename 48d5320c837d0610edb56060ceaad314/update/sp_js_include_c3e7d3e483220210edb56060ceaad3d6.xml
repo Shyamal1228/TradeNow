@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include">
+    <sp_js_include action="INSERT_OR_UPDATE">
+        <display_name>paginate</display_name>
+        <source>local</source>
+        <sys_class_name>sp_js_include</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-30 16:06:18</sys_created_on>
+        <sys_id>c3e7d3e483220210edb56060ceaad3d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>paginate</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_ui_script display_value="x_1383179_tradenow.dirPagination">013753a083220210edb56060ceaad38d</sys_ui_script>
+        <sys_update_name>sp_js_include_c3e7d3e483220210edb56060ceaad3d6</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-30 16:06:18</sys_updated_on>
+        <url/>
+    </sp_js_include>
+</record_update>

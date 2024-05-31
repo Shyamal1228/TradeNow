@@ -3,16 +3,24 @@
         <category>custom</category>
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
-        <css>.testimonials {
+        <css>.top-container{
+  margin-top:50px;
+}
+.testimonials {
   margin-top: 15px;
-  color: #1f8476;
+  color: #000000;
   text-align: center;
+}
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 .line{
   border: none;
   height: 5px;
   width: 20%;
-  background-color:#1f8476;
+  background-color:#000000;
  	margin-butom: 7px;
 }
 .testimonial-container {
@@ -27,14 +35,16 @@ figure.snip1390 {
   overflow: hidden;
   margin: 10px;
   width: calc(50% - 20px); /* Two testimonials per row */
-  max-width: 315px;
+  max-width: 370px;
   color: #000000;
   text-align: center;
   font-size: 16px;
-  background-color: #293e40;
+  //background-color: #293e40;
+  background-color: #0a2414;
   padding: 30px;
   background-image: linear-gradient(-25deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
   box-sizing: border-box;
+  border-radius:10px;
 }
 
 figure.snip1390 *,
@@ -121,16 +131,21 @@ figure.snip1390 .profile {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-29 07:04:41</sys_created_on>
         <sys_id>22a29cd483aa4610edb56060ceaad389</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>55</sys_mod_count>
         <sys_name>testimonial</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_22a29cd483aa4610edb56060ceaad389</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-29 09:01:37</sys_updated_on>
-        <template><![CDATA[<div class="testimonials">
-  <h2 style="font-weight: bold;">Testimonials</h2>
+        <sys_updated_on>2024-05-30 14:52:13</sys_updated_on>
+        <template><![CDATA[<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+</style>
+<div class="top-container">
+  
+<div class="testimonials">
+  <h2 class="poppins-semibold">Testimonials</h2>
   <hr class="line" />
 </div>
 <div class="testimonial-container">
@@ -156,6 +171,7 @@ figure.snip1390 .profile {
     <blockquote>This app is a win-win! I got the items I required without any hassle, and knowing that my donations are supporting charities makes me proud to be part of such a noble cause.</blockquote>
   </figcaption>
 </figure>
+</div>
 </div>
 ]]></template>
     </sp_widget>

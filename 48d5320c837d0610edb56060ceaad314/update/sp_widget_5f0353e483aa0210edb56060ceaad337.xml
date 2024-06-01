@@ -206,6 +206,7 @@ a.ng-binding:hover{
   gr.query();
 	while (gr.next()) {
 		var obj={
+			sys_id:gr.getValue('sys_id'),
 			name:gr.getValue('item_name'),
 			description:gr.getValue('description'),
 			category:gr.getValue('category'),
@@ -241,14 +242,14 @@ a.ng-binding:hover{
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-30 15:43:43</sys_created_on>
         <sys_id>5f0353e483aa0210edb56060ceaad337</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>Item list clone</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_5f0353e483aa0210edb56060ceaad337</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-31 05:51:31</sys_updated_on>
+        <sys_updated_on>2024-06-01 14:37:46</sys_updated_on>
         <template><![CDATA[
 
 <div class="container">
@@ -291,11 +292,11 @@ a.ng-binding:hover{
       <div class="caption">
         <h3>{{item.name}}</h3>
         <span>{{item.description}}</span>
-        <p><a href="#" class="btn btn-primary" role="button">View Item</a></p>
+        <p><a href="/tradenow?id=item_details&table=x_1383179_tradenow_item_list&sys_id={{item.sys_id}}" class="btn btn-primary" role="button">View Item</a></p>
       </div>
     </div>
   </div>
-</div>
+</div>s
 <dir-pagination-controls></dir-pagination-controls>
 
 

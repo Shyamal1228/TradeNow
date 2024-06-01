@@ -116,6 +116,7 @@ h1 {
     gap: 10px;
 }
 
+.claim-item,
 .add-to-cart,
 .compare {
     padding: 10px 20px;
@@ -124,7 +125,10 @@ h1 {
     cursor: pointer;
     font-size: 1em;
 }
-
+.claim-item {
+    background-color: #00d26a;
+    color: #ffffff;
+}
 .add-to-cart {
     background-color: #007bff;
     color: #ffffff;
@@ -159,40 +163,98 @@ h1 {
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+	
+	var table_name = $sp.getParameter('table');
+	var targetSysId = $sp.getParameter('sys_id');
+	//console.log(table_name);
+	//console.log(targetSysId);
+	//data.details = [];
+	if(table_name){
+  var gr = new GlideRecord(table_name);
+	if (gr.get(targetSysId)){
+		data.obj={
+			sys_id:gr.getValue('sys_id'),
+			lister:gr.getValue('lister_name'),
+			name:gr.getValue('item_name'),
+			description:gr.getValue('description'),
+			category:gr.getValue('category'),
+			condition:gr.getValue('condition'),
+			image_url: null
+		};
+		var category_sys_id=data.obj.category;
+		var catGR = new GlideRecord('x_1383179_tradenow_category_lookup');
+		catGR.addQuery('sys_id', category_sys_id);
+		catGR.query();
+		if (catGR.next()) {
+			var categoryName = catGR.getDisplayValue('name');
+			data.obj.category = categoryName;
+		}
+		
+		
+		var attachmentGr = new GlideRecord('sys_attachment');
+		attachmentGr.addQuery('table_sys_id', targetSysId);
+		attachmentGr.query();
+		
+		if (attachmentGr.next()) {
+			data.obj.image_url = '/sys_attachment.do?sys_id=' + attachmentGr.getValue('sys_id');
+		}
+		
+		
+		var userId = data.obj.lister;
+
+		var userGR = new GlideRecord('sys_user');
+		userGR.addQuery('sys_id', userId);
+		userGR.query();
+
+		if (userGR.next()) {
+			//var fullName = userGR;
+			 var fullName = userGR.getDisplayValue('name');
+			console.log("userGR="+userGR);
+			data.obj.lister=fullName;
+		}
+	//data.details.push(obj);
+	}
+}
+
+	
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-31 07:29:00</sys_created_on>
         <sys_id>426be27c83a24210edb56060ceaad3f0</sys_id>
-        <sys_mod_count>75</sys_mod_count>
+        <sys_mod_count>137</sys_mod_count>
         <sys_name>Item Details</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_426be27c83a24210edb56060ceaad3f0</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-31 10:16:36</sys_updated_on>
+        <sys_updated_on>2024-06-01 16:51:04</sys_updated_on>
         <template><![CDATA[
     <div class="container">
         <div class="image">
-            <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt="Nike Shoes">
+             <!--<img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt="Nike Shoes">-->
+         <img src="{{data.obj.image_url}}" alt="{{ data.obj.name }}">
         </div>
         <div class="content">
-            <h1 style="margin-bottom: 0.5rem;" class="poppins-semibold">Nike Shoes</h1>
+            <h1 style="margin-bottom: 0.5rem;" class="poppins-semibold">{{ data.obj.name }}</h1>
           	<hr class="line" />
             <div class="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem et sequi ipsa!</p>
+                <p>{{ data.obj.description }}</p>
             </div>
             <ul class="features">
                 
                 <li><span>✅</span> <strong>Available:</strong> in stock</li>
-                <li><span>✅</span> <strong>Category:</strong> Electronics</li>
-              	<li><span>✅</span> <strong>Condition:</strong> New</li>
+                <li><span>✅</span> <strong>Category:</strong> {{data.obj.category}}</li>
+              	<li><span>✅</span> <strong>Condition:</strong> {{data.obj.condition}}</li>
                 <li><span>✅</span> <strong>Item Location:</strong><img src="map.png" class="map"> </li>
-                <!--<li><span>✅</span> <strong>Shipping Fee:</strong> Free</li>-->
+                <li><span>✅</span> <strong>Item Lister:</strong> {{data.obj.lister}}</li>
             </ul>
             <div class="actions">
+              	<button class="claim-item">Claim Item</button>
                 <button class="add-to-cart">Add to Cart</button>
                 <button class="compare">Reserve</button>
             </div>

@@ -12,9 +12,153 @@
     };
     reader.readAsDataURL(event.target.files[0]);
   };
+	
+	c.submitForm = function(isValid) {
+		c.try=isValid;
+		c.submitted= true;
+		//alert("done");
+		 //spUtil.addInfoMessage('saved');
+		
+		if (!isValid)
+			return;
+		c.data.item_name = c.item_name;
+		c.data.description= c.description;
+		c.data.selectedCondition= c.selectedCondition;
+		c.data.selectedCategory = c.selectedCategory;
+		//data.event= c.select_event;
+		//data.eventSysId=c.setect_event.sys_id;
+		c.data.image= c.image;
+
+		//Pass the data object to the server, add a promise (callback)
+		// to process the server's response
+		c.server.update();
+		
+	}
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+  margin:30px;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: #f4f4f9;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+  border-radius:15px;
+}
+
+.form-container {
+    flex: 1;
+    padding: 20px 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+input[type="text"], 
+textarea, 
+select, 
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="file"] {
+    padding: 3px;
+}
+
+.btn {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+hr {
+    border: none;
+    height: 5px;
+  	width:50%;
+    background-color: #dddddd;
+    margin-bottom: 20px;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -28,81 +172,170 @@
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.categoryArray = [];
+  var categoryList = new GlideRecord('x_1383179_tradenow_category_lookup');
+	categoryList.query();
+	while (categoryList.next()) {
+		
+		var catObj={
+			name:categoryList.getValue('name'),
+			sys_id:categoryList.getValue('sys_id'),
+		};
+		data.categoryArray.push(catObj);
+		//data.categoryArray.push(categoryList.getValue('name'));
+	}
+	
+	/*data.choices = [];
+        var gr = new GlideRecord('sys_choice');
+        gr.addQuery('name', 'x_1383179_tradenow_item_list');
+        gr.addQuery('element', 'condition');
+        gr.addQuery('inactive', false);
+        gr.orderBy('sequence');
+        gr.query();
+        while (gr.next()) {
+					var conObj={
+						value: gr.getValue('value'),
+                label: gr.getValue('label')
+					};
+					data.choices.push(conObj);
+           // choices.push({
+            //    value: gr.getValue('value'),
+           //     label: gr.getValue('label')
+           // });
+        }
+	*/
+	
+	data.choices = [];
+	var gr = new GlideRecord('sys_choice');
+	gr.addQuery('name', 'x_1383179_tradenow_item_list');
+	gr.addQuery('element', 'condition');
+	gr.addQuery('inactive', false);
+	gr.orderBy('sequence');
+	gr.query();
+	while (gr.next()) {
+		var conObj = {
+			value: gr.getValue('value'),
+			label: gr.getValue('label')
+		};
+		data.choices.push(conObj);
+	}
+
+	//	console.log(data.choices);
+		// console.log(data.categoryArray);
+	
+	if(input){
+		console.log(input);
+		//if(validateRegistration (input.name)){
+
+			var grNewRegistration = new GlideRecordSecure('x_1383179_tradenow_item_list');
+			grNewRegistration.initialize();
+			console.log(input);
+			grNewRegistration.setValue('item_name', input.item_name);
+
+			grNewRegistration.setValue('description', input.description);
+			grNewRegistration.setValue('condition', input.selectedCondition);
+			grNewRegistration.setValue('category', input.selectedCategory);
+			grNewRegistration.setValue('company', input.selectedCondition);
+			//grNewRegistration.setValue('event', input.eventSysId);
+
+			grNewRegistration.setValue('image', input.image);
+
+		if(!input.comments) {
+			grNewRegistration.setValue('comments', "");
+		} else {
+			grNewRegistration.setValue('comments', input.comments);
+			}
+
+			var userRegSysId = grNewRegistration.insert();
+			//if the record is created successfully, send the success
+			// message to the client, else send the error message
+
+			if (!gs.nil(userRegSysId)) {
+				data.status = "success";
+
+			} else {            data.message = "Your registration has been successfully submitted.";
+
+						 }                   data.status = "error";
+
+	//	}
+
+	}
+
+	
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-24 07:48:51</sys_created_on>
         <sys_id>f4dce2aa83d28210edb56060ceaad307</sys_id>
-        <sys_mod_count>42</sys_mod_count>
+        <sys_mod_count>147</sys_mod_count>
         <sys_name>Add item widget</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_f4dce2aa83d28210edb56060ceaad307</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-25 14:42:41</sys_updated_on>
-        <template><![CDATA[<form class="form-horizontal">
-  <h3>Add an Item</h3>
-  <div class="form-group">
-    <div class="col-md-12">
-      <label>Item Name </label>
-      <input id="item_name" name="item_name" type="text" placeholder="Enter item name" class="form-control input-md">
-    </div>
-  </div>
-  
-  <div class="form-group">
-    <div class="col-md-12">
-      <label>Item Description </label>
-      <input id="item_description" name="item_description" type="text" placeholder="Enter item description" class="form-control input-md">
-    </div>
-  </div>
-  
-  <div class="form-group">
-    <div class="col-md-12">
-      <label>Select Condition</label>
-      <select id="select_condition" name="select_condition" class="form-control">
-        <option value="new">New</option>
-        <option value="used">Used</option>
-      </select>
-    </div>
-  </div>
-  
-  <div class="form-group">
-    <div class="col-md-12">
-      <label>Select Category</label>
-      <select id="select_category" name="select_category" class="form-control">
-        <option value="art">Art and craft supplies</option>
-        <option value="books">Books</option>
-        <option value="clothing">Clothing and Accessories</option>
-        <option value="electronics">Electronics</option>
-        <option value="furniture">Furniture</option>
-        <option value="home">Home and Kitchen Appliances</option>
-        <option value="shoes">Shoes</option>
-        <option value="toys">Toys and Games</option>
-        <option value="watch">Watch</option>
-      </select>
-    </div>
-  </div>
-  
-  <div class="form-group">
-    <div class="col-md-12">
-      <label>Upload Image<input type="file" accept="image/*" onchange="angular.element(this).scope().c.loadFile(event)"></label>
-  
-  <!-- Image element to display the uploaded image -->
-  <img id="output" style="max-width: 100%; height: auto;"/>
+        <sys_updated_on>2024-06-04 10:54:31</sys_updated_on>
+        <template><![CDATA[
+    <div class="container">
+        <div class="image-container">
+            <img src="add item image.png" alt="Item Image">
+        </div>
+        <div class="form-container">
+            <h1>Add New Item</h1>
+          <hr>
+            <form name="registration" novalidate ng-submit="c.submitForm(registration.$valid)">
+                <div class="form-group" ng-class="{'has-error':registration.item_name.$invalid && c.submitted }">
+                    <label for="item_name">Item Name</label>
+                    <input type="text" ng-model="c.item_name" id="item_name" name="item_name" ng-required="true">
+                  <p class="help-block" ng-show="registration.item_name.$invalid && c.submitted">Field is required.</p>
+                </div>
+                <div class="form-group" ng-class="{'has-error':registration.description.$invalid && c.submitted }">
+                    <label for="description">Item Description</label>
+                    <textarea id="description" ng-model="c.description" name="description" rows="4" ng-required="true"></textarea>
+                  <p class="help-block" ng-show="registration.description.$invalid && c.submitted">Field is required.</p>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' :registration.condition.$invalid && c.submitted }">
+                  <div class="select-dropdown">
+                     <label for="description">Item Condition</label>
+                   <!-- <select name="condition" ng-model="c.selectedCondition" ng-options="condition.value for condition in data.choices" ng-required="true">
+                      <option value="">Select Condition</option>
+                    </select>-->
+                    <select name="condition" ng-model="c.selectedCondition" ng-options="condition.value as condition.label for condition in data.choices" ng-required="true">
+                      <option value="">Select Condition</option>
+                    </select>
 
-    <!-- <label>Select a file: <input type="file" name="img" accept="image/*" > </label> -->
+
+										<p class="help-block" ng-show="registration.condition.$invalid && c.submitted">Field is required.</p>
+                  </div>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' :registration.category.$invalid && c.submitted }">
+                  <div class="select-dropdown">
+                    <label for="description">Item Category</label>
+                    <!--<select name="category" ng-model="c.selectedCategory" ng-options="category.name for category in data.categoryArray" ng-required="true">
+                      <option value="">Select Category</option>
+                    </select>-->
+                    <select name="category" ng-model="c.selectedCategory" ng-options="category.sys_id as category.name for category in data.categoryArray" ng-required="true">
+                      <option value="">Select Category</option>
+                    </select>
+
+										<p class="help-block" ng-show="registration.category.$invalid && c.submitted">Field is required.</p>
+                  </div>
+                </div>
+               <div class="form-group">
+                    <label for="item-image">Upload Image</label>
+                    <input type="file" ng-model="c.image" accept="image/*" onchange="angular.element(this).scope().c.loadFile(event)">
+                  	<img id="output" style="max-width: 20%; height: auto;"/>
+                </div>
+                <button type="submit" class="btn">Add Item</button>
+            </form>
+        </div>
+      <div ng-if="c.message" id="errorMessage" class="alert alert-danger" role="alert">{{c.message}}</div>
+<div ng-if="c.success" id="successMessage" class="alert alert-success" role="alert">{{c.success}}</div>
     </div>
-  </div>
-  
-  <div class="form-group">
-    <div class="col-md-4">
-      <button id="button" name="submit" class="btn btn-primary"> Add </button>
-    </div>
-  </div>
-  
-  
-</form>]]></template>
+]]></template>
     </sp_widget>
 </record_update>

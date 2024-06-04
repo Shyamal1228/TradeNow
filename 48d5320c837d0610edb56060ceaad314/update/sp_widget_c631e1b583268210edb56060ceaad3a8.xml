@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //background-color: #ff0000;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content {
+    flex: 1 1 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333333;
+}
+
+.description {
+    margin-bottom: 20px;
+}
+
+.description p {
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+.features {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.features li {
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+.features li span {
+    color: #ff0000;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.add-to-cart,
+.compare {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.add-to-cart {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.compare {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .image,
+    .content {
+        flex: 1 1 100%;
+    }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>item_details_practice</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>item details practice</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-03 04:38:47</sys_created_on>
+        <sys_id>c631e1b583268210edb56060ceaad3a8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>item details practice</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_c631e1b583268210edb56060ceaad3a8</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-03 04:39:15</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Shoes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt="Nike Shoes">
+        </div>
+        <div class="content">
+            <h1>Nike Shoes</h1>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem et sequi ipsa!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Consequatur, perferendis eius. Dignissimos, labore suscipit. Unde.</p>
+            </div>
+            <ul class="features">
+                <li><span>✔</span> Color: Black</li>
+                <li><span>✔</span> Available: in stock</li>
+                <li><span>✔</span> Category: Shoes</li>
+                <li><span>✔</span> Shipping Area: All over the world</li>
+                <li><span>✔</span> Shipping Fee: Free</li>
+            </ul>
+            <div class="actions">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="compare">Compare</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+]]></template>
+    </sp_widget>
+</record_update>

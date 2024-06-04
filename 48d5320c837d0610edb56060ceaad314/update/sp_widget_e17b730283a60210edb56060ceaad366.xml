@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+		c.Itembutton = function(st) {
+		c.data.status=st;
+		//c.server.update();
+			c.server.update().then(function(response) {
+      if (response.data.success) {
+       alert('Update successful');
+      } else {
+       alert('Update failed:', response.data.error);
+      }
+    });
+	}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.text{
+  color:#000000;
+  font-weight:bold;
+}
+.map{
+  width:5%;
+  margin-left:5px;
+}
+.line{
+  border: none;
+  height: 5px;
+  width: 20%;
+  background-color:#000000;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+.container {
+    background-color: #ffffff;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  	margin:55px 0;
+    padding: 25px 0;
+}
+
+.image {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //background-color: #ff0000;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content {
+    flex: 1 1 50%;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333333;
+}
+
+.description {
+    margin-bottom: 20px;
+}
+
+.description p {
+  	margin-top: 10px;
+    margin-bottom: 10px;
+    color: #555555;
+  	font-size: 1.5rem;
+}
+
+.features {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.features li {
+  	font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+.features li span {
+    color: #ff0000;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.claim-item,
+.add-to-cart,
+.reserve {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  	
+}
+
+.view-item-button {
+  display: inline-block;
+  padding: 1.3rem 2.5rem;
+  background-color: #78c879;
+  color: white;
+  font-size: 1.4rem;
+  //font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(120, 200, 121, 0.4);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-item-button:hover {
+  background-color: #66b267;
+}
+
+.claim-item {
+    background-color: #00d26a;
+    color: #ffffff;
+  	box-shadow: 0 4px 8px rgba(120, 200, 121, 0.4);
+ 		transition: background-color 0.3s ease;
+}
+.claim-item:hover {
+  background-color: #25c249;
+}
+.add-to-cart {
+    background-color: #007bff;
+    color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+  transition: background-color 0.3s ease;
+}
+.add-to-cart:hover {
+  background-color:#0e65f0;
+}
+.reserve {
+    background-color: #f26b0a;
+    color: #ffffff;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
+.reserve:hover {
+  background-color: #db4e02;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .image,
+    .content {
+        flex: 1 1 100%;
+    }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>item_details_copy</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Item details copy</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+	
+	var table_name = $sp.getParameter('table');
+	var targetSysId = $sp.getParameter('sys_id');
+	
+	//console.log(table_name);
+	//console.log(targetSysId);
+	//data.details = [];
+	if(table_name){
+  var gr = new GlideRecord(table_name);
+	if (gr.get(targetSysId)){
+		data.obj={
+			sys_id:gr.getValue('sys_id'),
+			lister:gr.getValue('lister_name'),
+			name:gr.getValue('item_name'),
+			description:gr.getValue('description'),
+			category:gr.getValue('category'),
+			condition:gr.getValue('condition'),
+			image_url: null
+		};
+		var category_sys_id=data.obj.category;
+		var catGR = new GlideRecord('x_1383179_tradenow_category_lookup');
+		catGR.addQuery('sys_id', category_sys_id);
+		catGR.query();
+		if (catGR.next()) {
+			var categoryName = catGR.getDisplayValue('name');
+			data.obj.category = categoryName;
+		}
+		
+		
+		var attachmentGr = new GlideRecord('sys_attachment');
+		attachmentGr.addQuery('table_sys_id', targetSysId);
+		attachmentGr.query();
+		
+		if (attachmentGr.next()) {
+			data.obj.image_url = '/sys_attachment.do?sys_id=' + attachmentGr.getValue('sys_id');
+		}
+		
+		
+		var userId = data.obj.lister;
+
+		var userGR = new GlideRecord('sys_user');
+		userGR.addQuery('sys_id', userId);
+		userGR.query();
+
+		if (userGR.next()) {
+			//var fullName = userGR;
+			 var fullName = userGR.getDisplayValue('name');
+			console.log("userGR="+userGR);
+			data.obj.lister=fullName;
+		}
+	//data.details.push(obj);
+	}
+}
+	
+	if (input && input.status) {
+	//	console.log(input.status);
+
+	var grClaimItem = new GlideRecordSecure('x_1383179_tradenow_item_list');
+	grClaimItem.addQuery('sys_id', targetSysId);
+	grClaimItem.query();
+	if (grClaimItem.next()) {
+			grClaimItem.setValue('status',input.status);
+			grClaimItem.update();
+	}
+	}
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-04 10:31:08</sys_created_on>
+        <sys_id>e17b730283a60210edb56060ceaad366</sys_id>
+        <sys_mod_count>46</sys_mod_count>
+        <sys_name>Item details copy</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_e17b730283a60210edb56060ceaad366</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-04 12:04:40</sys_updated_on>
+        <template><![CDATA[
+    <div class="container">
+        <div class="image">
+             <!--<img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt="Nike Shoes">-->
+         <img src="{{data.obj.image_url}}" alt="{{ data.obj.name }}">
+        </div>
+        <div class="content">
+            <h1 style="margin-bottom: 0.5rem;" class="poppins-semibold">{{ data.obj.name }}</h1>
+          	<hr class="line" />
+            <div class="description">
+                <p class="poppins-regular">{{ data.obj.description }}</p>
+            </div>
+            <ul class="features">
+                
+                <li class="poppins-regular"><span>✅</span> <strong>Available:</strong> in stock</li>
+                <li class="poppins-regular"><span>✅</span> <strong>Category:</strong> {{data.obj.category}}</li>
+              	<li class="poppins-regular"><span>✅</span> <strong>Condition:</strong> {{data.obj.condition}}</li>
+                <li class="poppins-regular"><span>✅</span> <strong>Item Location:</strong><img src="map.png" class="map"> </li>
+                <li class="poppins-regular"><span>✅</span> <strong>Item Lister:</strong> {{data.obj.lister}}</li>
+            </ul>
+            <div class="actions">
+              <button ng-if="c.data.status !== 'reserved'" ng-click="c.Itembutton('readypickup')" class="claim-item">Claim Item</button>
+                <!--<button ng-click="c.claimItem()" class="add-to-cart">Add to Cart</button>-->
+                <button ng-if="c.data.status == 'available'|| c.data.status == 'draft'" ng-click="c.Itembutton('reserved')" class="reserve">Reserve</button>
+               <button ng-if="c.data.status == 'reserved'" ng-click="c.Itembutton('available')" class="add-to-cart">Cancel Reservation</button>
+            </div>
+        </div>
+    </div>
+]]></template>
+    </sp_widget>
+</record_update>

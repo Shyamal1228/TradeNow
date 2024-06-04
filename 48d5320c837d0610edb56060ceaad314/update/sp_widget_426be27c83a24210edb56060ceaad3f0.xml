@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+		c.Itembutton = function(data) {
+		c.data.status=data;
+		c.server.update();
+	}
+};]]></client_script>
         <controller_as>c</controller_as>
         <css>* {
     box-sizing: border-box;
@@ -57,7 +64,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
-  	margin:25px 0;
+  	margin:55px 0;
+    padding: 25px 0;
 }
 
 .image {
@@ -95,6 +103,7 @@ h1 {
   	margin-top: 10px;
     margin-bottom: 10px;
     color: #555555;
+  	font-size: 1.5rem;
 }
 
 .features {
@@ -103,6 +112,7 @@ h1 {
 }
 
 .features li {
+  	font-size: 1.5rem;
     margin-bottom: 10px;
     color: #555555;
 }
@@ -118,27 +128,60 @@ h1 {
 
 .claim-item,
 .add-to-cart,
-.compare {
+.reserve {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
+  	
 }
+
+.view-item-button {
+  display: inline-block;
+  padding: 1.3rem 2.5rem;
+  background-color: #78c879;
+  color: white;
+  font-size: 1.4rem;
+  //font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(120, 200, 121, 0.4);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-item-button:hover {
+  background-color: #66b267;
+}
+
 .claim-item {
     background-color: #00d26a;
     color: #ffffff;
+  	box-shadow: 0 4px 8px rgba(120, 200, 121, 0.4);
+ 		transition: background-color 0.3s ease;
+}
+.claim-item:hover {
+  background-color: #25c249;
 }
 .add-to-cart {
     background-color: #007bff;
     color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+  transition: background-color 0.3s ease;
 }
-
-.compare {
-    background-color: #ff0000;
+.add-to-cart:hover {
+  background-color:#0e65f0;
+}
+.reserve {
+    background-color: #f26b0a;
     color: #ffffff;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
 }
-
+.reserve:hover {
+  background-color: #db4e02;
+}
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -168,6 +211,7 @@ h1 {
 	
 	var table_name = $sp.getParameter('table');
 	var targetSysId = $sp.getParameter('sys_id');
+	
 	//console.log(table_name);
 	//console.log(targetSysId);
 	//data.details = [];
@@ -217,7 +261,20 @@ h1 {
 	//data.details.push(obj);
 	}
 }
-
+	
+	console.log(input);
+	
+	/*var grClaimItem = new GlideRecordSecure('x_1383179_tradenow_item_list');
+	grClaimItem.addQuery('sys_id', targetSysId);
+	grClaimItem.query();
+	if (grClaimItem.next()) {
+		//data.status=input.status;
+		// console.log(data.status);
+		//console.log(input.status);
+			grClaimItem.setValue('status',input.status);
+			//grClaimItem.update();
+	}*/
+	
 	
 })();]]></script>
         <servicenow>false</servicenow>
@@ -225,14 +282,14 @@ h1 {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-31 07:29:00</sys_created_on>
         <sys_id>426be27c83a24210edb56060ceaad3f0</sys_id>
-        <sys_mod_count>137</sys_mod_count>
+        <sys_mod_count>194</sys_mod_count>
         <sys_name>Item Details</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_426be27c83a24210edb56060ceaad3f0</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-01 16:51:04</sys_updated_on>
+        <sys_updated_on>2024-06-04 10:29:51</sys_updated_on>
         <template><![CDATA[
     <div class="container">
         <div class="image">
@@ -243,20 +300,21 @@ h1 {
             <h1 style="margin-bottom: 0.5rem;" class="poppins-semibold">{{ data.obj.name }}</h1>
           	<hr class="line" />
             <div class="description">
-                <p>{{ data.obj.description }}</p>
+                <p class="poppins-regular">{{ data.obj.description }}</p>
             </div>
             <ul class="features">
                 
-                <li><span>✅</span> <strong>Available:</strong> in stock</li>
-                <li><span>✅</span> <strong>Category:</strong> {{data.obj.category}}</li>
-              	<li><span>✅</span> <strong>Condition:</strong> {{data.obj.condition}}</li>
-                <li><span>✅</span> <strong>Item Location:</strong><img src="map.png" class="map"> </li>
-                <li><span>✅</span> <strong>Item Lister:</strong> {{data.obj.lister}}</li>
+                <li class="poppins-regular"><span>✅</span> <strong>Available:</strong> in stock</li>
+                <li class="poppins-regular"><span>✅</span> <strong>Category:</strong> {{data.obj.category}}</li>
+              	<li class="poppins-regular"><span>✅</span> <strong>Condition:</strong> {{data.obj.condition}}</li>
+                <li class="poppins-regular"><span>✅</span> <strong>Item Location:</strong><img src="map.png" class="map"> </li>
+                <li class="poppins-regular"><span>✅</span> <strong>Item Lister:</strong> {{data.obj.lister}}</li>
             </ul>
             <div class="actions">
-              	<button class="claim-item">Claim Item</button>
-                <button class="add-to-cart">Add to Cart</button>
-                <button class="compare">Reserve</button>
+              <button ng-click="c.Itembutton('readypickup')" class="claim-item">Claim Item</button>
+                <!--<button ng-click="c.claimItem()" class="add-to-cart">Add to Cart</button>-->
+                <button ng-click="c.Itembutton('reserve')" class="reserve">Reserve</button>
+               <p>Status: {{ c.data.status }}</p>
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@
         <css>.thumbnail {
     width: 250px;
     height: 400px;
-    overflow: hidden; 
+   // overflow: hidden; 
   }
 
   .thumbnail img {
@@ -242,14 +242,14 @@ a.ng-binding:hover{
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-30 15:43:43</sys_created_on>
         <sys_id>5f0353e483aa0210edb56060ceaad337</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>Item list clone</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_5f0353e483aa0210edb56060ceaad337</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-01 14:37:46</sys_updated_on>
+        <sys_updated_on>2024-06-02 12:17:27</sys_updated_on>
         <template><![CDATA[
 
 <div class="container">

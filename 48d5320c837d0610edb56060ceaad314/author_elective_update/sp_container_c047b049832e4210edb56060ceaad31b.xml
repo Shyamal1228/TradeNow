@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Charity Organization - Container 2</name>
+        <order>2</order>
+        <semantic_tag/>
+        <sp_page display_value="charity_organization">ba02b340832a4610edb56060ceaad3cc</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-31 17:39:59</sys_created_on>
+        <sys_id>c047b049832e4210edb56060ceaad31b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Charity Organization - Container 2</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_container_c047b049832e4210edb56060ceaad31b</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-04 16:04:48</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sp_container_c047b049832e4210edb56060ceaad31b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>Charity Organization - Container 2</name><order>2</order><semantic_tag/><sp_page display_value="charity_organization">ba02b340832a4610edb56060ceaad3cc</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-05-31 17:39:59</sys_created_on><sys_id>c047b049832e4210edb56060ceaad31b</sys_id><sys_mod_count>3</sys_mod_count><sys_name>Charity Organization - Container 2</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sp_container_c047b049832e4210edb56060ceaad31b</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-06-04 16:04:48</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>-1360368552</payload_hash>
+        <record_name>Charity Organization - Container 2</record_name>
+        <reverted_from/>
+        <source>94111d0783468e10edb56060ceaad3a5</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-04 16:04:48</sys_created_on>
+        <sys_id>c5d74d5683ea0210edb56060ceaad300</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fe3fef61b0000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-04 16:04:48</sys_updated_on>
+        <type>Container</type>
+        <update_guid>4dd70d569dea02109719168c068232ff</update_guid>
+        <update_guid_history>4dd70d569dea02109719168c068232ff:-1360368552,64aa1855852e8210cc89cb06fb942dab:2128094039,244417457ee682101adf1e429ab7a090:-1360368552,8047b049732e4210b1e7d6d67702291c:-553863847</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Charity Organization - Container 2">bdd7895683ea0210edb56060ceaad3cd</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-04 16:04:51</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>449b62b7a0ef4fa6845fb9a4be2386b9</sys_id>
+        <sys_metadata>c047b049832e4210edb56060ceaad31b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Charity Organization - Container 2</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sp_container_c047b049832e4210edb56060ceaad31b</sys_update_name>
+        <sys_update_version display_value="sp_container_c047b049832e4210edb56060ceaad31b">c5d74d5683ea0210edb56060ceaad300</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-04 16:04:51</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

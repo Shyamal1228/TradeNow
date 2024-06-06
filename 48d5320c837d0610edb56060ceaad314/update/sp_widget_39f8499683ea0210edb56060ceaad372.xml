@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $location) {
+  /* widget controller */
+  var c = this;
+	var payment_page = function(){
+		var charityId= $scope.obj.charityId;
+		$location.search("id=charity_page&charity_id="+charityId);
+	}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>$color-dark: #04364A;
+$color-mid-1: #176B87;
+$color-mid-2: #64CCC5;
+$color-light: #DAFFFB;
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+.charity-specific-info{
+  display: flex;
+  flex-direction: column;
+	.charity-name {
+	width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 5.5rem;
+    color: $color-dark;
+  }
+  .heading-bar{
+    width: 95%;
+    height: 2px;
+    background-color: $color-mid-1;
+  }
+}
+
+.charity-info{
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .charity-image{
+  	flex: 1;
+    img {
+    	width: 90%;
+      height: 90%;
+    }
+  }
+  .info-section{
+  	flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    .description{
+      font-size: 20px;
+      text-align: justify;
+		  text-justify: inter-word;	
+    }
+    .additional-info{
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      letter-spacing: 2px;
+      p {
+      	color: $color-dark;
+        span {
+        	color: $color-mid-1;
+          a{
+            color: $color-mid-1;
+          }
+        }
+      }
+    }
+  }
+	}
+  .navigation{
+  	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    button {
+    	background-color: $color-dark;
+    	color: $color-light;
+    	border: none;
+      font-size: 30px;
+      padding-left: 50px;
+      padding-right: 50px;
+      border-radius: 20px;
+    }
+  }
+  .payment-div{
+  	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: $color-dark;
+    color: $color-light;
+    .qr-payment{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      .qr-image{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          padding: 20px;
+  	      border-radius: 15px;
+	        background-color: white;
+        }
+      }
+      .screenshot-proof{
+        flex: 1;
+      }
+    }
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>charity_info</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>charity_info</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.table = 'x_1383179_tradenow_charity_list';
+	//data.items = []
+  var gr = new GlideRecord(data.table);
+	var charity_id = $sp.getParameter('charity_id');
+	console.log(charity_id)
+	gr.addQuery('number','=',charity_id);
+	gr.query();
+	/*while(gr.next()){
+		var obj={
+			charityId: gr.getValue('number'),
+			name:gr.getValue('charity_name'),
+			description:gr.getValue('description'),
+			raisedAmount: gr.getValue('total_amount_raised'),
+			image_url: gr.getDisplayValue('image')
+		}
+		data.items.push(obj);
+	}*/
+	
+	while(gr.next()){
+		var locationRF = gr.getValue('location')
+		console.log(locationRF);
+	data.obj = {
+		charityId: gr.getValue('number'),
+		name:gr.getValue('charity_name'),
+		description:gr.getValue('description'),
+		raisedAmount: gr.getValue('total_amount_raised'),
+		image_url: gr.getDisplayValue('image'),
+		website: gr.getValue('website'),
+		email: gr.getValue('email'),
+		phone: gr.getValue('phone'),
+		location: gr.getDisplayName('location'),
+		paymentLink: gr.getValue('donation_link'),
+		qrImage: gr.getDisplayValue('qr_code')
+	}
+	}
+	console.log(data.obj);
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-04 16:09:46</sys_created_on>
+        <sys_id>39f8499683ea0210edb56060ceaad372</sys_id>
+        <sys_mod_count>115</sys_mod_count>
+        <sys_name>charity_info</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_39f8499683ea0210edb56060ceaad372</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-05 13:01:26</sys_updated_on>
+        <template><![CDATA[<div class="charity-specific-info">
+<section class="charity-name">
+  	<h1 class="poppins-heading">{{data.obj.name}}</h1>
+  	<div class="heading-bar"></div>
+  </section>
+<section class="charity-info">
+  <div class="charity-image">
+    <img src={{data.obj.image_url}} alt:{{data.obj.name}} />
+  </div>
+  <div class="info-section">
+		<div class="poppins-regular description">
+      {{data.obj.description}}
+    </div>
+    <div class="additional-info poppins-semibold">
+      <p>Amount Raised: $<span>{{data.obj.raisedAmount}}</span></p>
+      <p>Email: <span>{{data.obj.email}}</span></p>
+      <p>Website: <span><a href={{data.obj.website}}>{{data.obj.website}}</a></span></p>
+      <p>Contact: <span>{{data.obj.phone}}</span></p>
+      <p>Location: <span>{{data.obj.location}}</span></p>
+    </div>
+  </div>
+</section>
+<section class="navigation">
+  <button type="button" class="poppins-heading" ng-click="payment_page()">
+    Donate
+  </button>
+</section>
+<section class="payment-div">
+  <div class="qr-payment">
+    <div class="qr-image">
+    	<img src={{data.obj.qrImage}} alt="payment qr image">  
+    </div>
+    <div class="screenshot-proof">
+      <p>
+        Upload screenshot
+      </p>
+    </div>
+  </div>
+  <div>
+   	<p>
+      Make a Donation to the official site <a href= {{data.obj.paymentLink}}>here</a>
+    </p>
+  </div>
+  </section>
+</div>]]></template>
+    </sp_widget>
+</record_update>

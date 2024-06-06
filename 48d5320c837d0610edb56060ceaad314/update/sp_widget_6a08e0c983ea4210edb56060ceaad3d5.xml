@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $location) {
+  /* widget controller */
+  var c = this;
+	//console.log(c.data.items);
+	
+		$scope.charities= [].concat(c.data.items);
+		//console.log($scope.data.items);
+		$scope.currentPage= 1;
+		$scope.pageSize= 9;
+		
+		$scope.getTotalPages= function(){
+			return Math.ceil($scope.charities.length/$scope.pageSize);
+		};
+		
+		$scope.setPage= function(page){
+			if(page>=1 && page<=$scope.getTotalPages()){
+				$scope.currentPage= page;
+			}
+		};
+		
+		$scope.paginate= function(){
+			var start= ($scope.currentPage- 1) * $scope.pageSize;
+			var end= start + $scope.pageSize;
+			return $scope.charities.slice(start,end)
+		};
+	
+		$scope.handleClick = function(charity_id){
+			$location.search("id=charity_page&charity_id="+charity_id);
+		}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.charity-list{
+  display:flex;
+  flex-direction: column;
+  align-item: center;
+  
+}
+
+.heading{
+	display:flex;
+  align-items: center;
+  justify-content:center;
+  font-family: sans-serif;
+  font-weight: bold;
+  height: 100px;
+  color: black;
+  font-weight: bold;
+}
+
+.pagination-div{
+	display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pagination-div .card-container {
+	display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 40px;
+  row-gap: 2em;
+}
+
+.pagination-div .card-container .charity-card {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: -3px 6px 5px 0px rgba(176,164,176,1);
+  transition: all .3s ease-in-out;
+  background-color: #f4f2f1;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.pagination-div .card-container .charity-card:hover {
+  box-shadow: -3px 18px 20px 0px rgba(99,89,99,1);
+  transform: translate3d(0px, -1px, 0px);
+}
+
+.pagination-div .card-container .charity-card .charity-image {
+  flex: 1.5;
+  width: 100%;
+  height: 250px;
+}
+
+.pagination-div .card-container .charity-card .charity-image img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.pagination-div .card-container .charity-card .charity-details {
+  flex: 2.5;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 10px;
+}
+
+.pagination-div .card-container .charity-card .title {
+  font-size: 32px;
+  color: #263b5c;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.pagination-div .card-container .charity-card:hover .title {
+  color: #122b32;
+}
+
+.pagination-div .card-container .charity-card .description {
+  color: #777777;
+}
+
+.pagination-div .card-container .charity-card .cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination-div .card-container .charity-card .cta .raised-amount {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pagination-div .card-container .charity-card .cta .raised-amount .amount {
+  color: #65c9bb;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.pagination-div .card-container .charity-card .cta .raised-amount .raised {
+  color: #263b5c;
+}
+
+.pagination-div .card-container .charity-card .cta button {
+  padding: 10px 24px;
+  border: 2px solid #122b32;
+  color: white;
+  background-color: #122b32;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+   cursor: pointer;
+}
+
+.pagination-div .card-container .charity-card:hover .cta button {
+  background-color: transparent;
+  color: #122b32;
+}
+
+.pagination-div .pagination-controls{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  font-size: 20px;
+  color: black;
+}
+
+.pagination-div .pagination-controls .nav-button{
+  background-color: transparent;
+	border: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.pagination-div .pagination-controls .nav-button:hover {
+	color: #65c9bb;
+}
+
+.pagination-div .pagination-controls .nav-button[disabled]{
+	color: grey;
+}
+
+@media only screen and (max-width: 992px){
+  .pagination-div .card-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .pagination-div .card-container .charity-card {
+    flex-direction: row;
+    height: 200px;
+    width: 95%;
+  }
+  
+   .pagination-div .card-container .charity-card .charity-image {
+  	flex: 1.5;
+    overflow: hidden;
+	}
+  
+  .pagination-div .card-container .charity-card .charity-details{
+  	flex: 2.5;
+  }
+  
+  .pagination-div .card-container .charity-image img{
+    object-fit: fill;
+  }
+  
+  .pagination-div .card-container .charity-card .title {
+  	font-size: 20px;
+  }
+  
+ .pagination-div .card-container .description{
+    display: none;
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>charity_list</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Charity_List</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+	data.table = 'x_1383179_tradenow_charity_list';
+	data.items = [];
+  var gr = new GlideRecord(data.table);
+	//gr.setLimit(8);
+  gr.query();
+	while (gr.next()) {
+		var obj={
+			id: gr.getValue('number'),
+			name:gr.getValue('charity_name'),
+			description:gr.getValue('description'),
+			category:gr.getValue('category'),
+			raisedAmount: gr.getValue('total_amount_raised'),
+			//image_url: gr.getValue('image')
+			image_url: gr.getDisplayValue('image')
+		};
+		
+		
+		data.items.push(obj);
+    }
+	for(var i=0;i<data.items.length;i++){
+		if (data.items[i].description.length > 100){
+			data.items[i].description= data.items[i].description.substring(0,100)+"..."
+		}
+	}
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-05-31 16:33:31</sys_created_on>
+        <sys_id>6a08e0c983ea4210edb56060ceaad3d5</sys_id>
+        <sys_mod_count>290</sys_mod_count>
+        <sys_name>Charity_List</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_6a08e0c983ea4210edb56060ceaad3d5</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-05 12:12:17</sys_updated_on>
+        <template><![CDATA[<div class="charity-list">
+  <div class="heading">
+    <h1>
+      All Charities
+    </h1>
+  </div>
+	<div class="pagination-div">
+    <div class="card-container">
+    <div class="charity-card" ng-repeat="item in paginate()">
+      <div class="charity-image">
+        <img ng-src="{{item.image_url}}" alt="Charity image">
+      </div>
+      <div class="charity-details">
+        <div class="title">{{item.name}}</div>
+        <div class="description">{{item.description}}</div>
+        <div class="cta">
+          <div class="raised-amount">
+            <span class="amount">${{item.raisedAmount}}</span>
+            <span class="raised">Raised</span>
+          </div>
+          <button type="submit" ng-click="handleClick(item.id)">View</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="pagination-controls">
+    	<button ng-click="setPage(currentPage - 1)" ng-disabled="currentPage === 1" class="nav-button">&lt;&lt;</button>
+      <span>Page {{currentPage}} of {{getTotalPages()}}</span>
+      <button ng-click="setPage(currentPage + 1)" ng-disabled="currentPage === getTotalPages()" class="nav-button">&gt;&gt;</button>
+    </div>     
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

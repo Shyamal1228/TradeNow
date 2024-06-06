@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rel_widget_clone">
     <sp_rel_widget_clone action="INSERT_OR_UPDATE">
-        <child display_value="Copy of Form">74523d3983668210edb56060ceaad3ac</child>
-        <cloned>2024-06-03 05:53:31</cloned>
-        <last_validated>2024-06-03 05:53:31</last_validated>
+        <child display_value="Copy of Form">7a2b74d683aa0210edb56060ceaad301</child>
+        <cloned>2024-06-04 15:09:29</cloned>
+        <last_validated>2024-06-04 15:09:29</last_validated>
         <parent display_value="Form">fd1f4ec347730200ba13a5554ee490c0</parent>
         <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;sp_widget&gt;&lt;category&gt;sp_platform&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function($rootScope, $scope, $timeout, $location, $log, $window, spUtil, nowAttachmentHandler, spAriaUtil, spNavStateManager) {
   $scope.submitting = false;
@@ -696,15 +696,15 @@
 &lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;</payload>
         <sys_class_name>sp_rel_widget_clone</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-06-03 05:53:31</sys_created_on>
-        <sys_id>f852f1b983668210edb56060ceaad30c</sys_id>
+        <sys_created_on>2024-06-04 15:09:29</sys_created_on>
+        <sys_id>b62b78d683aa0210edb56060ceaad3be</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>74523d3983668210edb56060ceaad3ac</sys_name>
+        <sys_name>7a2b74d683aa0210edb56060ceaad301</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_rel_widget_clone_f852f1b983668210edb56060ceaad30c</sys_update_name>
+        <sys_update_name>sp_rel_widget_clone_b62b78d683aa0210edb56060ceaad3be</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-03 05:53:31</sys_updated_on>
+        <sys_updated_on>2024-06-04 15:09:29</sys_updated_on>
     </sp_rel_widget_clone>
 </record_update>

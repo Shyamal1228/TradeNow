@@ -199,6 +199,13 @@ h1 {
         flex: 1 1 100%;
     }
 }
+
+.claimed{
+  background-color:#000000;
+  padding:10px;
+  border-radius:20px;
+  color:#ffffff;
+}
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -232,6 +239,7 @@ h1 {
 			description:gr.getValue('description'),
 			category:gr.getValue('category'),
 			condition:gr.getValue('condition'),
+			item_status:gr.getValue('status'),
 			image_url: null
 		};
 		var category_sys_id=data.obj.category;
@@ -287,14 +295,14 @@ h1 {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-04 10:31:08</sys_created_on>
         <sys_id>e17b730283a60210edb56060ceaad366</sys_id>
-        <sys_mod_count>46</sys_mod_count>
+        <sys_mod_count>59</sys_mod_count>
         <sys_name>Item details copy</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_e17b730283a60210edb56060ceaad366</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-04 12:04:40</sys_updated_on>
+        <sys_updated_on>2024-06-05 08:11:33</sys_updated_on>
         <template><![CDATA[
     <div class="container">
         <div class="image">
@@ -316,10 +324,12 @@ h1 {
                 <li class="poppins-regular"><span>✅</span> <strong>Item Lister:</strong> {{data.obj.lister}}</li>
             </ul>
             <div class="actions">
-              <button ng-if="c.data.status !== 'reserved'" ng-click="c.Itembutton('readypickup')" class="claim-item">Claim Item</button>
+              <button ng-if="data.obj.item_status == 'available' || data.obj.item_status == 'reserved'" ng-click="c.Itembutton('readypickup')" class="claim-item">Claim Item</button>
                 <!--<button ng-click="c.claimItem()" class="add-to-cart">Add to Cart</button>-->
-                <button ng-if="c.data.status == 'available'|| c.data.status == 'draft'" ng-click="c.Itembutton('reserved')" class="reserve">Reserve</button>
-               <button ng-if="c.data.status == 'reserved'" ng-click="c.Itembutton('available')" class="add-to-cart">Cancel Reservation</button>
+                <button ng-if="data.obj.item_status == 'available'" ng-click="c.Itembutton('reserved')" class="reserve">Reserve</button>
+               <button ng-if="data.obj.item_status == 'reserved'" ng-click="c.Itembutton('available')" class="add-to-cart">Cancel Reservation</button>
+              <h2 ng-if="data.obj.item_status == 'claimed'" class="claimed">Item has been Claimed </h2>
+               <button ng-if="data.obj.item_status == 'readypickup'" ng-click="c.Itembutton('claimed')" class="claim-item">Confirm Pick-Up</button>
             </div>
         </div>
     </div>

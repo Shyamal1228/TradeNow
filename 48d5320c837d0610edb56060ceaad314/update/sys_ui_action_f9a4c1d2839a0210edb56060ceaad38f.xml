@@ -7,7 +7,7 @@
 
 }]]></client_script_v2>
         <comments/>
-        <condition>current.status=="draft"</condition>
+        <condition>current.status!='available' &amp;&amp; current.status!='readypickup'  &amp;&amp; current.status!='reserved'  &amp;&amp; current.status!='claimed'  </condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
         <form_button_v2>false</form_button_v2>
@@ -31,7 +31,8 @@
         <onclick/>
         <order>-200</order>
         <script><![CDATA[current.status="available";
-current.update();]]></script>
+current.update();
+//current.status=="draft"]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
@@ -42,7 +43,7 @@ current.update();]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f9a4c1d2839a0210edb56060ceaad38f</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Add Item</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -50,7 +51,7 @@ current.update();]]></script>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_ui_action_f9a4c1d2839a0210edb56060ceaad38f</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-23 05:40:08</sys_updated_on>
+        <sys_updated_on>2024-06-05 10:23:45</sys_updated_on>
         <table>x_1383179_tradenow_item_list</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

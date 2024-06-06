@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>sp_platform</category>
-        <client_script><![CDATA[function($rootScope, $scope, $timeout, $location, $log, $window, spUtil, nowAttachmentHandler, spAriaUtil, spNavStateManager) {
+        <client_script><![CDATA[api.controller = function($rootScope, $scope, $timeout, $location, $log, $window, spUtil, nowAttachmentHandler, spAriaUtil, spNavStateManager) {
   $scope.submitting = false;
   $scope.mandatory = [];
   $scope.errorMessages = [];
@@ -441,160 +441,174 @@
 }
 .tox.tox-tinymce {
   border-color: $input-border;
+}
+
+// My style
+.panel.panel.ng-scope{
+		padding: 30px;
+    background-color: #DAFFFB;
+  	margin:60px;
+  
+    border-radius: 15px;
+}
+.panel-heading{
+  background-color: #64CCC5;
+}
+.panel-footer{
+  background-color: #DAFFFB;
+  border-top: 0rem;
+}
+.c4275701283aa0210edb56060ceaad357{
+background-size: initial;
+  background-position: center;
+  background-image: url("https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?q=80&amp;w=1770&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.action-btn{
+  float:right;
+  background-color: #176B87;
+}
+
+.btn-primary{
+  background-color: #176B87;
+}
+
+#s2id_sp_formfield_lister_name{
+  background-color: #ffffff;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
-        <id/>
+        <has_preview>true</has_preview>
+        <id>tradenow_form</id>
         <internal>false</internal>
-        <link><![CDATA[function(){
+        <link><![CDATA[function link(){
 	setTimeout(function(){
 	$('#adminMenu, #platformLink').tooltip();
 });
 }]]></link>
-        <name>Copy of Form</name>
+        <name>Tradenow Form</name>
         <option_schema>[{"name":"disableUIActions","section":"Behavior","label":"Disable UI Actions on Form","type":"boolean"},{"name":"showFormView","section":"Behavior","label":"Display current form view","type":"boolean"},{"name":"omitHeaderOptions","section":"Behavior","label":"Omit header options icon","type":"boolean"}]</option_schema>
         <public>false</public>
         <roles>snc_external,snc_internal</roles>
-        <script><![CDATA[// form functionality - URL parameter driven
-(function($sp, input, data, options, gs) {
-  /* "use strict"; -linter issues */
-  // populate the 'data' variable
-	data.attachmentUploadSuccessMsg = gs.getMessage("Attachment upload was successful");
-	data.recordAddedMsg = gs.getMessage("Record Added");
-	data.updatedMsg = gs.getMessage("Record Updated");
-	data.exportPDFMsg = gs.getMessage("Export to PDF");
-	data.exportPDFLandMsg = gs.getMessage("Export to PDF (landscape)");
-	data.addAttachmentMsg = gs.getMessage("Add an attachment");
-	data.supportedAttachmentExtensions = gs.getProperty("glide.attachment.extensions", '');
-	data.maxAttachmentSize = parseInt(gs.getProperty("com.glide.attachment.max_size", 1024));
-	data.advancedUIEnabled = (gs.getProperty("glide.ui.advanced") == "true");
-	if (isNaN(data.maxAttachmentSize))
-		data.maxAttachmentSize = 24;
-	data.largeAttachmentMsg = gs.getMessage("Attached files must be smaller than {0} - please try again", "" + data.maxAttachmentSize + "MB");
-
-	data.isAdmin = gs.hasRightsTo('sp/configure.all/execute', null);
-	data.emptyStateTemplate = options.empty_state_template;
-	var isPopup = false;
-
-	if (input) {
-		data.table = input.table;
-		data.sys_id = input.sys_id;
-		data.view = input.view;
-		var result = {};
-		if (input._fields) {
-			result = $sp.saveRecord(input.table, input.sys_id, input._fields);
-			data.sys_id = result.sys_id;
-		}
-
-		if (input.sys_id == '-1')
-			data.isNewRecord = true;
-		if (input.isPopup === true)
-			isPopup = true;
-	} else {
-		data.table = options.table || $sp.getParameter("t") || $sp.getParameter("table") || $sp.getParameter("sl_table");
-		data.sys_id = options.sys_id || $sp.getParameter("sys_id") || $sp.getParameter("sl_sys_id");
-		if (!data.sys_id && options.sys_id_required != "true")
-			data.sys_id = "-1";
-		data.view = options.view || $sp.getParameter("view") || $sp.getParameter("v"); // no default
-	}
-
-  	if (isPopup && gs.getProperty("glide.service_portal.reference.use_sys_popup_view", "false") == "true") {
-		options.hideRelatedLists = true;
-		options.disableUIActions = "true";
-	}
-	data.hideRelatedLists = options.hideRelatedLists || false;
-	data.disableUIActions = options.disableUIActions === "true" || !!(input && input.disableUIActions);
-
-	data.query = $sp.getParameter("query") || options.query || "";
-	data.f = {};
-	if (!data.table)
-		return;
-
-	// Form widget is not a supported way to view an attachment
-	if (data.table == "sys_attachment") {
-		data.tableUnsupported = true;
-		return;
-	}
-
-	if (!GlideTableDescriptor.isValid(data.table))
-		return;
-
-	if (!data.sys_id)
-		return;
-
-	var rec = $sp.getRecord(data.table, data.sys_id);
-
- 	if (data.sys_id != "-1" && !rec.canRead())
-		return; // can't see requested record
-
-	if (data.sys_id == "-1" && !rec.canCreate())
-		return; // can't create a new record
-
-	data.isValid = rec.isValid() || data.sys_id == "-1";
-	if (!data.isValid)
-		return;
-
-	data.table = rec.getRecordClassName();
-	data.tableHierarchy = GlideDBObjectManager.getTables(data.table).toArray().join();
-	data.canWrite = rec.canWrite();
-	var hasRecordAccess = data.sys_id == "-1" ? rec.canCreate() : data.canWrite;
-	data.canAttach = !options.omitAttachmentButton && hasRecordAccess && gs.hasRole(gs.getProperty('glide.attachment.role')) && !GlideTableDescriptor.get(data.table).getED().getBooleanAttribute("no_attachment");
-	data.f = $sp.getForm(data.table, data.sys_id, data.query, data.view, isPopup);
-
-	// PRB1335036: show appropriate message when record is in cross app scope
-	data.f.outOfScope = !rec.isInSelectedScope();
-	// Populate scope labels only when needed
-	if (data.f.outOfScope) {
-		data.f.recordScopeLabel = gs.getScopeLabelByRecordId(rec.getUniqueValue());
-		data.f.currentScopeLabel = gs.getCurrentApplicationName();
-	}
+        <script><![CDATA[(function($sp, input, data, options, gs) {
+  // Messages and settings
+  data.attachmentUploadSuccessMsg = gs.getMessage("Attachment upload was successful");
+  data.recordAddedMsg = gs.getMessage("Record Added");
+  data.updatedMsg = gs.getMessage("Record Updated");
+  data.addAttachmentMsg = gs.getMessage("Add an attachment");
+  data.supportedAttachmentExtensions = gs.getProperty("glide.attachment.extensions", '');
+  data.maxAttachmentSize = parseInt(gs.getProperty("com.glide.attachment.max_size", 1024));
+  if (isNaN(data.maxAttachmentSize))
+    data.maxAttachmentSize = 24;
+  data.largeAttachmentMsg = gs.getMessage("Attached files must be smaller than {0} - please try again", "" + data.maxAttachmentSize + "MB");
+ 
+  // Admin check and other settings
+  data.isAdmin = gs.hasRightsTo('sp/configure.all/execute', null);
+  data.emptyStateTemplate = options.empty_state_template;
+  var isPopup = false;
+ 
+  if (input) {
+    data.table = input.table || 'x_1383179_tradenow_item_list'; // Set your table
+    data.sys_id = input.sys_id;
+    data.view = input.view;
+    var result = {};
+    if (input._fields) {
+      result = $sp.saveRecord(data.table, input.sys_id, input._fields);
+      data.sys_id = result.sys_id;
+    }
+ 
+    if (input.sys_id == '-1')
+      data.isNewRecord = true;
+    if (input.isPopup === true)
+      isPopup = true;
+  } else {
+    data.table = options.table || $sp.getParameter("t") || 'x_1383179_tradenow_item_list'; // Set your table
+    data.sys_id = options.sys_id || $sp.getParameter("sys_id");
+    if (!data.sys_id && options.sys_id_required != "true")
+      data.sys_id = "-1";
+    data.view = options.view || $sp.getParameter("view"); // no default
+  }
+ 
+  if (!data.table) return;
+ 
+  if (data.table == "sys_attachment") {
+    data.tableUnsupported = true;
+    return;
+  }
+ 
+  if (!data.sys_id) return;
+ 
+  var gr = new GlideRecord(data.table);
+ 
+  if (data.sys_id != "-1") {
+    if (!gr.get(data.sys_id)) {
+      data.isValid = false;
+      return;
+    }
+    if (!gr.canRead()) return; // can't see requested record
+  }
+ 
+  if (data.sys_id == "-1" && !gr.canCreate()) return; // can't create a new record
+ 
+  data.isValid = data.sys_id == "-1" || gr.isValid();
+  if (!data.isValid) return;
+ 
+  data.table = gr.getRecordClassName();
+  data.canWrite = gr.canWrite();
+  var hasRecordAccess = data.sys_id == "-1" ? gr.canCreate() : data.canWrite;
+  data.canAttach = !options.omitAttachmentButton && hasRecordAccess && gs.hasRole(gs.getProperty('glide.attachment.role')) && gr.isValidField('attachment');
+ 
+  data.f = $sp.getForm(data.table, data.sys_id, data.query, data.view, isPopup);
+ 
   var policies = data.f.policy || []
-	policies.forEach(function(policy, index){
+  policies.forEach(function(policy, index) {
     if (policy['is_ui_data_policy']) {
       policies[index].onload = true;
     }
-  })
-	// Activity formatter is hardcoded to set specific options
-	for (var f in data.f._formatters) {
-		var fm = data.f._formatters[f];
-		if (fm.formatter == "activity.xml") {
-			fm.hardcoded = true;
-			fm.widgetInstance = $sp.getWidget('widget-ticket-conversation',
-																{table: data.table,
-																 sys_id: data.sys_id,
-																 includeExtended: true,
-																 hideAttachmentBtn: true,
-																 title: "${Activity}",
-																 use_dynamic_placeholder: true,
-																 btnLabel: "${Post}"});
-		} else if(fm.formatter == "com_glideapp_servicecatalog_veditor" || fm.formatter == "com_glideapp_questionset_default_question_editor") {
-			var qsConfig = $sp.getValue('quick_start_config');
-			if (qsConfig)
-				qsConfig = JSON.parse(qsConfig)[0];
-			fm.widgetInstance = $sp.getWidget(fm.widget, {table: data.table,
-														sys_id: data.sys_id,
-														readonly_variable_editor: qsConfig ? qsConfig.readonly_variable_editor : 'false'});
-		} else
-			fm.widgetInstance = $sp.getWidget(fm.widget, data);
-	}
+  });
+ 
+  for (var f in data.f._formatters) {
+    var fm = data.f._formatters[f];
+    if (fm.formatter == "activity.xml") {
+      fm.hardcoded = true;
+      fm.widgetInstance = $sp.getWidget('widget-ticket-conversation', {
+        table: data.table,
+        sys_id: data.sys_id,
+        includeExtended: true,
+        hideAttachmentBtn: true,
+        title: "${Activity}",
+        use_dynamic_placeholder: true,
+        btnLabel: "${Post}"
+      });
+    } else if (fm.formatter == "com_glideapp_servicecatalog_veditor" || fm.formatter == "com_glideapp_questionset_default_question_editor") {
+      var qsConfig = $sp.getValue('quick_start_config');
+      if (qsConfig) qsConfig = JSON.parse(qsConfig)[0];
+      fm.widgetInstance = $sp.getWidget(fm.widget, {
+        table: data.table,
+        sys_id: data.sys_id,
+        readonly_variable_editor: qsConfig ? qsConfig.readonly_variable_editor : 'false'
+      });
+    } else {
+      fm.widgetInstance = $sp.getWidget(fm.widget, data);
+    }
+  }
 })($sp, input, data, options, gs);]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-06-03 05:53:31</sys_created_on>
-        <sys_id>74523d3983668210edb56060ceaad3ac</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Copy of Form</sys_name>
+        <sys_created_on>2024-06-05 05:24:20</sys_created_on>
+        <sys_id>30de331a83e64210edb56060ceaad397</sys_id>
+        <sys_mod_count>35</sys_mod_count>
+        <sys_name>Tradenow Form</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_widget_74523d3983668210edb56060ceaad3ac</sys_update_name>
+        <sys_update_name>sp_widget_30de331a83e64210edb56060ceaad397</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-03 05:53:31</sys_updated_on>
+        <sys_updated_on>2024-06-05 11:37:48</sys_updated_on>
         <template><![CDATA[<div ng-if="::!data.isValid && !data.emptyStateTemplate" class="panel panel-default">
   <div class="panel-body wrapper-lg text-center">
     <span ng-if="!data.tableUnsupported">${Record not found}</span>
@@ -710,9 +724,9 @@
     </div>
 
     <div class="panel-footer">
-      <button ng-click="triggerUIAction(action)" ng-disabled="submitting" ng-repeat="action in getUIActions('button') | filter: hideDuplicateSaveAction" class="btn action-btn" ng-class="::getButtonClass(action)" gsft_id="{{::action.sys_id}}">{{action.name}}</button>
+     <button ng-click="triggerUIAction(action)" ng-disabled="submitting" ng-repeat="action in getUIActions('button') | filter: hideDuplicateSaveAction" class="btn action-btn" ng-class="::getButtonClass(action)" gsft_id="{{::action.sys_id}}">{{action.name}}</button>
       <span>{{status}}</span>
-      <button ng-if="getPrimaryAction()" type="submit" ng-click="triggerUIAction(getPrimaryAction())" ng-disabled="submitting" class="btn btn-primary action-btn pull-right" gsft_id="{{::getPrimaryAction().sys_id ? getPrimaryAction().sys_id : ''}}">${Save} <span ng-if="saveButtonSuffix">(${{{saveButtonSuffix}}})</span></button>
+      <!--<button ng-if="getPrimaryAction()" type="submit" ng-click="triggerUIAction(getPrimaryAction())" ng-disabled="submitting" class="btn btn-primary action-btn pull-right" gsft_id="{{::getPrimaryAction().sys_id ? getPrimaryAction().sys_id : ''}}">${Save} <span ng-if="saveButtonSuffix">(${{{saveButtonSuffix}}})</span></button>-->
       <div style="clear: both;"></div>
       <div ng-if="mandatory.length" class="alert alert-info" style="margin-top: .5em" aria-live="polite" aria-atomic="true">
         <span ng-if="mandatory.length > 0">${Required information} </span>

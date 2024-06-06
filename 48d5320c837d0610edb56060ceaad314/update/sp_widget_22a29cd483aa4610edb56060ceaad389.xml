@@ -40,7 +40,7 @@ figure.snip1390 {
   text-align: center;
   font-size: 16px;
   //background-color: #293e40;
-  background-color: #0a2414;
+  background-color: #176B87;
   padding: 30px;
   background-image: linear-gradient(-25deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
   box-sizing: border-box;
@@ -131,14 +131,14 @@ figure.snip1390 .profile {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-29 07:04:41</sys_created_on>
         <sys_id>22a29cd483aa4610edb56060ceaad389</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>56</sys_mod_count>
         <sys_name>testimonial</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_22a29cd483aa4610edb56060ceaad389</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-30 14:52:13</sys_updated_on>
+        <sys_updated_on>2024-06-06 06:41:48</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>

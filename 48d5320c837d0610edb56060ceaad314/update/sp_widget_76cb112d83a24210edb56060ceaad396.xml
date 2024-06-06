@@ -397,7 +397,8 @@ a.ng-binding:hover{
 			//added
 			created_on:gr.getValue('sys_created_on'),
 			//
-			image_url: null
+			//image_url: null
+			image_url: gr.getDisplayValue('image')
 		};
 		//added
 		// Assuming the input date string is stored in a variable named 'inputDate'
@@ -413,13 +414,13 @@ gs.info("Formatted Date: " + formattedDate);*/
 
 		
 		
-		var attachmentGr = new GlideRecord('sys_attachment');
+		/*var attachmentGr = new GlideRecord('sys_attachment');
 		attachmentGr.addQuery('table_sys_id', gr.getUniqueValue());
 		attachmentGr.query();
 
 		if (attachmentGr.next()) {
 			obj.image_url = '/sys_attachment.do?sys_id=' + attachmentGr.getValue('sys_id');
-		}
+		}*/
 		data.items.push(obj);
      // data.items.push(gr.getValue('number')); // assuming 'number' is the field you want to print
     }
@@ -443,14 +444,14 @@ gs.info("Formatted Date: " + formattedDate);*/
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-02 09:36:35</sys_created_on>
         <sys_id>76cb112d83a24210edb56060ceaad396</sys_id>
-        <sys_mod_count>103</sys_mod_count>
+        <sys_mod_count>104</sys_mod_count>
         <sys_name>Item list style 1</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_76cb112d83a24210edb56060ceaad396</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-05 12:12:24</sys_updated_on>
+        <sys_updated_on>2024-06-06 06:06:17</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>

@@ -20,7 +20,7 @@
 
 .footer {
     position: relative;
-    background-color: #293e40;
+    background-color: #04364A;
     color: white;
     padding: 20px 0;
     margin-top: 0px; // maring top of footer
@@ -95,7 +95,7 @@
 }
 
 .bg-lightgray{
-  background-color: lightgray;
+  background-color: #DAFFFB;
 }
 .copyrights{
   margin-top:25px;
@@ -134,14 +134,14 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-28 11:10:27</sys_created_on>
         <sys_id>a821004883e60610edb56060ceaad3cc</sys_id>
-        <sys_mod_count>126</sys_mod_count>
+        <sys_mod_count>128</sys_mod_count>
         <sys_name>Tradenow Footer</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_header_footer_a821004883e60610edb56060ceaad3cc</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-29 06:37:14</sys_updated_on>
+        <sys_updated_on>2024-06-06 06:30:56</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
 </style>

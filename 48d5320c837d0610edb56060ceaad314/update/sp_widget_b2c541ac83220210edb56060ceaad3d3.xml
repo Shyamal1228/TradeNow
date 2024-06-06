@@ -73,7 +73,7 @@ figure.snip1390 {
   text-align: center;
   font-size: 16px;
   box-sizing: border-box;
-  background-color: #80ed99;
+  background-color: #64CCC5;
    border-radius: 10px;
 }
 
@@ -139,7 +139,7 @@ figure.snip1390 {
   justify-content: center;
   align-items: center;
   margin: 0 auto; /* Center horizontally */
-  color:#2ECC71;
+  color:#64CCC5;
 }
 
 /* Button styles */
@@ -147,16 +147,16 @@ figure.snip1390 {
             display: inline-block;
             padding: 10px 20px;
             font-size: 16px;
-            border: 2px solid #2ECC71;
+            border: 2px solid #64CCC5;
             border-radius: 8px;
             background-color: #E0F2E9;
-            color: #2ECC71;
+            color: #64CCC5;
             cursor: pointer;
         }
 
         /* Hover effect */
         .custom-button:hover {
-            background-color: #2ECC71;
+            background-color: #64CCC5;
             color: #E0F2E9;
         }
 a{
@@ -181,14 +181,14 @@ a{
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-30 05:26:33</sys_created_on>
         <sys_id>b2c541ac83220210edb56060ceaad3d3</sys_id>
-        <sys_mod_count>82</sys_mod_count>
+        <sys_mod_count>91</sys_mod_count>
         <sys_name>Section1</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_b2c541ac83220210edb56060ceaad3d3</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-01 13:43:16</sys_updated_on>
+        <sys_updated_on>2024-06-06 06:39:29</sys_updated_on>
         <template><![CDATA[<!--<div class="testimonials">
   <h2 style="font-weight: bold;">Testimonials</h2>
   <hr class="line" />

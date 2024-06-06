@@ -139,22 +139,57 @@ $color-light: #DAFFFB;
     .qr-payment{
       display: flex;
       flex-direction: row;
-      width: 100%;
+      flex: 1 1 auto;
+      width: 80%;
       padding-top: 20px;
       padding-bottom: 20px;
+      border-radius: 20px
+      align-items: center;
+      background-color: white;
+      border-radius: 20px;
       .qr-image{
-        flex: 1;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 50%;
         img {
           padding: 20px;
   	      border-radius: 15px;
+          width: 400px;
+          height: 400px;
 	        background-color: white;
+          object-fit: contain;
         }
       }
       .screenshot-proof{
-        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        color: $color-dark;
+        font-size: 20px;
+        label{
+        	cursor: pointer;
+          border: $color-dark solid 2px;
+          border-radius: 5px;
+          input[type="file"]{
+          	display: none;
+          }
+        }
+        button{
+        	background-color: $color-dark;
+          color: $color-light;
+          border: $color-dark solid 2px;
+          border-radius: 25px;
+          padding: 10px 24px;
+          transition: 0.2s ease;
+        }
+        
+        button:hover{
+        	background-color: transparent;
+          color: $color-dark;
+        }
       }
     }
   }
@@ -218,14 +253,14 @@ $color-light: #DAFFFB;
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-04 16:09:46</sys_created_on>
         <sys_id>39f8499683ea0210edb56060ceaad372</sys_id>
-        <sys_mod_count>115</sys_mod_count>
+        <sys_mod_count>162</sys_mod_count>
         <sys_name>charity_info</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_39f8499683ea0210edb56060ceaad372</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-06-05 13:01:26</sys_updated_on>
+        <sys_updated_on>2024-06-06 09:50:52</sys_updated_on>
         <template><![CDATA[<div class="charity-specific-info">
 <section class="charity-name">
   	<h1 class="poppins-heading">{{data.obj.name}}</h1>
@@ -258,16 +293,17 @@ $color-light: #DAFFFB;
     <div class="qr-image">
     	<img src={{data.obj.qrImage}} alt="payment qr image">  
     </div>
-    <div class="screenshot-proof">
-      <p>
-        Upload screenshot
-      </p>
+    <div class="screenshot-proof poppins-regular">
+      <p>Upload a screenshot of your payment page.</p>
+      <label for="ss-upload">
+        Select Screenshot
+        <input id="ss-upload" type="file">
+      </label>
+      <button type="button poppins-semibold">Upload</button>
     </div>
   </div>
   <div>
-   	<p>
-      Make a Donation to the official site <a href= {{data.obj.paymentLink}}>here</a>
-    </p>
+   	<p>Make a Donation to the official site <a href= {{data.obj.paymentLink}}>here</a></p>
   </div>
   </section>
 </div>]]></template>

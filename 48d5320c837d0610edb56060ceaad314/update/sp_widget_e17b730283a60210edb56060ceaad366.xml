@@ -206,7 +206,48 @@ h1 {
   border-radius:20px;
   color:#ffffff;
 }
-</css>
+
+
+.bn632-hover {
+  width: 160px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:focus {
+  outline: none;
+}
+
+.bn632-hover.bn26 {
+  background-image: linear-gradient(
+    to right,
+    #25aae1,
+    #4481eb,
+    #04befe,
+    #3f86ed
+  );
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -240,7 +281,7 @@ h1 {
 			category:gr.getValue('category'),
 			condition:gr.getValue('condition'),
 			item_status:gr.getValue('status'),
-			image_url: null
+			image_url: gr.getDisplayValue('image')
 		};
 		var category_sys_id=data.obj.category;
 		var catGR = new GlideRecord('x_1383179_tradenow_category_lookup');
@@ -252,13 +293,13 @@ h1 {
 		}
 		
 		
-		var attachmentGr = new GlideRecord('sys_attachment');
+		/*var attachmentGr = new GlideRecord('sys_attachment');
 		attachmentGr.addQuery('table_sys_id', targetSysId);
 		attachmentGr.query();
 		
 		if (attachmentGr.next()) {
 			data.obj.image_url = '/sys_attachment.do?sys_id=' + attachmentGr.getValue('sys_id');
-		}
+		}*/
 		
 		
 		var userId = data.obj.lister;
@@ -270,6 +311,17 @@ h1 {
 		if (userGR.next()) {
 			//var fullName = userGR;
 			 var fullName = userGR.getDisplayValue('name');
+			var locationId = userGR.getValue('location');
+			if (locationId) {
+				var locationGR = new GlideRecord('cmn_location');
+				locationGR.addQuery('sys_id', locationId);
+				locationGR.query();
+				if (locationGR.next()) {
+					data.obj.latitude = locationGR.getValue('latitude');
+					data.obj.longitude = locationGR.getValue('longitude');
+					//console.log(latitude);
+				}
+			}
 			console.log("userGR="+userGR);
 			data.obj.lister=fullName;
 		}
@@ -295,14 +347,14 @@ h1 {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-04 10:31:08</sys_created_on>
         <sys_id>e17b730283a60210edb56060ceaad366</sys_id>
-        <sys_mod_count>88</sys_mod_count>
+        <sys_mod_count>113</sys_mod_count>
         <sys_name>Item details copy</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_e17b730283a60210edb56060ceaad366</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-06 05:34:33</sys_updated_on>
+        <sys_updated_on>2024-06-06 09:32:50</sys_updated_on>
         <template><![CDATA[
     <div class="container">
         <div class="image">
@@ -317,11 +369,12 @@ h1 {
             </div>
             <ul class="features">
                 
-                <li class="poppins-regular"><span>✅</span> <strong>Available:</strong> in stock</li>
-                <li class="poppins-regular"><span>✅</span> <strong>Category:</strong> {{data.obj.category}}</li>
-              	<li class="poppins-regular"><span>✅</span> <strong>Condition:</strong> {{data.obj.condition}}</li>
-                <li class="poppins-regular"><span>✅</span> <strong>Item Location:</strong><img src="map.png" class="map"> </li>
-                <li class="poppins-regular"><span>✅</span> <strong>Item Lister:</strong> {{data.obj.lister}}</li>
+                <li class="poppins-regular"> <i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Available:</strong> in stock</li>
+                <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Category:</strong> {{data.obj.category}}</li>
+              	<li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Condition:</strong> {{data.obj.condition}}</li>
+              <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Lister:</strong> {{data.obj.lister}}</li>
+                <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Location:</strong><a target="_blank" href="https://www.google.com/maps?q={{data.obj.latitude}},{{data.obj.longitude}}"><button class="bn632-hover bn26">View location</button></a></li>
+                
             </ul>
             <div class="actions">
               <button ng-if="data.obj.item_status == 'available' || data.obj.item_status == 'reserved'" ng-click="c.Itembutton('readypickup')" class="claim-item">Claim Item</button>
@@ -331,6 +384,9 @@ h1 {
               <h2 ng-if="data.obj.item_status == 'claimed'" class="claimed">Item has been Claimed </h2>
                <button ng-if="data.obj.item_status == 'readypickup'" ng-click="c.Itembutton('claimed')" class="claim-item">Confirm Pick-Up</button>
             </div>
+          <!--<p>
+            {{data.obj.latitude}} {{data.obj.longitude}}
+          </p>-->
         </div>
     </div>
 ]]></template>

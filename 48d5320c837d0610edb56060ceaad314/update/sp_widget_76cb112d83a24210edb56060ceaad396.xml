@@ -72,9 +72,15 @@ img {
     border: 1px solid transparent;
     
     &amp;:hover, &amp;:focus-within {
-        box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(0, 0, 0, .1);
-        transform: translateY(-5px);
-        border-color: #16C79A; /* Added green border on hover */
+       // box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(0, 0, 0, .1);
+        //transform: translateY(-5px);
+        //border-color: #16C79A; /* Added green border on hover */
+       -webkit-box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
+-moz-box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
+box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
+ //box-shadow: -1px 3px 11px 0px rgba(0,0,0,0.75);
+  //box-shadow:-3px 18px 20px 0px rgba(99,89,99,1);
+  transform: translate3d(0px, -1px, 0px);
     }
 }
 
@@ -227,7 +233,7 @@ img {
 .view-item-button {
   display: inline-block;
   padding: 1.3rem 2.5rem;
-  background-color: #78c879;
+  background-color: #176B87;
   color: white;
   font-size: 1.4rem;
   //font-weight: bold;
@@ -239,7 +245,7 @@ img {
 }
 
 .view-item-button:hover {
-  background-color: #66b267;
+  background-color: #04364A;
 }
 
 
@@ -248,9 +254,9 @@ img {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #78c879;
+        background-color: #fff;
         color: #fff;
-        padding: 20px;
+        padding: 20px 20px 20px 0px;
   border-radius: 10px;
   margin-bottom:20px;
     }
@@ -444,14 +450,14 @@ gs.info("Formatted Date: " + formattedDate);*/
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-02 09:36:35</sys_created_on>
         <sys_id>76cb112d83a24210edb56060ceaad396</sys_id>
-        <sys_mod_count>104</sys_mod_count>
+        <sys_mod_count>112</sys_mod_count>
         <sys_name>Item list style 1</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_76cb112d83a24210edb56060ceaad396</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-06 06:06:17</sys_updated_on>
+        <sys_updated_on>2024-06-06 07:38:17</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>

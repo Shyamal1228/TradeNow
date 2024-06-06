@@ -16,20 +16,20 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-26 11:02:43</sys_created_on>
         <sys_id>846ce9db835a4210edb56060ceaad355</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_instance_846ce9db835a4210edb56060ceaad355</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-26 11:29:49</sys_updated_on>
+        <sys_updated_on>2024-06-06 07:14:08</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters><![CDATA[{
 	"html": {
-		"value": "<div style=\"text-align: center; color: #1f8476;\">\r\n<h2 style=\"font-weight: bold;\">All Items</h2>\r\n<hr style=\"border: none; height: 5px; width: 20%; background-color: #1f8476; margin-butom: 7px;\" /></div>",
-		"displayValue": "<div style=\"text-align: center; color: #1f8476;\">\n<h2 style=\"font-weight: bold;\">All Items</h2>\n<hr style=\"border: none; height: 5px; width: 20%; background-color: #1f8476; margin-butom: 7px;\" /></div>"
+		"value": "<div style=\"text-align: center; color: #04364a;\">\r\n<h2 style=\"font-weight: bold;\">All Items</h2>\r\n<hr style=\"border: none; height: 5px; width: 20%; background-color: #04364a; margin-butom: 7px;\" /></div>",
+		"displayValue": "<div style=\"text-align: center; color: #04364a;\">\n<h2 style=\"font-weight: bold;\">All Items</h2>\n<hr style=\"border: none; height: 5px; width: 20%; background-color: #04364a; margin-butom: 7px;\" /></div>"
 	}
 }]]></widget_parameters>
     </sp_instance>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller=function($scope,spUtil) {
+  /* widget controller */
+  var c = this;
+	
+};]]></client_script>
         <controller_as>c</controller_as>
         <css>h3{
   color:#000000;
@@ -314,20 +318,20 @@ input{
   display: block;
   padding: 10px 15px;
   text-decoration: none;
-  color: #007bff;
+  color: #04364A;
   background-color: #fff;
-  border: 1px solid #dee2e6;
+  border: 1px solid #04364A;
   border-radius: 3px;
 }
 
 .page-link:hover {
-  background-color: #66b267;
+  background-color: #04364A;
 }
 
 .page-item.active .page-link {
-  background-color: #66b267;
+  background-color: #04364A;
   color: white;
-  border-color: #007bff;
+  border-color: #04364A;
 }
 
 ul.dirPagination.ng-scope{
@@ -348,31 +352,35 @@ a.ng-binding{
   text-decoration: none;
   color: #2fa14d;
   background-color: #fff;
-  border: 1px solid #4484c5;
+  border: 1px solid #04364A;
   border-radius: 3px;
   margin: 0px 2.5px;
 }
 a.ng-binding:hover{
-  background-color: #66b267;
-  border-color: #145926;
+  background-color: #176B87;
+  border-color: #04364A;
   color: #fff;
 }
 .ng-scope&gt;a{
  display: block;
   padding: 10px 15px;
   text-decoration: none;
-  color: #2fa14d;
+  color: #176B87;
   background-color: #fff;
-  border: 1px solid #2fa14d;
+  border: 1px solid #04364A;
   border-radius: 3px;
   margin: 0px 5px
 }
 .ng-scope&gt;a:hover{
-  background-color: #66b267;
-  border-color: #145926;
+  background-color: #176B87;
+  border-color: #04364A;
   color: #fff;
 }
-</css>
+
+// delete after show and tell
+//.card-meta:first-child:after{
+ // background-color: #fff;
+//}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -392,6 +400,7 @@ a.ng-binding:hover{
 	data.table = 'x_1383179_tradenow_item_list';
 	data.items = [];
   var gr = new GlideRecord(data.table);
+	gr.orderByDesc('sys_created_on');
 	//gr.setLimit(4);
   gr.query();
 	while (gr.next()) {
@@ -401,13 +410,13 @@ a.ng-binding:hover{
 			description:gr.getValue('description'),
 			category:gr.getValue('category'),
 			//added
-			created_on:gr.getValue('sys_created_on'),
+			created_on:gr.getValue('sys_created_on').toString().substring(0, 10),
 			//
 			//image_url: null
-			image_url: gr.getDisplayValue('image')
+			image_url: gr.getDisplayValue('image'),
+			watching: gr.getValue('total_watchers')
 		};
 		//added
-		// Assuming the input date string is stored in a variable named 'inputDate'
 /*var inputDate = obj.created_on;
 var parsedDate = new GlideDateTime(inputDate);
 var monthAbbreviation = parsedDate.getDayOfMonthUTC();
@@ -430,7 +439,7 @@ gs.info("Formatted Date: " + formattedDate);*/
 		data.items.push(obj);
      // data.items.push(gr.getValue('number')); // assuming 'number' is the field you want to print
     }
-	// console.log(data.items);
+	 //console.log(data.items);
 	
 	data.categoryArray = [];
   var categoryList = new GlideRecord('x_1383179_tradenow_category_lookup');
@@ -450,14 +459,14 @@ gs.info("Formatted Date: " + formattedDate);*/
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-02 09:36:35</sys_created_on>
         <sys_id>76cb112d83a24210edb56060ceaad396</sys_id>
-        <sys_mod_count>112</sys_mod_count>
+        <sys_mod_count>141</sys_mod_count>
         <sys_name>Item list style 1</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_76cb112d83a24210edb56060ceaad396</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-06 07:38:17</sys_updated_on>
+        <sys_updated_on>2024-06-10 14:55:11</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
@@ -495,7 +504,7 @@ gs.info("Formatted Date: " + formattedDate);*/
                     <path d="M21.257 10.962c.474.62.474 1.457 0 2.076C19.764 14.987 16.182 19 12 19c-4.182 0-7.764-4.013-9.257-5.962a1.692 1.692 0 0 1 0-2.076C4.236 9.013 7.818 5 12 5c4.182 0 7.764 4.013 9.257 5.962z" />
                     <circle cx="12" cy="12" r="3" />
                 </svg>
-                0
+                {{item.watching || 0}}
             </div>
             <div class="card-meta card-meta--date">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Calendar">

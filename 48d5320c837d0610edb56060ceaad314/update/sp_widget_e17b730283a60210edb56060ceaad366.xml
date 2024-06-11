@@ -209,13 +209,13 @@ h1 {
 
 
 .bn632-hover {
-  width: 160px;
-  font-size: 16px;
-  font-weight: 600;
+  width: 130px;
+  //font-size: 16px;
+  //font-weight: 600;
   color: #fff;
   cursor: pointer;
   margin: 20px;
-  height: 55px;
+  height: 40px;
   text-align:center;
   border: none;
   background-size: 300% 100%;
@@ -347,14 +347,14 @@ h1 {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-04 10:31:08</sys_created_on>
         <sys_id>e17b730283a60210edb56060ceaad366</sys_id>
-        <sys_mod_count>113</sys_mod_count>
+        <sys_mod_count>122</sys_mod_count>
         <sys_name>Item details copy</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_e17b730283a60210edb56060ceaad366</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-06 09:32:50</sys_updated_on>
+        <sys_updated_on>2024-06-06 16:08:51</sys_updated_on>
         <template><![CDATA[
     <div class="container">
         <div class="image">
@@ -373,7 +373,7 @@ h1 {
                 <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Category:</strong> {{data.obj.category}}</li>
               	<li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Condition:</strong> {{data.obj.condition}}</li>
               <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Lister:</strong> {{data.obj.lister}}</li>
-                <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Location:</strong><a target="_blank" href="https://www.google.com/maps?q={{data.obj.latitude}},{{data.obj.longitude}}"><button class="bn632-hover bn26">View location</button></a></li>
+                <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Location:</strong><a target="_blank" href="https://www.google.com/maps?q={{data.obj.latitude}},{{data.obj.longitude}}"><button class="bn632-hover bn26 poppins-regular">View location<i class="fa fa-location-dot" style="color: #e22828;"></i></button></a></li>
                 
             </ul>
             <div class="actions">

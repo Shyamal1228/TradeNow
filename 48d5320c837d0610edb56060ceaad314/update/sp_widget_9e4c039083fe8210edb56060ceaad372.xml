@@ -7,7 +7,7 @@
 	c.mapVisible = false;
 	c.showMap = function() {
 		var url="https://maps.google.com/maps?q="+c.data.obj.latitude+","+c.data.obj.longitude+"&z=15&output=embed";
-		console.log(url);
+	//	console.log(url);
 		$scope.detailFrame= $sce.trustAsResourceUrl(url);
 		//alert(c.data.obj.latitude);
 		c.mapVisible = !c.mapVisible;
@@ -15,12 +15,17 @@
 	
 		c.Itembutton = function(st) {
 		c.data.status=st;
+			
+			if(st=='reserved'){
+				spUtil.addInfoMessage("Item will be reserved for 30 sec !")
+			}
 		//c.server.update();
 			c.server.update().then(function(response) {
-      if (response.data.success) {
-       alert('Update successful');
+      if (response) {
+				c.data.status = null;
+       //alert('Update successful');
       } else {
-       alert('Update failed:', response.data.error);
+       //alert('Update failed:', response.data.error);
       }
     });
 	}
@@ -33,7 +38,7 @@
 	
 	// calculate distance
 	//c.calculateDistance = function() {
-	/*	var lat1 = c.data.obj.latitude;
+	var lat1 = c.data.obj.latitude;
 		var lng1 = c.data.obj.longitude;
 		var lat2 = c.data.obj.Logglatitude;
 		var lng2 = c.data.obj.Logglongitude;
@@ -53,7 +58,7 @@
 		var c1 = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 		var d = R * c1; // Distance in km
 
-		c.distance = Math.floor(d);*/
+		c.distance = Math.floor(d);
 	//};
 	
 	//c.calculateDistance();
@@ -609,11 +614,11 @@ iframe {
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>true</has_preview>
-        <id>item_details_practice</id>
+        <has_preview>false</has_preview>
+        <id>item_details_testing</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>item details practice</name>
+        <name>Item details Testing</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -649,6 +654,7 @@ iframe {
 			data.obj.category = categoryName;
 		}
 		
+		console.log("######Status##### "+data.obj.item_status);
 		
 		/*var attachmentGr = new GlideRecord('sys_attachment');
 		attachmentGr.addQuery('table_sys_id', targetSysId);
@@ -707,7 +713,7 @@ iframe {
 		
 		
 		// total watching
-		/*
+		if(!input){
 			var record = new GlideRecord('x_1383179_tradenow_item_list');
 		if (record.get(data.obj.sys_id)) {
 			console.log("sys_id="+data.obj.sys_id);
@@ -715,11 +721,12 @@ iframe {
 			record.update();
 			data.watch=record.total_watchers;
 			console.log(data.watch);
-		}*/
+		}
+		}
 }
 	
 	if (input && input.status) {
-	//	console.log(input.status);
+		console.log("Button clicked="+input.status);
 
 	var grClaimItem = new GlideRecordSecure('x_1383179_tradenow_item_list');
 	grClaimItem.addQuery('sys_id', targetSysId);
@@ -728,22 +735,24 @@ iframe {
 			grClaimItem.setValue('status',input.status);
 			grClaimItem.update();
 	}
+		
+		return true;
 	}
 	
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-06-03 04:38:47</sys_created_on>
-        <sys_id>c631e1b583268210edb56060ceaad3a8</sys_id>
-        <sys_mod_count>261</sys_mod_count>
-        <sys_name>item details practice</sys_name>
+        <sys_created_on>2024-06-11 06:51:22</sys_created_on>
+        <sys_id>9e4c039083fe8210edb56060ceaad372</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>Item details Testing</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_widget_c631e1b583268210edb56060ceaad3a8</sys_update_name>
+        <sys_update_name>sp_widget_9e4c039083fe8210edb56060ceaad372</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-11 06:48:16</sys_updated_on>
+        <sys_updated_on>2024-06-11 17:59:21</sys_updated_on>
         <template><![CDATA[
 <div class="container">
   <div class="image">
@@ -764,12 +773,21 @@ iframe {
       <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Lister:</strong> {{data.obj.lister}}</li>
       <!--<li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Location:</strong><a target="_blank" href="https://www.google.com/maps?q={{data.obj.latitude}},{{data.obj.longitude}}"><button class="bn632-hover bn26 poppins-regular">View location</button></a></li>-->
       <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Location:</strong> {{data.obj.location}}</li>
-      <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Distance:</strong> KM away</li>
+      <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Distance:</strong> {{c.distance }} KM away</li>
 
     </ul>
-    <div class="actions">
+   <!-- <div class="actions">
       <button ng-if="data.obj.item_status == 'available' || data.obj.item_status == 'reserved'" ng-click="c.Itembutton('readypickup')" class="claim-item">Claim Item</button>
       <button ng-show="data.obj.item_status == 'available'" ng-click="c.Itembutton('reserved')" class="reserve">Reserve</button>
+      <button ng-show="data.obj.item_status == 'reserved'" ng-click="c.Itembutton('available')" class="cancel">Cancel Reservation</button>
+      <h2 ng-if="data.obj.item_status == 'claimed'" class="claimed">Item has been Claimed </h2>
+      <button ng-if="data.obj.item_status == 'readypickup'" ng-click="c.Itembutton('claimed')" class="claim-item">Confirm Pick-Up</button>
+      
+  </div>-->
+    
+     <div class="actions">
+      <button ng-if="data.obj.item_status == 'available' || data.obj.item_status == 'reserved'" ng-click="c.Itembutton('readypickup')" class="claim-item">Claim Item</button>
+      <button ng-if="data.obj.item_status == 'available'" ng-click="c.Itembutton('reserved')" class="reserve">Reserve</button>
       <button ng-show="data.obj.item_status == 'reserved'" ng-click="c.Itembutton('available')" class="cancel">Cancel Reservation</button>
       <h2 ng-if="data.obj.item_status == 'claimed'" class="claimed">Item has been Claimed </h2>
       <button ng-if="data.obj.item_status == 'readypickup'" ng-click="c.Itembutton('claimed')" class="claim-item">Confirm Pick-Up</button>

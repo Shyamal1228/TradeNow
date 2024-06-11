@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+            font-family: Arial, sans-serif;
+            background-color: #e9f5db;
+            margin: 0;
+            padding: 20px;
+        }
+        .shopping-bag {
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding: 15px;
+        }
+        .shopping-bag-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #f7f7f7;
+            border-radius: 8px 8px 0 0;
+        }
+        .shopping-bag-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .category-bar {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+        .category-bar select {
+            padding: 8px;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+        }
+        .search-bar {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        .search-bar input {
+            padding: 8px;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+        }
+        .shopping-item {
+            display: flex;
+            align-items: center;
+            padding: 25px 15px;
+            border-bottom: 3px solid #E1E8EE;
+        }
+        .shopping-item:last-child {
+            border-bottom: none;
+        }
+        .shopping-item img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .item-details {
+            flex-grow: 1;
+        }
+        .item-details p {
+            margin: 5px 0;
+        }
+        .item-details p.name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .item-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .item-buttons button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .item-buttons button.get-item {
+            background-color: #4caf50;
+            color: white;
+        }
+        .item-buttons button.cancel-reservation {
+            background-color: #f44336;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            .shopping-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .item-buttons {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+            .shopping-bag-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .search-bar, .category-bar {
+                position: static;
+                margin-top: 10px;
+                width: 100%;
+            }
+        }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>order_history</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Order History</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+	data.table = 'x_1383179_tradenow_item_list';
+	data.items = [];
+  var gr1 = new GlideRecord(data.table);
+	gr1.addQuery('status', 'reserved');
+	//gr1.orderByDesc('sys_created_on');
+  gr1.query();
+	while (gr1.next()) {
+		var obj={
+			sys_id:gr.getValue('sys_id'),
+			name:gr.getValue('item_name'),
+			description:gr.getValue('description'),
+			category:gr.getValue('category'),
+			//added
+			created_on:gr.getValue('sys_created_on').toString().substring(0, 10),
+			//
+			//image_url: null
+			image_url: gr.getDisplayValue('image'),
+			watching: gr.getValue('total_watchers')
+		};
+		data.items.push(obj);
+		
+		var category_sys_id=data.obj.category;
+		var catGR = new GlideRecord('x_1383179_tradenow_category_lookup');
+		catGR.addQuery('sys_id', category_sys_id);
+		catGR.query();
+		if (catGR.next()) {
+			var categoryName = catGR.getDisplayValue('name');
+			data.obj.category = categoryName;
+		}
+	}
+	console.log("data.items"+data);
+	
+	
+	data.choices = [];
+	var gr = new GlideRecord('sys_choice');
+	gr.addQuery('name', 'x_1383179_tradenow_item_list');
+	gr.addQuery('element', 'status');
+	gr.addQuery('inactive', false);
+	//gr.addEncodedQuery('statusINreadypickup,reserved');
+	gr.orderBy('sequence');
+	gr.query();
+	while (gr.next()) {
+		var conObj = {
+			value: gr.getValue('value'),
+			label: gr.getValue('label')
+		};
+		data.choices.push(conObj);
+	}
+	data.choices.splice(0,2);
+	data.choices.splice(2,1);
+	console.log(data.choices);
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-10 10:06:20</sys_created_on>
+        <sys_id>245f224c83fa4210edb56060ceaad3fc</sys_id>
+        <sys_mod_count>34</sys_mod_count>
+        <sys_name>Order History</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_245f224c83fa4210edb56060ceaad3fc</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-10 11:08:58</sys_updated_on>
+        <template><![CDATA[<div class="shopping-bag">
+        <div class="shopping-bag-header">
+        
+            <div class="category-bar">
+              <select name="condition" ng-model="c.selectedCondition" ng-options="condition.value as condition.label for condition in data.choices" ng-required="true">
+                <option value="">Select Item Status</option>
+              </select>
+            </div>
+            <div class="search-bar">
+                <input ng-model="test" type="text" placeholder="Search...">
+            </div>
+        </div>
+        <div class="shopping-item" ng-repeat="item in data.items | filter: test">
+            <img src="{{item.image_url}}" alt="Common Projects Bbball High">
+            <div class="item-details">
+                <p class="name">{{item.name}}</p>
+                <p>Condition: {{item.condition}}</p>
+                <p>Category: {{item.category}}</p>
+            </div>
+            <div class="item-buttons">
+                <button class="get-item">Get Item</button>
+                <button class="cancel-reservation">Cancel Reservation</button>
+            </div>
+        </div>
+        <!--<div class="shopping-item">
+            <img src="https://via.placeholder.com/80" alt="Maison Margiela Future Sneakers">
+            <div class="item-details">
+                <p class="name">Maison Margiela Future Sneakers</p>
+                <p>Condition: New</p>
+                <p>Category: Sneakers</p>
+            </div>
+            <div class="item-buttons">
+                <button class="get-item">Get Item</button>
+                <button class="cancel-reservation">Cancel Reservation</button>
+            </div>
+        </div>
+        <div class="shopping-item">
+            <img src="https://via.placeholder.com/80" alt="Our Legacy Brushed Scarf">
+            <div class="item-details">
+                <p class="name">Our Legacy Brushed Scarf</p>
+                <p>Condition: New</p>
+                <p>Category: Accessories</p>
+            </div>
+            <div class="item-buttons">
+                <button class="get-item">Get Item</button>
+                <button class="cancel-reservation">Cancel Reservation</button>
+            </div>
+        </div>-->
+    </div>]]></template>
+    </sp_widget>
+</record_update>

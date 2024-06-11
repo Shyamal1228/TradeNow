@@ -601,14 +601,14 @@ background-size: initial;
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-05 05:24:20</sys_created_on>
         <sys_id>30de331a83e64210edb56060ceaad397</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>44</sys_mod_count>
         <sys_name>Tradenow Form</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_30de331a83e64210edb56060ceaad397</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-06 09:51:20</sys_updated_on>
+        <sys_updated_on>2024-06-07 01:05:44</sys_updated_on>
         <template><![CDATA[<div ng-if="::!data.isValid && !data.emptyStateTemplate" class="panel panel-default">
   <div class="panel-body wrapper-lg text-center">
     <span ng-if="!data.tableUnsupported">${Record not found}</span>
@@ -642,7 +642,10 @@ background-size: initial;
   </div>
    
   <div ng-show="isPageReady" class="panel panel-default" ng-if="data.f._view.length || !data.hideRelatedLists" >
+    
+   <!-- <img src="icon.png">-->
     <div class="panel-heading" ng-if="data.f.title.length" sp-context-menu="getUIActionContextMenu(event)">
+      
       	<span class="dropdown m-r-xs" ng-if="(data.isAdmin || getUIActions('context').length > 0) && options.omitHeaderOptions != 'true'">
             <button aria-label="{{data.f.label}} ${Form menu}" title="{{data.f.label}} ${Form menu}" class="btn btn-form-menu dropdown-toggle glyphicon glyphicon-menu-hamburger" style="line-height: 1.4em" id="adminMenu" data-toggle="dropdown" data-placement="bottom" aria-haspopup="true" aria-expanded="false"></button>
             <ul class="dropdown-menu" aria-labelledby="adminMenu">
@@ -659,7 +662,7 @@ background-size: initial;
               <li><a target="_new" href="/{{data.f.table}}.do?PDF&landscape=true&sys_id={{data.sys_id}}&sysparm_view={{data.f.view}}" tabindex="-1">${Export to PDF (landscape)}</a></li>
             </ul>
         </span>
-	<img src="map.png">
+	
       	<!-- optional "Open in platform" link when omitHeaderOptions is true -->
       
      

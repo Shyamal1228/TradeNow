@@ -77,6 +77,33 @@
 .bn37:hover {
   transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
 }
+
+
+// extra -&gt; carousel responsive
+@media (max-width: 767px) {
+    /*vertically tall*/
+    .carousel-inner, .carousel, .carousel-inner .item {
+        height: 80vh;
+    }
+
+    /* Adjusting the image to fit the taller carousel */
+    .carousel-inner &gt; .item &gt; img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .carousel-caption h1 {
+        font-size: 3em;
+    }
+
+    a.bn3637.bn37 {
+        padding: 10px;
+        font-size: 1.3em;
+    }
+}
+
+
 </css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -97,14 +124,14 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-25 10:34:50</sys_created_on>
         <sys_id>ca6cd00783920210edb56060ceaad34d</sys_id>
-        <sys_mod_count>142</sys_mod_count>
+        <sys_mod_count>160</sys_mod_count>
         <sys_name>Homepage carousel</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_ca6cd00783920210edb56060ceaad34d</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-06 06:33:12</sys_updated_on>
+        <sys_updated_on>2024-06-07 08:37:54</sys_updated_on>
         <template><![CDATA[<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -117,22 +144,19 @@
         <div class="item active">
             <img src="homepage carousel 1.jpg" alt="...">
             <div class="carousel-caption">
-               <h1 class="poppins-bold">Your Donation <br>
-									is Others Inspiration
-							</h1>
-                
-              <div class="button-container">
-                    <a href="/tradenow?id=charity_organization" class="bn3637 bn37">Donate now</a>
+              <h1 class="poppins-bold">Giveaway An <br>Item</h1>
+                <div class="button-container">
+                    <a href="/tradenow?id=add_item&table=x_1383179_tradenow_item_list&sys_id=-1&view=portal" class="bn3637 bn37">Giveaway now</a>
                 </div>
             </div>
         </div>
         <div class="item">
             <img src="homepage carousel 2.jpg" alt="...">
             <div class="carousel-caption">
-                 <h1 class="poppins-bold">Giveaway An <br>Item
-							</h1>
-                <div class="button-container">
-                    <a href="/tradenow?id=add_item&table=x_1383179_tradenow_item_list&sys_id=-1&view=portal" class="bn3637 bn37">Giveaway now</a>
+                 <h1 class="poppins-bold">Your Donation <br>
+									is Others Inspiration</h1> 
+              <div class="button-container">
+                    <a href="/tradenow?id=charity_organization" class="bn3637 bn37">Donate now</a>
                 </div>
             </div>
         </div>

@@ -7,36 +7,36 @@
         <display_2/>
         <display_date/>
         <filter/>
-        <glyph>empty</glyph>
+        <glyph/>
         <hint/>
         <kb_article/>
         <kb_category/>
         <kb_topic/>
-        <label>Order History</label>
-        <order>300</order>
+        <label>Ready to Pick-Up</label>
+        <order>200</order>
         <record_script/>
         <sc_cat_item/>
         <sc_category/>
         <short_description/>
-        <sp_page display_value="add_item_widget">70dce2aa83d28210edb56060ceaad30a</sp_page>
-        <sp_rectangle_menu display_value="TradeNow menu">183defb783960610edb56060ceaad383</sp_rectangle_menu>
-        <sp_rectangle_menu_item/>
+        <sp_page display_value="ready_to_pickup">90f9149c83b28210edb56060ceaad31d</sp_page>
+        <sp_rectangle_menu/>
+        <sp_rectangle_menu_item display_value="Order History">5e30f7bb83960610edb56060ceaad365</sp_rectangle_menu_item>
         <sys_class_name>sp_rectangle_menu_item</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-05-28 09:59:38</sys_created_on>
-        <sys_id>5e30f7bb83960610edb56060ceaad365</sys_id>
-        <sys_mod_count>10</sys_mod_count>
-        <sys_name>Order History</sys_name>
+        <sys_created_on>2024-06-10 14:41:06</sys_created_on>
+        <sys_id>5c2e2f4083328210edb56060ceaad320</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Ready to Pick-Up</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_rectangle_menu_item_5e30f7bb83960610edb56060ceaad365</sys_update_name>
+        <sys_update_name>sp_rectangle_menu_item_5c2e2f4083328210edb56060ceaad320</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-10 14:37:26</sys_updated_on>
+        <sys_updated_on>2024-06-10 17:53:06</sys_updated_on>
         <table/>
         <type>page</type>
         <url/>
         <url_target/>
     </sp_rectangle_menu_item>
-    <sys_translated_text action="delete_multiple" query="documentkey=5e30f7bb83960610edb56060ceaad365"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=5c2e2f4083328210edb56060ceaad320"/>
 </record_update>

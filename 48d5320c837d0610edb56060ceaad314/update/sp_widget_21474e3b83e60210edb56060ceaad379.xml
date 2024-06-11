@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+  
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.map-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 450px;
+  border: 0;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>google_map</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Google Map</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-09 12:32:53</sys_created_on>
+        <sys_id>21474e3b83e60210edb56060ceaad379</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Google Map</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_21474e3b83e60210edb56060ceaad379</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-09 16:21:16</sys_updated_on>
+        <template><![CDATA[<div class="map-container">
+  <iframe id="dynamicMap" src="https://www.google.com/maps/embed/v1/view?key=AIzaSyDlmuJnoQWRGk76Ew_r4XTwYBWk44-gdt0&center=12.8481675868212,77.67037644956777&zoom=14&maptype=roadmap" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+<div>
+  <iframe src="https://maps.google.com/maps?q=12.8481675868212, 77.67037644956777&z=15&output=embed" width="360" height="270" frameborder="0" style="border:0"></iframe>
+</div>]]></template>
+    </sp_widget>
+</record_update>

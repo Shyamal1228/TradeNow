@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[// Definition of the API controller function
+api.controller = function() {
+  /* widget controller */
+  var c = this; // Assigning 'this' to variable 'c' for easier access
+
+  // Retrieving DOM elements by their IDs
+  var imageName = document.getElementById("ss-upload"); // Input element for uploading an image
+  var imageLabel = document.getElementById("photo-name"); // Label element for displaying the selected image name
+
+  // Event listener for the 'change' event on the imageName element
+  imageName.addEventListener("change", function() {
+    // Retrieving the selected image file from the input element
+    var inputImage = document.querySelector("#ss-upload").files[0];
+    
+    // Logging the selected image file to the console
+    console.log(inputImage);
+
+    // Updating the text content of the imageLabel element to display the selected image name
+    imageLabel.innerText = inputImage ? inputImage.name : "Select Screenshot";
+  });
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Font Styles */
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Payment Info Section */
+.payment-info {
+  /* Placeholder for additional styling */
+}
+
+/* Payment Division Section */
+.payment-info .payment-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #04364A; /* Background color */
+  color: #DAFFFB; /* Text color */
+}
+
+/* Payment Header */
+.payment-info .payment-div .payment-header {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* QR Payment Section */
+.payment-info .payment-div .qr-payment {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  width: 80%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  align-items: center;
+  background-color: white; /* Background color */
+  border-radius: 20px;
+}
+
+/* QR Image Section */
+.payment-info .payment-div .qr-payment .qr-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+/* QR Code Image */
+.payment-info .payment-div .qr-payment .qr-image img {
+  padding: 20px;
+  border-radius: 15px;
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  object-fit: contain;
+}
+
+/* QR Image Separator */
+.payment-info .payment-div .qr-payment .qr-image:after {
+  display: flex;
+  content: "";
+  background-color: #04364A; /* Separator color */
+  width: 2px;
+  height: 100%;
+  top: 10px;
+  left: 100%;
+  display: block;
+}
+
+/* Screenshot Proof Section */
+.payment-info .payment-div .qr-payment .screenshot-proof {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  color: #04364A; /* Text color */
+  font-size: 20px;
+}
+
+/* Amount Input Field */
+.payment-info .payment-div .qr-payment .screenshot-proof .amount {
+  width: 80%;
+}
+
+/* Amount Input Field Style */
+.payment-info .payment-div .qr-payment .screenshot-proof .amount input {
+  width: 100%;
+  border: 4px solid #04364A; /* Border color */
+  border-radius: 10px;
+  padding: 5px;
+  transition: 0.3s ease; /* Transition effect */
+}
+
+/* Amount Input Field Hover State */
+.payment-info .payment-div .qr-payment .screenshot-proof .amount input:hover {
+  border: 4px solid #176B87; /* Hover border color */
+  transition: 0.3s ease;
+}
+
+/* Amount Input Field Focus State */
+.payment-info .payment-div .qr-payment .screenshot-proof .amount input:focus {
+  border: 4px solid #DAFFFB; /* Focus border color */
+  transition: 0.3s ease;
+}
+
+/* Photo Upload Label */
+.payment-info .payment-div .qr-payment .screenshot-proof .photo-upload {
+  cursor: pointer;
+  width: 80%;
+  margin-top: 20px;
+  border: 4px solid #04364A; /* Border color */
+  border-radius: 10px;
+  padding: 5px;
+  transition: 0.3s ease; /* Transition effect */
+}
+
+/* Photo Upload Input Field */
+.payment-info .payment-div .qr-payment .screenshot-proof .photo-upload input[type="file"] {
+  display: none;
+}
+
+/* Photo Upload Hover State */
+.payment-info .payment-div .qr-payment .screenshot-proof .photo-upload:hover {
+  border: 4px solid #176B87; /* Hover border color */
+  transition: 0.3s ease;
+}
+
+/* Photo Upload Focus State */
+.payment-info .payment-div .qr-payment .screenshot-proof .photo-upload:focus {
+  border: 4px solid #DAFFFB; /* Focus border color */
+  transition: 0.3s ease;
+}
+
+/* Upload Button */
+.payment-info .payment-div .qr-payment .screenshot-proof button {
+  background-color: #04364A; /* Background color */
+  color: #DAFFFB; /* Text color */
+  margin-top: 10px;
+  border: #04364A solid 2px;
+  border-radius: 25px;
+  padding: 10px 24px;
+  transition: 0.2s ease; /* Transition effect */
+}
+
+/* Upload Button Hover State */
+.payment-info .payment-div .qr-payment .screenshot-proof button:hover {
+  background-color: transparent;
+  color: #04364A; /* Hover text color */
+}
+
+/* Payment Divider Section */
+.payment-info .payment-div .payment-divider {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Divider Lines */
+.payment-info .payment-div .payment-divider .divider-lines {
+  content: " ";
+  background-color: #DAFFFB; /* Divider color */
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 2px;
+  border-radius: 50px;
+}
+
+/* OR Tag */
+.payment-info .payment-div .payment-divider .or-tag {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* OR Tag Text */
+.payment-info .payment-div .payment-divider .or-tag p {
+  color: #DAFFFB; /* Text color */
+  margin: 0;
+  font-size: 30px;
+}
+
+/* Site Payment Section */
+.payment-info .payment-div .site-payment {
+  font-size: 40px;
+  width: 80%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+/* Description Class */
+.description {
+  margin-bottom: 15px;
+}
+
+/* Payment Division */
+.payment-div {
+  margin-bottom: 20px;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>charity_info_payment</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>charity info payment</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[// Immediately invoked function expression (IIFE) to encapsulate the code and avoid polluting the global namespace
+(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+  // Initializing properties in the 'data' object
+	data.table = 'x_1383179_tradenow_charity_list'; // Table name for charity list
+	data.table1 = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr'; // Table name for user relationships
+
+  // Creating a new GlideRecord instance for the charity list table
+  var gr = new GlideRecord(data.table);
+
+  // Retrieving the 'charity_id' parameter from the client-side
+	var charity_id = $sp.getParameter('charity_id');
+
+  // Logging the charity_id to the console
+	console.log(charity_id)
+
+  // Adding a query condition to filter GlideRecord records based on 'number' field matching the 'charity_id'
+	gr.addQuery('number', '=', charity_id);
+
+  // Executing the GlideRecord query
+	gr.query();
+	
+  // Iterating through each record in the GlideRecord result set
+	while (gr.next()) {
+		// Creating an object 'data.obj' to store information about the charity
+		data.obj = {
+			charityId: gr.getValue('number'), // Charity ID
+			name: gr.getValue('charity_name'), // Charity name
+			description: gr.getValue('description'), // Charity description
+			raisedAmount: gr.getValue('total_amount_raised'), // Total amount raised by the charity
+			image_url: gr.getDisplayValue('image'), // URL of the charity's image
+			website: gr.getValue('website'), // Charity's website URL
+			email: gr.getValue('email'), // Charity's email address
+			phone: gr.getValue('phone'), // Charity's phone number
+			location: gr.getDisplayValue('u_reference_1'), // Charity's location
+			paymentLink: gr.getValue('donation_link'), // Link for making donations to the charity
+			qrImage: gr.getDisplayValue('qr_code') // QR code image associated with the charity
+		}
+	}
+
+  // Logging the 'data.obj' containing charity information to the console
+	console.log(data.obj);
+
+  // Immediately invoked function expression (IIFE) to query the second table
+	(function() {
+		// Creating a new GlideRecord instance for the second table
+		var gr1 = new GlideRecord(data.table1);
+		
+    // Executing the query for the second table
+		gr1.query();
+		
+    // Logging the GlideRecord result set for the second table to the console
+		console.log(gr1);
+		
+    // Iterating through each record in the GlideRecord result set for the second table
+		while (gr.next()) {
+			// Logging the value of 'charity_id' field for each record to the console
+			console.log(gr.getValue('charity_id'));
+		}
+	})();
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-11 17:44:33</sys_created_on>
+        <sys_id>9ec1e52c837ac210edb56060ceaad34a</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>charity info payment</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_9ec1e52c837ac210edb56060ceaad34a</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-12 05:20:59</sys_updated_on>
+        <template><![CDATA[<div class="payment-info">
+  <!-- Payment Information Section -->
+  <section class="payment-div">
+    <!-- Payment Division Section -->
+    <p class="poppins-bold payment-header">
+      Become a Part of the Cause
+    </p>
+    <!-- Payment Header -->
+    <div class="qr-payment">
+      <!-- QR Payment Section -->
+      <div class="qr-image">
+        <!-- QR Image Section -->
+        <img src={{data.obj.qrImage}} alt="payment qr image">
+        <!-- QR Code Image -->
+      </div>
+      <div class="screenshot-proof poppins-semibold">
+        <!-- Screenshot Proof Section -->
+        <p>Upload a screenshot of your payment page.</p>
+        <!-- Screenshot Proof Description -->
+        <label for="amount" class="amount">
+          <!-- Label for Amount -->
+          <input id="amount" placeholder="Amount" type="number">
+          <!-- Input Field for Amount -->
+        </label>
+        <label for="ss-upload" class="photo-upload" id="photo-name">
+          <!-- Label for Screenshot Upload -->
+          Select Screenshot
+          <input id="ss-upload" type="file">
+          <!-- Input Field for Screenshot Upload -->
+        </label>
+        <button type="button poppins-semibold">Upload</button>
+        <!-- Upload Button -->
+      </div>
+    </div>
+    <!-- End of QR Payment Section -->
+    <div class="payment-divider">
+      <!-- Payment Divider Section -->
+      <div class="divider-lines"></div>
+      <!-- Divider Lines -->
+      <div class="or-tag"><p class="poppins-bold">OR</p></div>
+      <!-- OR Tag -->
+      <div class="divider-lines"></div>
+      <!-- Divider Lines -->
+    </div>
+    <!-- End of Payment Divider Section -->
+    <div class="site-payment poppins-regular">
+      <!-- Site Payment Section -->
+      <p>Make a Donation to the official site 
+        <button class="btn-79 poppins-bold"><span>Here</span></button>
+        <!-- Donation Button -->
+      </p>
+    </div>
+    <!-- End of Site Payment Section -->
+  </section>
+  <!-- End of Payment Division Section -->
+</div>
+<!-- End of Payment Information Section -->
+]]></template>
+    </sp_widget>
+</record_update>

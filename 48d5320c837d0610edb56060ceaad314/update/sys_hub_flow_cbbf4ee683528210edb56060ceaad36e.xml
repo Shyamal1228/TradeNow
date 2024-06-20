@@ -4,21 +4,21 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=347148000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=edge,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1213970000,viewActivatedIn=naturalLanguage</attributes>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
         <copied_from/>
         <copied_from_name/>
         <description>Flow for approving or rejecting donation's</description>
         <internal_name>donations_approval_flow_for_charity_coordinator</internal_name>
-        <label_cache>[{"name":"Created_1.current.sys_user","label":"Trigger - Record Created➛Donation History Record➛User","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"sys_user"},{"name":"eceabef8-3efd-4f47-99ef-009dc9c84cc9.approval_state","label":"1 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current","label":"Trigger - Record Created➛Donation History Record","reference":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","reference_display":"Donation History","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.status","label":"Trigger - Record Created➛Donation History Record➛Status","reference":"","reference_display":"Status","type":"choice","base_type":"choice","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"status","choices":[{"label":"Unverified","used":false,"reference":false,"image":"","rawLabel":"Unverified","selected":false,"missing":false,"value":"unverified","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Verified","used":false,"reference":false,"image":"","rawLabel":"Verified","selected":false,"missing":false,"value":"verified","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Rejected","used":false,"reference":false,"image":"","rawLabel":"Rejected","selected":false,"missing":false,"value":"rejected","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Draft","used":false,"reference":false,"image":"","rawLabel":"Draft","selected":false,"missing":false,"value":"draft","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}}]},{"name":"{{static.1e0a1ef0834a0610edb56060ceaad30d}}","label":"Charity Coordinators","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"Created_1.current.sys_created_on","label":"Trigger - Record Created➛Donation History Record➛Created","reference":"","reference_display":"Created","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"sys_created_on"}]</label_cache>
+        <label_cache>[{"name":"Created_1.current.sys_created_on","label":"Trigger - Record Created➛Donation History Record➛Created","reference":"","reference_display":"Created","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"sys_created_on"},{"name":"{{static.1e0a1ef0834a0610edb56060ceaad30d}}","label":"Charity Coordinators","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"Created_1.current.status","label":"Trigger - Record Created➛Donation History Record➛Status","reference":"","reference_display":"Status","type":"choice","base_type":"choice","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"status","choices":[{"label":"Unverified","reference":false,"used":false,"rawLabel":"Unverified","selected":false,"missing":false,"image":"","value":"unverified","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Verified","reference":false,"used":false,"rawLabel":"Verified","selected":false,"missing":false,"image":"","value":"verified","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Rejected","reference":false,"used":false,"rawLabel":"Rejected","selected":false,"missing":false,"image":"","value":"rejected","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Draft","reference":false,"used":false,"rawLabel":"Draft","selected":false,"missing":false,"image":"","value":"draft","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}}]},{"name":"Created_1.current","label":"Trigger - Record Created➛Donation History Record","reference":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","reference_display":"Donation History","type":"reference","base_type":"reference","attributes":{}},{"name":"eceabef8-3efd-4f47-99ef-009dc9c84cc9.approval_state","label":"1 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current.sys_user","label":"Trigger - Record Created➛Donation History Record➛User","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"sys_user"}]</label_cache>
         <master_snapshot>5576323783920610edb56060ceaad34c</master_snapshot>
         <name>Donation's Approval Flow For Charity Coordinator</name>
         <natlang/>
         <outputs/>
         <pre_compiled>false</pre_compiled>
         <remote_trigger_id>a976323783920610edb56060ceaad3e6</remote_trigger_id>
-        <run_as>user</run_as>
+        <run_as>system</run_as>
         <run_with_roles/>
         <sc_callable>false</sc_callable>
         <show_draft_actions>false</show_draft_actions>
@@ -30,7 +30,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>cbbf4ee683528210edb56060ceaad36e</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Donation's Approval Flow For Charity Coordinator</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -38,7 +38,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_hub_flow_cbbf4ee683528210edb56060ceaad36e</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:37</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:38</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow>
     <sys_translated_text action="delete_multiple" query="documentkey=cbbf4ee683528210edb56060ceaad36e"/>
@@ -75,14 +75,14 @@
         <identifier>cbbf4ee683528210edb56060ceaad36e</identifier>
         <runner>FDTriggerRunner</runner>
         <sys_created_by>jagriti</sys_created_by>
-        <sys_created_on>2024-05-28 06:07:36</sys_created_on>
-        <sys_id>f40c363f83920610edb56060ceaad33d</sys_id>
+        <sys_created_on>2024-06-07 06:54:38</sys_created_on>
+        <sys_id>8ba6e24f836a4210edb56060ceaad3ca</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:38</sys_updated_on>
         <trigger display_value="">a976323783920610edb56060ceaad3e6</trigger>
     </sys_trigger_runner_mapping>
-    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=cbbf4ee683528210edb56060ceaad36e^sys_idNOT INf40c363f83920610edb56060ceaad33d"/>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=cbbf4ee683528210edb56060ceaad36e^sys_idNOT IN8ba6e24f836a4210edb56060ceaad3ca"/>
     <sys_hub_trigger_instance action="delete_multiple" query="flow=cbbf4ee683528210edb56060ceaad36e^sys_idNOT IN0369d22683928210edb56060ceaad347"/>
     <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
         <comment/>
@@ -93,10 +93,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-24 06:24:05</sys_created_on>
         <sys_id>0369d22683928210edb56060ceaad347</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:38</sys_updated_on>
         <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -209,14 +209,14 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-24 06:24:05</sys_created_on>
         <sys_id>0b69d22683928210edb56060ceaad342</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name/>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:38</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -293,14 +293,14 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-24 06:24:05</sys_created_on>
         <sys_id>4b69d22683928210edb56060ceaad33b</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name/>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:38</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -332,10 +332,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-24 06:24:05</sys_created_on>
         <sys_id>4769d22683928210edb56060ceaad35b</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2024-06-07 06:55:17</sys_updated_on>
         <ui_id>eceabef8-3efd-4f47-99ef-009dc9c84cc9</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=4769d22683928210edb56060ceaad35b"/>
@@ -375,10 +375,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-28 06:04:15</sys_created_on>
         <sys_id>ef3bb2fb83920610edb56060ceaad3b9</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:04:15</sys_updated_on>
-        <value>donation_amount</value>
+        <sys_updated_on>2024-06-07 06:54:35</sys_updated_on>
+        <value/>
         <variable display_value="Approval Field">01f2e9920b10030085c083eb37673ad8</variable>
     </sys_variable_value>
     <sys_element_mapping action="delete_multiple" query="id=4769d22683928210edb56060ceaad35b"/>
@@ -459,10 +459,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-24 06:24:05</sys_created_on>
         <sys_id>5b69d22683928210edb56060ceaad368</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:37</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2024-06-07 06:55:17</sys_updated_on>
         <ui_id>5aaa0055-1d7f-43b0-b26d-bb5658d0b94a</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=5b69d22683928210edb56060ceaad368"/>
@@ -548,10 +548,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-24 06:24:06</sys_created_on>
         <sys_id>5f69d22683928210edb56060ceaad37b</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:37</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2024-06-07 06:55:17</sys_updated_on>
         <ui_id>35ff72e5-bcc3-496a-96fb-b34472fb31d6</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=5f69d22683928210edb56060ceaad37b"/>
@@ -647,10 +647,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-24 06:24:05</sys_created_on>
         <sys_id>8369d22683928210edb56060ceaad360</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:37</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:38</sys_updated_on>
         <ui_id>065651cb-94a5-4779-9a1a-500255932aa1</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -719,10 +719,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-24 06:24:06</sys_created_on>
         <sys_id>d769d22683928210edb56060ceaad375</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:37</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:38</sys_updated_on>
         <ui_id>cdce6240-0b80-4741-bcde-561cef839dc0</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -794,14 +794,14 @@
         <copied_from_name/>
         <description>Flow for approving or rejecting donation's</description>
         <internal_name>donations_approval_flow_for_charity_coordinator</internal_name>
-        <label_cache>[{"name":"Created_1.current.sys_user","label":"Trigger - Record Created➛Donation History Record➛User","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"sys_user"},{"name":"eceabef8-3efd-4f47-99ef-009dc9c84cc9.approval_state","label":"1 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current","label":"Trigger - Record Created➛Donation History Record","reference":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","reference_display":"Donation History","type":"reference","base_type":"reference","attributes":{}},{"name":"Created_1.current.status","label":"Trigger - Record Created➛Donation History Record➛Status","reference":"","reference_display":"Status","type":"choice","base_type":"choice","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"status","choices":[{"label":"Unverified","used":false,"reference":false,"image":"","rawLabel":"Unverified","selected":false,"missing":false,"value":"unverified","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Verified","used":false,"reference":false,"image":"","rawLabel":"Verified","selected":false,"missing":false,"value":"verified","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Rejected","used":false,"reference":false,"image":"","rawLabel":"Rejected","selected":false,"missing":false,"value":"rejected","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Draft","used":false,"reference":false,"image":"","rawLabel":"Draft","selected":false,"missing":false,"value":"draft","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}}]},{"name":"{{static.1e0a1ef0834a0610edb56060ceaad30d}}","label":"Charity Coordinators","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"Created_1.current.sys_created_on","label":"Trigger - Record Created➛Donation History Record➛Created","reference":"","reference_display":"Created","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"sys_created_on"}]</label_cache>
+        <label_cache>[{"name":"Created_1.current.sys_created_on","label":"Trigger - Record Created➛Donation History Record➛Created","reference":"","reference_display":"Created","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"sys_created_on"},{"name":"{{static.1e0a1ef0834a0610edb56060ceaad30d}}","label":"Charity Coordinators","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference"},{"name":"Created_1.current.status","label":"Trigger - Record Created➛Donation History Record➛Status","reference":"","reference_display":"Status","type":"choice","base_type":"choice","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"status","choices":[{"label":"Unverified","reference":false,"used":false,"rawLabel":"Unverified","selected":false,"missing":false,"image":"","value":"unverified","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Verified","reference":false,"used":false,"rawLabel":"Verified","selected":false,"missing":false,"image":"","value":"verified","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Rejected","reference":false,"used":false,"rawLabel":"Rejected","selected":false,"missing":false,"image":"","value":"rejected","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}},{"label":"Draft","reference":false,"used":false,"rawLabel":"Draft","selected":false,"missing":false,"image":"","value":"draft","parameters":{"name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr"}}]},{"name":"Created_1.current","label":"Trigger - Record Created➛Donation History Record","reference":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","reference_display":"Donation History","type":"reference","base_type":"reference","attributes":{}},{"name":"eceabef8-3efd-4f47-99ef-009dc9c84cc9.approval_state","label":"1 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current.sys_user","label":"Trigger - Record Created➛Donation History Record➛User","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"x_1383179_tradenow_m2m_sys_user_x_1383179_tr","column_name":"sys_user"}]</label_cache>
         <master>true</master>
         <name>Donation's Approval Flow For Charity Coordinator</name>
         <natlang/>
         <outputs/>
         <parent_flow display_value="Donation's Approval Flow For Charity Coordinator">cbbf4ee683528210edb56060ceaad36e</parent_flow>
         <remote_trigger_id/>
-        <run_as>user</run_as>
+        <run_as>system</run_as>
         <run_with_roles/>
         <sc_callable>false</sc_callable>
         <status>published</status>
@@ -811,7 +811,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>5576323783920610edb56060ceaad34c</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
@@ -819,7 +819,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name/>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:37</sys_updated_on>
         <type>flow</type>
     </sys_hub_flow_snapshot>
     <sys_translated_text action="delete_multiple" query="documentkey=5576323783920610edb56060ceaad34c"/>
@@ -834,10 +834,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-28 05:43:21</sys_created_on>
         <sys_id>5576323783920610edb56060ceaad3c9</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_scope/>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:38</sys_updated_on>
         <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
         <trigger_inputs/>
         <trigger_outputs/>
@@ -950,14 +950,14 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-28 05:43:20</sys_created_on>
         <sys_id>9576323783920610edb56060ceaad34e</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name/>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:35</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:37</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1034,14 +1034,14 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-28 05:43:20</sys_created_on>
         <sys_id>9976323783920610edb56060ceaad36b</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name/>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:35</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:37</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -1073,10 +1073,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-28 05:43:21</sys_created_on>
         <sys_id>1176323783920610edb56060ceaad3ab</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:35</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:37</sys_updated_on>
         <ui_id>eceabef8-3efd-4f47-99ef-009dc9c84cc9</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=1176323783920610edb56060ceaad3ab"/>
@@ -1102,10 +1102,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-28 06:07:35</sys_created_on>
         <sys_id>2c0cf23f83920610edb56060ceaad3d2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:35</sys_updated_on>
-        <value>donation_amount</value>
+        <sys_updated_on>2024-06-07 06:54:37</sys_updated_on>
+        <value/>
         <variable display_value="Approval Field">01f2e9920b10030085c083eb37673ad8</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -1200,10 +1200,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-28 05:43:21</sys_created_on>
         <sys_id>5576323783920610edb56060ceaad3c7</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:37</sys_updated_on>
         <ui_id>35ff72e5-bcc3-496a-96fb-b34472fb31d6</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=5576323783920610edb56060ceaad3c7"/>
@@ -1289,10 +1289,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-28 05:43:21</sys_created_on>
         <sys_id>d976323783920610edb56060ceaad3c0</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:37</sys_updated_on>
         <ui_id>5aaa0055-1d7f-43b0-b26d-bb5658d0b94a</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=d976323783920610edb56060ceaad3c0"/>
@@ -1388,10 +1388,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-28 05:43:20</sys_created_on>
         <sys_id>9176323783920610edb56060ceaad383</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:37</sys_updated_on>
         <ui_id>065651cb-94a5-4779-9a1a-500255932aa1</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1460,10 +1460,10 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-28 05:43:20</sys_created_on>
         <sys_id>9176323783920610edb56060ceaad3a1</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:37</sys_updated_on>
         <ui_id>cdce6240-0b80-4741-bcde-561cef839dc0</ui_id>
         <workflow_inputs/>
         <workflow_reference/>
@@ -1526,24 +1526,24 @@
     <sys_hub_flow action="UPDATE">
         <sys_id>cbbf4ee683528210edb56060ceaad36e</sys_id>
         <latest_snapshot>5576323783920610edb56060ceaad34c</latest_snapshot>
-        <compiler_build>glide-vancouver-07-06-2023__patch2-hotfix1-10-04-2023_10-06-2023_1235.zip</compiler_build>
+        <compiler_build>glide-vancouver-07-06-2023__patch9-05-02-2024_05-14-2024_2249.zip</compiler_build>
     </sys_hub_flow>
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=cbbf4ee683528210edb56060ceaad36e^sys_idNOT INe976323783920610edb56060ceaad3e8"/>
     <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
         <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"e976323783920610edb56060ceaad3e8","name":"plan","plan_signature":null}}</plan>
         <plan_id>cbbf4ee683528210edb56060ceaad36e</plan_id>
-        <snapshot>5576323783920610edb56060ceaad34c</snapshot>
+        <snapshot>e4d62a4f836a4210edb56060ceaad3a9</snapshot>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-28 05:43:21</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e976323783920610edb56060ceaad3e8</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 06:07:36</sys_updated_on>
+        <sys_updated_on>2024-06-07 06:54:38</sys_updated_on>
         <trigger display_value="">a976323783920610edb56060ceaad3e6</trigger>
     </sys_flow_trigger_plan>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=cbbf4ee683528210edb56060ceaad36e"/>

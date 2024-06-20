@@ -29,27 +29,42 @@
         <rest_service_text/>
         <rest_variables/>
         <role_conditions/>
-        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+        <script><![CDATA[// This function executes a rule when triggered, updating certain fields and redirecting the user.
 
-   // current.status = 'verified';
+(function executeRule(current, previous /*null when async*/ ) {
+    // Create a GlideRecord object to query the 'sys_user' table
     var userGR = new GlideRecord('sys_user');
+    
+    // Get the 'sys_user' record associated with the current record
     userGR.get(current.sys_user);
+    
+    // Perform a query on the 'sys_user' table
     userGR.query();
+    
+    // Check if there is a next record in the GlideRecord result set
     if (userGR.next()) {
+        // Increment the 'u_points' field of the user by 200
         userGR.u_points = userGR.u_points + 200;
+        
+        // Update the user record
         userGR.update();
     }
+    
+    // Update the current record
     current.update();
+    
+    // Set the redirect URL for the current record
     action.setRedirectURL(current);
 
-})(current, previous);]]></script>
+})(current, previous);
+]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-28 05:41:07</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3b95feb383920610edb56060ceaad3b4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>BR to add donation points to user</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -57,7 +72,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_script_3b95feb383920610edb56060ceaad3b4</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-28 05:41:07</sys_updated_on>
+        <sys_updated_on>2024-06-12 05:39:36</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

@@ -7,38 +7,62 @@
         <client_callable>true</client_callable>
         <description/>
         <name>TradeNowClientUtils</name>
-        <script><![CDATA[var TradeNowClientUtils = Class.create();
+        <script><![CDATA[/*
+This script defines a JavaScript class TradeNowClientUtils that extends the global AbstractAjaxProcessor class.
+It provides a method populateUserPoints() to add points to a user based on their sys_id.
+*/
+
+var TradeNowClientUtils = Class.create();
+
+// Extend the TradeNowClientUtils prototype with methods from global.AbstractAjaxProcessor
 TradeNowClientUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 	
+	// Method to populate user points
 	populateUserPoints: function(){
+		// Retrieve the sys_id of the user from the request parameters
 		var user_id = this.getParameter('sysparm_user_name');
+		
+		// Create a GlideRecord object to query the 'sys_user' table
 		var userGr = new GlideRecord('sys_user');
+		
+		// Add a query to find the user with the specified sys_id
 		userGr.addQuery('sys_id', user_id);
+		
+		// Execute the query
 		userGr.query();
+		
+		// If a user record is found
 		if(userGr.next()){
+			// Add 100 points to the user's 'u_points' field
 			userGr.u_points += 100;
+			
+			// Update the user record
 			userGr.update(); 
+			
+			// Return a success message
 			return "Points added to user";
 		}
 		else{
+			// Return a message indicating that the user was not found
 			return "User not found";
 		}
-
 	},
 
+    // Define the type of the class
     type: 'TradeNowClientUtils'
-});]]></script>
+});
+]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-07 16:27:55</sys_created_on>
         <sys_id>e65ff81d83c68610edb56060ceaad381</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>TradeNowClientUtils</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_script_include_e65ff81d83c68610edb56060ceaad381</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-07 16:27:55</sys_updated_on>
+        <sys_updated_on>2024-06-12 05:41:35</sys_updated_on>
     </sys_script_include>
 </record_update>

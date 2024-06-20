@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.poppins {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.playwrite-co-writer {
+  font-family: "Playwrite CO", cursive;
+  font-optical-sizing: auto;
+  font-weight: &lt;weight&gt;;
+  font-style: normal;
+}
+
+.charity-description{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.charity-description .charity-info{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding: 20px 20px;
+}
+
+.charity-description .charity-info .info-section{
+	width: 70%;
+  min-height: 500px;
+  border: 2px solid black;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.charity-description .charity-info .info-section .info-container{
+  padding-top: 30px;
+	width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.charity-description .charity-info .info-section .info-container .about-div{
+	font-size: 5rem;
+  font-weight: 600;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.charity-description .charity-info .info-section .info-container .description-div{
+  color: black;  
+}
+
+.charity-description .charity-info .info-section .info-container .contact-div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.contact-title{
+	font-size: 2rem;
+  font-weight: 400;
+}
+
+.website-div, .email-div, .phone-div, .location-div{
+	width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.svg-container{
+	width: 20%;
+  height: 100%;
+}
+
+.svg-container{
+	width: 100%;
+  height: 100%;
+}
+
+.charity-description .charity-amount-raised{
+  width: 30%;
+  height: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.charity-description .charity-amount-raised .amount-raised{
+  width: 100%;
+	border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: #5de5af;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 500;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>charity_description</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>charity description</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  // This is an immediately-invoked function expression (IIFE) to encapsulate the code
+
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+  // Setting properties in the 'data' object with table names
+  data.table = 'x_1383179_tradenow_charity_list';
+  data.table1 = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr';
+
+  // Creating a new GlideRecord object with the table name from the 'data' object
+  var gr = new GlideRecord(data.table);
+  
+  // Getting the 'charity_id' parameter from the Service Portal
+  var charity_id = $sp.getParameter('charity_id');
+  console.log(charity_id);
+
+  // Adding a query condition to retrieve records with a specific charity_id
+  gr.addQuery('number', '=', charity_id);
+  
+  // Executing the query
+  gr.query();
+
+  // Looping through the result set
+  while (gr.next()) {
+    // Creating an object 'data.obj' to store information about the charity
+    data.obj = {
+      charityId: gr.getValue('number'),
+      name: gr.getValue('charity_name'),
+      description: gr.getValue('description'),
+      raisedAmount: gr.getValue('total_amount_raised'),
+      image_url: gr.getDisplayValue('image'),
+      website: gr.getValue('website'),
+      email: gr.getValue('email'),
+      phone: gr.getValue('phone'),
+      location: gr.getDisplayValue('u_reference_1'),
+      paymentLink: gr.getValue('donation_link'),
+      qrImage: gr.getDisplayValue('qr_code')
+    };
+  }
+  
+  // Logging the 'data.obj' object to the console
+  console.log(data.obj);
+
+  // Anonymous function within the IIFE
+  (function() {
+    // Creating a new GlideRecord object with another table name from the 'data' object
+    var gr1 = new GlideRecord(data.table1);
+    
+    // Querying the GlideRecord
+    gr1.query();
+    
+    // Logging the GlideRecord object to the console
+    console.log(gr1);
+    
+    // Looping through the result set
+    while (gr.next()) {
+      // Logging the 'charity_id' value from each record to the console
+      console.log(gr.getValue('charity_id'));
+    }
+  })();
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-11 16:53:22</sys_created_on>
+        <sys_id>a81659ec833ac210edb56060ceaad31e</sys_id>
+        <sys_mod_count>128</sys_mod_count>
+        <sys_name>charity description</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_a81659ec833ac210edb56060ceaad31e</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-18 16:04:38</sys_updated_on>
+        <template><![CDATA[<div class="charity-description poppins">
+  <div class="charity-info">
+    <div class="info-section poppins">
+      <div class="info-container">
+        <div class="about-div playwrite-co-writer">About Us...</div>
+        <div class="description-div">{{data.obj.description}}</div>
+        <div class="contact-div">
+          <div class="contact-title">Contact Us:</div>
+        	<div class="website-div"><div class="svg-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+            </div>{{data.obj.website}}</div>
+          <div class="email-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>{{data.obj.email}}</div>
+          <div class="phone-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>{{data.obj.phone}}</div>
+          <div class="location-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>{{data.obj.location}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="charity-amount-raised">
+    <div class="amount-raised">
+      <div>Amount Raised</div>
+      <div>${{data.obj.raisedAmount}}</div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

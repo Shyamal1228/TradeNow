@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.poppins {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.charity-heading{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.charity-heading .charity-image{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.charity-heading .charity-image .image-container{
+	width: 90%;
+  height: 90%;
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  border: 5px solid #5de5af;
+  align-items: center;
+  justify-content: center;
+}
+
+.charity-heading .charity-image .image-container img{
+	width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+
+.charity-heading .charity-name{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 4rem;
+  color: white;
+  font-weight: 600;
+}
+
+.charity-heading .charity-amount-raised{
+  width: 30%;
+  height: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.charity-heading .charity-amount-raised .amount-raised{
+  width: 100%;
+	border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: #5de5af;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 500;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>charity_info_heading</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>charity info heading</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  // This is an immediately-invoked function expression (IIFE) to encapsulate the code
+
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+  // Setting properties in the 'data' object with table names
+  data.table = 'x_1383179_tradenow_charity_list';
+  data.table1 = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr';
+
+  // Creating a new GlideRecord object with the table name from the 'data' object
+  var gr = new GlideRecord(data.table);
+  
+  // Getting the 'charity_id' parameter from the Service Portal
+  var charity_id = $sp.getParameter('charity_id');
+  console.log(charity_id);
+
+  // Adding a query condition to retrieve records with a specific charity_id
+  gr.addQuery('number', '=', charity_id);
+  
+  // Executing the query
+  gr.query();
+
+  // Looping through the result set
+  while (gr.next()) {
+    // Creating an object 'data.obj' to store information about the charity
+    data.obj = {
+      charityId: gr.getValue('number'),
+      name: gr.getValue('charity_name'),
+      description: gr.getValue('description'),
+      raisedAmount: gr.getValue('total_amount_raised'),
+      image_url: gr.getDisplayValue('image'),
+      website: gr.getValue('website'),
+      email: gr.getValue('email'),
+      phone: gr.getValue('phone'),
+      location: gr.getDisplayValue('u_reference_1'),
+      paymentLink: gr.getValue('donation_link'),
+      qrImage: gr.getDisplayValue('qr_code')
+    };
+  }
+  
+  // Logging the 'data.obj' object to the console
+  console.log(data.obj);
+
+  // Anonymous function within the IIFE
+  (function() {
+    // Creating a new GlideRecord object with another table name from the 'data' object
+    var gr1 = new GlideRecord(data.table1);
+    
+    // Querying the GlideRecord
+    gr1.query();
+    
+    // Logging the GlideRecord object to the console
+    console.log(gr1);
+    
+    // Looping through the result set
+    while (gr.next()) {
+      // Logging the 'charity_id' value from each record to the console
+      console.log(gr.getValue('charity_id'));
+    }
+  })();
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-18 08:39:38</sys_created_on>
+        <sys_id>e438efaa83fe0e10edb56060ceaad383</sys_id>
+        <sys_mod_count>31</sys_mod_count>
+        <sys_name>charity info heading</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_e438efaa83fe0e10edb56060ceaad383</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-18 10:05:08</sys_updated_on>
+        <template><![CDATA[<div class="charity-heading poppins">
+	<div class="charity-image">
+    <div class="image-container">
+      <img src={{data.obj.image_url}}> 
+    </div>
+  </div>
+  <div class="charity-name">
+    {{data.obj.name}}
+  </div>
+  <div class="charity-amount-raised">
+    <div class="amount-raised">
+      <div>Amount Raised</div>
+      <div>${{data.obj.raisedAmount}}</div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

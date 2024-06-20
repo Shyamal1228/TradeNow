@@ -1,63 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function($scope, $location) {
+        <client_script><![CDATA[api.controller = function($scope, $location) {
   /* widget controller */
   var c = this;
-	//console.log(c.data.items);
-	
-		$scope.charities= [].concat(c.data.items);
-		//console.log($scope.data.items);
-		$scope.currentPage= 1;
-		$scope.pageSize= 9;
-		
-		$scope.getTotalPages= function(){
-			return Math.ceil($scope.charities.length/$scope.pageSize);
-		};
-		
-		$scope.setPage= function(page){
-			if(page>=1 && page<=$scope.getTotalPages()){
-				$scope.currentPage= page;
-			}
-		};
-		
-		$scope.paginate= function(){
-			var start= ($scope.currentPage- 1) * $scope.pageSize;
-			var end= start + $scope.pageSize;
-			return $scope.charities.slice(start,end)
-		};
-	
-		$scope.handleClick = function(charity_id){
-			$location.search("id=charity_page&charity_id="+charity_id);
-		}
-};]]></client_script>
+
+  // Initialize the charities array with the data items from the controller
+  $scope.charities = [].concat(c.data.items);
+  
+  // Initialize current page to 1
+  $scope.currentPage = 1;
+  
+  // Set the number of items to display per page
+  $scope.pageSize = 6;
+  
+  // Function to calculate the total number of pages
+  $scope.getTotalPages = function() {
+    return Math.ceil($scope.charities.length / $scope.pageSize);
+  };
+  
+  // Function to set the current page, ensuring it's within valid range
+  $scope.setPage = function(page) {
+    console.log(page);
+    if (page >= 1 && page <= $scope.getTotalPages()) {
+      $scope.currentPage = page;
+    }
+  };
+  
+  // Function to get the items for the current page
+  $scope.paginate = function() {
+    var start = ($scope.currentPage - 1) * $scope.pageSize;
+    var end = start + $scope.pageSize;
+    return $scope.charities.slice(start, end);
+  };
+  
+  // Function to generate an array representing the range of pages
+  $scope.range = function() {
+    var range = [];
+    for (var i = 1; i <= $scope.getTotalPages(); i++) {
+      range.push(i);
+    }
+    return range;
+  };
+  
+  // Function to handle click event on a charity, navigating to charity's page
+  $scope.handleClick = function(charity_id) {
+    $location.search("id=charity_page&charity_id=" + charity_id);
+  };
+};
+]]></client_script>
         <controller_as>c</controller_as>
-        <css>.charity-list{
-  display:flex;
+        <css>$color-dark: #04364A;
+$color-mid-1: #176B87;
+$color-mid-2: #64CCC5;
+$color-light: #DAFFFB;
+
+.charity-list {
+  display: flex;
   flex-direction: column;
   align-item: center;
-  
+  /* Container for the entire charity list, arranged in a column, centered items */
 }
 
-.heading{
-	display:flex;
+.heading {
+  display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   font-family: sans-serif;
   font-weight: bold;
   height: 100px;
   color: black;
-  font-weight: bold;
+  /* Header section, centered, with bold font */
 }
 
-.pagination-div{
-	display: flex;
+.pagination-div {
+  display: flex;
   align-items: center;
   flex-direction: column;
+  /* Container for pagination and charity cards, arranged in a column, centered items */
 }
 
 .pagination-div .card-container {
-	display: grid;
+  display: grid;
   justify-content: center;
   align-items: center;
   margin-left: 10px;
@@ -65,6 +89,7 @@
   grid-template-columns: repeat(3, 1fr);
   column-gap: 40px;
   row-gap: 2em;
+  /* Container for all charity cards, displayed as a grid with 3 columns, gaps between columns and rows */
 }
 
 .pagination-div .card-container .charity-card {
@@ -74,32 +99,34 @@
   width: 350px;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: -1px 3px 11px 0px rgba(0,0,0,0.75);
+  box-shadow: -1px 3px 11px 0px rgba(0, 0, 0, 0.75);
   transition: all .3s ease-in-out;
   background-color: #f4f2f1;
   font-family: sans-serif;
   cursor: pointer;
+  /* Styles for each charity card, including size, border radius, box shadow, transition effect, background color, and font */
 }
 
 .pagination-div .card-container .charity-card:hover {
-  -webkit-box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
--moz-box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
-box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
- //box-shadow: -1px 3px 11px 0px rgba(0,0,0,0.75);
-  //box-shadow:-3px 18px 20px 0px rgba(99,89,99,1);
+  -webkit-box-shadow: -1px 0px 12px 0px rgba(23, 107, 135, 0.8);
+  -moz-box-shadow: -1px 0px 12px 0px rgba(23, 107, 135, 0.8);
+  box-shadow: -1px 0px 12px 0px rgba(23, 107, 135, 0.8);
   transform: translate3d(0px, -1px, 0px);
+  /* Hover effect for charity cards, including box shadow and slight translation */
 }
 
 .pagination-div .card-container .charity-card .charity-image {
   flex: 1.5;
   width: 100%;
   height: 250px;
+  /* Image section of the charity card, with defined flex, width, and height */
 }
 
 .pagination-div .card-container .charity-card .charity-image img {
   object-fit: cover;
   height: 100%;
   width: 100%;
+  /* Image within the charity card, ensuring it covers the entire area */
 }
 
 .pagination-div .card-container .charity-card .charity-details {
@@ -110,6 +137,7 @@ box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
   justify-content: space-between;
   height: 100%;
   gap: 10px;
+  /* Details section of the charity card, with defined padding, flex direction, and spacing between items */
 }
 
 .pagination-div .card-container .charity-card .title {
@@ -117,36 +145,43 @@ box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
   color: #263b5c;
   font-weight: bold;
   transition: all 0.2s ease;
+  /* Title of the charity, with font size, color, and transition effect */
 }
 
 .pagination-div .card-container .charity-card:hover .title {
   color: #122b32;
+  /* Hover effect for the title, changing the color */
 }
 
 .pagination-div .card-container .charity-card .description {
   color: #777777;
+  /* Description text color */
 }
 
 .pagination-div .card-container .charity-card .cta {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* Call-to-action section, aligned and spaced between items */
 }
 
 .pagination-div .card-container .charity-card .cta .raised-amount {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  /* Raised amount section, arranged in a column with gap between items */
 }
 
 .pagination-div .card-container .charity-card .cta .raised-amount .amount {
   color: #65c9bb;
   font-weight: bold;
   font-size: 20px;
+  /* Raised amount text, with color, bold font, and size */
 }
 
 .pagination-div .card-container .charity-card .cta .raised-amount .raised {
   color: #263b5c;
+  /* "Raised" text color */
 }
 
 .pagination-div .card-container .charity-card .cta button {
@@ -157,72 +192,87 @@ box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
   font-weight: bold;
   letter-spacing: 1px;
   transition: all 0.2s ease;
-   cursor: pointer;
+  cursor: pointer;
+  /* Button styles, including padding, border, colors, font weight, and transition effect */
 }
 
 .pagination-div .card-container .charity-card:hover .cta button {
   background-color: transparent;
   color: #122b32;
+  /* Hover effect for the button, changing background and text color */
 }
 
-.pagination-div .pagination-controls{
+.pagination-div .pagination-controls {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
+  gap: 2px;
   width: 100%;
   height: 200px;
   font-size: 20px;
   color: black;
+  /* Container for pagination controls, centered with gap between items */
 }
 
-.pagination-div .pagination-controls .nav-button{
+.pagination-div .pagination-controls .normal-button {
+  border: 1px solid $color-dark;
   background-color: transparent;
-	border: none;
-  margin-left: 20px;
-  margin-right: 20px;
-  color: black;
-  font-weight: bold;
+  color: $color-dark;
+  /* Normal pagination button styles */
 }
 
-.pagination-div .pagination-controls .nav-button:hover {
-	color: #65c9bb;
+.pagination-div .pagination-controls .current-button {
+  border: 1px solid $color-mid-2;
+  background-color: $color-light;
+  color: $color-dark;
+  /* Current page button styles */
 }
 
-.pagination-div .pagination-controls .nav-button[disabled]{
-	color: grey;
+.pagination-div .pagination-controls .disabled-button {
+  color: grey;
+  border: 1px solid grey;
+  /* Disabled button styles */
 }
 
-@media only screen and (max-width: 992px){
+@media only screen and (max-width: 992px) {
   .pagination-div .card-container {
     display: flex;
     flex-direction: column;
+    /* For smaller screens, arrange the card container in a column */
   }
   
   .pagination-div .card-container .charity-card {
     flex-direction: row;
     height: 200px;
     width: 95%;
+    /* Adjust charity card styles for smaller screens */
   }
   
-   .pagination-div .card-container .charity-card .charity-image {
-  	flex: 1.5;
+  .pagination-div .card-container .charity-card .charity-image {
+    flex: 1.5;
     overflow: hidden;
-	}
-  
-  .pagination-div .card-container .charity-card .charity-details{
-  	flex: 2.5;
+    /* Adjust image section for smaller screens */
   }
   
-  .pagination-div .card-container .charity-image img{
+  .pagination-div .card-container .charity-card .charity-details {
+    flex: 2.5;
+    /* Adjust details section for smaller screens */
+  }
+  
+  .pagination-div .card-container .charity-image img {
     object-fit: fill;
+    /* Ensure image covers the area for smaller screens */
   }
   
   .pagination-div .card-container .charity-card .title {
-  	font-size: 20px;
+    font-size: 20px;
+    /* Adjust title font size for smaller screens */
   }
   
- .pagination-div .card-container .description{
+  .pagination-div .card-container .description {
     display: none;
+    /* Hide description for smaller screens */
   }
 }
 
@@ -232,17 +282,19 @@ box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
   background-color: #176B87;
   color: white;
   font-size: 1.4rem;
-  //font-weight: bold;
   border: none;
   border-radius: 50px;
   box-shadow: 0 4px 8px rgba(120, 200, 121, 0.4);
   cursor: pointer;
   text-decoration: none;
+  /* Styles for the view item button, including padding, colors, font size, border, border-radius, and shadow */
 }
 
 .view-item-button:hover {
   background-color: #04364A;
-}</css>
+  /* Hover effect for the view item button, changing background color */
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -259,72 +311,131 @@ box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
         <script><![CDATA[(function() {
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
-	
-	data.table = 'x_1383179_tradenow_charity_list';
-	data.items = [];
+
+  // Set the table name where the charity data is stored
+  data.table = 'x_1383179_tradenow_charity_list';
+  
+  // Initialize an empty array to hold the charity items
+  data.items = [];
+  
+  // Create a new GlideRecord object for the specified table
   var gr = new GlideRecord(data.table);
-	//gr.setLimit(8);
+  
+  // Query the table to retrieve all records
   gr.query();
-	while (gr.next()) {
-		var obj={
-			id: gr.getValue('number'),
-			name:gr.getValue('charity_name'),
-			description:gr.getValue('description'),
-			category:gr.getValue('category'),
-			raisedAmount: gr.getValue('total_amount_raised'),
-			//image_url: gr.getValue('image')
-			image_url: gr.getDisplayValue('image')
-		};
-		
-		
-		data.items.push(obj);
+  
+  // Loop through each retrieved record
+  while (gr.next()) {
+    // Create an object to hold the charity data for the current record
+    var obj = {
+      id: gr.getValue('number'), // Get the 'number' field value
+      name: gr.getValue('charity_name'), // Get the 'charity_name' field value
+      description: gr.getValue('description'), // Get the 'description' field value
+      category: gr.getValue('category'), // Get the 'category' field value
+      raisedAmount: gr.getValue('total_amount_raised'), // Get the 'total_amount_raised' field value
+      image_url: gr.getDisplayValue('image') // Get the display value of the 'image' field
+    };
+    
+    // Add the object to the items array
+    data.items.push(obj);
+  }
+  
+  // Loop through each item in the items array
+  for (var i = 0; i < data.items.length; i++) {
+    // Check if the description length exceeds 100 characters
+    if (data.items[i].description.length > 100) {
+      // Truncate the description to 100 characters and add ellipsis
+      data.items[i].description = data.items[i].description.substring(0, 100) + "...";
     }
-	for(var i=0;i<data.items.length;i++){
-		if (data.items[i].description.length > 100){
-			data.items[i].description= data.items[i].description.substring(0,100)+"..."
-		}
-	}
-	
-})();]]></script>
+  }
+  
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-31 16:33:31</sys_created_on>
         <sys_id>6a08e0c983ea4210edb56060ceaad3d5</sys_id>
-        <sys_mod_count>309</sys_mod_count>
+        <sys_mod_count>350</sys_mod_count>
         <sys_name>Charity_List</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_6a08e0c983ea4210edb56060ceaad3d5</sys_update_name>
-        <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-06 07:28:59</sys_updated_on>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-12 04:29:04</sys_updated_on>
         <template><![CDATA[<div class="charity-list">
-	<div class="pagination-div">
+  <!-- Container for the entire charity list -->
+  
+  <div class="pagination-div">
+    <!-- Container for pagination and charity cards -->
+    
     <div class="card-container">
-    <div class="charity-card" ng-repeat="item in paginate()">
-      <div class="charity-image">
-        <img ng-src="{{item.image_url}}" alt="Charity image">
-      </div>
-      <div class="charity-details">
-        <div class="title">{{item.name}}</div>
-        <div class="description">{{item.description}}</div>
-        <div class="cta">
-          <div class="raised-amount">
-            <span class="amount">${{item.raisedAmount}}</span>
-            <span class="raised">Raised</span>
+      <!-- Container for all charity cards -->
+      
+      <div class="charity-card" ng-repeat="item in paginate()">
+        <!-- Loop through each paginated item to create a charity card -->
+        
+        <div class="charity-image">
+          <!-- Container for the charity image -->
+          <img ng-src="{{item.image_url}}" alt="Charity image">
+          <!-- Image element with source bound to item.image_url -->
+        </div>
+        
+        <div class="charity-details">
+          <!-- Container for charity details -->
+          
+          <div class="title">{{item.name}}</div>
+          <!-- Charity name bound to item.name -->
+          
+          <div class="description">{{item.description}}</div>
+          <!-- Charity description bound to item.description -->
+          
+          <div class="cta">
+            <!-- Call-to-action section -->
+            
+            <div class="raised-amount">
+              <!-- Container for displaying raised amount -->
+              
+              <span class="amount">${{item.raisedAmount}}</span>
+              <!-- Amount raised bound to item.raisedAmount -->
+              
+              <span class="raised">Raised</span>
+              <!-- Static text "Raised" -->
+            </div>
+            
+            <button class="view-item-button" type="submit" ng-click="handleClick(item.id)">
+              Donate
+            </button>
+            <!-- Donate button with click handler bound to handleClick(item.id) -->
+            
           </div>
-          <button class="view-item-button" type="submit" ng-click="handleClick(item.id)">View</button>
         </div>
       </div>
     </div>
-  </div>
+    
     <div class="pagination-controls">
-    	<button ng-click="setPage(currentPage - 1)" ng-disabled="currentPage === 1" class="nav-button">&lt;&lt;</button>
-      <span>Page {{currentPage}} of {{getTotalPages()}}</span>
-      <button ng-click="setPage(currentPage + 1)" ng-disabled="currentPage === getTotalPages()" class="nav-button">&gt;&gt;</button>
-    </div>     
+      <!-- Container for pagination controls -->
+      
+      <button ng-click="setPage(currentPage - 1)" ng-class="currentPage === 1?'disabled-button':'current-button'" class="nav-button">&lt</button>
+      <!-- Previous page button, disabled if on the first page -->
+      
+      <div ng-repeat="i in range()" class="pagination-buttons">
+        <!-- Loop through page numbers for pagination buttons -->
+        
+        <button type="button" ng-click="setPage(i)" ng-class="i===currentPage?'current-button':'normal-button'">
+          {{i}}
+        </button>
+        <!-- Page number button, highlights current page -->
+        
+      </div>
+      
+      <button ng-click="setPage(currentPage + 1)" ng-class="currentPage === getTotalPages?'disabled-button':'current-button'" class="nav-button">&gt</button>
+      <!-- Next page button, disabled if on the last page -->
+      
+    </div>
   </div>
-</div>]]></template>
+</div>
+]]></template>
     </sp_widget>
 </record_update>

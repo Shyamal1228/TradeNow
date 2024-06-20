@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+	$scope.products=[{"item":1,"name":"Product 1"},
+									{"item":2,"name":"Product 2"},
+									{"item":3,"name":"Product 3"}]
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.user-info{
+  width: 100%;
+  height: 1000px;
+  padding: 10px;
+  background-color: #FFFFF0;
+}
+
+.user-info .main-info{
+  width: 100%;
+  height: 30%;
+  background-image: linear-gradient(#176B87, #64CCC5, #DAFFFB);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-info .main-info .user-card{
+  width: 70%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  background: rgba( 255, 255, 255, 0.95 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 18.5px );
+  -webkit-backdrop-filter: blur( 18.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.user-info .main-info .user-card .profile-image{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info .main-info .user-card .profile-image .image-container{
+	width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  background-color: #FFFFF0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid grey;
+}
+
+.user-info .main-info .user-card .profile-image .image-container svg{
+	width: 50%;
+  height: 50%;
+}
+
+.user-info .main-info .user-card .personal-info{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: black;
+  padding-left: 5px;
+  font-size: 2rem;
+}
+
+.user-info .score-tracker{
+	background-color: white;
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+.user-info .score-tracker .score-circle{
+	width: 20%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: #04364A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFF0;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.user-info .score-tracker .points-collected {
+	color: #04364A;
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.user-info .recent-purchases{
+	width: 100%;
+  height: 40%;
+  padding: 10px;
+  background-color: white;
+}
+
+.user-info .recent-purchases .recent-purchase-header{
+	font-size: 2em;
+  color: #04364A;
+  font-weight: bold;
+  height: 15%;
+}
+
+.user-info .recent-purchases .recent-purchase-items{
+	display: flex;
+  height: 85%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.card{
+	flex: 1 1 200px;
+  max-width: 300px;
+  height: 100%;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card .product-image{
+	height: 80%;
+  width: 95%;
+  background-color: grey;
+  border: 0.5px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .product-image img {
+	width: auto;
+  height: 100%;
+  overflow-x: hidden;
+  display: block;
+}
+
+.card .product-name{
+	height: 20%;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 3rem;
+  color: #04364A;
+  font-weight: 600;
+}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>sample_user_info_personal_info</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>sample user info personal info</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	data.sysUserId = $sp.getParameter("sys_id");
+	data.table = 'x_1383179_tradenow_item_list';
+	data.items = [];
+
+	var sysUserGR = new GlideRecord('sys_user');
+	var itemList = new GlideRecord(data.table);
+	if(sysUserGR.get(data.sysUserId)){
+		var count = 0;
+		data.name = sysUserGR.getValue('name');
+		data.email = sysUserGR.getValue('email');
+		data.location = sysUserGR.getDisplayValue('location');
+		data.points = sysUserGR.getValue('u_points');
+
+		itemList.orderByDesc('sys_created_on');
+		itemList.addQuery('claimer','=',data.sysUserId);
+		itemList.query();
+		while(itemList.next() && count<3){
+			if( itemList.getValue('status') === 'claimed'){
+				obj = {
+					item_name: itemList.getValue('item_name'),
+					item_image: itemList.getDisplayValue('image'),
+					item_claimer: itemList.getDisplayValue('claimer'),
+					item_status: itemList.getValue('status')
+				}
+				data.items.push(obj);
+				count += 1;
+			}
+		}
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-12 06:16:24</sys_created_on>
+        <sys_id>3fdd44f483760610edb56060ceaad3d4</sys_id>
+        <sys_mod_count>167</sys_mod_count>
+        <sys_name>sample user info personal info</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_3fdd44f483760610edb56060ceaad3d4</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-18 22:34:59</sys_updated_on>
+        <template><![CDATA[<div class="user-info">
+	<div class="main-info">
+    <div class="user-card">
+      <div class="profile-image">
+        <div class="image-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+        </div>
+      </div>
+      <div class="personal-info">
+        <p>Name: {{data.name}}</p>
+        <p>Email: {{data.email}}</p>
+        <p>Location: {{data.location}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="score-tracker">
+    <div class="score-circle">
+      {{data.points}}
+    </div>
+    <div class="points-collected">
+      <p>Points</p>
+    </div>
+  </div>
+  <div class="recent-purchases">
+    <div class="recent-purchase-header">
+      Recently Purchased items
+    </div>
+    <div class="recent-purchase-items">
+      <div class="card" ng-repeat = "items in data.items">
+        <div class="product-image">
+          <img src={{items.item_image}} alt="product image" />
+        </div>
+        <div class="product-name">
+          {{items.item_name}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

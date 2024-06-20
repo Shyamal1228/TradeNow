@@ -30,34 +30,49 @@
         <rest_service_text/>
         <rest_variables/>
         <role_conditions/>
-        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+        <script><![CDATA[// This function executes a rule when triggered, updating the total amount raised for a charity record.
+
+(function executeRule(current, previous /*null when async*/ ) {
+    // Create a GlideRecord object to query the 'x_1383179_tradenow_charity_list' table
     var userGr = new GlideRecord('x_1383179_tradenow_charity_list');
+    
+    // Get the charity record associated with the current record
     userGr.get(current.getValue('x_1383179_tradenow_charity_list'));
+    
+    // Retrieve the donation amount from the current record
     var amount = current.donation_amount;
+    
+    // Convert the donation amount to a number and divide by 2
     var numberConvert = Number(amount);
-	numberConvert=numberConvert/2;
+    numberConvert = numberConvert / 2;
+    
+    // Retrieve the previous total amount raised from the charity record
     var prevAmount = Number(userGr.total_amount_raised);
+    
+    // Calculate the new total amount raised by adding half of the donation amount to the previous total
     var newAmount = numberConvert + prevAmount;
-    // gs.info('total: ' + newAmount);
+    
+    // Update the 'total_amount_raised' field of the charity record with the new total amount
     userGr.total_amount_raised = String(newAmount);
     userGr.update();
 
-})(current, previous);]]></script>
+})(current, previous);
+]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-21 10:57:27</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>5e793bad83928a50edb56060ceaad3c8</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>BR to add total amount to charities</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_script_5e793bad83928a50edb56060ceaad3c8</sys_update_name>
-        <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-07 08:28:25</sys_updated_on>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-12 05:40:21</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

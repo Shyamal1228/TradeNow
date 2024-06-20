@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $location) {
+	/* widget controller */
+	var c = this;
+
+	$scope.charities = [].concat(c.data.items);
+	var inputField1 = document.getElementById("charity-search");
+	var keywordSearch = function(keyword, productName){
+		var length = productName.length;
+		for(var i=0; i<=(length-keyword.length); i++){
+			if( keyword === productName.slice(i,keyword.length+i)){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	$scope.handleClear = function(){
+		inputField1.value = "";
+		$scope.charities = [];
+		$scope.charities = [].concat(c.data.items);
+	}
+
+	$scope.checkEnter = function(event){
+		if(event.keyCode === 13){
+			console.log(inputField1.value);
+			$scope.charities = [];
+			if(inputField1.value == ""){
+				console.log(inputField1.value);
+				$scope.charities = [].concat(c.data.items);
+				console.log($scope.charities);
+			} else {
+				$scope.charities = [];
+				for(var i=0;i<c.data.items.length ;i++){
+					var searchTerm = inputField1.value.toLowerCase();
+					var product_name = c.data.items[i].name.toLowerCase();
+					if(keywordSearch(searchTerm, product_name)){
+						$scope.charities.push(c.data.items[i]);
+					}
+				}
+			}
+		}
+	}
+
+
+	// Function to handle click event on a charity, navigating to charity's page
+	$scope.handleClick = function(charity_id) {
+		$location.search("id=charity_page&charity_id=" + charity_id);
+	};
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.header{
+  text-align: center;
+  color: #004c4c;
+}
+.header&gt;h2{
+  //font-weight: bold;
+  color:#004c4c;
+}
+.header&gt;hr{
+  border: none;
+  height: 5px;
+  width: 30%;
+  background-color: #004c4c;
+  margin-butom: 2px;
+  margin-top: 0px;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+/*.heading{
+display: flex;
+width: 100%;
+height: 200px;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background-color: #ffffff;
+margin-bottom: 20px;
+}*/
+
+.page-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5em;
+  width: 100%;
+  font-weight: 600;
+  color:#F5F5DC;
+  color: black;
+}
+
+.breadcrumb{
+  width: 100%;
+  color: black;
+  margin: 0;
+  letter-spacing: 2px;
+  background-color: #ffffff;
+  font-weight: 600;
+}
+
+.breadcrumb a{
+  color: black;
+}
+
+.search{
+  display: flex;
+  width: 100%;
+  padding: 0 5%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search-box{
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+.input-search{
+  height: 40px;
+  width: 40px;
+  border-style: none;
+  padding: 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 50%;
+  transition: all .5s ease-in-out;
+  background-color: white;
+  padding-right: 40px;
+  color:black;
+}
+.input-search::placeholder{
+  color:rgba(0,0,0,0.5);
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+.btn-search{
+  width: 40px;
+  height: 40px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 5;
+  position: absolute;
+  right: 0px;
+  color:#ffffff ;
+  background-color:#004c4c;
+  pointer-events: painted;  
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+.btn-search svg{
+  fill: white;
+  width: 70%;
+  height: 70%;
+}
+
+.btn-search:focus{
+  width: 40px;
+  height: 40px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 5;
+  position: absolute;
+  right: 0px;
+  color:#ffffff ;
+  background-color:#004c4c;
+  pointer-events: painted;  
+  box-shadow: none;
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+.btn-search:focus ~ .input-search{
+  width: 400px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid #474747;
+  transform: translateX(-40px);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+.input-search:focus{
+  width: 400px;
+  border-radius: 0px;
+  background-color: transparent;
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  box-shadow: none;
+  outline: none;
+  transform: translateX(-40px);
+  border: none;
+  border-bottom: 1px solid #474747;
+}
+
+.search-1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 5%;
+  height: 50px;
+}
+
+.search-bar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  border-radius: 25px;
+  border: 1px solid #004c4c;
+}
+
+.search-bar .container-image{
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.search-bar .container-image svg{
+  width: 70%;
+  height: 70%;
+}
+
+.search-bar input{
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+}
+
+.search-bar input:focus{
+  box-shadow: none;
+}
+
+.charity_container {
+  --surface-color: #9B3922;
+  --curve: 20;
+  background-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__image {      
+  width: 100%;
+  height: 300px;
+  background-color: #e5f2f2;
+  mix-blend-mode: multiply;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__image .card__image_inner_container{
+  width: 95%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: calc(var(--curve) * 1px);
+  background-color: white;
+  overflow: hidden;
+}
+
+.card__image img{      
+  width: 90%;
+  height: auto;
+  border-radius: calc(var(--curve) * 1px);
+  background-color: white;
+  overflow: hidden;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: calc(var(--curve) * 1px);    
+  background-color: #004c4c;      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  background-color: #004c4c;
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: #004c4c;
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;      
+  border-radius: 50%;  
+  background: white;
+}
+
+.card__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 .3em;
+  color: #F5F5DC;
+}
+
+.card__tagline {
+  display: block;
+  margin: 1em 0; 
+  font-size: .8em; 
+  color: #D7BDCA;  
+}
+
+.card__status {
+  font-size: .8em;
+  color: #FFFB97;
+}
+
+.card__description {
+  margin: 0;
+  color: #F5F5DC;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.card__overlay .card_description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #F5F5DC;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.card__description .card_description{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.charity_container,.search-div{
+  background-color:#fff;
+}
+
+.card-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100px;
+}
+
+.card__description .card-action button{
+  background: white;
+  color: black;
+  border-radius: 25px;
+  border: none;
+  font-weight: 400;
+  height: 100%;
+  width: 100%;
+  transition: width 300ms ease;
+}
+
+.card__description .card-action:hover button{
+  background: white;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  color: black;
+  border: none;
+  width: 80%;
+  box-shadow: none;
+  transition: width 300ms ease;
+}
+
+.card-action svg{
+  width: auto;
+  height: 100%;
+	background: white;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  display: none;
+  padding: 5%;
+}
+
+.card__description .card-action:hover svg{
+	display: inline;
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>charity_list_1</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>charity list 1</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+  // Set the table name where the charity data is stored
+  data.table = 'x_1383179_tradenow_charity_list';
+  
+  // Initialize an empty array to hold the charity items
+  data.items = [];
+  
+  // Create a new GlideRecord object for the specified table
+  var gr = new GlideRecord(data.table);
+  
+  // Query the table to retrieve all records
+  gr.query();
+  
+  // Loop through each retrieved record
+  while (gr.next()) {
+    // Create an object to hold the charity data for the current record
+    var obj = {
+      id: gr.getValue('number'), // Get the 'number' field value
+      name: gr.getValue('charity_name'), // Get the 'charity_name' field value
+      description: gr.getValue('description'), // Get the 'description' field value
+      category: gr.getValue('category'), // Get the 'category' field value
+      raisedAmount: gr.getValue('total_amount_raised'), // Get the 'total_amount_raised' field value
+      image_url: gr.getDisplayValue('image') // Get the display value of the 'image' field
+    };
+    
+    // Add the object to the items array
+    data.items.push(obj);
+  }
+  
+  // Loop through each item in the items array
+  for (var i = 0; i < data.items.length; i++) {
+    // Check if the description length exceeds 100 characters
+    if (data.items[i].description.length > 100) {
+      // Truncate the description to 100 characters and add ellipsis
+      data.items[i].description = data.items[i].description.substring(0, 75) + "...";
+    }
+  }
+  
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-16 04:31:59</sys_created_on>
+        <sys_id>195c140283fa4a10edb56060ceaad350</sys_id>
+        <sys_mod_count>447</sys_mod_count>
+        <sys_name>charity list 1</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_195c140283fa4a10edb56060ceaad350</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-18 11:46:29</sys_updated_on>
+        <template><![CDATA[<div class="heading">
+  <!--<div class="breadcrumb poppins">
+    <a href="#">Home</a>&nbsp;&nbsp;>&nbsp;&nbsp;Charity Organization
+  </div>-->
+  <!-- <div class="page-title poppins">
+    Charity Organizations
+  </div>-->
+  <div class="header" >
+    <h2 class="poppins-semibold">Charity Organizations</h2>
+    <hr/>
+  </div>
+
+</div>
+
+<div class="search-1">
+  <div class="search-bar">
+    <div class="container-image">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+    </div>
+    <input type="text" id="charity-search" ng-model="inputCharityName" ng-keydown="checkEnter($event)">
+    <div class="container-image" ng-click="handleClear()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+    </div>
+  </div>
+</div>
+
+
+<div class="charity_container poppins">
+  <ul class="cards">
+    <li ng-repeat='items in charities'>
+      <div href="www.google.com" class="card">
+        <div class="card__image"><div class='card__image_inner_container'><img src={{items.image_url}} alt="" /></div></div>
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+            <img class="card__thumb" src={{items.image_url}} alt="" />
+            <div class="card__header-text poppins">
+              <h3 class="card__title">{{items.name}}</h3>            
+              <span class="card__status">Raised Amount: ${{items.raisedAmount}}</span>
+            </div>
+          </div>
+          <div class="card__description poppins">
+            <div class="card_description">
+              <div class="card-action">
+                <button class="poppins" ng-click="handleClick(items.id)">
+                  View
+                </button>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>      
+  </li>
+</ul>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

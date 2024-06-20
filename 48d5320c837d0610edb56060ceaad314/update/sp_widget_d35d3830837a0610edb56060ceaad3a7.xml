@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope,$rootScope) {
+  /* widget controller */
+  var c = this;
+	
+	
+	$rootScope.$on('item',function(event,data_obj){
+		var widget_name = data_obj.widget;
+		if(widget_name === 1){
+			console.log("loading widget 1");
+			c.data.condition1 = true;
+			c.data.condition2 = false;
+			c.data.condition3 = false;
+		} else if(widget_name === 2) {
+			console.log("loading widget 2");
+			c.data.condition1 = false;
+			c.data.condition2 = true;
+			c.data.condition3 = false;
+		} else {
+			console.log("loading widget 3");
+			c.data.condition1 = false;
+			c.data.condition2 = false;
+			c.data.condition3 = true;
+		}
+	});
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>sample_info_widget_container</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>sample_info_widget_container</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function($scope) {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+	data.condition1 = true;
+	data.condition2 = false;
+	data.condition3 = false;
+	
+	if(input){
+		console.log(data);
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-12 09:43:54</sys_created_on>
+        <sys_id>d35d3830837a0610edb56060ceaad3a7</sys_id>
+        <sys_mod_count>93</sys_mod_count>
+        <sys_name>sample_info_widget_container</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_d35d3830837a0610edb56060ceaad3a7</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-13 06:42:35</sys_updated_on>
+        <template><![CDATA[<div>
+  <div ng-if="data.condition1">
+  	<widget id="sample_user_info_personal_info" ></widget>  
+  </div>
+  <div ng-if="data.condition2">
+  	<widget id="sample_user_info_personal_listed_item" ></widget>  
+  </div>
+  <div ng-if="data.condition3">
+  	<widget id="sample_user_info_personal_orders" ></widget>  
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

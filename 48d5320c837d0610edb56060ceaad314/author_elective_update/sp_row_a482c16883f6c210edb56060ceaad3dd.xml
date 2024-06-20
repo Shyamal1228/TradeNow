@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row">
+    <sp_row action="DELETE">
+        <class_name/>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_column/>
+        <sp_container display_value="Charity Page - Container 1">8c18019683ea0210edb56060ceaad35b</sp_container>
+        <sys_class_name>sp_row</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-11 15:27:53</sys_created_on>
+        <sys_id>a482c16883f6c210edb56060ceaad3dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_row_a482c16883f6c210edb56060ceaad3dd</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-11 15:27:53</sys_updated_on>
+    </sp_row>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sp_row_a482c16883f6c210edb56060ceaad3dd</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row"><sp_row action="INSERT_OR_UPDATE"><class_name/><order>1</order><semantic_tag/><sp_column/><sp_container display_value="Charity Page - Container 1">8c18019683ea0210edb56060ceaad35b</sp_container><sys_class_name>sp_row</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-06-11 15:27:53</sys_created_on><sys_id>a482c16883f6c210edb56060ceaad3dd</sys_id><sys_mod_count>0</sys_mod_count><sys_name>1</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sp_row_a482c16883f6c210edb56060ceaad3dd</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-06-11 15:27:53</sys_updated_on></sp_row></record_update>]]></payload>
+        <payload_hash>796839696</payload_hash>
+        <record_name>1</record_name>
+        <reverted_from/>
+        <source>e61f85ba83620210edb56060ceaad305</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-11 15:27:53</sys_created_on>
+        <sys_id>6c820d6883f6c210edb56060ceaad353</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19007e9aeaf0000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-11 15:27:53</sys_updated_on>
+        <type>Row</type>
+        <update_guid>a0820d68e6f6c210e5283f7a9e55a253</update_guid>
+        <update_guid_history>a0820d68e6f6c210e5283f7a9e55a253:796839696</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="1">f3f245a883f6c210edb56060ceaad369</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-11 15:30:02</sys_created_on>
+        <sys_db_object display_value="" name="sp_row">sp_row</sys_db_object>
+        <sys_id>14fbb25e395e49ca98434cade5e3a401</sys_id>
+        <sys_metadata>a482c16883f6c210edb56060ceaad3dd</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sp_row_a482c16883f6c210edb56060ceaad3dd</sys_update_name>
+        <sys_update_version display_value="sp_row_a482c16883f6c210edb56060ceaad3dd">6c820d6883f6c210edb56060ceaad353</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-11 15:30:02</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

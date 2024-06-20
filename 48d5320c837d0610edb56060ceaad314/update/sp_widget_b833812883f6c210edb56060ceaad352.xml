@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $location, $timeout) {
+  /* Widget controller */
+
+  // Initialize the controller scope
+  var c = this;
+
+  // Initialize the numbers array in the scope
+  $scope.numbers = [];
+
+  // Get references to DOM elements
+  var imageName = document.getElementById("ss-upload");
+  var imageLabel = document.getElementById("photo-name");
+  var amount_container = document.getElementById("amount-container");
+  var amount_numbers = document.querySelectorAll('#counter');
+
+  // Function to calculate the length of the amount and populate the numbers array
+  function calculate_length(amount) {
+    $scope.numbers = [];
+    if (amount == 0) {
+      $scope.numbers.unshift({"num": 0});
+    } else {
+      while (amount != 0) {
+        obj = {"num": amount % 10};
+        $scope.numbers.unshift(obj);
+        amount = Math.trunc(amount / 10);
+      }
+    }
+    console.log($scope.numbers);
+  }
+
+  // Function to increment the counter with a delay
+  function delayedCounter(number, count, limit) {
+    function increment() {
+      if (count != limit) {
+        count++;
+        if (count > 9) count = 0;
+        number.style.opacity = number.style.opacity + 1.0;
+        number.innerText = count;
+        setTimeout(increment, 50);
+      }
+    }
+    increment();
+  }
+
+  // Delayed execution to ensure DOM elements are rendered
+  setTimeout(function() {
+    if (document.querySelectorAll("#counter")) {
+      console.log("p tags rendered", document.querySelectorAll("#counter"));
+      numbers = document.querySelectorAll('#counter');
+
+      numbers.forEach(function(number) {
+        if (numbers.length != 1 && numbers[0].getAttribute('hiddenValue') != '0') {
+          var endNumber = parseInt(number.getAttribute('hiddenValue'));
+          var startNumber = (endNumber + 1) > 9 ? 1 : (endNumber + 1);
+          console.log(number, startNumber, endNumber);
+          delayedCounter(number, startNumber, endNumber);
+        } else {
+          numbers[0].style.opacity = 1.0;
+        }
+      });
+    } else {
+      console.log("Some elements rendered");
+    }
+  }, 1000);
+
+  // Angular ready function to initialize the scope
+  angular.element(document).ready(function() {
+    calculate_length(Math.floor($scope.data.obj.raisedAmount));
+    console.log($scope.data.obj.raisedAmount);
+  });
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Define font styles for different weights of Poppins font */
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Styling for the heading background */
+.heading-background {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: rgba( 255, 255, 255, 0.25 ); /* Semi-transparent white background */
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); /* Box shadow effect */
+  backdrop-filter: blur( 4px ); /* Apply blur effect to the background */
+  -webkit-backdrop-filter: blur( 4px ); /* Apply blur effect to the background for webkit browsers */
+}
+
+/* Styling for the charity name */
+.heading-background .charity-name {
+  font-size: 100px; /* Large font size for the charity name */
+  display: flex;
+  align-items: center;
+  color: #DAFFFB; /* Text color */
+}
+
+/* Styling for the amount raised section */
+.heading-background .amount-raised {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem; /* Large font size */
+  color: #DAFFFB; /* Text color */
+  row-gap: 25px; /* Spacing between rows */
+}
+
+/* Styling for the amount raised counter */
+.heading-background .amount-raised .amount-raised-counter {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* Circular shape */
+  background-color: #04364A; /* Background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px 10px #DAFFFB; /* Box shadow effect */
+  transform: scale(1); /* Initial scale */
+  animation: pulse-blue 2s infinite; /* Animation for pulsating effect */
+}
+
+/* Styling for the amount raised counter text */
+.heading-background .amount-raised .amount-raised-counter p {
+  color: #DAFFFB; /* Text color */
+  font-size: 3.5rem; /* Large font size */
+  margin: 0;
+  opacity: 0; /* Initially hidden */
+}
+
+/* Animation keyframes for pulsating effect */
+@keyframes pulse-blue {
+  0% {
+    transform: scale(0.95); /* Initial scale */
+    box-shadow: 0 0 10px 10px #DAFFFB; /* Box shadow effect */
+  }
+
+  70% {
+    transform: scale(1); /* Slightly larger scale */
+    box-shadow: 0 0 10px 20px #DAFFFB; /* Larger box shadow effect */
+  }
+
+  100% {
+    transform: scale(0.95); /* Return to initial scale */
+    box-shadow: 0 0 10px 10px #DAFFFB; /* Box shadow effect */
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>charity_heading</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>charity heading</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[// Immediately Invoked Function Expression (IIFE) to encapsulate the code
+(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+  // Initialize data properties
+  data.table = 'x_1383179_tradenow_charity_list';
+  data.table1 = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr';
+
+  // Create a new GlideRecord instance for the first table
+  var gr = new GlideRecord(data.table);
+
+  // Get the charity_id parameter from the Service Portal
+  var charity_id = $sp.getParameter('charity_id');
+  console.log(charity_id);
+
+  // Add a query condition to filter records by charity_id
+  gr.addQuery('number', '=', charity_id);
+
+  // Execute the query
+  gr.query();
+
+  // Loop through each record in the GlideRecord result
+  while (gr.next()) {
+    // Populate data.obj with values from the GlideRecord
+    data.obj = {
+      charityId: gr.getValue('number'),
+      name: gr.getValue('charity_name'),
+      description: gr.getValue('description'),
+      raisedAmount: gr.getValue('total_amount_raised'),
+      image_url: gr.getDisplayValue('image'),
+      website: gr.getValue('website'),
+      email: gr.getValue('email'),
+      phone: gr.getValue('phone'),
+      location: gr.getDisplayValue('u_reference_1'),
+      paymentLink: gr.getValue('donation_link'),
+      qrImage: gr.getDisplayValue('qr_code')
+    };
+  }
+
+  // Log the populated data.obj object
+  console.log(data.obj);
+
+  // Immediately Invoked Function Expression (IIFE) to encapsulate GlideRecord logic
+  (function() {
+    // Create a new GlideRecord instance for the second table
+    var gr1 = new GlideRecord(data.table1);
+
+    // Execute the query
+    gr1.query();
+
+    // Log the GlideRecord result
+    console.log(gr1);
+
+    // Loop through each record in the GlideRecord result
+    while (gr.next()) {
+      // Log the value of the 'charity_id' field for each record
+      console.log(gr.getValue('charity_id'));
+    }
+  })();
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-11 15:30:54</sys_created_on>
+        <sys_id>b833812883f6c210edb56060ceaad352</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>charity heading</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_b833812883f6c210edb56060ceaad352</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-12 05:28:24</sys_updated_on>
+        <template><![CDATA[<div class="heading-background">
+  <!-- Charity name section -->
+	<div class="charity-name poppins-heading">
+    {{data.obj.name}} <!-- Display the name of the charity -->
+  </div>
+
+  <!-- Amount raised section -->
+  <div class="amount-raised poppins-heading">
+    <!-- Container for the amount raised counter -->
+    <div class="amount-raised-counter poppins-heading" id="amount-container">
+      <!-- ng-repeat directive to iterate through numbers -->
+      <div ng-repeat="number in numbers">
+        <!-- Placeholder for the counter value -->
+        <p id="counter" hiddenValue={{number.num}}>
+          0 <!-- Initial value of the counter -->
+        </p>
+      </div>
+    </div>
+    Amount Raised <!-- Text indicating the purpose of the section -->
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

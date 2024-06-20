@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope) {
+  /* widget controller */
+  var c = this;
+	
+	$scope.status = "readypickup";
+	var readypick_button = document.getElementById('readypickup');
+	var reserved_button = document.getElementById('reserved');
+	var my_orders_button = document.getElementById('claimed');
+	
+	$scope.handleClick = function(action){
+		$scope.status = action;
+		if(action === 'readypickup'){
+			readypick_button.classList.add('active');
+			reserved_button.classList.remove('active');
+			my_orders_button.classList.remove('active');
+		} else if(action === 'reserved'){
+			readypick_button.classList.remove('active');
+			reserved_button.classList.add('active');
+			my_orders_button.classList.remove('active');
+		} else {
+			readypick_button.classList.remove('active');
+			reserved_button.classList.remove('active');
+			my_orders_button.classList.add('active');
+		}
+	}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.listed-item-info{
+  width: 100%;
+  height: 1000px;
+  padding: 10px;
+  background-color: #FFFFF0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.listed-item-info .title{
+  background-color: white;
+  padding: 10px;
+  font-size: 4.5rem;
+  color: #04364A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  font-weight: 900;
+}
+
+.listed-item-options {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.listed-item-options .btn{
+  flex-grow: 1;
+  padding: 10px 40px;
+  font-size: 2.5rem;
+  color: black;
+  border: none;
+  background-color: #F0EFE7;
+  border-top: 4px solid #F0EFE7;
+  border-left: 1px solid #F0EFE7;
+  border-right: 1px solid #F0EFE7;
+  border-bottom: 1px solid #04364A;
+  border-radius: 0px;
+}
+
+.listed-item-options .btn:focus{
+  background-color: white;
+  box-shadow: none;
+  font-weight: 600;
+  border-top: 4px solid #04364A;
+  border-left: 1px solid #04364A;
+  border-right: 1px solid #04364A;
+  border-bottom: 1px solid white;
+}
+
+.active {
+	background-color: white;
+  box-shadow: none;
+  font-weight: 600;
+  border-top: 4px solid #04364A;
+  border-left: 1px solid #04364A;
+  border-right: 1px solid #04364A;
+  border-bottom: 1px solid white;
+}
+
+.active:focus {
+	background-color: white;
+  box-shadow: none;
+  font-weight: 600;
+  border-top: 4px solid #04364A;
+  border-left: 1px solid #04364A;
+  border-right: 1px solid #04364A;
+  border-bottom: 1px solid white;
+}
+
+.listed-item-options .btn:focus ~ .btn{
+  border-bottom: 1px solid #04364A;
+}
+
+.listed-item-info .listed-item-container{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.listed-item-info .listed-item-container::-webkit-scrollbar{
+  display: none;
+}
+
+.listed-item-info .listed-item-container .item-cards{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.listed-item-info .listed-item-container .item-cards .card{
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listed-item-info .listed-item-container .item-cards .card:hover {
+  transform: translateY(-2px); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.listed-item-info .listed-item-container .item-cards .card .card-image-container{
+  width: 40%;
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F9F6EE;
+  border-radius: 5px;
+}
+
+.listed-item-info .listed-item-container .item-cards .card .card-image-container img {
+	width: auto;
+  height: 100%;
+  overflow-x: hidden;
+  display: block;
+}
+
+.listed-item-info .listed-item-container .item-cards .card .card-image-container svg{
+  width: 50%;
+  height: 50%;
+}
+
+.listed-item-info .listed-item-container .item-cards .card .card-description-container{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-item: flex-start;
+  justify-content: center;
+  padding-left: 10px;
+  color: black;
+}
+
+.listed-item-info .listed-item-container .item-cards .card .card-description-container h2{
+  color: #04364A;
+  font-weight: 600;
+}
+
+.listed-item-info .listed-item-container .item-cards .card .card-description-container p{
+	margin: 0;
+}
+
+.listed-item-info .listed-item-container .item-cards .card .card-description-container .claim-button{
+	background-color: white;
+  margin-top: auto;
+}
+
+.claim-button{
+  height: 30%;
+  width: 100%;
+	display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.claim-button .btn1-container{
+	height: 100%;
+  width: auto;
+  background-color: #176B87;
+  color: white;
+  margin-right: 10px;
+}
+
+.claim-button .btn1-container .btn1{
+	height: 100%;
+  width: auto;
+  background-color: #04364A;
+  color: white;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.claim-button .btn1-container .btn1:hover {
+	transform: translateX(5px); 
+}
+
+.claim-button .btn1-container .btn1:active {
+	border: none;
+  box-shadow: none;
+}
+
+.claim-button .btn1-container .btn1:focus {
+	border: none;
+  box-shadow: none;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>sample_user_info_personal_orders</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>sample user info personal orders</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	data.sysUserId = $sp.getParameter("sys_id");
+	data.table = 'x_1383179_tradenow_item_list';
+	data.itemsall = [];
+	data.itemsavailable = [];
+	data.itemsclaimed = [];
+
+	var sysUserGR = new GlideRecord('sys_user');
+	var itemList = new GlideRecord(data.table);
+	if(sysUserGR.get(data.sysUserId)){
+		var count = 0;
+		data.name = sysUserGR.getValue('name');
+		data.email = sysUserGR.getValue('email');
+		data.location = sysUserGR.getDisplayValue('location');
+		data.points = sysUserGR.getValue('u_points');
+
+		itemList.orderByDesc('sys_created_on');
+		itemList.addQuery('claimer','=',data.sysUserId);
+		itemList.query();
+		while(itemList.next()){
+			obj = {
+				item_name: itemList.getValue('item_name'),
+				item_image: itemList.getDisplayValue('image'),
+				item_claimer: itemList.getValue('lister_name'),
+				item_status: itemList.getValue('status'),
+				item_availability: itemList.getValue('status'),
+				item_condition: itemList.getValue('condition')[0].toUpperCase() + itemList.getValue('condition').slice(1),
+				item_description: (itemList.getValue('description').length>75)?(itemList.getValue('description').slice(0,75))+"...":itemList.getValue('description')
+			}
+			if(obj.item_status === 'Readypickup'){
+				obj.item_availability = "readypickup";
+				obj.item_status = "Ready to Pickup";
+				obj.item_action_1 = "Confirm Pickup";
+				data.itemsall.push(obj)
+			} else if(obj.item_status === 'claimed'){
+				obj.item_availability = "claimed";
+				obj.item_status = "Claimed";
+				data.itemsall.push(obj);
+			} else if(obj.item_status === 'reserved'){
+				obj.item_availability = "reserved";
+				obj.item_status = "Reserved";
+				obj.item_action_1 = "Cancel Reservation";
+				obj.item_action_2 = "Claim Item";
+				data.itemsall.push(obj);
+			} 
+		}
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-12 11:39:41</sys_created_on>
+        <sys_id>2fd7913083fa0610edb56060ceaad35b</sys_id>
+        <sys_mod_count>70</sys_mod_count>
+        <sys_name>sample user info personal orders</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_2fd7913083fa0610edb56060ceaad35b</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-18 16:21:55</sys_updated_on>
+        <template><![CDATA[<div class="listed-item-info">
+  <div class="title">
+    Orders
+  </div>
+  <div class="listed-item-options">
+    <button class="btn" id="readypickup" type="button" ng-click='handleClick("readypickup")'>Ready to Pickup</button>
+    <button class="btn" id="reserved" type="button" ng-click='handleClick("reserved")'>Reserved</button>
+    <button class="btn" id="claimed" type="button" ng-click='handleClick("claimed")'>My Orders</button>
+  </div>
+  <div class="listed-item-container">
+    <div class="item-cards">
+      <div class="card" ng-repeat="items in data.itemsall" ng-if="status === items.item_availability">
+        <div class="card-image-container">
+          <img src={{items.item_image}} alt="product image" />
+        </div>
+        <div class="card-description-container">
+          <h2>{{items.item_name}}</h2>
+          <p>{{items.item_description}}</p>
+          <p>Condition: {{items.item_condition}}</p>
+          <p>Status: {{items.item_status}}</p>
+          <div class="claim-button">
+            <div class="btn1-container" ng-if="status != 'claimed'">
+              <button class="btn1" >{{items.item_action_1}}</button>
+            </div>
+            <div class="btn1-container" ng-if="status === 'reserved'">
+              <button class="btn1" >{{items.item_action_2}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

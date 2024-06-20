@@ -1,20 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function($scope, $location) {
-  /* widget controller */
+        <client_script><![CDATA[// Define the controller function
+api.controller = function($scope, $location, $timeout) {
+  // Store a reference to 'this' in a variable for later use
   var c = this;
-	var payment_page = function(){
-		var charityId= $scope.obj.charityId;
-		$location.search("id=charity_page&charity_id="+charityId);
-	}
-};]]></client_script>
+  
+  // Initialize an empty array in the scope to store numbers
+  $scope.numbers = [];
+  
+  // Get references to DOM elements
+  var imageName = document.getElementById("ss-upload");
+  var imageLabel = document.getElementById("photo-name");
+  var amount_container = document.getElementById("amount-container");
+  var amount_numbers = document.querySelectorAll('#counter');
+  
+  // Function to calculate the length of a number and populate the array
+  function calculate_length(amount) {
+    $scope.numbers = [];
+    if (amount == 0) {
+      $scope.numbers.unshift({"num":0});
+    } else {
+      while(amount != 0) {
+        obj = {"num":amount % 10};
+        $scope.numbers.unshift(obj)
+        amount = Math.trunc(amount / 10);
+      }
+    }
+    console.log($scope.numbers);
+  }
+  
+  // Function to increment a number gradually
+  function delayedCounter(number, count, limit) {
+    function increment() {
+      if (count != limit) {
+        count++;
+        if (count > 9) count = 0;
+        number.style.opacity = number.style.opacity + 1.0;
+        number.innerText = count;
+        setTimeout(increment, 50);
+      }
+    }
+    increment();
+  }
+  
+  // Wait for 1 second before executing this code block
+  setTimeout(function() {
+    if (document.querySelectorAll("#counter")) {
+      console.log("p tags rendered", document.querySelectorAll("#counter"));
+      numbers = document.querySelectorAll('#counter');
+      numbers.forEach(function(number) {
+        if (numbers.length != 1 && numbers[0].getAttribute('hiddenValue') != '0') {
+          var endNumber = parseInt(number.getAttribute('hiddenValue'));
+          var startNumber = (endNumber + 1) > 9 ? 1 : (endNumber + 1);
+          console.log(number, startNumber, endNumber);
+          delayedCounter(number, startNumber, endNumber);
+        } else {
+          numbers[0].style.opacity = 1.0;
+        }
+      });
+    } else {
+      console.log("Some elements rendered");
+    }
+  }, 1000);
+  
+  // When the Angular document is ready, calculate the length of a number
+  angular.element(document).ready(function() {
+    calculate_length(Math.floor($scope.data.obj.raisedAmount));
+    //set_amount();
+  });
+  
+  // Event listener for file input change
+  imageName.addEventListener("change", function() {
+    var inputImage = document.querySelector("#ss-upload").files[0];
+    console.log(inputImage);
+    imageLabel.innerText = inputImage ? inputImage.name : "Select Screenshot";
+  });
+};
+]]></client_script>
         <controller_as>c</controller_as>
-        <css>$color-dark: #04364A;
-$color-mid-1: #176B87;
-$color-mid-2: #64CCC5;
-$color-light: #DAFFFB;
-
+        <css>/* Font weights for Poppins */
 .poppins-extralight {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
@@ -26,6 +91,7 @@ $color-light: #DAFFFB;
   font-weight: 300;
   font-style: normal;
 }
+
 .poppins-regular {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -50,149 +116,322 @@ $color-light: #DAFFFB;
   font-style: normal;
 }
 
-
-.charity-specific-info{
+/* Main container for charity-specific info */
+.charity-specific-info {
   display: flex;
   flex-direction: column;
-	.charity-name {
-	width: 100%;
+  background-color: #0C0C0C;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* Charity name section */
+.charity-specific-info .charity-name {
+  width: 100%;
   height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  h1 {
-    font-size: 5.5rem;
-    color: $color-dark;
-  }
-  .heading-bar{
-    width: 95%;
-    height: 2px;
-    background-color: $color-mid-1;
-  }
 }
 
-.charity-info{
+.charity-specific-info .charity-name h1 {
+  font-size: 5.5rem;
+  color: #04364A;
+  justify: center;
+}
+
+.charity-specific-info .charity-name .heading-bar {
+  width: 95%;
+  height: 2px;
+  background-color: #176B87;
+}
+
+/* Charity information section */
+.charity-specific-info .charity-info {
   display: flex;
   flex-direction: row;
   padding-top: 20px;
   padding-bottom: 20px;
-  .charity-image{
-  	flex: 1;
-    img {
-    	width: 90%;
-      height: 90%;
-    }
+}
+
+.charity-specific-info .charity-info .charity-image {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.charity-specific-info .charity-info .charity-image img {
+  display: block;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+}
+
+.charity-specific-info .charity-info .info-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+}
+
+.charity-specific-info .charity-info .info-section .description {
+  font-size: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.charity-specific-info .charity-info .info-section .contact-info {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  font-size: 2.5rem;
+  color: #04364A;
+  column-gap: 10px;
+}
+
+/* Amount raised section */
+.charity-specific-info .amount-raised {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  color: #04364A;
+  row-gap: 25px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.charity-specific-info .amount-raised .amount-raised-counter {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #04364A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px 10px #DAFFFB;
+  transform: scale(1);
+  animation: pulse-blue 2s infinite;
+}
+
+.charity-specific-info .amount-raised .amount-raised-counter p {
+  color: #DAFFFB;
+  font-size: 3.5rem;
+  margin: 0;
+  opacity: 0;
+}
+
+@keyframes pulse-blue {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px 10px #DAFFFB;
   }
-  .info-section{
-  	flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: space-between;
-    .description{
-      font-size: 20px;
-      text-align: justify;
-		  text-justify: inter-word;	
-    }
-    .additional-info{
-      display: flex;
-      flex-direction: column;
-      font-size: 20px;
-      letter-spacing: 2px;
-      p {
-      	color: $color-dark;
-        span {
-        	color: $color-mid-1;
-          a{
-            color: $color-mid-1;
-          }
-        }
-      }
-    }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 10px 20px #DAFFFB;
   }
-	}
-  .navigation{
-  	display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 150px;
-    button {
-    	background-color: $color-dark;
-    	color: $color-light;
-    	border: none;
-      font-size: 30px;
-      padding-left: 50px;
-      padding-right: 50px;
-      border-radius: 20px;
-    }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px 10px #DAFFFB;
   }
-  .payment-div{
-  	display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-color: $color-dark;
-    color: $color-light;
-    .qr-payment{
-      display: flex;
-      flex-direction: row;
-      flex: 1 1 auto;
-      width: 80%;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      border-radius: 20px
-      align-items: center;
-      background-color: white;
-      border-radius: 20px;
-      .qr-image{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50%;
-        img {
-          padding: 20px;
-  	      border-radius: 15px;
-          width: 400px;
-          height: 400px;
-	        background-color: white;
-          object-fit: contain;
-        }
-      }
-      .screenshot-proof{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        color: $color-dark;
-        font-size: 20px;
-        label{
-        	cursor: pointer;
-          border: $color-dark solid 2px;
-          border-radius: 5px;
-          input[type="file"]{
-          	display: none;
-          }
-        }
-        button{
-        	background-color: $color-dark;
-          color: $color-light;
-          border: $color-dark solid 2px;
-          border-radius: 25px;
-          padding: 10px 24px;
-          transition: 0.2s ease;
-        }
-        
-        button:hover{
-        	background-color: transparent;
-          color: $color-dark;
-        }
-      }
-    }
-  }
+}
+
+/* Payment section */
+.charity-specific-info .payment-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #04364A;
+  color: #DAFFFB;
+}
+
+.charity-specific-info .payment-div .payment-header {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.charity-specific-info .payment-div .qr-payment {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  width: 80%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.charity-specific-info .payment-div .qr-payment .qr-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.charity-specific-info .payment-div .qr-payment .qr-image img {
+  padding: 20px;
+  border-radius: 15px;
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  object-fit: contain;
+}
+
+.charity-specific-info .payment-div .qr-payment .qr-image:after {
+  display: flex;
+  content: "";
+  background-color: #04364A;
+  width: 2px;
+  height: 100%;
+  top: 10px;
+  left: 100%;
+  display: block;
+}
+
+.charity-specific-info .payment-div .qr-payment .screenshot-proof {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  color: #04364A;
+  font-size: 20px;
+}
+
+.charity-specific-info .payment-div .qr-payment .screenshot-proof .amount {
+  width: 80%;
+}
+
+.charity-specific-info .payment-div .qr-payment .screenshot-proof .amount input {
+  width: 100%;
+  border: 4px solid #04364A;
+  border-radius: 10px;
+  padding: 5px;
+  transition: 0.3s ease;
+}
+
+.charity-specific-info .payment-div .qr-payment .screenshot-proof .amount input:hover {
+  border: 4px solid #176B87;
+  transition: 0.3s ease;
+}
+
+.charity-specific-info .payment-div .qr-payment .screenshot-proof .amount input:focus {
+  border: 4px solid #DAFFFB;
+  transition: 0.3s ease;
+}
+
+.charity-specific-info .payment-div .qr-payment .screenshot-proof .photo-upload {
+  cursor: pointer;
+  width: 80%;
+  margin-top: 20px;
+  border: 4px solid #04364A;
+  border-radius: 10px;
+  padding: 5px;
+  transition: 0.3s ease;
+}
+
+.charity-specific-info .payment-div .qr-payment .screenshot-proof .photo-upload input[type="file"] {
+  display: none;
+}
+
+.charity-specific-info .payment-div .qr-payment .screenshot-proof .photo-upload:hover {
+  border: 4px solid #176B87;
+  transition: 0.3s ease;
+}
+
+.charity-specific-info .payment-div .qr-payment .screenshot-proof .photo-upload:focus {
+  border: 4px solid #DAFFFB;
+  transition: 0.3s ease;
+}
+
+.charity-specific-info .payment-div .qr-payment .screenshot-proof button {
+  background-color: #04364A;
+  color: #DAFFFB;
+  margin-top: 10px;
+  border: #04364A solid 2px;
+  border-radius: 25px;
+  padding: 10px 24px;
+  transition: 0.2s ease;
+}
+
+.charity-specific-info .payment-div .qr-payment .screenshot-proof button:hover {
+  background-color: transparent;
+  color: #04364A;
+}
+
+/* Payment Divider */
+.charity-specific-info .payment-div .payment-divider {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.charity-specific-info .payment-div .payment-divider .divider-lines {
+  content: " ";
+  background-color: #DAFFFB;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 2px;
+  border-radius: 50px;
+}
+
+.charity-specific-info .payment-div .payment-divider .or-tag {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.charity-specific-info .payment-div .payment-divider .or-tag p {
+  color: #DAFFFB;
+  margin: 0;
+  font-size: 30px;
+}
+
+/* Site Payment Section */
+.charity-specific-info .payment-div .site-payment {
+  font-size: 40px;
+  width: 80%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+/* Description */
+.description {
+  margin-bottom: 15px;
+}
+
+/* Additional Styles */
+.payment-div {
+  margin-bottom: 20px;
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -200,7 +439,7 @@ $color-light: #DAFFFB;
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>charity_info</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
@@ -209,103 +448,175 @@ $color-light: #DAFFFB;
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
+  /* This function is immediately invoked */
+  
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
-	data.table = 'x_1383179_tradenow_charity_list';
-	//data.items = []
+  
+  // Initialize data properties for tables
+  data.table = 'x_1383179_tradenow_charity_list';
+  data.table1 = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr';
+  
+  // Create a GlideRecord object for the specified table
   var gr = new GlideRecord(data.table);
-	var charity_id = $sp.getParameter('charity_id');
-	console.log(charity_id)
-	gr.addQuery('number','=',charity_id);
-	gr.query();
-	/*while(gr.next()){
-		var obj={
-			charityId: gr.getValue('number'),
-			name:gr.getValue('charity_name'),
-			description:gr.getValue('description'),
-			raisedAmount: gr.getValue('total_amount_raised'),
-			image_url: gr.getDisplayValue('image')
-		}
-		data.items.push(obj);
-	}*/
-	
-	while(gr.next()){
-		var locationRF = gr.getValue('location')
-		console.log(locationRF);
-	data.obj = {
-		charityId: gr.getValue('number'),
-		name:gr.getValue('charity_name'),
-		description:gr.getValue('description'),
-		raisedAmount: gr.getValue('total_amount_raised'),
-		image_url: gr.getDisplayValue('image'),
-		website: gr.getValue('website'),
-		email: gr.getValue('email'),
-		phone: gr.getValue('phone'),
-		location: gr.getDisplayName('location'),
-		paymentLink: gr.getValue('donation_link'),
-		qrImage: gr.getDisplayValue('qr_code')
-	}
-	}
-	console.log(data.obj);
-})();]]></script>
+  
+  // Get the charity_id parameter from the request URL
+  var charity_id = $sp.getParameter('charity_id');
+  console.log(charity_id)
+  
+  // Query the GlideRecord for records with the specified charity_id
+  gr.addQuery('number', '=', charity_id);
+  gr.query();
+  
+  // Iterate through the GlideRecord results
+  while (gr.next()) {
+    // Populate data.obj with values from the GlideRecord
+    data.obj = {
+      charityId: gr.getValue('number'),
+      name: gr.getValue('charity_name'),
+      description: gr.getValue('description'),
+      raisedAmount: gr.getValue('total_amount_raised'),
+      image_url: gr.getDisplayValue('image'),
+      website: gr.getValue('website'),
+      email: gr.getValue('email'),
+      phone: gr.getValue('phone'),
+      location: gr.getDisplayValue('u_reference_1'),
+      paymentLink: gr.getValue('donation_link'),
+      qrImage: gr.getDisplayValue('qr_code')
+    }
+  }
+  console.log(data.obj);
+  
+  // Immediately invoked function expression (IIFE)
+  (function() {
+    // Create a GlideRecord object for the second table
+    var gr1 = new GlideRecord(data.table1);
+    gr1.query();
+    console.log(gr1);
+    
+    // Iterate through the GlideRecord results
+    while (gr.next()) {
+      console.log(gr.getValue('charity_id'));
+    }
+  })();
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-04 16:09:46</sys_created_on>
         <sys_id>39f8499683ea0210edb56060ceaad372</sys_id>
-        <sys_mod_count>162</sys_mod_count>
+        <sys_mod_count>594</sys_mod_count>
         <sys_name>charity_info</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_39f8499683ea0210edb56060ceaad372</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-06-06 09:50:52</sys_updated_on>
+        <sys_updated_on>2024-06-16 10:55:09</sys_updated_on>
         <template><![CDATA[<div class="charity-specific-info">
-<section class="charity-name">
-  	<h1 class="poppins-heading">{{data.obj.name}}</h1>
-  	<div class="heading-bar"></div>
+  <!-- Section for displaying the charity name -->
+  <section class="charity-name">
+    <!-- Heading with a custom font class -->
+    <h1 class="poppins-heading">{{data.obj.name}}</h1>
+    <!-- Decorative bar below the heading -->
+    <div class="heading-bar"></div>
   </section>
-<section class="charity-info">
-  <div class="charity-image">
-    <img src={{data.obj.image_url}} alt:{{data.obj.name}} />
-  </div>
-  <div class="info-section">
-		<div class="poppins-regular description">
-      {{data.obj.description}}
+
+  <!-- Section containing detailed information about the charity -->
+  <section class="charity-info">
+    <!-- Charity image container -->
+    <div class="charity-image">
+      <!-- Image element with source and alt text from data object -->
+      <img src={{data.obj.image_url}} alt={{data.obj.name}} />
     </div>
-    <div class="additional-info poppins-semibold">
-      <p>Amount Raised: $<span>{{data.obj.raisedAmount}}</span></p>
-      <p>Email: <span>{{data.obj.email}}</span></p>
-      <p>Website: <span><a href={{data.obj.website}}>{{data.obj.website}}</a></span></p>
-      <p>Contact: <span>{{data.obj.phone}}</span></p>
-      <p>Location: <span>{{data.obj.location}}</span></p>
+    <!-- Information section containing description and contact details -->
+    <div class="info-section">
+      <!-- Charity description with custom font class -->
+      <div class="poppins-regular description">
+        {{data.obj.description}}
+      </div>
+      <!-- Contact information with icons -->
+      <div class="contact-info poppins-semibold">
+        <!-- Email address with envelope icon -->
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg> 
+          {{data.obj.email}}
+        </p>
+        <!-- Phone number with phone icon -->
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg> 
+          {{data.obj.phone}}
+        </p>
+        <!-- Website URL with link icon -->
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg> 
+          {{data.obj.website}}
+        </p>
+        <!-- Location with map marker icon -->
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg> 
+          {{data.obj.location}}
+        </p>
+      </div>
     </div>
-  </div>
-</section>
-<section class="navigation">
-  <button type="button" class="poppins-heading" ng-click="payment_page()">
-    Donate
-  </button>
-</section>
-<section class="payment-div">
-  <div class="qr-payment">
-    <div class="qr-image">
-    	<img src={{data.obj.qrImage}} alt="payment qr image">  
-    </div>
-    <div class="screenshot-proof poppins-regular">
-      <p>Upload a screenshot of your payment page.</p>
-      <label for="ss-upload">
-        Select Screenshot
-        <input id="ss-upload" type="file">
-      </label>
-      <button type="button poppins-semibold">Upload</button>
-    </div>
-  </div>
-  <div>
-   	<p>Make a Donation to the official site <a href= {{data.obj.paymentLink}}>here</a></p>
-  </div>
   </section>
-</div>]]></template>
+
+  <!-- Section for displaying the amount raised with a counter -->
+  <section class="amount-raised poppins-heading">
+    <div class="amount-raised-counter poppins-heading" id="amount-container">
+      <!-- Repeats for each number in the 'numbers' array -->
+      <div ng-repeat="number in numbers">
+        <p id="counter" hiddenValue={{number.num}}>
+          0
+        </p>
+      </div>
+    </div>
+    Amount Raised
+  </section>
+
+  <!-- Section for payment options -->
+  <section class="payment-div">
+    <!-- Header for payment section -->
+    <p class="poppins-bold payment-header">
+      Become a Part of the Cause
+    </p>
+    <!-- QR code payment section -->
+    <div class="qr-payment">
+      <!-- Container for QR code image -->
+      <div class="qr-image">
+        <!-- QR code image element -->
+        <img src={{data.obj.qrImage}} alt="payment qr image">  
+      </div>
+      <!-- Section for uploading payment screenshot -->
+      <div class="screenshot-proof poppins-semibold">
+        <p>Upload a screenshot of your payment page.</p>
+        <!-- Input field for amount -->
+        <label for="amount" class="amount">
+          <input id="amount" placeholder="Amount" type="number">
+        </label>
+        <!-- File input for screenshot upload -->
+        <label for="ss-upload" class="photo-upload" id="photo-name">
+          Select Screenshot
+          <input id="ss-upload" type="file">
+        </label>
+        <!-- Button to upload the screenshot -->
+        <button type="button" class="poppins-semibold">Upload</button>
+      </div>
+    </div>
+    <!-- Divider with 'OR' tag between QR payment and site payment options -->
+    <div class="payment-divider">
+      <div class="divider-lines"></div>
+      <div class="or-tag"><p class="poppins-bold">OR</p></div>
+      <div class="divider-lines"></div>
+    </div>
+    <!-- Site payment option -->
+    <div class="site-payment poppins-regular">
+      <p>Make a Donation to the official site 
+      <button class="btn-79 poppins-bold"><span>Here</span></button></p>
+    </div>
+  </section>
+</div>
+]]></template>
     </sp_widget>
 </record_update>

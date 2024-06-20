@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope) {
+  var c = this;
+
+  // Initialize scope variables
+  $scope.currentOption = 0;
+  $scope.currentSubOption = 0;
+  $scope.availability = $scope.data.options[0][0];
+  $scope.optionsMenu = [].concat($scope.data.options[0]);
+
+  // Debounce the handleItemClick function using Lodash
+  $scope.handleItemClick = function(value) {
+    $scope.currentOption = value;
+    $scope.optionsMenu = [].concat($scope.data.options[value]);
+    $scope.selectedOption = $scope.optionsMenu[0];
+    $scope.currentSubOption = 0;
+    $scope.availability = $scope.data.options[value][0];
+  };
+
+  $scope.debouncedHandleItemClick = _.debounce($scope.handleItemClick, 300);
+
+  $scope.onOptionChange = function() {
+    var index = $scope.optionsMenu.indexOf($scope.selectedOption);
+    $scope.currentSubOption = index;
+    $scope.availability = $scope.data.options[$scope.currentOption][index];
+    console.log($scope.availability);
+  };
+
+  // Initial setup
+  $scope.selectedOption = $scope.optionsMenu[0];
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.poppins {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.profile-page{
+	display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.user-profile{
+	width: 100%;
+  display: flex;
+  height: 300ps;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.header{
+  text-align: center;
+  color: #004c4c;
+}
+.header&gt;h2{
+  //font-weight: bold;
+  color:#004c4c;
+}
+.header&gt;hr{
+  border: none;
+  height: 5px;
+  width: 30%;
+  background-color: #004c4c;
+  margin-butom: 2px;
+  margin-top: 0px;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.items-container{
+	width: 90%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-container{
+	width: 100%;
+  display: flex;
+}
+
+.active-button{
+	background-color: #006060;
+  color: white;
+}
+
+.buttons-container button{
+	width: 100%;
+  outline: none;
+  border: none;
+  font-size: 2rem;
+}
+
+.buttons-container button:color{
+	box-shadow: none;
+  outline: none;
+  border: none;
+  color: #004242
+}
+
+.buttons-container button:active{
+	box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+.buttons-container button:focus{
+	box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+hr{
+  border: none;
+  height: 2px;
+  width: 100%;
+  background-color: #004c4c;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.dropdown-container{
+	width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropdown-container select{
+	height: 100%;
+  width: 30%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.dropdown-container select:focus{
+	box-shadow: none;
+}
+
+.card-item-container{
+	width: 100%;
+}
+
+.listed-items, .ordered-items, .donation-history{
+  width: 100%;
+  padding: 10px 0;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 10px;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.ordered-items-card{
+	width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //background-color: #b2d8d8;
+  background-color: white;
+  color: black;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, .1);
+  transition: 500ms ease-in-out;
+}
+
+.ordered-items-card:hover{
+	transform: translateY(-2px);
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, .5)
+}
+
+.ordered-items-card .order-logo{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+}
+
+.ordered-items-card .order-logo .order-image-container{
+	width: 90%;
+  height: 90%;
+  background-color: #F5F5DC;
+  border-radius: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .1)
+}
+
+.ordered-items-card .order-logo .order-image-container img{
+	width: auto;
+  height: 100%;
+  overflow-x: hidden;
+  display: block;
+}
+
+.ordered-items-card .order-info{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ordered-items-card .order-info .order-name{
+	font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.ordered-items-card .order-info .order-status{
+	font-size: 0.9rem;
+}
+
+.ordered-items-card .order-amount{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.operation-button-green{
+	background-color: #006060;
+  color: white;
+  border: none;
+  width: 50%;
+  border-radius: 5px;
+  padding: 10px 24px;
+}
+
+.operation-button-red{
+	background-color: red;
+  color: white;
+  border: none;
+  width: 70%;
+  border-radius: 5px;
+  padding: 10px 24px;
+}
+
+
+//Donations css
+
+.donation-history-card{
+	width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //background-color: #b2d8d8;
+  background-color: white;
+  color: black;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, .1);
+  transition: 500ms ease-in-out;
+}
+
+.donation-history-card:hover{
+	transform: translateY(-2px);
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, .5)
+}
+
+.donation-history-card .charity-logo{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+}
+
+.donation-history-card .charity-logo img{
+	width: auto;
+  height: 90%;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.donation-history-card .charity-info{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.donation-history-card .charity-info .charity-name{
+	font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.donation-history-card .charity-info .time-created{
+	font-size: 0.9rem;
+}
+
+.donation-history-card .donation-amount{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>my_profile</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>my profile</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	data.sysUserId = $sp.getParameter("sys_id");
+	data.table = 'x_1383179_tradenow_item_list';
+	data.donationTable = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr';
+	data.charityTable = 'x_1383179_tradenow_charity_list';
+	data.listedItems = [];
+	data.orderedItems = [];
+	data.donationHistory = [];
+	data.options= [['All','Available','Claimed','Ready to Pickup'],
+								 ['All','Claimed','Reserved','Ready to Pickup'],
+								 ['All']];
+	var sysUserGR = new GlideRecord('sys_user');
+	var listedItems = new GlideRecord(data.table);
+	var orderedItems = new GlideRecord(data.table);
+	var donationHistory = new GlideRecord(data.donationTable);
+	if(sysUserGR.get(data.sysUserId)){
+		var count = 0;
+		data.name = sysUserGR.getValue('name');
+		var index = data.name.indexOf(' ');
+		data.name = data.name.slice(0,index);
+		data.email = sysUserGR.getValue('email');
+		data.location = sysUserGR.getDisplayValue('location');
+		data.points = sysUserGR.getValue('u_points');
+		data.gender = sysUserGR.getValue('gender');
+		data.userImage = sysUserGR.getDisplayValue('photo');
+		console.log(data.userImage);
+
+		listedItems.orderByDesc('sys_created_on');
+		listedItems.addQuery('lister_name','=',data.sysUserId);
+		listedItems.query();
+
+		orderedItems.orderByDesc('sys_created_on');
+		orderedItems.addQuery('claimer','=',data.sysUserId);
+		orderedItems.query();
+
+		donationHistory.orderByDesc('sys_created_on');
+		donationHistory.addQuery('sys_user','=',data.sysUserId);
+		donationHistory.query();
+		
+		count=1;
+		while(listedItems.next()){
+			if(listedItems.getValue('status') !== 'reserved'){
+				obj = {
+					id: count,
+					item_name: listedItems.getValue('item_name'),
+					item_image: listedItems.getDisplayValue('image'),
+					item_lister: orderedItems.getValue('lister_name'),
+					item_claimer: listedItems.getDisplayValue('claimer'),
+					item_status: listedItems.getValue('status'),
+					availability: ""
+				}
+				if(obj.item_status === 'readypickup'){
+					obj.availability = "Ready to Pickup";
+				} else if(obj.item_status === 'claimed'){
+					obj.availability = "Claimed";
+				} else if(obj.item_status === 'reserved'){
+					obj.availability = "Reserved";				
+				} else {
+					obj.availability = "Available";
+				}
+				data.listedItems.push(obj);
+				count += 1;
+			}
+		}
+		count = 1;
+		while(orderedItems.next()){
+			obj = {
+				id: count,
+				item_name: orderedItems.getValue('item_name'),
+				item_image: orderedItems.getDisplayValue('image'),
+				item_lister: orderedItems.getDisplayValue('lister_name'),
+				item_claimer: listedItems.getDisplayValue('claimer'),
+				item_status: orderedItems.getValue('status'),
+				availability: ""
+			}
+			if(obj.item_status === 'readypickup'){
+				obj.availability = "Ready to Pickup";
+				obj.button = ["Confirm Pickup"];
+			} else if(obj.item_status === 'claimed'){
+				obj.availability = "Claimed";
+			} else if(obj.item_status === 'reserved'){
+				obj.availability = "Reserved";		
+				obj.button = ["Claim Item","Cancel Reservation"];
+			} else {
+				obj.availability = "Available";
+			}
+			data.orderedItems.push(obj);
+			count += 1;
+		}
+		count = 1;
+		while(donationHistory.next()){
+			var charity_code = donationHistory.getDisplayValue('x_1383179_tradenow_charity_list');
+			var charityList = new GlideRecord(data.charityTable);
+			charityList.addQuery('number','=',charity_code);
+			charityList.query();
+			var charityName = "";
+			var charityImage = "";
+			while(charityList.next()){
+				charityName = charityList.getValue('charity_name');
+				charityImage = charityList.getDisplayValue('image');
+			}
+			obj = {
+				//donation_transaction_id: donationHistory.getValue('number'),
+				id: count,
+				donation_charity_name: charityName,
+				donation_person: donationHistory.getDisplayValue('sys_user'),
+				donation_amount: donationHistory.getDisplayValue('donation_amount'),
+				donation_created_at: donationHistory.getValue('sys_created_on'),
+				donation_charity_image: charityImage
+			}
+			data.donationHistory.push(obj);
+			count += 1;
+		}
+		console.log(data.donationHistory);
+	}
+	//<div class="donation-history-card" ng-repeat="donation in data.donationHistory track by donation.id">
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-06-18 17:13:51</sys_created_on>
+        <sys_id>4ded11fe83f64e10edb56060ceaad3f1</sys_id>
+        <sys_mod_count>449</sys_mod_count>
+        <sys_name>my profile</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_4ded11fe83f64e10edb56060ceaad3f1</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-06-19 14:06:07</sys_updated_on>
+        <template><![CDATA[<div class="profile-page">
+<div class="user-profile poppins">
+  <div class="header" >
+    <h2 class="poppins-semibold">Hello {{::data.name}}</h2>
+    <hr/>
+  </div>
+</div>
+<div class="items-container poppins">
+  <div class="buttons-container">
+    <button ng-click="debouncedHandleItemClick(0)" id='listed-item-button' ng-class="{'active-button': currentOption === 0}">Listed Items</button>
+    <button ng-click="debouncedHandleItemClick(1)" id='ordered-item-button'ng-class="{'active-button': currentOption === 1}">My Orders</button>
+    <button ng-click="debouncedHandleItemClick(2)" id='donation-history-button' ng-class="{'active-button': currentOption === 2}">Donation History</button>
+  </div>
+  <hr/>
+  <div class="dropdown-container">
+    <select id="selectedOption" ng-model="selectedOption" ng-options="option for option in optionsMenu" ng-change="onOptionChange()"></select>
+  </div>
+  <div class="card-item-container">
+
+    <div class="ordered-items" id="listedItems" ng-show="currentOption === 0">
+      <div class="ordered-items-card" ng-repeat='order in data.listedItems track by order.id' ng-show='currentSubOption === 0 || order.availability === availability'>
+        <div class="order-logo"><div class="order-image-container"><img ng-src={{order.item_image}} lazy-load></div></div>
+        <div class="order-info">
+          <div class="order-name" ng-bind="order.availability"></div>
+          <div class="order-status">Status: <span ng-bind="order.availability" /></div>
+        </div>
+        <div class="order-amount">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="ordered-items" id="orderedItems" ng-show="currentOption === 1">
+      <div class="ordered-items-card" ng-repeat='order in data.orderedItems track by order.id' ng-show='currentSubOption === 0 || order.availability === availability'>
+        <div class="order-logo"><div class="order-image-container"><img ng-src={{order.item_image}} lazy-load></div></div>
+        <div class="order-info">
+          <div class="order-name" ng-bind="order.item_name"></div>
+          <div class="order-status">Status: <span ng-bind="order.availability" /></div>
+        </div>
+        <div class="order-amount">
+          <button class="operation-button-green" ng-repeat="buttons in order.button" ng-bind="buttons">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="donation-history" id="donationHistory" ng-show="currentOption === 2">
+      <div class="donation-history-card" ng-repeat="donation in data.donationHistory track by donation.id">
+        <div class="charity-logo"><img ng-src={{donation.donation_charity_image}} lazy-load></div>
+        <div class="charity-info">
+          <div class="charity-name" ng-bind="donation.donation_charity_name"></div>
+          <div class="time-created">Created At:<span ng-bind="donation.donation_created_at" /></div>
+        </div>
+        <div class="donation-amount" ng-bind="donation.donation_amount"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

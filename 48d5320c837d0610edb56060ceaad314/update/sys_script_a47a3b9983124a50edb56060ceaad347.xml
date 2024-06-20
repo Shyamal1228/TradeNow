@@ -29,23 +29,40 @@
         <rest_service_text/>
         <rest_variables/>
         <role_conditions/>
-        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+        <script><![CDATA[// This is a Script Include function that executes when a certain rule is triggered.
+// It adds 50 points to a user's 'u_points' field in the 'sys_user' table when the rule is executed.
+
+// The function signature indicates that it receives two parameters: current and previous.
+// 'current' represents the current GlideRecord object, and 'previous' is null when executed asynchronously.
+
+(function executeRule(current, previous /*null when async*/) {
+    // Create a new GlideRecord instance for the 'sys_user' table
     var userGr = new GlideRecord('sys_user');
+
+    // Add a query to find the user record with the same sys_id as the 'claimer' field in the current record
     userGr.addQuery('sys_id', current.getValue('claimer'));
     userGr.query();
+
+    // If a matching user record is found
     if (userGr.next()) {
+        // Increment the 'u_points' field by 50
         userGr.u_points += 50;
+
+        // Update the user record
         userGr.update();
     }
+
+    // Add an informational message to the system log
     gs.addInfoMessage('Points added to claimer');
-})(current, previous);]]></script>
+})(current, previous); // Call the function with the 'current' and 'previous' parameters
+]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-05-20 16:17:54</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a47a3b9983124a50edb56060ceaad347</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Add points when state changes to claimed</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -53,7 +70,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_script_a47a3b9983124a50edb56060ceaad347</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-05-20 16:17:54</sys_updated_on>
+        <sys_updated_on>2024-06-12 05:37:27</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

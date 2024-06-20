@@ -4,13 +4,13 @@
             <element>lister_name</element>
             <position>0</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>5ad4b992839e0210edb56060ceaad302</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>838a988383768e10edb56060ceaad3c2</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>lister_name.location</element>
             <position>1</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>ded4b992839e0210edb56060ceaad302</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>8b8a988383768e10edb56060ceaad3c2</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>number</element>
             <position>2</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>52d4b992839e0210edb56060ceaad303</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>8f8a988383768e10edb56060ceaad3c2</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>item_name</element>
             <position>3</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>d2d4b992839e0210edb56060ceaad303</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>838a988383768e10edb56060ceaad3c3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -60,13 +60,13 @@
             <element>.split</element>
             <position>4</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>56d4b992839e0210edb56060ceaad303</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>878a988383768e10edb56060ceaad3c3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -74,13 +74,13 @@
             <element>status</element>
             <position>5</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>d6d4b992839e0210edb56060ceaad303</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>8b8a988383768e10edb56060ceaad3c3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -88,13 +88,13 @@
             <element>condition</element>
             <position>6</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>5ad4b992839e0210edb56060ceaad303</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>8f8a988383768e10edb56060ceaad3c3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -102,13 +102,13 @@
             <element>category</element>
             <position>7</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>dad4b992839e0210edb56060ceaad303</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>838a988383768e10edb56060ceaad3c4</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -116,13 +116,13 @@
             <element>reservation_time</element>
             <position>8</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>5ed4b992839e0210edb56060ceaad303</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>878a988383768e10edb56060ceaad3c4</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -130,13 +130,13 @@
             <element>total_watchers</element>
             <position>9</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>ded4b992839e0210edb56060ceaad303</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>8b8a988383768e10edb56060ceaad3c4</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -144,13 +144,13 @@
             <element>.end_split</element>
             <position>10</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>52d4b992839e0210edb56060ceaad304</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>8f8a988383768e10edb56060ceaad3c4</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
@@ -158,13 +158,13 @@
             <element>description</element>
             <position>11</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>d2d4b992839e0210edb56060ceaad304</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>838a988383768e10edb56060ceaad3c5</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -172,13 +172,41 @@
             <element>image</element>
             <position>12</position>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-05-23 09:05:48</sys_created_on>
-            <sys_id>56d4b992839e0210edb56060ceaad304</sys_id>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>878a988383768e10edb56060ceaad3c5</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-05-23 09:05:48</sys_updated_on>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>claimer</element>
+            <position>13</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>8b8a988383768e10edb56060ceaad3c5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>claimer_email</element>
+            <position>14</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-19 06:58:06</sys_created_on>
+            <sys_id>8f8a988383768e10edb56060ceaad3c5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_item_list" sys_domain="global" view="Default view">4d1f33b18356ca50edb56060ceaad3a1</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-19 06:58:06</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
     <sp_header_footer action="INSERT_OR_UPDATE">
         <category>standard</category>
-        <client_script><![CDATA[function ($rootScope, $scope, snRecordWatcher, spUtil, $location, $uibModal, cabrillo, $timeout, $window, i18n) {
+        <client_script><![CDATA[api.controller = function ($rootScope, $scope, snRecordWatcher, spUtil, $location, $uibModal, cabrillo, $timeout, $window, i18n) {
 
 	$scope.logoText = i18n.format(i18n.getMessage('Go to {0} Homepage'), $scope.portal.title);
 	$scope.collapse = function() {
@@ -234,7 +234,7 @@ margin: 0px;
         <has_preview>false</has_preview>
         <id/>
         <internal>false</internal>
-        <link><![CDATA[function(scope, element) {
+        <link><![CDATA[function link(scope, element) {
 	var prevFocusIndex = -1;// This is used for prev focus of nav-bar(avatar) drop down items when its visible.
 	var KEY = {
 		TAB : 9,
@@ -413,14 +413,14 @@ data.loginWidget = $sp.getWidgetFromInstance('login-modal');]]></script>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-24 07:35:59</sys_created_on>
         <sys_id>98e96ae683d28210edb56060ceaad300</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Copy of Stock Header</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_header_footer_98e96ae683d28210edb56060ceaad300</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-24 07:35:59</sys_updated_on>
+        <sys_updated_on>2024-06-18 17:02:11</sys_updated_on>
         <template><![CDATA[<div>
   <nav class="navbar-inverse" ng-class="::{'navbar':!isViewNative, 'is-native': isViewNative}"
        role="navigation" aria-label="${Primary}">
@@ -454,7 +454,7 @@ data.loginWidget = $sp.getWidgetFromInstance('login-modal');]]></script>
             <span class="visible-lg-inline">{{::user.name}}</span>
           </a>
           <ul class="dropdown-menu" role="menu" aria-label="{{::data.profileBtnMsg}}">
-            <li role="presentation"><a tabindex="-1" ng-href="?id=user_profile&sys_id={{::user.sys_id}}" role="menuitem">${Profile}</a></li>
+            <li role="presentation"><a tabindex="-1" ng-href="?id=my_profile&sys_id={{::user.sys_id}}" role="menuitem">${Profile}</a></li>
             <li ng-if="::!(isViewNative || isViewNativeTablet)" role="presentation"><a tabindex="-1" href="{{::portal.logoutUrl}}" role="menuitem">${Logout}</a></li>
           </ul>
         </li>

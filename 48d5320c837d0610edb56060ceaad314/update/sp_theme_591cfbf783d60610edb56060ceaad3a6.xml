@@ -185,21 +185,21 @@ body .padding-left {&#13;
 </css_variables>
         <footer display_value="Tradenow Footer">a821004883e60610edb56060ceaad3cc</footer>
         <footer_fixed>false</footer_fixed>
-        <header display_value="Stock Header">bf5ec2f2cb10120000f8d856634c9c0c</header>
+        <header display_value="Tradenow Stock Header">a023e936833a4e10edb56060ceaad385</header>
         <name>TradeNow Theme</name>
         <navbar_fixed>true</navbar_fixed>
         <sys_class_name>sp_theme</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-28 10:47:32</sys_created_on>
         <sys_id>591cfbf783d60610edb56060ceaad3a6</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>TradeNow Theme</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_theme_591cfbf783d60610edb56060ceaad3a6</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-29 06:34:31</sys_updated_on>
+        <sys_updated_on>2024-06-18 17:47:20</sys_updated_on>
         <turn_off_scss_compilation>false</turn_off_scss_compilation>
     </sp_theme>
 </record_update>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
+    <sp_column action="DELETE">
+        <class_name/>
+        <order>3</order>
+        <semantic_tag/>
+        <size>2</size>
+        <size_lg/>
+        <size_sm/>
+        <size_xs/>
+        <sp_row display_value="1">0eeae77e832e0210edb56060ceaad338</sp_row>
+        <sys_class_name>sp_column</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-06 17:14:16</sys_created_on>
+        <sys_id>4aeae77e832e0210edb56060ceaad3e1</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>3</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_column_4aeae77e832e0210edb56060ceaad3e1</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-11 06:16:16</sys_updated_on>
+    </sp_column>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sp_column_4aeae77e832e0210edb56060ceaad3e1</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column"><sp_column action="INSERT_OR_UPDATE"><class_name/><order>3</order><semantic_tag/><size>2</size><size_lg/><size_sm/><size_xs/><sp_row display_value="1">0eeae77e832e0210edb56060ceaad338</sp_row><sys_class_name>sp_column</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-06-06 17:14:16</sys_created_on><sys_id>4aeae77e832e0210edb56060ceaad3e1</sys_id><sys_mod_count>3</sys_mod_count><sys_name>3</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sp_column_4aeae77e832e0210edb56060ceaad3e1</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-06-11 06:16:16</sys_updated_on></sp_column></record_update>]]></payload>
+        <payload_hash>-737713404</payload_hash>
+        <record_name>3</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-11 06:16:16</sys_created_on>
+        <sys_id>9c44039883be8210edb56060ceaad3ad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19005f0ab4c0000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-11 06:16:16</sys_updated_on>
+        <type>Column</type>
+        <update_guid>54440398b1be8210805de3cdb14057ad</update_guid>
+        <update_guid_history>54440398b1be8210805de3cdb14057ad:-737713404,d4044b58c4be8210c925a83e83cec3f7:-1209710813,27fa2b7e282e02100d1bd0c4a0c2d30a:-737713404,8aeae77e1c2e021059895e1522c3a4e2:-1209710813</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="3">5195abc183b68610edb56060ceaad3cf</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-13 16:37:20</sys_created_on>
+        <sys_db_object display_value="" name="sp_column">sp_column</sys_db_object>
+        <sys_id>425118da93874944919afa056fc29ec9</sys_id>
+        <sys_metadata>4aeae77e832e0210edb56060ceaad3e1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>3</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sp_column_4aeae77e832e0210edb56060ceaad3e1</sys_update_name>
+        <sys_update_version display_value="sp_column_4aeae77e832e0210edb56060ceaad3e1">9c44039883be8210edb56060ceaad3ad</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-13 16:37:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

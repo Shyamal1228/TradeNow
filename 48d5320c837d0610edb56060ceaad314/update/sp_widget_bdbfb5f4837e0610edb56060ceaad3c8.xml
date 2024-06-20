@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope,$http) {
+	/* widget controller */
+	var c = this;
+
+	$scope.$on("field.change", function(evt, parms) {
+		if (parms.field.name == 'tableName'){
+			c.data.table = parms.newValue.toString();
+			c.server.update();
+		}
+	});
+	//
+	  $scope.onFileSelect = function(files) {
+        $scope.data.image = files;
+				alert('Img: ' + JSON.stringify(files));
+    };
+	
+$scope.files = [];	
+	$scope.setFiles = function(element) {
+		$scope.$apply(function() {
+			console.log('files:', element.files);
+			// Turn the FileList object into an Array
+			for (var i = 0; i < element.files.length; i++) {
+				$scope.files.push(element.files[i]);
+			}
+		});
+		alert('ss: ' + JSON.stringify($scope.files));
+	};
+	
+	
+	$scope.submitForm = function() {
+		alert('ss');
+		// Step 1: Insert record into item table
+$http.post('https://dev245733.service-now.com/api/now/table/x_1383179_tradenow_item_list', {
+    item_name: c.data.name // Assuming 'name' is the field for item name
+})
+.then(function(response) {
+    // On success
+    var itemSysId = response.data.result.sys_id; // Assuming the response contains the inserted record's sys_id
+    alert('Item inserted successfully. Sys ID:'+ itemSysId);
+
+    // Step 2: Upload attachment using the obtained sys_id
+   
+	var formData = new FormData();
+	formData.append('file', $scope.data.image); // 'file' is the parameter expected by the ServiceNow API
+
+	
+	
+    var config = {
+        headers: {
+            'Content-Type': $scope.data.image.type,
+            'Accept': 'application/json'
+        }
+    };
+
+    var url = 'https://dev245733.service-now.com/api/now/attachment/file?table_name=x_1383179_tradenow_item_list&table_sys_id=' + itemSysId + '&file_name=' + $scope.data.image.name;
+
+    $http.post(url, formData, config)
+        .then(function(uploadResponse) {
+            // On success code here
+            console.log('File uploaded successfully:', uploadResponse.data);
+        })
+        .catch(function(uploadError) {
+            // On error code here
+            console.error('Error uploading file:', uploadError);
+        });
+})
+.catch(function(error) {
+    // On error inserting record
+    console.error('Error inserting item:', error);
+});
+	
+	}
+
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>insert_image</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Insert Image</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-12 14:33:48</sys_created_on>
+        <sys_id>bdbfb5f4837e0610edb56060ceaad3c8</sys_id>
+        <sys_mod_count>38</sys_mod_count>
+        <sys_name>Insert Image</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_bdbfb5f4837e0610edb56060ceaad3c8</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-12 15:53:29</sys_updated_on>
+        <template><![CDATA[<div>
+<div class="container">
+    <h2>Insert Item</h2>
+    <form>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" ng-model="c.data.name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="image">Image:</label>
+            <input type="file" id="fileInput" class="form-control" multiple onchange="angular.element(this).scope().setFiles(this)">
+        </div>
+        <button type="button" class="btn btn-primary" ng-click="submitForm()">Submit</button>
+    </form>
+</div>
+
+File: <input type="file" id="fileToUpload" multiple onchange="angular.element(this).scope().setFiles(this)"/>
+</div>]]></template>
+    </sp_widget>
+</record_update>

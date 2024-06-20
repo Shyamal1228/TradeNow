@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, spUtil, $element, $window) {
+	var c = this;
+	$element.hide();
+	var height = c.options.height_from_top || 300;
+	height = parseInt(height);
+	var lastScrollTop = 0;
+	var container = angular.element('.sp-scroll');
+	var windowElement = angular.element($window);
+	var handleScroll = function(e) {
+		var target = e.target;
+		var currentScroll = angular.element(target).scrollTop();
+		if(lastScrollTop > currentScroll && lastScrollTop > height && currentScroll > height) // moving up
+			$element.show();
+		else
+			$element.hide();
+		lastScrollTop = currentScroll;
+	}
+	container.on("scroll", handleScroll); // for large screen
+	windowElement.on("scroll", handleScroll); // for small screens
+
+
+	$scope.goTop = function() {
+		var animationDuration = 300;
+		if($window.scrollY > 0) {
+			$('html').animate({
+				scrollTop : 0
+			}, animationDuration);
+		} else {
+			spUtil.scrollTo('.sp-scroll', animationDuration);
+		}
+	}
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@media only screen and (max-width : 992px) {
+  .button-to-top-wrapper {
+    position: relative;
+    
+   .button-to-top {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px !important;
+      opacity: 0.7 !important;
+      padding: 12px !important;
+      border: 1px solid !important;
+      width: 47px;
+      height: 45px;
+      background-color: #ddd;
+     z-index: 1;
+    } 
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Copy of SC Scroll to top</name>
+        <option_schema>[{"hint":"Height from top (px) after which control would display","name":"height_from_top","section":"other","default_value":"300","label":"Height from top (px)","type":"integer"}]</option_schema>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	data.scrollButtonLabel = gs.getMessage("Scroll to top");
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-18 07:08:01</sys_created_on>
+        <sys_id>9e3397a283be0e10edb56060ceaad396</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of SC Scroll to top</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_9e3397a283be0e10edb56060ceaad396</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-18 07:08:01</sys_updated_on>
+        <template><![CDATA[<div class="button-to-top-wrapper">
+	<button name="gotoTop" ng-click="goTop()" class="visible-xs visible-sm btn fa fa-arrow-up fa-lg padder-lg button-to-top pull-right" data-toggle="tooltip" data-placement="top" title="{{c.data.scrollButtonLabel}}"></button>
+</div>]]></template>
+    </sp_widget>
+</record_update>

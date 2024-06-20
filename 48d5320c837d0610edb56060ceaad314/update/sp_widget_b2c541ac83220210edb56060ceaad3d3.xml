@@ -5,6 +5,8 @@
         <controller_as>c</controller_as>
         <css>.top-container{
   margin-top:60px;
+  background-color:#fff;
+  padding-bottom:20px;
 }
 
 .header&gt;p{
@@ -19,7 +21,7 @@
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  background-color:#eefbf4;
+  background-color:	#b2d8d8;
 }
 
 .card:hover {
@@ -53,7 +55,7 @@
   border: none;
   height: 5px;
   width: 20%;
-  background-color:#1f8476;
+  background-color:#b04927;
  	margin-butom: 7px;
 }
 .testimonial-container {
@@ -73,7 +75,7 @@ figure.snip1390 {
   text-align: center;
   font-size: 16px;
   box-sizing: border-box;
-  background-color: #64CCC5;
+  background-color: #006666;
    border-radius: 10px;
 }
 
@@ -139,7 +141,7 @@ figure.snip1390 {
   justify-content: center;
   align-items: center;
   margin: 0 auto; /* Center horizontally */
-  color:#64CCC5;
+  color:#004c4c;
 }
 
 /* Button styles */
@@ -147,16 +149,16 @@ figure.snip1390 {
             display: inline-block;
             padding: 10px 20px;
             font-size: 16px;
-            border: 2px solid #64CCC5;
+            border: 2px solid #004c4c;
             border-radius: 8px;
-            background-color: #E0F2E9;
-            color: #64CCC5;
+            background-color: #006666;
+            color: 	#fff;
             cursor: pointer;
         }
 
         /* Hover effect */
         .custom-button:hover {
-            background-color: #64CCC5;
+            background-color: #66b2b2;
             color: #E0F2E9;
         }
 a{
@@ -181,14 +183,14 @@ a{
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-30 05:26:33</sys_created_on>
         <sys_id>b2c541ac83220210edb56060ceaad3d3</sys_id>
-        <sys_mod_count>91</sys_mod_count>
+        <sys_mod_count>131</sys_mod_count>
         <sys_name>Section1</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_b2c541ac83220210edb56060ceaad3d3</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-06 06:39:29</sys_updated_on>
+        <sys_updated_on>2024-06-18 04:27:40</sys_updated_on>
         <template><![CDATA[<!--<div class="testimonials">
   <h2 style="font-weight: bold;">Testimonials</h2>
   <hr class="line" />

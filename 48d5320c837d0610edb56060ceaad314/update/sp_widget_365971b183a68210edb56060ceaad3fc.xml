@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function($scope, $http) {
+        <client_script><![CDATA[api.controller=function($scope,$http) {
   /* widget controller */
   var c = this;
-	/*c.loadFile = function(event) {
-    var reader = new FileReader();
-    reader.onload = function() {
-      var image = document.getElementById('output');
-      image.src = reader.result;
-    };
-    reader.readAsDataURL(event.target.files[0]);
-  };*/
 	
+	// CODE FOR input record
+	$scope.getID = function(rec) {
+		c.data.record = rec.toString(); // sys id of the record
+		c.server.update();
+	}	
 	
 	// CODE FOR file upload
 	$scope.files = [];	
@@ -24,8 +21,9 @@
 				$scope.files.push(element.files[i]);
 			}
 		});
+		alert('ss: ' + JSON.stringify($scope.files));
 	};
-
+	
 	$scope.removeFiles = function(fname) {
 		var index = $scope.files.indexOf(fname);
 		if(index>-1)
@@ -41,7 +39,7 @@
 		$scope.fd.append('file', file);
 		var request = {
 			method: 'POST',
-			url: 'https://dev245733.service-now.com/api/now/attachment/file?table_name='+c.data.table+'&table_sys_id='+c.data.rec_sysid+'&file_name='+file.name,
+			url: 'https://dev200524.service-now.com/api/now/attachment/file?table_name='+c.data.table+'&table_sys_id='+c.data.rec_sysid+'&file_name='+file.name,
 			data: $scope.fd.get('file'),
 			headers: {
 				'Content-Type': file.type, // Let the browser set the Content-Type including the boundary
@@ -51,165 +49,122 @@
 		};
 		$http(request)
 			.then(function (response) {
-			var d = response.data;
-			var attaSysId = d.result.sys_id;
-			alert("sys_id: " + attaSysId);
-			c.data.attchSysId = attaSysId;
-			c.server.update();
-		})
+				var d = response.data;
+				var attaSysId = d.result.sys_id;
+				alert("sys_id: " + attaSysId);
+				c.data.attchSysId = attaSysId;
+				c.server.update();
+			})
 			.catch(function (err) {
-			alert("Error uploading file.");
-		});
+				alert("Error uploading file.");
+			});
 	};
-
 	
-	c.submitForm = function(isValid) {
-		c.try=isValid;
-		c.submitted= true;
-		//alert("done");
-		 //spUtil.addInfoMessage('saved');
-		
-		if (!isValid)
-			return;
 	
-		c.data.item_name = c.item_name;
-		c.data.description= c.description;
-		c.data.selectedCondition= c.selectedCondition;
-		c.data.selectedCategory = c.selectedCategory;
-		//data.event= c.select_event;
-		//data.eventSysId=c.setect_event.sys_id;
-		//c.data.image= c.image;
-
-		//Pass the data object to the server, add a promise (callback)
-		// to process the server's response
-		c.server.update();
-		
-	}
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css>body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
+        <css>* {
+    box-sizing: border-box;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f4f4f4;
 }
 
 .container {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    max-width: 1000px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    overflow: hidden;
-  margin:30px;
+    max-width: 400px;
+  margin:auto;
 }
 
-.image-container {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // background-color: #f4f4f9;
-}
-
-.image-container img {
-    max-width: 100%;
-    height: auto;
-  border-radius:15px;
-}
-
-.form-container {
-    flex: 1;
-    padding: 20px 30px;
-}
-
-h1 {
+.form-header {
     text-align: center;
-    color: #333333;
     margin-bottom: 20px;
+}
+
+.form-icon {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+h2 {
+    color: #333;
 }
 
 .form-group {
     margin-bottom: 15px;
 }
 
-label {
+.form-group label {
     display: block;
-    font-weight: bold;
     margin-bottom: 5px;
-    color: #555555;
+    color: #333;
 }
 
-input[type="text"], 
-textarea, 
-select, 
-input[type="file"] {
+.form-group input,
+.form-group select,
+.form-group textarea {
     width: 100%;
     padding: 10px;
-    margin: 0;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-textarea {
+.form-group textarea {
     resize: vertical;
+    height: 100px;
 }
 
-input[type="file"] {
-    padding: 3px;
-}
-
-.btn {
+.form-group button {
     width: 100%;
-    background-color: #28a745;
-    color: white;
-    border: none;
     padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #218838;
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .image-container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .form-container {
-        width: 100%;
-        padding: 15px 20px;
-    }
-
-    .btn {
-        padding: 12px;
-        font-size: 18px;
-    }
-}
-
-hr {
+    background-color: #176B87;
     border: none;
-    height: 5px;
-  	width:50%;
-    background-color: #dddddd;
-    margin-bottom: 20px;
-}</css>
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #04364A;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 8px;
+    }
+
+    .form-group button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .form-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -223,11 +178,10 @@ hr {
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function($atob) {
+        <script><![CDATA[(function() {
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
 	data.categoryArray = [];
-	data.table='x_1383179_tradenow_item_list';
   var categoryList = new GlideRecord('x_1383179_tradenow_category_lookup');
 	categoryList.query();
 	while (categoryList.next()) {
@@ -293,7 +247,7 @@ hr {
 			grNewRegistration.setValue('company', input.selectedCondition);
 			//grNewRegistration.setValue('event', input.eventSysId);
 
-			//grNewRegistration.setValue('image', input.image);
+			grNewRegistration.setValue('image', input.image);
 
 		if(!input.comments) {
 			grNewRegistration.setValue('comments', "");
@@ -302,23 +256,6 @@ hr {
 			}
 
 			var userRegSysId = grNewRegistration.insert();
-		data.rec_sysid=userRegSysId.toString();
-		// var attachment = new GlideSysAttachment();
-     //   var decodedContent = GlideBase64.decodeAsBytes(input.fileContent);
-     //   attachment.write('x_1383179_tradenow_item_list', userRegSysId, input.fileName, decodedContent);
-		if(input.attchSysId){
-		console.log("input: " + input.attchSysId);
-		var grTask = new GlideRecord('x_1383179_tradenow_item_list');
-		grTask.addQuery('sys_id',userRegSysId);
-		grTask.query();
-		if(grTask.next()){
-			grTask.setValue('image',input.attchSysId);
-			grTask.update();
-		}
-	}
-		
-	//	var attachment = new GlideSysAttachment();
-   //     attachment.write('x_1383179_tradenow_item_list', userRegSysId, input.fileName,input.fileContent);
 			//if the record is created successfully, send the success
 			// message to the client, else send the error message
 
@@ -330,6 +267,19 @@ hr {
 						 }                   data.status = "error";
 
 	//	}
+		
+		
+		// my code
+		if(input.attchSysId){
+		console.log("input: " + input.attchSysId);
+		var grTask = new GlideRecord('x_1383179_tradenow_item_list');
+		grTask.addQuery('sys_id',userRegSysId);
+		grTask.query();
+		if(grTask.next()){
+			grTask.setValue('image',input.attchSysId);
+			grTask.update();
+		}
+	}
 
 	}
 
@@ -340,23 +290,29 @@ hr {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-03 06:24:14</sys_created_on>
         <sys_id>365971b183a68210edb56060ceaad3fc</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>63</sys_mod_count>
         <sys_name>Add item image</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_365971b183a68210edb56060ceaad3fc</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-09 12:00:42</sys_updated_on>
-        <template><![CDATA[
+        <sys_updated_on>2024-06-13 05:07:12</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Item</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <div class="container">
-        <div class="image-container">
-            <img src="add item image.png" alt="Item Image">
-        </div>
-        <div class="form-container">
-            <h1>Add New Item</h1>
-          <hr>
             <form name="registration" novalidate ng-submit="c.submitForm(registration.$valid)">
+              <div class="form-header">
+                <img src="icon.png" alt="Icon" class="form-icon">
+                <h2>Add New Item</h2>
+            </div>
                 <div class="form-group" ng-class="{'has-error':registration.item_name.$invalid && c.submitted }">
                     <label for="item_name">Item Name</label>
                     <input type="text" ng-model="c.item_name" id="item_name" name="item_name" ng-required="true">
@@ -395,29 +351,16 @@ hr {
                   </div>
                 </div>
                <div class="form-group">
-                    <!--<label for="item-image">Upload Image</label>-->
-                    <!--<input type="file" ng-model="c.image" accept="image/*" onchange="angular.element(this).scope().c.loadFile(event)">
-                  	<img id="output" style="max-width: 20%; height: auto;"/>-->
-                 
-                 File: <input type="file" id="fileToUpload" multiple onchange="angular.element(this).scope().setFiles(this)"/>
-                 <br/>      <div ng-show="files.length">
-                 <div ng-repeat="file in files.slice(0)">
-                   <span>{{file.webkitRelativePath || file.name}}</span>
-                   (<span ng-switch="file.size > 1024*1024">
-                   <span ng-switch-when="true">{{file.size / 1024 / 1024 | number:2}} MB</span>
-                   <span ng-switch-default>{{file.size / 1024 | number:2}} kB</span>
-                   </span>)<span class="glyphicon glyphicon-remove-circle" id="removeicon" ng-click="removeFiles(file)"></span>
-                 </div>
-                 <input type="button" ng-click="uploadFiles()" value="Upload" />
-                 </div>
+                    <label for="item-image">Upload Image</label>
+                    <input type="file" id="fileToUpload" multiple onchange="angular.element(this).scope().setFiles(this)"/>
                 </div>
-              
-                <button type="submit" class="btn">Add Item</button>
+              <div class="form-group">
+                <button type="submit" ng-click="uploadFiles()" value="Upload">Add Item</button>
+              </div>
             </form>
-        </div>
-      <div ng-if="c.message" id="errorMessage" class="alert alert-danger" role="alert">{{c.message}}</div>
-<div ng-if="c.success" id="successMessage" class="alert alert-success" role="alert">{{c.success}}</div>
     </div>
+</body>
+</html>
 ]]></template>
     </sp_widget>
 </record_update>

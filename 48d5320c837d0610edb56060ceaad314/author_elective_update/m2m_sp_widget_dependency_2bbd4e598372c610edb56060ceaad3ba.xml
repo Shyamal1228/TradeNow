@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="DELETE">
+        <sp_dependency display_value="item.paginate">7bd41bec83aa0210edb56060ceaad3b9</sp_dependency>
+        <sp_widget display_value="Item list lazy load">63bd46198372c610edb56060ceaad32d</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-14 04:52:03</sys_created_on>
+        <sys_id>2bbd4e598372c610edb56060ceaad3ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>item.paginate.Item list lazy load</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_2bbd4e598372c610edb56060ceaad3ba</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-14 04:52:03</sys_updated_on>
+    </m2m_sp_widget_dependency>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>m2m_sp_widget_dependency_2bbd4e598372c610edb56060ceaad3ba</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency"><m2m_sp_widget_dependency action="INSERT_OR_UPDATE"><sp_dependency display_value="item.paginate">7bd41bec83aa0210edb56060ceaad3b9</sp_dependency><sp_widget display_value="Item list lazy load">63bd46198372c610edb56060ceaad32d</sp_widget><sys_class_name>m2m_sp_widget_dependency</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-06-14 04:52:03</sys_created_on><sys_id>2bbd4e598372c610edb56060ceaad3ba</sys_id><sys_mod_count>0</sys_mod_count><sys_name>item.paginate.Item list lazy load</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>m2m_sp_widget_dependency_2bbd4e598372c610edb56060ceaad3ba</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-06-14 04:52:03</sys_updated_on></m2m_sp_widget_dependency></record_update>]]></payload>
+        <payload_hash>-2136403193</payload_hash>
+        <record_name>item.paginate.Item list lazy load</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-14 04:52:03</sys_created_on>
+        <sys_id>6fbd4e598372c610edb56060ceaad3bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1901516a1900000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-14 04:52:03</sys_updated_on>
+        <type>Widget Dependency</type>
+        <update_guid>a3bd4e59ed72c61010a41fa16349b6bc</update_guid>
+        <update_guid_history>a3bd4e59ed72c61010a41fa16349b6bc:-2136403193</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="item.paginate.Item list lazy load">90461ed183b2c610edb56060ceaad31e</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-14 05:29:13</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_widget_dependency">m2m_sp_widget_dependency</sys_db_object>
+        <sys_id>6bd67d496c8b40f5b503fb77b84553e1</sys_id>
+        <sys_metadata>2bbd4e598372c610edb56060ceaad3ba</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>item.paginate.Item list lazy load</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>m2m_sp_widget_dependency_2bbd4e598372c610edb56060ceaad3ba</sys_update_name>
+        <sys_update_version display_value="m2m_sp_widget_dependency_2bbd4e598372c610edb56060ceaad3ba">6fbd4e598372c610edb56060ceaad3bc</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-14 05:29:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

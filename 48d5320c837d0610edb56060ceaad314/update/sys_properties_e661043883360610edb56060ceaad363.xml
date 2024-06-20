@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>This properties will store the time duration for reserve item.</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_1383179_tradenow.reservation.duration</name>
+        <read_roles/>
+        <suffix>reservation.duration</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-12 05:43:55</sys_created_on>
+        <sys_id>e661043883360610edb56060ceaad363</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_1383179_tradenow.reservation.duration</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_properties_e661043883360610edb56060ceaad363</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-19 05:47:47</sys_updated_on>
+        <type>time_format</type>
+        <value>60</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=e661043883360610edb56060ceaad363"/>
+</record_update>

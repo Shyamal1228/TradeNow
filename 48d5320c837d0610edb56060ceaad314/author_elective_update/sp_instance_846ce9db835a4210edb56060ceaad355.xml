@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">a25caddb835a4210edb56060ceaad36d</sp_column>
+        <sp_widget display_value="HTML">8679ef89cb21120000f8d856634c9c4f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-26 11:02:43</sys_created_on>
+        <sys_id>846ce9db835a4210edb56060ceaad355</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_instance_846ce9db835a4210edb56060ceaad355</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-06 07:14:08</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"html": {
+		"value": "<div style=\"text-align: center; color: #04364a;\">\r\n<h2 style=\"font-weight: bold;\">All Items</h2>\r\n<hr style=\"border: none; height: 5px; width: 20%; background-color: #04364a; margin-butom: 7px;\" /></div>",
+		"displayValue": "<div style=\"text-align: center; color: #04364a;\">\n<h2 style=\"font-weight: bold;\">All Items</h2>\n<hr style=\"border: none; height: 5px; width: 20%; background-color: #04364a; margin-butom: 7px;\" /></div>"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=846ce9db835a4210edb56060ceaad355"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sp_instance_846ce9db835a4210edb56060ceaad355</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;a25caddb835a4210edb56060ceaad36d&lt;/sp_column&gt;&lt;sp_widget display_value="HTML"&gt;8679ef89cb21120000f8d856634c9c4f&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-26 11:02:43&lt;/sys_created_on&gt;&lt;sys_id&gt;846ce9db835a4210edb56060ceaad355&lt;/sys_id&gt;&lt;sys_mod_count&gt;8&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_846ce9db835a4210edb56060ceaad355&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-06 07:14:08&lt;/sys_updated_on&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"html": {
+		"value": "&lt;div style=\"text-align: center; color: #04364a;\"&gt;\r\n&lt;h2 style=\"font-weight: bold;\"&gt;All Items&lt;/h2&gt;\r\n&lt;hr style=\"border: none; height: 5px; width: 20%; background-color: #04364a; margin-butom: 7px;\" /&gt;&lt;/div&gt;",
+		"displayValue": "&lt;div style=\"text-align: center; color: #04364a;\"&gt;\n&lt;h2 style=\"font-weight: bold;\"&gt;All Items&lt;/h2&gt;\n&lt;hr style=\"border: none; height: 5px; width: 20%; background-color: #04364a; margin-butom: 7px;\" /&gt;&lt;/div&gt;"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=846ce9db835a4210edb56060ceaad355"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>221985043</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-06 07:14:08</sys_created_on>
+        <sys_id>4781653283e20210edb56060ceaad3fa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fec65d8960000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-06 07:14:08</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>0f8165329ae202107705b95ac411a4f9</update_guid>
+        <update_guid_history>0f8165329ae202107705b95ac411a4f9:221985043,1592f1933b9a421075cbbd7e3a8da396:-1787045101,3c11b153c59a4210fd87a07cd15ac06e:1177845619,8ecfa9df2d5a4210f1e9c818219cb1de:-525398465,17dee95fe15a421058bb7f6cf66fb51c:1084990463,7f6de9dbd35a42107e889b1f572bd86e:1146007647,5d4de9db0b5a421076128d8de702a11b:1262046495,3f0da5db5c5a4210828f740a23facb89:-285560001,886ce9db845a42105a40ab6b8c4e1156:-1108808509</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">b406ed9a8336ca10edb56060ceaad3b3</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-17 04:32:22</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>1d286f9cd67f4abf8384f78b9f424211</sys_id>
+        <sys_metadata>846ce9db835a4210edb56060ceaad355</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sp_instance_846ce9db835a4210edb56060ceaad355</sys_update_name>
+        <sys_update_version display_value="sp_instance_846ce9db835a4210edb56060ceaad355">4781653283e20210edb56060ceaad3fa</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-17 04:32:22</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

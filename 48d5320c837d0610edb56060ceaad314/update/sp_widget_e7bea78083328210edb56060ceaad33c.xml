@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller=function($scope,spUtil) {
+  /* widget controller */
+  var c = this;
+	c.Itembutton = function(st,sys_id) {
+		c.data.status=st;
+		c.data.sys_id=sys_id;
+		
+		// alert(st+" clicked and sys_id "+sys_id);
+		//c.server.update();
+			c.server.update().then(function(response) {
+      if (response) {
+				//c.data.status = null;
+       //alert('Update successful');
+      } else {
+       //alert('Update failed:', response.data.error);
+      }
+    });
+	}
+	
+	spUtil.recordWatch($scope, 'x_1383179_tradenow_item_list', "statusINavailable,readypickup,reserved,claimed", function(response) {
+	//console.log(response.data);
+		// statusINavailable,readypickup,reserved,claimed
+		c.server.update();
+});
+};]]></client_script>
         <controller_as>c</controller_as>
         <css>body {
     font-family: Arial, sans-serif;
@@ -204,6 +228,7 @@ hr.header-line{
 			description:gr.getValue('description'),
 			category:gr.getDisplayValue('category'),
 			condition:gr.getValue('condition'),
+			item_status:gr.getValue('status'),
 			//added
 			created_on:gr.getValue('sys_created_on').toString().substring(0, 10),
 			//
@@ -213,21 +238,35 @@ hr.header-line{
 		};
 		data.items.push(obj);
     }
-	 console.log(data.items);
+	 //console.log(data.items);
+		
+			if (input && input.status) {
+		// console.log("Button clicked="+input.status);
+
+	var grClaimItem = new GlideRecordSecure('x_1383179_tradenow_item_list');
+	grClaimItem.addQuery('sys_id', input.sys_id);
+	grClaimItem.query();
+	if (grClaimItem.next()) {
+			grClaimItem.setValue('status',input.status);
+			grClaimItem.update();
+	}
+		
+		return true;
+	}
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-10 14:43:26</sys_created_on>
         <sys_id>e7bea78083328210edb56060ceaad33c</sys_id>
-        <sys_mod_count>39</sys_mod_count>
+        <sys_mod_count>70</sys_mod_count>
         <sys_name>Reserved Items</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_e7bea78083328210edb56060ceaad33c</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-11 07:27:10</sys_updated_on>
+        <sys_updated_on>2024-06-12 07:43:50</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
@@ -255,8 +294,10 @@ hr.header-line{
                 <p>Category: {{item.category}}</p>
             </div>
             <div class="item-buttons">
-                  <button class="claim-item">Claim Item</button>
-                <button class="cancel">Cancel Reservation</button>
+                  <!--<button class="claim-item">Claim Item</button>
+                <button class="cancel">Cancel Reservation</button>-->
+              <button ng-if="item.item_status == 'available' || item.item_status == 'reserved'" ng-click="c.Itembutton('readypickup',item.sys_id)" class="claim-item">Claim Item</button>
+              <button ng-show="item.item_status == 'reserved'" ng-click="c.Itembutton('available',item.sys_id)" class="cancel">Cancel Reservation</button>
             </div>
         </div>
         <!--<div class="shopping-item">

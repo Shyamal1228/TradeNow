@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[/*api.controller=function($scope, spUtil, $element, $window) {
+	var c = this;
+	$element.hide();
+	var height = c.options.height_from_top || 300;
+	height = parseInt(height);
+	var lastScrollTop = 0;
+	var container = angular.element('.sp-scroll');
+	var windowElement = angular.element($window);
+	var handleScroll = function(e) {
+		var target = e.target;
+		var currentScroll = angular.element(target).scrollTop();
+		if(lastScrollTop > currentScroll && lastScrollTop > height && currentScroll > height) // moving up
+			$element.show();
+		else
+			$element.hide();
+		lastScrollTop = currentScroll;
+	}
+	container.on("scroll", handleScroll); // for large screen
+	windowElement.on("scroll", handleScroll); // for small screens
+
+
+	$scope.goTop = function() {
+		var animationDuration = 300;
+		if($window.scrollY > 0) {
+			$('html').animate({
+				scrollTop : 0
+			}, animationDuration);
+		} else {
+			spUtil.scrollTo('.sp-scroll', animationDuration);
+		}
+	}
+
+}*/
+
+api.controller = function($scope, spUtil, $element, $window) {
+    var c = this;
+    $element.hide();
+    var height = c.options.height_from_top || 300;
+    height = parseInt(height);
+    var lastScrollTop = 0;
+    var container = angular.element('.sp-scroll');
+    var windowElement = angular.element($window);
+
+    var handleScroll = function(e) {
+        var currentScroll = angular.element(e.target).scrollTop();
+
+        // Show button when scrolling down and past the defined height
+        if (lastScrollTop < currentScroll || lastScrollTop > currentScroll) { 
+            $element.show();
+        } else {
+            $element.hide();
+        }
+        lastScrollTop = currentScroll;
+    };
+
+    container.on("scroll", handleScroll); // For large screen
+    windowElement.on("scroll", handleScroll); // For small screens
+
+    $scope.goTop = function() {
+        var animationDuration = 300;
+        if ($window.scrollY > 0) {
+            $('html').animate({
+                scrollTop: 0
+            }, animationDuration);
+        } else {
+            spUtil.scrollTo('.sp-scroll', animationDuration);
+        }
+    };
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@media only screen and (max-width : 992px) {
+  .button-to-top-wrapper {
+    position: relative;
+    
+   button.button-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border-radius: 50% !important;
+    opacity: 0.7 !important;
+    padding: 12px !important;
+    border: 1px solid !important;
+    width: 47px;
+    height: 45px;
+    background-color: #008080;
+} 
+  }
+}
+button.button-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border-radius: 50% !important;
+    opacity: 0.7 !important;
+    padding: 12px !important;
+    border: 1px solid !important;
+    width: 47px;
+    height: 45px;
+    background-color: #008080;
+  	vertical-align: middle;
+  	//z-index:100;
+  color:#fff;
+}
+
+.button-to-top:hover {
+    transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+}
+
+/*button.button-to-top{
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff;
+	height: 0px;
+  width: 0px;
+  overflow: hidden;
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+  color: transparent;
+	clear: both;
+  visibility: hidden;
+  position: fixed;
+  cursor: pointer;
+  display: block;
+  border: none;
+  right: 50px;
+	bottom: 75px;
+  font-size: 0px;
+  outline: 0 !important;
+  z-index: 99;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+button.button-to-top:hover,
+button.button-to-top:active,
+button.button-to-top:focus,{
+  outline: 0 !important;
+}
+button.button-to-top::before,
+button.button-to-top::after {
+  content: "";
+    display: block;
+    vertical-align: middle;
+    border-bottom: solid 10px #EA5D5F;
+    border-left: solid 10px transparent;
+    line-height: 0;
+    border-right: solid 10px transparent;
+    height: 0;
+    margin: 18px auto 0;
+    width: 0;
+  border-radius:20px;
+  visibility: hidden;
+}
+button.button-to-top.show::after,
+button.button-to-top.show::before{
+  visibility: visible;
+}
+button.button-to-top::after {
+  border-bottom-color:#fff;
+      position: relative;
+  top:-24px;
+}
+button.button-to-top.show {
+  display: block;
+  background: #fff;
+  color: #00ab6c;
+  font-size: 25px;
+  right: 25px;
+	bottom: 50px;
+  height: 50px;
+  width: 50px;
+  visibility: visible;
+	box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+}
+button.button-to-top.show:active {
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+}*/</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Scroll to top</name>
+        <option_schema>[{"hint":"Height from top (px) after which control would display","name":"height_from_top","section":"other","default_value":"300","label":"Height from top (px)","type":"integer"}]</option_schema>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	data.scrollButtonLabel = gs.getMessage("Scroll to top");
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-18 06:04:10</sys_created_on>
+        <sys_id>8b940fee833e0e10edb56060ceaad3c9</sys_id>
+        <sys_mod_count>52</sys_mod_count>
+        <sys_name>Scroll to top</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_8b940fee833e0e10edb56060ceaad3c9</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-19 05:34:50</sys_updated_on>
+        <template><![CDATA[<div class="button-to-top-wrapper">
+	<button name="gotoTop" ng-click="goTop()" class="btn fa fa-arrow-up fa-lg padder-lg button-to-top pull-right"></button>
+</div>]]></template>
+    </sp_widget>
+</record_update>

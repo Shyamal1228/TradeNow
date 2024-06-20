@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>:root {
+    --black: #000000;
+    --white: #ffffff;
+    --darkest: #004c4c; /* Changed from #101010 */
+    --darker: #006666;  /* Changed from #16171A */
+    --dark: #66b2b2;    /* Changed from #A3AFBF */
+    --medium: #b2d8d8;  /* Changed from #DFE7EF */
+    --light: #b2d8d8;   /* Kept the same */
+    --lighter: #F5F8FC; /* Kept the same */
+    --lightest: var(--white);
+    
+    --primary: #008080; /* Changed from #7B16FF */
+    --primary-light: #66b2b2; /* Changed from #DDD9FF */
+    --primary-trans: rgba(0, 128, 128, 0.4); /* Changed to match --primary */
+    
+    --yellow: #FDCB6E;
+    --orange: #E17055;
+    --teal: #00CEC9;
+    
+    --bg: var(--darkest);
+    --color: var(--lightest);
+    --surface: var(--darker);
+}
+
+
+.l-wrapper {
+    width: 100%;
+    max-width: 980px;
+    margin: auto;
+    padding: 1.6rem 1.6rem 3.2rem;
+  	color: #ffffff;
+}
+
+.l-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 1.6rem;
+    grid-row-gap: 1.6rem;
+    position: relative;
+}
+
+@media screen and (max-width: 700px) {
+    .l-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.c-header {
+    padding: 1.6rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.4rem;
+    position: relative;
+  	color:#004c4c;
+  	font-size:4rem;
+  
+}
+
+.header{
+  text-align: center;
+  color: #004c4c;
+}
+.header&gt;h2{
+  //font-weight: bold;
+  color:#004c4c;
+}
+.header&gt;hr{
+  border: none;
+  height: 5px;
+  width: 35%;
+  background-color: #004c4c;
+  margin-butom: 2px;
+  margin-top: 0px;
+}
+.line{
+  border: none;
+  height: 5px;
+  width: 30%;
+  background-color: #fff;
+  margin-butom: 2px;
+  margin-top: 0px;
+}
+.c-logo {
+    display: inline-block;
+    max-width: 13.6rem; /* Equivalent to $spacing-unit*22 in SCSS */
+    user-select: none;
+}
+
+.c-button {
+    display: inline-block;
+    background-color: #A3AFBF;
+    border: none;
+    padding: 2.4rem 4rem;
+    transition: all 120ms ease-out 0s;
+    color: #ffffff;
+}
+
+.c-button--primary {
+    background-color: #7B16FF;
+}
+
+.c-card {
+    border-radius: 0.8rem;
+    //background-color: #66b2b2;
+  background: linear-gradient(to top, 	#66b2b2, 	#008080) !important;
+    width: 100%;
+    margin-bottom: 1.6rem;
+    //box-shadow: 0px 0px 0px 1px rgba(102, 178, 178, 0.2);
+  -webkit-box-shadow: -1px 0px 12px 0px rgba(102, 178, 178,1);
+-moz-box-shadow: -1px 0px 12px 0px rgba(102, 178, 178,1);
+box-shadow: -1px 0px 12px 0px rgba(102, 178, 178,1);
+}
+
+.c-card__body,
+.c-card__header {
+    padding: 2rem 4.8rem 4.8rem 4.8rem;
+}
+
+.c-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
+.c-select {
+    background-color: transparent;
+    padding: 2.4rem;
+    font-size: 1.4rem;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.c-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.c-list__item {
+    padding: 1.6rem 0;
+    display: grid;
+    grid-template-columns: 2.4rem 4fr 1fr;
+    column-gap: 4.8rem;
+    align-items: center;
+}
+
+.c-list__item--header {
+    //background-color: #66b2b2;
+ // background: linear-gradient(to top, #006666, #00CEC9) !important;
+    border-bottom: 1px solid #DFE7EF;
+    font-weight: bold;
+}
+
+.c-list__item img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    vertical-align: middle;
+}
+
+.c-list__grid {
+    display: flex;
+    align-items: center;
+}
+
+.u-text--left {
+    text-align: left;
+}
+
+.u-text--right {
+    text-align: right;
+}
+
+.u-text--small {
+    font-size: 1.4rem;
+}
+
+.u-text--center {
+    text-align: center;
+}
+
+.u-bg--light-gradient {
+    background: linear-gradient(to top, 	#b2d8d8, 	#008080) !important;
+  //#00CEC9, #ffffff
+}
+
+.u-display--flex {
+    display: flex;
+}
+
+.u-justify--space-between {
+    justify-content: space-between;
+}
+
+.u-align--center {
+    align-items: center;
+}
+
+.u-pb--2 {
+    padding-bottom: 0.8rem;
+}
+
+.u-mt--24 {
+    margin-top: 19.2rem;
+}
+
+.top-sender img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h3{
+  text-align:center;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>leaderboard</id>
+        <internal>false</internal>
+        <link><![CDATA[/*function link(scope, element, attrs, controller) {
+  // Sample data for the "Received Kudos" list
+var kudosData = [
+    { rank: "1st", teamMember: "John Doe", numKudos: 12, imgSrc: "https://img.freepik.com/free-photo/fashion-boy-with-yellow-jacket-blue-pants_71767-96.jpg?size=626&ext=jpg&ga=GA1.1.1795288707.1716529742&semt=sph" },
+    { rank: "2nd", teamMember: "Jane Smith", numKudos: 8, imgSrc: "https://img.freepik.com/free-photo/fashion-boy-with-yellow-jacket-blue-pants_71767-96.jpg?size=626&ext=jpg&ga=GA1.1.1795288707.1716529742&semt=sph" },
+    { rank: "3rd", teamMember: "Michael Johnson", numKudos: 5, imgSrc: "https://img.freepik.com/free-photo/fashion-boy-with-yellow-jacket-blue-pants_71767-96.jpg?size=626&ext=jpg&ga=GA1.1.1795288707.1716529742&semt=sph" },
+    { rank: "4th", teamMember: "Emily Brown", numKudos: 3, imgSrc: "https://img.freepik.com/free-photo/fashion-boy-with-yellow-jacket-blue-pants_71767-96.jpg?size=626&ext=jpg&ga=GA1.1.1795288707.1716529742&semt=sph" },
+    { rank: "5th", teamMember: "David Wilson", numKudos: 2, imgSrc: "https://img.freepik.com/free-photo/fashion-boy-with-yellow-jacket-blue-pants_71767-96.jpg?size=626&ext=jpg&ga=GA1.1.1795288707.1716529742&semt=sph" },
+];
+
+// Function to populate the "Received Kudos" list
+function populateKudosList() {
+    var list = document.getElementById('list');
+
+    // Clear existing content
+    list.innerHTML = ''; 
+
+    // Add the header
+    var header = document.createElement('li');
+    header.classList.add('c-list__item', 'c-list__item--header');
+    
+    var rankHeader = document.createElement('div');
+    rankHeader.classList.add('c-list__grid', 'u-text--left', 'u-text--small', 'u-text--medium');
+    rankHeader.textContent = 'Rank';
+    header.appendChild(rankHeader);
+    
+    var nameHeader = document.createElement('div');
+    nameHeader.classList.add('c-list__grid', 'u-text--left', 'u-text--small', 'u-text--medium');
+    nameHeader.textContent = 'Team Member';
+    header.appendChild(nameHeader);
+    
+    var kudosHeader = document.createElement('div');
+    kudosHeader.classList.add('c-list__grid', 'u-text--right', 'u-text--small', 'u-text--medium');
+    kudosHeader.textContent = '# of Kudos';
+    header.appendChild(kudosHeader);
+
+    list.appendChild(header);
+
+    // Add the data rows
+    kudosData.forEach(function(item) {
+        var li = document.createElement('li');
+        li.classList.add('c-list__item');
+
+        var rankDiv = document.createElement('div');
+        rankDiv.classList.add('c-list__grid', 'u-text--left', 'u-text--small', 'u-text--medium');
+        rankDiv.textContent = item.rank;
+        li.appendChild(rankDiv);
+
+        var teamMemberDiv = document.createElement('div');
+        teamMemberDiv.classList.add('c-list__grid', 'u-text--left', 'u-text--small', 'u-text--medium');
+        
+        var img = document.createElement('img');
+        img.src = item.imgSrc;
+        img.alt = item.teamMember;
+        
+        var span = document.createElement('span');
+        span.textContent = item.teamMember;
+
+        teamMemberDiv.appendChild(img);
+        teamMemberDiv.appendChild(span);
+        li.appendChild(teamMemberDiv);
+
+        var numKudosDiv = document.createElement('div');
+        numKudosDiv.classList.add('c-list__grid', 'u-text--right', 'u-text--small', 'u-text--medium');
+        numKudosDiv.textContent = item.numKudos;
+        li.appendChild(numKudosDiv);
+
+        list.appendChild(li);
+    });
+}
+
+// Call the function to populate the list initially
+populateKudosList();
+
+}*/]]></link>
+        <name>Leaderboard</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	 getUserDetails(gs.getUserID());
+	//console.log("dd" + JSON.stringify(userObj) + gs.getUserID());
+	//data.myimage = userObj.photo;
+	//data.myname = userObj.name;
+	//data.mypoints = userObj.points;
+	data.table = 'sys_user';
+	data.users = [];
+  var gr = new GlideRecord(data.table);
+	gr.orderByDesc('u_points');
+	gr.setLimit(5);
+  gr.query();
+	
+	var c=1;
+	while (gr.next()) {
+		var obj={
+			sys_id:gr.getValue('sys_id'),
+			name:gr.getValue('name'),
+			image_url: gr.getDisplayValue('photo'),
+			points:gr.getValue('u_points'),
+			rank:c
+		};
+		data.users.push(obj);
+		c++;
+	}
+	console.log(data.users);
+	// logged in users details
+	/*var userRecord = new GlideRecord('sys_user');
+    userRecord.addQuery('sys_id', gs.getUserID());
+    userRecord.query();*/
+		var count=1;
+		for(var i=0;i<data.users.length;i++){
+			if(data.users[i].sys_id!=gs.getUserID()){
+				count++;
+			}
+			else
+				{
+					//data.mypoints=data.users[i].points;
+					//data.myname=data.users[i].name;
+					//data.myimage=data.users[i].image_url;
+					break;
+				}
+		}
+	data.rank=count;
+	
+	function getUserDetails(user){
+		var grUser = new GlideRecord('sys_user');
+		grUser.get(user);
+		data.myname = grUser.getValue('name');
+		data.myimage = grUser.getDisplayValue('photo'); 
+		data.mypoints = grUser.getValue('u_points');
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-13 07:22:02</sys_created_on>
+        <sys_id>437669c5837e4610edb56060ceaad39b</sys_id>
+        <sys_mod_count>186</sys_mod_count>
+        <sys_name>Leaderboard</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_437669c5837e4610edb56060ceaad39b</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-18 15:39:44</sys_updated_on>
+        <template><![CDATA[<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+</style>
+    <div class="l-wrapper">
+        <!--<header class="c-header">
+        </header>-->
+      
+      <div class="header" >
+        <h2 class="poppins-semibold">Leaderboard</h2>
+        <hr/>
+      </div>
+        <div class="l-grid">
+            <div class="l-grid__item l-grid__item--sticky">
+                <div class="c-card u-bg--light-gradient u-text--dark">
+                    <div class="c-card__body">
+                        <div class="u-display--flex u-justify--space-between">
+                            <div class="u-text--left">
+                                <div class="u-text--small">My Rank</div>
+                                <h2>{{data.rank}}</h2>
+                            </div>
+                            <div class="u-text--right">
+                                <div class="u-text--small">My Points</div>
+                                <h2>{{data.mypoints}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-card">
+                    <div class="c-card__body">
+                        <div class="u-text--center" id="winner">
+                            <div class="top-sender">
+                                <img ng-src="{{data.myimage}}" alt="{{data.myname}}">
+                                <h3 class="poppins-regular">{{data.myname}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="l-grid__item">
+                <div class="c-card">
+                    <div class="c-card__body">
+                      <h3 class="poppins-semibold">Top 5 Users</h3>
+                      <hr class="line"/>
+                      <ul class="c-list" id="list">
+                          <li class="c-list__item c-list__item--header">
+                                 <div class="c-list__grid u-text--left u-text--small u-text--medium">Rank</div>
+                                <div class="c-list__grid u-text--left u-text--small u-text--medium">Users</div>
+                                <div class="c-list__grid u-text--right u-text--small u-text--medium"># of Points</div>
+                            </li>
+                        </ul>
+                        <ul class="c-list" id="list" ng-repeat="user in data.users">
+                            <!--<li class="c-list__item c-list__item--header">
+                                <div class="c-list__grid u-text--left u-text--small u-text--medium">Rank</div>
+                                <div class="c-list__grid u-text--left u-text--small u-text--medium">Users</div>
+                                <div class="c-list__grid u-text--right u-text--small u-text--medium"># of Points</div>
+                            </li>-->
+                          <li class="c-list__item c-list__item--header">
+                                <div class="c-list__grid u-text--left u-text--small u-text--medium">
+                                  {{user.rank}}&nbsp;
+                                  <svg ng-if="user.rank==1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 360 511.48"><path fill="#D0401B" d="m144.83 306.61 151.45-26.08L360 429.51l-78.8-.9-64.75 52.53z"/><path fill="#F60" d="m231.94 290.08-162.37 4.3L0 459.86l78.8-.91 64.75 52.53z"/><path fill="#F5C800" d="M183.21.03c9.35-.4 16.72 2.86 24.15 7.59 9.44 5.98 20.06 17.8 33.17 25.3 18.45 10.54 52.61-4 70.11 21.99 10.21 15.16 10.69 27.04 11.45 38.78.82 12.67 3.04 24.32 16 41.47 21.47 28.38 25.94 47.27 14.88 66.96-7.54 13.42-23.41 20.88-27.09 29.38-7.81 18.09.83 31.72-9.87 52.81-7.43 14.62-18.89 24.26-34.16 29.18-12.88 4.14-25.8-1.85-36.1 2.48-18.12 7.61-31.48 25.3-45.89 29.77-5.57 1.73-11.11 2.58-16.65 2.54-5.53.04-11.08-.81-16.64-2.54-14.42-4.47-27.78-22.16-45.9-29.77-10.3-4.33-23.22 1.66-36.1-2.48-15.26-4.92-26.73-14.56-34.16-29.18-10.7-21.09-2.06-34.72-9.87-52.81-3.68-8.5-19.55-15.96-27.09-29.38-11.06-19.69-6.58-38.58 14.88-66.96 12.96-17.15 15.18-28.8 16-41.47.76-11.74 1.24-23.62 11.45-38.78 17.5-25.99 51.66-11.45 70.11-21.99 13.12-7.5 23.73-19.32 33.17-25.3 7.44-4.73 14.81-7.99 24.15-7.59z"/><path fill="#FFDD61" d="M183.21.04c9.35-.41 16.71 2.86 24.15 7.58 9.44 5.98 20.06 17.8 33.17 25.3 14.67 8.38 39.28.91 57.54 10.56L91.95 314.9c-2.45-.2-4.92-.62-7.38-1.41-15.27-4.92-26.73-14.55-34.16-29.18-10.7-21.09-2.06-34.72-9.87-52.81-3.68-8.5-19.55-15.96-27.09-29.38-11.06-19.69-6.58-38.58 14.87-66.96 12.97-17.14 15.19-28.8 16.01-41.47.76-11.74 1.24-23.62 11.44-38.78 17.51-26 51.68-11.45 70.12-21.99 13.12-7.5 23.74-19.32 33.17-25.3C166.5 2.9 173.87-.37 183.21.04z"/><path fill="#E37E00" d="M182.71 46.79c71.81 0 130.03 58.22 130.03 130.04 0 71.81-58.22 130.03-130.03 130.03-71.82 0-130.04-58.22-130.04-130.03 0-71.82 58.22-130.04 130.04-130.04z"/><path fill="#fff" d="M182.71 72.88c57.41 0 103.94 46.54 103.94 103.95 0 57.41-46.53 103.94-103.94 103.94S78.76 234.24 78.76 176.83 125.3 72.88 182.71 72.88z"/><path fill="#EDEDED" d="M182.71 72.88c27.48 0 52.49 10.67 71.07 28.09l-127.44 163.2c-4.62-2.98-8.99-6.33-13.07-9.99-21.18-19.02-34.51-46.63-34.51-77.35 0-57.41 46.54-103.95 103.95-103.95z"/><path fill-rule="nonzero" d="M221.66 228.94h-77.9v-26.98h25.09v-44.68l-25.09 2.02v-26.98l33.85-8.76h26.65v78.4h17.4z"/></svg>
+                            			<svg ng-if="user.rank==2" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 360 511.48"><path fill="#D0401B" d="m144.83 306.61 151.45-26.08L360 429.51l-78.8-.9-64.75 52.53z"/><path fill="#F60" d="m231.94 290.08-162.37 4.3L0 459.86l78.8-.91 64.75 52.53z"/><path fill="#F5C800" d="M183.21.03c9.35-.4 16.72 2.86 24.15 7.59 9.44 5.98 20.06 17.8 33.17 25.3 18.45 10.54 52.61-4 70.11 21.99 10.21 15.16 10.69 27.04 11.45 38.78.82 12.67 3.04 24.32 16 41.47 21.47 28.38 25.94 47.27 14.88 66.96-7.54 13.42-23.41 20.88-27.09 29.38-7.81 18.09.83 31.72-9.87 52.81-7.43 14.62-18.89 24.26-34.16 29.18-12.88 4.14-25.8-1.85-36.1 2.48-18.12 7.61-31.48 25.3-45.89 29.77-5.57 1.73-11.11 2.58-16.65 2.54-5.53.04-11.08-.81-16.64-2.54-14.42-4.47-27.78-22.16-45.9-29.77-10.3-4.33-23.22 1.66-36.1-2.48-15.26-4.92-26.73-14.56-34.16-29.18-10.7-21.09-2.06-34.72-9.87-52.81-3.68-8.5-19.55-15.96-27.09-29.38-11.06-19.69-6.58-38.58 14.88-66.96 12.96-17.15 15.18-28.8 16-41.47.76-11.74 1.24-23.62 11.45-38.78 17.5-25.99 51.66-11.45 70.11-21.99 13.12-7.5 23.73-19.32 33.17-25.3 7.44-4.73 14.81-7.99 24.15-7.59z"/><path fill="#FFDD61" d="M183.21.04c9.35-.41 16.71 2.86 24.15 7.58 9.44 5.98 20.06 17.8 33.17 25.3 14.67 8.38 39.28.91 57.54 10.56L91.95 314.9c-2.45-.2-4.92-.62-7.38-1.41-15.27-4.92-26.73-14.55-34.16-29.18-10.7-21.09-2.06-34.72-9.87-52.81-3.68-8.5-19.55-15.96-27.09-29.38-11.06-19.69-6.58-38.58 14.87-66.96 12.97-17.14 15.19-28.8 16.01-41.47.76-11.74 1.24-23.62 11.44-38.78 17.51-26 51.68-11.45 70.12-21.99 13.12-7.5 23.74-19.32 33.17-25.3C166.5 2.9 173.87-.37 183.21.04z"/><circle fill="#E37E00" cx="182.71" cy="176.83" r="130.04"/><circle fill="#fff" cx="182.71" cy="176.83" r="103.95"/><path fill="#EDEDED" d="M182.71 72.88c27.48 0 52.49 10.67 71.07 28.09l-127.44 163.2c-4.62-2.98-8.99-6.33-13.07-9.99-21.18-19.02-34.51-46.63-34.51-77.35 0-57.41 46.54-103.95 103.95-103.95z"/><path fill-rule="nonzero" d="m145.36 154.4-4.38-25.11c14.16-4.28 28.27-6.41 42.32-6.41 5.62 0 10.31.17 14.08.5 3.76.34 7.67 1.18 11.72 2.53 4.04 1.35 7.24 3.21 9.6 5.57 5.4 5.39 8.09 13.65 8.09 24.78s-3.14 19.33-9.43 24.62c-6.3 5.28-19.56 11.35-39.8 18.2v4.73h47.55v26.97h-86.49v-21.07c0-6.3 1.18-12.31 3.54-18.05 1.46-3.25 5-7.19 10.62-11.79 3.03-2.59 7.11-5.06 12.22-7.42 5.11-2.37 9.95-4.59 14.5-6.67 4.56-2.08 8.23-3.79 11.05-5.14v-9.1c-5.06-.56-9.72-.84-14-.84-10.34 0-20.74 1.23-31.19 3.7z"/></svg>
+                            			<svg ng-if="user.rank==3" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 360 511.48"><path fill="#D0401B" d="m144.83 306.61 151.45-26.08L360 429.51l-78.8-.9-64.75 52.53z"/><path fill="#F60" d="m231.94 290.08-162.37 4.3L0 459.86l78.8-.91 64.75 52.53z"/><path fill="#F5C800" d="M183.21.03c9.35-.4 16.72 2.86 24.15 7.59 9.44 5.98 20.06 17.8 33.17 25.3 18.45 10.54 52.62-4 70.12 21.99 10.2 15.16 10.68 27.04 11.44 38.78.82 12.67 3.04 24.32 16.01 41.47 21.46 28.38 25.93 47.27 14.87 66.96-7.54 13.42-23.41 20.88-27.09 29.38-7.81 18.09.83 31.72-9.87 52.81-7.43 14.62-18.89 24.26-34.16 29.18-12.87 4.14-25.79-1.85-36.1 2.48-18.12 7.61-31.48 25.3-45.89 29.77-5.57 1.73-11.11 2.58-16.65 2.54-5.53.04-11.08-.81-16.64-2.54-14.42-4.47-27.78-22.16-45.89-29.77-10.31-4.33-23.23 1.66-36.11-2.48-15.26-4.92-26.73-14.56-34.16-29.18-10.7-21.09-2.05-34.72-9.87-52.81-3.67-8.5-19.55-15.96-27.09-29.38-11.05-19.69-6.58-38.58 14.88-66.96 12.96-17.15 15.18-28.8 16-41.47.76-11.74 1.24-23.62 11.45-38.78 17.5-25.99 51.66-11.45 70.11-21.99 13.12-7.5 23.73-19.32 33.17-25.3 7.44-4.73 14.81-7.99 24.15-7.59z"/><path fill="#FFDD61" d="M183.21.04c9.35-.41 16.71 2.86 24.15 7.58 9.44 5.98 20.06 17.8 33.17 25.3 14.67 8.38 39.28.91 57.55 10.56L91.95 314.9c-2.45-.2-4.92-.62-7.38-1.41-15.27-4.92-26.73-14.55-34.16-29.18-10.7-21.09-2.05-34.72-9.87-52.81-3.67-8.5-19.55-15.96-27.09-29.38-11.06-19.69-6.58-38.58 14.88-66.96 12.96-17.14 15.18-28.8 16-41.47.76-11.74 1.24-23.62 11.44-38.78 17.51-26 51.68-11.45 70.12-21.99 13.12-7.5 23.74-19.32 33.17-25.3C166.5 2.9 173.87-.37 183.21.04z"/><circle fill="#E37E00" cx="182.71" cy="176.83" r="130.04"/><circle fill="#fff" cx="182.71" cy="176.83" r="103.95"/><path fill="#EDEDED" d="M182.71 72.88c27.48 0 52.49 10.67 71.07 28.09l-127.44 163.2c-4.62-2.98-8.99-6.33-13.07-9.99-21.18-19.02-34.51-46.63-34.51-77.35 0-57.41 46.54-103.95 103.95-103.95z"/><path fill-rule="nonzero" d="M190.04 161.24v-10.96c-3.37-.56-8.83-.84-16.36-.84-7.53 0-16.91 1.18-28.15 3.54l-4.39-24.95c13.72-4.28 26.98-6.41 39.79-6.41 11.02 0 19 .67 23.94 2.02 4.95 1.35 8.61 2.98 10.96 4.89 5.18 4.38 7.76 11.01 7.76 19.89 0 11.24-4.67 19.34-13.99 24.28v.85c11.13 4.6 16.69 12.98 16.69 25.12 0 5.95-.93 11.04-2.78 15.25-1.86 4.22-4.19 7.48-7 9.79-2.81 2.3-6.52 4.13-11.13 5.48-6.86 1.91-16.49 2.86-28.91 2.86-12.42 0-24.87-1.46-37.35-4.38l4.72-27.82c10.68 2.58 19.73 3.87 27.15 3.87 7.42 0 13.77-.33 19.05-1.01v-10.78l-29-2.87v-24.45l29-3.37z"/></svg>
+                            </div>
+                                <div class="c-list__grid u-text--left u-text--small u-text--medium"><img ng-if="user.image_url" ng-src="{{user.image_url}}" alt="User Image"><img ng-if="!user.image_url" ng-src="user.png" alt="Default Image">{{user.name}}</div>
+                                <div class="c-list__grid u-text--right u-text--small u-text--medium"> <i class="fas fa-coins"></i>&nbsp;{{user.points}}</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://kit.fontawesome.com/ebe15838fd.js" crossorigin="anonymous"></script>]]></template>
+    </sp_widget>
+</record_update>

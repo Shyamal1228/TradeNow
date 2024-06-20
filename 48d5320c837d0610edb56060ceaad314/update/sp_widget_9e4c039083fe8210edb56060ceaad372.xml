@@ -17,7 +17,7 @@
 		c.data.status=st;
 			
 			if(st=='reserved'){
-				spUtil.addInfoMessage("Item will be reserved for 30 sec !")
+				spUtil.addInfoMessage("Item will be reserved for "+c.data.timeProperty+ " seconds!")
 			}
 		//c.server.update();
 			c.server.update().then(function(response) {
@@ -608,13 +608,23 @@ iframe {
     border-radius: 10px;
     overflow: hidden;
 }
-</css>
+
+
+.icons{
+  width:25px;
+}
+
+.svg{
+  margin-left:-2px;
+  margin-right:6px;
+  margin-bottom:-4px;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>item_details_testing</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
@@ -628,6 +638,7 @@ iframe {
 	var table_name = $sp.getParameter('table');
 	var targetSysId = $sp.getParameter('sys_id');
 	
+	data.timeProperty = gs.getProperty('x_1383179_tradenow.reservation.duration');
 	//console.log(table_name);
 	//console.log(targetSysId);
 	//data.details = [];
@@ -745,14 +756,14 @@ iframe {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-11 06:51:22</sys_created_on>
         <sys_id>9e4c039083fe8210edb56060ceaad372</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>120</sys_mod_count>
         <sys_name>Item details Testing</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_9e4c039083fe8210edb56060ceaad372</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-11 17:59:21</sys_updated_on>
+        <sys_updated_on>2024-06-13 11:34:46</sys_updated_on>
         <template><![CDATA[
 <div class="container">
   <div class="image">
@@ -767,13 +778,15 @@ iframe {
     </div>
     <ul class="features">
 
-      <li class="poppins-regular"> <i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Available:</strong> in stock</li>
-      <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Category:</strong> {{data.obj.category}}</li>
-      <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Condition:</strong> {{data.obj.condition}}</li>
-      <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Lister:</strong> {{data.obj.lister}}</li>
+      <li class="poppins-regular"><svg class="svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48">
+<path fill="#4caf50" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path fill="#ccff90" d="M34.602,14.602L21,28.199l-5.602-5.598l-2.797,2.797L21,33.801l16.398-16.402L34.602,14.602z"></path>
+</svg><strong>Item Status:</strong> {{data.obj.item_status}}</li>
+      <li class="poppins-regular"><i class="fa-solid fa-layer-group icons" style="color: #00a83b;"></i><strong>Category:</strong> {{data.obj.category}}</li>
+      <li class="poppins-regular"><i class="fa-solid fa-signal icons" style="color: #23be04;"></i><strong>Condition:</strong> {{data.obj.condition}}</li>
+      <li class="poppins-regular"><i class="fa-solid fa-user icons" style="color: #0b3fa8;"></i><strong>Item Lister:</strong> {{data.obj.lister}}</li>
       <!--<li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Location:</strong><a target="_blank" href="https://www.google.com/maps?q={{data.obj.latitude}},{{data.obj.longitude}}"><button class="bn632-hover bn26 poppins-regular">View location</button></a></li>-->
-      <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Location:</strong> {{data.obj.location}}</li>
-      <li class="poppins-regular"><i class="fa fa-circle" style="color: #176B87; margin-right:5px;"></i><strong>Item Distance:</strong> {{c.distance }} KM away</li>
+      <li class="poppins-regular"><i class="fa-solid fa-location-dot fa-xl icons" style="color: #f90101;"></i><strong>Item Location:</strong> {{data.obj.location}}</li>
+      <li class="poppins-regular"><i class="fa-solid fa-location-arrow icons" style="color: #2073a7;"></i><strong>Item Distance:</strong> {{c.distance }} KM away</li>
 
     </ul>
    <!-- <div class="actions">
@@ -808,6 +821,7 @@ iframe {
   <!--<iframe ng-show="c.mapVisible" src="https://maps.google.com/maps?q=50.085273, 14.40448&z=15&output=embed" frameborder="0" style="border:0"></iframe>-->
   <iframe ng-show="c.mapVisible" ng-src="{{detailFrame}}"></iframe>
 </div>
-]]></template>
+
+<script src="https://kit.fontawesome.com/ebe15838fd.js" crossorigin="anonymous"></script>]]></template>
     </sp_widget>
 </record_update>

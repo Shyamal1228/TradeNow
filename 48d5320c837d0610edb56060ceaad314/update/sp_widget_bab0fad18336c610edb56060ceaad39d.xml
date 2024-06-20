@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $window, $rootScope, $http, $timeout) {
+    var c = this;
+    $scope.displayNumber = 20;    
+    var index = 0;
+
+    c.data.incidents = [];
+
+    c.getIncidents = function () {
+        var params = [
+            'sysparm_fields=category,number,short_description,priority,state',
+            'sysparm_offset=' + index * 20,
+            'sysparm_limit=20'
+        ].join('&');
+
+        $http.get('/api/now/table/incident?' + params)
+            .then(function(res) {
+                var data = res.data.result.slice();
+                c.data.incidents = c.data.incidents.concat(data);
+                index++;
+            });
+    };
+
+    c.getIncidents();
+
+    var debounce = function(func, wait) {
+        var timeout;
+        return function() {
+            var context = this, args = arguments;
+            var later = function() {
+                timeout = null;
+                func.apply(context, args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    };
+
+    var emnt = document.getElementsByClassName('scrollable-container')[0];    
+    $scope.loadPoint = false;
+
+    var checkScroll = debounce(function() {
+        if (emnt.scrollHeight - emnt.scrollTop - emnt.clientHeight < 200) {
+            $scope.loadPoint = true;
+            $scope.$apply(function() {
+                c.getIncidents();
+                $scope.displayNumber += 20;
+            });
+        }
+    }, 200);
+
+    $(emnt).on('scroll', checkScroll);
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>th {
+  min-width: 12rem;
+  margin: 2rem;
+}
+
+td {
+  padding-top: 2rem;
+}
+
+.description {
+  min-width: 20rem;
+}
+
+.mid {
+  text-align: center;
+}
+
+.scrollable-container {
+  height: 400px; /* Set your desired height */
+  overflow-y: auto;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>item_list_lazy_load_snippet</id>
+        <internal>false</internal>
+        <link/>
+        <name>Item List Lazy load Snippet</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.table = 'x_1383179_tradenow_item_list';
+	data.items = [];
+  var gr = new GlideRecord(data.table);
+	gr.orderByDesc('sys_created_on');
+	//gr.setLimit(4);
+  gr.query();
+	while (gr.next()) {
+		var obj={
+			sys_id:gr.getValue('sys_id'),
+			name:gr.getValue('item_name'),
+			description:gr.getValue('description'),
+			category:gr.getValue('category'),
+			//added
+			created_on:gr.getValue('sys_created_on').toString().substring(0, 10),
+			//
+			//image_url: null
+			image_url: gr.getDisplayValue('image'),
+			watching: gr.getValue('total_watchers')
+		};
+		//added
+/*var inputDate = obj.created_on;
+var parsedDate = new GlideDateTime(inputDate);
+var monthAbbreviation = parsedDate.getDayOfMonthUTC();
+var dayOfMonth = parsedDate.getDayOfMonth();
+var year = parsedDate.getYear();
+
+var formattedDate = monthAbbreviation + " " + dayOfMonth + ", " + year;
+obj.date=formattedDate;
+gs.info("Formatted Date: " + formattedDate);*/
+
+		
+		
+		/*var attachmentGr = new GlideRecord('sys_attachment');
+		attachmentGr.addQuery('table_sys_id', gr.getUniqueValue());
+		attachmentGr.query();
+
+		if (attachmentGr.next()) {
+			obj.image_url = '/sys_attachment.do?sys_id=' + attachmentGr.getValue('sys_id');
+		}*/
+		data.items.push(obj);
+     // data.items.push(gr.getValue('number')); // assuming 'number' is the field you want to print
+    }
+	 //console.log(data.items);
+	
+	data.categoryArray = [];
+  var categoryList = new GlideRecord('x_1383179_tradenow_category_lookup');
+	categoryList.query();
+	while (categoryList.next()) {
+		
+		var catObj={
+			name:categoryList.getValue('name'),
+			sys_id:categoryList.getValue('sys_id'),
+		};
+		data.categoryArray.push(catObj);
+		//data.categoryArray.push(categoryList.getValue('name'));
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-14 07:24:54</sys_created_on>
+        <sys_id>bab0fad18336c610edb56060ceaad39d</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Item List Lazy load Snippet</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_bab0fad18336c610edb56060ceaad39d</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-16 19:12:13</sys_updated_on>
+        <template><![CDATA[<div>
+  <div class="scrollable-container">
+    <table>
+      <thead>
+        <th scope="col" colspan="1">
+          Category
+        </th>
+        <th scope="col" colspan="1">
+          Number
+        </th>
+        <th class="description">
+          Short Description
+        </th>
+        <th scope="col" colspan="1" class="mid">
+          Priority
+        </th>
+        <th scope="col" colspan="1" class="mid">
+          State
+        </th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="incident in c.data.incidents | limitTo: displayNumber">
+          <td ng-bind-html="::incident.category"></td>
+          <td ng-bind-html="::incident.number"></td>
+          <td ng-bind-html="::incident.short_description"></td>
+          <td ng-bind-html="::incident.priority" class="mid"></td>
+          <td ng-bind-html="::incident.state" class="mid"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+]]></template>
+    </sp_widget>
+</record_update>

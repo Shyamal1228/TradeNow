@@ -1588,7 +1588,10 @@
     }
 
     // populate the 'data' object
-    data.link = '?id=hri_user_profile&sys_id=' + gs.getUserID();
+    //data.link = '?id=hri_user_profile&sys_id=' + gs.getUserID();/*this*/
+	   // data.link = '?id=my_profile&sys_id=' + gs.getUserID();
+	    data.link = '?id=sample_user_profile';
+
 
     // Defines the support queue ID that will be linked to by the Live Chat link in header
     data.login_page = $sp.getValue('login_page');
@@ -1680,7 +1683,7 @@
     data.typeahead = $sp.getWidget('typeahead-search', typeAheadOptions);
     data.loginWidget = $sp.getWidgetFromInstance('login-modal');
     data.avatarDropDown = $sp.getWidget('profile-with-drop-down', {
-        "profile_url": data.link,
+        "profile_url": "www.google.com",
         "show_xs_avatar": false
     });
 })();]]></script>
@@ -1689,14 +1692,14 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-24 05:11:28</sys_created_on>
         <sys_id>5fc802ee83128210edb56060ceaad3b5</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Tradenow Header</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_5fc802ee83128210edb56060ceaad3b5</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-24 05:11:28</sys_updated_on>
+        <sys_updated_on>2024-06-18 17:33:40</sys_updated_on>
         <template><![CDATA[<!-- Nav bar menu items starts-->
 <nav class="navbar-inverse" aria-label="Primary" role="navigation" ng-if="!showViewAsHeader">
 

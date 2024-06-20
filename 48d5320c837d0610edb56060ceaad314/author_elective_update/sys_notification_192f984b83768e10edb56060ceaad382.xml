@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_notification">
+    <sys_notification action="DELETE">
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_update>true</action_update>
+        <active>true</active>
+        <advanced_event_condition>false</advanced_event_condition>
+        <category/>
+        <condition table="x_1383179_tradenow_item_list">statusCHANGESTOreadypickup^ORstatusCHANGESTOreserved^ORstatusCHANGESTOclaimed^EQ<item display_value="Ready to Pickup" endquery="false" field="status" goto="false" newquery="false" operator="CHANGESTO" or="false" value="readypickup"/>
+            <item display_value="Reserved" endquery="false" field="status" goto="false" newquery="false" operator="CHANGESTO" or="true" value="reserved"/>
+            <item display_value="Claimed" endquery="false" field="status" goto="false" newquery="false" operator="CHANGESTO" or="true" value="claimed"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <description/>
+        <event/>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_1_table>sys_user</event_parm_1_table>
+        <event_parm_2>false</event_parm_2>
+        <event_parm_2_table>sys_user</event_parm_2_table>
+        <include_originator>true</include_originator>
+        <name>Tradenow Notification</name>
+        <order>100</order>
+        <recipient_fields>claimer</recipient_fields>
+        <recipient_users/>
+        <script><![CDATA[(function runRecipientScript(/*String*/ parm1, /*String*/ parm2) {
+      /*
+      //Create instance of AdvancedNotificationRecipients to add recipients
+      var nr = new sn_notification.AdvancedNotificationRecipients();
+      var sysIds = [];
+      var gr = new GlideRecord('sys_user');
+      gr.addQuery('first_name','IN',parm1);
+      gr.query();
+      while (gr.next()) {
+        sysIds.push(gr.getValue('sys_id'));
+      }
+      nr.addRecipientInfo('sys_user',sysIds);
+      return nr;*/
+      })(parm1,parm2);]]></script>
+        <sys_class_name>sys_notification</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-19 07:20:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>192f984b83768e10edb56060ceaad382</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Tradenow Notification</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_notification_192f984b83768e10edb56060ceaad382</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-19 07:36:55</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
+        <triggered_by>record_change</triggered_by>
+    </sys_notification>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_notification_192f984b83768e10edb56060ceaad382</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_notification"&gt;&lt;sys_notification action="INSERT_OR_UPDATE"&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;false&lt;/action_insert&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;advanced_event_condition&gt;false&lt;/advanced_event_condition&gt;&lt;category/&gt;&lt;condition table="x_1383179_tradenow_item_list"&gt;statusCHANGESTOreadypickup^ORstatusCHANGESTOreserved^ORstatusCHANGESTOclaimed^EQ&lt;item display_value="Ready to Pickup" endquery="false" field="status" goto="false" newquery="false" operator="CHANGESTO" or="false" value="readypickup"/&gt;&lt;item display_value="Reserved" endquery="false" field="status" goto="false" newquery="false" operator="CHANGESTO" or="true" value="reserved"/&gt;&lt;item display_value="Claimed" endquery="false" field="status" goto="false" newquery="false" operator="CHANGESTO" or="true" value="claimed"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/condition&gt;&lt;description/&gt;&lt;event/&gt;&lt;event_parm_1&gt;false&lt;/event_parm_1&gt;&lt;event_parm_1_table&gt;sys_user&lt;/event_parm_1_table&gt;&lt;event_parm_2&gt;false&lt;/event_parm_2&gt;&lt;event_parm_2_table&gt;sys_user&lt;/event_parm_2_table&gt;&lt;include_originator&gt;true&lt;/include_originator&gt;&lt;name&gt;Tradenow Notification&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;recipient_fields&gt;claimer&lt;/recipient_fields&gt;&lt;recipient_users/&gt;&lt;script&gt;&lt;![CDATA[(function runRecipientScript(/*String*/ parm1, /*String*/ parm2) {
+      /*
+      //Create instance of AdvancedNotificationRecipients to add recipients
+      var nr = new sn_notification.AdvancedNotificationRecipients();
+      var sysIds = [];
+      var gr = new GlideRecord('sys_user');
+      gr.addQuery('first_name','IN',parm1);
+      gr.query();
+      while (gr.next()) {
+        sysIds.push(gr.getValue('sys_id'));
+      }
+      nr.addRecipientInfo('sys_user',sysIds);
+      return nr;*/
+      })(parm1,parm2);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_notification&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-19 07:20:38&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;192f984b83768e10edb56060ceaad382&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Tradenow Notification&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_notification_192f984b83768e10edb56060ceaad382&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-19 07:36:55&lt;/sys_updated_on&gt;&lt;table&gt;x_1383179_tradenow_item_list&lt;/table&gt;&lt;triggered_by&gt;record_change&lt;/triggered_by&gt;&lt;/sys_notification&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1986946294</payload_hash>
+        <record_name>Tradenow Notification</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-19 07:36:55</sys_created_on>
+        <sys_id>af63e48f83768e10edb56060ceaad3f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1902f6d61b30000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-19 07:36:55</sys_updated_on>
+        <type>Notification</type>
+        <update_guid>6763e48f51768e10bb7e954afdce2ef8</update_guid>
+        <update_guid_history>6763e48f51768e10bb7e954afdce2ef8:-1986946294,9b70a84b87768e10380e506d829af834:-217605320,cdbf944b2c768e10b823bcba4a381fc3:-1757500761</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-20 04:36:46</sys_created_on>
+        <sys_db_object display_value="" name="sys_notification">sys_notification</sys_db_object>
+        <sys_id>03726ccb421d46048b7efc35ae4a52c4</sys_id>
+        <sys_metadata>192f984b83768e10edb56060ceaad382</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Tradenow Notification</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_notification_192f984b83768e10edb56060ceaad382</sys_update_name>
+        <sys_update_version display_value="sys_notification_192f984b83768e10edb56060ceaad382">af63e48f83768e10edb56060ceaad3f8</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-20 04:36:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -16,9 +16,9 @@
     }
 
     var statusValue = g_form.getValue('status');
-    if (statusValue === 'available') {
+    if (statusValue == 'available') {
         g_form.clearValue('claimer');
-        g_form.clearValue('email');
+        g_form.clearValue('claimer_email');
 		g_form.save();
     }
 
@@ -29,7 +29,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c6db204983c24610edb56060ceaad34a</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>Clear claimer detailson available status</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -37,7 +37,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_script_client_c6db204983c24610edb56060ceaad34a</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-08 18:31:12</sys_updated_on>
+        <sys_updated_on>2024-06-19 07:01:40</sys_updated_on>
         <table>x_1383179_tradenow_item_list</table>
         <type>onChange</type>
         <ui_type>10</ui_type>

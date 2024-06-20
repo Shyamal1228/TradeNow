@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>up_arrow</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  // ===== Scroll to Top ==== 
+
+}]]></link>
+        <name>Up arrow</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-16 19:14:48</sys_created_on>
+        <sys_id>5566afce83fa8a10edb56060ceaad357</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Up arrow</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_5566afce83fa8a10edb56060ceaad357</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-16 19:38:25</sys_updated_on>
+        <template><![CDATA[<!-- Return to Top -->
+<a id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+
+<!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+  
+<!-- Test the scroll -->
+<div style="height:2000px;">
+  
+  <h3>Scroll down</h3>
+  <h3><i class="icon-arrow-down"></i>
+  
+</div>
+  
+  
+<!-- HTML -->
+<div style="height:2000px;" class="scroll-up-arrow" onclick="scrollToTop()">↑</div>
+
+<!-- CSS -->
+<style>
+  .scroll-up-arrow {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: none; /* Initially hidden */
+    z-index: 1000;
+    cursor: pointer;
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 200) {
+      document.querySelector('.scroll-up-arrow').style.display = 'block';
+    } else {
+      document.querySelector('.scroll-up-arrow').style.display = 'none';
+    }
+  });
+
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 1024) {
+      document.querySelector('.scroll-up-arrow').style.display = 'block';
+    } else {
+      document.querySelector('.scroll-up-arrow').style.display = 'none';
+    }
+  });
+</script>
+]]></template>
+    </sp_widget>
+</record_update>

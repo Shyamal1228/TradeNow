@@ -5,6 +5,8 @@
         <controller_as>c</controller_as>
         <css>.top-container{
   margin-top:50px;
+  background-color:#fff;
+  padding-bottom:25px;
 }
 .testimonials {
   margin-top: 15px;
@@ -40,7 +42,7 @@ figure.snip1390 {
   text-align: center;
   font-size: 16px;
   //background-color: #293e40;
-  background-color: #176B87;
+  background-color: #b2d8d8;
   padding: 30px;
   background-image: linear-gradient(-25deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
   box-sizing: border-box;
@@ -67,18 +69,18 @@ figure.snip1390 blockquote {
 figure.snip1390 h2,
 figure.snip1390 h4 {
   font-weight: 300;
-  color: #ffffff;
+  color: 	#004c4c;
 }
 
 figure.snip1390 h4 {
-  color: #a6a6a6;
+  color: #008080;
 }
 
 figure.snip1390 blockquote {
   font-size: 1em;
   padding: 45px 20px 40px 50px;
   margin-top: 30px;
-  background-color: #ffffff;
+  background-color:#fff;
   border-radius: 5px;
   box-shadow: inset -1.4px -1.4px 2px rgba(0, 0, 0, 0.3);
   text-align: left;
@@ -102,7 +104,7 @@ figure.snip1390 .profile {
   display: inline-block;
   box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4);
   margin-bottom: 10px;
-  border: solid 5px #A6A57A;
+  //border: solid 5px #A6A57A;
 }
 
 @media (max-width: 767px) {
@@ -131,14 +133,14 @@ figure.snip1390 .profile {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-29 07:04:41</sys_created_on>
         <sys_id>22a29cd483aa4610edb56060ceaad389</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>74</sys_mod_count>
         <sys_name>testimonial</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_22a29cd483aa4610edb56060ceaad389</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-06 06:41:48</sys_updated_on>
+        <sys_updated_on>2024-06-18 04:40:06</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>

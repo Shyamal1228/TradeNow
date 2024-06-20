@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope,spUtil) {
+  /* widget controller */
+  var c = this;
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>h3{
+  color:#000000;
+}
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lexend", sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #393232;
+    margin: 0;
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+} 
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    justify-content: flex-start; /* Change to flex-start */
+
+}
+
+.card {
+    background-color: #FFF;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 20px 50px 0 rgba(0, 0, 0, .1);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0.5rem; /* Reduced padding */
+    position: relative;
+    transition: .15s ease-in;
+  flex: 1 1 calc(25% - 1rem); /* Adjusted for four items per row */
+    max-width: calc(25% - 1rem); /* Adjusted for four items per row */
+
+    border: 1px solid transparent;
+    
+    &amp;:hover, &amp;:focus-within {
+       // box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(0, 0, 0, .1);
+        //transform: translateY(-5px);
+        //border-color: #16C79A; /* Added green border on hover */
+       -webkit-box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
+-moz-box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
+box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
+ //box-shadow: -1px 3px 11px 0px rgba(0,0,0,0.75);
+  //box-shadow:-3px 18px 20px 0px rgba(99,89,99,1);
+  transform: translate3d(0px, -1px, 0px);
+    }
+}
+
+.card-image {
+   //	width: 250px;
+    //height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0.5rem 0; /* Reduced margin around image */
+}
+
+.card-image img {
+   // width: 100%;
+    //height: auto;
+    //object-fit: cover; /* Ensure the image covers the container */
+  	width: 100%; 
+    height: 200px;
+    object-fit: cover;
+    border-radius:4px;
+}
+
+.card-header {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+        font-weight: 600;
+        font-size: 1.375rem;
+        line-height: 1.25;
+        padding-right: 1rem;
+        text-decoration: none;
+        color: #000000;
+        will-change: transform;
+        position: relative;
+        &amp;:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+
+.card-description {
+    font-size: 1.375rem;
+    color: #000000;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    height: 3em;
+  }
+}
+
+.icon-button {
+    border: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    transition: .25s ease;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 3px 8px 0 rgba(0, 0, 0, .15);
+    z-index: 1;
+    cursor: pointer;
+    color: #565656;
+    
+    svg {
+        width: 1em;
+        height: 1em;
+    }
+    &amp;:hover, &amp;:focus {
+        background-color: #EC4646;
+        color: #FFF;
+    }
+}
+
+.card-footer {
+    margin-top: 1.25rem;
+    border-top: 1px solid #ddd;
+    padding-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-meta {    
+    display: flex;
+    align-items: center;
+    color: #787878;
+    &amp;:first-child:after {
+        display: block;
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: currentcolor;
+        margin-left: .75rem;
+        margin-right: .75rem;
+    }
+    svg {
+        flex-shrink: 0;
+        width: 1em;
+        height: 1em;
+        margin-right: .25em;
+    }
+}
+@media (max-width: 950px) {
+    .card {
+        flex: 1 1 calc(33.33% - 1rem);
+        max-width: calc(33.33% - 1rem);
+    }
+}
+
+@media (max-width: 750px) {
+    .card {
+        flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem); 
+    }
+}
+
+@media (max-width: 530px) {
+    .card {
+        flex: 1 1 100%; 
+        max-width: 100%; 
+    }
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-action {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.view-item-button {
+  display: inline-block;
+  padding: 1.3rem 2.5rem;
+  background-color: #176B87;
+  color: white;
+  font-size: 1.4rem;
+  //font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(120, 200, 121, 0.4);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-item-button:hover {
+  background-color: #04364A;
+}
+
+
+// category and search bar
+.top-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        color: #fff;
+        padding: 20px 20px 20px 0px;
+  border-radius: 10px;
+  margin-bottom:20px;
+    }
+
+.select-dropdown select {
+  margin-right: 10px;
+  color:#000000;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+}
+
+.search-box {
+  margin-left: 10px;
+  color:#000000;
+}
+input{
+  color:#000000;
+}
+.search-box input{
+  //width: 40%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  color:#000000;
+}
+
+    @media screen and (max-width: 600px) {
+        .top-section {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .search-box {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+
+
+// pagination
+.pagination {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-link {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #04364A;
+  background-color: #fff;
+  border: 1px solid #04364A;
+  border-radius: 3px;
+}
+
+.page-link:hover {
+  background-color: #04364A;
+}
+
+.page-item.active .page-link {
+  background-color: #04364A;
+  color: white;
+  border-color: #04364A;
+}
+
+ul.dirPagination.ng-scope{
+display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  border-radius: 0.25rem;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+
+// 1 2 3
+a.ng-binding{
+ display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #2fa14d;
+  background-color: #fff;
+  border: 1px solid #04364A;
+  border-radius: 3px;
+  margin: 0px 2.5px;
+}
+a.ng-binding:hover{
+  background-color: #176B87;
+  border-color: #04364A;
+  color: #fff;
+}
+.ng-scope&gt;a{
+ display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #176B87;
+  background-color: #fff;
+  border: 1px solid #04364A;
+  border-radius: 3px;
+  margin: 0px 5px
+}
+.ng-scope&gt;a:hover{
+  background-color: #176B87;
+  border-color: #04364A;
+  color: #fff;
+}
+
+// delete after show and tell
+//.card-meta:first-child:after{
+ // background-color: #fff;
+//}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>item_list_lazy_load</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Item list lazy load</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.table = 'x_1383179_tradenow_item_list';
+	data.items = [];
+  var gr = new GlideRecord(data.table);
+	gr.orderByDesc('sys_created_on');
+	//gr.setLimit(4);
+  gr.query();
+	while (gr.next()) {
+		var obj={
+			sys_id:gr.getValue('sys_id'),
+			name:gr.getValue('item_name'),
+			description:gr.getValue('description'),
+			category:gr.getValue('category'),
+			//added
+			created_on:gr.getValue('sys_created_on').toString().substring(0, 10),
+			//
+			//image_url: null
+			image_url: gr.getDisplayValue('image'),
+			watching: gr.getValue('total_watchers')
+		};
+		//added
+/*var inputDate = obj.created_on;
+var parsedDate = new GlideDateTime(inputDate);
+var monthAbbreviation = parsedDate.getDayOfMonthUTC();
+var dayOfMonth = parsedDate.getDayOfMonth();
+var year = parsedDate.getYear();
+
+var formattedDate = monthAbbreviation + " " + dayOfMonth + ", " + year;
+obj.date=formattedDate;
+gs.info("Formatted Date: " + formattedDate);*/
+
+		
+		
+		/*var attachmentGr = new GlideRecord('sys_attachment');
+		attachmentGr.addQuery('table_sys_id', gr.getUniqueValue());
+		attachmentGr.query();
+
+		if (attachmentGr.next()) {
+			obj.image_url = '/sys_attachment.do?sys_id=' + attachmentGr.getValue('sys_id');
+		}*/
+		data.items.push(obj);
+     // data.items.push(gr.getValue('number')); // assuming 'number' is the field you want to print
+    }
+	 //console.log(data.items);
+	
+	data.categoryArray = [];
+  var categoryList = new GlideRecord('x_1383179_tradenow_category_lookup');
+	categoryList.query();
+	while (categoryList.next()) {
+		
+		var catObj={
+			name:categoryList.getValue('name'),
+			sys_id:categoryList.getValue('sys_id'),
+		};
+		data.categoryArray.push(catObj);
+		//data.categoryArray.push(categoryList.getValue('name'));
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-14 04:52:02</sys_created_on>
+        <sys_id>63bd46198372c610edb56060ceaad32d</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Item list lazy load</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_63bd46198372c610edb56060ceaad32d</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-14 05:26:03</sys_updated_on>
+        <template><![CDATA[<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+</style>
+
+<div class="top-section">
+    <div class="select-dropdown">
+        <select ng-model="selectedCategory" ng-options="category.name for category in data.categoryArray">
+            <option value="">Select Category</option>
+        </select>
+    </div>
+      
+    <div class="search-box">
+        <input type="text" ng-model="test" placeholder="Search for items...">
+    </div>
+</div>
+
+
+<div class="card-list">
+    <article class="card" dir-repeat="item in data.items |filter: {category: selectedCategory.sys_id} | filter: {name: test}">
+        <figure class="card-image">
+            <img src="{{item.image_url}}" alt={{item.name}} />
+        </figure>
+        <div class="card-header">
+            <h3 class="poppins-regular">{{item.name}}</h3>
+            <button class="icon-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Heart">
+                    <path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z" />
+                </svg>
+            </button>
+        </div>
+        <div class="card-description poppins-regular">{{item.description}}</div>
+        <div class="card-footer">
+            <div class="card-meta card-meta--views">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="EyeOpen">
+                    <path d="M21.257 10.962c.474.62.474 1.457 0 2.076C19.764 14.987 16.182 19 12 19c-4.182 0-7.764-4.013-9.257-5.962a1.692 1.692 0 0 1 0-2.076C4.236 9.013 7.818 5 12 5c4.182 0 7.764 4.013 9.257 5.962z" />
+                    <circle cx="12" cy="12" r="3" />
+                </svg>
+                {{item.watching || 0}}
+            </div>
+            <div class="card-meta card-meta--date">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Calendar">
+                    <rect x="2" y="4" width="20" height="18" rx="4" />
+                    <path d="M8 2v4" />
+                    <path d="M16 2v4" />
+                    <path d="M2 10h20" />
+                </svg>
+                <!--Jul 26, 2019-->
+              {{item.created_on}}
+            </div>
+        </div>
+      <div class="card-action">
+        <a href="/tradenow?id=item_details&table=x_1383179_tradenow_item_list&sys_id={{item.sys_id}}"><button class="view-item-button poppins-light">View Item</button></a>
+        </div>
+    </article>
+  
+    <!-- Repeat other cards with similar structure -->
+</div>
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sp_widget_63bd46198372c610edb56060ceaad32d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function($scope,spUtil) {
+  /* widget controller */
+  var c = this;
+	
+};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;h3{
+  color:#000000;
+}
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lexend", sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #393232;
+    margin: 0;
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+} 
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    justify-content: flex-start; /* Change to flex-start */
+
+}
+
+.card {
+    background-color: #FFF;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 20px 50px 0 rgba(0, 0, 0, .1);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0.5rem; /* Reduced padding */
+    position: relative;
+    transition: .15s ease-in;
+  flex: 1 1 calc(25% - 1rem); /* Adjusted for four items per row */
+    max-width: calc(25% - 1rem); /* Adjusted for four items per row */
+
+    border: 1px solid transparent;
+    
+    &amp;amp;:hover, &amp;amp;:focus-within {
+       // box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(0, 0, 0, .1);
+        //transform: translateY(-5px);
+        //border-color: #16C79A; /* Added green border on hover */
+       -webkit-box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
+-moz-box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
+box-shadow: -1px 0px 12px 0px rgba(23,107,135,0.8);
+ //box-shadow: -1px 3px 11px 0px rgba(0,0,0,0.75);
+  //box-shadow:-3px 18px 20px 0px rgba(99,89,99,1);
+  transform: translate3d(0px, -1px, 0px);
+    }
+}
+
+.card-image {
+   //	width: 250px;
+    //height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0.5rem 0; /* Reduced margin around image */
+}
+
+.card-image img {
+   // width: 100%;
+    //height: auto;
+    //object-fit: cover; /* Ensure the image covers the container */
+  	width: 100%; 
+    height: 200px;
+    object-fit: cover;
+    border-radius:4px;
+}
+
+.card-header {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+        font-weight: 600;
+        font-size: 1.375rem;
+        line-height: 1.25;
+        padding-right: 1rem;
+        text-decoration: none;
+        color: #000000;
+        will-change: transform;
+        position: relative;
+        &amp;amp;:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+
+.card-description {
+    font-size: 1.375rem;
+    color: #000000;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    height: 3em;
+  }
+}
+
+.icon-button {
+    border: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    transition: .25s ease;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 3px 8px 0 rgba(0, 0, 0, .15);
+    z-index: 1;
+    cursor: pointer;
+    color: #565656;
+    
+    svg {
+        width: 1em;
+        height: 1em;
+    }
+    &amp;amp;:hover, &amp;amp;:focus {
+        background-color: #EC4646;
+        color: #FFF;
+    }
+}
+
+.card-footer {
+    margin-top: 1.25rem;
+    border-top: 1px solid #ddd;
+    padding-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-meta {    
+    display: flex;
+    align-items: center;
+    color: #787878;
+    &amp;amp;:first-child:after {
+        display: block;
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: currentcolor;
+        margin-left: .75rem;
+        margin-right: .75rem;
+    }
+    svg {
+        flex-shrink: 0;
+        width: 1em;
+        height: 1em;
+        margin-right: .25em;
+    }
+}
+@media (max-width: 950px) {
+    .card {
+        flex: 1 1 calc(33.33% - 1rem);
+        max-width: calc(33.33% - 1rem);
+    }
+}
+
+@media (max-width: 750px) {
+    .card {
+        flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem); 
+    }
+}
+
+@media (max-width: 530px) {
+    .card {
+        flex: 1 1 100%; 
+        max-width: 100%; 
+    }
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-action {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.view-item-button {
+  display: inline-block;
+  padding: 1.3rem 2.5rem;
+  background-color: #176B87;
+  color: white;
+  font-size: 1.4rem;
+  //font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(120, 200, 121, 0.4);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-item-button:hover {
+  background-color: #04364A;
+}
+
+
+// category and search bar
+.top-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        color: #fff;
+        padding: 20px 20px 20px 0px;
+  border-radius: 10px;
+  margin-bottom:20px;
+    }
+
+.select-dropdown select {
+  margin-right: 10px;
+  color:#000000;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+}
+
+.search-box {
+  margin-left: 10px;
+  color:#000000;
+}
+input{
+  color:#000000;
+}
+.search-box input{
+  //width: 40%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  color:#000000;
+}
+
+    @media screen and (max-width: 600px) {
+        .top-section {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .search-box {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+
+
+// pagination
+.pagination {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-link {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #04364A;
+  background-color: #fff;
+  border: 1px solid #04364A;
+  border-radius: 3px;
+}
+
+.page-link:hover {
+  background-color: #04364A;
+}
+
+.page-item.active .page-link {
+  background-color: #04364A;
+  color: white;
+  border-color: #04364A;
+}
+
+ul.dirPagination.ng-scope{
+display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  border-radius: 0.25rem;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+
+// 1 2 3
+a.ng-binding{
+ display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #2fa14d;
+  background-color: #fff;
+  border: 1px solid #04364A;
+  border-radius: 3px;
+  margin: 0px 2.5px;
+}
+a.ng-binding:hover{
+  background-color: #176B87;
+  border-color: #04364A;
+  color: #fff;
+}
+.ng-scope&amp;gt;a{
+ display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #176B87;
+  background-color: #fff;
+  border: 1px solid #04364A;
+  border-radius: 3px;
+  margin: 0px 5px
+}
+.ng-scope&amp;gt;a:hover{
+  background-color: #176B87;
+  border-color: #04364A;
+  color: #fff;
+}
+
+// delete after show and tell
+//.card-meta:first-child:after{
+ // background-color: #fff;
+//}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;item_list_lazy_load&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Item list lazy load&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.table = 'x_1383179_tradenow_item_list';
+	data.items = [];
+  var gr = new GlideRecord(data.table);
+	gr.orderByDesc('sys_created_on');
+	//gr.setLimit(4);
+  gr.query();
+	while (gr.next()) {
+		var obj={
+			sys_id:gr.getValue('sys_id'),
+			name:gr.getValue('item_name'),
+			description:gr.getValue('description'),
+			category:gr.getValue('category'),
+			//added
+			created_on:gr.getValue('sys_created_on').toString().substring(0, 10),
+			//
+			//image_url: null
+			image_url: gr.getDisplayValue('image'),
+			watching: gr.getValue('total_watchers')
+		};
+		//added
+/*var inputDate = obj.created_on;
+var parsedDate = new GlideDateTime(inputDate);
+var monthAbbreviation = parsedDate.getDayOfMonthUTC();
+var dayOfMonth = parsedDate.getDayOfMonth();
+var year = parsedDate.getYear();
+
+var formattedDate = monthAbbreviation + " " + dayOfMonth + ", " + year;
+obj.date=formattedDate;
+gs.info("Formatted Date: " + formattedDate);*/
+
+		
+		
+		/*var attachmentGr = new GlideRecord('sys_attachment');
+		attachmentGr.addQuery('table_sys_id', gr.getUniqueValue());
+		attachmentGr.query();
+
+		if (attachmentGr.next()) {
+			obj.image_url = '/sys_attachment.do?sys_id=' + attachmentGr.getValue('sys_id');
+		}*/
+		data.items.push(obj);
+     // data.items.push(gr.getValue('number')); // assuming 'number' is the field you want to print
+    }
+	 //console.log(data.items);
+	
+	data.categoryArray = [];
+  var categoryList = new GlideRecord('x_1383179_tradenow_category_lookup');
+	categoryList.query();
+	while (categoryList.next()) {
+		
+		var catObj={
+			name:categoryList.getValue('name'),
+			sys_id:categoryList.getValue('sys_id'),
+		};
+		data.categoryArray.push(catObj);
+		//data.categoryArray.push(categoryList.getValue('name'));
+	}
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-14 04:52:02&lt;/sys_created_on&gt;&lt;sys_id&gt;63bd46198372c610edb56060ceaad32d&lt;/sys_id&gt;&lt;sys_mod_count&gt;16&lt;/sys_mod_count&gt;&lt;sys_name&gt;Item list lazy load&lt;/sys_name&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_63bd46198372c610edb56060ceaad32d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-14 05:26:03&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;style&gt;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&amp;display=swap');
+&lt;/style&gt;
+
+&lt;div class="top-section"&gt;
+    &lt;div class="select-dropdown"&gt;
+        &lt;select ng-model="selectedCategory" ng-options="category.name for category in data.categoryArray"&gt;
+            &lt;option value=""&gt;Select Category&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+      
+    &lt;div class="search-box"&gt;
+        &lt;input type="text" ng-model="test" placeholder="Search for items..."&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class="card-list"&gt;
+    &lt;article class="card" dir-repeat="item in data.items |filter: {category: selectedCategory.sys_id} | filter: {name: test}"&gt;
+        &lt;figure class="card-image"&gt;
+            &lt;img src="{{item.image_url}}" alt={{item.name}} /&gt;
+        &lt;/figure&gt;
+        &lt;div class="card-header"&gt;
+            &lt;h3 class="poppins-regular"&gt;{{item.name}}&lt;/h3&gt;
+            &lt;button class="icon-button"&gt;
+                &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Heart"&gt;
+                    &lt;path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z" /&gt;
+                &lt;/svg&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="card-description poppins-regular"&gt;{{item.description}}&lt;/div&gt;
+        &lt;div class="card-footer"&gt;
+            &lt;div class="card-meta card-meta--views"&gt;
+                &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="EyeOpen"&gt;
+                    &lt;path d="M21.257 10.962c.474.62.474 1.457 0 2.076C19.764 14.987 16.182 19 12 19c-4.182 0-7.764-4.013-9.257-5.962a1.692 1.692 0 0 1 0-2.076C4.236 9.013 7.818 5 12 5c4.182 0 7.764 4.013 9.257 5.962z" /&gt;
+                    &lt;circle cx="12" cy="12" r="3" /&gt;
+                &lt;/svg&gt;
+                {{item.watching || 0}}
+            &lt;/div&gt;
+            &lt;div class="card-meta card-meta--date"&gt;
+                &lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Calendar"&gt;
+                    &lt;rect x="2" y="4" width="20" height="18" rx="4" /&gt;
+                    &lt;path d="M8 2v4" /&gt;
+                    &lt;path d="M16 2v4" /&gt;
+                    &lt;path d="M2 10h20" /&gt;
+                &lt;/svg&gt;
+                &lt;!--Jul 26, 2019--&gt;
+              {{item.created_on}}
+            &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;div class="card-action"&gt;
+        &lt;a href="/tradenow?id=item_details&amp;table=x_1383179_tradenow_item_list&amp;sys_id={{item.sys_id}}"&gt;&lt;button class="view-item-button poppins-light"&gt;View Item&lt;/button&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+  
+    &lt;!-- Repeat other cards with similar structure --&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>849735136</payload_hash>
+        <record_name>Item list lazy load</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-14 05:26:03</sys_created_on>
+        <sys_id>b585569183b2c610edb56060ceaad313</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1901535c4600000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-14 05:26:03</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>7d85569176b2c61033f064180d910012</update_guid>
+        <update_guid_history>7d85569176b2c61033f064180d910012:849735136,a3751a91fbb2c61084523f1c7e46ea68:-1214102524,d075da91b5b2c61003ba4dcd90ce7d5b:-142999559,c535569160b2c610dcda924cc89e580c:-543351654,cd25d291f9b2c61092f3177e40450fbd:1002295694,9b055e512db2c610d32ec56287ebd5b6:-1837234735,1205d29197b2c6102b5b6a59b88b6d57:-1848461387,8ef4d6dd8972c610158c2ac528542b36:-1763464208,09e4de517ab2c610b003e1bfd3deda05:-2050101450,e0d45e51a1b2c6109b442382b4ebaf7a:-1763464208,be101a1d9072c610d72b3b0fc435ea4a:-395462977,194f4a593c72c6101e1f1a8b40376524:1060329695,302f86d9fe72c610a795210e77168b81:-1316762757,4dee4ad53372c610851b3d796d130f78:1189996891,1bbe8e593a72c610d31c8f6cd1e656e2:19530751,684e0a599272c6104effd2829326499f:-1904526245,27bd46195672c610f589a12babb6e830:-142999559</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Item list lazy load">18461ed183b2c610edb56060ceaad324</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-14 05:29:14</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>2418eb8c47ab4c40b9eec100b6dbc900</sys_id>
+        <sys_metadata>63bd46198372c610edb56060ceaad32d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Item list lazy load</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sp_widget_63bd46198372c610edb56060ceaad32d</sys_update_name>
+        <sys_update_version display_value="sp_widget_63bd46198372c610edb56060ceaad32d">b585569183b2c610edb56060ceaad313</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-14 05:29:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

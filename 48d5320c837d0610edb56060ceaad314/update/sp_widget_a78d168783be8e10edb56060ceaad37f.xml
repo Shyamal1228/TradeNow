@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, spUtil) {
+	
+	var c=this;
+    $scope.emails = [];
+
+    // Fetch emails from the server
+    spUtil.get('email_notifications', {}).then(function(response) {
+        $scope.emails = response.emails;
+    });
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.email-notifications {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+}
+.email-notifications ul {
+    list-style-type: none;
+    padding: 0;
+}
+.email-notifications li {
+    margin-bottom: 10px;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>portal_notification</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Portal Notification</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    data.emails = [];
+
+    var gr = new GlideRecord('sys_email');
+    gr.addQuery('type', 'received'); // Filter for received emails
+    gr.orderByDesc('sys_created_on'); // Order by creation date
+    gr.setLimit(10); // Limit the number of emails retrieved
+    gr.query();
+    while (gr.next()) {
+        var plainTextBody = GlideStringUtil.stripHTML(gr.body.toString());
+        data.emails.push({
+            subject: gr.subject.toString(),
+            body: plainTextBody,
+            date: gr.sys_created_on.getDisplayValue()
+        });
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-19 16:30:29</sys_created_on>
+        <sys_id>a78d168783be8e10edb56060ceaad37f</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Portal Notification</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_a78d168783be8e10edb56060ceaad37f</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-19 16:43:20</sys_updated_on>
+        <template><![CDATA[<div class="email-notifications">
+    <h4>Recent Emails</h4>
+    <ul>
+        <li ng-repeat="email in data.emails">
+            <strong>{{email.subject}}</strong> <br/>
+            {{email.body}} <br/>
+            <small>{{email.date}}</small>
+        </li>
+    </ul>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

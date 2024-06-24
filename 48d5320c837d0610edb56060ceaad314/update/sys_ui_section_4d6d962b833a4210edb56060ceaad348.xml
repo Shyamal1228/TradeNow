@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="New Section" section_id="4d6d962b833a4210edb56060ceaad348" sys_domain="global" table="x_1383179_tradenow_charity_list" version="3" view="CharityPortal">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>0</position>
+            <sys_created_by>jagriti</sys_created_by>
+            <sys_created_on>2024-06-21 06:45:24</sys_created_on>
+            <sys_id>d8da2e2b837a4210edb56060ceaad3dd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="New Section" display_value="New Section" name="x_1383179_tradenow_charity_list" sys_domain="global" view="012616ef83f64210edb56060ceaad35a">4d6d962b833a4210edb56060ceaad348</sys_ui_section>
+            <sys_updated_by>jagriti</sys_updated_by>
+            <sys_updated_on>2024-06-21 06:45:24</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>New Section</caption>
+            <header>false</header>
+            <name>x_1383179_tradenow_charity_list</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>jagriti</sys_created_by>
+            <sys_created_on>2024-06-21 05:46:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4d6d962b833a4210edb56060ceaad348</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383179_tradenow_charity_list</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+            <sys_update_name>sys_ui_section_4d6d962b833a4210edb56060ceaad348</sys_update_name>
+            <sys_updated_by>jagriti</sys_updated_by>
+            <sys_updated_on>2024-06-21 05:46:45</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="CharityPortal" name="CharityPortal">012616ef83f64210edb56060ceaad35a</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

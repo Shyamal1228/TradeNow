@@ -5,7 +5,7 @@
         <draft>false</draft>
         <dynamic_title_structure/>
         <human_readable_url_structure/>
-        <id>my_profile</id>
+        <id>my_activity</id>
         <internal>false</internal>
         <omit_watcher>false</omit_watcher>
         <public>false</public>
@@ -14,18 +14,18 @@
         <short_description/>
         <sys_class_name>sp_page</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
-        <sys_created_on>2024-06-14 05:15:18</sys_created_on>
-        <sys_id>101356dd8372c610edb56060ceaad34a</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>my_profile</sys_name>
+        <sys_created_on>2024-06-21 09:52:43</sys_created_on>
+        <sys_id>04b5d3e7833e4210edb56060ceaad35e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>my_activity</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_page_101356dd8372c610edb56060ceaad34a</sys_update_name>
+        <sys_update_name>sp_page_04b5d3e7833e4210edb56060ceaad35e</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-06-21 07:19:57</sys_updated_on>
+        <sys_updated_on>2024-06-21 09:52:43</sys_updated_on>
         <title>My Activity</title>
         <use_seo_script>false</use_seo_script>
     </sp_page>
-    <sys_translated_text action="delete_multiple" query="documentkey=101356dd8372c610edb56060ceaad34a"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=04b5d3e7833e4210edb56060ceaad35e"/>
 </record_update>

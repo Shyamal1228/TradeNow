@@ -5,7 +5,7 @@
         <element label="Donation link" max_length="100" name="donation_link" type="url"/>
         <element label="Email" max_length="40" name="email" type="string"/>
         <element default="true" label="Hide field" max_length="40" name="hide_field" type="boolean"/>
-        <element label="Image" max_length="40" name="image" type="user_image"/>
+        <element label="Logo" max_length="40" name="image" type="user_image"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
         <element choice="1" label="Payment Mode" max_length="40" name="payment_mode" type="choice">
             <choice>
@@ -21,7 +21,7 @@
         <element label="Total amount raised" max_length="20" name="total_amount_raised" read_only="true" type="currency"/>
         <element label="UPI number" max_length="40" name="upi_number" type="string"/>
         <element attributes="encode_utf8=false" label="Location" mandatory="true" max_length="32" name="u_reference_1" reference="cmn_location" type="reference"/>
-        <element label="Website" mandatory="true" max_length="40" name="website" type="url"/>
+        <element label="Website" mandatory="true" max_length="40" name="website" type="string"/>
         <index name="index">
             <element name="u_reference_1"/>
         </index>

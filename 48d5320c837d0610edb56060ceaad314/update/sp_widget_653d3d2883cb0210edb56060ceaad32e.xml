@@ -149,20 +149,16 @@
 		}
 	});
 
-	function recResponse(charityList){
+	var charityList = new GlideRecord('x_1383179_tradenow_charity_list');
+	charityList.query(resResponse(charityList));
+
+	function resResponse(result){
 		console.log("Hello");
-		while(charityList.next()){
-			console.log("Here");
+		while(result.next()) {
+			// Print all INC with priority 4 – Low AND short description contains 'USB device not working'
+			console.log(result.getValue('number')); 
 		}
 	}
-
-	var charityList = new GlideRecord('x_1383179_tradenow_charity_list');
-	charityList.query(function(response){
-		while(response.next()){
-			console.log("Hello");
-		}
-	});
-
 
 	// Initial setup
 	$scope.selectedOption = $scope.optionsMenu[0];
@@ -616,10 +612,10 @@ hr{
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>my_profile</id>
+        <id>my_activity</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>my profile</name>
+        <name>My_activity</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -748,20 +744,20 @@ hr{
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
-        <sys_created_on>2024-06-18 17:13:51</sys_created_on>
-        <sys_id>4ded11fe83f64e10edb56060ceaad3f1</sys_id>
-        <sys_mod_count>749</sys_mod_count>
-        <sys_name>my profile</sys_name>
+        <sys_created_on>2024-06-24 06:00:04</sys_created_on>
+        <sys_id>653d3d2883cb0210edb56060ceaad32e</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>My_activity</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_widget_4ded11fe83f64e10edb56060ceaad3f1</sys_update_name>
+        <sys_update_name>sp_widget_653d3d2883cb0210edb56060ceaad32e</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-06-24 06:26:45</sys_updated_on>
+        <sys_updated_on>2024-06-24 06:08:03</sys_updated_on>
         <template><![CDATA[<div class="profile-page">
   <div class="user-profile poppins">
     <div class="header" >
-      <h2 class="poppins-semibold">Your Activities</h2>
+      <h2 class="poppins-semibold">My Activities</h2>
       <hr/>
     </div>
   </div>
@@ -784,7 +780,7 @@ hr{
           <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
         </div>
         <div class="category-filter">
-          <p>Category: </p>
+          <p>Status: </p>
           <select id="selectedOption" ng-model="selectedOption" ng-options="option for option in optionsMenu" ng-change="onOptionChange()"></select>
         </div>
       </div>

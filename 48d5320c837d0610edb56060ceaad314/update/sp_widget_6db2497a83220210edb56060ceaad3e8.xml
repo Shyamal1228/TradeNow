@@ -556,7 +556,7 @@ display:flex;
   align-items: center;
   justify-content:center;
   border:none;
-  background-color:#DAFFFB;
+  background-color:#b2d8d8;
   border-radius:8px;
   padding-top:10px;
   padding-bottom:10px;
@@ -614,7 +614,7 @@ input[type="file"] {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #176B87;
+    background-color: #008080;
     border: none;
     border-radius: 4px;
     color: #fff;
@@ -623,9 +623,12 @@ button {
 }
 
 button:hover {
-    background-color: #04364A;
+    background-color: #006666;
 }
 
+.alert-info{
+  background-color: #b2d8d8;
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .panel-shift {
@@ -770,14 +773,14 @@ button:hover {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-06 04:59:24</sys_created_on>
         <sys_id>6db2497a83220210edb56060ceaad3e8</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_name>Charity Form</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_6db2497a83220210edb56060ceaad3e8</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-06-18 05:24:38</sys_updated_on>
+        <sys_updated_on>2024-06-21 07:08:55</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
@@ -816,7 +819,7 @@ button:hover {
   <div ng-show="isPageReady" class="panel panel-default" ng-if="data.f._view.length || !data.hideRelatedLists" >
     <div class="icon">
       <img  src="icon.png">
-      <h3 class="poppins-semibold">Add New Item</h3>
+      <h3 class="poppins-semibold">Add Charity Organization</h3>
     </div>
    <!-- <div class="panel-heading" ng-if="data.f.title.length" sp-context-menu="getUIActionContextMenu(event)">
       
@@ -907,7 +910,7 @@ button:hover {
     <div class="panel-footer">
      <button ng-click="triggerUIAction(action)" ng-disabled="submitting" ng-repeat="action in getUIActions('button') | filter: hideDuplicateSaveAction" class="btn action-btn" ng-class="::getButtonClass(action)" gsft_id="{{::action.sys_id}}">{{action.name}}</button>
       <span>{{status}}</span>
-      <!--<button ng-if="getPrimaryAction()" type="submit" ng-click="triggerUIAction(getPrimaryAction())" ng-disabled="submitting" class="btn btn-primary action-btn pull-right" gsft_id="{{::getPrimaryAction().sys_id ? getPrimaryAction().sys_id : ''}}">${Save} <span ng-if="saveButtonSuffix">(${{{saveButtonSuffix}}})</span></button>-->
+      <button ng-if="getPrimaryAction()" type="submit" ng-click="triggerUIAction(getPrimaryAction())" ng-disabled="submitting" class="btn btn-primary action-btn pull-right" gsft_id="{{::getPrimaryAction().sys_id ? getPrimaryAction().sys_id : ''}}">${Add Charity Organization}</button>
       <div style="clear: both;"></div>
       <div ng-if="mandatory.length" class="alert alert-info" style="margin-top: .5em" aria-live="polite" aria-atomic="true">
         <span ng-if="mandatory.length > 0">${Required information} </span>

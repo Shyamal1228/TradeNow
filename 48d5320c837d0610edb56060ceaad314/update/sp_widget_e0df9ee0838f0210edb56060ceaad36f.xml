@@ -13,7 +13,6 @@
 	$scope.tempSearchKeyword = '';
 	$scope.sortOrder = 'creationTime';
 	$scope.donationHistory = [].concat($scope.data.donationHistory);
-	$scope.listedItems = [].concat($scope.data.listedItems);
 
 	var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -130,19 +129,9 @@
 			location.reload();
 		}
 	};
-	
-	spUtil.recordWatch($scope, 'x_1383179_tradenow_item_list', 'lister_name='+$scope.data.sysUserId, function(response){
-		console.log(response);
-		if(response.data.operation === 'update'){
-			
-		}
-	});
-	
-	spUtil.recordWatch($scope, 'x_1383179_tradenow_item_list', 'claimer='+$scope.data.sysUserId, function(response){
-		console.log(response);
-	});
 
 	spUtil.recordWatch($scope, 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr', 'sys_user=' + $scope.data.sysUserId, function(response){
+		console.log(response);
 		if(response.data.action === 'entry'){
 			console.log(response);
 			var newDonation = {
@@ -151,8 +140,8 @@
 				creationTime: response.data.record.sys_created_on.value,
 				donation_charity_name: response.data.record.x_1383179_tradenow_charity_list.display_value
 			};
-			$scope.donationHistory.push(newDonation);
-		} 
+			$scope.data.donationHistory.push(newDonation);
+		}
 	});
 
 	var charityList = new GlideRecord('x_1383179_tradenow_charity_list');
@@ -615,10 +604,10 @@ hr{
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>my_profile</id>
+        <id>my_profile_record_watching_testing</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>my profile</name>
+        <name>my profile record watching testing</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -652,7 +641,7 @@ hr{
 		data.userImage = sysUserGR.getDisplayValue('photo');
 		console.log(data.userImage);
 
-		listedItems.orderBy('number');
+		listedItems.orderBy('sys_created_on');
 		listedItems.addQuery('lister_name','=',data.sysUserId);
 		listedItems.query();
 
@@ -668,7 +657,7 @@ hr{
 		while(listedItems.next()){
 			if(listedItems.getValue('status') !== 'reserved'){
 				obj = {
-					id: listedItems.getValue('number'),
+					id: count,
 					item_name: listedItems.getValue('item_name'),
 					item_image: listedItems.getDisplayValue('image'),
 					item_lister: orderedItems.getValue('lister_name'),
@@ -690,7 +679,6 @@ hr{
 				count += 1;
 			}
 		}
-		console.log(data.listedItems);
 		count = 1;
 		while(orderedItems.next()){
 			obj = {
@@ -748,16 +736,16 @@ hr{
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
-        <sys_created_on>2024-06-18 17:13:51</sys_created_on>
-        <sys_id>4ded11fe83f64e10edb56060ceaad3f1</sys_id>
-        <sys_mod_count>774</sys_mod_count>
-        <sys_name>my profile</sys_name>
+        <sys_created_on>2024-06-24 08:31:16</sys_created_on>
+        <sys_id>e0df9ee0838f0210edb56060ceaad36f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>my profile record watching testing</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_widget_4ded11fe83f64e10edb56060ceaad3f1</sys_update_name>
+        <sys_update_name>sp_widget_e0df9ee0838f0210edb56060ceaad36f</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-06-24 13:01:38</sys_updated_on>
+        <sys_updated_on>2024-06-24 08:31:16</sys_updated_on>
         <template><![CDATA[<div class="profile-page">
   <div class="user-profile poppins">
     <div class="header" >
@@ -830,7 +818,7 @@ hr{
 
       <div class="listeditems" ng-show="currentOption === 2">
         <div class="donation-history" id="donationHistory" ng-show="currentOption === 2">
-          <div class="donation-history-card" ng-repeat="donation in donationHistory | filter:searchFilter | orderBy:sortOrder track by donation.donation_id">
+          <div class="donation-history-card" ng-repeat="donation in data.donationHistory | filter:searchFilter | orderBy:sortOrder track by donation.donation_id">
             <div class="charity-logo"><img ng-src={{donation.donation_charity_image}} lazy-load></div>
             <div class="charity-info">
               <div class="charity-name" ng-bind="donation.donation_charity_name"></div>
@@ -839,7 +827,7 @@ hr{
             <div class="donation-amount" ng-bind="donation.donation_amount"></div>
           </div>
         </div>
-        <div class="no-items-found" ng-if='!(donationHistory | filter:customDonationFilter).length'>
+        <div class="no-items-found" ng-if='!(data.donationHistory | filter:customDonationFilter).length'>
           <img src="https://img.freepik.com/premium-vector/hand-drawn-no-data-illustration_23-2150696443.jpg"/>
           No Items Found</div>
       </div>

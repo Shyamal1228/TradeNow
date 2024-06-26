@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, spUtil) {
+  var c = this;
+
+
+       c.submitForm = function() {
+            var itemData = {
+                itemName: c.itemName,
+                itemDescription: c.itemDescription,
+                imageBase64: c.imageBase64
+            };
+
+        // Function to convert the selected image to base64
+        c.convertImageToBase64 = function() {
+            var fileInput = document.getElementById('imageFile');
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+            reader.onloadend = function() {
+                c.imageBase64 = reader.result; // Set the base64 string to the view model
+            };
+            reader.readAsDataURL(file);
+        };
+			 };
+       
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+  margin:30px;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: #f4f4f9;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+  border-radius:15px;
+}
+
+.form-container {
+    flex: 1;
+    padding: 20px 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+input[type="text"], 
+textarea, 
+select, 
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="file"] {
+    padding: 3px;
+}
+
+.btn {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+hr {
+    border: none;
+    height: 5px;
+  	width:50%;
+    background-color: #dddddd;
+    margin-bottom: 20px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>image_upload_test</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Image upload test</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[// Define the insertItem function to insert data into the "x_1383179_tradenow_item_list" table
+function insertItem(itemData) {
+    var itemGR = new GlideRecord('x_1383179_tradenow_item_list');
+    itemGR.initialize(); // Initialize a new record
+    itemGR.setValue('item_name', itemData.itemName);
+    itemGR.setValue('description', itemData.itemDescription);
+    itemGR.setValue('image', itemData.imageBase64);
+    // Set other fields as needed
+
+    var itemId = itemGR.insert(); // Insert the record into the table
+    
+}
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-04 13:44:18</sys_created_on>
+        <sys_id>f6a72c12836a0210edb56060ceaad378</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_name>Image upload test</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_f6a72c12836a0210edb56060ceaad378</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-05 02:06:30</sys_updated_on>
+        <template><![CDATA[<div ng-controller="ItemController as c">
+    <h2>Add New Item</h2>
+    <form name="itemForm" ng-submit="c.submitForm(itemForm.$valid)">
+        <div>
+            <label for="itemName">Item Name</label>
+            <input type="text" id="itemName" name="itemName" ng-model="c.itemName" required />
+        </div>
+        <div>
+            <label for="itemDescription">Item Description</label>
+            <textarea id="itemDescription" name="itemDescription" ng-model="c.itemDescription" required></textarea>
+        </div>
+        <div>
+            <label for="imageFile">Upload Image</label>
+            <input type="file" id="imageFile" accept="image/*" onchange="angular.element(this).scope().c.convertImageToBase64()" />
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div ng-if="vm.errorMessage" class="error">{{c.errorMessage}}</div>
+    <div ng-if="vm.successMessage" class="success">{{c.successMessage}}</div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sp_widget_f6a72c12836a0210edb56060ceaad378</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller = function($scope, spUtil) {
+  var c = this;
+
+
+       c.submitForm = function() {
+            var itemData = {
+                itemName: c.itemName,
+                itemDescription: c.itemDescription,
+                imageBase64: c.imageBase64
+            };
+
+        // Function to convert the selected image to base64
+        c.convertImageToBase64 = function() {
+            var fileInput = document.getElementById('imageFile');
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+            reader.onloadend = function() {
+                c.imageBase64 = reader.result; // Set the base64 string to the view model
+            };
+            reader.readAsDataURL(file);
+        };
+			 };
+       
+};
+]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+  margin:30px;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: #f4f4f9;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+  border-radius:15px;
+}
+
+.form-container {
+    flex: 1;
+    padding: 20px 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+input[type="text"], 
+textarea, 
+select, 
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="file"] {
+    padding: 3px;
+}
+
+.btn {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+hr {
+    border: none;
+    height: 5px;
+  	width:50%;
+    background-color: #dddddd;
+    margin-bottom: 20px;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;image_upload_test&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Image upload test&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[// Define the insertItem function to insert data into the "x_1383179_tradenow_item_list" table
+function insertItem(itemData) {
+    var itemGR = new GlideRecord('x_1383179_tradenow_item_list');
+    itemGR.initialize(); // Initialize a new record
+    itemGR.setValue('item_name', itemData.itemName);
+    itemGR.setValue('description', itemData.itemDescription);
+    itemGR.setValue('image', itemData.imageBase64);
+    // Set other fields as needed
+
+    var itemId = itemGR.insert(); // Insert the record into the table
+    
+}
+]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-04 13:44:18&lt;/sys_created_on&gt;&lt;sys_id&gt;f6a72c12836a0210edb56060ceaad378&lt;/sys_id&gt;&lt;sys_mod_count&gt;24&lt;/sys_mod_count&gt;&lt;sys_name&gt;Image upload test&lt;/sys_name&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_f6a72c12836a0210edb56060ceaad378&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-05 02:06:30&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div ng-controller="ItemController as c"&gt;
+    &lt;h2&gt;Add New Item&lt;/h2&gt;
+    &lt;form name="itemForm" ng-submit="c.submitForm(itemForm.$valid)"&gt;
+        &lt;div&gt;
+            &lt;label for="itemName"&gt;Item Name&lt;/label&gt;
+            &lt;input type="text" id="itemName" name="itemName" ng-model="c.itemName" required /&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for="itemDescription"&gt;Item Description&lt;/label&gt;
+            &lt;textarea id="itemDescription" name="itemDescription" ng-model="c.itemDescription" required&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for="imageFile"&gt;Upload Image&lt;/label&gt;
+            &lt;input type="file" id="imageFile" accept="image/*" onchange="angular.element(this).scope().c.convertImageToBase64()" /&gt;
+        &lt;/div&gt;
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;div ng-if="vm.errorMessage" class="error"&gt;{{c.errorMessage}}&lt;/div&gt;
+    &lt;div ng-if="vm.successMessage" class="success"&gt;{{c.successMessage}}&lt;/div&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1906728441</payload_hash>
+        <record_name>Image upload test</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-05 02:06:30</sys_created_on>
+        <sys_id>cb819f9683264210edb56060ceaad359</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fe625d5850000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-05 02:06:30</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>83819f96492642106c80f0aa7a3b0059</update_guid>
+        <update_guid_history>83819f96492642106c80f0aa7a3b0059:1906728441,8ac09f962f2642104a6da7f495fafd52:588606302,f2309bd22a2642107bf1096f2fc48869:1029400299,4410d396ac26421089f72caa72a9c04b:-561460528,a7cfc3d2ff264210377ba004563633f4:-379548010,716f43529926421004028a76e2095a73:76468094,8c4e43167726421038dc1decb965099a:-1450558326,64dd431618264210fc33327086d8ff92:105278474,7a9d03d241264210114ec28876c2c37e:-1235501692,af4dc3d249264210f191a3a03e82f391:2031472878,083dcb12aa6e0210a3addaf61caac1d8:1248084771,47c0a59e4f2e021098e1344eec2171fb:1459310069,6b9f9d9e3f2e0210453e7ebeededcb1a:1822091414,1ece1d12ad2e02102ed110fcc2d69c2f:-1790860945,42ed201aab6a02106163473524546810:-584355342,5f8da8d6306a02103851c57de8b2d38d:1081677441,724d2c96ad6a0210259c87427c2b57e8:533741351,5c1d2856c06a02108b9cbfbf2ebfce39:314205498,e90d60d6cc6a02103fb4db265a74c5e2:234072422,affcac960f6a021043603cb95a740c74:-145731198,0d7c2856216a02106da7a3d92902e7ff:1964648319,877b2c16f36a0210704b9bc0f8b28782:2013444837,95d9e05ebe2a021050c3d84f8b0740f5:1726732627,d418ac12256a02109acfb86e621a0799:1695837885,7aa72c12b76a02108ae74633fbc0b87b:144393965</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Image upload test">f7f99bd483030210edb56060ceaad3a2</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-23 18:06:58</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>a4fa8190f106486bbf521a7b41dba121</sys_id>
+        <sys_metadata>f6a72c12836a0210edb56060ceaad378</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Image upload test</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sp_widget_f6a72c12836a0210edb56060ceaad378</sys_update_name>
+        <sys_update_version display_value="sp_widget_f6a72c12836a0210edb56060ceaad378">cb819f9683264210edb56060ceaad359</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-23 18:06:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

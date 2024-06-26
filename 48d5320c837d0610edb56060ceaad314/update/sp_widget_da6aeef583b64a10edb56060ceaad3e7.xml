@@ -4,7 +4,7 @@
         <client_script><![CDATA[api.controller=function($scope, $window, $rootScope, $http) {
 
 	var c = this;
-
+	c.data.incidents = false;
 	$scope.displayNumber = 8;  // Initially display 4 items	
 	var totalItems=0;
 	var index = 0;
@@ -94,6 +94,13 @@
 	function scrollToTop() {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
+	
+	//clear serarch
+	$scope.clearSearch = function(){
+		$scope.searchText = "";
+		$scope.searchKeyword = $scope.searchText;
+		document.getElementById('search-bar').value = '';
+	};
 }
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -452,11 +459,12 @@ input{
 }
 .search-box input{
   //width: 40%;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
+  padding: 1rem;
+ // border: 1px solid #ccc;
   border-radius: 25px;
   outline: none;
   color:#000000;
+  height:100%;
 }
 
     @media screen and (max-width: 600px) {
@@ -644,7 +652,70 @@ button.back-to-top.show:active {
   box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
-}*/</css>
+}*/
+
+
+// search box
+.search-box-container{
+	width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  //border: 2px solid #006060;
+  background-color:#fff;
+}
+
+.search-bar-svg{
+	height: 100%;
+  width: 20%;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar-svg svg{
+	width: 70%;
+  height: 70%;
+  margin-left:5px;
+}
+
+.search-box-container &gt; input{
+	height: 100%;
+  width: 100%;
+  border: none;
+  padding-left: 10px;
+  color:#000;
+}
+
+.search-box-container &gt; input:focus{
+	box-shadow: none;
+  outline: none;
+}
+.cross{
+  width:16%;
+  margin-right:5px;
+}
+
+// Item not found
+.no-items-found {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.5rem !important;
+  color: black !important; /* Adjust color as needed */
+}
+
+.no-items-found img{
+	width: 20%;
+  height: 20%;
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -725,14 +796,14 @@ gs.info("Formatted Date: " + formattedDate);*/
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-15 20:14:15</sys_created_on>
         <sys_id>da6aeef583b64a10edb56060ceaad3e7</sys_id>
-        <sys_mod_count>251</sys_mod_count>
+        <sys_mod_count>307</sys_mod_count>
         <sys_name>Lazy Loading Extra scroll</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_da6aeef583b64a10edb56060ceaad3e7</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-18 10:14:05</sys_updated_on>
+        <sys_updated_on>2024-06-24 19:19:47</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
@@ -742,15 +813,21 @@ gs.info("Formatted Date: " + formattedDate);*/
   </div>
 <div class="main-container">
 <div class="top-section">
-    <div class="select-dropdown">
+    <div class="select-dropdown poppins-regular">
         <select class="select" ng-model="selectedCategory" ng-options="category.name for category in data.categoryArray">
             <option value="">Select Category</option>
         </select>
     </div>
       
-    <div class="search-box">
+    <!--<div class="search-box">
         <input type="text" ng-model="searchText" placeholder="Search for items...">
-    </div>
+    </div>-->
+  
+  <div class="search-box-container search-box poppins-regular">
+    <div class="search-bar-svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></div>
+    <input type="text" placeholder="Search for items..." ng-model="searchText" ng-keyup="checkEnterKey($event)" id="search-bar">
+    <div class="search-bar-svg cross" ng-click="clearSearch()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg></div>
+  </div>
 </div>
 
 <div class="card-list">
@@ -795,6 +872,10 @@ gs.info("Formatted Date: " + formattedDate);*/
         </div>
     </article>
   
+  <div class="no-items-found" ng-if='!(c.data.incidents | filter: {category: selectedCategory.sys_id} |filter:{item_name:searchText}).length'>
+    <img src="https://img.freepik.com/premium-vector/hand-drawn-no-data-illustration_23-2150696443.jpg"/>
+    No Items Found
+  </div>
     <!-- Repeat other cards with similar structure -->
 </div>
 </div>
@@ -824,6 +905,7 @@ $('button.back-to-top').click(function() {
   }, 800);
   return false;
 });
-</script>-->]]></template>
+</script>-->
+<!--No edit-->]]></template>
     </sp_widget>
 </record_update>

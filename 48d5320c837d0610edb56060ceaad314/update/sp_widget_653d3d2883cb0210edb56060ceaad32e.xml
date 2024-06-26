@@ -165,8 +165,37 @@
 };
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>.poppins {
+        <css>.header{
+  text-align: center;
+  color: #004c4c;
+}
+.header&gt;h2{
+  font-weight: 600;
+  color:#004c4c;
+}
+.header&gt;hr{
+  border: none;
+  height: 5px;
+  width: 30%;
+  background-color: #004c4c;
+  margin-butom: 2px;
+  margin-top: 0px;
+}
+
+.poppins-extralight {
   font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -175,6 +204,7 @@
   font-weight: 400;
   font-style: normal;
 }
+
 
 .dancing-script {
   font-family: "Dancing Script" ;
@@ -191,6 +221,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  margin-bottom:30px;
 }
 .user-profile{
 	width: 90%;
@@ -247,6 +278,7 @@
 }
 
 .buttons-container{
+  
 	width: 100%;
   display: flex;
 }
@@ -257,6 +289,8 @@
 }
 
 .buttons-container button{
+  height: 50px;
+  border-radius:15px;
 	width: 100%;
   outline: none;
   border: none;
@@ -300,8 +334,8 @@ hr{
 }
 
 .search-box-container{
-	width: 45%;
-  height: 90%;
+	width: 25%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -310,8 +344,8 @@ hr{
 }
 
 .search-bar-svg{
-	height: 100%;
-  width: 10%;
+	height: 27px;
+  width: 27px;
   padding: 2%;
   display: flex;
   align-items: center;
@@ -319,8 +353,8 @@ hr{
 }
 
 .search-bar-svg svg{
-	width: 90%;
-  height: 90%;
+	width: 30px;
+  height: 30px;
 }
 
 .search-box-container &gt; input{
@@ -336,9 +370,9 @@ hr{
 }
 
 .search-box-container &gt; input::placeholder{
-  color:rgba(0,0,0,0.5);
+  //color:rgba(0,0,0,0.5);
   letter-spacing: 2px;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .dropdown-container .filter-container{
@@ -475,7 +509,9 @@ hr{
 .ordered-items-card .order-logo .order-image-container{
 	width: 90%;
   height: 90%;
-  background-color: #F5F5DC;
+  //background-color: #F5F5DC;
+  //background-color: #cce3e3;
+  cursor:pointer;
   border-radius: 5%;
   display: flex;
   align-items: center;
@@ -500,16 +536,16 @@ hr{
 }
 
 .ordered-items-card .order-info .order-name{
-	font-size: 1.4rem;
+	font-size: 1.8rem;
   font-weight: 400;
 }
 
 .ordered-items-card .order-info .order-status{
-	font-size: 0.9rem;
+	font-size: 1.2rem;
 }
 
 .ordered-items-card .order-info .time-created{
-	font-size: 0.9rem;
+	font-size: 1.2rem;
 }
 
 .ordered-items-card .order-amount{
@@ -605,7 +641,8 @@ hr{
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-}</css>
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -746,21 +783,29 @@ hr{
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-24 06:00:04</sys_created_on>
         <sys_id>653d3d2883cb0210edb56060ceaad32e</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>My_activity</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_653d3d2883cb0210edb56060ceaad32e</sys_update_name>
-        <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-06-24 06:08:03</sys_updated_on>
-        <template><![CDATA[<div class="profile-page">
-  <div class="user-profile poppins">
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-25 11:01:10</sys_updated_on>
+        <template><![CDATA[  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+</style>
+<div class="profile-page">
+
+<div class="header" >
+    <h2 class="poppins-semibold">My Activities</h2>
+    <hr/>
+  </div>
+  <!--<div class="user-profile poppins">
     <div class="header" >
       <h2 class="poppins-semibold">My Activities</h2>
       <hr/>
     </div>
-  </div>
+  </div>-->
   <div class="items-container poppins">
     <div class="buttons-container">
       <button ng-click="debouncedHandleItemClick(0)" id='listed-item-button' ng-class="{'active-button': currentOption === 0}">Listed Items</button>

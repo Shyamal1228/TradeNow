@@ -413,14 +413,14 @@ data.loginWidget = $sp.getWidgetFromInstance('login-modal');]]></script>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-18 17:36:45</sys_created_on>
         <sys_id>a023e936833a4e10edb56060ceaad385</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Tradenow Stock Header</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_header_footer_a023e936833a4e10edb56060ceaad385</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-19 11:14:19</sys_updated_on>
+        <sys_updated_on>2024-06-24 06:06:47</sys_updated_on>
         <template><![CDATA[<div>
   <nav class="navbar-inverse" ng-class="::{'navbar':!isViewNative, 'is-native': isViewNative}"
        role="navigation" aria-label="${Primary}">
@@ -464,7 +464,7 @@ data.loginWidget = $sp.getWidgetFromInstance('login-modal');]]></script>
             <span class="visible-lg-inline">{{::user.name}}</span>
           </a>
           <ul class="dropdown-menu" role="menu" aria-label="{{::data.profileBtnMsg}}">
-            <li role="presentation"><a tabindex="-1" ng-href="?id=my_profile&sys_id={{::user.sys_id}}" role="menuitem">${My Activity}</a></li>
+            <li role="presentation"><a tabindex="-1" ng-href="?id=my_activity&sys_id={{::user.sys_id}}" role="menuitem">${My Activity}</a></li>
             <li ng-if="::!(isViewNative || isViewNativeTablet)" role="presentation"><a tabindex="-1" href="{{::portal.logoutUrl}}" role="menuitem">${Logout}</a></li>
           </ul>
         </li>

@@ -3,36 +3,11 @@
         <category>custom</category>
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
-        <css>:root {
-    --black: #000000;
-    --white: #ffffff;
-    --darkest: #004c4c; /* Changed from #101010 */
-    --darker: #006666;  /* Changed from #16171A */
-    --dark: #66b2b2;    /* Changed from #A3AFBF */
-    --medium: #b2d8d8;  /* Changed from #DFE7EF */
-    --light: #b2d8d8;   /* Kept the same */
-    --lighter: #F5F8FC; /* Kept the same */
-    --lightest: var(--white);
-    
-    --primary: #008080; /* Changed from #7B16FF */
-    --primary-light: #66b2b2; /* Changed from #DDD9FF */
-    --primary-trans: rgba(0, 128, 128, 0.4); /* Changed to match --primary */
-    
-    --yellow: #FDCB6E;
-    --orange: #E17055;
-    --teal: #00CEC9;
-    
-    --bg: var(--darkest);
-    --color: var(--lightest);
-    --surface: var(--darker);
-}
-
-
-.l-wrapper {
+        <css>.l-wrapper {
     width: 100%;
     max-width: 980px;
     margin: auto;
-    padding: 1.6rem 1.6rem 3.2rem;
+    padding: 0rem 1.6rem 1.6rem 3.2rem;
   	color: #ffffff;
 }
 
@@ -68,6 +43,7 @@
 }
 .header&gt;h2{
   //font-weight: bold;
+  //margin-top:0px;
   color:#004c4c;
 }
 .header&gt;hr{
@@ -119,7 +95,10 @@ box-shadow: -1px 0px 12px 0px rgba(102, 178, 178,1);
 
 .c-card__body,
 .c-card__header {
-    padding: 2rem 4.8rem 4.8rem 4.8rem;
+    padding: 4rem 4rem 4rem 4rem;
+}
+.c-card__leaderboard{
+  padding: 2rem 4.8rem 4.8rem 4.8rem;
 }
 
 .c-card__header {
@@ -332,73 +311,69 @@ populateKudosList();
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-	 getUserDetails(gs.getUserID());
-	//console.log("dd" + JSON.stringify(userObj) + gs.getUserID());
-	//data.myimage = userObj.photo;
-	//data.myname = userObj.name;
-	//data.mypoints = userObj.points;
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	function getUserDetails(user){
+		var loggedInUser = new GlideRecord('sys_user');
+		loggedInUser.get(user);
+		data.myname = loggedInUser.getValue('name');
+		data.myimage = loggedInUser.getDisplayValue('photo'); 
+		data.mypoints = loggedInUser.getValue('u_points');
+	}
+
+	getUserDetails(gs.getUserID());
+	
 	data.table = 'sys_user';
 	data.users = [];
-  var gr = new GlideRecord(data.table);
-	gr.orderByDesc('u_points');
-	gr.setLimit(5);
-  gr.query();
-	
+	var userDetails = new GlideRecord(data.table);
+	userDetails.orderByDesc('u_points');
+	userDetails.setLimit(5);
+	userDetails.query();
+
 	var c=1;
-	while (gr.next()) {
+	while (userDetails.next()) {
 		var obj={
-			sys_id:gr.getValue('sys_id'),
-			name:gr.getValue('name'),
-			image_url: gr.getDisplayValue('photo'),
-			points:gr.getValue('u_points'),
+			sys_id:userDetails.getValue('sys_id'),
+			name:userDetails.getValue('name'),
+			image_url: userDetails.getDisplayValue('photo'),
+			points:userDetails.getValue('u_points'),
 			rank:c
 		};
 		data.users.push(obj);
 		c++;
 	}
-	console.log(data.users);
-	// logged in users details
-	/*var userRecord = new GlideRecord('sys_user');
-    userRecord.addQuery('sys_id', gs.getUserID());
-    userRecord.query();*/
-		var count=1;
-		for(var i=0;i<data.users.length;i++){
-			if(data.users[i].sys_id!=gs.getUserID()){
-				count++;
-			}
-			else
-				{
-					//data.mypoints=data.users[i].points;
-					//data.myname=data.users[i].name;
-					//data.myimage=data.users[i].image_url;
-					break;
-				}
+	//console.log(data.users);
+
+	var count=1;
+	for(var i=0;i<data.users.length;i++){
+		if(data.users[i].sys_id!=gs.getUserID()){
+			count++;
 		}
-	data.rank=count;
-	
-	function getUserDetails(user){
-		var grUser = new GlideRecord('sys_user');
-		grUser.get(user);
-		data.myname = grUser.getValue('name');
-		data.myimage = grUser.getDisplayValue('photo'); 
-		data.mypoints = grUser.getValue('u_points');
+		else
+		{
+			//data.mypoints=data.users[i].points;
+			//data.myname=data.users[i].name;
+			//data.myimage=data.users[i].image_url;
+			break;
+		}
 	}
+	data.rank=count;
+
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-13 07:22:02</sys_created_on>
         <sys_id>437669c5837e4610edb56060ceaad39b</sys_id>
-        <sys_mod_count>186</sys_mod_count>
+        <sys_mod_count>197</sys_mod_count>
         <sys_name>Leaderboard</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_437669c5837e4610edb56060ceaad39b</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-18 15:39:44</sys_updated_on>
+        <sys_updated_on>2024-06-25 10:11:11</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
@@ -439,7 +414,7 @@ populateKudosList();
             </div>
             <div class="l-grid__item">
                 <div class="c-card">
-                    <div class="c-card__body">
+                    <div class="c-card__leaderboard">
                       <h3 class="poppins-semibold">Top 5 Users</h3>
                       <hr class="line"/>
                       <ul class="c-list" id="list">

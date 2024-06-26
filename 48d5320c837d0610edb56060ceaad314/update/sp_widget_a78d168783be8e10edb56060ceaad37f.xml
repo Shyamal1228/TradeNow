@@ -1,37 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function($scope, spUtil) {
+        <client_script><![CDATA[api.controller=function($scope,spUtil) {
+	/* widget controller */
+	var c = this;
 	
-	var c=this;
-    $scope.emails = [];
+	// Function to delete notification
+	c.deleteNotification = function(sys_id) {
+		c.data.id=sys_id;
+		console.log("notttt"+c.data.id);
+		//c.server.update();
+		c.server.update().then(function(response) {
+			if (response.data.success) {
+				alert('Update successful');
+			} else {
+				alert('Update failed:', response.data.error);
+			}
+		});
+	}
 
-    // Fetch emails from the server
-    spUtil.get('email_notifications', {}).then(function(response) {
-        $scope.emails = response.emails;
-    });
-}
-]]></client_script>
+	spUtil.recordWatch($scope, 'x_1383179_tradenow_item_list', "notificationflag=true", function(response) {
+		//console.log(response.data);
+		c.server.update();
+	});
+};]]></client_script>
         <controller_as>c</controller_as>
-        <css>.email-notifications {
-    background-color: #f8f9fa;
-    padding: 10px;
-    border: 1px solid #dee2e6;
+        <css>.notification {
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-left: 5px solid #4caf50;
+  position: relative;
 }
-.email-notifications ul {
-    list-style-type: none;
-    padding: 0;
+.notification h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
 }
-.email-notifications li {
-    margin-bottom: 10px;
+.notification p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #666;
 }
-</css>
+.shopping-bag {
+  max-width: 900px;
+  margin: auto;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.shopping-bag h2 {
+  background-color: #f7f7f7;
+  padding: 15px;
+  margin: 0;
+  text-align: center;
+  font-size: 24px;
+}
+.shopping-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fafafa;
+  transition: background-color 0.3s ease;
+}
+.shopping-item:hover {
+  background-color: #f0f0f0;
+}
+.shopping-item:last-child {
+  border-bottom: none;
+}
+.shopping-item img {
+  width: 60px;
+  height: auto;
+  margin-right: 15px;
+}
+.item-details {
+  flex-grow: 1;
+}
+.item-details p {
+  margin: 5px 0;
+}
+.item-details p.name {
+  font-weight: bold;
+}
+.item-buttons {
+  display: flex;
+  gap: 10px;
+}
+.item-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.item-buttons button.get-item {
+  background-color: #4caf50;
+  color: white;
+}
+.item-buttons button.cancel-reservation {
+  background-color: #f44336;
+  color: white;
+}
+@media (max-width: 600px) {
+  .shopping-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .item-buttons {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.header{
+  text-align: center;
+  color: #004c4c;
+}
+.header&gt;h2{
+  //font-weight: bold;
+  color:#004c4c;
+}
+.header&gt;hr{
+  border: none;
+  height: 5px;
+  width: 25%;
+  background-color: #004c4c;
+  margin-butom: 2px;
+  margin-top: 0px;
+}
+
+.delete-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: red;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>portal_notification</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
@@ -40,46 +184,88 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-    data.emails = [];
+	
+	data.notify = [];
+	var notification = new GlideRecord('x_1383179_tradenow_item_list');
+	notification.addEncodedQuery('status=readypickup^ORstatus=reserved^ORstatus=claimed');
+	notification.orderByDesc('sys_updated_on');
+	notification.addQuery('notificationflag',false);
+	notification.query();
 
-    var gr = new GlideRecord('sys_email');
-    gr.addQuery('type', 'received'); // Filter for received emails
-    gr.orderByDesc('sys_created_on'); // Order by creation date
-    gr.setLimit(10); // Limit the number of emails retrieved
-    gr.query();
-    while (gr.next()) {
-        var plainTextBody = GlideStringUtil.stripHTML(gr.body.toString());
-        data.emails.push({
-            subject: gr.subject.toString(),
-            body: plainTextBody,
-            date: gr.sys_created_on.getDisplayValue()
-        });
-    }
-})();
-]]></script>
+	while(notification.next()){
+		var obj={
+			sys_id:notification.getValue('sys_id'),
+			name:notification.getValue('item_name'),
+			status:notification.getValue('status'),
+			//reservation_time:notification.getValue('reservation'),
+			//created_on:gr.getValue('sys_created_on').toString().substring(0, 10),
+			updated_on:notification.getValue('sys_updated_on')
+		};
+		
+		// fetching reservation duration from system properties
+		var timeProperty = gs.getProperty('x_1383179_tradenow.reservation.duration');
+		//console.log("timeProperty="+typeof timeProperty);
+		var [hours, minutes, seconds] = timeProperty.split(':').map(Number);
+		//console.log(hours,minutes,seconds);
+		var totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
+		console.log(totalSeconds);
+
+		
+		// Create a new GlideDateTime object for the current date and time
+		// Get the current GlideDateTime object
+		var currentTime = new GlideDateTime();
+		//gs.info(currentTime);
+		currentTime.addSeconds(totalSeconds);
+		// Convert to string
+		var currentTimeString = currentTime.toString();
+		obj.reservation_time=currentTimeString;
+
+		data.notify.push(obj);
+
+		//console.log(data.notify);
+
+		if (input && input.id) {
+			var deleteNotification = new GlideRecordSecure('x_1383179_tradenow_item_list');
+			deleteNotification.addQuery('sys_id', input.id);
+			deleteNotification.query();
+			if (deleteNotification.next()) {
+				deleteNotification.setValue('notificationflag',true);
+				deleteNotification.update();
+			}
+		}
+	}
+})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-19 16:30:29</sys_created_on>
         <sys_id>a78d168783be8e10edb56060ceaad37f</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>Portal Notification</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_a78d168783be8e10edb56060ceaad37f</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-19 16:43:20</sys_updated_on>
-        <template><![CDATA[<div class="email-notifications">
-    <h4>Recent Emails</h4>
-    <ul>
-        <li ng-repeat="email in data.emails">
-            <strong>{{email.subject}}</strong> <br/>
-            {{email.body}} <br/>
-            <small>{{email.date}}</small>
-        </li>
-    </ul>
+        <sys_updated_on>2024-06-26 05:15:06</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+</style>
+<div class="header" >
+  <h2 class="poppins-semibold">My Notifications</h2>
+  <hr/>
 </div>
-]]></template>
+<div ng-repeat="noti in data.notify">
+  <div class="notification">
+    <span class="delete-icon" ng-click="c.deleteNotification(noti.sys_id)"><i class="fa-solid fa-xmark" style="color: #d4340c;"></i></span>
+    <h2 class="poppins-regular">{{noti.name}}</h2>
+    <p ng-if="noti.status=='reserved'">Your Item {{noti.name}} has been reserved. Reservation will be ends in {{noti.reservation_time}}.</p>
+    <p ng-if="noti.status=='readypickup'">Your Item {{noti.name}} is ready to pickup.</p>
+    <p ng-if="noti.status=='claimed'">Your Item {{noti.name}} is claimed successfully.</p>
+    <p>Date/Time: {{noti.updated_on}}</p>
+  </div>
+</div>
+
+<script src="https://kit.fontawesome.com/ebe15838fd.js" crossorigin="anonymous"></script>]]></template>
     </sp_widget>
 </record_update>

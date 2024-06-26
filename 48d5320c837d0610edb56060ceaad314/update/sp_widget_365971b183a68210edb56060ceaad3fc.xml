@@ -45,7 +45,7 @@
 				'Content-Type': file.type, // Let the browser set the Content-Type including the boundary
 				'Accept': 'application/json'
 			},
-			transformRequest: angular.identity // Use angular.identity to send FormData as is
+			transformRequest: angular.identity // Use angular.identity to send FormData
 		};
 		$http(request)
 			.then(function (response) {
@@ -63,22 +63,7 @@
 	
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css>* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-}
-
-.container {
+        <css>.container {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -194,37 +179,17 @@ h2 {
 		//data.categoryArray.push(categoryList.getValue('name'));
 	}
 	
-	/*data.choices = [];
-        var gr = new GlideRecord('sys_choice');
-        gr.addQuery('name', 'x_1383179_tradenow_item_list');
-        gr.addQuery('element', 'condition');
-        gr.addQuery('inactive', false);
-        gr.orderBy('sequence');
-        gr.query();
-        while (gr.next()) {
-					var conObj={
-						value: gr.getValue('value'),
-                label: gr.getValue('label')
-					};
-					data.choices.push(conObj);
-           // choices.push({
-            //    value: gr.getValue('value'),
-           //     label: gr.getValue('label')
-           // });
-        }
-	*/
-	
 	data.choices = [];
-	var gr = new GlideRecord('sys_choice');
-	gr.addQuery('name', 'x_1383179_tradenow_item_list');
-	gr.addQuery('element', 'condition');
-	gr.addQuery('inactive', false);
-	gr.orderBy('sequence');
-	gr.query();
-	while (gr.next()) {
+	var conditionList = new GlideRecord('sys_choice');
+	conditionList.addQuery('name', 'x_1383179_tradenow_item_list');
+	conditionList.addQuery('element', 'condition');
+	conditionList.addQuery('inactive', false);
+	conditionList.orderBy('sequence');
+	conditionList.query();
+	while (conditionList.next()) {
 		var conObj = {
-			value: gr.getValue('value'),
-			label: gr.getValue('label')
+			value: conditionList.getValue('value'),
+			label: conditionList.getValue('label')
 		};
 		data.choices.push(conObj);
 	}
@@ -259,13 +224,6 @@ h2 {
 			//if the record is created successfully, send the success
 			// message to the client, else send the error message
 
-			if (!gs.nil(userRegSysId)) {
-				data.status = "success";
-
-			} else {            data.message = "Your registration has been successfully submitted.";
-
-						 }                   data.status = "error";
-
 	//	}
 		
 		
@@ -290,77 +248,67 @@ h2 {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-03 06:24:14</sys_created_on>
         <sys_id>365971b183a68210edb56060ceaad3fc</sys_id>
-        <sys_mod_count>63</sys_mod_count>
+        <sys_mod_count>70</sys_mod_count>
         <sys_name>Add item image</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_365971b183a68210edb56060ceaad3fc</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-13 05:07:12</sys_updated_on>
-        <template><![CDATA[<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Item</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-            <form name="registration" novalidate ng-submit="c.submitForm(registration.$valid)">
-              <div class="form-header">
-                <img src="icon.png" alt="Icon" class="form-icon">
-                <h2>Add New Item</h2>
-            </div>
-                <div class="form-group" ng-class="{'has-error':registration.item_name.$invalid && c.submitted }">
-                    <label for="item_name">Item Name</label>
-                    <input type="text" ng-model="c.item_name" id="item_name" name="item_name" ng-required="true">
-                  <p class="help-block" ng-show="registration.item_name.$invalid && c.submitted">Field is required.</p>
-                </div>
-                <div class="form-group" ng-class="{'has-error':registration.description.$invalid && c.submitted }">
-                    <label for="description">Item Description</label>
-                    <textarea id="description" ng-model="c.description" name="description" rows="4" ng-required="true"></textarea>
-                  <p class="help-block" ng-show="registration.description.$invalid && c.submitted">Field is required.</p>
-                </div>
-                <div class="form-group" ng-class="{ 'has-error' :registration.condition.$invalid && c.submitted }">
-                  <div class="select-dropdown">
-                     <label for="description">Item Condition</label>
-                   <!-- <select name="condition" ng-model="c.selectedCondition" ng-options="condition.value for condition in data.choices" ng-required="true">
-                      <option value="">Select Condition</option>
-                    </select>-->
-                    <select name="condition" ng-model="c.selectedCondition" ng-options="condition.value as condition.label for condition in data.choices" ng-required="true">
-                      <option value="">Select Condition</option>
-                    </select>
-
-
-										<p class="help-block" ng-show="registration.condition.$invalid && c.submitted">Field is required.</p>
-                  </div>
-                </div>
-                <div class="form-group" ng-class="{ 'has-error' :registration.category.$invalid && c.submitted }">
-                  <div class="select-dropdown">
-                    <label for="description">Item Category</label>
-                    <!--<select name="category" ng-model="c.selectedCategory" ng-options="category.name for category in data.categoryArray" ng-required="true">
-                      <option value="">Select Category</option>
-                    </select>-->
-                    <select name="category" ng-model="c.selectedCategory" ng-options="category.sys_id as category.name for category in data.categoryArray" ng-required="true">
-                      <option value="">Select Category</option>
-                    </select>
-
-										<p class="help-block" ng-show="registration.category.$invalid && c.submitted">Field is required.</p>
-                  </div>
-                </div>
-               <div class="form-group">
-                    <label for="item-image">Upload Image</label>
-                    <input type="file" id="fileToUpload" multiple onchange="angular.element(this).scope().setFiles(this)"/>
-                </div>
-              <div class="form-group">
-                <button type="submit" ng-click="uploadFiles()" value="Upload">Add Item</button>
-              </div>
-            </form>
+        <sys_updated_on>2024-06-23 17:58:19</sys_updated_on>
+        <template><![CDATA[<div class="container">
+  <form name="registration" novalidate ng-submit="c.submitForm(registration.$valid)">
+    <div class="form-header">
+      <img src="icon.png" alt="Icon" class="form-icon">
+      <h2>Add New Item</h2>
     </div>
-</body>
-</html>
+    <div class="form-group" ng-class="{'has-error':registration.item_name.$invalid && c.submitted }">
+      <label for="item_name">Item Name</label>
+      <input type="text" ng-model="c.item_name" id="item_name" name="item_name" ng-required="true">
+      <p class="help-block" ng-show="registration.item_name.$invalid && c.submitted">Field is required.</p>
+    </div>
+    <div class="form-group" ng-class="{'has-error':registration.description.$invalid && c.submitted }">
+      <label for="description">Item Description</label>
+      <textarea id="description" ng-model="c.description" name="description" rows="4" ng-required="true"></textarea>
+      <p class="help-block" ng-show="registration.description.$invalid && c.submitted">Field is required.</p>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' :registration.condition.$invalid && c.submitted }">
+      <div class="select-dropdown">
+        <label for="description">Item Condition</label>
+        <!-- <select name="condition" ng-model="c.selectedCondition" ng-options="condition.value for condition in data.choices" ng-required="true">
+                      <option value="">Select Condition</option>
+                    </select>-->
+        <select name="condition" ng-model="c.selectedCondition" ng-options="condition.value as condition.label for condition in data.choices" ng-required="true">
+          <option value="">Select Condition</option>
+        </select>
+
+
+        <p class="help-block" ng-show="registration.condition.$invalid && c.submitted">Field is required.</p>
+      </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' :registration.category.$invalid && c.submitted }">
+      <div class="select-dropdown">
+        <label for="description">Item Category</label>
+        <!--<select name="category" ng-model="c.selectedCategory" ng-options="category.name for category in data.categoryArray" ng-required="true">
+                      <option value="">Select Category</option>
+                    </select>-->
+        <select name="category" ng-model="c.selectedCategory" ng-options="category.sys_id as category.name for category in data.categoryArray" ng-required="true">
+          <option value="">Select Category</option>
+        </select>
+
+        <p class="help-block" ng-show="registration.category.$invalid && c.submitted">Field is required.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="item-image">Upload Image</label>
+      <input type="file" id="fileToUpload" multiple onchange="angular.element(this).scope().setFiles(this)"/>
+    </div>
+    <div class="form-group">
+      <button type="submit" ng-click="uploadFiles()" value="Upload">Add Item</button>
+    </div>
+  </form>
+</div>
+
 ]]></template>
     </sp_widget>
 </record_update>

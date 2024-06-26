@@ -11,9 +11,9 @@
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .text{
   color:#000000;
@@ -56,85 +56,85 @@
 
 
 .container {
-    background-color: #ffffff;
-    max-width: 900px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  	margin:55px 0;
-    padding: 25px 0;
+  background-color: #ffffff;
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin:55px 0;
+  padding: 25px 0;
 }
 
 .image {
-    flex: 1 1 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    //background-color: #ff0000;
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //background-color: #ff0000;
 }
 
 .image img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .content {
-    flex: 1 1 50%;
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex: 1 1 50%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
-    color: #333333;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #333333;
 }
 
 .description {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .description p {
-  	margin-top: 10px;
-    margin-bottom: 10px;
-    color: #555555;
-  	font-size: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #555555;
+  font-size: 1.5rem;
 }
 
 .features {
-    list-style: none;
-    margin-bottom: 20px;
+  list-style: none;
+  margin-bottom: 20px;
 }
 
 .features li {
-  	font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #555555;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #555555;
 }
 
 .features li span {
-    color: #ff0000;
+  color: #ff0000;
 }
 
 .actions {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .claim-item,
 .add-to-cart,
 .reserve {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-  	
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+
 }
 
 .view-item-button {
@@ -156,17 +156,17 @@ h1 {
 }
 
 .claim-item {
-    background-color: #00d26a;
-    color: #ffffff;
-  	box-shadow: 0 4px 8px rgba(120, 200, 121, 0.4);
- 		transition: background-color 0.3s ease;
+  background-color: #00d26a;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(120, 200, 121, 0.4);
+  transition: background-color 0.3s ease;
 }
 .claim-item:hover {
   background-color: #25c249;
 }
 .add-to-cart {
-    background-color: #007bff;
-    color: #ffffff;
+  background-color: #007bff;
+  color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
   transition: background-color 0.3s ease;
 }
@@ -174,8 +174,8 @@ h1 {
   background-color:#0e65f0;
 }
 .reserve {
-    background-color: #f26b0a;
-    color: #ffffff;
+  background-color: #f26b0a;
+  color: #ffffff;
   box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4);
   transition: background-color 0.3s ease;
 }
@@ -183,14 +183,14 @@ h1 {
   background-color: #db4e02;
 }
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
+  .container {
+    flex-direction: column;
+  }
 
-    .image,
-    .content {
-        flex: 1 1 100%;
-    }
+  .image,
+  .content {
+    flex: 1 1 100%;
+  }
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -207,89 +207,72 @@ h1 {
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-  /* populate the 'data' object */
-	
+	/* populate the 'data' object */
+
 	var table_name = $sp.getParameter('table');
 	var targetSysId = $sp.getParameter('sys_id');
-	
+
 	//console.log(table_name);
 	//console.log(targetSysId);
 	//data.details = [];
 	if(table_name){
-  var gr = new GlideRecord(table_name);
-	if (gr.get(targetSysId)){
-		data.obj={
-			sys_id:gr.getValue('sys_id'),
-			lister:gr.getValue('lister_name'),
-			name:gr.getValue('item_name'),
-			description:gr.getValue('description'),
-			category:gr.getValue('category'),
-			condition:gr.getValue('condition'),
-			image_url: null
-		};
-		var category_sys_id=data.obj.category;
-		var catGR = new GlideRecord('x_1383179_tradenow_category_lookup');
-		catGR.addQuery('sys_id', category_sys_id);
-		catGR.query();
-		if (catGR.next()) {
-			var categoryName = catGR.getDisplayValue('name');
-			data.obj.category = categoryName;
-		}
-		
-		
-		var attachmentGr = new GlideRecord('sys_attachment');
-		attachmentGr.addQuery('table_sys_id', targetSysId);
-		attachmentGr.query();
-		
-		if (attachmentGr.next()) {
-			data.obj.image_url = '/sys_attachment.do?sys_id=' + attachmentGr.getValue('sys_id');
-		}
-		
-		
-		var userId = data.obj.lister;
+		var itemDetails = new GlideRecord(table_name);
+		if (itemDetails.get(targetSysId)){
+			data.obj={
+				sys_id:itemDetails.getValue('sys_id'),
+				lister:itemDetails.getValue('lister_name'),
+				name:itemDetails.getValue('item_name'),
+				description:itemDetails.getValue('description'),
+				category:itemDetails.getValue('category'),
+				condition:itemDetails.getValue('condition'),
+				image_url: null
+			};
+			var category_sys_id=data.obj.category;
+			var catGR = new GlideRecord('x_1383179_tradenow_category_lookup');
+			catGR.addQuery('sys_id', category_sys_id);
+			catGR.query();
+			if (catGR.next()) {
+				var categoryName = catGR.getDisplayValue('name');
+				data.obj.category = categoryName;
+			}
 
-		var userGR = new GlideRecord('sys_user');
-		userGR.addQuery('sys_id', userId);
-		userGR.query();
+			var attachmentGR = new GlideRecord('sys_attachment');
+			attachmentGR.addQuery('table_sys_id', targetSysId);
+			attachmentGR.query();
 
-		if (userGR.next()) {
-			//var fullName = userGR;
-			 var fullName = userGR.getDisplayValue('name');
-			console.log("userGR="+userGR);
-			data.obj.lister=fullName;
+			if (attachmentGR.next()) {
+				data.obj.image_url = '/sys_attachment.do?sys_id=' + attachmentGR.getValue('sys_id');
+			}
+
+			var userId = data.obj.lister;
+			var userGR = new GlideRecord('sys_user');
+			userGR.addQuery('sys_id', userId);
+			userGR.query();
+
+			if (userGR.next()) {
+				//var fullName = userGR;
+				var fullName = userGR.getDisplayValue('name');
+				console.log("userGR="+userGR);
+				data.obj.lister=fullName;
+			}
+			//data.details.push(obj);
 		}
-	//data.details.push(obj);
 	}
-}
-	
-	console.log(input);
-	
-	/*var grClaimItem = new GlideRecordSecure('x_1383179_tradenow_item_list');
-	grClaimItem.addQuery('sys_id', targetSysId);
-	grClaimItem.query();
-	if (grClaimItem.next()) {
-		//data.status=input.status;
-		// console.log(data.status);
-		//console.log(input.status);
-			grClaimItem.setValue('status',input.status);
-			//grClaimItem.update();
-	}*/
-	
-	
+
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-31 07:29:00</sys_created_on>
         <sys_id>426be27c83a24210edb56060ceaad3f0</sys_id>
-        <sys_mod_count>194</sys_mod_count>
+        <sys_mod_count>199</sys_mod_count>
         <sys_name>Item Details</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_426be27c83a24210edb56060ceaad3f0</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-04 10:29:51</sys_updated_on>
+        <sys_updated_on>2024-06-23 18:16:28</sys_updated_on>
         <template><![CDATA[
     <div class="container">
         <div class="image">

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $location) {
+  $scope.c.breadcrumbs = []; // Initialize breadcrumbs
+  $scope.c.expanded = false;
+ 
+  // Method to expand breadcrumbs
+  $scope.c.expand = function() {
+    $scope.c.expanded = true;
+  };
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.nav {
+  overflow:hidden;
+  li {
+    padding: 10px 7px;
+
+    &gt; span {
+      &gt; a {
+          display: inline;
+      }
+
+      &gt; i {
+          padding-left: 15px;
+      }
+    }
+  }
+  &amp;::before, &amp;::after {
+    content: none;
+  }
+}
+
+.a-disabled {
+  cursor: default;
+  color: $sp-disabled-breadcrumb;
+  font-weight: bold;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>tradenow_breadcrumbs</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Tradenow Breadcrumbs</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  data.breadcrumbs = [];
+  var currentPage = $sp.getParameter('id'); // Get current page ID
+  var sysId = $sp.getParameter('sys_id'); // Example: Get course ID from URL
+	var charityId=$sp.getParameter('charity_id');
+ 
+  // Define breadcrumb map
+  var breadcrumbMap = {
+    'all_items': ['All Items'],
+    'item_details': ['All Items','Item Details'],
+		'charity_organization':['Charity Organizations'],
+		'charity_page':['Charity Organizations','Charity Details'],
+		'my_activity':['My Activities']
+  };
+ 
+	
+  if (currentPage == 'item_details' && sysId) {
+		var gr = new GlideRecord('x_1383179_tradenow_item_list');
+    if (gr.get(sysId)) {
+      //data.breadcrumbs.push({ label: 'Home', url: '?id=tradenow_index' });
+      data.breadcrumbs.push({ label: 'All Items', url: '?id=all_items' });
+      data.breadcrumbs.push({ label: gr.getValue('item_name'), url: '' }); // Current page
+    }
+  } 
+	
+	else if (currentPage == 'charity_page' && charityId) {
+		var charity = new GlideRecord('x_1383179_tradenow_charity_list');
+    if (charity.get(sysId)) {
+      //data.breadcrumbs.push({ label: 'Home', url: '?id=tradenow_index' });
+      data.breadcrumbs.push({ label: 'Charity Organizations', url: '?id=charity_organization' });
+      data.breadcrumbs.push({ label: charity.getValue('charity_name'), url: '' }); // Current page
+    }
+  }
+	
+	else if (currentPage == 'my_activity' && sysId) {
+		var user = new GlideRecord('sys_user');
+    if (user.get(sysId)) {
+      //data.breadcrumbs.push({ label: 'Home', url: '?id=tradenow_index' });
+      data.breadcrumbs.push({ label: 'My Activities', url: '?id=my_activity' });
+      //data.breadcrumbs.push({ label: charity.getValue('charity_name'), url: '' }); // Current page
+    }
+  }
+	
+	else if (breadcrumbMap[currentPage]) {
+    breadcrumbMap[currentPage].forEach(function(label, index) {
+      data.breadcrumbs.push({
+        label: label,
+        url: index === 0 ? '?id=tradenow_index' : ''
+      });
+    });
+  }
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-25 05:14:20</sys_created_on>
+        <sys_id>615cb6f883438210edb56060ceaad34b</sys_id>
+        <sys_mod_count>56</sys_mod_count>
+        <sys_name>Tradenow Breadcrumbs</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_615cb6f883438210edb56060ceaad34b</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-25 09:23:34</sys_updated_on>
+        <template><![CDATA[<nav aria-label="${Page breadcrumbs}" role="navigation" class="breadcrumbs">
+<ul class="nav nav-pills nav-sm">
+  <li>
+    <span><a ng-href="?id={{portal.homepage_dv}}">${Home}</a>
+      <i aria-hidden="true" class="fa fa-chevron-right flip-icon-rtl"></i></span>
+  </li>
+  <li ng-if="!c.expanded &amp;&amp; c.data.breadcrumbs &amp;&amp; c.data.breadcrumbs.length > 2">
+    <span><a ng-click="c.expand()"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+      <i aria-hidden="true" class="fa fa-chevron-right flip-icon-rtl"></i></span>
+  </li>
+  <li ng-if="!c.data.breadcrumbs"><span style="display: inline;" class="a-disabled" aria-current="page">{{page.title}}</span></li>
+  <li ng-if="c.expanded || ((c.data.breadcrumbs.length > 2  &amp;&amp; $index > c.data.breadcrumbs.length-3) || (c.data.breadcrumbs.length <= 2))" ng-repeat="item in c.data.breadcrumbs track by $index" >
+    <span><a ng-if="!$last" ng-href="{{item.url}}">{{item.label}}</a>
+      <span class="a-disabled" ng-if="$last" aria-current="page">{{item.label}}</span>
+      <i aria-hidden="true" ng-if="!$last" class="fa fa-chevron-right flip-icon-rtl"></i></span>
+  </li>
+</ul>
+  
+  <!--<pre>{{c.data.breadcrumbs}}</pre>-->
+</nav]]></template>
+    </sp_widget>
+</record_update>

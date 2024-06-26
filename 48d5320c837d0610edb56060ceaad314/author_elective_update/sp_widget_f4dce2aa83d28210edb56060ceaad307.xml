@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	c.loadFile = function(event) {
+    var reader = new FileReader();
+    reader.onload = function() {
+      var image = document.getElementById('output');
+      image.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+	
+	c.submitForm = function(isValid) {
+		c.try=isValid;
+		c.submitted= true;
+		//alert("done");
+		 //spUtil.addInfoMessage('saved');
+		
+		if (!isValid)
+			return;
+		c.data.item_name = c.item_name;
+		c.data.description= c.description;
+		c.data.selectedCondition= c.selectedCondition;
+		c.data.selectedCategory = c.selectedCategory;
+		//data.event= c.select_event;
+		//data.eventSysId=c.setect_event.sys_id;
+		c.data.image= c.image;
+
+		//Pass the data object to the server, add a promise (callback)
+		// to process the server's response
+		c.server.update();
+		
+	}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+  margin:30px;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: #f4f4f9;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+  border-radius:15px;
+}
+
+.form-container {
+    flex: 1;
+    padding: 20px 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+input[type="text"], 
+textarea, 
+select, 
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="file"] {
+    padding: 3px;
+}
+
+.btn {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+hr {
+    border: none;
+    height: 5px;
+  	width:50%;
+    background-color: #dddddd;
+    margin-bottom: 20px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>add_item_widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Add item widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.categoryArray = [];
+  var categoryList = new GlideRecord('x_1383179_tradenow_category_lookup');
+	categoryList.query();
+	while (categoryList.next()) {
+		
+		var catObj={
+			name:categoryList.getValue('name'),
+			sys_id:categoryList.getValue('sys_id'),
+		};
+		data.categoryArray.push(catObj);
+		//data.categoryArray.push(categoryList.getValue('name'));
+	}
+	
+	/*data.choices = [];
+        var gr = new GlideRecord('sys_choice');
+        gr.addQuery('name', 'x_1383179_tradenow_item_list');
+        gr.addQuery('element', 'condition');
+        gr.addQuery('inactive', false);
+        gr.orderBy('sequence');
+        gr.query();
+        while (gr.next()) {
+					var conObj={
+						value: gr.getValue('value'),
+                label: gr.getValue('label')
+					};
+					data.choices.push(conObj);
+           // choices.push({
+            //    value: gr.getValue('value'),
+           //     label: gr.getValue('label')
+           // });
+        }
+	*/
+	
+	data.choices = [];
+	var gr = new GlideRecord('sys_choice');
+	gr.addQuery('name', 'x_1383179_tradenow_item_list');
+	gr.addQuery('element', 'condition');
+	gr.addQuery('inactive', false);
+	gr.orderBy('sequence');
+	gr.query();
+	while (gr.next()) {
+		var conObj = {
+			value: gr.getValue('value'),
+			label: gr.getValue('label')
+		};
+		data.choices.push(conObj);
+	}
+
+	//	console.log(data.choices);
+		// console.log(data.categoryArray);
+	
+	if(input){
+		console.log(input);
+		//if(validateRegistration (input.name)){
+
+			var grNewRegistration = new GlideRecordSecure('x_1383179_tradenow_item_list');
+			grNewRegistration.initialize();
+			console.log(input);
+			grNewRegistration.setValue('item_name', input.item_name);
+
+			grNewRegistration.setValue('description', input.description);
+			grNewRegistration.setValue('condition', input.selectedCondition);
+			grNewRegistration.setValue('category', input.selectedCategory);
+			grNewRegistration.setValue('company', input.selectedCondition);
+			//grNewRegistration.setValue('event', input.eventSysId);
+
+			grNewRegistration.setValue('image', input.image);
+
+		if(!input.comments) {
+			grNewRegistration.setValue('comments', "");
+		} else {
+			grNewRegistration.setValue('comments', input.comments);
+			}
+
+			var userRegSysId = grNewRegistration.insert();
+			//if the record is created successfully, send the success
+			// message to the client, else send the error message
+
+			if (!gs.nil(userRegSysId)) {
+				data.status = "success";
+
+			} else {            data.message = "Your registration has been successfully submitted.";
+
+						 }                   data.status = "error";
+
+	//	}
+
+	}
+
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-24 07:48:51</sys_created_on>
+        <sys_id>f4dce2aa83d28210edb56060ceaad307</sys_id>
+        <sys_mod_count>147</sys_mod_count>
+        <sys_name>Add item widget</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_f4dce2aa83d28210edb56060ceaad307</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-04 10:54:31</sys_updated_on>
+        <template><![CDATA[
+    <div class="container">
+        <div class="image-container">
+            <img src="add item image.png" alt="Item Image">
+        </div>
+        <div class="form-container">
+            <h1>Add New Item</h1>
+          <hr>
+            <form name="registration" novalidate ng-submit="c.submitForm(registration.$valid)">
+                <div class="form-group" ng-class="{'has-error':registration.item_name.$invalid && c.submitted }">
+                    <label for="item_name">Item Name</label>
+                    <input type="text" ng-model="c.item_name" id="item_name" name="item_name" ng-required="true">
+                  <p class="help-block" ng-show="registration.item_name.$invalid && c.submitted">Field is required.</p>
+                </div>
+                <div class="form-group" ng-class="{'has-error':registration.description.$invalid && c.submitted }">
+                    <label for="description">Item Description</label>
+                    <textarea id="description" ng-model="c.description" name="description" rows="4" ng-required="true"></textarea>
+                  <p class="help-block" ng-show="registration.description.$invalid && c.submitted">Field is required.</p>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' :registration.condition.$invalid && c.submitted }">
+                  <div class="select-dropdown">
+                     <label for="description">Item Condition</label>
+                   <!-- <select name="condition" ng-model="c.selectedCondition" ng-options="condition.value for condition in data.choices" ng-required="true">
+                      <option value="">Select Condition</option>
+                    </select>-->
+                    <select name="condition" ng-model="c.selectedCondition" ng-options="condition.value as condition.label for condition in data.choices" ng-required="true">
+                      <option value="">Select Condition</option>
+                    </select>
+
+
+										<p class="help-block" ng-show="registration.condition.$invalid && c.submitted">Field is required.</p>
+                  </div>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' :registration.category.$invalid && c.submitted }">
+                  <div class="select-dropdown">
+                    <label for="description">Item Category</label>
+                    <!--<select name="category" ng-model="c.selectedCategory" ng-options="category.name for category in data.categoryArray" ng-required="true">
+                      <option value="">Select Category</option>
+                    </select>-->
+                    <select name="category" ng-model="c.selectedCategory" ng-options="category.sys_id as category.name for category in data.categoryArray" ng-required="true">
+                      <option value="">Select Category</option>
+                    </select>
+
+										<p class="help-block" ng-show="registration.category.$invalid && c.submitted">Field is required.</p>
+                  </div>
+                </div>
+               <div class="form-group">
+                    <label for="item-image">Upload Image</label>
+                    <input type="file" ng-model="c.image" accept="image/*" onchange="angular.element(this).scope().c.loadFile(event)">
+                  	<img id="output" style="max-width: 20%; height: auto;"/>
+                </div>
+                <button type="submit" class="btn">Add Item</button>
+            </form>
+        </div>
+      <div ng-if="c.message" id="errorMessage" class="alert alert-danger" role="alert">{{c.message}}</div>
+<div ng-if="c.success" id="successMessage" class="alert alert-success" role="alert">{{c.success}}</div>
+    </div>
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sp_widget_f4dce2aa83d28210edb56060ceaad307</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	c.loadFile = function(event) {
+    var reader = new FileReader();
+    reader.onload = function() {
+      var image = document.getElementById('output');
+      image.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+	
+	c.submitForm = function(isValid) {
+		c.try=isValid;
+		c.submitted= true;
+		//alert("done");
+		 //spUtil.addInfoMessage('saved');
+		
+		if (!isValid)
+			return;
+		c.data.item_name = c.item_name;
+		c.data.description= c.description;
+		c.data.selectedCondition= c.selectedCondition;
+		c.data.selectedCategory = c.selectedCategory;
+		//data.event= c.select_event;
+		//data.eventSysId=c.setect_event.sys_id;
+		c.data.image= c.image;
+
+		//Pass the data object to the server, add a promise (callback)
+		// to process the server's response
+		c.server.update();
+		
+	}
+};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+  margin:30px;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-color: #f4f4f9;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+  border-radius:15px;
+}
+
+.form-container {
+    flex: 1;
+    padding: 20px 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+input[type="text"], 
+textarea, 
+select, 
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="file"] {
+    padding: 3px;
+}
+
+.btn {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+hr {
+    border: none;
+    height: 5px;
+  	width:50%;
+    background-color: #dddddd;
+    margin-bottom: 20px;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;add_item_widget&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Add item widget&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.categoryArray = [];
+  var categoryList = new GlideRecord('x_1383179_tradenow_category_lookup');
+	categoryList.query();
+	while (categoryList.next()) {
+		
+		var catObj={
+			name:categoryList.getValue('name'),
+			sys_id:categoryList.getValue('sys_id'),
+		};
+		data.categoryArray.push(catObj);
+		//data.categoryArray.push(categoryList.getValue('name'));
+	}
+	
+	/*data.choices = [];
+        var gr = new GlideRecord('sys_choice');
+        gr.addQuery('name', 'x_1383179_tradenow_item_list');
+        gr.addQuery('element', 'condition');
+        gr.addQuery('inactive', false);
+        gr.orderBy('sequence');
+        gr.query();
+        while (gr.next()) {
+					var conObj={
+						value: gr.getValue('value'),
+                label: gr.getValue('label')
+					};
+					data.choices.push(conObj);
+           // choices.push({
+            //    value: gr.getValue('value'),
+           //     label: gr.getValue('label')
+           // });
+        }
+	*/
+	
+	data.choices = [];
+	var gr = new GlideRecord('sys_choice');
+	gr.addQuery('name', 'x_1383179_tradenow_item_list');
+	gr.addQuery('element', 'condition');
+	gr.addQuery('inactive', false);
+	gr.orderBy('sequence');
+	gr.query();
+	while (gr.next()) {
+		var conObj = {
+			value: gr.getValue('value'),
+			label: gr.getValue('label')
+		};
+		data.choices.push(conObj);
+	}
+
+	//	console.log(data.choices);
+		// console.log(data.categoryArray);
+	
+	if(input){
+		console.log(input);
+		//if(validateRegistration (input.name)){
+
+			var grNewRegistration = new GlideRecordSecure('x_1383179_tradenow_item_list');
+			grNewRegistration.initialize();
+			console.log(input);
+			grNewRegistration.setValue('item_name', input.item_name);
+
+			grNewRegistration.setValue('description', input.description);
+			grNewRegistration.setValue('condition', input.selectedCondition);
+			grNewRegistration.setValue('category', input.selectedCategory);
+			grNewRegistration.setValue('company', input.selectedCondition);
+			//grNewRegistration.setValue('event', input.eventSysId);
+
+			grNewRegistration.setValue('image', input.image);
+
+		if(!input.comments) {
+			grNewRegistration.setValue('comments', "");
+		} else {
+			grNewRegistration.setValue('comments', input.comments);
+			}
+
+			var userRegSysId = grNewRegistration.insert();
+			//if the record is created successfully, send the success
+			// message to the client, else send the error message
+
+			if (!gs.nil(userRegSysId)) {
+				data.status = "success";
+
+			} else {            data.message = "Your registration has been successfully submitted.";
+
+						 }                   data.status = "error";
+
+	//	}
+
+	}
+
+	
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-24 07:48:51&lt;/sys_created_on&gt;&lt;sys_id&gt;f4dce2aa83d28210edb56060ceaad307&lt;/sys_id&gt;&lt;sys_mod_count&gt;147&lt;/sys_mod_count&gt;&lt;sys_name&gt;Add item widget&lt;/sys_name&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_f4dce2aa83d28210edb56060ceaad307&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-04 10:54:31&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[
+    &lt;div class="container"&gt;
+        &lt;div class="image-container"&gt;
+            &lt;img src="add item image.png" alt="Item Image"&gt;
+        &lt;/div&gt;
+        &lt;div class="form-container"&gt;
+            &lt;h1&gt;Add New Item&lt;/h1&gt;
+          &lt;hr&gt;
+            &lt;form name="registration" novalidate ng-submit="c.submitForm(registration.$valid)"&gt;
+                &lt;div class="form-group" ng-class="{'has-error':registration.item_name.$invalid &amp;&amp; c.submitted }"&gt;
+                    &lt;label for="item_name"&gt;Item Name&lt;/label&gt;
+                    &lt;input type="text" ng-model="c.item_name" id="item_name" name="item_name" ng-required="true"&gt;
+                  &lt;p class="help-block" ng-show="registration.item_name.$invalid &amp;&amp; c.submitted"&gt;Field is required.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group" ng-class="{'has-error':registration.description.$invalid &amp;&amp; c.submitted }"&gt;
+                    &lt;label for="description"&gt;Item Description&lt;/label&gt;
+                    &lt;textarea id="description" ng-model="c.description" name="description" rows="4" ng-required="true"&gt;&lt;/textarea&gt;
+                  &lt;p class="help-block" ng-show="registration.description.$invalid &amp;&amp; c.submitted"&gt;Field is required.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group" ng-class="{ 'has-error' :registration.condition.$invalid &amp;&amp; c.submitted }"&gt;
+                  &lt;div class="select-dropdown"&gt;
+                     &lt;label for="description"&gt;Item Condition&lt;/label&gt;
+                   &lt;!-- &lt;select name="condition" ng-model="c.selectedCondition" ng-options="condition.value for condition in data.choices" ng-required="true"&gt;
+                      &lt;option value=""&gt;Select Condition&lt;/option&gt;
+                    &lt;/select&gt;--&gt;
+                    &lt;select name="condition" ng-model="c.selectedCondition" ng-options="condition.value as condition.label for condition in data.choices" ng-required="true"&gt;
+                      &lt;option value=""&gt;Select Condition&lt;/option&gt;
+                    &lt;/select&gt;
+
+
+										&lt;p class="help-block" ng-show="registration.condition.$invalid &amp;&amp; c.submitted"&gt;Field is required.&lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="form-group" ng-class="{ 'has-error' :registration.category.$invalid &amp;&amp; c.submitted }"&gt;
+                  &lt;div class="select-dropdown"&gt;
+                    &lt;label for="description"&gt;Item Category&lt;/label&gt;
+                    &lt;!--&lt;select name="category" ng-model="c.selectedCategory" ng-options="category.name for category in data.categoryArray" ng-required="true"&gt;
+                      &lt;option value=""&gt;Select Category&lt;/option&gt;
+                    &lt;/select&gt;--&gt;
+                    &lt;select name="category" ng-model="c.selectedCategory" ng-options="category.sys_id as category.name for category in data.categoryArray" ng-required="true"&gt;
+                      &lt;option value=""&gt;Select Category&lt;/option&gt;
+                    &lt;/select&gt;
+
+										&lt;p class="help-block" ng-show="registration.category.$invalid &amp;&amp; c.submitted"&gt;Field is required.&lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+               &lt;div class="form-group"&gt;
+                    &lt;label for="item-image"&gt;Upload Image&lt;/label&gt;
+                    &lt;input type="file" ng-model="c.image" accept="image/*" onchange="angular.element(this).scope().c.loadFile(event)"&gt;
+                  	&lt;img id="output" style="max-width: 20%; height: auto;"/&gt;
+                &lt;/div&gt;
+                &lt;button type="submit" class="btn"&gt;Add Item&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+      &lt;div ng-if="c.message" id="errorMessage" class="alert alert-danger" role="alert"&gt;{{c.message}}&lt;/div&gt;
+&lt;div ng-if="c.success" id="successMessage" class="alert alert-success" role="alert"&gt;{{c.success}}&lt;/div&gt;
+    &lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>254726727</payload_hash>
+        <record_name>Add item widget</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-04 10:54:31</sys_created_on>
+        <sys_id>7fc0cc1683a60210edb56060ceaad3d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18fe2e2e5040000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-04 10:54:31</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>37c0cc16a0a60210f10330b95829b8d4</update_guid>
+        <update_guid_history>37c0cc16a0a60210f10330b95829b8d4:254726727,7280df4e52a2021068067b29c64ca599:70297919,d830130225e202106e236a6770b89c6d:-589650558,37009786b0a2021042e752c9cab67c45:618021752,00ef0fcee0a20210d9888a08440f26b8:-1660088073,201e87861da2021038fc84a170d0463d:-399167100,8f778b46fca20210f647e5a92b239772:-731731055,4f96034aef6202104879b6c97650595e:-374821003,4e1443ca9c6202109ce60f15c2099e4b:737940576,566db68af062021042387f1ed1283518:-1134212689,452dbe0aad6202100d7fa8d1148a60d1:-484735830,cedb36c6e9620210eebf460c848779f7:-1208308523,26cbbe0ae2620210a256f7e7a0934cbb:-2125326632,aabb76c6306202109dd83aa10da546fb:-224815960,188b320a656202102ae26d4579c08e46:-1218497572,ab5b368694620210ad4605ad095227af:-2125326632,0c4b760aec62021084aed4561c36468c:-919769395,812bf20ae56202106922170ad80929da:2121743955,69ba76c6e56202107f3d5ebf240435cc:-1042236545,a66ab6c63762021050eee36fa3c411d5:587091816,594af686b6620210e5180e94e62125fd:1892638344,23f93a865f62021098efc0343df4e0bb:587091816,3189b2c21b620210702102a6d37ee441:-1014037408,e669be46a66202104b852403bd14f06e:250776168,0939328628620210c92048c7c75b40ed:1999173604,3f0932062c620210f0d4cf8e08348e97:-1448648053,1809fece6a220210c24bd2f8074962c7:-918229012,bbd8fa4686620210c86e17305336ce54:1016989175,1d98f2c27c620210547499b42fbb248f:-346094713,26887ec2b76202107828c4c17af172e9:509764939,d828f2c281620210555279dd302422a0:1873845939,2727b2c28a6202107fd0ded04aac66d9:-1701469497,dc86b68e722202108bf8ccdb76fb7f16:-1075678137,2466fe82d5620210f9891a0d2ac030c0:-123906311,44d5bececd220210b32ddbf7bdb6d19b:184279815,6544368e382202107dde9b47205aa6e8:1242451557,d9f3b68e582202109a6bada08e7ef5a0:-505620096,2c933ece16220210a3609f11fed34890:1698900300,4843b68ea32202108889bf669c3e9098:53968067,8912324e8722021037ebf66aa2b9700e:-1718352664,2ae1728e4322021043aa132e04852daf:105130920,7b81fa4e7c220210fba6e86c19a71ac0:920702171,f981fa0a792202104a75178cd39c0753:592057715,1731fe0e662202106c9fcf4ce2b1fcdd:1773712923,bbd0364a7a220210c0fd8a59e2bc6be7:1236125182,f870764a2622021058236586a5297b46:-432452525,9dfea68aca22021089c6f3cfe43f7438:1356271764,145ceec6e32202102c9b6fc07f48ed89:1071042055,7caba6068f220210f51e35f4b8e9acaa:-1586191003,928a62861c2202103cf904b36fcc4412:-1374300210,c809ee82592202102af326d61c6ff651:-1229854906,fa4fd4863b62c210d6c34d998d9134d4:122342862,1a2f50861462c210b7afcf92d3b60b85:-1148421258,dac6f6352aaa82103eeb9fa02531f82d:-1102017548,c1763ef1feaa82107e6f9da9baeb9fa8:-1606407812,8d06f2b56eaa8210f00ff25ded14394a:-795646991,66c5363586aa821037335f082707d206:-1715095605,7ef4327588aa821099a7f316ae538fea:1310185048,ace4fe357daa8210b72d292d43f3255c:-1023720123,16d4be356aaa82104be1fe7ecdfe5171:-717890076,e794363571aa8210146f5e18c3d8540f:-1146983320,71643a716eaa8210443df0ef257ce03e:1217163496,9b34f235faaa821059d906efa89066fe:-1779128709,f3c332b121aa8210afe666cbb105ac8e:594164422,db22367ded6a8210c5482ea75f6e9701:485471219,3aff2afd4e6a821050facc3c5f35e9fe:-342838408,7eef6ebda66a821088ffff60e82404b1:565623007,3f6f6ab9292a8210c96e44cc42829b29:-381739344,1b5f6a7dcc6a82100eb122d557f776c1:-580116815,934f6ebde36a8210bf72f2023161b1ab:1321627569,521e2a7da46a8210c17dce71db3d3fa0:-167828801,f2fd26f5116a821099f728e7ff6f3761:-297836087,d0dd22f1566a8210896950af4e1183b6:-1513113135,6e6cae79f96a8210027b099178903fbb:-119530135,ed4cae79906a8210af754b6abd5ad0e2:2014344687,c4cae6794a6a821017cae0215840a337:223837158,db04cebdb0a68210749c96a2c97bec96:324021417,65b18e7972a682103d2e893747055389:-1322997807,43a18af916a682103b344ef141672ab0:-1208488533,dca18e79bea682106651fe61092af3a4:282037413,4491c6b963a682102947ed3a01f59e93:135060880,30814a79d0a68210808c6da2a20d2c31:-831544839,9471c6b9ffa6821085bfe8fa919cbeb4:1647494997,b561c6b9d6a68210480e65dcebb3b0bf:-1110204847,5fd0c6b99aa68210e3de8bf9d451b98a:-441506702,30c0467906a6821008c84df6ca9ba01e:1848618989,1f508a794ca68210d0095bcf60ab284f:-840850615,364046f5dca68210f05d6d0a9b5c3301:-738643798,e1208a79a4a6821060350709b4744948:-1750873177,91104a7990a682100c6a23f10fe43429:501433131,d3df7db541a682102fa6aec46bf22a99:-250282945,e3cfbdb528a682103d52176817d13d33:-2022823599,4afdf975eea682107964ca25002affa1:60187955,faddb97525a68210392fae69ec53536a:2078554462,145db5b5ffa68210dae1f65aa94bb355:220125297,982df1f173a68210b36572607476f7cc:-2138727399,79dc35f174a68210f0eecf49a1b6e318:-97746787,5f8c35f1aba68210d072cb0015f4d630:-1918234745,c2cbb1f1aca68210ffebfb6be044d33a:-1240672587,7696bdb9896682108b1d898724b51aac:-1941256471,3e86b1bd85668210d67d8e30cea6ac22:-900964632,8e667dbd316682107b1af6fa5df0462d:83204430,b346f53dfd668210888c62da4a317738:1639655832,7016b1bdd4668210f9baa32ae7dcaa1c:767828682,83c5f1b99a6682108b1a3f8ab33d2800:524092516,a025518b7c960210267ecf82907df550:1341498549,e915d58b7296021004da5c746622c2be:1763838510,b8c45dc7d29602102c7fd04af52f5af3:820871667,deb4954b2e960210688ba5ad404a5555:-2103854975,8d94d907d5960210a4e0b58a0283d161:-1356450993,be741d4b259602107fa28578dae138e9:-2000344525,f34411c7e8960210206ba22f5e9cf855:-1171003631,f214954b7096021014746580a1e35436:1890831185,65935d0b349602104bcca39d3bb26b38:1958359249,bc5359c7c396021004382b96b1cffca9:307305648,e2c25dc78396021051e1f6d1fa6ba56a:1772540960,a9b25dc7cf960210e09e6720cd3c8f63:-2031697661,0a7259c748960210c1b274def02f1972:-903154652,930291c7ef9602102692674de822ab41:1772540960,8cf111c73f960210d7bb8304b6c1c82c:855817748,b131d18744960210481537443792538b:935565147,5af0d9479d960210e4a4bed63a44c6a0:-1036330281,9cc01107c9960210819264a1c2b6451c:-2080163070,9290d9073b9602107115cb9b83648f51:-1782877644,ad1051cffa560210b3bc7b017847a41b:-422410991,25df0583d89602102d1bf66601d6eab6:-59502388,f65fc98fbe560210117b2fb27f541136:214662791,9e3fcdc38a960210272314a3ba7202c8:1665017209,602f8d8f7656021092d533d4010e113c:1999221667,29ee09c34d960210d647fccce7373406:-211852929,61ce41cf6b5602103ac0a17033b63a2a:-939109786,afdd8543499602101421cfac165f4e3f:-2016413717,4fd936eaaf16821018f2331b71046aaf:-413113809,2cd9f6aa54168210b1c841662bfdd780:348661291,8999beaac91682101c2a81a6b8f7e277:-1723622093,9b897eaaee16821066b8e875fd082298:1060700555,ee3976aadd168210accf9d44515f981b:844073117,a1d83aa28d168210252ab9b026f487f9:-847085449,4251feeeebd2821089dfa121553a41c7:-906978235,fbf03aaebfd282105520a8fc2ec5da97:2015118956,79e07662441682104feabee7adba0017:662919806,fd503eaa64d282109804757326b50a06:2145737642,91ef2aae04d28210d3558d903fd5eb8e:78628151,903faaaa11d282100ce4cbbce9015487:-2014917742,4ebea2aaf2d28210495fb4e11a0b7d37:-59777254,11bd2e2ec4d28210890747b109f11a09:188133621,cb0da6aac5d28210c769581a18a9c002:1985795816,fcdce2aacfd28210b9eb1fe38daa0108:1498639079</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Add item widget">d7a8539483030210edb56060ceaad389</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-23 18:01:11</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>3db94fa25dcd4a2a8ba44491d37cde44</sys_id>
+        <sys_metadata>f4dce2aa83d28210edb56060ceaad307</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Add item widget</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sp_widget_f4dce2aa83d28210edb56060ceaad307</sys_update_name>
+        <sys_update_version display_value="sp_widget_f4dce2aa83d28210edb56060ceaad307">7fc0cc1683a60210edb56060ceaad3d4</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-23 18:01:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

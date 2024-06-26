@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.container {
+    line-height: 25px;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: #777777;
+}
+.container {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+.container {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>homepage_donation</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Homepage donation</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-25 09:14:47</sys_created_on>
+        <sys_id>151ac08383520210edb56060ceaad3e4</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Homepage donation</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_151ac08383520210edb56060ceaad3e4</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-25 09:16:59</sys_updated_on>
+        <template><![CDATA[<div class="container">
+<div class="main_title">
+<h2>Featured causes</h2>
+<p>Creepeth called face upon face yielding midst is after moveth </p>
+</div>
+<div class="row">
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<div class="card-body">
+<figure>
+<img class="card-img-top img-fluid" src="img/features/fc1.jpg" alt="Card image cap">
+</figure>
+<div class="card_inner_body">
+<h4 class="card-title">Education for every child</h4>
+<p class="card-text">
+Be tree their face won't appear day waters moved fourth in they're divide don't a you were man face god.
+</p>
+<div class="d-flex justify-content-between raised_goal">
+<p>Raised: $1533</p>
+<p><span>Goal: $2500</span></p>
+</div>
+<div class="d-flex justify-content-between donation align-items-center">
+<a href="#" class="primary_btn">donate</a>
+<p><span class="lnr lnr-heart"></span> 90 Donors</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<div class="card-body">
+<figure>
+<img class="card-img-top img-fluid" src="img/features/fc2.jpg" alt="Card image cap">
+</figure>
+<div class="card_inner_body">
+<h4 class="card-title">Feeding the hungry people</h4>
+<p class="card-text">
+Be tree their face won't appear day waters moved fourth in they're divide don't a you were man face god.
+</p>
+<div class="d-flex justify-content-between raised_goal">
+<p>Raised: $1533</p>
+<p><span>Goal: $2500</span></p>
+</div>
+<div class="d-flex justify-content-between donation align-items-center">
+<a href="#" class="primary_btn">donate</a>
+<p><span class="lnr lnr-heart"></span> 90 Donors</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6">
+<div class="card">
+<div class="card-body">
+<figure>
+<img class="card-img-top img-fluid" src="img/features/fc3.jpg" alt="Card image cap">
+</figure>
+<div class="card_inner_body">
+<h4 class="card-title">Providing cloth people</h4>
+<p class="card-text">
+Be tree their face won't appear day waters moved fourth in they're divide don't a you were man face god.
+</p>
+<div class="d-flex justify-content-between raised_goal">
+<p>Raised: $1533</p>
+<p><span>Goal: $2500</span></p>
+</div>
+<div class="d-flex justify-content-between donation align-items-center">
+<a href="#" class="primary_btn">donate</a>
+<p><span class="lnr lnr-heart"></span> 90 Donors</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sp_widget_151ac08383520210edb56060ceaad3e4</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.container {
+    line-height: 25px;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: #777777;
+}
+.container {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+.container {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+}&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;homepage_donation&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Homepage donation&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-05-25 09:14:47&lt;/sys_created_on&gt;&lt;sys_id&gt;151ac08383520210edb56060ceaad3e4&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Homepage donation&lt;/sys_name&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_151ac08383520210edb56060ceaad3e4&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-05-25 09:16:59&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="container"&gt;
+&lt;div class="main_title"&gt;
+&lt;h2&gt;Featured causes&lt;/h2&gt;
+&lt;p&gt;Creepeth called face upon face yielding midst is after moveth &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+&lt;div class="col-lg-4 col-md-6"&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;
+&lt;figure&gt;
+&lt;img class="card-img-top img-fluid" src="img/features/fc1.jpg" alt="Card image cap"&gt;
+&lt;/figure&gt;
+&lt;div class="card_inner_body"&gt;
+&lt;h4 class="card-title"&gt;Education for every child&lt;/h4&gt;
+&lt;p class="card-text"&gt;
+Be tree their face won't appear day waters moved fourth in they're divide don't a you were man face god.
+&lt;/p&gt;
+&lt;div class="d-flex justify-content-between raised_goal"&gt;
+&lt;p&gt;Raised: $1533&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Goal: $2500&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="d-flex justify-content-between donation align-items-center"&gt;
+&lt;a href="#" class="primary_btn"&gt;donate&lt;/a&gt;
+&lt;p&gt;&lt;span class="lnr lnr-heart"&gt;&lt;/span&gt; 90 Donors&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-lg-4 col-md-6"&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;
+&lt;figure&gt;
+&lt;img class="card-img-top img-fluid" src="img/features/fc2.jpg" alt="Card image cap"&gt;
+&lt;/figure&gt;
+&lt;div class="card_inner_body"&gt;
+&lt;h4 class="card-title"&gt;Feeding the hungry people&lt;/h4&gt;
+&lt;p class="card-text"&gt;
+Be tree their face won't appear day waters moved fourth in they're divide don't a you were man face god.
+&lt;/p&gt;
+&lt;div class="d-flex justify-content-between raised_goal"&gt;
+&lt;p&gt;Raised: $1533&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Goal: $2500&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="d-flex justify-content-between donation align-items-center"&gt;
+&lt;a href="#" class="primary_btn"&gt;donate&lt;/a&gt;
+&lt;p&gt;&lt;span class="lnr lnr-heart"&gt;&lt;/span&gt; 90 Donors&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-lg-4 col-md-6"&gt;
+&lt;div class="card"&gt;
+&lt;div class="card-body"&gt;
+&lt;figure&gt;
+&lt;img class="card-img-top img-fluid" src="img/features/fc3.jpg" alt="Card image cap"&gt;
+&lt;/figure&gt;
+&lt;div class="card_inner_body"&gt;
+&lt;h4 class="card-title"&gt;Providing cloth people&lt;/h4&gt;
+&lt;p class="card-text"&gt;
+Be tree their face won't appear day waters moved fourth in they're divide don't a you were man face god.
+&lt;/p&gt;
+&lt;div class="d-flex justify-content-between raised_goal"&gt;
+&lt;p&gt;Raised: $1533&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;Goal: $2500&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="d-flex justify-content-between donation align-items-center"&gt;
+&lt;a href="#" class="primary_btn"&gt;donate&lt;/a&gt;
+&lt;p&gt;&lt;span class="lnr lnr-heart"&gt;&lt;/span&gt; 90 Donors&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1266203281</payload_hash>
+        <record_name>Homepage donation</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-05-25 09:16:59</sys_created_on>
+        <sys_id>799a0c8783520210edb56060ceaad3ac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18faf0a025b0000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-05-25 09:16:59</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>319a0c87895202109a7192155f186bac</update_guid>
+        <update_guid_history>319a0c87895202109a7192155f186bac:1266203281,5e3a8487f85202105f4a9a6262c1b968:904479857,911ac0874252021087e5fda90a973c59:-228561742</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Homepage donation">b1a917d483030210edb56060ceaad322</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-23 18:05:27</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>1ae9cc35a04f45a0948587a784624490</sys_id>
+        <sys_metadata>151ac08383520210edb56060ceaad3e4</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Homepage donation</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sp_widget_151ac08383520210edb56060ceaad3e4</sys_update_name>
+        <sys_update_version display_value="sp_widget_151ac08383520210edb56060ceaad3e4">799a0c8783520210edb56060ceaad3ac</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-23 18:05:27</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

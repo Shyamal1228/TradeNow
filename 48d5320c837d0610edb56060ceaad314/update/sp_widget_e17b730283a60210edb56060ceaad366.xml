@@ -1,68 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function(spUtil,$scope,$sce) {
-  /* widget controller */
-  var c = this;
+        <client_script><![CDATA[api.controller=function(i18n,spModal,spUtil,$scope,$sce) {
+	/* widget controller */
+	var c = this;
 	c.mapVisible = false;
 	c.showMap = function() {
 		var url="https://maps.google.com/maps?q="+c.data.obj.latitude+","+c.data.obj.longitude+"&z=15&output=embed";
-	//	console.log(url);
+		//	console.log(url);
 		$scope.detailFrame= $sce.trustAsResourceUrl(url);
 		//alert(c.data.obj.latitude);
 		c.mapVisible = !c.mapVisible;
 	};
-	
-		c.Itembutton = function(st) {
+
+	c.Itembutton = function(st) {
 		c.data.status=st;
-			
-			if(st=='reserved'){
-				spUtil.addInfoMessage("Item will be reserved for "+c.data.timeProperty+ " seconds!")
-			}
+
+		if(st=='reserved'){
+			spUtil.addInfoMessage("Item will be reserved for "+c.data.timeProperty+ " seconds!")
+		}
 		//c.server.update();
-			c.server.update().then(function(response) {
-      if (response) {
+		c.server.update().then(function(response) {
+			if (response) {
 				c.data.status = null;
-       //alert('Update successful');
-      } else {
-       //alert('Update failed:', response.data.error);
-      }
-    });
+				//alert('Update successful');
+			} else {
+				//alert('Update failed:', response.data.error);
+			}
+		});
 	}
-	
+
 	spUtil.recordWatch($scope, 'x_1383179_tradenow_item_list', "statusINavailable,readypickup,reserved,claimed", function(response) {
-	//console.log(response.data);
+		//console.log(response.data);
 		// statusINavailable,readypickup,reserved,claimed
 		c.server.update();
-});
-	
+	});
+
 	// calculate distance
-	//c.calculateDistance = function() {
 	var lat1 = c.data.obj.latitude;
-		var lng1 = c.data.obj.longitude;
-		var lat2 = c.data.obj.Logglatitude;
-		var lng2 = c.data.obj.Logglongitude;
-		console.log( lat1+" "+lng1+" "+ lat2+" "+lng2);
+	var lng1 = c.data.obj.longitude;
+	var lat2 = c.data.obj.loggedInUserLatitude;
+	var lng2 = c.data.obj.loggedInUserLongitude;
+	//console.log( lat1+" "+lng1+" "+ lat2+" "+lng2);
 
-		// Haversine formula
-		var toRadians = function(degrees) {
-			return degrees * (Math.PI / 180);
-		};
+	// Haversine formula
+	var toRadians = function(degrees) {
+		return degrees * (Math.PI / 180);
+	};
 
-		var R = 6371; // Earth's radius in km
-		var dLat = toRadians(lat2 - lat1);
-		var dLng = toRadians(lng2 - lng1);
-		var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-				Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
-				Math.sin(dLng / 2) * Math.sin(dLng / 2);
-		var c1 = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-		var d = R * c1; // Distance in km
+	var R = 6371; // Earth's radius in km
+	var dLat = toRadians(lat2 - lat1);
+	var dLng = toRadians(lng2 - lng1);
+	var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+			Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+			Math.sin(dLng / 2) * Math.sin(dLng / 2);
+	var c1 = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+	var d = R * c1; // Distance in km
 
-		c.distance = Math.floor(d);
-	//};
-	
-	//c.calculateDistance();
-	
+	c.distance = Math.floor(d);
+
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>/** {
@@ -338,6 +334,9 @@ iframe {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  	font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .text {
@@ -789,7 +788,106 @@ li&gt;i{
   cursor:pointer;
   size:40px;
 }
-</css>
+
+// dialouge box
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+  }
+  .popup {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: slide-down 0.5s forwards;
+  }
+  .popup h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+  }
+.popup h4 {
+    margin-top: 15px;
+    //font-size: 12px;
+    color: #333;
+  }
+  .popup .buttons {
+    margin-top: 20px;
+  }
+  .popup .buttons button {
+    margin: 0 10px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .popup .buttons .yes {
+    background-color: #008080;
+    color: white;
+  }
+  .popup .buttons .yes:hover {
+    background-color: #006666;
+  }
+  .popup .buttons .no {
+    background-color: #dc3545;
+    color: white;
+  }
+  .popup .buttons .no:hover {
+    background-color: #c82333;
+  }
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s;
+  }
+  .close-btn:hover {
+    color: #666;
+  }
+  .confirm-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  .confirm-btn:hover {
+    background-color: #0056b3;
+  }
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -829,92 +927,98 @@ li&gt;i{
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-  /* populate the 'data' object */
-	
+	/* populate the 'data' object */
+
 	var table_name = $sp.getParameter('table');
 	var targetSysId = $sp.getParameter('sys_id');
-	
+
 	data.timeProperty = gs.getProperty('x_1383179_tradenow.reservation.duration');
 	//console.log(table_name);
 	//console.log(targetSysId);
 	//data.details = [];
 	if(table_name){
-  var gr = new GlideRecord(table_name);
-	if (gr.get(targetSysId)){
-		data.obj={
-			sys_id:gr.getValue('sys_id'),
-			lister:gr.getValue('lister_name'),
-			name:gr.getValue('item_name'),
-			description:gr.getValue('description'),
-			category:gr.getValue('category'),
-			condition:gr.getValue('condition'),
-			item_status:gr.getValue('status'),
-			image_url: gr.getDisplayValue('image'),
-			location: gr.getDisplayValue('lister_name.location')
-		};
-		
-		var choice = new GlideRecord('sys_choice');
-    choice.addQuery('name', 'x_1383179_tradenow_item_list');
-    choice.addQuery('element', 'status');
-    choice.addQuery('value', data.obj.item_status);
-    choice.query();
-    if (choice.next()) {
-        var selectedLabel = choice.getValue('label');
+		var itemDetails = new GlideRecord(table_name);
+		if (itemDetails.get(targetSysId)){
+			data.obj={
+				sys_id:itemDetails.getValue('sys_id'),
+				lister:itemDetails.getValue('lister_name'),
+				name:itemDetails.getValue('item_name'),
+				description:itemDetails.getValue('description'),
+				category:itemDetails.getValue('category'),
+				condition:itemDetails.getValue('condition'),
+				item_status:itemDetails.getValue('status'),
+				image_url: itemDetails.getDisplayValue('image'),
+				location: itemDetails.getDisplayValue('lister_name.location'),
+				// accessing field label
+				lister_label:itemDetails['lister_name'].getLabel(),
+				listerLocation_label:itemDetails['location'].getLabel(),
+				itemStatus_label:itemDetails['status'].getLabel(),
+				item_condition_label:itemDetails['condition'].getLabel(),
+				item_category_label:itemDetails['category'].getLabel(),
+			};
+
+			var choice = new GlideRecord('sys_choice');
+			choice.addQuery('name', 'x_1383179_tradenow_item_list');
+			choice.addQuery('element', 'status');
+			choice.addQuery('value', data.obj.item_status);
+			choice.query();
+			if (choice.next()) {
+				var selectedLabel = choice.getValue('label');
 				data.obj.item_status_label=selectedLabel;
-        //console.log('Selected Label: ' + selectedLabel);
-    }
-		
-		var category_sys_id=data.obj.category;
-		var catGR = new GlideRecord('x_1383179_tradenow_category_lookup');
-		catGR.addQuery('sys_id', category_sys_id);
-		catGR.query();
-		if (catGR.next()) {
-			var categoryName = catGR.getDisplayValue('name');
-			data.obj.category = categoryName;
-		}
-		
-		console.log("######Status##### "+data.obj.item_status);
-		
-		/*var attachmentGr = new GlideRecord('sys_attachment');
+				//console.log('Selected Label: ' + selectedLabel);
+			}
+
+			var category_sys_id=data.obj.category;
+			var catGR = new GlideRecord('x_1383179_tradenow_category_lookup');
+			catGR.addQuery('sys_id', category_sys_id);
+			catGR.query();
+			if (catGR.next()) {
+				var categoryName = catGR.getDisplayValue('name');
+				data.obj.category = categoryName;
+			}
+
+			//console.log("######Status##### "+data.obj.item_status);
+
+			/*var attachmentGr = new GlideRecord('sys_attachment');
 		attachmentGr.addQuery('table_sys_id', targetSysId);
 		attachmentGr.query();
-		
+
 		if (attachmentGr.next()) {
 			data.obj.image_url = '/sys_attachment.do?sys_id=' + attachmentGr.getValue('sys_id');
 		}*/
-		
-		
-		var userId = data.obj.lister;
 
-		var userGR = new GlideRecord('sys_user');
-		userGR.addQuery('sys_id', userId);
-		userGR.query();
 
-		if (userGR.next()) {
-			//var fullName = userGR;
-			 var fullName = userGR.getDisplayValue('name');
-			var locationId = userGR.getValue('location');
-			if (locationId) {
-				var locationGR = new GlideRecord('cmn_location');
-				locationGR.addQuery('sys_id', locationId);
-				locationGR.query();
-				if (locationGR.next()) {
-					data.obj.latitude = locationGR.getValue('latitude');
-					data.obj.longitude = locationGR.getValue('longitude');
+			var userId = data.obj.lister;
+
+			var userGR = new GlideRecord('sys_user');
+			userGR.addQuery('sys_id', userId);
+			userGR.query();
+
+			if (userGR.next()) {
+				//var fullName = userGR;
+				var fullName = userGR.getDisplayValue('name');
+				var locationId = userGR.getValue('location');
+				if (locationId) {
+					var locationGR = new GlideRecord('cmn_location');
+					locationGR.addQuery('sys_id', locationId);
+					locationGR.query();
+					if (locationGR.next()) {
+						data.obj.latitude = locationGR.getValue('latitude');
+						data.obj.longitude = locationGR.getValue('longitude');
+					}
+					//console.log("Lat: " + data.obj.latitude);
 				}
-				//console.log("Lat: " + data.obj.latitude);
+				console.log("userGR="+userGR);
+				data.obj.lister=fullName;
 			}
-			console.log("userGR="+userGR);
-			data.obj.lister=fullName;
+			//data.details.push(obj);
 		}
-	//data.details.push(obj);
-	}
-		
-		// logged in user long, lati
+
+		// logged in user longitude, latitude
 		var userRecord = new GlideRecord('sys_user');
-    userRecord.addQuery('sys_id', gs.getUserID());
-    userRecord.query();
-		
+		userRecord.addQuery('sys_id', gs.getUserID());
+		userRecord.query();
+
 		if (userRecord.next()) {
 			//var fullName = userGR;
 			var locId = userRecord.getValue('location');
@@ -923,56 +1027,58 @@ li&gt;i{
 				locGR.addQuery('sys_id', locId);
 				locGR.query();
 				if (locGR.next()) {
-					data.obj.Logglatitude = locGR.getValue('latitude');
-					data.obj.Logglongitude = locGR.getValue('longitude');
+					data.obj.loggedInUserLatitude = locGR.getValue('latitude');
+					data.obj.loggedInUserLongitude = locGR.getValue('longitude');
 				}
 				//console.log("loggedd in user Lat: " + data.obj.Logglatitude);
 			}
 		}
-		
-		
-		// total watching
+
+
+		// total viewers
 		if(!input){
 			var record = new GlideRecord('x_1383179_tradenow_item_list');
-		if (record.get(data.obj.sys_id)) {
-			console.log("sys_id="+data.obj.sys_id);
-			record.total_watchers = (record.total_watchers || 0) + 1;
-			record.update();
-			data.watch=record.total_watchers;
-			console.log(data.watch);
+			if (record.get(data.obj.sys_id)) {
+				console.log("sys_id="+data.obj.sys_id);
+				record.total_watchers = (record.total_watchers || 0) + 1;
+				record.update();
+				data.watch=record.total_watchers;
+				console.log(data.watch);
+			}
 		}
-		}
-}
-	
-	if (input && input.status) {
-		console.log("Button clicked="+input.status);
-
-	var grClaimItem = new GlideRecordSecure('x_1383179_tradenow_item_list');
-	grClaimItem.addQuery('sys_id', targetSysId);
-	grClaimItem.query();
-	if (grClaimItem.next()) {
-			grClaimItem.setValue('status',input.status);
-			grClaimItem.update();
 	}
-		
+
+	if (input && input.status) {
+		//console.log("Button clicked="+input.status);
+
+		var itemStatus = new GlideRecordSecure('x_1383179_tradenow_item_list');
+		itemStatus.addQuery('sys_id', targetSysId);
+		itemStatus.query();
+		if (itemStatus.next()) {
+			itemStatus.setValue('status',input.status);
+			itemStatus.update();
+		}
+
 		return true;
 	}
-	
+
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-04 10:31:08</sys_created_on>
         <sys_id>e17b730283a60210edb56060ceaad366</sys_id>
-        <sys_mod_count>281</sys_mod_count>
+        <sys_mod_count>381</sys_mod_count>
         <sys_name>Item details copy</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_e17b730283a60210edb56060ceaad366</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-19 10:09:52</sys_updated_on>
-        <template><![CDATA[
+        <sys_updated_on>2024-06-25 17:10:34</sys_updated_on>
+        <template><![CDATA[<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+</style>
 <div class="container">
   <div class="image">
     <!--<img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt="Nike Shoes">-->
@@ -997,11 +1103,11 @@ li&gt;i{
     </ul>-->
     
     <ul class="features">
-      <li class="poppins-regular"><i class="fas fa-user" title="Lister"></i> {{data.obj.lister}}</li>
-      <li class="poppins-regular"><i class="fas fa-map-marker-alt" title="Location"></i> {{data.obj.location}}</li>
-      <li class="poppins-regular"><i class="fas fa-check-circle" title="Status"></i> {{data.obj.item_status_label.charAt(0).toUpperCase() + data.obj.item_status_label.slice(1)}}</li>
-      <li class="poppins-regular"><i class="fas fa-clipboard-check" title="Condition"></i> {{data.obj.condition.charAt(0).toUpperCase()+data.obj.condition.slice(1)}}</li>
-      <li class="poppins-regular"><i class="fas fa-tags" title="Category"></i> {{data.obj.category.charAt(0).toUpperCase() + data.obj.category.slice(1)}}</li>
+      <li class="poppins-regular"><i class="fas fa-user" title="{{data.obj.lister_label}}"></i> {{data.obj.lister}}</li>
+      <li class="poppins-regular"><i class="fas fa-map-marker-alt" title="{{data.obj.listerLocation_label}}"></i> {{data.obj.location}}</li>
+      <li class="poppins-regular"><i class="fas fa-check-circle" title="{{data.obj.itemStatus_label}}"></i> {{data.obj.item_status_label.charAt(0).toUpperCase() + data.obj.item_status_label.slice(1)}}</li>
+      <li class="poppins-regular"><i class="fas fa-clipboard-check" title="{{data.obj.item_condition_label}}"></i> {{data.obj.condition.charAt(0).toUpperCase()+data.obj.condition.slice(1)}}</li>
+      <li class="poppins-regular"><i class="fas fa-tags" title="{{data.obj.item_category_label}}"></i> {{data.obj.category.charAt(0).toUpperCase() + data.obj.category.slice(1)}}</li>
       <li class="poppins-regular"><i class="fas fa-route" title="Distance"></i> {{c.distance }} KM away</li>
     </ul>
   
@@ -1020,7 +1126,10 @@ li&gt;i{
       <button ng-if="data.obj.item_status == 'available'" ng-click="c.Itembutton('reserved')" class="reserve">Reserve</button>
       <button ng-show="data.obj.item_status == 'reserved'" ng-click="c.Itembutton('available')" class="cancel">Cancel Reservation</button>
       <!--<h2 ng-if="data.obj.item_status == 'claimed'" class="claimed">Item has been Claimed </h2>-->
-      <button ng-if="data.obj.item_status == 'readypickup'" ng-click="c.Itembutton('claimed')" class="claim-item">Confirm Pick-Up</button>
+      <!--<button ng-if="data.obj.item_status == 'readypickup'" ng-click="c.Itembutton('claimed')" class="claim-item">Confirm Pick-Up</button>-->
+       <button ng-show="data.obj.item_status == 'readypickup'" ng-click="c.Itembutton('claimed')" class="claim-item" id="confirmButton" >Confirm Pick-Up</button>
+       <!--<button class="confirm-btn" id="confirmButton">Confirm</button>-->
+       
       <button ng-click="c.showMap()" class="viewmap popUpBtn" data-modal="myModal1">View on Map</button>
       
   </div>
@@ -1060,8 +1169,39 @@ li&gt;i{
   </div>
 
 </div>
+<!--Dialouge box code for donation-->
+<div class="overlay" id="popupOverlay">
+  <div class="popup">
+    <span class="close-btn" id="closePopup">&times;</span>
+    <h2 class="poppins-semibold">Support a Cause: Donate Today!</h2>
+    <h4 class="poppins-regular">Do you want to donate to charities?</h4>
+    <div class="buttons">
+      <button class="yes poppins-light" id="donateYes">Yes</button>
+      <button class="no poppins-light" id="donateNo">No</button>
+    </div>
+  </div>
+</div>
 
+<script>
+  document.getElementById('confirmButton').onclick = function() {
+    document.getElementById('popupOverlay').style.display = 'flex';
+  };
 
-<script src="https://kit.fontawesome.com/ebe15838fd.js" crossorigin="anonymous"></script>]]></template>
+  document.getElementById('closePopup').onclick = function() {
+    document.getElementById('popupOverlay').style.display = 'none';
+  };
+
+  document.getElementById('donateYes').onclick = function() {
+    window.location.href = '/tradenow?id=charity_organization';
+  };
+
+  document.getElementById('donateNo').onclick = function() {
+    document.getElementById('popupOverlay').style.display = 'none';
+  };
+</script>
+
+<script src="https://kit.fontawesome.com/ebe15838fd.js" crossorigin="anonymous"></script>
+
+<!--No edit-->]]></template>
     </sp_widget>
 </record_update>

@@ -14,8 +14,7 @@
         <kb_topic/>
         <label/>
         <order>700</order>
-        <record_script><![CDATA[
-// only show 30 in header menu dropdown
+        <record_script><![CDATA[// only show 30 in header menu dropdown
 var max = 30;
 
 var t = data;
@@ -27,43 +26,51 @@ var userID = gs.getUserID();
 
 // Use record watchers to tell header when to update dropdown counts
 t.record_watchers = [];
-//t.record_watchers.push({'table':'incident','filter':'caller_id=' + userID + '^active=true'});
-t.record_watchers.push({'table':'x_1383179_tradenow_item_list','filter':'status=reserved'});
+t.record_watchers.push({
+    'table': 'x_1383179_tradenow_item_list',
+    'filter': 'status=readypickup^ORstatus=reserved^ORstatus=claimed,notificationflag=false'
+});
 
-// Query the incident table for incidents where the caller is the current user and the incident is active
+// Query the custom table for items with the specified statuses updated today
 var z = new GlideRecord('x_1383179_tradenow_item_list');
-//z.addActiveQuery();
-
-z.addEncodedQuery('status=reserved');
+z.addEncodedQuery('status=readypickup^ORstatus=reserved^ORstatus=claimed');
+z.addEncodedQuery('sys_updated_onONToday@javascript:gs.beginningOfToday()@javascript:gs.endOfToday()');
+z.addQuery('notificationflag',false);
 z.orderByDesc('sys_updated_on');
 z.setLimit(max);
 z.query();
 
 var link = {};
-link.title = gs.getMessage('View all Items');
+link.title = gs.getMessage('View all notifications');
 link.type = 'link';
-link.href = '?id=incidents';
+link.href = '?id=notification';
 link.items = [];
 t.items.push(link);
 
 while (z.next()) {
-  var a = {};
-  a.short_description = z.item_name + "";
-  a.number = z.number + "";
-  a.sys_id = z.sys_id + "";
-  a.sys_updated_on = z.sys_updated_on.getDisplayValue();
-  a.__table = z.getRecordClassName();
-  a.type = 'record';
-  t.items.push(a);
-  t.count++;
+    var a = {};
+    a.short_description = z.item_name + "";
+    if (z.status == 'reserved')
+        a.number = "Status: Reserved";
+    else if (z.status == 'readypickup')
+        a.number = "Status: Ready to Pickup";
+    else if (z.status == 'claimed')
+        a.number = "Status: Claimed";
+    
+    a.sys_id = z.sys_id + "";
+    a.sys_updated_on = z.getValue('sys_updated_on');
+    a.__table = z.getRecordClassName();
+    a.type = 'record';
+    a.__page = 'item_details';
+    t.items.push(a);
+    t.count++;
 }
 
-//gs.log('inc: ' + JSON.stringify(t));
-
 if (t.count == 1)
-  data.badgeHint = gs.getMessage('{0} updated incident', [''+t.count]);
+    data.badgeHint = gs.getMessage('{0} updated notification', ['' + t.count]);
 else
-  data.badgeHint = gs.getMessage('{0} updated incidents', [''+t.count]);]]></record_script>
+    data.badgeHint = gs.getMessage('{0} updated notifications', ['' + t.count]);
+]]></record_script>
         <sc_cat_item/>
         <sc_category/>
         <short_description/>
@@ -74,14 +81,14 @@ else
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-18 16:43:47</sys_created_on>
         <sys_id>1ea69d7683f64e10edb56060ceaad3e3</sys_id>
-        <sys_mod_count>30</sys_mod_count>
+        <sys_mod_count>115</sys_mod_count>
         <sys_name/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_rectangle_menu_item_1ea69d7683f64e10edb56060ceaad3e3</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-20 04:35:33</sys_updated_on>
+        <sys_updated_on>2024-06-26 05:20:54</sys_updated_on>
         <table/>
         <type>scripted</type>
         <url/>

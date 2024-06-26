@@ -558,7 +558,7 @@ hr{
   font-size: 1rem;
 }
 
-.operation-button-green{
+.operation-reserved{
 	background-color: #006060;
   color: white;
   border: none;
@@ -566,7 +566,35 @@ hr{
   border-radius: 5px;
   padding: 10px 24px;
 }
+.Claim{
+	background-color: #008080;
+  color: white;
+  border: none;
+  width: 50%;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-left:4px;
+  margin-right:4px;
+  transition: background-color .3s ease;
+}
+.Claim:hover{
+  background-color: #006666;
+}
 
+.Cancel{
+	background-color: #e6070e;
+  color: white;
+  border: none;
+  width: 50%;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-left:4px;
+  margin-right:4px;
+  transition: background-color .3s ease;
+}
+.Cancel:hover{
+  background-color: #b01920;
+}
 .operation-button-red{
 	background-color: red;
   color: white;
@@ -743,7 +771,7 @@ hr{
 				obj.availability = "Claimed";
 			} else if(obj.item_status === 'reserved'){
 				obj.availability = "Reserved";		
-				obj.button = ["Claim Item","Cancel Reservation"];
+				obj.button = ["Claim","Cancel"];
 			} else {
 				obj.availability = "Available";
 			}
@@ -783,14 +811,14 @@ hr{
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-24 06:00:04</sys_created_on>
         <sys_id>653d3d2883cb0210edb56060ceaad32e</sys_id>
-        <sys_mod_count>30</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_name>My_activity</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_653d3d2883cb0210edb56060ceaad32e</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-25 11:01:10</sys_updated_on>
+        <sys_updated_on>2024-06-26 07:01:48</sys_updated_on>
         <template><![CDATA[  <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
@@ -859,7 +887,7 @@ hr{
               <div class="time-created"> Updated on: <span ng-bind="order.creationTime" /></div>
             </div>
             <div class="order-amount">
-              <button class="operation-button-green" ng-repeat="buttons in order.button" ng-bind="buttons" ng-click="handleItemOperation(buttons)">
+              <button class="poppins-regular operation-reserved {{buttons}}" ng-repeat="buttons in order.button" ng-bind="buttons" ng-click="handleItemOperation(buttons)">
               </button>
             </div>
           </div>

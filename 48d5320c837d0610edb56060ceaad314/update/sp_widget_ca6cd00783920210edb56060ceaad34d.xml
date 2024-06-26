@@ -49,7 +49,6 @@
 }
 
 // button style
-
 .bn3637 {
   display: inline-flex;
   align-items: center;
@@ -79,7 +78,7 @@
 }
 
 
-// extra -&gt; carousel responsive
+// carousel responsive css
 @media (max-width: 767px) {
     /*vertically tall*/
     .carousel-inner, .carousel, .carousel-inner .item {
@@ -124,14 +123,14 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-25 10:34:50</sys_created_on>
         <sys_id>ca6cd00783920210edb56060ceaad34d</sys_id>
-        <sys_mod_count>161</sys_mod_count>
+        <sys_mod_count>163</sys_mod_count>
         <sys_name>Homepage carousel</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_ca6cd00783920210edb56060ceaad34d</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-21 16:22:17</sys_updated_on>
+        <sys_updated_on>2024-06-26 05:54:22</sys_updated_on>
         <template><![CDATA[<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">

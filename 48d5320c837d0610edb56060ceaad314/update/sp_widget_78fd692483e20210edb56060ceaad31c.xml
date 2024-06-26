@@ -3,12 +3,12 @@
         <category>custom</category>
         <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
         <controller_as>c</controller_as>
-        <css>.top{
-
-}
+        <css>/* Style for &lt;h4&gt; elements */
 h4{
    font-weight: bold;
 }
+
+/* Poppins font styles with different weights */
 .poppins-extralight {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
@@ -33,9 +33,10 @@ h4{
   font-style: normal;
 }
 
+/* Style for the feature section */
 .feature-section {
     background-image: url('https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&amp;w=1770&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  	box-shadow: inset 0 0 0 2000px rgba(178, 216, 216, 0.3);
+    box-shadow: inset 0 0 0 2000px rgba(178, 216, 216, 0.3);
     background-size: cover;
     background-position: center;
     padding: 50px 0;
@@ -43,13 +44,14 @@ h4{
     display: flex;
     justify-content: center;
     align-items: center;
-  	//margin-top:30px;
-  	//margin-bottom:30px;
+    /* margin-top:30px; */
+    /* margin-bottom:30px; */
 }
 
+/* Content inside the feature section */
 .feature-section .content {
     display: flex;
-/*     flex-wrap: wrap; */
+    /* flex-wrap: wrap; */
     max-width: 1200px;
     width: 100%;
     background: rgba(0,0,0, 0.3); /* Adds a dark overlay */
@@ -57,17 +59,20 @@ h4{
     overflow: hidden;
 }
 
+/* Style for left and right sides of the feature section */
 .feature-section .left, .feature-section .right {
     flex: 1 1 50%;
     padding: 20px;
 }
 
+/* Style for the left side */
 .feature-section .left {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Image in the left side */
 .feature-section .left img {
     width: 100%;
     border-radius: 10px;
@@ -75,6 +80,7 @@ h4{
     height: 100%;
 }
 
+/* Style for the right side */
 .feature-section .right {
     display: flex;
     flex-direction: column;
@@ -82,17 +88,19 @@ h4{
     align-items: flex-start;
 }
 
+/* Heading in the right side */
 .feature-section .right h2 {
     font-size: 2em;
     margin-bottom: 10px;
 }
 
+/* Paragraph in the right side */
 .feature-section .right p {
     letter-spacing: .02em;
     margin-bottom: 20px;
 }
 
-
+/* Responsive design for screens smaller than 768px */
 @media (max-width: 768px) {
     .feature-section .left, .feature-section .right {
         flex: 1 1 100%;
@@ -102,75 +110,84 @@ h4{
         width: 100%;
         height: auto;
     }
-  .feature-section .content {
-    display: flex;
-    flex-wrap: wrap;
-  }
   
+    .feature-section .content {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
+/* Style for button with gradient background */
 .bn39 {
-  background-image: linear-gradient(135deg, #008aff, #86d472);
-  border-radius: 6px;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: block;
-  height: 50px;
-  font-size: 1.4em;
-  font-weight: 600;
-  padding: 4px;
-  position: relative;
-  text-decoration: none;
-  width: 7em;
-  z-index: 2;
-  margin-top:10px;
+    background-image: linear-gradient(135deg, #008aff, #86d472);
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: block;
+    height: 50px;
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 4px;
+    position: relative;
+    text-decoration: none;
+    width: 7em;
+    z-index: 2;
+    margin-top: 10px;
 }
 
+/* Hover effect for the button */
 .bn39:hover {
-  color: #fff;
+    color: #fff;
 }
 
+/* Inner span for the button */
 .bn39 .bn39span {
-  align-items: center;
-  background: #0e0e10;
-  border-radius: 6px;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  transition: background 0.5s ease;
-  width: 100%;
+    align-items: center;
+    background: #0e0e10;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
 }
 
+/* Hover effect for inner span */
 .bn39:hover .bn39span {
-  background: transparent;
+    background: transparent;
 }
 
+/* Style for &lt;h3&gt; elements inside the right section */
 .right&gt;h3{
-   letter-spacing: 0.15em;
+    letter-spacing: 0.15em;
 }
 
+/* Style for another button */
 .bn59 {
-  background-color: #008080;
-  border: 1px solid rgba(0, 76, 76, 0.6);
-  font-weight: 600;
-  color:#fff;
-  font-size:18px;
-  position: relative;
-  outline: none;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  height: 45px;
-  width: 130px;
-  opacity: 1;
-  margin-top:10px;
+    background-color: #008080;
+    border: 1px solid rgba(0, 76, 76, 0.6);
+    font-weight: 600;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+    outline: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 45px;
+    width: 130px;
+    opacity: 1;
+    margin-top: 10px;
 }
+
+/* Hover effect for the button */
 .bn59:hover {
-  background-color: #006666;
-  transition: background 0.5s ease;
-}</css>
+    background-color: #006666;
+    transition: background 0.5s ease;
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -185,71 +202,88 @@ h4{
         <public>false</public>
         <roles/>
         <script><![CDATA[(function($setInterval) {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
 	data.table = 'x_1383179_tradenow_charity_list';
-	data.items = [];
-  var gr = new GlideRecord(data.table);
-  gr.query();
-	var count=gr.getRowCount();
+	data.charity = [];
+	// Create a new GlideRecord for the charity list table
+	var charityGR = new GlideRecord(data.table);
+	// Query the table for records
+	charityGR.query(); 
+	// Get the total number of records
+	var count=charityGR.getRowCount();
+	// Generate a random number
 	var random=Math.floor(Math.random()*count);
-	
-	
 
-//	setInterval(function generateRandomNumber() {
-  // var random=Math.floor(Math.random()*count);
-//}, 60000);
-	
+	//	setInterval(function generateRandomNumber() {
+	// var random=Math.floor(Math.random()*count);
+	//}, 60000);
+
 	//console.log(count+" "+random);
-	while (gr.next()) {
+	while (charityGR.next()) {
+		// Create an object for each record with specific fields
 		var obj={
-			id: gr.getValue('number'),
-			name:gr.getValue('charity_name'),
-			description:gr.getValue('description'),
-			category:gr.getValue('category'),
-			raisedAmount: gr.getValue('total_amount_raised'),
-			image_url: gr.getDisplayValue('image')
+			id: charityGR.getValue('number'),
+			name: charityGR.getValue('charity_name'),
+			description: charityGR.getValue('description'),
+			category: charityGR.getValue('category'),
+			raisedAmount: charityGR.getValue('total_amount_raised'),
+			image_url: charityGR.getDisplayValue('image')
 		};
-		data.items.push(obj);
-    }
-	
-	data.random = [];
-	data.random.push(data.items[random]);
+		// Push the object into the items array
+		data.charity.push(obj);
+	}
+	// Create an array to store the random item
+	data.randomCharity = [];
+	// Push the randomly selected item into the random array
+	data.randomCharity.push(data.charity[random]);
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-30 08:21:59</sys_created_on>
         <sys_id>78fd692483e20210edb56060ceaad31c</sys_id>
-        <sys_mod_count>144</sys_mod_count>
+        <sys_mod_count>150</sys_mod_count>
         <sys_name>Section2</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_78fd692483e20210edb56060ceaad31c</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-18 04:35:40</sys_updated_on>
+        <sys_updated_on>2024-06-26 06:27:27</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
+<!-- Top Container -->
 <div class="top">
-    <div class="feature-section" ng-repeat="item in data.random">
+  <!-- Feature Section -->
+  <!-- Using AngularJS directive ng-repeat to repeat this block for each item in the data.random array -->
+    <div class="feature-section" ng-repeat="item in data.randomCharity">
+        <!-- Content Wrapper -->
         <div class="content">
+          <!-- Left Column -->
             <div class="left">
+              <!-- Feature Image -->
                 <!--<img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Feature Image">-->
               <img src="{{item.image_url}}" alt="Feature Image">
             </div>
+          <!-- Right Column -->
             <div class="right">
+               <!-- Featured Tag -->
               	<h3 class="poppins-regular">FEATURED</h3>
+               <!-- Item Name -->
                 <h1 class="poppins-semibold">{{item.name}}</h1>
+               <!-- Item Description -->
                 <p class="poppins-light">{{item.description}}</p>
                <!-- <button class="btn-donate">Donate Now</button>-->
+              <!-- Amount Raised -->
               <h4 class="poppins-light">We have raised <b>${{item.raisedAmount}}</b></h4>
               <!--<a class="bn39" href="/tradenow?id=charity_page&charity_id={{item.id}}"><span class="bn39span">Donate Now</span></a>-->
-              <a class="bn59 poppins-regular" href="/">Donate</a>
+              <!-- Donation Button -->
+              <a class="bn59 poppins-regular" href="/tradenow?id=charity_page&charity_id={{item.id}}">Donate</a>
             </div>
-        </div>
-    </div>
-  </div>]]></template>
+        </div><!-- End of Content Wrapper -->
+    </div><!-- End of Feature Section -->
+  </div><!-- End of Top Container -->]]></template>
     </sp_widget>
 </record_update>

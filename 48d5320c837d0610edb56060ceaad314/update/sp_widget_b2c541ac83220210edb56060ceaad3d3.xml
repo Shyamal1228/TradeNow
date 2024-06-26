@@ -10,8 +10,8 @@
 }
 
 .header&gt;p{
- // margin-top:20px;
-//  margin-bottom:40px;
+  // margin-top:20px;
+  //  margin-bottom:40px;
 }
 
 .card {
@@ -56,7 +56,7 @@
   height: 5px;
   width: 20%;
   background-color:#b04927;
- 	margin-butom: 7px;
+  margin-butom: 7px;
 }
 .testimonial-container {
   display: flex;
@@ -69,70 +69,70 @@ figure.snip1390 {
   position: relative;
   overflow: hidden;
   margin: 10px;
-  width: calc(50% - 20px); /* Two testimonials per row */
+  width: calc(50% - 20px); /* Two card per row */
   max-width: 350px;
   color: #000000;
   text-align: center;
   font-size: 16px;
   box-sizing: border-box;
   background-color: #006666;
-   border-radius: 10px;
+  border-radius: 10px;
 }
 
 
 @media (max-width: 767px) {
   figure.snip1390 {
-    width: calc(100% - 20px); /* One testimonial per row */
+    width: calc(100% - 20px); /* One card per row */
     max-width: none;
   }
 }
 
 
 .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #80ed99;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #80ed99;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-        .button:hover {
-            background-color: #66cc77;
-        }
+.button:hover {
+  background-color: #66cc77;
+}
 
 .header {
-            text-align: center;
-            margin: 20px 0;
-        }
+  text-align: center;
+  margin: 20px 0;
+}
 
-        .header h1 {
-            font-size: 5rem;
-            margin: 0;
-            color: #000000;
-          margin-bottom:10px;
-        }
+.header h1 {
+  font-size: 5rem;
+  margin: 0;
+  color: #000000;
+  margin-bottom:10px;
+}
 
-        .header p {
-            font-size: 1.2em;
-            color: #333;
-        }
+.header p {
+  font-size: 1.2em;
+  color: #333;
+}
 @media (max-width: 600px) {
-            //.card {
-              //  flex-basis: 100%;
-              //  margin: 10px 0;
-          //  }
+  //.card {
+  //  flex-basis: 100%;
+  //  margin: 10px 0;
+  //  }
 
-            .header h1 {
-                font-size: 2em;
-            }
+  .header h1 {
+    font-size: 2em;
+  }
 
-            .header p {
-                font-size: 1em;
-            }
-        }
+  .header p {
+    font-size: 1em;
+  }
+}
 
 .icon {
   width: 50px;
@@ -145,22 +145,22 @@ figure.snip1390 {
 }
 
 /* Button styles */
-        .custom-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: 2px solid #004c4c;
-            border-radius: 8px;
-            background-color: #006666;
-            color: 	#fff;
-            cursor: pointer;
-        }
+.custom-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #004c4c;
+  border-radius: 8px;
+  background-color: #006666;
+  color: 	#fff;
+  cursor: pointer;
+}
 
-        /* Hover effect */
-        .custom-button:hover {
-            background-color: #66b2b2;
-            color: #E0F2E9;
-        }
+/* Hover effect */
+.custom-button:hover {
+  background-color: #66b2b2;
+  color: #E0F2E9;
+}
 a{
   text-decoration:none;
 }</css>
@@ -183,57 +183,68 @@ a{
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-30 05:26:33</sys_created_on>
         <sys_id>b2c541ac83220210edb56060ceaad3d3</sys_id>
-        <sys_mod_count>132</sys_mod_count>
+        <sys_mod_count>136</sys_mod_count>
         <sys_name>Section1</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_b2c541ac83220210edb56060ceaad3d3</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-21 16:22:51</sys_updated_on>
-        <template><![CDATA[<!--<div class="testimonials">
-  <h2 style="font-weight: bold;">Testimonials</h2>
-  <hr class="line" />
-</div>-->
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+        <sys_updated_on>2024-06-26 06:05:21</sys_updated_on>
+        <template><![CDATA[<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
+<!-- Top Container -->
 <div class="top-container">
-
-<div class="header">
-        <h1 class="poppins-semibold">Trade, Give & Donate</h1>
-        <p class="poppins-light">Tradenow allows users to easily give away unused items to others who need them. Browse available items in your area or list items you want to giveaway. We also partner with reputable charities to make donating easy.</p>
-    </div>
-<div class="testimonial-container">
-<figure class="snip1390">
-  <div class="card light-green">
-            <div class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gift" class="svg-inline--fa fa-gift fa-fw icon " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-testid="icon-test"><path fill="currentColor" d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z"></path></svg></div>
-            <h3 class="poppins-regular">Giveaway</h3>
-            <p class="poppins-light">Safely give away unused items in your community. Reduce waste while helping others in need.</p>
-<!--             <button class="custom-button">Browse </button> -->
-    <a href="/tradenow?id=add_item&table=x_1383179_tradenow_item_list&sys_id=-1&view=portal" class="custom-button poppins-regular">Giveaway Item</a>
-        </div>
-</figure>
-<figure class="snip1390 hover">
-  <div class="card white">
-            <div class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass fa-fw icon " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-testid="icon-test"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg></div>
-            <h3 class="poppins-regular">Browse</h3>
-            <p class="poppins-light">Discover available items in your area that others are giving away for free. Find something useful.</p>
-<!--             <button class="custom-button">Search </button> -->
-              <a href="/tradenow?id=all_items" class="custom-button poppins-regular">Search</a>
-        </div>
-</figure>
-<figure class="snip1390">
-  <div class="card dark-green">
-            <div class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-dollar-to-slot" class="svg-inline--fa fa-circle-dollar-to-slot fa-fw icon " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-testid="icon-test"><path fill="currentColor" d="M326.7 403.7c-22.1 8-45.9 12.3-70.7 12.3s-48.7-4.4-70.7-12.3c-.3-.1-.5-.2-.8-.3c-30-11-56.8-28.7-78.6-51.4C70 314.6 48 263.9 48 208C48 93.1 141.1 0 256 0S464 93.1 464 208c0 55.9-22 106.6-57.9 144c-1 1-2 2.1-3 3.1c-21.4 21.4-47.4 38.1-76.3 48.6zM256 84c-11 0-20 9-20 20v14c-7.6 1.7-15.2 4.4-22.2 8.5c-13.9 8.3-25.9 22.8-25.8 43.9c.1 20.3 12 33.1 24.7 40.7c11 6.6 24.7 10.8 35.6 14l1.7 .5c12.6 3.8 21.8 6.8 28 10.7c5.1 3.2 5.8 5.4 5.9 8.2c.1 5-1.8 8-5.9 10.5c-5 3.1-12.9 5-21.4 4.7c-11.1-.4-21.5-3.9-35.1-8.5c-2.3-.8-4.7-1.6-7.2-2.4c-10.5-3.5-21.8 2.2-25.3 12.6s2.2 21.8 12.6 25.3c1.9 .6 4 1.3 6.1 2.1l0 0 0 0c8.3 2.9 17.9 6.2 28.2 8.4V312c0 11 9 20 20 20s20-9 20-20V298.2c8-1.7 16-4.5 23.2-9c14.3-8.9 25.1-24.1 24.8-45c-.3-20.3-11.7-33.4-24.6-41.6c-11.5-7.2-25.9-11.6-37.1-15l-.7-.2c-12.8-3.9-21.9-6.7-28.3-10.5c-5.2-3.1-5.3-4.9-5.3-6.7c0-3.7 1.4-6.5 6.2-9.3c5.4-3.2 13.6-5.1 21.5-5c9.6 .1 20.2 2.2 31.2 5.2c10.7 2.8 21.6-3.5 24.5-14.2s-3.5-21.6-14.2-24.5c-6.5-1.7-13.7-3.4-21.1-4.7V104c0-11-9-20-20-20zM48 352H64c19.5 25.9 44 47.7 72.2 64H64v32H256 448V416H375.8c28.2-16.3 52.8-38.1 72.2-64h16c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V400c0-26.5 21.5-48 48-48z"></path></svg></div>
-            <h3 class="poppins-regular">Donate</h3>
-            <p class="poppins-light">Quickly donate unused items to vetted charities through our integrated partnerships.</p>
-<!--             <button class="button">Donate </button>  -->
-    <a href="/tradenow?id=charity_organization" class="custom-button poppins-regular">Donate</a>
-        </div>
-</figure>
-</div>
-</div>
-<!--No edit-->]]></template>
+ <!-- Header Section -->
+  <div class="header">
+     <!-- Main Heading -->
+    <h1 class="poppins-semibold">Trade, Give & Donate</h1>
+    <!-- Description Paragraph -->
+    <p class="poppins-light">Tradenow allows users to easily give away unused items to others who need them. Browse available items in your area or list items you want to giveaway. We also partner with reputable charities to make donating easy.</p>
+  </div>
+  <!-- Card Container -->
+  <div class="testimonial-container">
+    <!-- First Card: Giveaway -->
+    <figure class="snip1390">
+      <div class="card light-green">
+        <!-- Icon -->
+        <div class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gift" class="svg-inline--fa fa-gift fa-fw icon " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-testid="icon-test"><path fill="currentColor" d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z"></path></svg></div>
+        <!-- Card Title -->
+        <h3 class="poppins-regular">Giveaway</h3>
+        <!-- Card Description -->
+        <p class="poppins-light">Safely give away unused items in your community. Reduce waste while helping others in need.</p>
+         <!-- Giveaway Button -->
+        <a href="/tradenow?id=add_item&table=x_1383179_tradenow_item_list&sys_id=-1&view=portal" class="custom-button poppins-regular">Giveaway Item</a>
+      </div>
+    </figure>
+    <!-- Second Card: Browse -->
+    <figure class="snip1390 hover">
+      <div class="card white">
+        <!-- Icon -->
+        <div class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass fa-fw icon " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-testid="icon-test"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg></div>
+        <!-- Card Title -->
+        <h3 class="poppins-regular">Browse</h3>
+        <!-- Card Description -->
+        <p class="poppins-light">Discover available items in your area that others are giving away for free. Find something useful.</p>
+        <!-- Search Button -->
+        <a href="/tradenow?id=all_items" class="custom-button poppins-regular">Search</a>
+      </div>
+    </figure>
+    <!-- Third Card: Donate -->
+    <figure class="snip1390">
+      <div class="card dark-green">
+        <!-- Icon -->
+        <div class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-dollar-to-slot" class="svg-inline--fa fa-circle-dollar-to-slot fa-fw icon " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-testid="icon-test"><path fill="currentColor" d="M326.7 403.7c-22.1 8-45.9 12.3-70.7 12.3s-48.7-4.4-70.7-12.3c-.3-.1-.5-.2-.8-.3c-30-11-56.8-28.7-78.6-51.4C70 314.6 48 263.9 48 208C48 93.1 141.1 0 256 0S464 93.1 464 208c0 55.9-22 106.6-57.9 144c-1 1-2 2.1-3 3.1c-21.4 21.4-47.4 38.1-76.3 48.6zM256 84c-11 0-20 9-20 20v14c-7.6 1.7-15.2 4.4-22.2 8.5c-13.9 8.3-25.9 22.8-25.8 43.9c.1 20.3 12 33.1 24.7 40.7c11 6.6 24.7 10.8 35.6 14l1.7 .5c12.6 3.8 21.8 6.8 28 10.7c5.1 3.2 5.8 5.4 5.9 8.2c.1 5-1.8 8-5.9 10.5c-5 3.1-12.9 5-21.4 4.7c-11.1-.4-21.5-3.9-35.1-8.5c-2.3-.8-4.7-1.6-7.2-2.4c-10.5-3.5-21.8 2.2-25.3 12.6s2.2 21.8 12.6 25.3c1.9 .6 4 1.3 6.1 2.1l0 0 0 0c8.3 2.9 17.9 6.2 28.2 8.4V312c0 11 9 20 20 20s20-9 20-20V298.2c8-1.7 16-4.5 23.2-9c14.3-8.9 25.1-24.1 24.8-45c-.3-20.3-11.7-33.4-24.6-41.6c-11.5-7.2-25.9-11.6-37.1-15l-.7-.2c-12.8-3.9-21.9-6.7-28.3-10.5c-5.2-3.1-5.3-4.9-5.3-6.7c0-3.7 1.4-6.5 6.2-9.3c5.4-3.2 13.6-5.1 21.5-5c9.6 .1 20.2 2.2 31.2 5.2c10.7 2.8 21.6-3.5 24.5-14.2s-3.5-21.6-14.2-24.5c-6.5-1.7-13.7-3.4-21.1-4.7V104c0-11-9-20-20-20zM48 352H64c19.5 25.9 44 47.7 72.2 64H64v32H256 448V416H375.8c28.2-16.3 52.8-38.1 72.2-64h16c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V400c0-26.5 21.5-48 48-48z"></path></svg></div>
+        <!-- Card Title -->
+        <h3 class="poppins-regular">Donate</h3>
+        <!-- Card Description -->
+        <p class="poppins-light">Quickly donate unused items to vetted charities through our integrated partnerships.</p>
+         <!-- Donate Button -->
+        <a href="/tradenow?id=charity_organization" class="custom-button poppins-regular">Donate</a>
+      </div>
+    </figure>
+  </div><!-- End of Card Container -->
+</div><!-- End of Top Container -->]]></template>
     </sp_widget>
 </record_update>

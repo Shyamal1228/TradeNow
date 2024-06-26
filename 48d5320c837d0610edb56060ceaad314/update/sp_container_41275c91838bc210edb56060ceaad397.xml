@@ -6,21 +6,21 @@
         <bootstrap_alt>false</bootstrap_alt>
         <class_name/>
         <container_class_name/>
-        <name>Add Charity - Container 2</name>
-        <order>2</order>
+        <name>Add Charity - Container 1</name>
+        <order>1</order>
         <semantic_tag/>
         <sp_page display_value="add_charity">57840d7e83220210edb56060ceaad38b</sp_page>
         <subheader>false</subheader>
         <sys_class_name>sp_container</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-06-06 05:11:35</sys_created_on>
-        <sys_id>ff7589fe83220210edb56060ceaad309</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Add Charity - Container 2</sys_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-26 06:29:33</sys_created_on>
+        <sys_id>41275c91838bc210edb56060ceaad397</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Add Charity - Container 1</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_container_ff7589fe83220210edb56060ceaad309</sys_update_name>
+        <sys_update_name>sp_container_41275c91838bc210edb56060ceaad397</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
         <sys_updated_on>2024-06-26 06:29:33</sys_updated_on>
         <title/>

@@ -16,19 +16,31 @@
     });
 	}
 	
-	c.donationDetails = function(sysID,id,charity_name) {
+	c.donationDetails = function(sysID,id,charity_name,docSysId) {
+		//alert(docSysId);
 		spModal.open({
 			title: id+' - Donation to '+charity_name,
 			widget: 'approvals_form',
-			widgetInput: {sys_id:sysID, table: 'sysapproval_approver'}
+			widgetInput: {sys_id:docSysId, table: 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr', view:'portal'}
 		}).then(function(){
 			//alert('Dismissed');
 		})
 	}
+	
+	/*c.donationDetails = function(sysID,id,charity_name,docSysId) {
 		
-	spUtil.recordWatch($scope, 'sysapproval_approver', "stateINrequested,approved,rejected", function(response) {
+		spModal.open({
+			title: id+' - Donation to '+charity_name,
+			widget: 'donation_details',
+			widgetInput: {sys_id:docSysId, table:'x_1383179_tradenow_m2m_sys_user_x_1383179_tr'}
+		}).then(function(){
+			//alert('Dismissed');
+		})
+	}*/
+		
+	/*spUtil.recordWatch($scope, 'sysapproval_approver', "stateINrequested,approved,rejected", function(response) {
 		c.server.update();
-});
+});*/
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>.approvals-container {
@@ -211,6 +223,7 @@
 		var obj={
 			sys_id:z.getValue('sys_id'),
 			id: z.getDisplayValue('document_id.number'),
+			docSysId: z.getValue('document_id'),
 			charity_name: z.getDisplayValue('document_id.x_1383179_tradenow_charity_list.charity_name'),
 			Requestor:z.getDisplayValue('document_id.sys_user'),
 			amount:z.getDisplayValue('document_id.donation_amount'),
@@ -235,14 +248,14 @@ console.log(data.approvals);
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-22 07:23:24</sys_created_on>
         <sys_id>b61db3338372c210edb56060ceaad30f</sys_id>
-        <sys_mod_count>55</sys_mod_count>
+        <sys_mod_count>77</sys_mod_count>
         <sys_name>Approvals</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_b61db3338372c210edb56060ceaad30f</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-22 20:33:01</sys_updated_on>
+        <sys_updated_on>2024-06-28 17:06:30</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
@@ -253,7 +266,7 @@ console.log(data.approvals);
 <div class="approvals-container">
   <div class="approval-item" ng-repeat="approval in c.data.approvals">
     <div class="approval-details">
-      <h4 class="item-id poppins-semibold" ng-click="c.donationDetails(approval.sys_id,approval.id,approval.charity_name)">{{approval.id+" - Donation to "+approval.charity_name}}</h4>
+      <h4 class="item-id poppins-semibold" ng-click="c.donationDetails(approval.sys_id,approval.id,approval.charity_name,approval.docSysId)">{{approval.id+" - Donation to "+approval.charity_name}}</h4>
       <p class="poppins-light"><b>Donator:</b> {{approval.Requestor}}</p>
       <p class="poppins-light"><b>Danation amount:</b> {{approval.amount}}</p>
     </div>
@@ -262,6 +275,7 @@ console.log(data.approvals);
       <button class="reject poppins-light" ng-click="c.approvefun('rejected',approval.sys_id)">Reject</button>
     </div>
   </div>
-</div>]]></template>
+</div>
+<!-- No edit -->]]></template>
     </sp_widget>
 </record_update>

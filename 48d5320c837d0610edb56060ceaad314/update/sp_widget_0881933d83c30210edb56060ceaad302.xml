@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope,spUtil,spModal) {
+  /* widget controller */
+  var c = this;
+	c.approvefun = function(val,id) {
+		c.data.reqStatus=val;
+		c.data.id=id;
+			c.server.update().then(function(response) {
+      if (response) {
+       //alert('Update successful');
+      } else {
+       //alert('Update failed:', response.data.error);
+      }
+    });
+	}
+	
+	c.donationDetails = function(sysID,id,charity_name) {
+		spModal.open({
+			title: id+' - Donation to '+charity_name,
+			widget: 'approvals_form',
+			widgetInput: {sys_id:sysID, table: 'sysapproval_approver'}
+		}).then(function(){
+			//alert('Dismissed');
+		})
+	}
+		
+	spUtil.recordWatch($scope, 'sysapproval_approver', "stateINrequested,approved,rejected", function(response) {
+		c.server.update();
+});
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Existing CSS for Approval List */
+.approvals-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.approvals-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.approval-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.approval-item:last-child {
+    border-bottom: none;
+}
+
+.approval-details {
+    flex: 1;
+}
+
+.item-id {
+    font-weight: bold;
+    text-decoration: none;
+    color: #0056b3;
+}
+
+.item-id:hover {
+    text-decoration: underline;
+}
+
+.toggle-options {
+    background: none;
+    border: none;
+    color: #0056b3;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.approval-details&gt;p {
+    margin: 2px;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.approve, .reject {
+    background-color: #008080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.reject {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+}
+
+.approve:hover, .reject:hover {
+    opacity: 0.8;
+    background-color: #006666;
+}
+
+.reject:hover {
+    background-color: #e6e6e6;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .approval-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .action-buttons {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .approve, .reject {
+        width: 48%;
+        margin-bottom: 0;
+    }
+
+    .toggle-options {
+        margin-top: 10px;
+    }
+}
+
+.poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.header {
+    text-align: center;
+    color: #004c4c;
+}
+
+.header&gt;h2 {
+    color: #004c4c;
+}
+
+.header&gt;hr {
+    border: none;
+    height: 5px;
+    width: 20%;
+    background-color: #004c4c;
+    margin-bottom: 2px;
+    margin-top: 0px;
+}
+
+.approval-details&gt;h4 {
+    color: #008080;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex; /* Show modal when .show class is added */
+    align-items: center;
+    justify-content: center;
+    opacity: 1; /* Fully opaque */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px); /* Start off-screen */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move to visible position */
+    }
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    animation: slideIn 0.3s ease;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group span {
+    display: block;
+    padding: 8px 0;
+}
+
+.form-group img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    margin-top: 5px;
+}
+
+.button-group {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.approve-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.reject-btn {
+    background-color: #f44336; /* Red */
+    color: white;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>donation_approvals</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Donation Approvals</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.approvals=[];
+	var z = new GlideRecord('sysapproval_approver');
+	z.addQuery("group.assignment_group", "1e0a1ef0834a0610edb56060ceaad30d");
+	z.addQuery("approver",gs.getUserID());
+	z.addQuery("state", "requested");
+	z.orderByDesc('sys_updated_on');
+	//z.setLimit(max);
+	z.query();
+	
+	while(z.next()){
+		var obj={
+			sys_id:z.getValue('sys_id'),
+			id: z.getDisplayValue('document_id.number'),
+			charity_name: z.getDisplayValue('document_id.x_1383179_tradenow_charity_list.charity_name'),
+			Requestor:z.getDisplayValue('document_id.sys_user'),
+			amount:z.getDisplayValue('document_id.donation_amount'),
+		}
+		data.approvals.push(obj);
+	}
+console.log(data.approvals);
+	if (input && input.reqStatus) {
+		var grClaimItem = new GlideRecordSecure('sysapproval_approver');
+		grClaimItem.addQuery('sys_id', input.id);
+		grClaimItem.query();
+		if (grClaimItem.next()) {
+			grClaimItem.setValue('state',input.reqStatus);
+			grClaimItem.update();
+		}
+		return true;
+	}
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-28 09:20:44</sys_created_on>
+        <sys_id>0881933d83c30210edb56060ceaad302</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>Donation Approvals</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_0881933d83c30210edb56060ceaad302</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-28 09:56:55</sys_updated_on>
+        <template><![CDATA[<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+</style>
+<div class="header">
+    <h2 class="poppins-semibold">My Approvals</h2>
+    <hr/>
+</div>
+<div class="approvals-container">
+  <div class="approval-item" ng-repeat="approval in c.data.approvals">
+    <div class="approval-details">
+      <h4 class="item-id poppins-semibold">{{approval.id + " - Donation to " + approval.charity_name}}</h4>
+      <p class="poppins-light"><b>Donator:</b> {{approval.Requestor}}</p>
+      <p class="poppins-light"><b>Donation amount:</b> {{approval.amount}}</p>
+    </div>
+    <div class="action-buttons">
+      <button class="approve poppins-light" ng-click="c.approvefun('approved', approval.sys_id)">Approve</button>
+      <button class="reject poppins-light" ng-click="c.approvefun('rejected', approval.sys_id)">Reject</button>
+    </div>
+  </div>
+</div>
+ <h4 class="item-id">
+   hello
+</h4>
+<!-- The Modal -->
+<div id="donationModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="form-group">
+      <label>Transaction ID:</label>
+      <span id="transactionId">12345</span>
+    </div>
+    <div class="form-group">
+      <label>Donor Name:</label>
+      <span id="donorName">John Doe</span>
+    </div>
+    <div class="form-group">
+      <label>Charity Organization:</label>
+      <span id="charityOrg">Charity Foundation</span>
+    </div>
+    <div class="form-group">
+      <label>Donation Amount:</label>
+      <span id="donationAmount">$100</span>
+    </div>
+    <div class="form-group">
+      <label>Status:</label>
+      <span id="status">Pending</span>
+    </div>
+    <div class="form-group">
+      <label>Payment Proof:</label>
+      <img id="paymentProof" src="path/to/payment_proof_image.jpg" alt="Payment Proof">
+    </div>
+    <div class="form-group">
+      <label>Donation Time:</label>
+      <span id="donationTime">2024-06-28 14:30:00</span>
+    </div>
+    <div class="button-group">
+      <button class="approve-btn">Approve</button>
+      <button class="reject-btn">Reject</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Function to handle click event on view details button
+document.querySelectorAll('.item-id').forEach(item => {
+  item.addEventListener('click', function() {
+    // Fetch or set data based on the clicked item (for demo, using data attributes)
+    const transactionId = '12345'; // Replace with actual data fetching logic
+    const donorName = 'John Doe'; // Replace with actual data fetching logic
+    const charityOrg = 'Charity Foundation'; // Replace with actual data fetching logic
+    const donationAmount = '$100'; // Replace with actual data fetching logic
+    const status = 'Pending'; // Replace with actual data fetching logic
+    const paymentProof = 'path/to/payment_proof_image.jpg'; // Replace with actual data fetching logic
+    const donationTime = '2024-06-28 14:30:00'; // Replace with actual data fetching logic
+
+    // Set data in modal fields
+    document.getElementById('transactionId').textContent = transactionId;
+    document.getElementById('donorName').textContent = donorName;
+    document.getElementById('charityOrg').textContent = charityOrg;
+    document.getElementById('donationAmount').textContent = donationAmount;
+    document.getElementById('status').textContent = status;
+    document.getElementById('paymentProof').src = paymentProof;
+    document.getElementById('donationTime').textContent = donationTime;
+
+    // Display modal
+    document.getElementById('donationModal').classList.add('show');
+  });
+});
+
+// Close modal functionality
+document.querySelector('.close').addEventListener('click', function() {
+  document.getElementById('donationModal').classList.remove('show');
+});
+
+// Approve and Reject button functionality (replace with actual backend integration)
+document.querySelector('.approve-btn').addEventListener('click', function() {
+  alert('Donation Approved!');
+  document.getElementById('donationModal').classList.remove('show'); // Close modal after action
+});
+
+document.querySelector('.reject-btn').addEventListener('click', function() {
+  alert('Donation Rejected!');
+  document.getElementById('donationModal').classList.remove('show'); // Close modal after action
+});
+</script>]]></template>
+    </sp_widget>
+</record_update>

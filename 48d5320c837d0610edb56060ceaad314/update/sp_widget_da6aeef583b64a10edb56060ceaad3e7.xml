@@ -29,7 +29,7 @@
             limit = remainingItems;
         }
 		var params = [
-			'sysparm_fields=sys_id,item_name,description,category,image,total_watchers,sys_created_on',
+			'sysparm_fields=sys_id,lister_name,item_name,description,category,image,total_watchers,sys_created_on',
 			'sysparm_offset=' + index * itemsLoaded,
 			'sysparm_limit'+limit
 		].join('&');
@@ -38,6 +38,7 @@
 			.then(function(res) {
 				var data = res.data.result.slice();
 			console.log(data);
+	
 			//extra
 			for(var i=0;i<data.length;i++){
 				res.data.result[i].category=res.data.result[i].category.value;
@@ -796,14 +797,14 @@ gs.info("Formatted Date: " + formattedDate);*/
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-15 20:14:15</sys_created_on>
         <sys_id>da6aeef583b64a10edb56060ceaad3e7</sys_id>
-        <sys_mod_count>307</sys_mod_count>
+        <sys_mod_count>320</sys_mod_count>
         <sys_name>Lazy Loading Extra scroll</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_da6aeef583b64a10edb56060ceaad3e7</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-24 19:19:47</sys_updated_on>
+        <sys_updated_on>2024-06-27 06:57:37</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
@@ -906,6 +907,7 @@ $('button.back-to-top').click(function() {
   return false;
 });
 </script>-->
+<!--No edit-->
 <!--No edit-->]]></template>
     </sp_widget>
 </record_update>

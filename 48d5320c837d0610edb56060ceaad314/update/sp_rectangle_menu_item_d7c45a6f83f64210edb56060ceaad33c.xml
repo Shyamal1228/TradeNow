@@ -2,7 +2,7 @@
     <sp_rectangle_menu_item action="INSERT_OR_UPDATE">
         <active>true</active>
         <color>default</color>
-        <condition>gs.isLoggedIn() &amp;&amp; gs.getUser().hasRole('x_1383179_tradenow.charity_coordinator')</condition>
+        <condition>gs.isLoggedIn() &amp;&amp; gs.getUser().hasRole('approver_user')</condition>
         <display_1/>
         <display_2/>
         <display_date/>
@@ -25,14 +25,14 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-21 05:11:42</sys_created_on>
         <sys_id>d7c45a6f83f64210edb56060ceaad33c</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Add Charity</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_rectangle_menu_item_d7c45a6f83f64210edb56060ceaad33c</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-24 07:47:32</sys_updated_on>
+        <sys_updated_on>2024-06-27 06:16:39</sys_updated_on>
         <table/>
         <type>url</type>
         <url>https://dev245733.service-now.com/tradenow?id=add_charity&amp;table=x_1383179_tradenow_charity_list&amp;sys_id=-1&amp;view=CharityPortal</url>

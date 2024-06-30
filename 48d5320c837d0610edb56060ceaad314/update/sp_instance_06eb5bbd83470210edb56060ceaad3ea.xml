@@ -14,19 +14,19 @@
         <sp_widget display_value="Approvals">b61db3338372c210edb56060ceaad30f</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-06-22 07:40:33</sys_created_on>
-        <sys_id>0a01c0048343c210edb56060ceaad399</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_created_on>2024-06-28 10:06:12</sys_created_on>
+        <sys_id>06eb5bbd83470210edb56060ceaad3ea</sys_id>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_instance_0a01c0048343c210edb56060ceaad399</sys_update_name>
+        <sys_update_name>sp_instance_06eb5bbd83470210edb56060ceaad3ea</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-22 07:40:33</sys_updated_on>
+        <sys_updated_on>2024-06-28 14:51:47</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>
     </sp_instance>
-    <sys_translated_text action="delete_multiple" query="documentkey=0a01c0048343c210edb56060ceaad399"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=06eb5bbd83470210edb56060ceaad3ea"/>
 </record_update>

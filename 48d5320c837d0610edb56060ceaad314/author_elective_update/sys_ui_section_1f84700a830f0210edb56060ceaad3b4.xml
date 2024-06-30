@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="Payment" section_id="1f84700a830f0210edb56060ceaad3b4" sys_domain="global" table="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" version="3" view="portal">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>x_1383179_tradenow_charity_list.donation_link</element>
+            <position>0</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-28 16:33:31</sys_created_on>
+            <sys_id>2b84b00a830f0210edb56060ceaad311</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Payment" display_value="Payment" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">1f84700a830f0210edb56060ceaad3b4</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-28 16:33:31</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>1</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-28 16:33:31</sys_created_on>
+            <sys_id>2f84b00a830f0210edb56060ceaad311</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Payment" display_value="Payment" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">1f84700a830f0210edb56060ceaad3b4</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-28 16:33:31</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>x_1383179_tradenow_charity_list.qr_code</element>
+            <position>2</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-28 16:33:31</sys_created_on>
+            <sys_id>2384b00a830f0210edb56060ceaad312</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Payment" display_value="Payment" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">1f84700a830f0210edb56060ceaad3b4</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-28 16:33:31</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption>Payment</caption>
+            <header>false</header>
+            <name>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-28 16:33:30</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1f84700a830f0210edb56060ceaad3b4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+            <sys_update_name>sys_ui_section_1f84700a830f0210edb56060ceaad3b4</sys_update_name>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-28 16:33:30</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Portal" name="portal">02ca0460d9313110cedf7dffddb48f75</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_ui_section_1f84700a830f0210edb56060ceaad3b4</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="Payment" section_id="1f84700a830f0210edb56060ceaad3b4" sys_domain="global" table="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" version="3" view="portal"><sys_ui_element action="INSERT_OR_UPDATE"><element>x_1383179_tradenow_charity_list.donation_link</element><position>0</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-06-28 16:33:31</sys_created_on><sys_id>2b84b00a830f0210edb56060ceaad311</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Payment" display_value="Payment" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">1f84700a830f0210edb56060ceaad3b4</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-06-28 16:33:31</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>1</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-06-28 16:33:31</sys_created_on><sys_id>2f84b00a830f0210edb56060ceaad311</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Payment" display_value="Payment" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">1f84700a830f0210edb56060ceaad3b4</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-06-28 16:33:31</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>x_1383179_tradenow_charity_list.qr_code</element><position>2</position><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-06-28 16:33:31</sys_created_on><sys_id>2384b00a830f0210edb56060ceaad312</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Payment" display_value="Payment" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">1f84700a830f0210edb56060ceaad3b4</sys_ui_section><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-06-28 16:33:31</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption>Payment</caption><header>false</header><name>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-06-28 16:33:30</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>1f84700a830f0210edb56060ceaad3b4</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</sys_name><sys_overrides/><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_ui_section_1f84700a830f0210edb56060ceaad3b4</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-06-28 16:33:30</sys_updated_on><sys_user/><title>false</title><view display_value="Portal" name="portal">02ca0460d9313110cedf7dffddb48f75</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>132856909</payload_hash>
+        <record_name>Donation History</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-28 16:33:31</sys_created_on>
+        <sys_id>2384b00a830f0210edb56060ceaad314</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1905fb1e24c0000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-28 16:33:31</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>a784b00ae90f021039dbb1e99f134213</update_guid>
+        <update_guid_history>a784b00ae90f021039dbb1e99f134213:132856909</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-06-28 16:34:47</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>1083b735d93a4084815a6292b60f5561</sys_id>
+        <sys_metadata>1f84700a830f0210edb56060ceaad3b4</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Payment</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Donation History">c0c41e4d838a4610edb56060ceaad3ca</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_ui_section_1f84700a830f0210edb56060ceaad3b4</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_1f84700a830f0210edb56060ceaad3b4">2384b00a830f0210edb56060ceaad314</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-06-28 16:34:47</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

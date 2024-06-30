@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="5384700a830f0210edb56060ceaad3b4" sys_domain="global" table="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" version="3" view="portal">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>0</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-28 17:13:45</sys_created_on>
+            <sys_id>38cd3482834f0210edb56060ceaad337</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">5384700a830f0210edb56060ceaad3b4</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-28 17:13:45</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sys_user</element>
+            <position>1</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-28 17:13:45</sys_created_on>
+            <sys_id>3ccd3482834f0210edb56060ceaad337</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">5384700a830f0210edb56060ceaad3b4</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-28 17:13:45</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>x_1383179_tradenow_charity_list.charity_name</element>
+            <position>2</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-28 17:13:45</sys_created_on>
+            <sys_id>30cd3482834f0210edb56060ceaad338</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">5384700a830f0210edb56060ceaad3b4</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-28 17:13:45</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>donation_amount</element>
+            <position>3</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-28 17:13:45</sys_created_on>
+            <sys_id>34cd3482834f0210edb56060ceaad338</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">5384700a830f0210edb56060ceaad3b4</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-28 17:13:45</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>status</element>
+            <position>4</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-28 17:13:45</sys_created_on>
+            <sys_id>38cd3482834f0210edb56060ceaad338</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">5384700a830f0210edb56060ceaad3b4</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-28 17:13:45</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>payment_proof</element>
+            <position>5</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-28 17:13:45</sys_created_on>
+            <sys_id>3ccd3482834f0210edb56060ceaad338</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">5384700a830f0210edb56060ceaad3b4</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-28 17:13:45</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sys_created_on</element>
+            <position>6</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-28 17:13:45</sys_created_on>
+            <sys_id>30cd3482834f0210edb56060ceaad339</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="02ca0460d9313110cedf7dffddb48f75">5384700a830f0210edb56060ceaad3b4</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-28 17:13:45</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-06-28 16:33:30</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5384700a830f0210edb56060ceaad3b4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+            <sys_update_name>sys_ui_section_5384700a830f0210edb56060ceaad3b4</sys_update_name>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-06-28 16:33:30</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Portal" name="portal">02ca0460d9313110cedf7dffddb48f75</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

@@ -298,185 +298,126 @@
   }
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css>/*.btn-form-menu {
-	vertical-align: inherit;
-  padding: inherit;
-  background: none;
+        <css>
+
+
+/* General styling for the form container */
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
 }
 
-.panel-title {
-  word-wrap: break-word;
+.sp-field-label-padding,.select2-chosen,.ng-binding,.poppins-light,input,.select2-results{
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+textarea#sp_formfield_description{
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
-.panel-heading {
-  .dropdown-menu {
-    a {
-      white-space: normal;
-      display: flex;
-      justify-content: space-between;
-      .badge {
-        align-self: baseline;
-        min-width: auto;
-      }
-    }
-  }
+div#select2-drop{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
-.sc-field-error-label {
-  margin-right: .5em;
-  display: inline-block;
-  background-color: $sc-field-error-color;
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.comment {
-	font-weight: bold;
-	margin-top: 2px;
-	margin-bottom: 2px;
-}
-
-.action-btn {
-  margin-right: 5px;
-}
-
-.timeline-container {
-   max-height: 50vh;
-   height: 100%;
-   overflow-y: auto;
-}
-
-.panel .panel {
-    height: auto !important;
-}
-
-.attachment-button {
-  .glyphicon-paperclip {
-    font-size: 18px;
-  }
-}
-
-.empty-state-wrapper {
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: 10vh 20px 20px;
-
-  .empty-state {
-    border: 1px solid #e7e9eb;
-    border-radius: 10px;
-    max-width: 700px;
-    padding: 30px 40px 20px;
-    position: relative;
-
-    .empty-state-badge {
-      top: -36px;
-      left: 50%;
-      position: absolute;
-      height: 72px;
-      width: 72px;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      border-radius: 100%;
-      color: #ffffff;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      font-size: 40px;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      margin-left: -36px;
-      text-align: center;
-    }
-
-    .empty-state-header {
-      font-size: 30px;
-      text-align: center;
-      color: #343d47;
-    }
-
-    .empty-state-content {
-      ul {
-        list-style: disc outside;
-        margin: 0 0 10px 0;
-        padding: 0 0 0 30px;
-      }
-    }
-  }
-}
-
-.text-success-alt {
-	background-color: $state-success-text;
-}
-
-.text-info-alt {
-	background-color: $state-info-text;
-}
-
-.sp-cross-scope-msg {
-  margin-bottom: 10px;
-}
-
-.asterisk-div{
-	margin: 2rem 0 1.5rem;
-}
-
-.asterisk{
-	padding-right: .25rem;
-}
-
-.related-lists-vertical-bar{
-	padding: 0 .5em;
-}
-.tox {
-  .tox-statusbar {
-    border-color : $input-border;
-  }
-  .tox-toolbar__primary {
-    background: none;
-    border-bottom: 1px solid $input-border;
-  }
-}
-.tox.tox-tinymce {
-  border-color: $input-border;
-}*/
-
-
-
-.panel-shift {
-    max-width: 100%;
-    margin: 20px auto;
-    //padding: 20px;
-    //border: 1px solid #66b2b2;
-    border-radius: 8px;
-  -webkit-box-shadow: -1px 0px 12px 0px rgba(211, 211, 211,1);
-  -moz-box-shadow: -1px 0px 12px 0px rgba(211, 211, 211,1);
-  box-shadow: -1px 0px 12px 0px rgba(211, 211, 211,1);
-    background-color: #fff;
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 
-/* Panel header styling */
-.panel-heading {
-    text-align: center;
-    margin-bottom: 20px;
-  background-color:#b2d8d8;
+
+.panel-default{
+  border: none;
+}
+
+.panel-title{
   display:none;
 }
 
-/* Panel title styling */
+.asterisk-div{
+  display:none;
+}
+
+.container-caption{
+  display:none;
+}
+
+.panel-footer{
+  background-color: #fff;
+  border-top: none;
+}
+
+/*.btn-default{
+  display:none;
+}*/
+
+.add-on.ng-scope{
+  display:none;
+}
+
+.select2-container.select2-container-disabled .select2-choice .select2-arrow{
+  display:none;
+  background-color:none;
+}
+
+
+
+.select2-container.select2-container-disabled .select2-choice {
+    background-color: #fff;
+    background-image: none;
+    border: none;
+    cursor: not-allowed;
+}
+
+.icon{
+display:flex;
+  align-items: center;
+  justify-content:center;
+  border:none;
+  background-color:#b2d8d8;
+  border-radius:8px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.icon h3{
+  margin-left:10px;
+}
+.icon img{
+  width:50px;
+}
+
+.panel-shift {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.panel-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .panel-title {
-    font-size: 16px;
-    //font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
 }
-
-.panel-default {
-    border-color: #fff;
-}
-
-/* Input fields styling */
 input[type="text"], textarea, select {
     width: 100%;
     padding: 10px;
@@ -487,7 +428,6 @@ input[type="text"], textarea, select {
     font-size: 14px;
 }
 
-/* Styling for the file input */
 input[type="file"] {
     padding: 10px;
     margin-bottom: 15px;
@@ -496,92 +436,52 @@ input[type="file"] {
     font-size: 14px;
 }
 
-
-/*no need */
-.select2-container.select2-container-disabled .select2-choice {
-    //background-color: #fff;
-   // background-image: none;
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #008080;
     border: none;
-    cursor: not-allowed;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.field-has-reference{
-  background-color: #e6e8ea;
+button:hover {
+    background-color: #006666;
 }
 
-.select2-container.select2-container-disabled .select2-choice .select2-arrow{
-  display:none;
-  background-color:none;
+.alert-info{
+  background-color: #b2d8d8;
 }
-.container-caption{
-  display:none;
-}
-.panel-title{
-  //display:none;
-}
+@media (max-width: 768px) {
+    .panel-shift {
+        padding: 15px;
+    }
 
-.panel-heading &gt; .dropdown .dropdown-toggle {
-    color: inherit;
-    display: none;
-}
+    .panel-heading {
+        margin-bottom: 15px;
+    }
 
-.field-has-reference .add-on {
-  display:none;
-}
+    .panel-title {
+        font-size: 20px;
+    }
 
-.panel-footer{
-  background-color: #fff;
-  border: none;
-}
-
-.btn-default:first-child{
-  margin-right:10px;
-  background-color: #008080;
-  color:#fff;
-}
-
-.btn-default:last-child{
-  background-color: #fff;
-  border:1px solid #000;
-  color:#000;
-}
-
-.btn-default:first-child:hover{
-  opacity: 0.8;
-  background-color:#006666;
-}
-
-.panel.panel-default{
-  padding:20px;
-}
-
-.fa-asterisk{
-  display:none;
-}
-
-.form-control{
-  background-color: #f1f1f1;
-}
-
-/* css for post button */
-.input-group-btn &gt; .btn {
-    height: 4.1rem;
+    input[type="text"], textarea, select, input[type="file"], button {
+        font-size: 12px;
+    }
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>true</has_preview>
-        <id>approvals_form</id>
+        <has_preview>false</has_preview>
+        <id>add_item_form</id>
         <internal>false</internal>
-        <link><![CDATA[function link(){
-	setTimeout(function(){
-	$('#adminMenu, #platformLink').tooltip();
-});
-}]]></link>
-        <name>Approvals Form</name>
-        <option_schema>[{"name":"disableUIActions","section":"Behavior","label":"Disable UI Actions on Form","type":"boolean"},{"name":"showFormView","section":"Behavior","label":"Display current form view","type":"boolean"},{"name":"omitHeaderOptions","section":"Behavior","label":"Omit header options icon","type":"boolean"}]</option_schema>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Add item form</name>
+        <option_schema/>
         <public>false</public>
         <roles/>
         <script><![CDATA[(function($sp, input, data, options, gs) {
@@ -602,7 +502,7 @@ input[type="file"] {
   var isPopup = false;
  
   if (input) {
-    data.table = input.table || 'sysapproval_approver'; // Set your table
+    data.table = input.table || 'x_1383179_tradenow_item_list'; // Set your table
     data.sys_id = input.sys_id;
     data.view = input.view;
     var result = {};
@@ -616,7 +516,7 @@ input[type="file"] {
     if (input.isPopup === true)
       isPopup = true;
   } else {
-    data.table = options.table || $sp.getParameter("t") || 'sysapproval_approver'; // Set your table
+    data.table = options.table || $sp.getParameter("t") || 'x_1383179_tradenow_item_list'; // Set your table
     data.sys_id = options.sys_id || $sp.getParameter("sys_id");
     if (!data.sys_id && options.sys_id_required != "true")
       data.sys_id = "-1";
@@ -690,16 +590,16 @@ input[type="file"] {
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-06-22 13:37:36</sys_created_on>
-        <sys_id>80c2d1cc8387c210edb56060ceaad3c9</sys_id>
-        <sys_mod_count>78</sys_mod_count>
-        <sys_name>Approvals Form</sys_name>
+        <sys_created_on>2024-06-28 06:11:31</sys_created_on>
+        <sys_id>d83626f583830210edb56060ceaad3dc</sys_id>
+        <sys_mod_count>40</sys_mod_count>
+        <sys_name>Add item form</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_widget_80c2d1cc8387c210edb56060ceaad3c9</sys_update_name>
+        <sys_update_name>sp_widget_d83626f583830210edb56060ceaad3dc</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-29 13:19:12</sys_updated_on>
+        <sys_updated_on>2024-06-28 06:47:21</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
@@ -734,8 +634,14 @@ input[type="file"] {
       <p>${This record is in the <strong>{{data.f.recordScopeLabel}}</strong> application, but <strong>{{data.f.currentScopeLabel}}</strong> is the current application.}</p>
     </div>
   </div>
+   
   <div ng-show="isPageReady" class="panel panel-default" ng-if="data.f._view.length || !data.hideRelatedLists" >
-    <div class="panel-heading" ng-if="data.f.title.length" sp-context-menu="getUIActionContextMenu(event)">
+    <div class="icon">
+      <img  src="icon.png">
+      <h3 class="poppins-semibold">Add New Item</h3>
+    </div>
+   <!-- <div class="panel-heading" ng-if="data.f.title.length" sp-context-menu="getUIActionContextMenu(event)">
+      
       	<span class="dropdown m-r-xs" ng-if="(data.isAdmin || getUIActions('context').length > 0) && options.omitHeaderOptions != 'true'">
             <button aria-label="{{data.f.label}} ${Form menu}" title="{{data.f.label}} ${Form menu}" class="btn btn-form-menu dropdown-toggle glyphicon glyphicon-menu-hamburger" style="line-height: 1.4em" id="adminMenu" data-toggle="dropdown" data-placement="bottom" aria-haspopup="true" aria-expanded="false"></button>
             <ul class="dropdown-menu" aria-labelledby="adminMenu">
@@ -751,9 +657,11 @@ input[type="file"] {
               <li><a target="_new" href="/{{data.f.table}}.do?PDF&sys_id={{data.sys_id}}&sysparm_view={{data.f.view}}" tabindex="-1">${Export to PDF}</a></li>
               <li><a target="_new" href="/{{data.f.table}}.do?PDF&landscape=true&sys_id={{data.sys_id}}&sysparm_view={{data.f.view}}" tabindex="-1">${Export to PDF (landscape)}</a></li>
             </ul>
-        </span>
-
+        </span>-->
+	
       	<!-- optional "Open in platform" link when omitHeaderOptions is true -->
+      
+     
       	<span class="dropdown m-r-xs" ng-if="::data.isAdmin && options.omitHeaderOptions == 'true' && options.ensurePlatformLink == 'true'">
             <button aria-label="{{data.f.label}} ${Form menu}" title="{{data.f.label}} ${Form menu}" class="btn btn-form-menu dropdown-toggle glyphicon glyphicon-menu-hamburger" style="line-height: 1.4em" id="platformLink" data-toggle="dropdown" data-placement="botton" aria-haspopup="true" aria-expanded="false"></button>
             <ul class="dropdown-menu" aria-labelledby="platformLink">
@@ -766,6 +674,7 @@ input[type="file"] {
       <sp-attachment-button modal="true" supported-extensions="{{::data.supportedAttachmentExtensions}}"></sp-attachment-button>
       </div>
     </div>
+    
     <div class="panel-body">
       <!-- performance debug -->
       <div ng-if="data.show_sql">
@@ -818,7 +727,7 @@ input[type="file"] {
     </div>
 
     <div class="panel-footer">
-      <button ng-click="triggerUIAction(action)" ng-disabled="submitting" ng-repeat="action in getUIActions('button') | filter: hideDuplicateSaveAction" class="btn action-btn" ng-class="::getButtonClass(action)" gsft_id="{{::action.sys_id}}">{{action.name}}</button>
+     <button ng-click="triggerUIAction(action)" ng-disabled="submitting" ng-repeat="action in getUIActions('button') | filter: hideDuplicateSaveAction" class="btn action-btn" ng-class="::getButtonClass(action)" gsft_id="{{::action.sys_id}}">{{action.name}}</button>
       <span>{{status}}</span>
       <!--<button ng-if="getPrimaryAction()" type="submit" ng-click="triggerUIAction(getPrimaryAction())" ng-disabled="submitting" class="btn btn-primary action-btn pull-right" gsft_id="{{::getPrimaryAction().sys_id ? getPrimaryAction().sys_id : ''}}">${Save} <span ng-if="saveButtonSuffix">(${{{saveButtonSuffix}}})</span></button>-->
       <div style="clear: both;"></div>
@@ -828,6 +737,9 @@ input[type="file"] {
       </div>
     </div>
   </div>
-</div>]]></template>
+</div>
+
+<!--No edit-->
+<!-- No edit -->]]></template>
     </sp_widget>
 </record_update>

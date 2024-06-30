@@ -6,11 +6,13 @@
   var c = this;
 };]]></client_script>
         <controller_as>c</controller_as>
-        <css>body {
-    font-family: "Poppins", sans-serif;
+        <css>* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+  	font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .carousel {
@@ -23,7 +25,7 @@
     background-color: #004242;
     color: white;
     padding: 20px 0;
-    margin-top: 0px; // maring top of footer
+    margin-top: 0px; 
     z-index: 0;
 }
 
@@ -48,7 +50,7 @@
     max-width: 150px;
 }
 
-.footer-nav ul {
+/*.footer-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -67,18 +69,109 @@
 .footer-nav ul li a:hover {
     color: #b2d8d8;
 }
+*/
 
+/*ADDED*/
 
-/* Media Queries for responsiveness */
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.footer-nav li {
+    margin-left: 20px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-nav ul li {
+        display: inline-block;
+        margin-right: 20px; /* Adjust spacing between menu items */
+    }
+
+    .footer-nav ul li a {
+        position: relative;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-nav ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff; /* Adjust underline color */
+        transform: scaleX(0); /* Initially, no underline */
+        transition: transform 0.3s ease;
+    }
+
+    .footer-nav ul li a:hover {
+        color: #fff; /* Adjust link color on hover */
+    }
+
+    .footer-nav ul li a:hover::after {
+        transform: scaleX(1); /* Show underline on hover */
+    }
+
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .footer-column {
         text-align: left;
         padding: 10px 0;
+      	text-align: center;
+      
+    }
+  
+  
+  /*.footer-container {
+        flex-direction: column;
+        text-align: center;
+    }*/
+
+    /*.logo-mission {
+        justify-content: center;
+        margin-bottom: 20px;
+    }*/
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .footer-nav ul {
+        flex-direction: column;
+      	text-align: center;
+    }
+
+    .footer-nav li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .footer-nav li:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -98,14 +191,14 @@
   background-color: #b2d8d8;
 }
 .copyrights{
-  margin-top:25px;
-  padding-bottom:10px;
+  margin-top:15px;
+  padding-bottom:15px;
 }
 
 .logo-p
 {
     margin-top:10px;
-  font-size:1.7rem;
+ // font-size:1.7rem;
 }
 </css>
         <data_table>sp_instance</data_table>
@@ -134,14 +227,14 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-28 11:10:27</sys_created_on>
         <sys_id>a821004883e60610edb56060ceaad3cc</sys_id>
-        <sys_mod_count>139</sys_mod_count>
+        <sys_mod_count>169</sys_mod_count>
         <sys_name>Tradenow Footer</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_header_footer_a821004883e60610edb56060ceaad3cc</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-18 09:39:57</sys_updated_on>
+        <sys_updated_on>2024-06-28 06:52:23</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
 </style>
@@ -152,11 +245,8 @@
               <p class="logo-p">Empowering People To Giveaway, Donate And Support.
                     </p>
             </div>
-            <div class="footer-column">
+            <div class="footer-column nav-links">
                 <nav class="footer-nav">
-                  <h3 class="poppins-regular">
-                   Useful Links
-                  </h3>
                     <ul>
                         <li><a href="/tradenow">Home</a></li>
                       	<li><a href="/tradenow?id=charity_organization">Donate</a></li>

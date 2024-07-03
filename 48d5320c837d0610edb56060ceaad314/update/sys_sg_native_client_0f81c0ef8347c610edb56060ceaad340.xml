@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_native_client">
+    <sys_sg_native_client action="INSERT_OR_UPDATE">
+        <client_theme/>
+        <empty_state/>
+        <force_local_login>false</force_local_login>
+        <geolocation_enabled>false</geolocation_enabled>
+        <mobile_theme/>
+        <name>TradeNow</name>
+        <navigation display_value="My navigation bar">7281c0ef8347c610edb56060ceaad33e</navigation>
+        <offline_enabled>false</offline_enabled>
+        <order/>
+        <required_roles/>
+        <sys_class_name>sys_sg_native_client</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-03 04:41:32</sys_created_on>
+        <sys_id>0f81c0ef8347c610edb56060ceaad340</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TradeNow</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_native_client_0f81c0ef8347c610edb56060ceaad340</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-03 04:41:32</sys_updated_on>
+        <type>request</type>
+        <vision_android_app_id/>
+        <vision_api_key/>
+        <vision_ios_app_id/>
+    </sys_sg_native_client>
+</record_update>

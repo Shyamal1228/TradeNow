@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config">
+    <sys_sg_view_config action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <description/>
+        <name>All Item details card</name>
+        <scratchpad_script/>
+        <sys_class_name>sys_sg_view_config</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-03 17:45:49</sys_created_on>
+        <sys_id>1705b6af83830a10edb56060ceaad3e4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>All Item details card</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_config_1705b6af83830a10edb56060ceaad3e4</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-03 17:46:14</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
+        <template display_value="All item details">8d2476ab83830a10edb56060ceaad31a</template>
+    </sys_sg_view_config>
+    <sys_translated_text action="delete_multiple" query="documentkey=1705b6af83830a10edb56060ceaad3e4"/>
+</record_update>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template_slot">
+    <sys_sg_view_template_slot action="INSERT_OR_UPDATE">
+        <name>text_09</name>
+        <sys_class_name>sys_sg_view_template_slot</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-03 09:29:11</sys_created_on>
+        <sys_id>146349ef838bc610edb56060ceaad350</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>text_09</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_template_slot_146349ef838bc610edb56060ceaad350</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-03 09:29:11</sys_updated_on>
+        <type>text</type>
+        <view_template display_value="Recent items">0c6345ef838bc610edb56060ceaad371</view_template>
+    </sys_sg_view_template_slot>
+</record_update>

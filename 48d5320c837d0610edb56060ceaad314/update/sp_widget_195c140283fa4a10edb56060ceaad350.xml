@@ -1,53 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope, $location) {
+        <client_script><![CDATA[api.controller = function($scope,$window, $http, $location) {
 	/* widget controller */
 	var c = this;
 
-	$scope.charities = [].concat(c.data.items);
-	var inputField1 = document.getElementById("charity-search");
-	var keywordSearch = function(keyword, productName){
-		var length = productName.length;
-		for(var i=0; i<=(length-keyword.length); i++){
-			if( keyword === productName.slice(i,keyword.length+i)){
-				return true;
-			}
+	$scope.displayNumber = 8;
+	$scope.charities = [];
+	$scope.inputCharityName="";
+	$scope.tempinputCharityName = "";
+	$scope.totalCharities ="Search among " + $scope.data.itemCount+ " charities";
+	var totalItems = 0;
+	var index = 0;
+	var itemsLoaded = 8;
+	console.log("Rohan");
+	var offset=0;
+
+	
+	$scope.getTotalItems = function(){
+		//var params ='sysparm_fields=charity_name,description,email,image,number,total_amount_raised';
+		var param = "";
+		if($scope.searchKeyword){
+			params = [
+				'sysparm_query=charity_nameLIKE'+$scope.searchKeyword,
+				'sysparm_fields=charity_name,description,email,image,number,total_amount_raised',
+				'sysparm_offset=' + offset,
+				'sysparm_limit='+itemsLoaded
+			].join('&');
+			console.log("Here");
+		} else {
+			//sysparm_query=descriptionLIKEexample^nameLIKEtest
+			params = [
+				'sysparm_fields=sys_id,charity_name,description,email,image,number,total_amount_raised',
+				'sysparm_offset=' + offset,
+				'sysparm_limit='+itemsLoaded
+			].join('&');
+			console.log("Else part");
 		}
-		return false;
+		$http.get('/api/now/table/x_1383179_tradenow_charity_list?'+params)
+			.then(function(response){
+			console.log(response.data);
+			$scope.charities = $scope.charities.concat(response.data.result.slice());
+			console.log($scope.charities);
+		})
 	}
 
-	$scope.handleClear = function(){
-		inputField1.value = "";
+	$scope.getTotalItems();
+	var emnt = document.getElementsByTagName('section')[0];
+
+	$(emnt).on('scroll', function() {
+		if (emnt.scrollHeight - emnt.scrollTop < 1200) {
+			offset += 8;
+			$scope.getTotalItems();
+			$scope.$apply();
+			//console.log(offset+"full screen");
+			console.log(emnt.scrollTop,emnt.clientHeight,emnt.scrollHeight);
+		}
+	});
+
+	$scope.searchCharity = function(item){
+		if(!item) return false;
+		if(!$scope.searchKeyword) return true;
+		if($scope.searchKeyword && item.charity_name.toLowerCase().includes($scope.searchKeyword.toLowerCase())){
+			return true;
+		}
+	}
+
+	function scrollToTop() {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
+
+	$scope.clearSearch = function(){
+		$scope.searchKeyword = "";
 		$scope.charities = [];
-		$scope.charities = [].concat(c.data.items);
+		var searchbar = document.getElementById('charity-search');
+		searchbar.value="";
+		scrollToTop();
+		offset = 0;
+		itemsLoaded = 8;
+		$scope.getTotalItems();
 	}
 
-	$scope.checkEnter = function(event){
-		if(event.keyCode === 13){
-			console.log(inputField1.value);
+	$scope.checkEnterKey = function(event) {
+		if (event.keyCode === 13) { // 13 is the Enter key
+			$scope.tempSearchKeyword = event.target.value;
+			$scope.searchKeyword = $scope.tempSearchKeyword;
 			$scope.charities = [];
-			if(inputField1.value == ""){
-				console.log(inputField1.value);
-				$scope.charities = [].concat(c.data.items);
-				console.log($scope.charities);
-			} else {
-				$scope.charities = [];
-				for(var i=0;i<c.data.items.length ;i++){
-					var searchTerm = inputField1.value.toLowerCase();
-					var product_name = c.data.items[i].name.toLowerCase();
-					if(keywordSearch(searchTerm, product_name)){
-						$scope.charities.push(c.data.items[i]);
-					}
-				}
-			}
+			scrollToTop();
+			offset=0;
+			itemsLoaded = 8;
+			$scope.getTotalItems();
 		}
-	}
+	};
+
+	$scope.$watch('searchKeyword', function(newValue, oldValue) {
+		if (newValue !== oldValue) {
+			scrollToTop();
+		}
+	});
 
 
 	// Function to handle click event on a charity, navigating to charity's page
-	$scope.handleClick = function(charity_id) {
-		$location.search("id=charity_page&charity_id=" + charity_id);
+	$scope.handleClick = function(charity_id,sys_id) {
+		$location.search("id=charity_page&charity_id=" + charity_id+"&sys_id="+sys_id);
+		//$location.search("id=charity_page&charity_id=" + charity_id);
 	};
 };
 ]]></client_script>
@@ -57,7 +113,7 @@
   color: #004c4c;
 }
 .header&gt;h2{
-  //font-weight: bold;
+  font-weight: 600;
   color:#004c4c;
 }
 .header&gt;hr{
@@ -277,6 +333,7 @@ margin-bottom: 20px;
   --surface-color: #9B3922;
   --curve: 20;
   background-color: #ffffff;
+  min-height: 500px;
 }
 
 * {
@@ -297,7 +354,8 @@ margin-bottom: 20px;
   position: relative;
   display: block;
   height: 100%;  
-  border-radius: calc(var(--curve) * 1px);
+  //border-radius: calc(var(--curve) * 1px);
+  border-radius:15px;
   overflow: hidden;
   text-decoration: none;
 }
@@ -318,7 +376,8 @@ margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: calc(var(--curve) * 1px);
+  //border-radius: calc(var(--curve) * 1px);
+  border-radius:15px;
   background-color: white;
   overflow: hidden;
 }
@@ -369,7 +428,7 @@ margin-bottom: 20px;
 }
 
 .card__arc path {
-  fill: #004c4c;
+  fill: #006666;
   d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
 }       
 
@@ -467,16 +526,67 @@ margin-bottom: 20px;
 .card-action svg{
   width: auto;
   height: 100%;
-	background: white;
+  background: white;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   display: none;
   padding: 5%;
 }
+.card-action svg:hover{
+  cursor:pointer;
+}
 
 .card__description .card-action:hover svg{
-	display: inline;
+  display: inline;
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+.no-items-found {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.5rem !important;
+  color: black !important; /* Adjust color as needed */
+}
+
+.no-items-found img{
+  width: 20%;
+  height: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card__title {
+    font-size: 1.2rem;
+  }
+
+  .card__status {
+    font-size: .6em;
+    color: #FFFB97;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .card__title {
+    font-size: 1.2rem;
+  }
+
+  .card__status {
+    font-size: .6em;
+    color: #FFFB97;
+  }
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -499,7 +609,7 @@ margin-bottom: 20px;
   data.table = 'x_1383179_tradenow_charity_list';
   
   // Initialize an empty array to hold the charity items
-  data.items = [];
+  data.itemCount = 0;
   
   // Create a new GlideRecord object for the specified table
   var gr = new GlideRecord(data.table);
@@ -510,26 +620,7 @@ margin-bottom: 20px;
   // Loop through each retrieved record
   while (gr.next()) {
     // Create an object to hold the charity data for the current record
-    var obj = {
-      id: gr.getValue('number'), // Get the 'number' field value
-      name: gr.getValue('charity_name'), // Get the 'charity_name' field value
-      description: gr.getValue('description'), // Get the 'description' field value
-      category: gr.getValue('category'), // Get the 'category' field value
-      raisedAmount: gr.getValue('total_amount_raised'), // Get the 'total_amount_raised' field value
-      image_url: gr.getDisplayValue('image') // Get the display value of the 'image' field
-    };
-    
-    // Add the object to the items array
-    data.items.push(obj);
-  }
-  
-  // Loop through each item in the items array
-  for (var i = 0; i < data.items.length; i++) {
-    // Check if the description length exceeds 100 characters
-    if (data.items[i].description.length > 100) {
-      // Truncate the description to 100 characters and add ellipsis
-      data.items[i].description = data.items[i].description.substring(0, 75) + "...";
-    }
+    data.itemCount += 1;
   }
   
 })();
@@ -539,59 +630,64 @@ margin-bottom: 20px;
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-16 04:31:59</sys_created_on>
         <sys_id>195c140283fa4a10edb56060ceaad350</sys_id>
-        <sys_mod_count>449</sys_mod_count>
+        <sys_mod_count>588</sys_mod_count>
         <sys_name>charity list 1</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_195c140283fa4a10edb56060ceaad350</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-06-21 08:48:57</sys_updated_on>
-        <template><![CDATA[<div class="heading">
+        <sys_updated_on>2024-07-02 08:01:03</sys_updated_on>
+        <template><![CDATA[<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+</style>
+<div class="header" >
+    <h2 class="poppins-semibold">Charity Organizations</h2>
+    <hr/>
+  </div>
+<!--<div class="heading">
+</div>-->
   <!--<div class="breadcrumb poppins">
     <a href="#">Home</a>&nbsp;&nbsp;>&nbsp;&nbsp;Charity Organization
   </div>-->
   <!-- <div class="page-title poppins">
     Charity Organizations
   </div>-->
-  <div class="header" >
-    <h2 class="poppins-semibold">Charity Organizations</h2>
-    <hr/>
-  </div>
 
-</div>
 
-<div class="search-1">
+
+
+<div class="search-1 poppins">
   <div class="search-bar">
     <div class="container-image">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
     </div>
-    <input type="text" id="charity-search" ng-model="inputCharityName" ng-keydown="checkEnter($event)">
-    <div class="container-image" ng-click="handleClear()">
+    <input type="text" id="charity-search" ng-model="tempinputCharityName" ng-keyup="checkEnterKey($event)" placeholder = "Type to Search...">
+    <div class="container-image" ng-click="clearSearch()">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
     </div>
   </div>
 </div>
 
 
-<div class="charity_container poppins">
-  <ul class="cards">
+<div class="charity_container poppins" id="card-div">
+  <ul class="cards" >
     <li ng-repeat='items in charities'>
-      <div href="www.google.com" class="card">
-        <div class="card__image"><div class='card__image_inner_container'><img src={{items.image_url}} alt="" /></div></div>
+      <div class="card">
+        <div class="card__image"><div class='card__image_inner_container'><img ng-src="sys_attachment.do?sys_id={{items.image}}" alt="" /></div></div>
         <div class="card__overlay">
           <div class="card__header">
             <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-            <img class="card__thumb" src={{items.image_url}} alt="" />
+            <img class="card__thumb" ng-src="sys_attachment.do?sys_id={{items.image}}" alt="" />
             <div class="card__header-text poppins">
-              <h3 class="card__title">{{items.name}}</h3>            
-              <span class="card__status">Raised Amount: ${{items.raisedAmount}}</span>
+              <h3 class="card__title">{{items.charity_name}}</h3>            
+              <span class="card__status">Raised Amount: ${{items.total_amount_raised}}</span>
             </div>
           </div>
           <div class="card__description poppins">
             <div class="card_description">
               <div class="card-action">
-                <button class="poppins" ng-click="handleClick(items.id)">
+                <button class="poppins" ng-click="handleClick(items.number,items.sys_id)">
                   View
                 </button>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
@@ -599,10 +695,12 @@ margin-bottom: 20px;
             </div>
           </div>
         </div>
-      </div>
-    </div>      
-  </li>
-</ul>
+      </div>   
+    </li>
+  </ul>
+  <div class="no-items-found" ng-if='!(charities).length'>
+    <img src="https://img.freepik.com/premium-vector/hand-drawn-no-data-illustration_23-2150696443.jpg"/>
+    No Results</div>
 </div>
 ]]></template>
     </sp_widget>

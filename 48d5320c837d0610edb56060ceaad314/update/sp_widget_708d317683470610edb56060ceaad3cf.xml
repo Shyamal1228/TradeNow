@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.header{
+  text-align: center;
+  color: #004c4c;
+  margin-top:40px;
+  margin-bottom:20px;
+}
+.header&gt;h2{
+  //font-weight: bold;
+  color:#004c4c;
+  margin-bottom:10px;
+}
+.header&gt;hr{
+  border: none;
+  height: 5px;
+  width: 30%;
+  background-color: #004c4c;
+  margin:auto;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+body {
+  display: flex;
+  padding: 0 35px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+ // background: linear-gradient(to left top, #031A9A, #8B53FF);
+  
+}
+.wrapper {
+  max-width: calc(100%);
+  width: 100%;
+  position: relative;
+}
+.wrapper i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-child{
+  left: -22px;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .slider{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.slider::-webkit-scrollbar {
+  display: none;
+}
+.slider.no-transition {
+  scroll-behavior: auto;
+}
+.slider.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.slider.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.slider :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  height: 342px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 8px;
+  width:230px;
+  background-color:	#b2d8d8;
+  
+}
+.slider .card .img {
+  //background: #8B53FF;
+  //height: 148px;
+  //width: 148px;
+  //border-radius: 50%;
+}
+.card .img img {
+  width: 150px;
+  height: 100%;
+  //border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+.slider .card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+.slider .card span {
+  color: #6A6D78;
+  font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .slider {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .slider {
+    grid-auto-columns: 100%;
+  }
+}
+
+// Items button
+.card-action {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.view-item-button {
+  display: inline-block;
+  padding: 1.3rem 2.5rem;
+  background-color: #008080;
+  color: white;
+  font-size: 1.4rem;
+  //font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 128, 128, 0.4);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-item-button:hover {
+  background-color: #006666;
+}
+
+#left{
+  background-color:	#66b2b2;
+  z-index:1000;
+}
+
+#right{
+  background-color:	#66b2b2;
+}
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  text-align: center;
+  color: #004c4c;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.header &gt; h2 {
+  color: #004c4c;
+  margin-bottom: 10px;
+}
+.header &gt; hr {
+  border: none;
+  height: 5px;
+  width: 30%;
+  background-color: #004c4c;
+  margin: auto;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+body {
+  display: flex;
+  padding: 0 35px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.wrapper {
+  max-width: calc(100%);
+  width: 100%;
+  position: relative;
+}
+.wrapper i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active {
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-child {
+  left: -22px;
+}
+.wrapper i:last-child {
+  right: -22px;
+}
+.wrapper .slider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.slider::-webkit-scrollbar {
+  display: none;
+}
+.slider.no-transition {
+  scroll-behavior: auto;
+}
+.slider.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.slider.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.slider :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  scroll-snap-align: start;
+  height: 400px;
+  width: 250px;
+  list-style: none;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #b2d8d8;
+  box-sizing: border-box;
+}
+.slider .card .img {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .img img {
+  width: 200px;
+  height: 90%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+.slider .card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 10px 0 5px;
+}
+.slider .card span {
+  color: #6A6D78;
+  font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .slider {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .slider {
+    grid-auto-columns: 100%;
+  }
+}
+
+.card-action {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.view-item-button {
+  display: inline-block;
+  padding: 1.3rem 2.5rem;
+  background-color: #008080;
+  color: white;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 128, 128, 0.4);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-item-button:hover {
+  background-color: #006666;
+}
+
+#left {
+  background-color: #66b2b2;
+  z-index: 1000;
+}
+
+#right {
+  background-color: #66b2b2;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>recently_added_items</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+
+}
+]]></link>
+        <name>Recently added items</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	// Initialize the 'table' property of the 'data' object to the 'sys_user' table
+	data.table = 'x_1383179_tradenow_item_list';
+	// Initialize an empty array to store the top 10 items
+	data.items = [];
+	// Create a new GlideRecord object for the 'x_1383179_tradenow_item_list' table
+	var itemsGR = new GlideRecord(data.table);
+	// Order the users by 'sys_created_on' in descending order
+	itemsGR.orderByDesc('sys_created_on');
+	// Limit the query to the top 10 items
+	itemsGR.setLimit(10);
+	itemsGR.query();
+	
+	
+	while (itemsGR.next()) {
+		// Create an object with the user details and their rank
+		var obj={
+			sys_id:itemsGR.getValue('sys_id'),
+			name:itemsGR.getValue('item_name'),
+			created_on:itemsGR.getValue('sys_created_on').toString().substring(0, 10),
+			image_url: itemsGR.getDisplayValue('image'),
+		};
+		// Add the user object to the 'items' array
+		data.items.push(obj);	
+	}
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-01 05:47:43</sys_created_on>
+        <sys_id>708d317683470610edb56060ceaad3cf</sys_id>
+        <sys_mod_count>131</sys_mod_count>
+        <sys_name>Recently added items</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_708d317683470610edb56060ceaad3cf</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-01 15:25:38</sys_updated_on>
+        <template><![CDATA[<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+</style>
+
+  <div class="header" >
+    <h2 class="poppins-semibold">Recently Added Items</h2>
+    <hr/>
+  </div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <div class="wrapper">
+    <i id="left" class="fa-solid fa-angle-left"></i>
+    <ul class="slider">
+      <li class="card" ng-repeat="item in c.data.items">
+        <div class="img"><img src="{{item.image_url}}" alt="{{item.name}}" draggable="false"></div>
+        <h2>{{item.name}}</h2>
+        <span>{{item.created_on}}</span>
+        <div class="card-action">
+          <a href="/tradenow?id=item_details&table=x_1383179_tradenow_item_list&sys_id={{item.sys_id}}"><button class="view-item-button poppins-light">View Item</button></a>
+        </div>
+      </li>
+
+    </ul>
+    <i id="right" class="fa-solid fa-angle-right"></i>
+  </div>
+  <script>
+    var wrapper = document.querySelector(".wrapper");
+    var slider = document.querySelector(".slider");
+    var firstCardWidth = slider.querySelector(".card").offsetWidth;
+    var arrowBtns = document.querySelectorAll(".wrapper i");
+    var sliderChildrens = Array.prototype.slice.call(slider.children);
+
+    var isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+
+    // Get the number of cards that can fit in the slider at once
+    var cardPerView = Math.round(slider.offsetWidth / firstCardWidth);
+
+    // Insert copies of the last few cards to beginning of slider for infinite scrolling
+    sliderChildrens.slice(-cardPerView).reverse().forEach(function(card) {
+      slider.insertAdjacentHTML("afterbegin", card.outerHTML);
+    });
+
+    // Insert copies of the first few cards to end of slider for infinite scrolling
+    sliderChildrens.slice(0, cardPerView).forEach(function(card) {
+      slider.insertAdjacentHTML("beforeend", card.outerHTML);
+    });
+
+    // Scroll the slider at appropriate postition to hide first few duplicate cards on Firefox
+    slider.classList.add("no-transition");
+    slider.scrollLeft = slider.offsetWidth;
+    slider.classList.remove("no-transition");
+
+    // Add event listeners for the arrow buttons to scroll the slider left and right
+    Array.prototype.forEach.call(arrowBtns, function(btn) {
+      btn.addEventListener("click", function() {
+        slider.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+      });
+    });
+
+    var dragStart = function(e) {
+      isDragging = true;
+      slider.classList.add("dragging");
+      // Records the initial cursor and scroll position of the slider
+      startX = e.pageX;
+      startScrollLeft = slider.scrollLeft;
+    };
+
+    var dragging = function(e) {
+      if (!isDragging) return; // if isDragging is false return from here
+      // Updates the scroll position of the slider based on the cursor movement
+      slider.scrollLeft = startScrollLeft - (e.pageX - startX);
+    };
+
+    var dragStop = function() {
+      isDragging = false;
+      slider.classList.remove("dragging");
+    };
+
+    var infiniteScroll = function() {
+      // If the slider is at the beginning, scroll to the end
+      if (slider.scrollLeft === 0) {
+        slider.classList.add("no-transition");
+        slider.scrollLeft = slider.scrollWidth - (2 * slider.offsetWidth);
+        slider.classList.remove("no-transition");
+      }
+      // If the slider is at the end, scroll to the beginning
+      else if (Math.ceil(slider.scrollLeft) === slider.scrollWidth - slider.offsetWidth) {
+        slider.classList.add("no-transition");
+        slider.scrollLeft = slider.offsetWidth;
+        slider.classList.remove("no-transition");
+      }
+
+      // Clear existing timeout & start autoplay if mouse is not hovering over slider
+      clearTimeout(timeoutId);
+      if (!wrapper.matches(":hover")) autoPlay();
+    };
+
+    var autoPlay = function() {
+      if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+      // Autoplay the slider after every 2500 ms
+      timeoutId = setTimeout(function() {
+        slider.scrollLeft += firstCardWidth;
+      }, 2500);
+    };
+    autoPlay();
+
+    slider.addEventListener("mousedown", dragStart);
+    slider.addEventListener("mousemove", dragging);
+    document.addEventListener("mouseup", dragStop);
+    slider.addEventListener("scroll", infiniteScroll);
+    wrapper.addEventListener("mouseenter", function() {
+      clearTimeout(timeoutId);
+    });
+    wrapper.addEventListener("mouseleave", autoPlay);
+  </script>
+]]></template>
+    </sp_widget>
+</record_update>

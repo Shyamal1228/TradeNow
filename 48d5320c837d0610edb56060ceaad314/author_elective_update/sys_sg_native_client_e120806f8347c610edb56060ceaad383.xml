@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_native_client">
+    <sys_sg_native_client action="DELETE">
+        <client_theme/>
+        <empty_state/>
+        <force_local_login>false</force_local_login>
+        <geolocation_enabled>false</geolocation_enabled>
+        <mobile_theme/>
+        <name>TradeNow</name>
+        <navigation display_value="Mobile Agent">679d4f0653d033002d96ddeeff7b1279</navigation>
+        <offline_enabled>false</offline_enabled>
+        <order/>
+        <required_roles/>
+        <sys_class_name>sys_sg_native_client</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-03 04:35:26</sys_created_on>
+        <sys_id>e120806f8347c610edb56060ceaad383</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TradeNow</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_native_client_e120806f8347c610edb56060ceaad383</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-03 04:35:26</sys_updated_on>
+        <type>request</type>
+        <vision_android_app_id/>
+        <vision_api_key/>
+        <vision_ios_app_id/>
+    </sys_sg_native_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_sg_native_client_e120806f8347c610edb56060ceaad383</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_native_client"><sys_sg_native_client action="INSERT_OR_UPDATE"><client_theme/><empty_state/><force_local_login>false</force_local_login><geolocation_enabled>false</geolocation_enabled><mobile_theme/><name>TradeNow</name><navigation display_value="Mobile Agent">679d4f0653d033002d96ddeeff7b1279</navigation><offline_enabled>false</offline_enabled><order/><required_roles/><sys_class_name>sys_sg_native_client</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-07-03 04:35:26</sys_created_on><sys_id>e120806f8347c610edb56060ceaad383</sys_id><sys_mod_count>0</sys_mod_count><sys_name>TradeNow</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_sg_native_client_e120806f8347c610edb56060ceaad383</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-07-03 04:35:26</sys_updated_on><type>request</type><vision_android_app_id/><vision_api_key/><vision_ios_app_id/></sys_sg_native_client></record_update>]]></payload>
+        <payload_hash>-1357513308</payload_hash>
+        <record_name>TradeNow</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-03 04:35:26</sys_created_on>
+        <sys_id>2920806f8347c610edb56060ceaad385</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19076e03fba0000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-03 04:35:26</sys_updated_on>
+        <type>Mobile app config</type>
+        <update_guid>6d20806f2f47c6101afa0d8a0f53b484</update_guid>
+        <update_guid_history>6d20806f2f47c6101afa0d8a0f53b484:-1357513308</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-03 04:40:43</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_native_client">sys_sg_native_client</sys_db_object>
+        <sys_id>bde1372593914a30943d760c0dee4900</sys_id>
+        <sys_metadata>e120806f8347c610edb56060ceaad383</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TradeNow</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_sg_native_client_e120806f8347c610edb56060ceaad383</sys_update_name>
+        <sys_update_version display_value="sys_sg_native_client_e120806f8347c610edb56060ceaad383">2920806f8347c610edb56060ceaad385</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-03 04:40:43</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

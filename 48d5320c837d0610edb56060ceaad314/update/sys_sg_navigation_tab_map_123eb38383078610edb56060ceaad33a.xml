@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_navigation_tab_map">
+    <sys_sg_navigation_tab_map action="INSERT_OR_UPDATE">
+        <navigation display_value="TradeNow Nav">2e5af74f83c38610edb56060ceaad3ca</navigation>
+        <navigation_tab display_value="Donate">5e3ebb4383078610edb56060ceaad396</navigation_tab>
+        <order>500</order>
+        <sys_class_name>sys_sg_navigation_tab_map</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-02 09:48:33</sys_created_on>
+        <sys_id>123eb38383078610edb56060ceaad33a</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_navigation_tab_map_123eb38383078610edb56060ceaad33a</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-02 10:11:41</sys_updated_on>
+    </sys_sg_navigation_tab_map>
+</record_update>

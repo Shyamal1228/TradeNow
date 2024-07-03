@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_launcher_m2m_section">
     <sys_sg_applet_launcher_m2m_section action="INSERT_OR_UPDATE">
         <applet_launcher display_value="TradeNow">ffb6b6c8837d0610edb56060ceaad341</applet_launcher>
-        <order/>
+        <order>30</order>
         <section display_value="Location">d0c6b2cc837d0610edb56060ceaad372</section>
         <sys_class_name>sys_sg_applet_launcher_m2m_section</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-04-21 17:36:02</sys_created_on>
         <sys_id>5cc6b2cc837d0610edb56060ceaad372</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_sg_applet_launcher_m2m_section_5cc6b2cc837d0610edb56060ceaad372</sys_update_name>
-        <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-04-21 17:36:02</sys_updated_on>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-02 18:55:05</sys_updated_on>
     </sys_sg_applet_launcher_m2m_section>
 </record_update>

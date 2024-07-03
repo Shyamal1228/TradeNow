@@ -298,189 +298,7 @@
   }
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css>/*.btn-form-menu {
-	vertical-align: inherit;
-  padding: inherit;
-  background: none;
-}
-
-.panel-title {
-  word-wrap: break-word;
-}
-
-.panel-heading {
-  .dropdown-menu {
-    a {
-      white-space: normal;
-      display: flex;
-      justify-content: space-between;
-      .badge {
-        align-self: baseline;
-        min-width: auto;
-      }
-    }
-  }
-}
-
-.sc-field-error-label {
-  margin-right: .5em;
-  display: inline-block;
-  background-color: $sc-field-error-color;
-}
-
-.comment {
-	font-weight: bold;
-	margin-top: 2px;
-	margin-bottom: 2px;
-}
-
-.action-btn {
-  margin-right: 5px;
-}
-
-.timeline-container {
-   max-height: 50vh;
-   height: 100%;
-   overflow-y: auto;
-}
-
-.panel .panel {
-    height: auto !important;
-}
-
-.attachment-button {
-  .glyphicon-paperclip {
-    font-size: 18px;
-  }
-}
-
-.empty-state-wrapper {
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: 10vh 20px 20px;
-
-  .empty-state {
-    border: 1px solid #e7e9eb;
-    border-radius: 10px;
-    max-width: 700px;
-    padding: 30px 40px 20px;
-    position: relative;
-
-    .empty-state-badge {
-      top: -36px;
-      left: 50%;
-      position: absolute;
-      height: 72px;
-      width: 72px;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      border-radius: 100%;
-      color: #ffffff;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      font-size: 40px;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      margin-left: -36px;
-      text-align: center;
-    }
-
-    .empty-state-header {
-      font-size: 30px;
-      text-align: center;
-      color: #343d47;
-    }
-
-    .empty-state-content {
-      ul {
-        list-style: disc outside;
-        margin: 0 0 10px 0;
-        padding: 0 0 0 30px;
-      }
-    }
-  }
-}
-
-.text-success-alt {
-	background-color: $state-success-text;
-}
-
-.text-info-alt {
-	background-color: $state-info-text;
-}
-
-.sp-cross-scope-msg {
-  margin-bottom: 10px;
-}
-
-.asterisk-div{
-	margin: 2rem 0 1.5rem;
-}
-
-.asterisk{
-	padding-right: .25rem;
-}
-
-.related-lists-vertical-bar{
-	padding: 0 .5em;
-}
-.tox {
-  .tox-statusbar {
-    border-color : $input-border;
-  }
-  .tox-toolbar__primary {
-    background: none;
-    border-bottom: 1px solid $input-border;
-  }
-}
-.tox.tox-tinymce {
-  border-color: $input-border;
-}
-
-// My style
-.panel.panel.ng-scope{
-		padding: 30px;
-    background-color: #DAFFFB;
-  	margin:60px;
-  
-    border-radius: 15px;
-}
-.panel-heading{
-  background-color: #64CCC5;
-}
-.panel-footer{
-  background-color: #DAFFFB;
-  border-top: 0rem;
-}
-.c4275701283aa0210edb56060ceaad357{
-background-size: initial;
-  background-position: center;
-  background-image: url("https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?q=80&amp;w=1770&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-}
-
-.action-btn{
-  float:right;
-  background-color: #176B87;
-}
-
-.btn-primary{
-  background-color: #176B87;
-}
-
-#s2id_sp_formfield_lister_name{
-  background-color: #ffffff;
-}*/
-
-
-/* General styling for the form container */
-
-.poppins-extralight {
+        <css>.poppins-extralight {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-style: normal;
@@ -777,14 +595,14 @@ button:hover {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-05 05:24:20</sys_created_on>
         <sys_id>30de331a83e64210edb56060ceaad397</sys_id>
-        <sys_mod_count>162</sys_mod_count>
+        <sys_mod_count>163</sys_mod_count>
         <sys_name>Tradenow Form</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_30de331a83e64210edb56060ceaad397</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-28 06:48:21</sys_updated_on>
+        <sys_updated_on>2024-06-30 10:42:25</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>

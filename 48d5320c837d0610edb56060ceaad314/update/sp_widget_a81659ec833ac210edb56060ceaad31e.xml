@@ -1,10 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {
-  /* widget controller */
-  var c = this;
-	
+        <client_script><![CDATA[api.controller=function($scope,$sce,$location,spUtil) {
+	/* widget controller */
+	var c = this;
+	var modal = document.getElementById("welcomeModal");
+	var successModal = document.getElementById("successModal");
+	var amount = document.getElementById("amount");
+
+	modal.style.display = "none";
+	successModal.style.display = "none";
+	$scope.handleClick = function() {
+		modal.style.display = "flex";
+		successModal.style.display = "none";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	$scope.handleClose=function(){
+		modal.style.display = "none";
+		successModal.style.display = "none";
+	}
+	/*
+	$scope.handleSubmit = function(){
+
+		var amount = document.getElementById('amount').value;
+		var screenshot = document.getElementById('screenshot').files[0];
+
+		if (amount > 0 && screenshot) {
+			successModal.style.display = "flex";	
+		}
+
+	}
+*/
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+			successModal.style.display = "none";
+		}
+	}
+
+	c.submitForm = function(isValid) {
+		console.log('Form submitted');
+		if (modal.style.display === "flex"){
+			successModal.style.display="none";
+			return;
+		}
+		console.log('Control 1 reached!');
+		var amountData = {
+			amount: c.amount
+		}
+		c.server.get({
+			action: 'submitForm', 
+			amountData: amountData
+		}).then(function(response) {
+			console.log('Control 2 reached!');
+			if (response.data.success) {
+				c.message = null;
+				c.success = response.message;
+				console.log("Inside the if")
+				successModal.style.display = "flex";//changed
+				amount.value = null;//changed
+			}
+			else if (response.success) {
+				c.message = response.message;
+				console.log('Error');
+			}
+		})
+
+	}
+
+	spUtil.recordWatch($scope, 'x_1383179_tradenow_charity_list','total_amount_raisedISNOTEMPTY', function(response) {
+		//console.log(response.data);
+		// statusINavailable,readypickup,reserved,claimed
+		c.server.update();
+	});
+
 };]]></client_script>
         <controller_as>c</controller_as>
         <css>.poppins {
@@ -22,8 +93,10 @@
 .charity-description{
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding: 0 20px;
+  padding-right: 60px;
 }
 
 
@@ -41,22 +114,21 @@
 .charity-description .charity-info .info-section{
 	width: 70%;
   min-height: 500px;
-  border: 2px solid black;
-  border-radius: 50px;
   display: flex;
   justify-content: center;
 }
 
 .charity-description .charity-info .info-section .info-container{
-  padding-top: 30px;
+  padding: 30px 0;
 	width: 80%;
   display: flex;
   align-items: center;
   flex-direction: column;
+  row-gap: 10px;
 }
 
 .charity-description .charity-info .info-section .info-container .about-div{
-	font-size: 5rem;
+	font-size: 3rem;
   font-weight: 600;
   display: flex;
   width: 100%;
@@ -79,20 +151,32 @@
   font-weight: 400;
 }
 
-.website-div, .email-div, .phone-div, .location-div{
+.contacts-div{
+	display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.individual-contact-div{
 	width: 100%;
   height: 30px;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
 }
 
-.svg-container{
-	width: 20%;
+.svg-container {
   height: 100%;
+  width: 5%;
+	display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.svg-container{
-	width: 100%;
+svg{
+	width: 90%;
+  fill: #006666;
   height: 100%;
 }
 
@@ -120,7 +204,195 @@
   padding-top: 5px;
   padding-bottom: 5px;
   font-weight: 500;
-}</css>
+}
+
+.charity-description .charity-form{
+  width: 30%;
+  height: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.charity-description .charity-form .donation-form{
+  width: 100%;
+	border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: black;
+  border: 2px solid #66b2b2;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
+  font-size: 1.5rem;
+  padding: 10px 0;
+  font-weight: 500;
+}
+
+.form-container{
+	display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 90%;
+  row-gap: 2rem;
+  margin: 10px 0;
+  justify-content: center;
+}
+
+.input-container{
+  width: 100%;
+	display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.input-container &gt; input{
+	width: 100%;
+  border-radius: 5px;
+  height: 40px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  border: 1px solid #006666;
+}
+
+
+.input-container &gt; input:focus {
+	box-shadow: none;
+}
+
+.input-container &gt; input:disabled {
+	background-color: #dadada;
+}
+
+.error-container{
+  width: 100%;
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container{
+  width: 100%;
+	display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.button-container &gt; button{
+	color: white;
+  padding: 10px 24px;
+  border-radius: 15px;
+  border: none;
+  background-color: #006666;
+  transition: all .5s linear;
+}
+
+.button-container &gt; button:focus{
+	border: none;
+  boz-shadow: none;
+}
+
+.button-container &gt; button:hover{
+	transform: translateY(-2px);
+}
+
+/* Modal styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation-name: slideIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+.close-div{
+	width: 100%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 5px;
+}
+
+.content-div{
+	width: 100%;
+  height: 95%;
+}
+
+.content-div &gt; img{
+	width: 300px;
+  height: 300px;
+}
+
+.content-div1{
+	width: 100%;
+  height: 95%;
+}
+
+.content-div1 &gt; img{
+	width: 150px;
+  height: 150px;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -135,65 +407,74 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-  // This is an immediately-invoked function expression (IIFE) to encapsulate the code
+	var user = gs.getUserID();
+	console.log(user);
+	data.userName = gs.getUserDisplayName();
+	data.table = 'x_1383179_tradenow_charity_list';
+	data.table1 = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr';
 
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-  // Setting properties in the 'data' object with table names
-  data.table = 'x_1383179_tradenow_charity_list';
-  data.table1 = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr';
+	var gr = new GlideRecord(data.table);
+	var charity_id = $sp.getParameter('charity_id');
+	var targetSysId = $sp.getParameter('sys_id');
+	gr.addQuery('number', '=', charity_id);
+	gr.query();
 
-  // Creating a new GlideRecord object with the table name from the 'data' object
-  var gr = new GlideRecord(data.table);
-  
-  // Getting the 'charity_id' parameter from the Service Portal
-  var charity_id = $sp.getParameter('charity_id');
-  console.log(charity_id);
+	while (gr.next()) {
+		data.obj = {
+			charityId: gr.getValue('number'),
+			name: gr.getValue('charity_name'),
+			description: gr.getValue('description'),
+			raisedAmount: gr.getValue('total_amount_raised'),
+			image_url: gr.getDisplayValue('image'),
+			website: gr.getValue('website'),
+			email: gr.getValue('email'),
+			phone: gr.getValue('phone'),
+			location: gr.getDisplayValue('u_reference_1'),
+			paymentLink: gr.getValue('donation_link'),
+			qrImage: gr.getDisplayValue('qr_code')
+		};
+	}
+	//gs.addInfoMessage(JSON.stringify(input));
+	if(input && input.action === 'submitForm' && input.amountData){
+		//console.log("Inputtttttttttttttt="+input.amountData.amount);
+		var currentTime = new GlideDateTime();
+		
+		//if(validateRegistration (input.name)){
+		//gs.addInfoMessage('Hello');
 
-  // Adding a query condition to retrieve records with a specific charity_id
-  gr.addQuery('number', '=', charity_id);
-  
-  // Executing the query
-  gr.query();
+		var grNewRegistration = new GlideRecordSecure('x_1383179_tradenow_m2m_sys_user_x_1383179_tr');
+		grNewRegistration.initialize();
 
-  // Looping through the result set
-  while (gr.next()) {
-    // Creating an object 'data.obj' to store information about the charity
-    data.obj = {
-      charityId: gr.getValue('number'),
-      name: gr.getValue('charity_name'),
-      description: gr.getValue('description'),
-      raisedAmount: gr.getValue('total_amount_raised'),
-      image_url: gr.getDisplayValue('image'),
-      website: gr.getValue('website'),
-      email: gr.getValue('email'),
-      phone: gr.getValue('phone'),
-      location: gr.getDisplayValue('u_reference_1'),
-      paymentLink: gr.getValue('donation_link'),
-      qrImage: gr.getDisplayValue('qr_code')
-    };
-  }
-  
-  // Logging the 'data.obj' object to the console
-  console.log(data.obj);
+		grNewRegistration.setValue('sys_user', user);
 
-  // Anonymous function within the IIFE
-  (function() {
-    // Creating a new GlideRecord object with another table name from the 'data' object
-    var gr1 = new GlideRecord(data.table1);
-    
-    // Querying the GlideRecord
-    gr1.query();
-    
-    // Logging the GlideRecord object to the console
-    console.log(gr1);
-    
-    // Looping through the result set
-    while (gr.next()) {
-      // Logging the 'charity_id' value from each record to the console
-      console.log(gr.getValue('charity_id'));
-    }
-  })();
+		grNewRegistration.setValue('donation_amount', input.amountData.amount);
+		grNewRegistration.setValue('x_1383179_tradenow_charity_list', targetSysId);
+		grNewRegistration.setValue('sys_created_on', currentTime);
+		grNewRegistration.setValue('status', 'unverified');
+		grNewRegistration.setValue('checked', true);
+		//grNewRegistration.setValue('company', input.selectedCondition);
+		//grNewRegistration.setValue('event', input.eventSysId);
+
+		//grNewRegistration.setValue('image', input.image);
+
+		/*if(!input.comments) {
+			grNewRegistration.setValue('comments', "");
+		} else {
+			grNewRegistration.setValue('comments', input.comments);
+		}*/
+		//grNewRegistration.insert();
+		var userRegSysId = grNewRegistration.insert();
+		console.log("New record sys_id="+userRegSysId);
+		//if the record is created successfully, send the success
+		// message to the client, else send the error message
+
+		//	}
+		data.success=true;
+	} 
+	else {
+		data.success=false;
+	}
+
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -201,36 +482,117 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-11 16:53:22</sys_created_on>
         <sys_id>a81659ec833ac210edb56060ceaad31e</sys_id>
-        <sys_mod_count>128</sys_mod_count>
+        <sys_mod_count>338</sys_mod_count>
         <sys_name>charity description</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_a81659ec833ac210edb56060ceaad31e</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-06-18 16:04:38</sys_updated_on>
+        <sys_updated_on>2024-07-02 06:27:56</sys_updated_on>
         <template><![CDATA[<div class="charity-description poppins">
   <div class="charity-info">
     <div class="info-section poppins">
       <div class="info-container">
-        <div class="about-div playwrite-co-writer">About Us...</div>
+        <div class="about-div poppins">About Us...</div>
         <div class="description-div">{{data.obj.description}}</div>
         <div class="contact-div">
           <div class="contact-title">Contact Us:</div>
-        	<div class="website-div"><div class="svg-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-            </div>{{data.obj.website}}</div>
-          <div class="email-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>{{data.obj.email}}</div>
-          <div class="phone-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>{{data.obj.phone}}</div>
-          <div class="location-div"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>{{data.obj.location}}</div>
+          <div class="contacts-div">
+            <div class="individual-contact-div"><div class="svg-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/><title>Website</title></svg>
+              </div>{{data.obj.website}}</div>
+            <div class="individual-contact-div"><div class="svg-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/><title>Email</title></svg>
+              </div>{{data.obj.email}}</div>
+            <div class="individual-contact-div"><div class="svg-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/><title>Phone</title></svg>
+              </div>{{data.obj.phone}}</div>
+            <div class="individual-contact-div"><div class="svg-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/><title>Location</title></svg>
+              </div>{{data.obj.location}}</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="charity-amount-raised">
-    <div class="amount-raised">
-      <div>Amount Raised</div>
-      <div>${{data.obj.raisedAmount}}</div>
+  <!--<div class="charity-form">
+    <div class="donation-form">
+      <form class="form-container" id="donationForm">
+        <div class="input-container">
+          <label>Name</label>
+          <input type="text" value={{data.userName}} readonly disabled>
+        </div>
+        <div class="input-container">
+          <label>Amount</label>
+          <input type="number" id="amount" >
+        </div>
+        <div class="input-container">
+          <label>Screenshot</label>
+          <input type="file" id="screenshot" accept="image/*" >
+        </div>
+        <div class="button-container">
+          <button id="donate-button" ng-click="handleClick()">
+            Donate
+          </button>
+          <button ng-click="handleSubmit()">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>-->
+  <div class="charity-form">
+    <div class="donation-form">
+      <form name="donation" class="form-container" id="donationForm" ng-submit="c.submitForm(c.registration.$valid)">
+        <div class="input-container">
+          <label>Name</label>
+          <input type="text" value={{data.userName}} id="name" name="name" ng-required="true" readonly disabled>
+        </div>
+        <div class="input-container">
+          <label>Amount</label>
+          <input type="number" ng-model="c.amount" id="amount" name="amount" ng-required="true" >
+        </div>
+        <div class="input-container">
+          <label>Screenshot</label>
+          <!--<input type="file" id="screenshot" accept="image/*" >-->
+          <input type="file" id="screenshot"/>
+        </div>
+        <div class="button-container">
+          <button id="donate-button" ng-click="handleClick()">
+            Donate
+          </button>
+          <!--<button ng-click="handleSubmit()">-->
+          <button type="submit" value="Upload" ng-click="handleSubmit()">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="welcomeModal" class="modal poppins">
+  <div class="modal-content">
+    <div class="close-div">
+      <span class="close-button" ng-click="handleClose()">&times;</span>
+    </div>
+    <div class="content-div">
+      <p>Thank you for your interest in donating!</p>
+      <img src={{data.obj.qrImage}}>
+      <p>Donate throught the link <a href={{data.obj.paymentLink}}>here</a></p>
+    </div>
+  </div>
+</div>
+
+<div id="successModal" class="modal poppins">
+  <div class="modal-content">
+    <div class="close-div">
+      <span class="close-button" ng-click="handleClose()">&times;</span>
+    </div>
+    <div class="content-div1">
+      <p>Thank you for the donation</p>
+      <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/svg/1f389.svg">
     </div>
   </div>
 </div>]]></template>

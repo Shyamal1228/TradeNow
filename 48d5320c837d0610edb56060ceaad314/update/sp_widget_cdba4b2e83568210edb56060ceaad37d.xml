@@ -1,114 +1,639 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <client_script><![CDATA[api.controller=function($scope, $window, $rootScope, $http) {
+
+	var c = this;
+	c.data.allItems = false;
+	$scope.displayNumber = 8;  // Initially display 8 items	
+	var totalItems=0;
+	var index = 0;
+	var itemsLoaded = 0;
+
+	// Function to get the total number of items
+	c.getTotalItems = function() {
+		$http.get('/api/now/table/x_1383179_tradenow_item_list?sysparm_count=true')
+			.then(function(res) {
+			var totalItems = res.data.result.length;
+			// Load initial items after getting the total count
+			c.getAllItems();
+		});
+	};
+	
+	// Initial call to get the total number of items
+	c.getTotalItems();
+	
+	// Function to get all items with loading
+	c.getAllItems = function () {
+		// Set the limit of items to load (8 initially, then 4)
+		var limit = itemsLoaded === 0 ? 8 : 4;
+
+		// Calculate remaining items to load
+		var remainingItems = totalItems - itemsLoaded;
+		if (remainingItems < limit) {
+			limit = remainingItems;
+		}
+		
+		// Prepare query parameters for the API call
+		var params = [
+			'sysparm_fields=sys_id,lister_name,item_name,description,category,image,total_watchers,sys_created_on',
+			'sysparm_offset=' + index * itemsLoaded,
+			'sysparm_limit'+limit
+		].join('&');
+		
+		// API call to get items
+		$http.get('/api/now/table/x_1383179_tradenow_item_list?' + params)
+			.then(function(res) {
+			var data = res.data.result.slice();
+			//console.log(data);
+
+			// Ensure category is correctly assigned
+			for(var i=0;i<data.length;i++){
+				res.data.result[i].category=res.data.result[i].category.value;
+			}
+			
+			// Concatenate new items to the existing items
+			c.data.allItems = c.data.allItems ? c.data.allItems.concat(data) : data;
+			index++;
+			
+			// Update items loaded
+			itemsLoaded += data.length;
+
+			// Disable further loading if all items are loaded
+			if (data.length < limit || itemsLoaded >= totalItems) {
+				// No more items to load
+				$scope.loadPoint = false;
+			}
+		});
+	};
+
+	// Watcher to trigger loading more items when loadPoint changes
+	$scope.$watch('loadPoint', function() {
+		if ($scope.loadPoint) {
+			$scope.displayNumber += 4;
+			c.getAllItems();
+
+			setTimeout(function() {
+				$scope.loadPoint = false;
+			}, 1000);
+		}
+	});
+	
+	// Get the first section element
+	var emnt = document.getElementsByTagName('section')[0];
+
+	$scope.loadPoint = false;
+	// Scroll event to trigger loading more items when near bottom
+	$(emnt).on('scroll', function() {
+		if (emnt.scrollHeight - emnt.scrollTop < 1200) {
+			$scope.$apply(function() {
+				$scope.loadPoint = true;
+			});
+		}
+	});
+	
+	// Watcher for category selection change to scroll to top
+	$scope.$watch('selectedCategory', function(newValue, oldValue) {
+		if (newValue !== oldValue) {
+			scrollToTop();
+		}
+	});
+	
+	// Watcher for search text change to scroll to top
+	$scope.$watch('searchText', function(newValue, oldValue) {
+		if (newValue !== oldValue) {
+			scrollToTop();
+		}
+	});
+	
+	// Function to scroll to top smoothly
+	function scrollToTop() {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
+
+	//clear serarch
+	$scope.clearSearch = function(){
+		$scope.searchText = "";
+		$scope.searchKeyword = $scope.searchText;
+		document.getElementById('search-bar').value = '';
+	};
+}
+]]></client_script>
         <controller_as>c</controller_as>
-        <css>.thumbnail {
-    width: 250px;
-    height: 400px;
-    overflow: hidden; 
-  }
-
-  .thumbnail img {
-    width: 100%; 
-    height: 200px;
-    object-fit: cover;
-    border-radius:4px;
-  }
-
-  .caption {
-    text-align: center; 
-  }
-
-  .caption h3 {
-    font-size: 1.2em; 
-    margin: 10px 0; 
-  }
-
-  .caption span {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-    height: 3em;
-  }
-
-  .caption p {
-    margin-top: 10px;
-  }
-
-  .btn-primary {
-    width: 100px;
-    margin: 0 auto; /* Center the button */
-  }
-
-.search-box {
-  display:flex;
-  justify-content:right;
-  margin-bottom: 20px;
-  
-}
-.input-group {
-  width: auto; /* Ensures the input group expands to fit content */
+        <css>th {
+  min-width: 12rem;
+  margin: 2rem;
 }
 
-.form-control { 
-  width: 300px;
-  
+td {
+  padding-top: 2rem;
 }
 
-.container{
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
+.description {
+  min-width: 20rem;
 }
 
-/* Align items to the right */ 
-.align-right { 
-  margin-left: auto; 
+.mid {
+  text-align: center;
+}
+
+.scrollable-container {
+  height: 800px; /* Set your desired height */
+  overflow-y: auto;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.top-section {
+  position: sticky;
+  top: 0;
+  // background-color: #f5d8c6;
+  z-index: 1000;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+div.top-section{
+  background-color: #006666;
+}
+.card-list-container {
+  overflow-y: auto;
+  flex: 1;
+  padding-top: 10px;
+}
+
+.header{
+  text-align: center;
+  color: #004c4c;
+}
+.header&gt;h2{
+  //font-weight: bold;
+  color:#004c4c;
+}
+.header&gt;hr{
+  border: none;
+  height: 5px;
+  width: 20%;
+  background-color: #004c4c;
+  margin-butom: 2px;
+  margin-top: 0px;
+}
+h3{
+  /*font-size: 1.375rem;
+  color: #000000;
+  margin-top: 0.5rem;
+  line-height: 1.4;*/
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  //height: 3em;
+  color:#000000;
+}
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #393232;
+  margin: 0;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 } 
 
-.dropdown{
-	margin-bottom: 20px;
-}
-.select-dropdown{
-  margin-bottom: 20px;
-}
-.select-dropdown select {
-  appearance: none; /* Remove default arrow */
-  -webkit-appearance: none; /* Remove default arrow in Safari */
-  -moz-appearance: none; /* Remove default arrow in Firefox */
-  
-  width: auto; /* Make the select box full width */
-  max-width: 300px;
-  // padding: 10px;
-  padding:10px 80px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff
-  font-size: 14px;
-  color: #333;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  justify-content: flex-start; /* Change to flex-start */
+  margin-bottom:25px;
+
 }
 
-.select-dropdown {
+.card {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 20px 50px 0 rgba(0, 0, 0, .1);
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 0.5rem; /* Reduced padding */
   position: relative;
+  transition: .15s ease-in;
+  flex: 1 1 calc(25% - 1rem); /* Adjusted for four items per row */
+  max-width: calc(25% - 1rem); /* Adjusted for four items per row */
+
+  border: 1px solid transparent;
+
+  &amp;:hover, &amp;:focus-within {
+    // box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(0, 0, 0, .1);
+    //transform: translateY(-5px);
+    //border-color: #16C79A; /* Added green border on hover */
+    -webkit-box-shadow: -1px 0px 12px 0px rgba(178, 216, 216,0.8);
+    -moz-box-shadow: -1px 0px 12px 0px rgba(178, 216, 216,0.8);
+    box-shadow: -1px 0px 12px 0px rgba(178, 216, 216,0.8);
+    //box-shadow: -1px 3px 11px 0px rgba(0,0,0,0.75);
+    //box-shadow:-3px 18px 20px 0px rgba(99,89,99,1);
+    transform: translate3d(0px, -1px, 0px);
+  }
 }
 
-.select-dropdown::after {
-  content: "▼"; /* Unicode character for down arrow */
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  pointer-events: none; /* Allow clicking through the arrow */
-  font-size: 12px; /* Adjust the size of the arrow */
-  color: #333; /* Arrow color */
+.card-image {
+  //	width: 250px;
+  //height: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0.5rem 0; /* Reduced margin around image */
 }
-</css>
+
+.card-image img {
+  // width: 100%;
+  //height: auto;
+  //object-fit: cover; /* Ensure the image covers the container */
+  width: 100%; 
+  height: 200px;
+  object-fit: cover;
+  border-radius:4px;
+}
+
+.card-header {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a {
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.25;
+    padding-right: 1rem;
+    text-decoration: none;
+    color: #000000;
+    will-change: transform;
+    position: relative;
+    &amp;:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.card-description {
+  font-size: 1.375rem;
+  color: #000000;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  height: 3em;
+}
+
+.icon-button {
+  border: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  transition: .25s ease;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 3px 8px 0 rgba(0, 0, 0, .15);
+  z-index: 1;
+  cursor: pointer;
+  color: #565656;
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+  &amp;:hover, &amp;:focus {
+    background-color: #EC4646;
+    color: #FFF;
+  }
+}
+
+.card-footer {
+  margin-top: 1.25rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-meta {    
+  display: flex;
+  align-items: center;
+  color: #787878;
+  &amp;:first-child:after {
+    display: block;
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: currentcolor;
+    margin-left: .75rem;
+    margin-right: .75rem;
+  }
+  svg {
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    margin-right: .25em;
+  }
+}
+
+
+@media (max-width: 950px) {
+  .card {
+    flex: 1 1 calc(33.33% - 1rem);
+    max-width: calc(33.33% - 1rem);
+  }
+}
+
+@media (max-width: 750px) {
+  .card {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem); 
+  }
+}
+
+@media (max-width: 530px) {
+  .card {
+    flex: 1 1 100%; 
+    max-width: 100%; 
+  }
+  .header&gt;hr{
+    width: 40%;
+  }
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-action {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.view-item-button {
+  display: inline-block;
+  padding: 1.3rem 2.5rem;
+  background-color: #008080;
+  color: white;
+  font-size: 1.4rem;
+  //font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 128, 128, 0.4);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.view-item-button:hover {
+  background-color: #006666;
+}
+
+
+// category and search bar
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: #fff;
+  //padding: 5px 20px 20px 0px;
+  border-radius: 10px;
+  margin-bottom:20px;
+}
+
+.select-dropdown select {
+  margin-right: 10px;
+  color:#000000;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+}
+
+.search-box {
+  margin-left: 10px;
+  color:#000000;
+}
+input{
+  color:#000000;
+}
+.search-box input{
+  //width: 40%;
+  padding: 1rem;
+  // border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  color:#000000;
+  height:100%;
+}
+
+@media screen and (max-width: 600px) {
+  .top-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-box {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+}
+
+
+
+// pagination
+.pagination {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-link {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #04364A;
+  background-color: #fff;
+  border: 1px solid #04364A;
+  border-radius: 3px;
+}
+
+.page-link:hover {
+  background-color: #04364A;
+}
+
+.page-item.active .page-link {
+  background-color: #04364A;
+  color: white;
+  border-color: #04364A;
+}
+
+/*ul.dirPagination.ng-scope{
+display: flex;
+justify-content: center;
+list-style-type: none;
+padding: 0;
+border-radius: 0.25rem;
+margin-top: 25px;
+margin-bottom: 20px;
+}*/
+
+// delete after show and tell
+.card-meta:first-child:after{
+  background-color: #000;
+}
+
+.back-to-top {
+  //display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 1000;
+  border: none; 
+  outline: none;
+  background-color: #176B87;
+  color: white;
+  cursor: pointer; 
+  padding: 15px; 
+  border-radius: 10px; 
+  font-size: 18px;
+}
+
+.back-to-top:hover {
+  background-color: #04364A;
+}
+
+// search box
+.search-box-container{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  //border: 2px solid #006060;
+  background-color:#fff;
+}
+
+.search-bar-svg{
+  height: 100%;
+  width: 20%;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar-svg svg{
+  width: 70%;
+  height: 70%;
+  margin-left:5px;
+}
+
+.search-box-container &gt; input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding-left: 10px;
+  color:#000;
+}
+
+.search-box-container &gt; input:focus{
+  box-shadow: none;
+  outline: none;
+}
+.cross{
+  width:16%;
+  margin-right:5px;
+}
+
+// Item not found
+.no-items-found {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.5rem !important;
+  color: black !important; /* Adjust color as needed */
+}
+
+.no-items-found img{
+  width: 20%;
+  height: 20%;
+}
+
+@media screen and (max-width: 400px) {
+  .search-box-container{
+    width: 100%;
+   
+  }
+  .select-dropdown select{
+     width: 100%;
+    height: 42px;
+  }
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -123,109 +648,144 @@
         <public>false</public>
         <roles/>
         <script><![CDATA[(function() {
-  /* populate the 'data' object */
-  /* e.g., data.table = $sp.getValue('table'); */
-	data.table = 'x_1383179_tradenow_item_list';
-	data.items = [];
-  var gr = new GlideRecord(data.table);
-	gr.setLimit(4);
-  gr.query();
-	while (gr.next()) {
-		var obj={
-			name:gr.getValue('item_name'),
-			description:gr.getValue('description'),
-			category:gr.getValue('category'),
-			image_url: null
-		};
-		var attachmentGr = new GlideRecord('sys_attachment');
-		attachmentGr.addQuery('table_sys_id', gr.getUniqueValue());
-		attachmentGr.query();
-
-		if (attachmentGr.next()) {
-			obj.image_url = '/sys_attachment.do?sys_id=' + attachmentGr.getValue('sys_id');
-		}
-		data.items.push(obj);
-     // data.items.push(gr.getValue('number')); // assuming 'number' is the field you want to print
-    }
-	// console.log(data.items);
-	
-	data.categoryArray = [];
-  var categoryList = new GlideRecord('x_1383179_tradenow_category_lookup');
-	categoryList.query();
-	while (categoryList.next()) {
-		
-		var catObj={
-			name:categoryList.getValue('name'),
-			sys_id:categoryList.getValue('sys_id'),
-		};
-		data.categoryArray.push(catObj);
-		//data.categoryArray.push(categoryList.getValue('name'));
-	}
-})();]]></script>
+  /* This script populates the 'data' object with categories from the 'x_1383179_tradenow_category_lookup' table */
+  /* Initialize an empty array to hold the categories */
+  data.categoryArray = [];
+  
+  /* Create a new GlideRecord object to query the 'x_1383179_tradenow_category_lookup' table */
+  var categoryListGR = new GlideRecord('x_1383179_tradenow_category_lookup');
+  
+  /* Execute the query to retrieve all records from the category lookup table */
+  categoryListGR.query();
+  
+  /* Iterate over each record in the result set */
+  while (categoryListGR.next()) {
+    /* Create an object to hold the name and sys_id of the current category */
+    var catObj = {
+      name: categoryListGR.getValue('name'),  // Get the value of the 'name' field
+      sys_id: categoryListGR.getValue('sys_id'),  // Get the value of the 'sys_id' field
+    };
+    
+    /* Add the category object to the category array */
+    data.categoryArray.push(catObj);
+  }
+})();
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-24 09:59:24</sys_created_on>
         <sys_id>cdba4b2e83568210edb56060ceaad37d</sys_id>
-        <sys_mod_count>214</sys_mod_count>
+        <sys_mod_count>229</sys_mod_count>
         <sys_name>Item List</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_cdba4b2e83568210edb56060ceaad37d</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-05-30 15:24:06</sys_updated_on>
-        <template><![CDATA[
+        <sys_updated_on>2024-07-02 10:00:41</sys_updated_on>
+        <template><![CDATA[<!-- Importing the Poppins font from Google Fonts -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+</style>
 
-<div class="container">
-  <!--<div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Dropdown
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <li><a href="#">Electronics</a></li>
-      <li><a href="#">Furniture</a></li>
-    </ul>
-  </div>-->
- <div class="select-dropdown">
-	<!--<select ng-model="selectedCategory">
-		<option value="Option 1">First Option</option>
-		<option value="electronics">Electronics</option>
-		<option value="furniture">Furniture</option>
-	</select>-->
-   <select ng-model="selectedCategory" ng-options="category.name for category in data.categoryArray">
-  <option value="">Select Category</option>
-</select>
-
- </div>
- 
-  
-  <div class="search-box align-right">
-    <div class="input-group">
-      <input style="border-radius: 4px;" type="text" class="form-control" ng-model="test" placeholder="Search for items...">
-    </div>
-  </div>
+<!-- Header section containing the title and a horizontal line -->
+<div class="header">
+    <h2 class="poppins-semibold">All Items</h2>
+    <hr/>
 </div>
 
+<!-- Main container for the content -->
+<div class="main-container">
 
-<div class="row">
-  <!--<div class="col-sm-4 col-md-3" ng-repeat="item in data.items | filter: {name: test} | filter: {category: selectedCategory} ">-->
-  <div class="col-sm-4 col-md-3" ng-repeat="item in data.items |filter: {category: selectedCategory.sys_id} | filter: {name: test} ">
-    <div class="thumbnail">
-      <img src="{{item.image_url}}" alt="...">
-      <div class="caption">
-        <h3>{{item.name}}</h3>
-        <span>{{item.description}}</span>
-        <p><a href="#" class="btn btn-primary" role="button">View Item</a></p>
+  <!-- Top section containing category selection dropdown and search box -->
+  <div class="top-section">
+    
+    <!-- Dropdown for selecting item category -->
+    <div class="select-dropdown poppins-regular">
+        <select class="select" ng-model="selectedCategory" ng-options="category.name for category in data.categoryArray">
+            <option value="">Select Category</option>
+        </select>
+    </div>
+    
+    <!-- Search box for searching items -->
+    <div class="search-box-container search-box poppins-regular">
+      <!-- SVG icon for search bar -->
+      <div class="search-bar-svg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+        </svg>
+      </div>
+      <!-- Input field for search text -->
+      <input type="text" placeholder="Search for items..." ng-model="searchText" ng-keyup="checkEnterKey($event)" id="search-bar">
+      <!-- SVG icon for clearing search text -->
+      <div class="search-bar-svg cross" ng-click="clearSearch()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/>
+        </svg>
       </div>
     </div>
   </div>
+
+  <!-- Container for displaying the list of items as cards -->
+  <div class="card-list">
+    <!-- Individual item card -->
+    <article class="card" ng-repeat="item in c.data.allItems | filter: {category: selectedCategory.sys_id} | filter: {item_name: searchText} | limitTo: displayNumber">
+      
+      <!-- Figure element containing item image -->
+      <figure class="card-image">
+        <img ng-src="sys_attachment.do?sys_id={{item.image}}" alt="{{item.item_name}}" />
+      </figure>
+      
+      <!-- Header section of the card containing item name -->
+      <div class="card-header">
+        <h3 class="poppins-regular" ng-bind-html="::item.item_name"></h3>
+        <!-- Uncomment the button below to enable the like/favorite feature -->
+        <!--<button class="icon-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Heart">
+            <path d="M7 3C4.239 3 2 5.216 2 7.95c0 2.207.875 7.445 9.488 12.74a.985.985 0 0 0 1.024 0C21.125 15.395 22 10.157 22 7.95 22 5.216 19.761 3 17 3s-5 3-5 3-2.239-3-5-3z" />
+          </svg>
+        </button>-->
+      </div>
+      
+      <!-- Footer section of the card containing item meta information -->
+      <div class="card-footer">
+        <!-- Meta information for total watchers -->
+        <div class="card-meta card-meta--views">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="EyeOpen">
+            <path d="M21.257 10.962c.474.62.474 1.457 0 2.076C19.764 14.987 16.182 19 12 19c-4.182 0-7.764-4.013-9.257-5.962a1.692 1.692 0 0 1 0-2.076C4.236 9.013 7.818 5 12 5c4.182 0 7.764 4.013 9.257 5.962z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+          {{item.total_watchers}}
+        </div>
+        <!-- Meta information for item creation date -->
+        <div class="card-meta card-meta--date">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" display="block" id="Calendar">
+            <rect x="2" y="4" width="20" height="18" rx="4" />
+            <path d="M8 2v4" />
+            <path d="M16 2v4" />
+            <path d="M2 10h20" />
+          </svg>
+          {{::item.sys_created_on.toString().substr(0,10)}}
+        </div>
+      </div>
+      
+      <!-- Action button for viewing item details -->
+      <div class="card-action">
+        <a href="/tradenow?id=item_details&table=x_1383179_tradenow_item_list&sys_id={{::item.sys_id}}">
+          <button class="view-item-button poppins-light">View Item</button>
+        </a>
+      </div>
+    </article>
+    
+    <!-- Message displayed when no items are found -->
+    <div class="no-items-found" ng-if='!(c.data.allItems | filter: {category: selectedCategory.sys_id} | filter: {item_name: searchText}).length'>
+      <img src="https://img.freepik.com/premium-vector/hand-drawn-no-data-illustration_23-2150696443.jpg" />
+      No Items Found
+    </div>
+  </div>
 </div>
 
-  <!-- Display message when no items are found -->
-  <div class="col-md-12" ng-if="Object.keys(item).length === 0">
-    <p>No items found.</p>
-  </div>]]></template>
+<!-- Done -->]]></template>
     </sp_widget>
 </record_update>

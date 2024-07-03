@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_tab">
+    <sys_sg_applet_tab action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <icon display_value="Heart">fdeb41a2b72200108223e126de11a9d6</icon>
+        <label>Donate</label>
+        <screen display_value="Donate">43fd7b4383078610edb56060ceaad3d6</screen>
+        <sys_class_name>sys_sg_applet_tab</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-02 09:48:33</sys_created_on>
+        <sys_id>5e3ebb4383078610edb56060ceaad396</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Donate</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_applet_tab_5e3ebb4383078610edb56060ceaad396</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-02 09:48:33</sys_updated_on>
+    </sys_sg_applet_tab>
+</record_update>

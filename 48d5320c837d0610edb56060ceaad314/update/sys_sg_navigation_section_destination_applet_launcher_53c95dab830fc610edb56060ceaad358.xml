@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_navigation_section_destination_applet_launcher">
+    <sys_sg_navigation_section_destination_applet_launcher action="INSERT_OR_UPDATE">
+        <applet_launcher display_value="Support">02b18391c7303010fedf0bcbe2c2609f</applet_launcher>
+        <background_color/>
+        <background_color_variable/>
+        <foreground_color/>
+        <foreground_color_variable display_value="Accordion - Color">d7c0d903070e201083c548f78ad300aa</foreground_color_variable>
+        <icon display_value="Activity Set Running Icon">1c3b39a153ac33004d1dddeeff7b1231</icon>
+        <image/>
+        <name>My Activities</name>
+        <sys_class_name>sys_sg_navigation_section_destination_applet_launcher</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-03 11:07:08</sys_created_on>
+        <sys_id>53c95dab830fc610edb56060ceaad358</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Activities</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_navigation_section_destination_applet_launcher_53c95dab830fc610edb56060ceaad358</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-03 11:07:08</sys_updated_on>
+    </sys_sg_navigation_section_destination_applet_launcher>
+</record_update>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config">
+    <sys_sg_view_config action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <description/>
+        <name>Leaderboard card</name>
+        <scratchpad_script/>
+        <sys_class_name>sys_sg_view_config</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-04 09:49:25</sys_created_on>
+        <sys_id>ee91de7b83834a10edb56060ceaad357</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Leaderboard card</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_config_ee91de7b83834a10edb56060ceaad357</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-05 06:06:52</sys_updated_on>
+        <table>sys_user</table>
+        <template display_value="Leaderboard template 1.0">1d06664083978a10edb56060ceaad338</template>
+    </sys_sg_view_config>
+    <sys_translated_text action="delete_multiple" query="documentkey=ee91de7b83834a10edb56060ceaad357"/>
+</record_update>

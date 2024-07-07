@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_item_parameter">
+    <sys_sg_item_parameter action="INSERT_OR_UPDATE">
+        <default_value/>
+        <name>Item item_name</name>
+        <parent>cb98fac483d78a10edb56060ceaad3be</parent>
+        <parent_table>sys_sg_write_back_action_item</parent_table>
+        <sys_class_name>sys_sg_item_parameter</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-05 07:18:20</sys_created_on>
+        <sys_id>9b98fa0883d78a10edb56060ceaad3b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Item item_name</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_item_parameter_9b98fa0883d78a10edb56060ceaad3b8</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-05 07:18:20</sys_updated_on>
+        <type>string</type>
+    </sys_sg_item_parameter>
+</record_update>

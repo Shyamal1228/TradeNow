@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_navigation_section_m2m_destination">
+    <sys_sg_navigation_section_m2m_destination action="DELETE">
+        <navigation_section display_value="Quick Links">25a7d42b83c7c610edb56060ceaad39f</navigation_section>
+        <navigation_section_destination display_value="Request IT assistance">a6d9f0ae778101108f64b2487b5a9943</navigation_section_destination>
+        <order>400</order>
+        <sys_class_name>sys_sg_navigation_section_m2m_destination</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-03 06:31:39</sys_created_on>
+        <sys_id>3fbad02f83c7c610edb56060ceaad301</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_navigation_section_m2m_destination_3fbad02f83c7c610edb56060ceaad301</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-03 06:31:39</sys_updated_on>
+    </sys_sg_navigation_section_m2m_destination>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_sg_navigation_section_m2m_destination_3fbad02f83c7c610edb56060ceaad301</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_navigation_section_m2m_destination"><sys_sg_navigation_section_m2m_destination action="INSERT_OR_UPDATE"><navigation_section display_value="Quick Links">25a7d42b83c7c610edb56060ceaad39f</navigation_section><navigation_section_destination display_value="Request IT assistance">a6d9f0ae778101108f64b2487b5a9943</navigation_section_destination><order>400</order><sys_class_name>sys_sg_navigation_section_m2m_destination</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-07-03 06:31:39</sys_created_on><sys_id>3fbad02f83c7c610edb56060ceaad301</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_sg_navigation_section_m2m_destination_3fbad02f83c7c610edb56060ceaad301</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-07-03 06:31:39</sys_updated_on></sys_sg_navigation_section_m2m_destination></record_update>]]></payload>
+        <payload_hash>8120332</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>f04549d383320210edb56060ceaad322</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-03 06:31:39</sys_created_on>
+        <sys_id>ffbad02f83c7c610edb56060ceaad303</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190774aa53c0000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-03 06:31:39</sys_updated_on>
+        <type>Icon section destinations</type>
+        <update_guid>37bad02f65c7c610fde7e91672c26e03</update_guid>
+        <update_guid_history>37bad02f65c7c610fde7e91672c26e03:8120332</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-04 10:09:37</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_navigation_section_m2m_destination">sys_sg_navigation_section_m2m_destination</sys_db_object>
+        <sys_id>74ccaa629f154364a8a987517748a590</sys_id>
+        <sys_metadata>3fbad02f83c7c610edb56060ceaad301</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_sg_navigation_section_m2m_destination_3fbad02f83c7c610edb56060ceaad301</sys_update_name>
+        <sys_update_version display_value="sys_sg_navigation_section_m2m_destination_3fbad02f83c7c610edb56060ceaad301">ffbad02f83c7c610edb56060ceaad303</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:09:37</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

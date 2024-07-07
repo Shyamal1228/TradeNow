@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>My point template 2.0</description>
+        <name>My point template 2.0</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-05 13:11:48</sys_created_on>
+        <sys_id>3c898414835f8a10edb56060ceaad3fc</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>My point template 2.0</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_template_3c898414835f8a10edb56060ceaad3fc</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-05 13:19:21</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Margin":{"Top":15,"Bottom":17},"Orientation":"Vertical","Alignment":"Center","Distribution":"Auto","Id":"Root","Background":{"Color":"#66b2b2","Opacity":1,"Type":"Color","CellId":"Background_Root","Id":"Background_Root","elementId":"793f627a-a9ac-a2e8-3673-bad15cc321af"},"Children":[{"Type":"Image","Scaling":"Fill","CellId":"image_01","Id":"image_01","Height":130,"Width":130,"CornerRadius":80,"Margin":{"Top":20,"Bottom":20}},{"Type":"Text","TextColor":"#FFFFFF","Font":{"Weight":"bold","Size":24},"MaxLines":1,"CellId":"text_01","Id":"text_01"},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Center","Distribution":"Equal","Id":"container_02","CellId":"container_02","Margin":{"Top":10},"Children":[{"Type":"Text","TextColor":"#FFFFFF","MaxLines":1,"Id":"text_03","CellId":"text_03","Margin":{"Right":4}},{"Type":"Text","TextColor":"#FFFFFF","MaxLines":1,"Id":"text_04","CellId":"text_04"}]}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=3c898414835f8a10edb56060ceaad3fc"/>
+</record_update>

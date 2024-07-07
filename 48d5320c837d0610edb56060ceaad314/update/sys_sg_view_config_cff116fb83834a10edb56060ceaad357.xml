@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config">
+    <sys_sg_view_config action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <description/>
+        <name>Donation History view config</name>
+        <scratchpad_script/>
+        <sys_class_name>sys_sg_view_config</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-04 09:51:06</sys_created_on>
+        <sys_id>cff116fb83834a10edb56060ceaad357</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Donation History view config</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_config_cff116fb83834a10edb56060ceaad357</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-04 09:55:01</sys_updated_on>
+        <table>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</table>
+        <template display_value="Donation History Template">bd31123b83834a10edb56060ceaad3be</template>
+    </sys_sg_view_config>
+    <sys_translated_text action="delete_multiple" query="documentkey=cff116fb83834a10edb56060ceaad357"/>
+</record_update>

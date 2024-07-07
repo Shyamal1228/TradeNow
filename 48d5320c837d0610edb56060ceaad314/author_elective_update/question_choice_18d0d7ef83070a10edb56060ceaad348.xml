@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <order>100</order>
+        <published_ref/>
+        <question display_value="Condition">565d072f83070a10edb56060ceaad3bc</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-03 19:47:45</sys_created_on>
+        <sys_id>18d0d7ef83070a10edb56060ceaad348</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Used</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>question_choice_18d0d7ef83070a10edb56060ceaad348</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-03 19:47:45</sys_updated_on>
+        <text>Used</text>
+        <value>used</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=18d0d7ef83070a10edb56060ceaad348"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>question_choice_18d0d7ef83070a10edb56060ceaad348</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><order>100</order><published_ref/><question display_value="Condition">565d072f83070a10edb56060ceaad3bc</question><sys_class_name>question_choice</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-07-03 19:47:45</sys_created_on><sys_id>18d0d7ef83070a10edb56060ceaad348</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Used</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>question_choice_18d0d7ef83070a10edb56060ceaad348</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-07-03 19:47:45</sys_updated_on><text>Used</text><value>used</value></question_choice><fx_price action="delete_multiple" query="id=18d0d7ef83070a10edb56060ceaad348"/></record_update>]]></payload>
+        <payload_hash>-108148721</payload_hash>
+        <record_name>Used</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-03 19:47:45</sys_created_on>
+        <sys_id>a9f0df2383470a10edb56060ceaad355</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1907a2382ac0000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-03 19:47:45</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>edf0df23ac470a100514a706a7907654</update_guid>
+        <update_guid_history>edf0df23ac470a100514a706a7907654:-108148721</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Used">e1711b6383470a10edb56060ceaad3cc</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-03 19:49:56</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>45fd98acea0c4b8e97b3ccfdb91c4c04</sys_id>
+        <sys_metadata>18d0d7ef83070a10edb56060ceaad348</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Used</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Condition">565d072f83070a10edb56060ceaad3bc</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>question_choice_18d0d7ef83070a10edb56060ceaad348</sys_update_name>
+        <sys_update_version display_value="question_choice_18d0d7ef83070a10edb56060ceaad348">a9f0df2383470a10edb56060ceaad355</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-03 19:49:56</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

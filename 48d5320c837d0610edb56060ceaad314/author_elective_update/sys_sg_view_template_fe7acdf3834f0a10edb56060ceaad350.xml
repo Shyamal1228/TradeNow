@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="DELETE">
+        <active>true</active>
+        <description>Template to display the details of the Item</description>
+        <name>Item Deails Template</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-04 04:38:41</sys_created_on>
+        <sys_id>fe7acdf3834f0a10edb56060ceaad350</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Item Deails Template</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_template_fe7acdf3834f0a10edb56060ceaad350</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-04 04:38:41</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Margin":{"Top":16,"Right":16,"Bottom":16,"Left":16},"Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"Root","Children":[{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"main_container","CellId":"main_container","CornerRadius":8,"BorderColor":"#D3D6DC","BorderColorVariable":"--now-color_border--tertiary","BorderWidth":1,"Margin":{"Top":24,"Right":24,"Bottom":16,"Left":24},"Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Left","Distribution":"Auto","Id":"container_01","CellId":"container_01","Children":[{"Type":"Text","TextColor":"#2C323F","TextColorVariable":"--now-color_text--secondary","MaxLines":1,"Id":"text_01","CellId":"text_01","TextAlignment":"Left"}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Left","Distribution":"Auto","Id":"container_02","CellId":"container_02","Margin":{"Top":12},"Children":[{"Type":"Image","Scaling":"Fill","Id":"image_01","CellId":"image_01","Height":64,"Width":64,"CornerRadius":32,"Margin":{"Right":24},"cellIdImageItemViewInput":"image_01"},{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"container_03","CellId":"container_03","Children":[{"Type":"Text","TextColor":"#151920","TextColorVariable":"--now-color_text--primary","MaxLines":2,"Id":"text_02","CellId":"text_02","Margin":{"Bottom":8}},{"Type":"Text","TextColor":"#2C323F","TextColorVariable":"--now-color_text--secondary","MaxLines":2,"Id":"text_03","CellId":"text_03"},{"Type":"Text","TextColor":"#2C323F","TextColorVariable":"--now-color_text--secondary","MaxLines":2,"Id":"text_04","CellId":"text_04"}]}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Equal","Id":"container_04","CellId":"container_04","Margin":{"Bottom":16,"Top":16,"Left":-24,"Right":-24},"Children":[{"Type":"Text","Id":"text_05","Height":1,"Margin":{},"MaxLines":1,"BackgroundColor":"#E4E6EA","BackgroundColorVariable":"--now-color_background--tertiary","CellId":"text_05"}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Equal","Id":"container_05","CellId":"container_05","Children":[{"Type":"Button","TextAlignment":"Center","Id":"button_01","CellId":"button_01","Margin":{"Right":8},"Height":40,"CornerRadius":8},{"Type":"Button","TextAlignment":"Center","Id":"button_02","CellId":"button_02","Height":40,"CornerRadius":8,"Margin":{}}]}]}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="DELETE" query="documentkey=fe7acdf3834f0a10edb56060ceaad350"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_sg_view_template_fe7acdf3834f0a10edb56060ceaad350</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template"><sys_sg_view_template action="INSERT_OR_UPDATE"><active>true</active><description>Template to display the details of the Item</description><name>Item Deails Template</name><preview_image/><root_view_attrs_json/><sys_class_name>sys_sg_view_template</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-07-04 04:38:41</sys_created_on><sys_id>fe7acdf3834f0a10edb56060ceaad350</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Item Deails Template</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_sg_view_template_fe7acdf3834f0a10edb56060ceaad350</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-07-04 04:38:41</sys_updated_on><template_json>{"Type":"ViewGroup","Margin":{"Top":16,"Right":16,"Bottom":16,"Left":16},"Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"Root","Children":[{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"main_container","CellId":"main_container","CornerRadius":8,"BorderColor":"#D3D6DC","BorderColorVariable":"--now-color_border--tertiary","BorderWidth":1,"Margin":{"Top":24,"Right":24,"Bottom":16,"Left":24},"Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Left","Distribution":"Auto","Id":"container_01","CellId":"container_01","Children":[{"Type":"Text","TextColor":"#2C323F","TextColorVariable":"--now-color_text--secondary","MaxLines":1,"Id":"text_01","CellId":"text_01","TextAlignment":"Left"}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Left","Distribution":"Auto","Id":"container_02","CellId":"container_02","Margin":{"Top":12},"Children":[{"Type":"Image","Scaling":"Fill","Id":"image_01","CellId":"image_01","Height":64,"Width":64,"CornerRadius":32,"Margin":{"Right":24},"cellIdImageItemViewInput":"image_01"},{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"container_03","CellId":"container_03","Children":[{"Type":"Text","TextColor":"#151920","TextColorVariable":"--now-color_text--primary","MaxLines":2,"Id":"text_02","CellId":"text_02","Margin":{"Bottom":8}},{"Type":"Text","TextColor":"#2C323F","TextColorVariable":"--now-color_text--secondary","MaxLines":2,"Id":"text_03","CellId":"text_03"},{"Type":"Text","TextColor":"#2C323F","TextColorVariable":"--now-color_text--secondary","MaxLines":2,"Id":"text_04","CellId":"text_04"}]}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Equal","Id":"container_04","CellId":"container_04","Margin":{"Bottom":16,"Top":16,"Left":-24,"Right":-24},"Children":[{"Type":"Text","Id":"text_05","Height":1,"Margin":{},"MaxLines":1,"BackgroundColor":"#E4E6EA","BackgroundColorVariable":"--now-color_background--tertiary","CellId":"text_05"}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Equal","Id":"container_05","CellId":"container_05","Children":[{"Type":"Button","TextAlignment":"Center","Id":"button_01","CellId":"button_01","Margin":{"Right":8},"Height":40,"CornerRadius":8},{"Type":"Button","TextAlignment":"Center","Id":"button_02","CellId":"button_02","Height":40,"CornerRadius":8,"Margin":{}}]}]}]}</template_json></sys_sg_view_template><sys_translated_text action="delete_multiple" query="documentkey=fe7acdf3834f0a10edb56060ceaad350"/></record_update>]]></payload>
+        <payload_hash>-762267113</payload_hash>
+        <record_name>Item Deails Template</record_name>
+        <reverted_from/>
+        <source>97e5cdbf830f0a10edb56060ceaad33d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-04 04:38:41</sys_created_on>
+        <sys_id>f27acdf3834f0a10edb56060ceaad354</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1907c09967f0000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-04 04:38:41</sys_updated_on>
+        <type>Card template</type>
+        <update_guid>3a7acdf32f4f0a103801ab6e0da94f53</update_guid>
+        <update_guid_history>3a7acdf32f4f0a103801ab6e0da94f53:-762267113</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-04 04:44:17</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_view_template">sys_sg_view_template</sys_db_object>
+        <sys_id>b6b0b3dd817d42898d900a376d889ef1</sys_id>
+        <sys_metadata>fe7acdf3834f0a10edb56060ceaad350</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Item Deails Template</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_sg_view_template_fe7acdf3834f0a10edb56060ceaad350</sys_update_name>
+        <sys_update_version display_value="sys_sg_view_template_fe7acdf3834f0a10edb56060ceaad350">f27acdf3834f0a10edb56060ceaad354</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-04 04:44:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

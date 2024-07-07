@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config">
+    <sys_sg_view_config action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <description/>
+        <name>My point card</name>
+        <scratchpad_script/>
+        <sys_class_name>sys_sg_view_config</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-05 10:25:35</sys_created_on>
+        <sys_id>1a73e788839b8a10edb56060ceaad339</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>My point card</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_config_1a73e788839b8a10edb56060ceaad339</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-05 13:12:26</sys_updated_on>
+        <table>sys_user</table>
+        <template display_value="My point template 2.0">3c898414835f8a10edb56060ceaad3fc</template>
+    </sys_sg_view_config>
+    <sys_translated_text action="delete_multiple" query="documentkey=1a73e788839b8a10edb56060ceaad339"/>
+</record_update>

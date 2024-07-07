@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element">
+    <sys_sg_view_config_element action="INSERT_OR_UPDATE">
+        <name>text_23_element</name>
+        <sys_class_name>sys_sg_view_config_element</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-04 10:39:25</sys_created_on>
+        <sys_id>f60d163b83c34a10edb56060ceaad300</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>text_23_element</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_config_element_f60d163b83c34a10edb56060ceaad300</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:39:25</sys_updated_on>
+        <view_config display_value="Charity Organization description Card">69ed3db383434a10edb56060ceaad3b0</view_config>
+        <view_template_slot display_value="text_23">41fc9ef783c34a10edb56060ceaad3ed</view_template_slot>
+    </sys_sg_view_config_element>
+</record_update>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Leaderboad card template</description>
+        <name>Leaderboad card template</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-04 09:38:46</sys_created_on>
+        <sys_id>aa2f06f783834a10edb56060ceaad3fe</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Leaderboad card template</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_template_aa2f06f783834a10edb56060ceaad3fe</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:18:45</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Id":"root","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Margin":{"Top":12,"Bottom":12,"Right":12,"Left":12},"CellId":"root","Children":[{"Type":"ViewGroup","Id":"container_06","Margin":{"Top":8},"Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","CellId":"container_06","Background":{"Color":"#b2d8d8","Opacity":1,"Type":"Color","CellId":"Background_container_06","Id":"Background_container_06","elementId":"8c9a4e03-9cbb-32c0-687b-005534da33af"},"Children":[{"Type":"ViewGroup","Id":"container_10","Orientation":"Vertical","Alignment":"Right","Distribution":"Equal","Margin":{"Left":8},"Width":82,"CellId":"container_10","CornerRadius":10,"Height":82,"Background":{"Color":"#b2d8d8","Opacity":1,"Type":"Color","CellId":"Background_container_10","Id":"Background_container_10","elementId":"32d712d9-c4cd-1f0f-782d-b08b433bbaa7"},"Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_07","CellId":"text_07"}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_14","CellId":"container_14","Background":{"Color":"#b2d8d8","Opacity":1,"Type":"Color","CellId":"Background_container_14","Id":"Background_container_14","elementId":"972c9230-01a1-8c7f-ed51-5f3094fb1be2"},"Children":[{"Type":"Image","Scaling":"Fit","Id":"image_02","CellId":"image_02","CornerRadius":55,"Height":55,"Width":55},{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_06","CellId":"text_06"}]},{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"container_15","CellId":"container_15","Margin":{"Left":15},"Background":{"Color":"#b2d8d8","Opacity":1,"Type":"Color","CellId":"Background_container_15","Id":"Background_container_15","elementId":"0b6f403f-a3a3-53da-7daf-c55807afbb07"},"Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_12","CellId":"text_12"}]}]}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=aa2f06f783834a10edb56060ceaad3fe"/>
+</record_update>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template_slot_attribute">
+    <sys_sg_view_template_slot_attribute action="INSERT_OR_UPDATE">
+        <description>text_09_FieldValue</description>
+        <name display_value="FieldValue">c2eed5c2b7321010df65f6efce11a9cf</name>
+        <sys_class_name>sys_sg_view_template_slot_attribute</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-06 11:24:21</sys_created_on>
+        <sys_id>a48a34e083930e10edb56060ceaad36e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>c2eed5c2b7321010df65f6efce11a9cf</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_template_slot_attribute_a48a34e083930e10edb56060ceaad36e</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-06 11:24:21</sys_updated_on>
+        <translated_value/>
+        <value/>
+        <view_template_slot display_value="text_09">648a34e083930e10edb56060ceaad369</view_template_slot>
+    </sys_sg_view_template_slot_attribute>
+    <sys_translated_text action="delete_multiple" query="documentkey=a48a34e083930e10edb56060ceaad36e"/>
+</record_update>

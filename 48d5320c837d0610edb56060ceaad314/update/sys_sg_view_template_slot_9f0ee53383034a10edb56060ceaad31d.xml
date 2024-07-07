@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template_slot">
+    <sys_sg_view_template_slot action="INSERT_OR_UPDATE">
+        <name>text_06</name>
+        <sys_class_name>sys_sg_view_template_slot</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-04 07:14:06</sys_created_on>
+        <sys_id>9f0ee53383034a10edb56060ceaad31d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>text_06</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_template_slot_9f0ee53383034a10edb56060ceaad31d</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-04 07:14:06</sys_updated_on>
+        <type>text</type>
+        <view_template display_value="Charity List template">570e65ff83cf0a10edb56060ceaad3d8</view_template>
+    </sys_sg_view_template_slot>
+</record_update>

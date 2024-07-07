@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="INSERT_OR_UPDATE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>Copy of Catalog Item (1) - Container 2</name>
+        <order>2</order>
+        <semantic_tag/>
+        <sp_page display_value="copy_of_sc_cat_item_1">b13ecb7f83874a10edb56060ceaad311</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-04 14:14:15</sys_created_on>
+        <sys_id>3d3e0fff83874a10edb56060ceaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Catalog Item (1) - Container 2</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_container_3d3e0fff83874a10edb56060ceaad36a</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-04 14:14:15</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+</record_update>

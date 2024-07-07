@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="DELETE">
+        <category>sc</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure>%item_name</dynamic_title_structure>
+        <human_readable_url_structure/>
+        <id>copy_of_sc_cat_item_2</id>
+        <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
+        <public>false</public>
+        <roles>snc_external,snc_internal</roles>
+        <seo_script/>
+        <short_description>Display a Catalog Item</short_description>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-04 14:27:26</sys_created_on>
+        <sys_id>cb31dfb383c74a10edb56060ceaad3f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>copy_of_sc_cat_item_2</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_page_cb31dfb383c74a10edb56060ceaad3f0</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-04 14:27:26</sys_updated_on>
+        <title>Copy of Catalog Item (2)</title>
+        <use_seo_script>false</use_seo_script>
+    </sp_page>
+    <sys_translated_text action="DELETE" query="documentkey=cb31dfb383c74a10edb56060ceaad3f0"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sp_page_cb31dfb383c74a10edb56060ceaad3f0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page"><sp_page action="INSERT_OR_UPDATE"><category>sc</category><css/><draft>false</draft><dynamic_title_structure>%item_name</dynamic_title_structure><human_readable_url_structure/><id>copy_of_sc_cat_item_2</id><internal>false</internal><omit_watcher>false</omit_watcher><public>false</public><roles>snc_external,snc_internal</roles><seo_script/><short_description>Display a Catalog Item</short_description><sys_class_name>sp_page</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-07-04 14:27:26</sys_created_on><sys_id>cb31dfb383c74a10edb56060ceaad3f0</sys_id><sys_mod_count>0</sys_mod_count><sys_name>copy_of_sc_cat_item_2</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sp_page_cb31dfb383c74a10edb56060ceaad3f0</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-07-04 14:27:26</sys_updated_on><title>Copy of Catalog Item (2)</title><use_seo_script>false</use_seo_script></sp_page><sys_translated_text action="delete_multiple" query="documentkey=cb31dfb383c74a10edb56060ceaad3f0"/></record_update>]]></payload>
+        <payload_hash>361884240</payload_hash>
+        <record_name>copy_of_sc_cat_item_2</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-04 14:27:27</sys_created_on>
+        <sys_id>5b3157f383c74a10edb56060ceaad332</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1907e249d040000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-04 14:27:27</sys_updated_on>
+        <type>Page</type>
+        <update_guid>9f3157f334c74a103ff8ec5945529231</update_guid>
+        <update_guid_history>9f3157f334c74a103ff8ec5945529231:361884240</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="copy_of_sc_cat_item_2">1781dbf383c74a10edb56060ceaad3af</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-04 14:28:48</sys_created_on>
+        <sys_db_object display_value="" name="sp_page">sp_page</sys_db_object>
+        <sys_id>4a0858daf7ab4890a9a29e47347fb861</sys_id>
+        <sys_metadata>cb31dfb383c74a10edb56060ceaad3f0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>copy_of_sc_cat_item_2</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sp_page_cb31dfb383c74a10edb56060ceaad3f0</sys_update_name>
+        <sys_update_version display_value="sp_page_cb31dfb383c74a10edb56060ceaad3f0">5b3157f383c74a10edb56060ceaad332</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-04 14:28:48</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

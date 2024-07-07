@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_navigation_section_m2m_destination">
+    <sys_sg_navigation_section_m2m_destination action="INSERT_OR_UPDATE">
+        <navigation_section display_value="Quick Links">25a7d42b83c7c610edb56060ceaad39f</navigation_section>
+        <navigation_section_destination display_value="My Actvity">d28c8a3783834a10edb56060ceaad3f8</navigation_section_destination>
+        <order>400</order>
+        <sys_class_name>sys_sg_navigation_section_m2m_destination</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-04 09:27:17</sys_created_on>
+        <sys_id>568c8a3783834a10edb56060ceaad3fa</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_navigation_section_m2m_destination_568c8a3783834a10edb56060ceaad3fa</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-04 10:15:51</sys_updated_on>
+    </sys_sg_navigation_section_m2m_destination>
+</record_update>

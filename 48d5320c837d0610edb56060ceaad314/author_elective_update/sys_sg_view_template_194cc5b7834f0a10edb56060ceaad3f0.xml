@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="DELETE">
+        <active>true</active>
+        <description>Template to display the details of the item</description>
+        <name>Item Details Template</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-04 04:46:30</sys_created_on>
+        <sys_id>194cc5b7834f0a10edb56060ceaad3f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Item Details Template</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_template_194cc5b7834f0a10edb56060ceaad3f0</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-04 04:46:30</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Margin":{},"Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"root","CellId":"root","Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Top","Distribution":"Auto","Id":"container_02","CellId":"container_02","Margin":{"Top":2,"Right":6,"Bottom":2},"Height":147,"Background":{"Type":"Image","Opacity":1,"CellId":"Background_container_02","Id":"Background_container_02"},"Width":304,"Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"empty_container_01","CellId":"empty_container_01","Width":12,"Children":[]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Center","Distribution":"Auto","Id":"container_03","CellId":"container_03","Background":{"Type":"Color","Opacity":1,"Color":"#BDDCF2","ColorVariable":"--now-color_alert--info-0","CellId":"Background_container_03","Id":"Background_container_03","elementId":"50468abb-a53c-b23e-3f1c-ab4415d513b6"},"CornerRadius":3,"Children":[{"Type":"Text","TextColor":"#151920","TextColorVariable":"--now-color_text--primary","Font":{"Size":10},"Margin":{"Right":4},"TextAlignment":"Left","CellId":"text_decorator_01","Id":"text_decorator_01","MaxLines":1},{"Type":"Text","TextColor":"#151920","TextColorVariable":"--now-color_text--primary","MaxLines":1,"Margin":{},"TextAlignment":"Left","CellId":"text_01","Id":"text_01"}]},{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"empty_container_02","CellId":"empty_container_02","Children":[]}]},{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Left","Distribution":"Auto","Id":"container_04","CellId":"container_04","Margin":{"Top":16,"Right":12,"Left":12,"Bottom":12},"Children":[{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Left","Distribution":"Auto","Id":"container_05","CellId":"container_05","Width":304,"Margin":{},"Children":[{"Type":"Text","TextColor":"#151920","TextColorVariable":"--now-color_text--primary","MaxLines":1,"Id":"text_02","CellId":"text_02","Margin":{},"TextAlignment":"Left"},{"Type":"Text","TextColor":"#2C323F","TextColorVariable":"--now-color_text--secondary","MaxLines":2,"Id":"text_03","CellId":"text_03","Margin":{"Top":8},"TextAlignment":"Left"}]}]}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="DELETE" query="documentkey=194cc5b7834f0a10edb56060ceaad3f0"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_sg_view_template_194cc5b7834f0a10edb56060ceaad3f0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template"><sys_sg_view_template action="INSERT_OR_UPDATE"><active>true</active><description>Template to display the details of the item</description><name>Item Details Template</name><preview_image/><root_view_attrs_json/><sys_class_name>sys_sg_view_template</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-07-04 04:46:30</sys_created_on><sys_id>194cc5b7834f0a10edb56060ceaad3f0</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Item Details Template</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_sg_view_template_194cc5b7834f0a10edb56060ceaad3f0</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-07-04 04:46:30</sys_updated_on><template_json>{"Type":"ViewGroup","Margin":{},"Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"root","CellId":"root","Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Top","Distribution":"Auto","Id":"container_02","CellId":"container_02","Margin":{"Top":2,"Right":6,"Bottom":2},"Height":147,"Background":{"Type":"Image","Opacity":1,"CellId":"Background_container_02","Id":"Background_container_02"},"Width":304,"Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"empty_container_01","CellId":"empty_container_01","Width":12,"Children":[]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Center","Distribution":"Auto","Id":"container_03","CellId":"container_03","Background":{"Type":"Color","Opacity":1,"Color":"#BDDCF2","ColorVariable":"--now-color_alert--info-0","CellId":"Background_container_03","Id":"Background_container_03","elementId":"50468abb-a53c-b23e-3f1c-ab4415d513b6"},"CornerRadius":3,"Children":[{"Type":"Text","TextColor":"#151920","TextColorVariable":"--now-color_text--primary","Font":{"Size":10},"Margin":{"Right":4},"TextAlignment":"Left","CellId":"text_decorator_01","Id":"text_decorator_01","MaxLines":1},{"Type":"Text","TextColor":"#151920","TextColorVariable":"--now-color_text--primary","MaxLines":1,"Margin":{},"TextAlignment":"Left","CellId":"text_01","Id":"text_01"}]},{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"empty_container_02","CellId":"empty_container_02","Children":[]}]},{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Left","Distribution":"Auto","Id":"container_04","CellId":"container_04","Margin":{"Top":16,"Right":12,"Left":12,"Bottom":12},"Children":[{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Left","Distribution":"Auto","Id":"container_05","CellId":"container_05","Width":304,"Margin":{},"Children":[{"Type":"Text","TextColor":"#151920","TextColorVariable":"--now-color_text--primary","MaxLines":1,"Id":"text_02","CellId":"text_02","Margin":{},"TextAlignment":"Left"},{"Type":"Text","TextColor":"#2C323F","TextColorVariable":"--now-color_text--secondary","MaxLines":2,"Id":"text_03","CellId":"text_03","Margin":{"Top":8},"TextAlignment":"Left"}]}]}]}</template_json></sys_sg_view_template><sys_translated_text action="delete_multiple" query="documentkey=194cc5b7834f0a10edb56060ceaad3f0"/></record_update>]]></payload>
+        <payload_hash>1786189689</payload_hash>
+        <record_name>Item Details Template</record_name>
+        <reverted_from/>
+        <source>97e5cdbf830f0a10edb56060ceaad33d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-04 04:46:30</sys_created_on>
+        <sys_id>e94cc5b7834f0a10edb56060ceaad3f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1907c10c0230000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-04 04:46:30</sys_updated_on>
+        <type>Card template</type>
+        <update_guid>214cc5b70d4f0a1004c2d4398523e8f3</update_guid>
+        <update_guid_history>214cc5b70d4f0a1004c2d4398523e8f3:1786189689</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-04 04:47:12</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_view_template">sys_sg_view_template</sys_db_object>
+        <sys_id>0a433c108f3544d08093360baa948510</sys_id>
+        <sys_metadata>194cc5b7834f0a10edb56060ceaad3f0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Item Details Template</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_sg_view_template_194cc5b7834f0a10edb56060ceaad3f0</sys_update_name>
+        <sys_update_version display_value="sys_sg_view_template_194cc5b7834f0a10edb56060ceaad3f0">e94cc5b7834f0a10edb56060ceaad3f3</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-04 04:47:12</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

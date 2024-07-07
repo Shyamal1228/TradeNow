@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element">
+    <sys_sg_view_config_element action="INSERT_OR_UPDATE">
+        <name>text_14_element</name>
+        <sys_class_name>sys_sg_view_config_element</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-05 06:07:52</sys_created_on>
+        <sys_id>0b78624483978a10edb56060ceaad3db</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>text_14_element</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_config_element_0b78624483978a10edb56060ceaad3db</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-05 06:07:52</sys_updated_on>
+        <view_config display_value="Leaderboard card">ee91de7b83834a10edb56060ceaad357</view_config>
+        <view_template_slot display_value="text_14">ad186a0483978a10edb56060ceaad3a5</view_template_slot>
+    </sys_sg_view_config_element>
+</record_update>

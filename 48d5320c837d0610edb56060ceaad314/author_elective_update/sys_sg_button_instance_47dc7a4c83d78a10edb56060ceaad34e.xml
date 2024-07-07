@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_button_instance">
+    <sys_sg_button_instance action="DELETE">
+        <active>true</active>
+        <button display_value="Delete Swipe (Item)">26dc7a4c83d78a10edb56060ceaad34b</button>
+        <color_theme/>
+        <description/>
+        <disable_offline>false</disable_offline>
+        <field_name/>
+        <icon/>
+        <label>Delete</label>
+        <location>leading_swipe</location>
+        <name>Delete (User)</name>
+        <order/>
+        <parent>9eb48ca38387c610edb56060ceaad360</parent>
+        <parent_table>sys_sg_master_item</parent_table>
+        <sys_class_name>sys_sg_button_instance</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-05 07:36:53</sys_created_on>
+        <sys_id>47dc7a4c83d78a10edb56060ceaad34e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Delete (User)</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_button_instance_47dc7a4c83d78a10edb56060ceaad34e</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-05 07:36:53</sys_updated_on>
+        <table/>
+    </sys_sg_button_instance>
+    <sys_translated_text action="DELETE" query="documentkey=47dc7a4c83d78a10edb56060ceaad34e"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_sg_button_instance_47dc7a4c83d78a10edb56060ceaad34e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_button_instance"><sys_sg_button_instance action="INSERT_OR_UPDATE"><active>true</active><button display_value="Delete Swipe (Item)">26dc7a4c83d78a10edb56060ceaad34b</button><color_theme/><description/><disable_offline>false</disable_offline><field_name/><icon/><label>Delete</label><location>leading_swipe</location><name>Delete (User)</name><order/><parent>9eb48ca38387c610edb56060ceaad360</parent><parent_table>sys_sg_master_item</parent_table><sys_class_name>sys_sg_button_instance</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-07-05 07:36:53</sys_created_on><sys_id>47dc7a4c83d78a10edb56060ceaad34e</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Delete (User)</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_sg_button_instance_47dc7a4c83d78a10edb56060ceaad34e</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-07-05 07:36:53</sys_updated_on><table/></sys_sg_button_instance><sys_translated_text action="delete_multiple" query="documentkey=47dc7a4c83d78a10edb56060ceaad34e"/></record_update>]]></payload>
+        <payload_hash>877931474</payload_hash>
+        <record_name>Delete (User)</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-05 07:36:53</sys_created_on>
+        <sys_id>0fdc7a4c83d78a10edb56060ceaad350</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19081d317c00000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-05 07:36:53</sys_updated_on>
+        <type>Function instance</type>
+        <update_guid>43dc7a4c79d78a100e19c0b376527250</update_guid>
+        <update_guid_history>43dc7a4c79d78a100e19c0b376527250:877931474</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-06 18:40:13</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_button_instance">sys_sg_button_instance</sys_db_object>
+        <sys_id>6517e09db14c45ac8d3d773bec8821d1</sys_id>
+        <sys_metadata>47dc7a4c83d78a10edb56060ceaad34e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Delete (User)</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_sg_button_instance_47dc7a4c83d78a10edb56060ceaad34e</sys_update_name>
+        <sys_update_version display_value="sys_sg_button_instance_47dc7a4c83d78a10edb56060ceaad34e">0fdc7a4c83d78a10edb56060ceaad350</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-06 18:40:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

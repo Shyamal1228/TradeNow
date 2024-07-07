@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Charity Organization description template</description>
+        <name>Charity Organization description template</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-04 08:21:41</sys_created_on>
+        <sys_id>ed8d317b83034a10edb56060ceaad3d7</sys_id>
+        <sys_mod_count>32</sys_mod_count>
+        <sys_name>Charity Organization description template</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_template_ed8d317b83034a10edb56060ceaad3d7</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-04 11:01:45</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Margin":{},"Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"root","CellId":"root","Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Center","Distribution":"Auto","Id":"container_14","CellId":"container_14","CornerRadius":5,"Background":{"Color":"#66b2b2","Opacity":1,"Type":"Color","CellId":"Background_container_14","Id":"Background_container_14","elementId":"3eaaf453-1e87-24cd-e2e3-afba88e9523d"},"Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_13","CellId":"container_13","Margin":{},"Children":[{"Type":"Image","Scaling":"Fit","Id":"image_02","CellId":"image_02","Height":80,"Width":80,"CornerRadius":80,"Margin":{}}]},{"Type":"Text","TextColor":"#FFFFFF","MaxLines":5,"Id":"text_23","CellId":"text_23","TextAlignment":"Left","Margin":{"Left":7}}]},{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Left","Distribution":"Auto","Id":"container_04","CellId":"container_04","Margin":{"Top":16,"Right":12,"Left":12,"Bottom":12},"Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Right","Distribution":"Auto","Id":"container_12","CellId":"container_12","Margin":{"Bottom":4},"Background":{"Color":"#b2d8d8","Opacity":1,"Type":"Color","CellId":"Background_container_12","Id":"Background_container_12","elementId":"88f42236-3ae7-691f-242d-da6fcd795f63"},"CornerRadius":4,"Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_18","CellId":"text_18","Margin":{"Right":3},"TextAlignment":"Right"},{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_20","CellId":"text_20","TextAlignment":"Left"}]},{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_21","CellId":"text_21"},{"Type":"Text","TextColor":"#151920","MaxLines":50,"Id":"text_22","CellId":"text_22"},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_08","CellId":"container_08","Margin":{"Top":7},"Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_19","CellId":"text_19","Margin":{"Right":3}},{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_08","CellId":"text_08"}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_09","CellId":"container_09","Margin":{"Top":7},"Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_17","CellId":"text_17","Margin":{"Right":3}},{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_10","CellId":"text_10"}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_10","CellId":"container_10","Margin":{"Top":7},"Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_14","CellId":"text_14","Margin":{"Right":3}},{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_13","CellId":"text_13"}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_11","CellId":"container_11","Margin":{"Top":7},"Children":[{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_12","CellId":"text_12","Margin":{"Right":3}},{"Type":"Text","TextColor":"#151920","MaxLines":1,"Id":"text_15","CellId":"text_15"}]}]}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=ed8d317b83034a10edb56060ceaad3d7"/>
+</record_update>

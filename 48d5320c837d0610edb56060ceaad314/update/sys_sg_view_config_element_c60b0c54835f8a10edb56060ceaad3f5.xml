@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element">
+    <sys_sg_view_config_element action="INSERT_OR_UPDATE">
+        <name>text_03_element</name>
+        <sys_class_name>sys_sg_view_config_element</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-05 13:18:25</sys_created_on>
+        <sys_id>c60b0c54835f8a10edb56060ceaad3f5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>text_03_element</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_config_element_c60b0c54835f8a10edb56060ceaad3f5</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-05 13:18:25</sys_updated_on>
+        <view_config display_value="My point card">1a73e788839b8a10edb56060ceaad339</view_config>
+        <view_template_slot display_value="text_03">56da0854835f8a10edb56060ceaad335</view_template_slot>
+    </sys_sg_view_config_element>
+</record_update>

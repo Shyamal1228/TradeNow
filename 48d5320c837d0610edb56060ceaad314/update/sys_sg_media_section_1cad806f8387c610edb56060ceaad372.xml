@@ -7,10 +7,10 @@
         <custom_height/>
         <custom_width/>
         <data_item/>
-        <headline>Welcome to TradeNow</headline>
+        <headline/>
         <hide_header>false</hide_header>
         <hide_section_if_empty>false</hide_section_if_empty>
-        <image_attachment display_value="larm-rmah-AEaTUnvneik-unsplash.jpg" sys_id="416d8c2f8387c610edb56060ceaad35e">416d8c2f8387c610edb56060ceaad35e</image_attachment>
+        <image_attachment display_value="2.png" sys_id="982a4e7383834a10edb56060ceaad3fb">982a4e7383834a10edb56060ceaad3fb</image_attachment>
         <is_custom_size>false</is_custom_size>
         <is_hidden_preference_name/>
         <orientation>horizontal</orientation>
@@ -20,14 +20,14 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-07-03 05:34:20</sys_created_on>
         <sys_id>1cad806f8387c610edb56060ceaad372</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Image</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_sg_media_section_1cad806f8387c610edb56060ceaad372</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-03 05:36:20</sys_updated_on>
+        <sys_updated_on>2024-07-04 09:18:00</sys_updated_on>
         <table/>
         <text/>
         <title>Image</title>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_template">
+    <sys_sg_view_template action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Donation History Template</description>
+        <name>Donation History Template</name>
+        <preview_image/>
+        <root_view_attrs_json/>
+        <sys_class_name>sys_sg_view_template</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-04 09:47:44</sys_created_on>
+        <sys_id>bd31123b83834a10edb56060ceaad3be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Donation History Template</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_template_bd31123b83834a10edb56060ceaad3be</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-04 09:47:44</sys_updated_on>
+        <template_json>{"Type":"ViewGroup","Id":"root","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Margin":{"Top":12,"Bottom":12,"Right":12,"Left":12},"CellId":"root","Children":[{"Type":"ViewGroup","Id":"container_06","Margin":{"Top":9,"Bottom":9,"Left":5},"Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","CellId":"container_06","Background":{"Color":"#66b2b2","Opacity":1,"Type":"Color","CellId":"Background_container_06","Id":"Background_container_06","elementId":"aceebf3e-9af1-5446-464c-b417f0871463"},"CornerRadius":3,"Children":[{"Type":"ViewGroup","Id":"container_10","Orientation":"Vertical","Alignment":"Right","Distribution":"Equal","Margin":{"Left":8},"Width":82,"CellId":"container_10","CornerRadius":55,"Height":82,"Children":[{"Type":"Image","Scaling":"fill","CellId":"image_01","Id":"image_01","Height":82,"Width":82,"CornerRadius":55,"Margin":{"Left":3}}]},{"Type":"ViewGroup","Orientation":"Vertical","Alignment":"Stretch","Distribution":"Auto","Id":"container_15","CellId":"container_15","Margin":{"Left":15},"Children":[{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_19","CellId":"container_19","Children":[{"Type":"Text","TextColor":"#FFFFFF","MaxLines":1,"Id":"text_08","CellId":"text_08"}]},{"Type":"ViewGroup","Orientation":"Horizontal","Alignment":"Stretch","Distribution":"Auto","Id":"container_20","CellId":"container_20","Children":[{"Type":"Text","TextColor":"#F0E000","MaxLines":1,"Id":"text_05","CellId":"text_05","Margin":{"Right":3}},{"Type":"Text","TextColor":"#F0E000","MaxLines":1,"Id":"text_06","CellId":"text_06"}]}]}]}]}</template_json>
+    </sys_sg_view_template>
+    <sys_translated_text action="delete_multiple" query="documentkey=bd31123b83834a10edb56060ceaad3be"/>
+</record_update>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config">
+    <sys_sg_view_config action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <description/>
+        <name>Item map card</name>
+        <scratchpad_script/>
+        <sys_class_name>sys_sg_view_config</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-06 07:15:48</sys_created_on>
+        <sys_id>88a148e0839fca10edb56060ceaad3b9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Item map card</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_view_config_88a148e0839fca10edb56060ceaad3b9</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-06 11:41:12</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
+        <template display_value="Item location view">6c8afc6083930e10edb56060ceaad380</template>
+    </sys_sg_view_config>
+    <sys_translated_text action="delete_multiple" query="documentkey=88a148e0839fca10edb56060ceaad3b9"/>
+</record_update>

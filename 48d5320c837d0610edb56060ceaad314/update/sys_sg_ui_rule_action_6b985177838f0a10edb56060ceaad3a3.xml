@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_ui_rule_action">
+    <sys_sg_ui_rule_action action="INSERT_OR_UPDATE">
+        <operation display_value="Set UI Style">1fc6ba105b431010da168d8fa881c7bb</operation>
+        <order>10</order>
+        <sys_class_name>sys_sg_ui_rule_action</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-04 05:40:27</sys_created_on>
+        <sys_id>6b985177838f0a10edb56060ceaad3a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_ui_rule_action_6b985177838f0a10edb56060ceaad3a3</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-04 05:40:27</sys_updated_on>
+        <target>container_13</target>
+        <ui_rule display_value="Background color for new item condition">a3985177838f0a10edb56060ceaad3a1</ui_rule>
+        <value>{"BackgroundColor":"#51AE00","BackgroundColorVariable":""}</value>
+    </sys_sg_ui_rule_action>
+</record_update>

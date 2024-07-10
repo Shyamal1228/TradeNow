@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_master_item">
+    <sys_sg_master_item action="INSERT_OR_UPDATE">
+        <condition_order/>
+        <datasource_table>sysapproval_approver</datasource_table>
+        <datasource_table_condition/>
+        <embedded_screen/>
+        <item_view/>
+        <name>Approvals config</name>
+        <sys_class_name>sys_sg_master_item</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-07 15:18:31</sys_created_on>
+        <sys_id>a8b9be78831f4e10edb56060ceaad31b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Approvals config</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_master_item_a8b9be78831f4e10edb56060ceaad31b</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-07 16:27:32</sys_updated_on>
+        <use_view_config>true</use_view_config>
+        <view_config display_value="Empty card">d323f24083d78a10edb56060ceaad347</view_config>
+    </sys_sg_master_item>
+</record_update>

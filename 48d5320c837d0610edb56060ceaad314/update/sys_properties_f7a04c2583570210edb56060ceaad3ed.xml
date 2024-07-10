@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>Default image upload</description>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_1383179_tradenow.image</name>
+        <read_roles/>
+        <suffix>image</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-09 09:49:27</sys_created_on>
+        <sys_id>f7a04c2583570210edb56060ceaad3ed</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_1383179_tradenow.image</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_properties_f7a04c2583570210edb56060ceaad3ed</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-09 09:50:07</sys_updated_on>
+        <type>image</type>
+        <value/>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=f7a04c2583570210edb56060ceaad3ed"/>
+</record_update>

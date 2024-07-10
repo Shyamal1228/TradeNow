@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_write_back_action_item">
+    <sys_sg_write_back_action_item action="INSERT_OR_UPDATE">
+        <description/>
+        <execution_script><![CDATA[(function WriteBackAction(input) {
+    //Type appropriate comment here, and begin script below
+ var donatioHistory = input.sys_id;
+ var sysApprovalGR = new GlideRecord('sysapproval_approver');
+ sysApprovalGR.get('document_id',donatioHistory);
+ if(sysApprovalGR.state == 'requested'){
+    sysApprovalGR.state = 'rejected';
+    sysApprovalGR.update();
+    return true;
+ }
+return false;
+
+})(input);]]></execution_script>
+        <name>Reject action item</name>
+        <parameter_screen/>
+        <query_condition/>
+        <sys_class_name>sys_sg_write_back_action_item</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-07 16:35:31</sys_created_on>
+        <sys_id>285b07bc835f4e10edb56060ceaad34e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Reject action item</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_write_back_action_item_285b07bc835f4e10edb56060ceaad34e</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-07 18:44:19</sys_updated_on>
+        <table>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</table>
+        <template>status=rejected^EQ</template>
+        <type>script</type>
+        <use_current_record_as_condition>true</use_current_record_as_condition>
+        <use_fields_for_ref_lookup>false</use_fields_for_ref_lookup>
+    </sys_sg_write_back_action_item>
+    <sys_translated_text action="delete_multiple" query="documentkey=285b07bc835f4e10edb56060ceaad34e"/>
+</record_update>

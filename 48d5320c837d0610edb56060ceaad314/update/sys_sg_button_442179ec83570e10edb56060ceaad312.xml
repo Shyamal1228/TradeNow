@@ -6,7 +6,9 @@
         <auto_redirection>false</auto_redirection>
         <button_table_field_name/>
         <cancel_label/>
-        <condition/>
+        <condition table="x_1383179_tradenow_m2m_sys_user_x_1383179_tr">status=unverified^EQ<item display_value="Unverified" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="unverified"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
         <condition_script/>
         <condition_type>declarative</condition_type>
         <confirm_label/>
@@ -14,7 +16,7 @@
         <context>record</context>
         <description/>
         <destination_alp/>
-        <destination_screen/>
+        <destination_screen display_value="Donation Details">109de31c831fca10edb56060ceaad388</destination_screen>
         <destination_type>screen</destination_type>
         <external_browser>false</external_browser>
         <failure_message>Donation rejected</failure_message>
@@ -22,7 +24,7 @@
         <hide_buttons/>
         <hide_fields/>
         <highlighted_icons/>
-        <jump_to_previous>false</jump_to_previous>
+        <jump_to_previous>true</jump_to_previous>
         <jump_to_screen>false</jump_to_screen>
         <link_label/>
         <link_url/>
@@ -50,7 +52,7 @@
         <show_buttons/>
         <show_confirmation>false</show_confirmation>
         <show_fields/>
-        <show_refresh_on_previous>false</show_refresh_on_previous>
+        <show_refresh_on_previous>true</show_refresh_on_previous>
         <show_signature>false</show_signature>
         <sms/>
         <success_message>Donation approved successfully</success_message>
@@ -58,20 +60,20 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-07-06 15:22:58</sys_created_on>
         <sys_id>442179ec83570e10edb56060ceaad312</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Approve function</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_sg_button_442179ec83570e10edb56060ceaad312</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-07-06 17:44:57</sys_updated_on>
-        <table>sysapproval_approver</table>
+        <sys_updated_on>2024-07-07 18:09:10</sys_updated_on>
+        <table>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</table>
         <take_value_from_field>false</take_value_from_field>
         <type>write_back</type>
         <unhighlighted_icons/>
         <use_overlay>false</use_overlay>
-        <write_back_action_item display_value="Approve REQ">f62a504b873f2300e0ef0cf888cb0b20</write_back_action_item>
+        <write_back_action_item display_value="Approve action item">8bbacb7c835f4e10edb56060ceaad368</write_back_action_item>
         <zombified_screens/>
     </sys_sg_button>
     <sys_translated_text action="delete_multiple" query="documentkey=442179ec83570e10edb56060ceaad312"/>

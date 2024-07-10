@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>false</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1383179_tradenow_item_list</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Insert default image</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	// Add your code here	
+	//var sysId = GlideSysAttachment.copy("sys_property", gs.getProperty('x_1383179_tradenow.image'), "x_1383179_tradenow_item_list", current.sys_id);
+	//current.image = 'a591c8e183570210edb56060ceaad3f0';
+	/*
+	var targetRecordSysId = 'target_record_sys_id_here';
+    
+    var imageSysId = 'f7a04c2583570210edb56060ceaad3ed';
+
+    var gr = new GlideRecord('x_1383179_tradenow_item_list');
+	gr.orderByDesc('sys_created_on');
+    gr.query();
+    if (gr.next()) {
+        gr.image = imageSysId; 
+        gr.update();
+    }*/
+
+	var existingAttachmentSysId = 'f7a04c2583570210edb56060ceaad3ed';
+
+    // Query the existing attachment
+    var attachmentGR = new GlideRecord('sys_attachment');
+    if (attachmentGR.get(existingAttachmentSysId)) {
+        // Get the attachment data
+        var attachment = new GlideSysAttachment();
+        var attachmentData = attachment.getBytes(attachmentGR);
+
+        // Attach the image to the current record
+        attachment.write(x_1383179_tradenow_item_list, current.sys_id, attachmentGR.file_name, attachmentData);
+	}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-09 09:54:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7d12c4a583570210edb56060ceaad30d</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Insert default image</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_script_7d12c4a583570210edb56060ceaad30d</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-09 11:02:30</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=7d12c4a583570210edb56060ceaad30d"/>
+</record_update>

@@ -7,18 +7,18 @@
         <foreground_color_variable/>
         <icon display_value="comments">0d94b73887203300e0ef0cf888cb0b9e</icon>
         <image/>
-        <name>create new incident</name>
+        <name>Add Item</name>
         <sys_class_name>sys_sg_navigation_section_destination_button</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-07-03 06:35:47</sys_created_on>
         <sys_id>dcbb986f83c7c610edb56060ceaad383</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>create new incident</sys_name>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Add Item</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_sg_navigation_section_destination_button_dcbb986f83c7c610edb56060ceaad383</sys_update_name>
-        <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-03 06:43:08</sys_updated_on>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-07 15:07:48</sys_updated_on>
     </sys_sg_navigation_section_destination_button>
 </record_update>

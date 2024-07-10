@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_variable_attribute">
+    <sys_sg_variable_attribute action="DELETE">
+        <name>FieldName</name>
+        <sys_class_name>sys_sg_variable_attribute</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-09 06:33:43</sys_created_on>
+        <sys_id>b0c41f1183930210edb56060ceaad33c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FieldName</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_variable_attribute_b0c41f1183930210edb56060ceaad33c</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-09 06:33:43</sys_updated_on>
+        <value>sys_id</value>
+        <variable display_value="p_sys_id">d884931183930210edb56060ceaad39f</variable>
+    </sys_sg_variable_attribute>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_sg_variable_attribute_b0c41f1183930210edb56060ceaad33c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_variable_attribute"><sys_sg_variable_attribute action="INSERT_OR_UPDATE"><name>FieldName</name><sys_class_name>sys_sg_variable_attribute</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-07-09 06:33:43</sys_created_on><sys_id>b0c41f1183930210edb56060ceaad33c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>FieldName</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_sg_variable_attribute_b0c41f1183930210edb56060ceaad33c</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-07-09 06:33:43</sys_updated_on><value>sys_id</value><variable display_value="p_sys_id">d884931183930210edb56060ceaad39f</variable></sys_sg_variable_attribute></record_update>]]></payload>
+        <payload_hash>1378918418</payload_hash>
+        <record_name>FieldName</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-09 06:33:43</sys_created_on>
+        <sys_id>34c41f1183930210edb56060ceaad33e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1909632b44f0000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-09 06:33:43</sys_updated_on>
+        <type>Variable Attribute</type>
+        <update_guid>78c41f111693021028e026bc0af33d3d</update_guid>
+        <update_guid_history>78c41f111693021028e026bc0af33d3d:1378918418</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-09 06:49:07</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_variable_attribute">sys_sg_variable_attribute</sys_db_object>
+        <sys_id>1232b4dc1f6e4cb4bb99b7d6840c6210</sys_id>
+        <sys_metadata>b0c41f1183930210edb56060ceaad33c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FieldName</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_sg_variable_attribute_b0c41f1183930210edb56060ceaad33c</sys_update_name>
+        <sys_update_version display_value="sys_sg_variable_attribute_b0c41f1183930210edb56060ceaad33c">34c41f1183930210edb56060ceaad33e</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-09 06:49:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

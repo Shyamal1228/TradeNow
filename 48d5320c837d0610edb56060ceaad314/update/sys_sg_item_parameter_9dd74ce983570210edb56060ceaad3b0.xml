@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_item_parameter">
+    <sys_sg_item_parameter action="INSERT_OR_UPDATE">
+        <default_value/>
+        <name>Charity organization</name>
+        <parent>7d824ef783434a10edb56060ceaad339</parent>
+        <parent_table>sys_sg_data_item</parent_table>
+        <sys_class_name>sys_sg_item_parameter</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-09 10:16:51</sys_created_on>
+        <sys_id>9dd74ce983570210edb56060ceaad3b0</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Charity organization</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_item_parameter_9dd74ce983570210edb56060ceaad3b0</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-09 10:29:20</sys_updated_on>
+        <type>string</type>
+    </sys_sg_item_parameter>
+</record_update>

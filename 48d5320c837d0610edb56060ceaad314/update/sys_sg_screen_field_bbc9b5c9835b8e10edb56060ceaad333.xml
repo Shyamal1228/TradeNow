@@ -3,23 +3,23 @@
         <data_item_field_name>description</data_item_field_name>
         <field_name/>
         <hidden>false</hidden>
-        <order>5</order>
+        <order>300</order>
         <record_id_field/>
-        <screen display_value="Item Details">357afddb830f8610edb56060ceaad3be</screen>
-        <screen_data_item_table>x_1383179_tradenow_item_list</screen_data_item_table>
+        <screen display_value="Charity Organization Detail">1b5971c9835b8e10edb56060ceaad380</screen>
+        <screen_data_item_table>x_1383179_tradenow_charity_list</screen_data_item_table>
         <sys_class_name>sys_sg_screen_field</sys_class_name>
-        <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-07-03 17:19:57</sys_created_on>
-        <sys_id>3c1faa2b83830a10edb56060ceaad30d</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-08 05:17:52</sys_created_on>
+        <sys_id>bbc9b5c9835b8e10edb56060ceaad333</sys_id>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>description</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sys_sg_screen_field_3c1faa2b83830a10edb56060ceaad30d</sys_update_name>
+        <sys_update_name>sys_sg_screen_field_bbc9b5c9835b8e10edb56060ceaad333</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-08 05:57:36</sys_updated_on>
+        <sys_updated_on>2024-07-08 05:55:30</sys_updated_on>
         <type>auto</type>
-        <value_only>false</value_only>
+        <value_only>true</value_only>
     </sys_sg_screen_field>
 </record_update>

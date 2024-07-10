@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_ui_parameter">
+    <sys_sg_ui_parameter action="INSERT_OR_UPDATE">
+        <button/>
+        <button_parent_table>x_1383179_tradenow_charity_list</button_parent_table>
+        <carried>true</carried>
+        <constant/>
+        <default_value/>
+        <default_value_type>none</default_value_type>
+        <field_name/>
+        <input_source>auto</input_source>
+        <input_style>popup</input_style>
+        <input_type>source_field</input_type>
+        <mandatory>false</mandatory>
+        <max_entries/>
+        <multi_entry>false</multi_entry>
+        <multi_select>false</multi_select>
+        <name>Charity UI parameter</name>
+        <order/>
+        <parameter_type>screen</parameter_type>
+        <placeholder/>
+        <screen display_value="Charity Organization Detail">1b5971c9835b8e10edb56060ceaad380</screen>
+        <search_type>starts_with</search_type>
+        <source_field>number</source_field>
+        <sys_class_name>sys_sg_ui_parameter</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-09 10:12:14</sys_created_on>
+        <sys_id>b5c608a983570210edb56060ceaad386</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Charity UI parameter</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_ui_parameter_b5c608a983570210edb56060ceaad386</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-09 10:12:14</sys_updated_on>
+        <table_name/>
+        <virtual_field_value>false</virtual_field_value>
+    </sys_sg_ui_parameter>
+    <sys_translated_text action="delete_multiple" query="documentkey=b5c608a983570210edb56060ceaad386"/>
+</record_update>

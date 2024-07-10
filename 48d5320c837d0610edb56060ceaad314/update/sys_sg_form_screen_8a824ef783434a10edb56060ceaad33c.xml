@@ -22,17 +22,17 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-07-04 08:43:34</sys_created_on>
         <sys_id>8a824ef783434a10edb56060ceaad33c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Charity Organization Description</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_sg_form_screen_8a824ef783434a10edb56060ceaad33c</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-04 08:43:34</sys_updated_on>
+        <sys_updated_on>2024-07-08 05:27:31</sys_updated_on>
         <table/>
         <use_view_config>true</use_view_config>
-        <view_config display_value="Charity Organization description Card">69ed3db383434a10edb56060ceaad3b0</view_config>
+        <view_config display_value="Empty card">d323f24083d78a10edb56060ceaad347</view_config>
     </sys_sg_form_screen>
     <sys_translated_text action="delete_multiple" query="documentkey=8a824ef783434a10edb56060ceaad33c"/>
 </record_update>

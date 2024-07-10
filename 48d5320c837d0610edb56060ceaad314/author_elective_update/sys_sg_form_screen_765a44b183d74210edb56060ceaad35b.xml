@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_form_screen">
+    <sys_sg_form_screen action="DELETE">
+        <alert/>
+        <available_offline>false</available_offline>
+        <data_item display_value="QR CODE data item">319a447183d74210edb56060ceaad3a2</data_item>
+        <description/>
+        <dynamic_prefetch_count/>
+        <empty_state/>
+        <fetch_type>not_required</fetch_type>
+        <filter/>
+        <hide_filters>false</hide_filters>
+        <hide_screen_name>false</hide_screen_name>
+        <icon display_value="comments">0d94b73887203300e0ef0cf888cb0b9e</icon>
+        <item_view/>
+        <name>QR CODE record</name>
+        <override_context_with_data_item>false</override_context_with_data_item>
+        <parameter_screen/>
+        <roles_override/>
+        <segments_height>medium</segments_height>
+        <segments_min_width>medium</segments_min_width>
+        <sys_class_name>sys_sg_form_screen</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-10 05:06:22</sys_created_on>
+        <sys_id>765a44b183d74210edb56060ceaad35b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>QR CODE record</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_form_screen_765a44b183d74210edb56060ceaad35b</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-10 05:07:24</sys_updated_on>
+        <table/>
+        <use_view_config>true</use_view_config>
+        <view_config display_value="QR CODE config">3a5ac87183d74210edb56060ceaad349</view_config>
+    </sys_sg_form_screen>
+    <sys_translated_text action="DELETE" query="documentkey=765a44b183d74210edb56060ceaad35b"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_sg_form_screen_765a44b183d74210edb56060ceaad35b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_form_screen"><sys_sg_form_screen action="INSERT_OR_UPDATE"><alert/><available_offline>false</available_offline><data_item display_value="QR CODE data item">319a447183d74210edb56060ceaad3a2</data_item><description/><dynamic_prefetch_count/><empty_state/><fetch_type>not_required</fetch_type><filter/><hide_filters>false</hide_filters><hide_screen_name>false</hide_screen_name><icon display_value="comments">0d94b73887203300e0ef0cf888cb0b9e</icon><item_view/><name>QR CODE record</name><override_context_with_data_item>false</override_context_with_data_item><parameter_screen/><roles_override/><segments_height>medium</segments_height><segments_min_width>medium</segments_min_width><sys_class_name>sys_sg_form_screen</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-07-10 05:06:22</sys_created_on><sys_id>765a44b183d74210edb56060ceaad35b</sys_id><sys_mod_count>1</sys_mod_count><sys_name>QR CODE record</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_sg_form_screen_765a44b183d74210edb56060ceaad35b</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-07-10 05:07:24</sys_updated_on><table/><use_view_config>true</use_view_config><view_config display_value="QR CODE config">3a5ac87183d74210edb56060ceaad349</view_config></sys_sg_form_screen><sys_translated_text action="delete_multiple" query="documentkey=765a44b183d74210edb56060ceaad35b"/></record_update>]]></payload>
+        <payload_hash>1253805277</payload_hash>
+        <record_name>QR CODE record</record_name>
+        <reverted_from/>
+        <source>affd6dc183178e10edb56060ceaad390</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-10 05:07:24</sys_created_on>
+        <sys_id>4e9a48b183d74210edb56060ceaad3c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1909b0a090d0000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-10 05:07:24</sys_updated_on>
+        <type>Record screen</type>
+        <update_guid>829a48b128d74210eff87be0b0222bc6</update_guid>
+        <update_guid_history>829a48b128d74210eff87be0b0222bc6:1253805277,325a44b17fd74210a444bd0c196a285e:893738594</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-10 05:10:25</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_form_screen">sys_sg_form_screen</sys_db_object>
+        <sys_id>92a63b0aee0b47f8b4dbcaf72058fab9</sys_id>
+        <sys_metadata>765a44b183d74210edb56060ceaad35b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>QR CODE record</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_sg_form_screen_765a44b183d74210edb56060ceaad35b</sys_update_name>
+        <sys_update_version display_value="sys_sg_form_screen_765a44b183d74210edb56060ceaad35b">4e9a48b183d74210edb56060ceaad3c6</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-10 05:10:25</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

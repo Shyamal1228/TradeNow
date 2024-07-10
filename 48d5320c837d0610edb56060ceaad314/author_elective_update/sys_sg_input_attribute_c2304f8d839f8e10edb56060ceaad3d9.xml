@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_input_attribute">
+    <sys_sg_input_attribute action="DELETE">
+        <input display_value="Name">4e33968983db8e10edb56060ceaad3eb</input>
+        <name>Inline</name>
+        <sys_class_name>sys_sg_input_attribute</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-08 10:25:29</sys_created_on>
+        <sys_id>c2304f8d839f8e10edb56060ceaad3d9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Inline</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_input_attribute_c2304f8d839f8e10edb56060ceaad3d9</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-08 10:25:29</sys_updated_on>
+        <value>true</value>
+    </sys_sg_input_attribute>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_sg_input_attribute_c2304f8d839f8e10edb56060ceaad3d9</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_input_attribute"><sys_sg_input_attribute action="INSERT_OR_UPDATE"><input display_value="Name">4e33968983db8e10edb56060ceaad3eb</input><name>Inline</name><sys_class_name>sys_sg_input_attribute</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-07-08 10:25:29</sys_created_on><sys_id>c2304f8d839f8e10edb56060ceaad3d9</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Inline</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_sg_input_attribute_c2304f8d839f8e10edb56060ceaad3d9</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-07-08 10:25:29</sys_updated_on><value>true</value></sys_sg_input_attribute></record_update>]]></payload>
+        <payload_hash>1843570140</payload_hash>
+        <record_name>Inline</record_name>
+        <reverted_from/>
+        <source>affd6dc183178e10edb56060ceaad390</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-08 10:25:29</sys_created_on>
+        <sys_id>4a304f8d839f8e10edb56060ceaad3db</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19091e088f30000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-08 10:25:29</sys_updated_on>
+        <type>Input Attribute</type>
+        <update_guid>8e304f8d0f9f8e106302fb5d92b248da</update_guid>
+        <update_guid_history>8e304f8d0f9f8e106302fb5d92b248da:1843570140</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-08 10:27:42</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_input_attribute">sys_sg_input_attribute</sys_db_object>
+        <sys_id>016de48ebdb744499569f8adbcd4fd19</sys_id>
+        <sys_metadata>c2304f8d839f8e10edb56060ceaad3d9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Inline</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_sg_input_attribute_c2304f8d839f8e10edb56060ceaad3d9</sys_update_name>
+        <sys_update_version display_value="sys_sg_input_attribute_c2304f8d839f8e10edb56060ceaad3d9">4a304f8d839f8e10edb56060ceaad3db</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-08 10:27:42</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

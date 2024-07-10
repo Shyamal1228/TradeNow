@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_ui_parameter">
+    <sys_sg_ui_parameter action="DELETE">
+        <button display_value="Donate to function">fa7b7d0d835b8e10edb56060ceaad32a</button>
+        <button_parent_table>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</button_parent_table>
+        <carried>true</carried>
+        <constant/>
+        <default_value/>
+        <default_value_type>source_field</default_value_type>
+        <field_name/>
+        <input_source>auto</input_source>
+        <input_style>popup</input_style>
+        <input_type>source_field</input_type>
+        <mandatory>false</mandatory>
+        <max_entries/>
+        <multi_entry>false</multi_entry>
+        <multi_select>false</multi_select>
+        <name>Donate ui parameter</name>
+        <order/>
+        <parameter_type>button</parameter_type>
+        <placeholder/>
+        <screen/>
+        <search_type>starts_with</search_type>
+        <source_field>x_1383179_tradenow_charity_list</source_field>
+        <sys_class_name>sys_sg_ui_parameter</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-10 04:16:25</sys_created_on>
+        <sys_id>57eefb2583974210edb56060ceaad39f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Donate ui parameter</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_ui_parameter_57eefb2583974210edb56060ceaad39f</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-10 04:16:25</sys_updated_on>
+        <table_name/>
+        <virtual_field_value>false</virtual_field_value>
+    </sys_sg_ui_parameter>
+    <sys_translated_text action="DELETE" query="documentkey=57eefb2583974210edb56060ceaad39f"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_sg_ui_parameter_57eefb2583974210edb56060ceaad39f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_ui_parameter"><sys_sg_ui_parameter action="INSERT_OR_UPDATE"><button display_value="Donate to function">fa7b7d0d835b8e10edb56060ceaad32a</button><button_parent_table>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</button_parent_table><carried>true</carried><constant/><default_value/><default_value_type>source_field</default_value_type><field_name/><input_source>auto</input_source><input_style>popup</input_style><input_type>source_field</input_type><mandatory>false</mandatory><max_entries/><multi_entry>false</multi_entry><multi_select>false</multi_select><name>Donate ui parameter</name><order/><parameter_type>button</parameter_type><placeholder/><screen/><search_type>starts_with</search_type><source_field>x_1383179_tradenow_charity_list</source_field><sys_class_name>sys_sg_ui_parameter</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-07-10 04:16:25</sys_created_on><sys_id>57eefb2583974210edb56060ceaad39f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Donate ui parameter</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_sg_ui_parameter_57eefb2583974210edb56060ceaad39f</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-07-10 04:16:25</sys_updated_on><table_name/><virtual_field_value>false</virtual_field_value></sys_sg_ui_parameter><sys_translated_text action="delete_multiple" query="documentkey=57eefb2583974210edb56060ceaad39f"/></record_update>]]></payload>
+        <payload_hash>1009895618</payload_hash>
+        <record_name>Donate ui parameter</record_name>
+        <reverted_from/>
+        <source>affd6dc183178e10edb56060ceaad390</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-10 04:16:25</sys_created_on>
+        <sys_id>9feefb2583974210edb56060ceaad3a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1909adb5d6d0000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-10 04:16:25</sys_updated_on>
+        <type>UI parameter</type>
+        <update_guid>d3eefb256a974210ddaf53d51407c6a2</update_guid>
+        <update_guid_history>d3eefb256a974210ddaf53d51407c6a2:1009895618</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-10 04:43:40</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_ui_parameter">sys_sg_ui_parameter</sys_db_object>
+        <sys_id>1b2b3add9e1344f885de2b0782e5f759</sys_id>
+        <sys_metadata>57eefb2583974210edb56060ceaad39f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Donate ui parameter</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_sg_ui_parameter_57eefb2583974210edb56060ceaad39f</sys_update_name>
+        <sys_update_version display_value="sys_sg_ui_parameter_57eefb2583974210edb56060ceaad39f">9feefb2583974210edb56060ceaad3a2</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-10 04:43:40</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

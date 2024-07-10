@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_input">
+    <sys_sg_input action="DELETE">
+        <active>true</active>
+        <autofill_variable/>
+        <category/>
+        <description/>
+        <label>User</label>
+        <mandatory>false</mandatory>
+        <name>sys_user</name>
+        <order>50</order>
+        <page display_value="Donate to page">55385ecd83db8e10edb56060ceaad326</page>
+        <parameter_screen display_value="Donate to input form screen">0a33968983db8e10edb56060ceaad3e8</parameter_screen>
+        <parameter_section/>
+        <placeholder/>
+        <readonly>false</readonly>
+        <sys_class_name>sys_sg_input</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-08 10:36:01</sys_created_on>
+        <sys_id>94a28b4183df8e10edb56060ceaad38c</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>User</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_input_94a28b4183df8e10edb56060ceaad38c</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-09 05:40:03</sys_updated_on>
+        <type display_value="Reference">770c605517021010f2b43b9fadb95900</type>
+    </sys_sg_input>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_sg_input_94a28b4183df8e10edb56060ceaad38c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_input"><sys_sg_input action="INSERT_OR_UPDATE"><active>true</active><autofill_variable/><category/><description/><label>User</label><mandatory>false</mandatory><name>sys_user</name><order>50</order><page display_value="Donate to page">55385ecd83db8e10edb56060ceaad326</page><parameter_screen display_value="Donate to input form screen">0a33968983db8e10edb56060ceaad3e8</parameter_screen><parameter_section/><placeholder/><readonly>false</readonly><sys_class_name>sys_sg_input</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-07-08 10:36:01</sys_created_on><sys_id>94a28b4183df8e10edb56060ceaad38c</sys_id><sys_mod_count>16</sys_mod_count><sys_name>User</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_sg_input_94a28b4183df8e10edb56060ceaad38c</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-07-09 05:40:03</sys_updated_on><type display_value="Reference">770c605517021010f2b43b9fadb95900</type></sys_sg_input></record_update>]]></payload>
+        <payload_hash>-1741852352</payload_hash>
+        <record_name>User</record_name>
+        <reverted_from/>
+        <source>affd6dc183178e10edb56060ceaad390</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-09 06:13:50</sys_created_on>
+        <sys_id>a53057d983530210edb56060ceaad362</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19096207f680000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-09 06:13:50</sys_updated_on>
+        <type>Input</type>
+        <update_guid>a2784391a6530210f07a32653e54e72a</update_guid>
+        <update_guid_history>a2784391a6530210f07a32653e54e72a:364561467,a2784391a6530210f07a32653e54e72a:364561467,7ea747515a5302104021967cee3badac:1684349282,30838b1d02130210664e996e0cd58c65:-25541517,1f13031dc01302104a5eb0854dbbe7b3:-439180084,2e3df2153813021036d422941d588eab:860156241,208ecfcd17df8e10e3962ea5d2e90df3:2059280700,208ecfcd17df8e10e3962ea5d2e90df3:2059280700,2d17c3c5c0df8e107865b717230bbba2:-1666647094,70b68b85dcdf8e1075eb5d8cd2034618:-1585097433,3c56c3852ddf8e10fc2bc5007a09281e:-1140591242,dd9507451adf8e10baec8548da743c7e:-2083988360,6184cbc184df8e10c2c45cc3ea346168:264521828,6184cbc184df8e10c2c45cc3ea346168:264521828,596483c1dbdf8e10e4c9c101ab37bc15:-612895879,9524c7c1efdf8e109c3c96451e312e50:1443296174,b9d343c156df8e103958892c88c6f5e9:1067552992,59534b8142df8e10eb99bba1492d30bc:-600722892,77230781c7df8e10276488b41d466b16:480814933,14a28b41b2df8e10e1a7521b3244358e:-728643286</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-09 06:14:09</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_input">sys_sg_input</sys_db_object>
+        <sys_id>35bbc06541a244738e3b691c3e846369</sys_id>
+        <sys_metadata>94a28b4183df8e10edb56060ceaad38c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>User</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_sg_input_94a28b4183df8e10edb56060ceaad38c</sys_update_name>
+        <sys_update_version display_value="sys_sg_input_94a28b4183df8e10edb56060ceaad38c">a53057d983530210edb56060ceaad362</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-09 06:14:09</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

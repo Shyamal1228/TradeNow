@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_parameter_screen">
+    <sys_sg_parameter_screen action="DELETE">
+        <active>true</active>
+        <advanced>true</advanced>
+        <available_offline>false</available_offline>
+        <cancel_label>Cancel</cancel_label>
+        <description/>
+        <dynamic_prefetch_count/>
+        <empty_state/>
+        <fetch_type>not_required</fetch_type>
+        <filter/>
+        <header_only_on_first_page>false</header_only_on_first_page>
+        <hide_filters>false</hide_filters>
+        <hide_screen_name>false</hide_screen_name>
+        <icon/>
+        <name>Donate input form</name>
+        <next_label>Next</next_label>
+        <pagination_type>all</pagination_type>
+        <prev_label>Previous</prev_label>
+        <reset_after_submit>false</reset_after_submit>
+        <resume>false</resume>
+        <roles_override/>
+        <submit_label>Submit</submit_label>
+        <sys_class_name>sys_sg_parameter_screen</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-08 06:28:09</sys_created_on>
+        <sys_id>25e9824d839b8e10edb56060ceaad3e5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Donate input form</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_sg_parameter_screen_25e9824d839b8e10edb56060ceaad3e5</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-08 06:28:09</sys_updated_on>
+        <type display_value="">string</type>
+        <view_config/>
+    </sys_sg_parameter_screen>
+    <sys_translated_text action="DELETE" query="documentkey=25e9824d839b8e10edb56060ceaad3e5"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_sg_parameter_screen_25e9824d839b8e10edb56060ceaad3e5</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_parameter_screen"><sys_sg_parameter_screen action="INSERT_OR_UPDATE"><active>true</active><advanced>true</advanced><available_offline>false</available_offline><cancel_label>Cancel</cancel_label><description/><dynamic_prefetch_count/><empty_state/><fetch_type>not_required</fetch_type><filter/><header_only_on_first_page>false</header_only_on_first_page><hide_filters>false</hide_filters><hide_screen_name>false</hide_screen_name><icon/><name>Donate input form</name><next_label>Next</next_label><pagination_type>all</pagination_type><prev_label>Previous</prev_label><reset_after_submit>false</reset_after_submit><resume>false</resume><roles_override/><submit_label>Submit</submit_label><sys_class_name>sys_sg_parameter_screen</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-07-08 06:28:09</sys_created_on><sys_id>25e9824d839b8e10edb56060ceaad3e5</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Donate input form</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_sg_parameter_screen_25e9824d839b8e10edb56060ceaad3e5</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-07-08 06:28:09</sys_updated_on><type display_value="">string</type><view_config/></sys_sg_parameter_screen><sys_translated_text action="delete_multiple" query="documentkey=25e9824d839b8e10edb56060ceaad3e5"/></record_update>]]></payload>
+        <payload_hash>1731104981</payload_hash>
+        <record_name>Donate input form</record_name>
+        <reverted_from/>
+        <source>affd6dc183178e10edb56060ceaad390</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-08 06:28:10</sys_created_on>
+        <sys_id>69e9828d839b8e10edb56060ceaad3bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190910742180000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-08 06:28:10</sys_updated_on>
+        <type>Input form screen</type>
+        <update_guid>ade9828da09b8e10220cf7b3452ff6be</update_guid>
+        <update_guid_history>ade9828da09b8e10220cf7b3452ff6be:1731104981</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-08 07:05:50</sys_created_on>
+        <sys_db_object display_value="" name="sys_sg_parameter_screen">sys_sg_parameter_screen</sys_db_object>
+        <sys_id>6a4760d9572a484c8e333d4c553010e1</sys_id>
+        <sys_metadata>25e9824d839b8e10edb56060ceaad3e5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Donate input form</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_sg_parameter_screen_25e9824d839b8e10edb56060ceaad3e5</sys_update_name>
+        <sys_update_version display_value="sys_sg_parameter_screen_25e9824d839b8e10edb56060ceaad3e5">69e9828d839b8e10edb56060ceaad3bf</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-08 07:05:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

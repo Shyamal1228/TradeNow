@@ -11,7 +11,7 @@
         <short_description/>
         <size>md</size>
         <sp_column display_value="1">70dce62e83d28210edb56060ceaad39a</sp_column>
-        <sp_widget display_value="Add item widget">f4dce2aa83d28210edb56060ceaad307</sp_widget>
+        <sp_widget/>
         <sys_class_name>sp_instance</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-24 07:48:51</sys_created_on>

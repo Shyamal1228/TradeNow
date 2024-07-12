@@ -3,7 +3,7 @@
         <active>true</active>
         <name>Giveaway item page</name>
         <order>10</order>
-        <parameter_screen display_value="Giveaway item form">9087f930831b4e10edb56060ceaad33d</parameter_screen>
+        <parameter_screen display_value="Giveaway Item">9087f930831b4e10edb56060ceaad33d</parameter_screen>
         <sys_class_name>sys_sg_parameter_page</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-07-07 10:29:20</sys_created_on>

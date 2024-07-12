@@ -5,7 +5,7 @@
         <max_offline_rows>500</max_offline_rows>
         <name>Charity List Segment</name>
         <order/>
-        <screen display_value="Charity Organization">85db697f83cf0a10edb56060ceaad37b</screen>
+        <screen display_value="Charity Organizations">85db697f83cf0a10edb56060ceaad37b</screen>
         <sys_class_name>sys_sg_item_stream_segment</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-07-04 07:07:53</sys_created_on>

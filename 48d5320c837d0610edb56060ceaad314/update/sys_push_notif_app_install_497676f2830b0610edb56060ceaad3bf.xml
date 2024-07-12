@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_push_notif_app_install">
+    <sys_push_notif_app_install action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <last_registered_on>2024-07-02 14:18:59</last_registered_on>
+        <send_badge_count>true</send_badge_count>
+        <sys_class_name>sys_push_notif_app_install</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-01 09:56:30</sys_created_on>
+        <sys_id>497676f2830b0610edb56060ceaad3bf</sys_id>
+        <sys_mod_count>60</sys_mod_count>
+        <sys_name>cZ-Tev87SXiJP0LK_3ehjt:APA91bGbAjS6IsSZ0LX1vVyikAfXoW7WR2u3GNxkwfPFM6UJAdchH-o1wIs7dICQCuPLJDFz_soi-c2IfNpAfMzsgVi-I4XNa7IrEQjxeNzPRWQpUnHdnu-2aVBXsESO_zGUYbCeM6IE</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_push_application_id display_value="ServiceNow Request Application">ac7f61d273122300d63a566a4cf6a78b</sys_push_application_id>
+        <sys_push_platform_id display_value="Google">53e75f30ff0002009738ffffffffff12</sys_push_platform_id>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_push_notif_app_install_497676f2830b0610edb56060ceaad3bf</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-02 14:18:59</sys_updated_on>
+        <sys_user_id display_value="Shyamal Das">1545a64c83e90210edb56060ceaad3ee</sys_user_id>
+        <token>cZ-Tev87SXiJP0LK_3ehjt:APA91bGbAjS6IsSZ0LX1vVyikAfXoW7WR2u3GNxkwfPFM6UJAdchH-o1wIs7dICQCuPLJDFz_soi-c2IfNpAfMzsgVi-I4XNa7IrEQjxeNzPRWQpUnHdnu-2aVBXsESO_zGUYbCeM6IE</token>
+    </sys_push_notif_app_install>
+</record_update>

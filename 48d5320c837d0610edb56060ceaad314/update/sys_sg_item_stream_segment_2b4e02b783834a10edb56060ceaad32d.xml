@@ -5,7 +5,7 @@
         <max_offline_rows>500</max_offline_rows>
         <name>Orders</name>
         <order>200</order>
-        <screen display_value="My activity">5e8c4a3783834a10edb56060ceaad34e</screen>
+        <screen display_value="My Activity">5e8c4a3783834a10edb56060ceaad34e</screen>
         <sys_class_name>sys_sg_item_stream_segment</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-07-04 09:35:00</sys_created_on>

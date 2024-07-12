@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_variable">
     <sys_sg_variable action="INSERT_OR_UPDATE">
         <name>Charity organization</name>
-        <parameter_screen display_value="Donate to input form screen">0a33968983db8e10edb56060ceaad3e8</parameter_screen>
+        <parameter_screen display_value="Support A Cause">0a33968983db8e10edb56060ceaad3e8</parameter_screen>
         <parameter_section/>
         <sys_class_name>sys_sg_variable</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>

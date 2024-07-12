@@ -9,7 +9,7 @@
         <name>image</name>
         <order>50</order>
         <page display_value="Giveaway item page">a487f930831b4e10edb56060ceaad347</page>
-        <parameter_screen display_value="Giveaway item form">9087f930831b4e10edb56060ceaad33d</parameter_screen>
+        <parameter_screen display_value="Giveaway Item">9087f930831b4e10edb56060ceaad33d</parameter_screen>
         <parameter_section/>
         <placeholder/>
         <readonly>false</readonly>

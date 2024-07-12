@@ -5,7 +5,7 @@
         <max_offline_rows>500</max_offline_rows>
         <name>New screen segment</name>
         <order/>
-        <screen display_value="Item map">98104c20839fca10edb56060ceaad3fd</screen>
+        <screen display_value="Item Map View">98104c20839fca10edb56060ceaad3fd</screen>
         <sys_class_name>sys_sg_item_stream_segment</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-07-06 07:09:01</sys_created_on>

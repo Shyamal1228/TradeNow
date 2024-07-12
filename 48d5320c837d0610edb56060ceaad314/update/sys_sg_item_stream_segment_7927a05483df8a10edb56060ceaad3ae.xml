@@ -5,7 +5,7 @@
         <max_offline_rows>500</max_offline_rows>
         <name>My approvals segment</name>
         <order/>
-        <screen display_value="My approvals">7d27a05483df8a10edb56060ceaad3ab</screen>
+        <screen display_value="My Approvals">7d27a05483df8a10edb56060ceaad3ab</screen>
         <sys_class_name>sys_sg_item_stream_segment</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-07-05 15:21:17</sys_created_on>

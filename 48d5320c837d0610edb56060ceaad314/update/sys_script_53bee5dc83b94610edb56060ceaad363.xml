@@ -15,8 +15,7 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_1383179_tradenow_item_list">reserve=true^EQ<item endquery="false" field="reserve" goto="false" newquery="false" operator="=" or="false" value="true"/>
-            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        <filter_condition table="x_1383179_tradenow_item_list">reserve=true^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
         <message><![CDATA[<p>Thanks for Reserving the Item.</p>]]></message>

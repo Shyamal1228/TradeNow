@@ -3,7 +3,7 @@
         <active>true</active>
         <icon display_value="Heart">fdeb41a2b72200108223e126de11a9d6</icon>
         <label>Donate</label>
-        <screen display_value="Charity Organization">85db697f83cf0a10edb56060ceaad37b</screen>
+        <screen display_value="Charity Organizations">85db697f83cf0a10edb56060ceaad37b</screen>
         <sys_class_name>sys_sg_applet_tab</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-07-04 07:05:33</sys_created_on>

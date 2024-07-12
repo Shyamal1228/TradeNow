@@ -9,7 +9,7 @@
         <name>Image</name>
         <order>200</order>
         <page display_value="Donate to page">55385ecd83db8e10edb56060ceaad326</page>
-        <parameter_screen display_value="Donate to input form screen">0a33968983db8e10edb56060ceaad3e8</parameter_screen>
+        <parameter_screen display_value="Support A Cause">0a33968983db8e10edb56060ceaad3e8</parameter_screen>
         <parameter_section/>
         <placeholder>Upload the screenshot of payment</placeholder>
         <readonly>false</readonly>

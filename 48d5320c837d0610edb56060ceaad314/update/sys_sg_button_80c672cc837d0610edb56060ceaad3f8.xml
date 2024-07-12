@@ -71,7 +71,7 @@
         <type>write_back</type>
         <unhighlighted_icons/>
         <use_overlay>false</use_overlay>
-        <write_back_action_item display_value="Edit (User)">08c672cc837d0610edb56060ceaad3f3</write_back_action_item>
+        <write_back_action_item display_value="">08c672cc837d0610edb56060ceaad3f3</write_back_action_item>
         <zombified_screens/>
     </sys_sg_button>
     <sys_translated_text action="delete_multiple" query="documentkey=80c672cc837d0610edb56060ceaad3f8"/>

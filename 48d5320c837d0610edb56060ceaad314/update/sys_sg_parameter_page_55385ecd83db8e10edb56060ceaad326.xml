@@ -3,7 +3,7 @@
         <active>true</active>
         <name>Donate to page</name>
         <order>10</order>
-        <parameter_screen display_value="Donate to input form screen">0a33968983db8e10edb56060ceaad3e8</parameter_screen>
+        <parameter_screen display_value="Support A Cause">0a33968983db8e10edb56060ceaad3e8</parameter_screen>
         <sys_class_name>sys_sg_parameter_page</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-07-08 07:30:40</sys_created_on>

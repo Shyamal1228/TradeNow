@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_push_notif_msg_content">
+    <sys_push_notif_msg_content action="INSERT_OR_UPDATE">
+        <name>Reject Donation Notification</name>
+        <push_app display_value="ServiceNow Request Application">ac7f61d273122300d63a566a4cf6a78b</push_app>
+        <script><![CDATA[(function buildJSON( /*GlideRecord*/ current, /*String*/ message, /*Object*/ attributes) { 
+
+    var layoutGen = new global.NotificationLayoutFieldGenerator(); 
+    var text_01 = layoutGen.layoutField(current.getTableName(), current.sys_id, "x_1383179_tradenow_charity_list.charity_name");
+    var text_02 = layoutGen.layoutField(current.getTableName(), current.sys_id, "status"); 
+    //var text_03 = layoutGen.layoutField(current.getTableName(), current.sys_id,"donation_amount"); 
+
+    var deepLinkGenerator = new global.MobileDeepLinkGenerator("Request"); 
+    var link = deepLinkGenerator.getFormScreenLink("109de31c831fca10edb56060ceaad388", current.getTableName(), current.getValue("sys_id")); 
+//3d7afddb830f8610edb56060ceaad3c1
+    var json = { 
+
+        "Link": link, 
+
+        "Layout": { 
+
+            "Status": text_01, 
+
+            "Identifier": text_02 
+
+            //"Description": text_03 
+
+        } 
+
+    }; 
+
+    return json;
+
+})(current, message, attributes);]]></script>
+        <sys_class_name>sys_push_notif_msg_content</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-11 05:27:39</sys_created_on>
+        <sys_id>ecd851ce835f8210edb56060ceaad3f6</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Reject Donation Notification</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_push_notif_msg_content_ecd851ce835f8210edb56060ceaad3f6</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-11 13:23:28</sys_updated_on>
+    </sys_push_notif_msg_content>
+</record_update>

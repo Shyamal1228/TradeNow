@@ -4,12 +4,12 @@
         <autofill_variable/>
         <category/>
         <description/>
-        <label>Donation amount</label>
+        <label>Donation amount ($)</label>
         <mandatory>true</mandatory>
         <name>donation_amount</name>
         <order>100</order>
         <page display_value="Donate to page">55385ecd83db8e10edb56060ceaad326</page>
-        <parameter_screen display_value="Donate to input form screen">0a33968983db8e10edb56060ceaad3e8</parameter_screen>
+        <parameter_screen display_value="Support A Cause">0a33968983db8e10edb56060ceaad3e8</parameter_screen>
         <parameter_section/>
         <placeholder/>
         <readonly>false</readonly>
@@ -17,14 +17,14 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-07-08 07:13:02</sys_created_on>
         <sys_id>76241ac983db8e10edb56060ceaad34d</sys_id>
-        <sys_mod_count>7</sys_mod_count>
-        <sys_name>Donation amount</sys_name>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Donation amount ($)</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_sg_input_76241ac983db8e10edb56060ceaad34d</sys_update_name>
-        <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-09 05:29:22</sys_updated_on>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-12 06:03:20</sys_updated_on>
         <type display_value="Number">8ceb241517021010f2b43b9fadb959a3</type>
     </sys_sg_input>
 </record_update>

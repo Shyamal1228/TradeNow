@@ -9,15 +9,15 @@
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-07-05 06:54:35</sys_created_on>
         <sys_id>d323f24083d78a10edb56060ceaad347</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Empty card</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_sg_view_config_d323f24083d78a10edb56060ceaad347</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-07-05 06:54:35</sys_updated_on>
-        <table/>
+        <sys_updated_on>2024-07-10 06:15:50</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
         <template display_value="Empty card">83c2360083d78a10edb56060ceaad3e7</template>
     </sys_sg_view_config>
     <sys_translated_text action="delete_multiple" query="documentkey=d323f24083d78a10edb56060ceaad347"/>

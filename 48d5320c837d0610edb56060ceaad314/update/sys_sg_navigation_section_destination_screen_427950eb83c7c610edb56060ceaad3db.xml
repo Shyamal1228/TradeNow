@@ -5,20 +5,20 @@
         <background_color_variable/>
         <foreground_color/>
         <foreground_color_variable/>
-        <icon display_value="icon-Address-Book">b7b6b6c8837d0610edb56060ceaad341</icon>
+        <icon display_value="Reserved Icon">286e5479831b4210edb56060ceaad377</icon>
         <image/>
         <name>Reserved Items</name>
         <sys_class_name>sys_sg_navigation_section_destination_screen</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-07-03 06:26:04</sys_created_on>
         <sys_id>427950eb83c7c610edb56060ceaad3db</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Reserved Items</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_sg_navigation_section_destination_screen_427950eb83c7c610edb56060ceaad3db</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-07-09 07:03:02</sys_updated_on>
+        <sys_updated_on>2024-07-10 06:33:52</sys_updated_on>
     </sys_sg_navigation_section_destination_screen>
 </record_update>

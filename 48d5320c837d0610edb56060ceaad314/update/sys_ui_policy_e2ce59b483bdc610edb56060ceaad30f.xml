@@ -16,6 +16,7 @@
         <run_scripts>true</run_scripts>
         <script_false><![CDATA[function onCondition() {
     g_form.setValue('reservation_time', "");
+	g_form.setValue('reservation_time_ends_at', "");
 	//g_form.setValue('reservation', "");
 }]]></script_false>
         <script_true><![CDATA[function onCondition() {
@@ -36,7 +37,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e2ce59b483bdc610edb56060ceaad30f</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>UI Policy to make  reservation time visible</sys_name>
         <sys_overrides/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
@@ -44,7 +45,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_ui_policy_e2ce59b483bdc610edb56060ceaad30f</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-21 08:20:09</sys_updated_on>
+        <sys_updated_on>2024-07-16 13:59:59</sys_updated_on>
         <table>x_1383179_tradenow_item_list</table>
         <ui_type>0</ui_type>
         <view/>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function(i18n,spModal,spUtil,$scope,$sce) {
+        <client_script><![CDATA[api.controller=function(i18n,spModal,spUtil,$scope,$sce,$http) {
 	/* widget controller */
 	var c = this;
-	
+
 	// Flag to track if the map is visible or not
 	c.mapVisible = false;
-	
+
 	// Function to show the map modal with the item's location
 	c.showMap = function() {
 		var url="https://maps.google.com/maps?q="+c.data.obj.latitude+","+c.data.obj.longitude+"&z=15&output=embed";
@@ -17,16 +17,43 @@
 		c.mapVisible = !c.mapVisible;
 	};
 
-	// Function to handle item status changes
-	c.Itembutton = function(st) {
-		c.data.status=st;
+	/*Timer functions*/
 
-		if(st=='reserved'){
-			spUtil.addInfoMessage("Item will be reserved for "+c.data.timeProperty+ " seconds!")
+
+	var interval;
+	function startTimer(duration,display){
+		var timer = duration, seconds;
+		interval = setInterval(function(){
+			seconds = parseInt(timer,10);
+			if (seconds < 10)
+				display.innerHTML = '0'+seconds;
+			else
+				display.innerHTML = seconds;
+			if(timer<10){
+				document.getElementById('reservation-timer-modal').style.backgroundColor = 'red';
+			}
+			if(--timer<0){
+				clearInterval(interval);
+				document.getElementById('reservation-timer-modal').style.display = 'none';
+				document.getElementById('reservation-timer-modal').style.backgroundColor = '#004242';
+
+			}
+		},1000);
+	}
+
+
+	window.onload = function(){
+		if($scope.data.obj.item_status === 'reserved'){
+			console.log("Hello");
+			var timerDuration = 30;
+			console.log("Executing timer");
+			document.getElementById('reservation-timer-modal').style.display = 'block';
+			var display = document.getElementById('timer');
+			startTimer(timerDuration,display);	
 		}
-		
-		// Update the server with the new item status
-		//c.server.update();
+	}
+
+	function addToServer() {
 		c.server.update().then(function(response) {
 			if (response) {
 				c.data.status = null;
@@ -37,13 +64,58 @@
 		});
 	}
 
+
+	// Function to handle item status changes
+	c.Itembutton = function(st) {
+		c.data.status=st;
+		c.data.reservation_date ='';
+		if(st === 'available'){
+			clearInterval(interval);
+			document.getElementById('reservation-timer-modal').style.display = 'none';
+			document.getElementById('timer').innerHTML = '30';
+			document.getElementById('reservation-timer-modal').style.backgroundColor = '#004242';
+			addToServer();
+		}
+
+		else if(st=='reserved'){
+			spUtil.addInfoMessage("Item will be reserved for "+c.data.timeProperty+ " seconds!");
+
+			params = [
+				'sysparm_query=numberLIKE'+$scope.data.obj.number,
+				'sysparm_fields=number,sys_updated_on,reservation_time_ends_at',
+			].join('&');
+			$http.get('/api/now/table/x_1383179_tradenow_item_list?'+params).then(function(response){
+				console.log(response.data);
+				console.log(response.data.result[0].sys_updated_on);
+				var timerDuration = 30;
+				//console.log("Executing timer");
+				document.getElementById('reservation-timer-modal').style.display = 'block';
+				var display = document.getElementById('timer');
+				startTimer(timerDuration,display);
+
+				var date = new Date(response.data.result[0].sys_updated_on);
+				date.setHours(date.getHours()-7);
+				var reservation_date = new Date(response.data.result[0].sys_updated_on);
+				reservation_date.setHours(reservation_date.getHours()-7);
+				reservation_date.setSeconds(reservation_date.getSeconds()+30);
+				addToServer();
+			})
+		} 
+		else {
+			addToServer();
+		}
+
+		// Update the server with the new item status
+		//c.server.update();
+	}
+
 	// Watch for changes in item status and trigger a server update when relevant status changes occur
 	spUtil.recordWatch($scope, 'x_1383179_tradenow_item_list', "statusINavailable,readypickup,reserved,claimed", function(response) {
 		//console.log(response.data);
 		// statusINavailable,readypickup,reserved,claimed
 		c.server.update();
 	});
-	
+
 	// Calculate the distance between the item's location and the logged-in user's location
 
 	// Latitude and Longitude of the item and the user
@@ -69,7 +141,8 @@
 
 	c.distance = Math.floor(d);
 
-};]]></client_script>
+};
+]]></client_script>
         <controller_as>c</controller_as>
         <css>* {
     box-sizing: border-box;
@@ -131,6 +204,7 @@ body {
 }
 
 .container {
+  	position: relative;
     background-color: #ffffff;
     max-width: 900px;
     width: 100%;
@@ -628,7 +702,24 @@ li&gt;i{
       opacity: 1;
       transform: translateY(0);
     }
-  }</css>
+  }
+
+
+/*Reservation timer modal*/
+
+.reservation-timer-modal {
+	display: none;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  color: white;
+  width: max-content;
+  height: max-content;
+  background-color: #004242;
+  padding-inline: 10px;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -683,6 +774,8 @@ li&gt;i{
 				sys_id:itemDetailsGR.getValue('sys_id'),
 				lister:itemDetailsGR.getValue('lister_name'),
 				name:itemDetailsGR.getValue('item_name'),
+				lister_comment: itemDetailsGR.getElement('lister_comment') ,
+				number:itemDetailsGR.getValue('number'),//added
 				description:itemDetailsGR.getValue('description'),
 				category:itemDetailsGR.getValue('category'),
 				condition:itemDetailsGR.getValue('condition'),
@@ -696,6 +789,8 @@ li&gt;i{
 				item_condition_label:itemDetailsGR['condition'].getLabel(),
 				item_category_label:itemDetailsGR['category'].getLabel(),
 			};
+			
+			console.log(data.obj);
 
 			// Fetch the display label for the item's current status from the sys_choice table
 			var choiceGR = new GlideRecord('sys_choice');
@@ -785,6 +880,8 @@ li&gt;i{
 		itemStatus.query();
 		if (itemStatus.next()) {
 			itemStatus.setValue('status',input.status);
+			console.log(input.reservation_date);
+			itemStatus.setValue('reservation_time_ends_at',input.reservation_date);
 			itemStatus.update();
 		}
 		return true;
@@ -796,19 +893,24 @@ li&gt;i{
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-30 08:08:32</sys_created_on>
         <sys_id>3d2455a68343c210edb56060ceaad322</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>63</sys_mod_count>
         <sys_name>Item details widget</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_3d2455a68343c210edb56060ceaad322</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-30 08:49:46</sys_updated_on>
+        <sys_updated_on>2024-07-17 15:11:58</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
 
 <div class="container">
+  <div id='reservation-timer-modal' class='reservation-timer-modal'>
+    <div class='reservation-modal-content'>
+      <p>Reservation time ends in 00:<span id="timer">30</span></p>
+    </div>
+  </div>
   <!-- Image section displaying the item's image -->
   <div class="image">
     <img src="{{data.obj.image_url}}" alt="{{ data.obj.name }}">
@@ -874,6 +976,8 @@ li&gt;i{
     </div>
   </div>
 </div>
+
+
 
 <script>
   // Show the donation popup when the confirm button is clicked

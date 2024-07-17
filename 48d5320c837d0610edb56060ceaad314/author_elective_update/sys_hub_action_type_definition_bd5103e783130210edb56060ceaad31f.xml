@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="DELETE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <active>true</active>
+        <annotation>Get Donation Page URL</annotation>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Action for Generating donation page URL for charity.</description>
+        <ih_action>false</ih_action>
+        <internal_name>get_donation_page_url</internal_name>
+        <label_cache/>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <name>Get Donation Page URL</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <state>draft</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-16 04:55:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>bd5103e783130210edb56060ceaad31f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Donation Page URL</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_bd5103e783130210edb56060ceaad31f</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-16 04:55:11</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="DELETE" query="documentkey=bd5103e783130210edb56060ceaad31f"/>
+    <sys_variable_value action="DELETE" query="document_key=bd5103e783130210edb56060ceaad31f"/>
+    <sys_hub_step_instance action="DELETE" query="action=bd5103e783130210edb56060ceaad31f"/>
+    <sys_hub_action_input action="DELETE" query="model=bd5103e783130210edb56060ceaad31f"/>
+    <sys_hub_action_output action="DELETE" query="model=bd5103e783130210edb56060ceaad31f"/>
+    <sys_hub_pill_compound action="DELETE" query="attached_to=bd5103e783130210edb56060ceaad31f"/>
+    <sys_hub_action_status_metadata action="DELETE" query="action_type_id=bd5103e783130210edb56060ceaad31f"/>
+    <sys_documentation action="DELETE" query="name=var__m_sys_hub_action_input_bd5103e783130210edb56060ceaad31f"/>
+    <sys_choice action="DELETE" query="name=var__m_sys_hub_action_input_bd5103e783130210edb56060ceaad31f"/>
+    <sys_documentation action="DELETE" query="name=var__m_sys_hub_action_output_bd5103e783130210edb56060ceaad31f"/>
+    <sys_choice action="DELETE" query="name=var__m_sys_hub_action_output_bd5103e783130210edb56060ceaad31f"/>
+    <sys_hub_action_plan action="DELETE" query="action_id=bd5103e783130210edb56060ceaad31f"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_hub_action_type_definition_bd5103e783130210edb56060ceaad31f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition"><sys_hub_action_type_definition action="INSERT_OR_UPDATE"><access>public</access><acls/><action_status/><action_template/><active>true</active><annotation>Get Donation Page URL</annotation><callable_by_client_api>false</callable_by_client_api><category/><compiler_build/><copied_from/><copied_from_name/><description>Action for Generating donation page URL for charity.</description><ih_action>false</ih_action><internal_name>get_donation_page_url</internal_name><label_cache/><latest_snapshot/><master_snapshot/><name>Get Donation Page URL</name><natlang/><outputs/><pre_compiled>false</pre_compiled><state>draft</state><sys_class_name>sys_hub_action_type_definition</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-07-16 04:55:11</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>bd5103e783130210edb56060ceaad31f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Get Donation Page URL</sys_name><sys_overrides/><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sys_hub_action_type_definition_bd5103e783130210edb56060ceaad31f</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-07-16 04:55:11</sys_updated_on><system_level>false</system_level><type/></sys_hub_action_type_definition><sys_translated_text action="delete_multiple" query="documentkey=bd5103e783130210edb56060ceaad31f"/><sys_variable_value action="delete_multiple" query="document_key=bd5103e783130210edb56060ceaad31f"/><sys_hub_step_instance action="delete_multiple" query="action=bd5103e783130210edb56060ceaad31f"/><sys_hub_action_input action="delete_multiple" query="model=bd5103e783130210edb56060ceaad31f"/><sys_hub_action_output action="delete_multiple" query="model=bd5103e783130210edb56060ceaad31f"/><sys_hub_pill_compound action="delete_multiple" query="attached_to=bd5103e783130210edb56060ceaad31f"/><sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=bd5103e783130210edb56060ceaad31f"/><sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_input_bd5103e783130210edb56060ceaad31f"/><sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_bd5103e783130210edb56060ceaad31f"/><sys_documentation action="delete_multiple" query="name=var__m_sys_hub_action_output_bd5103e783130210edb56060ceaad31f"/><sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_bd5103e783130210edb56060ceaad31f"/><sys_hub_action_plan action="delete_multiple" query="action_id=bd5103e783130210edb56060ceaad31f"/></record_update>]]></payload>
+        <payload_hash>-1850039602</payload_hash>
+        <record_name>Get Donation Page URL</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-16 04:55:11</sys_created_on>
+        <sys_id>3d51472b83130210edb56060ceaad308</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190b9e5034b0000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-16 04:55:11</sys_updated_on>
+        <type>Action Type</type>
+        <update_guid>fd51472b4113021093ae5c4a026b7e07</update_guid>
+        <update_guid_history>fd51472b4113021093ae5c4a026b7e07:-1850039602</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-16 05:34:03</sys_created_on>
+        <sys_db_object display_value="" name="sys_hub_action_type_definition">sys_hub_action_type_definition</sys_db_object>
+        <sys_id>16530862972448fcafb1e0f2e05b36d9</sys_id>
+        <sys_metadata>bd5103e783130210edb56060ceaad31f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Donation Page URL</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_hub_action_type_definition_bd5103e783130210edb56060ceaad31f</sys_update_name>
+        <sys_update_version display_value="sys_hub_action_type_definition_bd5103e783130210edb56060ceaad31f">3d51472b83130210edb56060ceaad308</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-16 05:34:03</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

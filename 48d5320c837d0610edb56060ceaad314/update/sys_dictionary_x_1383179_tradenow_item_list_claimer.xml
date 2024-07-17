@@ -16,7 +16,7 @@
         <column_label>Claimer</column_label>
         <comments/>
         <create_roles/>
-        <default_value>javascript:gs.getUserID();</default_value>
+        <default_value/>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -24,7 +24,7 @@
         <display>false</display>
         <dynamic_creation>false</dynamic_creation>
         <dynamic_creation_script/>
-        <dynamic_default_value display_value="Sender">2fd8e97bef3221002841f7f775c0fbc1</dynamic_default_value>
+        <dynamic_default_value/>
         <dynamic_ref_qual/>
         <element>claimer</element>
         <element_reference>false</element_reference>
@@ -58,12 +58,12 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_dictionary_x_1383179_tradenow_item_list_claimer</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-04-30 10:28:48</sys_updated_on>
+        <sys_updated_on>2024-07-10 07:32:18</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>true</use_dynamic_default>
+        <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
         <virtual_type>script</virtual_type>

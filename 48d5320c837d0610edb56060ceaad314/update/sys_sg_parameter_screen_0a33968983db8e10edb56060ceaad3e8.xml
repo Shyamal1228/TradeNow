@@ -13,7 +13,7 @@
         <hide_filters>false</hide_filters>
         <hide_screen_name>false</hide_screen_name>
         <icon/>
-        <name>Donate to input form screen</name>
+        <name>Support A Cause</name>
         <next_label>Next</next_label>
         <pagination_type>all</pagination_type>
         <prev_label>Previous</prev_label>
@@ -25,14 +25,14 @@
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-07-08 07:08:53</sys_created_on>
         <sys_id>0a33968983db8e10edb56060ceaad3e8</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Donate to input form screen</sys_name>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Support A Cause</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_sg_parameter_screen_0a33968983db8e10edb56060ceaad3e8</sys_update_name>
-        <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-09 04:47:32</sys_updated_on>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-12 08:56:19</sys_updated_on>
         <type display_value="">string</type>
         <view_config/>
     </sys_sg_parameter_screen>

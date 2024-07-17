@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
+    <sys_ui_policy action="DELETE">
+        <active>false</active>
+        <conditions table="x_1383179_tradenow_item_list">status=reserved^EQ<item display_value="Reserved" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="reserved"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
+        <description/>
+        <global>true</global>
+        <inherit>false</inherit>
+        <isolate_script>true</isolate_script>
+        <model_id/>
+        <model_table/>
+        <on_load>false</on_load>
+        <order>100</order>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>true</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+    g_form.setValue('reservation_time', "");
+	//g_form.setValue('reservation', "");
+	g_form.save();
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {
+var currentDateTime = new Date();
+
+// Extract hours, minutes, and seconds as integers
+var hours = currentDateTime.getHours();
+var minutes = currentDateTime.getMinutes();
+var seconds = currentDateTime.getSeconds();
+
+// Format the current date and time to the required format (yyyy-MM-dd HH:mm:ss)
+var year = currentDateTime.getFullYear();
+var month = String(currentDateTime.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+var day = String(currentDateTime.getDate()).padStart(2, '0');
+
+
+var myDate=year+"-"+month+"-"+day+" ";
+//var formattedDateTime = year + "-" + month + "-" + day + " " + String(hours).padStart(2, '0') + ":" + String(minutes).padStart(2, '0') + ":" + String(seconds).padStart(2, '0');
+
+// Log the formatted date/time and the extracted hours, minutes, and seconds
+//gs.info("Formatted Date/Time: " + formattedDateTime);
+//gs.info("Hours: " + hours + ", Minutes: " + minutes + ", Seconds: " + seconds);
+
+var time = hours+':'+ minutes + ':' + seconds;
+
+//gs.info("mytime="+time);
+		var gdt = new GlideDateTime(myDate + time);
+		//gdt.addSeconds(gdt.getTZOffset()/-1000);
+
+       // gs.info(gdt);
+    g_form.setValue('reservation_time', gdt);
+	g_form.setValue('reservation_time_ends_at', gdt);
+	//g_form.setValue('reservation','Testtt');
+	g_form.save();
+}]]></script_true>
+        <set_values/>
+        <short_description>UI Policy to make  reservation time visible test</short_description>
+        <sys_class_name>sys_ui_policy</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-16 09:50:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>29e488b783570210edb56060ceaad30b</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>UI Policy to make  reservation time visible test</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_ui_policy_29e488b783570210edb56060ceaad30b</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-16 13:18:47</sys_updated_on>
+        <table>x_1383179_tradenow_item_list</table>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_ui_policy>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_ui_policy_29e488b783570210edb56060ceaad30b</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_policy"&gt;&lt;sys_ui_policy action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;conditions table="x_1383179_tradenow_item_list"&gt;status=reserved^EQ&lt;item display_value="Reserved" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="reserved"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/conditions&gt;&lt;description/&gt;&lt;global&gt;true&lt;/global&gt;&lt;inherit&gt;false&lt;/inherit&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;model_id/&gt;&lt;model_table/&gt;&lt;on_load&gt;false&lt;/on_load&gt;&lt;order&gt;100&lt;/order&gt;&lt;reverse_if_false&gt;true&lt;/reverse_if_false&gt;&lt;run_scripts&gt;true&lt;/run_scripts&gt;&lt;script_false&gt;&lt;![CDATA[function onCondition() {
+    g_form.setValue('reservation_time', "");
+	//g_form.setValue('reservation', "");
+	g_form.save();
+}]]&gt;&lt;/script_false&gt;&lt;script_true&gt;&lt;![CDATA[function onCondition() {
+var currentDateTime = new Date();
+
+// Extract hours, minutes, and seconds as integers
+var hours = currentDateTime.getHours();
+var minutes = currentDateTime.getMinutes();
+var seconds = currentDateTime.getSeconds();
+
+// Format the current date and time to the required format (yyyy-MM-dd HH:mm:ss)
+var year = currentDateTime.getFullYear();
+var month = String(currentDateTime.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+var day = String(currentDateTime.getDate()).padStart(2, '0');
+
+
+var myDate=year+"-"+month+"-"+day+" ";
+//var formattedDateTime = year + "-" + month + "-" + day + " " + String(hours).padStart(2, '0') + ":" + String(minutes).padStart(2, '0') + ":" + String(seconds).padStart(2, '0');
+
+// Log the formatted date/time and the extracted hours, minutes, and seconds
+//gs.info("Formatted Date/Time: " + formattedDateTime);
+//gs.info("Hours: " + hours + ", Minutes: " + minutes + ", Seconds: " + seconds);
+
+var time = hours+':'+ minutes + ':' + seconds;
+
+//gs.info("mytime="+time);
+		var gdt = new GlideDateTime(myDate + time);
+		//gdt.addSeconds(gdt.getTZOffset()/-1000);
+
+       // gs.info(gdt);
+    g_form.setValue('reservation_time', gdt);
+	g_form.setValue('reservation_time_ends_at', gdt);
+	//g_form.setValue('reservation','Testtt');
+	g_form.save();
+}]]&gt;&lt;/script_true&gt;&lt;set_values/&gt;&lt;short_description&gt;UI Policy to make  reservation time visible test&lt;/short_description&gt;&lt;sys_class_name&gt;sys_ui_policy&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shyamal&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-07-16 09:50:21&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;29e488b783570210edb56060ceaad30b&lt;/sys_id&gt;&lt;sys_mod_count&gt;16&lt;/sys_mod_count&gt;&lt;sys_name&gt;UI Policy to make  reservation time visible test&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="TradeNow" source="x_1383179_tradenow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TradeNow"&gt;48d5320c837d0610edb56060ceaad314&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_policy_29e488b783570210edb56060ceaad30b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;shyamal&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-07-16 13:18:47&lt;/sys_updated_on&gt;&lt;table&gt;x_1383179_tradenow_item_list&lt;/table&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_ui_policy&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1164619305</payload_hash>
+        <record_name>UI Policy to make  reservation time visible test</record_name>
+        <reverted_from/>
+        <source>cf2a474483fd0610edb56060ceaad360</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-16 13:18:47</sys_created_on>
+        <sys_id>e694f8f3835b0210edb56060ceaad33e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190bbb20fcc0000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-16 13:18:47</sys_updated_on>
+        <type>UI Policy</type>
+        <update_guid>2e94f8f3d85b02102a3672f989d6073d</update_guid>
+        <update_guid_history>2e94f8f3d85b02102a3672f989d6073d:1164619305,ac38dc37dbd70210d95e8e244f2f1495:-1198175202,c208dc3705d7021025aad64deec5f691:-1273054156,f855583f43970210e7b3dc5977c048a6:101934223,1bb2d0bf129702104b509fd5899dc646:1156952538,3d81187fd6970210e1051dc21460a492:101934223,62d0943f3f970210376ad4a1f5973fc4:1531911363,4eb0903f4a970210b0350a6b3d3c8057:-1424793835,2a1fc47b5a970210c0510fb4b3cc4db5:-1164474976,2b3e0c3b6e970210ae6db28d7de4f025:-1424793835,360e447b0797021085a31ebffad54d7a:1069369382,6c8d043bf0970210c4aa05e56104266a:-856938194,986d843b81970210a73021b356850521:240749852,103d40f7f79702103f4201c165a1815f:1069369382,642c4cb719970210e10d6811113c5e39:81938616,501c8477d6970210043ce90e9dd932bc:-1785067427,b91b84770d970210da31129a2a56b0fc:-806798080,c0aaccf337970210cc16b2d2b34cfe47:1232579778,5e2a88f3119702100d8e37451a785341:1232579778,acf98cf332970210ae8e85bb4eaa4deb:817587214,40f8c0b3be97021071acd91612b79d97:-1670555998,d478c0b3bc970210240139860d34bbac:1232579778,be384c735d97021091b788e7eab04860:-1955721603,11878c3384970210453bccd4a052f83c:-295536131,59570433ef970210ed6aa1ad5b4e6335:-1334378797,34b6847fcf570210368cf52f9a4c53de:-295536131,50058c3f18570210b7e1fcc82cea6d8f:898597386,65e4c47f32570210d4942d0c25b66d9c:-806798080</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-16 14:01:05</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy">sys_ui_policy</sys_db_object>
+        <sys_id>45e5e0bb8077457cb003405fc25d57e9</sys_id>
+        <sys_metadata>29e488b783570210edb56060ceaad30b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>UI Policy to make  reservation time visible test</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="Item">205187c883bd0610edb56060ceaad3cf</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_29e488b783570210edb56060ceaad30b</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_29e488b783570210edb56060ceaad30b">e694f8f3835b0210edb56060ceaad33e</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-16 14:01:05</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

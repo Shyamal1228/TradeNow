@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_push_notif_app_install">
     <sys_push_notif_app_install action="INSERT_OR_UPDATE">
         <active>true</active>
-        <last_registered_on>2024-07-12 09:02:10</last_registered_on>
+        <last_registered_on>2024-07-17 15:07:14</last_registered_on>
         <send_badge_count>true</send_badge_count>
         <sys_class_name>sys_push_notif_app_install</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-07-02 14:41:10</sys_created_on>
         <sys_id>f03145d7830b8610edb56060ceaad34b</sys_id>
-        <sys_mod_count>692</sys_mod_count>
+        <sys_mod_count>706</sys_mod_count>
         <sys_name>fdODBFl8TKWqq7ChMP-o29:APA91bFrfKCMYl7tgEQ92IId6VP1s003WSIpNA9gPtoHinZUOnxF3nN_8ZtiIr83x0V6dnhE-qfjvYagVQW43FWR06PlhpvPapeSp8REZ4BI5QS6lxCMd_tJ_x8xSDpr5sBNs4Q5Y9y8</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
@@ -16,7 +16,7 @@
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sys_push_notif_app_install_f03145d7830b8610edb56060ceaad34b</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-07-12 09:02:10</sys_updated_on>
+        <sys_updated_on>2024-07-17 15:07:14</sys_updated_on>
         <sys_user_id display_value="Shyamal Das">1545a64c83e90210edb56060ceaad3ee</sys_user_id>
         <token>fdODBFl8TKWqq7ChMP-o29:APA91bFrfKCMYl7tgEQ92IId6VP1s003WSIpNA9gPtoHinZUOnxF3nN_8ZtiIr83x0V6dnhE-qfjvYagVQW43FWR06PlhpvPapeSp8REZ4BI5QS6lxCMd_tJ_x8xSDpr5sBNs4Q5Y9y8</token>
     </sys_push_notif_app_install>

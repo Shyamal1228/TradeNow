@@ -105,14 +105,7 @@
 				reservation_date.setSeconds(reservation_date.getSeconds()+30);
 				c.data.reservation_date = reservation_date.toString();
 			})
-			c.server.update().then(function(response) {
-				if (response) {
-					c.data.status = null;
-					//alert('Update successful');
-				} else {
-					//alert('Update failed:', response.data.error);
-				}
-			});
+			addToServer();
 		} 
 		else {
 			addToServer();
@@ -888,7 +881,7 @@ li&gt;i{
 
 	// Update the item status based on the input provided
 	if (input && input.status) {
-		//console.log("Button clicked="+input.status);
+		console.log("Button clicked="+input.status);
 		var itemStatus = new GlideRecordSecure('x_1383179_tradenow_item_list');
 		itemStatus.addQuery('sys_id', targetSysId);
 		itemStatus.query();
@@ -907,14 +900,14 @@ li&gt;i{
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-30 08:08:32</sys_created_on>
         <sys_id>3d2455a68343c210edb56060ceaad322</sys_id>
-        <sys_mod_count>74</sys_mod_count>
+        <sys_mod_count>76</sys_mod_count>
         <sys_name>Item details widget</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_3d2455a68343c210edb56060ceaad322</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-07-18 07:26:44</sys_updated_on>
+        <sys_updated_on>2024-07-18 07:29:15</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>

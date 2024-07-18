@@ -626,7 +626,18 @@ li&gt;i{
       opacity: 1;
       transform: translateY(0);
     }
-  }</css>
+  }
+
+.reservation-timer-modal {
+	display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: max-content;
+  height: max-content;
+  background-color: red;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -771,14 +782,14 @@ li&gt;i{
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-31 07:29:00</sys_created_on>
         <sys_id>426be27c83a24210edb56060ceaad3f0</sys_id>
-        <sys_mod_count>214</sys_mod_count>
+        <sys_mod_count>215</sys_mod_count>
         <sys_name>Item Details</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_426be27c83a24210edb56060ceaad3f0</sys_update_name>
-        <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-30 08:09:12</sys_updated_on>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-17 05:14:00</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
@@ -847,6 +858,13 @@ li&gt;i{
       <button class="yes poppins-light" id="donateYes">Yes</button>
       <button class="no poppins-light" id="donateNo">No</button>
     </div>
+  </div>
+</div>
+
+<div id='reservation-timer-modal' class='reservation-timer-modal'>
+  <div class='reservation-modal-content'>
+    <h2>Modal header</h2>
+    <p>Reservation time ends in</p>
   </div>
 </div>
 

@@ -866,6 +866,13 @@ hr{
 	/* e.g., data.table = $sp.getValue('table'); */
 
 
+	/*Testing*/
+	var currentTime = new Date();
+	var current_Time = currentTime;
+	console.log(current_Time.toString());
+	updatedTime = new Date(currentTime.setTime(currentTime.getTime() + (1*60*1000)));
+	console.log(updatedTime.toString());
+	/**/
 	data.sysUserId = $sp.getParameter("sys_id");
 	data.table = 'x_1383179_tradenow_item_list';
 	data.donationTable = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr';
@@ -909,7 +916,7 @@ hr{
 					id: listedItems.getValue('number'),
 					item_name: listedItems.getValue('item_name'),
 					item_image: listedItems.getDisplayValue('image'),
-					item_lister: orderedItems.getValue('lister_name'),
+					item_lister: listedItems.getValue('lister_name'),
 					item_claimer: listedItems.getDisplayValue('claimer'),
 					item_status: listedItems.getValue('status'),
 					creationTime: listedItems.getValue('sys_created_on'),
@@ -934,9 +941,10 @@ hr{
 				item_name: orderedItems.getValue('item_name'),
 				image: orderedItems.getValue('image'),
 				lister_name: orderedItems.getDisplayValue('lister_name'),
-				claimer: listedItems.getDisplayValue('claimer'),
+				claimer: orderedItems.getDisplayValue('claimer'),
 				status: orderedItems.getValue('status'),
 				creationTime: orderedItems.getValue('sys_updated_on'),//correct this
+				reservationTime: orderedItems.getValue('reservation_time_ends_at'),
 				availability: ""
 			}
 			if(obj.status === 'readypickup'){
@@ -947,7 +955,16 @@ hr{
 				obj.availability = "Claimed";
 				data.orderedItems.push(obj);
 			} else if(obj.status === 'reserved'){
-				obj.availability = "Reserved";		
+				obj.availability = "Reserved";
+				var updated_time = obj.creationTime.split(' ')[1];
+				obj.time = {
+					mm: parseInt(updated_time.split(':')[1]),
+					ss: parseInt(updated_time.split(':')[2])
+				};
+				obj.end_time = {
+					mm: obj.time.mm + 1,
+					ss: obj.time.ss
+				};
 				obj.button = ["Claim Item","Cancel Reservation"];
 				data.reservedItems.push(obj);
 			}
@@ -1017,14 +1034,14 @@ hr{
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-24 06:00:04</sys_created_on>
         <sys_id>653d3d2883cb0210edb56060ceaad32e</sys_id>
-        <sys_mod_count>268</sys_mod_count>
+        <sys_mod_count>299</sys_mod_count>
         <sys_name>My_activity</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_653d3d2883cb0210edb56060ceaad32e</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-03 11:28:13</sys_updated_on>
+        <sys_updated_on>2024-07-16 17:57:28</sys_updated_on>
         <template><![CDATA[<div class="profile-page">
   <div class="user-profile poppins">
     <div class="header" >
@@ -1078,7 +1095,7 @@ hr{
             <div class="order-info">
               <div class="order-name" ng-bind="order.item_name"></div>
               <div class="order-status">Status: <span ng-bind="order.availability" /></div>
-              <div class="time-created"> Updated on: <span ng-bind="order.creationTime" /></div>
+              <div class="time-created"> Reservation ends in: <span ng-bind="order.creationTime" /></div>
             </div>
             <div class="button-div">
               <button class="operation-button-green" 

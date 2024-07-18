@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <condition/>
+        <description>Default access control on x_1383179_tradenow_chat</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_1383179_tradenow_chat</name>
+        <operation display_value="delete">delete</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-17 05:15:12</sys_created_on>
+        <sys_id>788fc088832b4210edb56060ceaad35b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383179_tradenow_chat</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sys_security_acl_788fc088832b4210edb56060ceaad35b</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-17 05:15:12</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>

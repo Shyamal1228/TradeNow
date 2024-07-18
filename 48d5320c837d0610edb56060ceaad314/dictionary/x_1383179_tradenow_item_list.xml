@@ -18,7 +18,7 @@
         <element label="Item name" mandatory="true" max_length="40" name="item_name" type="string"/>
         <element label="Last name" max_length="50" name="last_name" type="string"/>
         <element label="latitude" max_length="40" name="latitude" type="float"/>
-        <element label="Lister comment" max_length="4000" name="lister_comment" type="journal"/>
+        <element label="Comment" max_length="4000" name="lister_comment" type="journal"/>
         <element default="javascript:gs.getUserID()" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Lister" max_length="32" name="lister_name" read_only="true" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Location" max_length="32" name="location" reference="sys_user" type="reference"/>
         <element label="longitude" max_length="40" name="longitude" type="float"/>
@@ -60,6 +60,5 @@
         <index name="index6">
             <element name="preferred_charity"/>
         </index>
-        <element label="Claimer comment" max_length="4000" name="claimer_comment" type="journal_list"/>
     </element>
 </database>

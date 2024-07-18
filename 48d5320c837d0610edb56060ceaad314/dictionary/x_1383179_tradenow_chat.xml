@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="14bd8008832b4210edb56060ceaad35b" label="Chat" max_length="40" name="x_1383179_tradenow_chat" type="collection">
+        <element label="Chat text" max_length="40" name="chat_text" type="string"/>
+        <element label="Claimer" max_length="40" name="claimer" reference="sys_user" type="reference"/>
+        <element label="Item id" max_length="40" name="item_id" reference="x_1383179_tradenow_item_list" type="reference"/>
+        <element label="Lister" max_length="40" name="lister" reference="sys_user" type="reference"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Chat id" max_length="40" name="number" read_only="true" type="string"/>
+    </element>
+</database>

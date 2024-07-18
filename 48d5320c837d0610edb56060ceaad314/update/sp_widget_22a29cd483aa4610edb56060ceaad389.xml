@@ -35,6 +35,27 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+
+.header {
+  text-align: center;
+  color: #004c4c;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.header &gt; h2 {
+  color: #004c4c;
+  margin-bottom: 10px;
+}
+.header &gt; hr {
+  border: none;
+  height: 5px;
+  width: 20%;
+  background-color: #004c4c;
+  margin: auto;
+}
+
+
 /* Styling for individual testimonial cards */
 figure.snip1390 {
   font-family: 'Roboto', Arial, sans-serif;
@@ -138,14 +159,14 @@ figure.snip1390 .profile {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-05-29 07:04:41</sys_created_on>
         <sys_id>22a29cd483aa4610edb56060ceaad389</sys_id>
-        <sys_mod_count>76</sys_mod_count>
+        <sys_mod_count>80</sys_mod_count>
         <sys_name>testimonial</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_22a29cd483aa4610edb56060ceaad389</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-30 04:28:13</sys_updated_on>
+        <sys_updated_on>2024-07-18 07:15:49</sys_updated_on>
         <template><![CDATA[<!-- Importing Google Fonts -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
@@ -153,13 +174,10 @@ figure.snip1390 .profile {
 
 <!-- Top container for the entire section -->
 <div class="top-container">
-  
   <!-- Testimonials Header -->
-  <div class="testimonials">
-    <!-- Testimonials Title -->
+  <div class="header" >
     <h2 class="poppins-semibold">Testimonials</h2>
-    <!-- Horizontal line under the title -->
-    <hr class="line" />
+    <hr/>
   </div>
 
   <!-- Container for testimonial cards -->

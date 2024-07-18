@@ -17,8 +17,8 @@
 		c.mapVisible = !c.mapVisible;
 	};
 
-	
-	
+
+
 	/*Timer functions*/
 	//Added by Jagriti
 	var interval;
@@ -42,7 +42,7 @@
 		},1000);
 	}
 
-//Added by Jagriti
+	//Added by Jagriti
 	window.onload = function(){
 		if($scope.data.obj.item_status === 'reserved'){
 			console.log("Hello");
@@ -71,7 +71,7 @@
 	c.Itembutton = function(st) {
 		c.data.status=st;
 		c.data.reservation_date ='';
-		
+
 		//Added by Jagriti
 		if(st === 'available'){
 			clearInterval(interval);
@@ -84,15 +84,14 @@
 		//Added by Jagriti
 		else if(st=='reserved'){
 			spUtil.addInfoMessage("Item will be reserved for "+c.data.timeProperty+ " seconds!");
-			addToServer();
+			//addToServer();
 			params = [
 				'sysparm_query=numberLIKE'+$scope.data.obj.number,
 				'sysparm_fields=number,sys_updated_on,reservation_time_ends_at',
 			].join('&');
-			$http.get('/api/now/table/x_1383179_tradenow_item_list?'+params).then(function(response){
+			$http.get('/api/now/table/x_1383179_tradenow_item_list?'+'sysparm_query=numberLIKE'+$scope.data.obj.number).then(function(response){
 				console.log(response.data);
 				console.log(response.data.result[0].sys_updated_on);
-				console.log(response.data.result[0].reservation_time_ends_at);
 				var timerDuration = 30;
 				//console.log("Executing timer");
 				document.getElementById('reservation-timer-modal').style.display = 'block';
@@ -104,7 +103,16 @@
 				var reservation_date = new Date(response.data.result[0].sys_updated_on);
 				reservation_date.setHours(reservation_date.getHours()-7);
 				reservation_date.setSeconds(reservation_date.getSeconds()+30);
+				c.data.reservation_date = reservation_date.toString();
 			})
+			c.server.update().then(function(response) {
+				if (response) {
+					c.data.status = null;
+					//alert('Update successful');
+				} else {
+					//alert('Update failed:', response.data.error);
+				}
+			});
 		} 
 		else {
 			addToServer();
@@ -886,7 +894,7 @@ li&gt;i{
 		itemStatus.query();
 		if (itemStatus.next()) {
 			itemStatus.setValue('status',input.status);
-			console.log(input.reservation_date);//Added by Jagriti
+			console.log("Reservation time: ",input.reservation_date);//Added by Jagriti
 			//itemStatus.setValue('reservation_time_ends_at',input.reservation_date);//Added by Jagriti
 			itemStatus.update();
 		}
@@ -899,14 +907,14 @@ li&gt;i{
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-30 08:08:32</sys_created_on>
         <sys_id>3d2455a68343c210edb56060ceaad322</sys_id>
-        <sys_mod_count>69</sys_mod_count>
+        <sys_mod_count>74</sys_mod_count>
         <sys_name>Item details widget</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_3d2455a68343c210edb56060ceaad322</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-07-18 06:55:54</sys_updated_on>
+        <sys_updated_on>2024-07-18 07:26:44</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>

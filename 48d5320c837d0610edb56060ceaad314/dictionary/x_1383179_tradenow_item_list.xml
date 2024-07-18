@@ -3,7 +3,6 @@
         <element label="Active" max_length="40" name="active" type="boolean"/>
         <element label="Category" max_length="32" name="category" reference="x_1383179_tradenow_category_lookup" type="reference"/>
         <element label="Claimer" max_length="32" name="claimer" reference="sys_user" type="reference"/>
-        <element label="Claimer comment" max_length="4000" name="claimer_comment" type="journal_list"/>
         <element label="Claimer Email" max_length="40" name="claimer_email" type="string"/>
         <element label="Claimer id" max_length="500" name="claimer_id" type="string"/>
         <element label="Claimer Name" max_length="32" name="claimer_name" reference="sys_user" type="reference"/>
@@ -25,6 +24,7 @@
         <element label="longitude" max_length="40" name="longitude" type="float"/>
         <element label="Notificationflag" max_length="40" name="notificationflag" type="boolean"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Preferred charity" max_length="32" name="preferred_charity" reference="x_1383179_tradenow_charity_list" type="reference"/>
         <element label="Reservation" max_length="40" name="reservation" type="string"/>
         <element label="Reservation time ends" max_length="40" name="reservation_time" read_only="true" type="string"/>
         <element label="Reservation time ends at" max_length="40" name="reservation_time_ends_at" type="glide_date_time"/>
@@ -57,5 +57,9 @@
         <index name="index5">
             <element name="location"/>
         </index>
+        <index name="index6">
+            <element name="preferred_charity"/>
+        </index>
+        <element label="Claimer comment" max_length="4000" name="claimer_comment" type="journal_list"/>
     </element>
 </database>

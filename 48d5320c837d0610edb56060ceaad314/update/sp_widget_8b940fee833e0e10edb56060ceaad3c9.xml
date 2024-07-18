@@ -48,7 +48,9 @@ api.controller = function($scope, spUtil, $element, $window) {
         var currentScroll = angular.element(e.target).scrollTop();
 
         // Show button when scrolling down and past the defined height
-        if (lastScrollTop < currentScroll || lastScrollTop > currentScroll) { 
+			//previous
+			//if (lastScrollTop < currentScroll || lastScrollTop > currentScroll)
+        if ((lastScrollTop < currentScroll || lastScrollTop > currentScroll) && currentScroll > height) { 
             $element.show();
         } else {
             $element.hide();
@@ -92,12 +94,13 @@ api.controller = function($scope, spUtil, $element, $window) {
 } 
   }
 }
-button.button-to-top {
+/*button.button-to-top {
     position: fixed;
     bottom: 0;
     right: 0;
     margin-right: 15px;
-    margin-bottom: 10px;
+    //margin-bottom: 10px;
+   	margin-bottom: 100px;
     border-radius: 50% !important;
     opacity: 0.7 !important;
     padding: 12px !important;
@@ -108,6 +111,21 @@ button.button-to-top {
   	vertical-align: middle;
   	//z-index:100;
   color:#fff;
+}*/
+button.button-to-top {
+    position: fixed;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    border-radius: 50% !important;
+    opacity: 0.7 !important;
+    padding: 12px !important;
+    border: 1px solid !important;
+    width: 47px;
+    height: 45px;
+    background-color: #008080;
+    vertical-align: middle;
+    color: #fff;
 }
 
 .button-to-top:hover {
@@ -209,14 +227,14 @@ button.button-to-top.show:active {
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-18 06:04:10</sys_created_on>
         <sys_id>8b940fee833e0e10edb56060ceaad3c9</sys_id>
-        <sys_mod_count>52</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_name>Scroll to top</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_8b940fee833e0e10edb56060ceaad3c9</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-19 05:34:50</sys_updated_on>
+        <sys_updated_on>2024-07-18 05:40:37</sys_updated_on>
         <template><![CDATA[<div class="button-to-top-wrapper">
 	<button name="gotoTop" ng-click="goTop()" class="btn fa fa-arrow-up fa-lg padder-lg button-to-top pull-right"></button>
 </div>]]></template>

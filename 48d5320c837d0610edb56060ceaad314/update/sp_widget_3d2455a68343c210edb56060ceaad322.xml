@@ -17,8 +17,10 @@
 		c.mapVisible = !c.mapVisible;
 	};
 
+	
+	
 	/*Timer functions*/
-
+	//Added by Jagriti
 
 	var interval;
 	function startTimer(duration,display){
@@ -41,7 +43,7 @@
 		},1000);
 	}
 
-
+//Added by Jagriti
 	window.onload = function(){
 		if($scope.data.obj.item_status === 'reserved'){
 			console.log("Hello");
@@ -53,6 +55,7 @@
 		}
 	}
 
+	//Added by Jagriti
 	function addToServer() {
 		c.server.update().then(function(response) {
 			if (response) {
@@ -69,6 +72,8 @@
 	c.Itembutton = function(st) {
 		c.data.status=st;
 		c.data.reservation_date ='';
+		
+		//Added by Jagriti
 		if(st === 'available'){
 			clearInterval(interval);
 			document.getElementById('reservation-timer-modal').style.display = 'none';
@@ -77,6 +82,7 @@
 			addToServer();
 		}
 
+		//Added by Jagriti
 		else if(st=='reserved'){
 			spUtil.addInfoMessage("Item will be reserved for "+c.data.timeProperty+ " seconds!");
 
@@ -103,6 +109,7 @@
 		} 
 		else {
 			addToServer();
+			//Added by Jagriti
 		}
 
 		// Update the server with the new item status
@@ -880,8 +887,8 @@ li&gt;i{
 		itemStatus.query();
 		if (itemStatus.next()) {
 			itemStatus.setValue('status',input.status);
-			console.log(input.reservation_date);
-			itemStatus.setValue('reservation_time_ends_at',input.reservation_date);
+			console.log(input.reservation_date);//Added by Jagriti
+			//itemStatus.setValue('reservation_time_ends_at',input.reservation_date);//Added by Jagriti
 			itemStatus.update();
 		}
 		return true;
@@ -893,14 +900,14 @@ li&gt;i{
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-30 08:08:32</sys_created_on>
         <sys_id>3d2455a68343c210edb56060ceaad322</sys_id>
-        <sys_mod_count>63</sys_mod_count>
+        <sys_mod_count>67</sys_mod_count>
         <sys_name>Item details widget</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_3d2455a68343c210edb56060ceaad322</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-07-17 15:11:58</sys_updated_on>
+        <sys_updated_on>2024-07-18 06:49:37</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function(i18n,spModal,spUtil,$scope,$sce) {
+        <client_script><![CDATA[api.controller=function(i18n,spModal,spUtil,$scope,$sce,$http) {
 	/* widget controller */
 	var c = this;
+
+	// Flag to track if the map is visible or not
 	c.mapVisible = false;
+
+	// Function to show the map modal with the item's location
 	c.showMap = function() {
 		var url="https://maps.google.com/maps?q="+c.data.obj.latitude+","+c.data.obj.longitude+"&z=15&output=embed";
 		//	console.log(url);
@@ -13,13 +17,45 @@
 		c.mapVisible = !c.mapVisible;
 	};
 
-	c.Itembutton = function(st) {
-		c.data.status=st;
 
-		if(st=='reserved'){
-			spUtil.addInfoMessage("Item will be reserved for "+c.data.timeProperty+ " seconds!")
+
+	/*Timer functions*/
+	//Added by Jagriti
+	var interval;
+	function startTimer(duration,display){
+		var timer = duration, seconds;
+		interval = setInterval(function(){
+			seconds = parseInt(timer,10);
+			if (seconds < 10)
+				display.innerHTML = '0'+seconds;
+			else
+				display.innerHTML = seconds;
+			if(timer<10){
+				document.getElementById('reservation-timer-modal').style.backgroundColor = 'red';
+			}
+			if(--timer<0){
+				clearInterval(interval);
+				document.getElementById('reservation-timer-modal').style.display = 'none';
+				document.getElementById('reservation-timer-modal').style.backgroundColor = '#004242';
+
+			}
+		},1000);
+	}
+
+	//Added by Jagriti
+	window.onload = function(){
+		if($scope.data.obj.item_status === 'reserved'){
+			console.log("Hello");
+			var timerDuration = 30;
+			console.log("Executing timer");
+			document.getElementById('reservation-timer-modal').style.display = 'block';
+			var display = document.getElementById('timer');
+			startTimer(timerDuration,display);	
 		}
-		//c.server.update();
+	}
+
+	//Added by Jagriti
+	function addToServer() {
 		c.server.update().then(function(response) {
 			if (response) {
 				c.data.status = null;
@@ -30,20 +66,73 @@
 		});
 	}
 
+
+	// Function to handle item status changes
+	c.Itembutton = function(st) {
+		c.data.status=st;
+		c.data.reservation_date ='';
+
+		//Added by Jagriti
+		if(st === 'available'){
+			clearInterval(interval);
+			document.getElementById('reservation-timer-modal').style.display = 'none';
+			document.getElementById('timer').innerHTML = '30';
+			document.getElementById('reservation-timer-modal').style.backgroundColor = '#004242';
+			addToServer();
+		}
+
+		//Added by Jagriti
+		else if(st=='reserved'){
+			spUtil.addInfoMessage("Item will be reserved for "+c.data.timeProperty+ " seconds!");
+			//addToServer();
+			params = [
+				'sysparm_query=numberLIKE'+$scope.data.obj.number,
+				'sysparm_fields=number,sys_updated_on,reservation_time_ends_at',
+			].join('&');
+			$http.get('/api/now/table/x_1383179_tradenow_item_list?'+'sysparm_query=numberLIKE'+$scope.data.obj.number).then(function(response){
+				console.log(response.data);
+				console.log(response.data.result[0].sys_updated_on);
+				var timerDuration = 30;
+				//console.log("Executing timer");
+				document.getElementById('reservation-timer-modal').style.display = 'block';
+				var display = document.getElementById('timer');
+				startTimer(timerDuration,display);
+
+				var date = new Date(response.data.result[0].sys_updated_on);
+				date.setHours(date.getHours()-7);
+				var reservation_date = new Date(response.data.result[0].sys_updated_on);
+				reservation_date.setHours(reservation_date.getHours()-7);
+				reservation_date.setSeconds(reservation_date.getSeconds()+30);
+				c.data.reservation_date = reservation_date.toString();
+			})
+			addToServer();
+		} 
+		else {
+			addToServer();
+			//Added by Jagriti
+		}
+
+		// Update the server with the new item status
+		//c.server.update();
+	}
+
+	// Watch for changes in item status and trigger a server update when relevant status changes occur
 	spUtil.recordWatch($scope, 'x_1383179_tradenow_item_list', "statusINavailable,readypickup,reserved,claimed", function(response) {
 		//console.log(response.data);
 		// statusINavailable,readypickup,reserved,claimed
 		c.server.update();
 	});
 
-	// calculate distance
+	// Calculate the distance between the item's location and the logged-in user's location
+
+	// Latitude and Longitude of the item and the user
 	var lat1 = c.data.obj.latitude;
 	var lng1 = c.data.obj.longitude;
 	var lat2 = c.data.obj.loggedInUserLatitude;
 	var lng2 = c.data.obj.loggedInUserLongitude;
 	//console.log( lat1+" "+lng1+" "+ lat2+" "+lng2);
 
-	// Haversine formula
+	// Haversine formula to calculate the great-circle distance between two points on the Earth's surface
 	var toRadians = function(degrees) {
 		return degrees * (Math.PI / 180);
 	};
@@ -59,278 +148,10 @@
 
 	c.distance = Math.floor(d);
 
-};]]></client_script>
+};
+]]></client_script>
         <controller_as>c</controller_as>
-        <css>/** {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-.text{
-  color:#000000;
-  font-weight:bold;
-}
-.map{
-  width:5%;
-  margin-left:5px;
-}
-.line{
-  border: none;
-  height: 5px;
-  width: 20%;
-  background-color:#000000;
-}
-
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-
-.container {
-    background-color: #ffffff;
-    max-width: 900px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  	margin:55px 55px 25px 55px;
-    padding: 25px 0;
-}
-
-.image {
-    flex: 1 1 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    //background-color: #ff0000;
-}
-
-.image img {
-    max-width: 100%;
-    height: auto;
-}
-
-.content {
-    flex: 1 1 50%;
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
-    color: #333333;
-}
-
-.description {
-    margin-bottom: 20px;
-}
-
-.description p {
-  	margin-top: 10px;
-    margin-bottom: 10px;
-    color: #555555;
-  	font-size: 1.5rem;
-}
-
-.features {
-    list-style: none;
-    margin-bottom: 20px;
-}
-
-.features li {
-  	font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #555555;
-}
-
-.features li span {
-    color: #ff0000;
-}
-
-.actions {
-    display: flex;
-    gap: 10px;
-}
-
-.claim-item,
-.add-to-cart,
-.reserve,
-.cancel{
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-  	
-}
-
-.view-item-button {
-  display: inline-block;
-  padding: 1.3rem 2.5rem;
-  background-color: #78c879;
-  color: white;
-  font-size: 1.4rem;
-  //font-weight: bold;
-  border: none;
-  border-radius: 50px;
-  box-shadow: 0 4px 8px rgba(120, 200, 121, 0.4);
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.view-item-button:hover {
-  background-color: #66b267;
-}
-
-.claim-item {
-    background-color: #176B87;
-    color: #ffffff;
-  	box-shadow: 0 4px 8px rgba(23, 107, 135, 0.4);
- 		transition: background-color 0.3s ease;
-}
-.claim-item:hover {
-  background-color: #0f566e;
-}
-.add-to-cart {
-    background-color: #007bff;
-    color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
-  transition: background-color 0.3s ease;
-}
-.add-to-cart:hover {
-  background-color:#0e65f0;
-}
-.reserve {
-    background-color: #d49a3a;
-    color: #ffffff;
-  box-shadow: 0 4px 8px rgba(212, 154, 58, 0.4);
-  transition: background-color 0.3s ease;
-}
-.reserve:hover {
-  background-color: #d1870d;
-}
-.cancel {
-    background-color: #e6070e;
-    color: #ffffff;
-  box-shadow: 0 4px 8px rgba(230, 7, 14, 0.4);
-  transition: background-color 0.3s ease;
-}
-.cancel:hover {
-  background-color:#bf060c;
-}
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .image,
-    .content {
-        flex: 1 1 100%;
-    }
-}
-
-.claimed{
-  background-color:#000000;
-  padding:10px;
-  border-radius:20px;
-  color:#ffffff;
-}
-
-
-.bn632-hover {
-  width: 130px;
-  //font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  height: 40px;
-  text-align:center;
-  border: none;
-  background-size: 300% 100%;
-  border-radius: 5px;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-  margin:auto;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-}
-
-.bn632-hover:hover {
-  background-position: 100% 0;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
-
-.bn632-hover:focus {
-  outline: none;
-}
-
-.bn632-hover.bn26 {
-  background-image: linear-gradient(
-    to right,
-    #04364A,
-    #176B87,
-    #64CCC5,
-    #176B87
-  );
-  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-}
-
-
-.map-container {
-  text-align: center;
-  margin: 20px 0;
-}
-
-iframe {
-  width: 100%;
-  margin-top: 50px 0px 0px 0px;
-  //max-width: 600px;
-  height: 300px;
-  border: 0;
-  
-    max-width: 100%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 10px;
-    overflow: hidden;
-  	margin:55px 0;
-}
-*/
-* {
+        <css>* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -390,6 +211,7 @@ body {
 }
 
 .container {
+  	position: relative;
     background-color: #ffffff;
     max-width: 900px;
     width: 100%;
@@ -887,14 +709,31 @@ li&gt;i{
       opacity: 1;
       transform: translateY(0);
     }
-  }</css>
+  }
+
+
+/*Reservation timer modal*/
+
+.reservation-timer-modal {
+	display: none;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  color: white;
+  width: max-content;
+  height: max-content;
+  background-color: #004242;
+  padding-inline: 10px;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>item_details_widget</id>
+        <id>test_item</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {
   $(document).ready(function(){
@@ -922,7 +761,7 @@ li&gt;i{
 })
 
 }]]></link>
-        <name>Item details widget</name>
+        <name>test_item</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -933,66 +772,57 @@ li&gt;i{
 	var targetSysId = $sp.getParameter('sys_id');
 
 	data.timeProperty = gs.getProperty('x_1383179_tradenow.reservation.duration');
-	//console.log(table_name);
-	//console.log(targetSysId);
-	//data.details = [];
+
 	if(table_name){
-		var itemDetails = new GlideRecord(table_name);
-		if (itemDetails.get(targetSysId)){
+		 // Created a GlideRecord object for fetching item details
+		var itemDetailsGR = new GlideRecord(table_name);
+		if (itemDetailsGR.get(targetSysId)){
 			data.obj={
-				sys_id:itemDetails.getValue('sys_id'),
-				lister:itemDetails.getValue('lister_name'),
-				name:itemDetails.getValue('item_name'),
-				description:itemDetails.getValue('description'),
-				category:itemDetails.getValue('category'),
-				condition:itemDetails.getValue('condition'),
-				item_status:itemDetails.getValue('status'),
-				image_url: itemDetails.getDisplayValue('image'),
-				location: itemDetails.getDisplayValue('lister_name.location'),
-				lister_comment: itemDetails.lister_comment.getJournalEntry(-1),
+				sys_id:itemDetailsGR.getValue('sys_id'),
+				lister:itemDetailsGR.getValue('lister_name'),
+				name:itemDetailsGR.getValue('item_name'),
+				lister_comment: itemDetailsGR.getElement('lister_comment') ,
+				number:itemDetailsGR.getValue('number'),//added
+				description:itemDetailsGR.getValue('description'),
+				category:itemDetailsGR.getValue('category'),
+				condition:itemDetailsGR.getValue('condition'),
+				item_status:itemDetailsGR.getValue('status'),
+				image_url: itemDetailsGR.getDisplayValue('image'),
+				location: itemDetailsGR.getDisplayValue('lister_name.location'),
 				// accessing field label
-				lister_label:itemDetails['lister_name'].getLabel(),
-				listerLocation_label:itemDetails['location'].getLabel(),
-				itemStatus_label:itemDetails['status'].getLabel(),
-				item_condition_label:itemDetails['condition'].getLabel(),
-				item_category_label:itemDetails['category'].getLabel(),
+				lister_label:itemDetailsGR['lister_name'].getLabel(),
+				listerLocation_label:itemDetailsGR['location'].getLabel(),
+				itemStatus_label:itemDetailsGR['status'].getLabel(),
+				item_condition_label:itemDetailsGR['condition'].getLabel(),
+				item_category_label:itemDetailsGR['category'].getLabel(),
 			};
 			
 			console.log(data.obj);
 
-			var choice = new GlideRecord('sys_choice');
-			choice.addQuery('name', 'x_1383179_tradenow_item_list');
-			choice.addQuery('element', 'status');
-			choice.addQuery('value', data.obj.item_status);
-			choice.query();
-			if (choice.next()) {
-				var selectedLabel = choice.getValue('label');
+			// Fetch the display label for the item's current status from the sys_choice table
+			var choiceGR = new GlideRecord('sys_choice');
+			choiceGR.addQuery('name', 'x_1383179_tradenow_item_list');
+			choiceGR.addQuery('element', 'status');
+			choiceGR.addQuery('value', data.obj.item_status);
+			choiceGR.query();
+			if (choiceGR.next()) {
+				var selectedLabel = choiceGR.getValue('label');
 				data.obj.item_status_label=selectedLabel;
 				//console.log('Selected Label: ' + selectedLabel);
 			}
 
+			// Get the name of the category from the 'x_1383179_tradenow_category_lookup' table
 			var category_sys_id=data.obj.category;
-			var catGR = new GlideRecord('x_1383179_tradenow_category_lookup');
-			catGR.addQuery('sys_id', category_sys_id);
-			catGR.query();
-			if (catGR.next()) {
-				var categoryName = catGR.getDisplayValue('name');
+			var categoryGR = new GlideRecord('x_1383179_tradenow_category_lookup');
+			categoryGR.addQuery('sys_id', category_sys_id);
+			categoryGR.query();
+			if (categoryGR.next()) {
+				var categoryName = categoryGR.getDisplayValue('name');
 				data.obj.category = categoryName;
 			}
 
-			//console.log("######Status##### "+data.obj.item_status);
-
-			/*var attachmentGr = new GlideRecord('sys_attachment');
-		attachmentGr.addQuery('table_sys_id', targetSysId);
-		attachmentGr.query();
-
-		if (attachmentGr.next()) {
-			data.obj.image_url = '/sys_attachment.do?sys_id=' + attachmentGr.getValue('sys_id');
-		}*/
-
-
+			// Get the lister's user record
 			var userId = data.obj.lister;
-
 			var userGR = new GlideRecord('sys_user');
 			userGR.addQuery('sys_id', userId);
 			userGR.query();
@@ -1009,7 +839,6 @@ li&gt;i{
 						data.obj.latitude = locationGR.getValue('latitude');
 						data.obj.longitude = locationGR.getValue('longitude');
 					}
-					//console.log("Lat: " + data.obj.latitude);
 				}
 				console.log("userGR="+userGR);
 				data.obj.lister=fullName;
@@ -1017,14 +846,14 @@ li&gt;i{
 			//data.details.push(obj);
 		}
 
-		// logged in user longitude, latitude
-		var userRecord = new GlideRecord('sys_user');
-		userRecord.addQuery('sys_id', gs.getUserID());
-		userRecord.query();
+		// Get the logged-in user's latitude and longitude
+		var userRecordGR = new GlideRecord('sys_user');
+		userRecordGR.addQuery('sys_id', gs.getUserID());
+		userRecordGR.query();
 
-		if (userRecord.next()) {
+		if (userRecordGR.next()) {
 			//var fullName = userGR;
-			var locId = userRecord.getValue('location');
+			var locId = userRecordGR.getValue('location');
 			if (locId) {
 				var locGR = new GlideRecord('cmn_location');
 				locGR.addQuery('sys_id', locId);
@@ -1037,8 +866,7 @@ li&gt;i{
 			}
 		}
 
-
-		// total viewers
+		// Increment the total number of watchers for the item
 		if(!input){
 			var record = new GlideRecord('x_1383179_tradenow_item_list');
 			if (record.get(data.obj.sys_id)) {
@@ -1051,67 +879,64 @@ li&gt;i{
 		}
 	}
 
+	// Update the item status based on the input provided
 	if (input && input.status) {
-		//console.log("Button clicked="+input.status);
-
+		console.log("Button clicked="+input.status);
 		var itemStatus = new GlideRecordSecure('x_1383179_tradenow_item_list');
 		itemStatus.addQuery('sys_id', targetSysId);
 		itemStatus.query();
 		if (itemStatus.next()) {
 			itemStatus.setValue('status',input.status);
-			var t=itemStatus.getValue('sys_updated_on');
-			var updatedOn = new GlideDateTime(t);
-			console.log("current time="+updatedOn);
-			updatedOn.addSeconds(30);
-			console.log("after time="+updatedOn);
-			itemStatus.setValue('reservation_time_ends_at',updatedOn);
-			//itemStatus.reservation_time_ends_at=updatedOn;
+			console.log("Reservation time: ",input.reservation_date);//Added by Jagriti
+			//itemStatus.setValue('reservation_time_ends_at',input.reservation_date);//Added by Jagriti
 			itemStatus.update();
 		}
-
 		return true;
 	}
 
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
-        <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-06-30 08:08:32</sys_created_on>
-        <sys_id>3d2455a68343c210edb56060ceaad322</sys_id>
-        <sys_mod_count>85</sys_mod_count>
-        <sys_name>Item details widget</sys_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-18 08:54:39</sys_created_on>
+        <sys_id>815b06d483e3c210edb56060ceaad32b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>test_item</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_widget_3d2455a68343c210edb56060ceaad322</sys_update_name>
+        <sys_update_name>sp_widget_815b06d483e3c210edb56060ceaad32b</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-19 06:20:23</sys_updated_on>
+        <sys_updated_on>2024-07-18 08:54:39</sys_updated_on>
         <template><![CDATA[<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
+
 <div class="container">
+  <div id='reservation-timer-modal' class='reservation-timer-modal'>
+    <div class='reservation-modal-content'>
+      <p>Reservation time ends in 00:<span id="timer">30</span></p>
+    </div>
+  </div>
+  <!-- Image section displaying the item's image -->
   <div class="image">
-    <!--<img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt="Nike Shoes">-->
     <img src="{{data.obj.image_url}}" alt="{{ data.obj.name }}">
   </div>
+
   <div class="content">
+    <!-- Item name and separator line -->
     <h1 style="margin-bottom: 0.5rem;" class="poppins-semibold">{{ data.obj.name }}</h1>
     <hr class="line" />
+
+    <!-- Item details header -->
     <h3 class="poppins-light">Item details <i class="fa fa-indent"></i></h3>
+
+    <!-- Item description -->
     <div class="description">
       <p class="poppins-regular">{{ data.obj.description }}</p>
     </div>
-    <!--<ul class="features">
 
-      <li class="poppins-regular"><i class="fas fa-user"></i> {{data.obj.lister}}</li>
-      <li class="poppins-regular"><i class="fas fa-map-marker-alt"></i> {{data.obj.location}}</li>
-      <li class="poppins-regular"><i class="fas fa-check-circle"></i> {{data.obj.item_status_label.charAt(0).toUpperCase() + data.obj.item_status_label.slice(1)}}</li>
-      <li class="poppins-regular"><i class="fas fa-clipboard-check"></i> {{data.obj.condition.charAt(0).toUpperCase()+data.obj.condition.slice(1)}}</li>
-      <li class="poppins-regular"><i class="fas fa-tags"></i> {{data.obj.category.charAt(0).toUpperCase() + data.obj.category.slice(1)}}</li>
-      <li class="poppins-regular"><i class="fas fa-route"></i> {{c.distance }} KM away</li>
-
-    </ul>-->
-    
+    <!-- Item features list -->
     <ul class="features">
       <li class="poppins-regular"><i class="fas fa-user" title="{{data.obj.lister_label}}"></i> {{data.obj.lister}}</li>
       <li class="poppins-regular"><i class="fas fa-map-marker-alt" title="{{data.obj.listerLocation_label}}"></i> {{data.obj.location}}</li>
@@ -1120,66 +945,33 @@ li&gt;i{
       <li class="poppins-regular"><i class="fas fa-tags" title="{{data.obj.item_category_label}}"></i> {{data.obj.category.charAt(0).toUpperCase() + data.obj.category.slice(1)}}</li>
       <li class="poppins-regular"><i class="fas fa-route" title="Distance"></i> {{c.distance }} KM away</li>
     </ul>
-  
-  
-   <!-- <div class="actions">
-      <button ng-if="data.obj.item_status == 'available' || data.obj.item_status == 'reserved'" ng-click="c.Itembutton('readypickup')" class="claim-item">Claim Item</button>
-      <button ng-show="data.obj.item_status == 'available'" ng-click="c.Itembutton('reserved')" class="reserve">Reserve</button>
-      <button ng-show="data.obj.item_status == 'reserved'" ng-click="c.Itembutton('available')" class="cancel">Cancel Reservation</button>
-      <h2 ng-if="data.obj.item_status == 'claimed'" class="claimed">Item has been Claimed </h2>
-      <button ng-if="data.obj.item_status == 'readypickup'" ng-click="c.Itembutton('claimed')" class="claim-item">Confirm Pick-Up</button>
-      
-  </div>-->
-    
-     <div class="actions">
+
+    <!-- Action buttons based on item status -->
+    <div class="actions">
       <button ng-if="data.obj.item_status == 'available' || data.obj.item_status == 'reserved'" ng-click="c.Itembutton('readypickup')" class="claim-item">Claim Item</button>
       <button ng-if="data.obj.item_status == 'available'" ng-click="c.Itembutton('reserved')" class="reserve">Reserve</button>
       <button ng-show="data.obj.item_status == 'reserved'" ng-click="c.Itembutton('available')" class="cancel">Cancel Reservation</button>
-      <!--<h2 ng-if="data.obj.item_status == 'claimed'" class="claimed">Item has been Claimed </h2>-->
-      <!--<button ng-if="data.obj.item_status == 'readypickup'" ng-click="c.Itembutton('claimed')" class="claim-item">Confirm Pick-Up</button>-->
-       <button ng-show="data.obj.item_status == 'readypickup'" ng-click="c.Itembutton('claimed')" class="claim-item" id="confirmButton" >Confirm Pick-Up</button>
-       <!--<button class="confirm-btn" id="confirmButton">Confirm</button>-->
-       
+      <button ng-show="data.obj.item_status == 'readypickup'" ng-click="c.Itembutton('claimed')" class="claim-item" id="confirmButton">Confirm Pick-Up</button>
       <button ng-click="c.showMap()" class="viewmap popUpBtn" data-modal="myModal1">View on Map</button>
-      
+    </div>
   </div>
-  <!--<p>
-    {{data.obj.latitude}} {{data.obj.longitude}}
-  </p>-->
-  <!--<p> Distance is 
-    {{c.distance }} KM
-  </p>-->
-    
-</div>
-  
 </div>
 
-<div>
-  <!--<iframe ng-show="c.mapVisible" src="https://maps.google.com/maps?q=50.085273, 14.40448&z=15&output=embed" frameborder="0" style="border:0"></iframe>-->
- <!-- <iframe ng-show="c.mapVisible" ng-src="{{detailFrame}}"></iframe>-->
-</div>
-
-
-<!-- Trigger/Open The Modal -->
-<!--<button class="popUpBtn" data-modal="myModal1">Open Modal1</button>-->
-
-<!-- The Modal1 -->
+<!-- Modal for displaying the map -->
 <div id="myModal1" class="modal">
-
-  <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">×</span>
       <div>
         <div class="map">
-          <iframe src="{{detailFrame}}" frameborder="0" style="border:0"></iframe> </div>
-        <!--   <iframe ng-show="c.mapVisible" src="https://maps.google.com/maps?q=12.91364833965512, 77.64477799697403&z=15&output=embed"></iframe> -->
+          <iframe src="{{detailFrame}}" frameborder="0" style="border:0"></iframe>
+        </div>
       </div>
     </div>
   </div>
-
 </div>
-<!--Dialouge box code for donation-->
+
+<!-- Dialog box for donation prompt -->
 <div class="overlay" id="popupOverlay">
   <div class="popup">
     <span class="close-btn" id="closePopup">&times;</span>
@@ -1192,27 +984,32 @@ li&gt;i{
   </div>
 </div>
 
+
+
 <script>
+  // Show the donation popup when the confirm button is clicked
   document.getElementById('confirmButton').onclick = function() {
     document.getElementById('popupOverlay').style.display = 'flex';
   };
 
+  // Close the donation popup when the close button is clicked
   document.getElementById('closePopup').onclick = function() {
     document.getElementById('popupOverlay').style.display = 'none';
   };
 
+  // Redirect to the charity organization page when 'Yes' is clicked
   document.getElementById('donateYes').onclick = function() {
     window.location.href = '/tradenow?id=charity_organization';
   };
 
+  // Close the donation popup when 'No' is clicked
   document.getElementById('donateNo').onclick = function() {
     document.getElementById('popupOverlay').style.display = 'none';
   };
 </script>
 
+<!-- Load FontAwesome icons -->
 <script src="https://kit.fontawesome.com/ebe15838fd.js" crossorigin="anonymous"></script>
-
-<!--No edit-->
-<!--No edit-->]]></template>
+]]></template>
     </sp_widget>
 </record_update>

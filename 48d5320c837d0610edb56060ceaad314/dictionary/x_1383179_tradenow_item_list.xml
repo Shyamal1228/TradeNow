@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="205187c883bd0610edb56060ceaad3cf" label="Item" max_length="40" name="x_1383179_tradenow_item_list" type="collection">
+    <element audit="true" db_object_id="205187c883bd0610edb56060ceaad3cf" label="Item" max_length="40" name="x_1383179_tradenow_item_list" type="collection">
         <element label="Active" max_length="40" name="active" type="boolean"/>
         <element label="Category" max_length="32" name="category" reference="x_1383179_tradenow_category_lookup" type="reference"/>
         <element label="Claimer" max_length="32" name="claimer" reference="sys_user" type="reference"/>

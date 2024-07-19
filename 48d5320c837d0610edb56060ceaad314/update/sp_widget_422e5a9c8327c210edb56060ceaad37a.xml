@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $window, $http) {
+    var c = this;
+    var liveProfiles = {};
+    liveProfiles[$scope.user] = {
+        userID: $scope.user,
+        name: $scope.user.name,
+        initials: $window.NOW.user_initials
+    };
+    if ($window.NOW.user_avatar) {
+        liveProfiles[$scope.user].userImage = $window.NOW.user_avatar;
+    }
+
+    c.getLiveProfileByUserId = function(userId) {
+        return liveProfiles[userId];
+    };
+
+    var pending = {};
+
+    //Little caching implementation to make sure we only get a given user's profile once.
+    c.hasLiveProfile = function(userId) {
+        if (!userId)
+            return false;
+
+        if (liveProfiles[userId])
+            return true;
+
+        if (pending[userId])
+            return false;
+
+        pending[userId] = $http.get('/api/now/live/profiles/sys_user.' + userId).then(function(response) {
+            liveProfiles[userId] = {
+                userID: userId,
+                name: response.data.result.name,
+                initials: buildInitials(response.data.result.name),
+                avatar: response.data.result.avatar
+            };
+        });
+        return false;
+    };
+
+    c.getUser = function(userName) {
+        return buildInitials(userName);
+    };
+
+    function buildInitials(name) {
+        if (!name)
+            return "--";
+
+        var initialMatchRegex = /^[A-ZÀ-Ÿ]|^[\u3040-\u309f]|^[\u30a0-\u30ff]|^[\uff66-\uff9f]|^[\u4e00-\u9faf]/;
+        // Included Hiragana, Katakana, CJK Unified Ideographs and Halfwidth and Fullwidth Forms Blocks 
+        // Hiragana -> Japanese words, Katakana -> foreign words
+        // CJK Unified Ideographs -> modern Chinese, Japanese, Korean and Vietnamese characters 
+
+        var initials = name.split(" ").map(function(word) {
+            return word.toUpperCase();
+        }).filter(function(word) {
+            return word.match(initialMatchRegex);
+        }).map(function(word) {
+            return word.substring(0, 1);
+        }).join("");
+
+        return (initials.length > 3) ? initials.substr(0, 3) : initials;
+    }
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>$background-primary: #ffffff !default;
+$border-tertiary: #DADDE2 !default;
+$border-primary: #8790A1 !default;
+$font-size-h4: 18px !default;
+$sp-space--lg: 16px !default;
+$sp-space--xl: 24px !default;
+$gray-light: #656E81 !default;
+$headings-font-weight: 600 !default;
+$font-size-h6: 14px !default;
+
+.comment-timeline {
+  position: relative;
+  padding: $sp-space--xl 0px;
+  list-style: none;
+  width: 100%;
+  background-color: $background-primary;
+
+  .comment-timeline-item {
+    display: flex;
+    margin-bottom: 48px;
+    width: 100%;
+
+    .comment-timeline-badge {
+      z-index: 1;
+      margin-top: $sp-space--lg;
+    }
+
+    .comment-timeline-badge-initials {
+      height: 4.8rem;
+      width: 4.8rem;
+      border-radius: 50%;
+      border: 0.1rem solid $border-primary;
+      font-weight: bold;
+      text-align: center;
+
+      .badge-initials {
+        font-size: $font-size-h4;
+        line-height: 4.8rem;
+      }
+    }
+
+    .badge-initial-background {
+      background-color: $background-primary;
+    }
+
+    .comment-timeline-panel {
+      display: flex;
+      padding-left: 20px;
+      width: 100%;
+
+      .comment-timeline-panel-inner {
+        display: flex;
+        flex-direction: column;
+        padding: $sp-space--lg $sp-space--xl;
+        width: 100%;
+        border: 0.1rem solid $border-tertiary;
+        border-radius: 0.4rem;
+        -webkit-box-shadow: .1rem .1rem .3rem rgba(0, 0, 0, .1);
+        box-shadow: .1rem .1rem .3rem rgba(0, 0, 0, .1);
+
+        .comment-timeline-heading {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          margin-bottom: $sp-space--lg;
+
+          .comment-heading-title {
+            font-size: $font-size-h4;
+          }
+        }
+
+        p {
+          margin-bottom: 0px;
+        }
+      }
+
+      &amp;:before {
+        content: " ";
+        position: absolute;
+        left: 5.3rem;
+        margin-top: 2.6rem;
+        border-top: 1.5rem solid transparent;
+        border-right: 1.5rem solid $border-tertiary;
+        border-bottom: 1.5rem solid transparent;
+      }
+
+      &amp;:after {
+        content: " ";
+        position: absolute;
+        left: 5.4rem;
+        margin-top: 2.6rem;
+        border-top: 1.5rem solid transparent;
+        border-right: 1.5rem solid $background-primary;
+        border-bottom: 1.5rem solid transparent;
+      }
+    }
+
+    &amp;:before {
+      content: "";
+      position: absolute;
+      top: 5rem;
+      bottom: 5rem;
+      left: 2.3rem;
+      border-right: 0.2rem $border-tertiary solid;
+    }
+  }
+
+  .comment-timeline-badge-start {
+    height: 48px;
+    width: 48px;
+    background-color: $success;
+    position: relative;
+    border-radius: 50%;
+
+    span {
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: $font-size-h6;
+      color: $text-color;
+    }
+  }
+}
+
+
+.skeleton-loading {
+  $loader-line-height: 20px;
+
+  .skeleton-loader {
+    animation: progress 2s ease-in-out infinite;
+    background: rgb(239, 241, 246) no-repeat;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    background-size: 200px 100%;
+    border-radius: 4px;
+  }
+
+  .name-loader {
+    height: $loader-line-height;
+    width: 20%;
+  }
+
+  .time-loader {
+    height: $loader-line-height;
+    width: 5%
+  }
+
+  .comment-loader {
+    height: $loader-line-height;
+    width: 70%
+  }
+
+  @keyframes progress {
+    0% {
+      background-position: -200px 0;
+    }
+
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+}
+
+.empty-state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 64px;
+  background-color: $background-primary;
+  
+  i {
+    font-size: 4.8rem;
+    color: $gray-light;
+  }
+  span {
+    font-size: $font-size-h4;
+    font-weight: $headings-font-weight;
+  }
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>tn_comments</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>TN Comments</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    data.loading = input && input.loading ? input.loading : options.loading;
+    data.emptyState = input && input.emptyState ? input.emptyState : options.emptyState;
+    data.comments = input && input.comments ? input.comments : options.comments;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-18 10:16:54</sys_created_on>
+        <sys_id>422e5a9c8327c210edb56060ceaad37a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TN Comments</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_422e5a9c8327c210edb56060ceaad37a</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-18 10:16:54</sys_updated_on>
+        <template><![CDATA[<ul role="list" class="comment-timeline" aria-label="${Ticket history}" ng-if="data.loading || (data.comments && data.comments.length > 0)">
+  <li class="comment-timeline-item" ng-repeat="item in data.comments" ng-if="!data.loading">
+    <div class="comment-timeline-badge">
+      <div class="comment-timeline-badge-initials badge-initial-background" ng-if="!c.hasLiveProfile(item.user_sysId)">
+        <span class="badge-initials">{{c.getUser(item.user_name)}}</span>
+      </div>
+      <sn-avatar-once ng-if="c.hasLiveProfile(item.user_sysId)" primary="c.getLiveProfileByUserId(item.user_sysId)" class="avatar-large" show-presence="true" enable-context-menu="false"/>
+    </div>
+    <div class="comment-timeline-panel">
+      <div class="comment-timeline-panel-inner">
+        <div class="comment-timeline-heading">
+          <div class="comment-heading-title">{{::item.user_name}}</div>
+          <small class="text-muted">
+            <span class="glyphicon glyphicon-time" aria-hidden="true"/>
+            <sn-time-ago timestamp="item.created_on"></sn-time-ago>
+          </small>
+        </div>
+        <p>{{::item.comment}}</p>
+      </div>
+    </div>
+  </li>
+  <li class="comment-timeline-item skeleton-loading" ng-repeat="item in [1,2]" ng-if="data.loading">
+    <div class="comment-timeline-badge skeleton-loader comment-timeline-badge-initials"/>
+    <div class="comment-timeline-panel">
+      <div class="comment-timeline-panel-inner">
+        <div class="comment-timeline-heading">
+          <div class="skeleton-loader name-loader" />
+          <small class="skeleton-loader time-loader"/>
+        </div>
+        <p class="skeleton-loader comment-loader"/>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="comment-timeline-badge comment-timeline-badge-start">
+      <span>${Start}</span>
+    </div>
+  </li>
+</ul>
+<div ng-if="data.emptyState && !data.loading && (!data.comments || (data.comments && data.comments.length == 0))" class="empty-state-container">
+  <i class="fa fa-comments-o"/>
+  <span>${No comments to show}</span>
+</div>]]></template>
+    </sp_widget>
+</record_update>

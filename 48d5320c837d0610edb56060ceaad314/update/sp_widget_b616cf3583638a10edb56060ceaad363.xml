@@ -9,6 +9,7 @@
 	var totalItems=0;
 	var index = 0;
 	var itemsLoaded = 0;
+	c.data.filteredItems = [];
 
 	// Function to get the total number of items
 	c.getTotalItems = function() {
@@ -36,7 +37,7 @@
 		
 		// Prepare query parameters for the API call
 		var params = [
-			'sysparm_fields=sys_id,lister_name,item_name,description,category,image,total_watchers,sys_created_on',
+			'sysparm_fields=sys_id,lister_name,item_name,description,category,image,total_watchers,sys_created_on,lister_name.location,lister_name.location.latitude,lister_name.location.longitude',
 			'sysparm_offset=' + index * itemsLoaded,
 			'sysparm_limit'+limit
 		].join('&');
@@ -60,6 +61,15 @@
 			}
 			console.log("count="+count);
 			data=newData;
+			//var jsonData=JSON.stringify(newData);
+			
+			for(var l=0;l<len;l++){
+				var Myobj=newData[l];
+				//var lati=Myobj["lister_name.location.latitude"];
+				//var longi=Myobj["lister_name.location.longitude"]
+				//console.log(lati+" "+longi);
+			}
+			//fetchLocationDetails
 			//end
 
 			// Ensure category is correctly assigned
@@ -132,6 +142,63 @@
 		$scope.searchKeyword = $scope.searchText;
 		document.getElementById('search-bar').value = '';
 	};
+	
+	
+	 // Fetch items and apply the distance filter
+    c.updateFilter = function() {
+        var distanceFilter = $scope.selectedDistance;
+
+        if (!distanceFilter) {
+            // If no distance filter is selected, display all items
+            c.data.filteredItems = c.data.allItems;
+            return;
+        }
+
+        var filteredItems = [];
+
+        for (var i = 0; i < c.data.allItems.length; i++) {
+            var item = c.data.allItems[i];
+            var distance = item.distance; // Ensure item.distance is in kilometers
+
+            switch (distanceFilter) {
+                case 'below500':
+                    if (distance < 500) filteredItems.push(item);
+                    break;
+                case 'below1000':
+                    if (distance < 1000) filteredItems.push(item);
+                    break;
+                case '500to1000':
+                    if (distance >= 500 && distance <= 1000) filteredItems.push(item);
+                    break;
+                case 'below5000':
+                    if (distance < 5000) filteredItems.push(item);
+                    break;
+                case 'other':
+                    if (distance >= 5000) filteredItems.push(item);
+                    break;
+            }
+        }
+
+        c.data.allItems = filteredItems;
+    };
+	
+	c.fetchLocationDetails = function(locationSysId) {
+        var ga = new GlideAjax('LocationUtils'); // Name of the Script Include
+        ga.addParam('sys_id', locationSysId);
+        ga.getXMLAnswer(function(response) {
+            var locationDetails = JSON.parse(response);
+            if (locationDetails) {
+                var latitude = locationDetails.latitude;
+                var longitude = locationDetails.longitude;
+                console.log('Latitude:', latitude);
+                console.log('Longitude:', longitude);
+                
+                // You can now use these details for your logic
+            } else {
+                console.error('Failed to get location details');
+            }
+        });
+    };
 }
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -655,10 +722,10 @@ margin-bottom: 20px;
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>item_list</id>
+        <id>item_list_with_distance</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>Item List</name>
+        <name>Item List with Distance</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -685,21 +752,42 @@ margin-bottom: 20px;
     /* Add the category object to the category array */
     data.categoryArray.push(catObj);
   }
+	
+	// logged in user longitude, latitude
+		var userRecord = new GlideRecord('sys_user');
+		userRecord.addQuery('sys_id', gs.getUserID());
+		userRecord.query();
+
+		if (userRecord.next()) {
+			//var fullName = userGR;
+			var locId = userRecord.getValue('location');
+			if (locId) {
+				var locGR = new GlideRecord('cmn_location');
+				locGR.addQuery('sys_id', locId);
+				locGR.query();
+				if (locGR.next()) {
+					data.loggedInUserLatitude = locGR.getValue('latitude');
+					data.loggedInUserLongitude = locGR.getValue('longitude');
+				}
+				console.log("loggedd in user Lat: " + data.loggedInUserLatitude);
+				console.log("loggedd in user Lat: " + data.loggedInUserLongitude);
+			}
+		}
 })();
 ]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-05-24 09:59:24</sys_created_on>
-        <sys_id>cdba4b2e83568210edb56060ceaad37d</sys_id>
-        <sys_mod_count>239</sys_mod_count>
-        <sys_name>Item List</sys_name>
+        <sys_created_on>2024-07-23 05:02:21</sys_created_on>
+        <sys_id>b616cf3583638a10edb56060ceaad363</sys_id>
+        <sys_mod_count>49</sys_mod_count>
+        <sys_name>Item List with Distance</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_widget_cdba4b2e83568210edb56060ceaad37d</sys_update_name>
+        <sys_update_name>sp_widget_b616cf3583638a10edb56060ceaad363</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-07-22 07:03:43</sys_updated_on>
+        <sys_updated_on>2024-07-23 07:13:57</sys_updated_on>
         <template><![CDATA[<!-- Importing the Poppins font from Google Fonts -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
@@ -722,6 +810,18 @@ margin-bottom: 20px;
         <select class="select" ng-model="selectedCategory" ng-options="category.name for category in data.categoryArray">
             <option value="">Select Category</option>
         </select>
+    </div>
+    
+    <!-- Dropdown for selecting item distance -->
+    <div class="select-dropdown poppins-regular">
+      <select class="select" ng-model="selectedDistance" ng-change="c.updateFilter()">
+          <option value="">Select Distance</option>
+          <option value="500">Below 500 km</option>
+          <option value="1000">Below 1000 km</option>
+          <option value="2000">Below 2000 km</option>
+          <option value="5000">Below 5000 km</option>
+          <option value="other">Other</option>
+      </select>
     </div>
     
     <!-- Search box for searching items -->

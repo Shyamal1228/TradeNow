@@ -1039,7 +1039,7 @@ li&gt;i{
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>item_details_widget</id>
+        <id>new_item_details_widget</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {
   $(document).ready(function(){
@@ -1067,7 +1067,7 @@ li&gt;i{
 })
 
 }]]></link>
-        <name>Item details widget</name>
+        <name>New Item details Widget</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -1285,16 +1285,16 @@ li&gt;i{
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-06-30 08:08:32</sys_created_on>
-        <sys_id>3d2455a68343c210edb56060ceaad322</sys_id>
-        <sys_mod_count>240</sys_mod_count>
-        <sys_name>Item details widget</sys_name>
+        <sys_created_on>2024-07-23 07:24:21</sys_created_on>
+        <sys_id>43962f7183678a10edb56060ceaad362</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Item details Widget</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_widget_3d2455a68343c210edb56060ceaad322</sys_update_name>
-        <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-22 09:03:40</sys_updated_on>
+        <sys_update_name>sp_widget_43962f7183678a10edb56060ceaad362</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-23 07:24:21</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>

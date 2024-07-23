@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-22 07:13:59</sys_created_on>
+        <sys_id>f69a166583af0a10edb56060ceaad312</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383179_tradenow_item_list.x_1383179_tradenow.item_list_user</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_security_acl display_value="x_1383179_tradenow_item_list">89158fcc83bd0610edb56060ceaad310</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_f69a166583af0a10edb56060ceaad312</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-22 07:13:59</sys_updated_on>
+        <sys_user_role display_value="x_1383179_tradenow.item_list_user" name="x_1383179_tradenow.item_list_user">a4158f8c83bd0610edb56060ceaad37b</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sys_security_acl_role_f69a166583af0a10edb56060ceaad312</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>shyamal</sys_created_by><sys_created_on>2024-07-22 07:13:59</sys_created_on><sys_id>f69a166583af0a10edb56060ceaad312</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1383179_tradenow_item_list.x_1383179_tradenow.item_list_user</sys_name><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_security_acl display_value="x_1383179_tradenow_item_list">89158fcc83bd0610edb56060ceaad310</sys_security_acl><sys_update_name>sys_security_acl_role_f69a166583af0a10edb56060ceaad312</sys_update_name><sys_updated_by>shyamal</sys_updated_by><sys_updated_on>2024-07-22 07:13:59</sys_updated_on><sys_user_role display_value="x_1383179_tradenow.item_list_user" name="x_1383179_tradenow.item_list_user">a4158f8c83bd0610edb56060ceaad37b</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-1681418290</payload_hash>
+        <record_name>x_1383179_tradenow_item_list.x_1383179_tradenow.item_list_user</record_name>
+        <reverted_from/>
+        <source>205a56e883670610edb56060ceaad358</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-22 07:13:59</sys_created_on>
+        <sys_id>61aada6583af0a10edb56060ceaad3d7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190d94a3da00000001</sys_recorded_at>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-22 07:13:59</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>a5aada65b8af0a108e040e9583c522d6</update_guid>
+        <update_guid_history>a5aada65b8af0a108e040e9583c522d6:-1681418290</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_1383179_tradenow_item_list.x_1383179_tradenow.item_list_user">6f7066ad83af0a10edb56060ceaad3c8</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-22 07:39:31</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>0da8da763e0d418689f05ac756989821</sys_id>
+        <sys_metadata>f69a166583af0a10edb56060ceaad312</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1383179_tradenow_item_list.x_1383179_tradenow.item_list_user</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent display_value="x_1383179_tradenow_item_list">89158fcc83bd0610edb56060ceaad310</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_f69a166583af0a10edb56060ceaad312</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_f69a166583af0a10edb56060ceaad312">61aada6583af0a10edb56060ceaad3d7</sys_update_version>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-22 07:39:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

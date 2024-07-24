@@ -9,6 +9,7 @@
 	var totalItems=0;
 	var index = 0;
 	var itemsLoaded = 0;
+	var count=0;
 	c.data.filteredItems = [];
 
 	// Function to get the total number of items
@@ -51,6 +52,19 @@
 			var len=res.data.result.length;
 			var newData=[];
 			var count=0;
+			
+			for(var k=0;k<len;k++){
+				var ob=data[k];
+				//var latitude=JSON.stringify(ob["lister_name.location.latitude"]);
+				//var longitude=JSON.stringify(ob["lister_name.location.longitude"]);
+				//console.log("latitude="+latitude);
+				//console.log("longitude="+longitude);
+				//console.log("latitude="+(ob["lister_name.location.latitude"]));
+				//console.log("longitude="+(ob["lister_name.location.longitude"]));
+				var dist=calculateDistance(ob["lister_name.location.latitude"],ob["lister_name.location.longitude"]);
+				console.log("distance="+dist);
+				data[k].distance=dist;
+			}
 			for(var k=0;k<len;k++){
 				console.log(typeof JSON.stringify(data[k].lister_name.value)+" "+typeof c.data.user);
 				if(data[k].lister_name.value!=String(c.data.user)){
@@ -60,14 +74,13 @@
 				}
 			}
 			console.log("count="+count);
+			console.log("typeof data="+ data);
+			console.log("typeof newdata="+ newData);
 			data=newData;
 			//var jsonData=JSON.stringify(newData);
-			
+			console.log("length="+data.length);
 			for(var l=0;l<len;l++){
-				var Myobj=newData[l];
-				//var lati=Myobj["lister_name.location.latitude"];
-				//var longi=Myobj["lister_name.location.longitude"]
-				//console.log(lati+" "+longi);
+				console.log(JSON.stringify(data[l]));
 			}
 			//fetchLocationDetails
 			//end
@@ -155,50 +168,64 @@
         }
 
         var filteredItems = [];
-
-        for (var i = 0; i < c.data.allItems.length; i++) {
+				var x=0;
+        for (var i = 0; i < 17; i++) {
             var item = c.data.allItems[i];
             var distance = item.distance; // Ensure item.distance is in kilometers
 
-            switch (distanceFilter) {
-                case 'below500':
+           switch (distanceFilter) {
+                case '500':
                     if (distance < 500) filteredItems.push(item);
                     break;
-                case 'below1000':
+                case '1000':
                     if (distance < 1000) filteredItems.push(item);
                     break;
-                case '500to1000':
-                    if (distance >= 500 && distance <= 1000) filteredItems.push(item);
+                case '2000':
+                    if (distance<2000) filteredItems.push(item);
                     break;
-                case 'below5000':
-                    if (distance < 5000) filteredItems.push(item);
+                case '5000':
+                    if (distance < 5000) {filteredItems.push(item);
+																					x++;
+																				 }
                     break;
                 case 'other':
                     if (distance >= 5000) filteredItems.push(item);
                     break;
             }
+					//console.log('Filtered item='+item.distance);
+					//filteredItems.push(item);
         }
-
+			console.log("value of x="+x);
+				console.log('Filtered item='+JSON.stringify(filteredItems));
         c.data.allItems = filteredItems;
     };
 	
-	c.fetchLocationDetails = function(locationSysId) {
-        var ga = new GlideAjax('LocationUtils'); // Name of the Script Include
-        ga.addParam('sys_id', locationSysId);
-        ga.getXMLAnswer(function(response) {
-            var locationDetails = JSON.parse(response);
-            if (locationDetails) {
-                var latitude = locationDetails.latitude;
-                var longitude = locationDetails.longitude;
-                console.log('Latitude:', latitude);
-                console.log('Longitude:', longitude);
-                
-                // You can now use these details for your logic
-            } else {
-                console.error('Failed to get location details');
-            }
-        });
-    };
+	
+	var calculateDistance=function(latitude,longitude){
+	var lat1 = latitude;
+	var lng1 = longitude;
+	var lat2 = c.data.loggedInUserLatitude;
+	var lng2 = c.data.loggedInUserLongitude;
+	console.log( lat1+" "+lng1+" "+ lat2+" "+lng2);
+
+	// Haversine formula
+	var toRadians = function(degrees) {
+		return degrees * (Math.PI / 180);
+	};
+
+	var R = 6371; // Earth's radius in km
+	var dLat = toRadians(lat2 - lat1);
+	var dLng = toRadians(lng2 - lng1);
+	var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+			Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+			Math.sin(dLng / 2) * Math.sin(dLng / 2);
+	var c1 = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+	var d = R * c1; // Distance in km
+
+	var distance = Math.floor(d);
+		return distance;
+	}
+
 }
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -780,14 +807,14 @@ margin-bottom: 20px;
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-07-23 05:02:21</sys_created_on>
         <sys_id>b616cf3583638a10edb56060ceaad363</sys_id>
-        <sys_mod_count>49</sys_mod_count>
+        <sys_mod_count>152</sys_mod_count>
         <sys_name>Item List with Distance</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_b616cf3583638a10edb56060ceaad363</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-07-23 07:13:57</sys_updated_on>
+        <sys_updated_on>2024-07-24 05:25:12</sys_updated_on>
         <template><![CDATA[<!-- Importing the Poppins font from Google Fonts -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');

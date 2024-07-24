@@ -1,29 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope, spUtil, $http) {
+        <client_script><![CDATA[api.controller = function($scope, spUtil, $http, $location) {
 	var c = this;
 
 	// Initialize scope variables
-	$scope.currentOption = 3;
+	$scope.currentOption = -1;
 	$scope.currentSubOption = 0;
 	$scope.availability = $scope.data.options[0][0];
-	$scope.optionsMenu = [].concat($scope.data.options[3]);
+	$scope.optionsMenu = [].concat($scope.data.options[0]);
 	$scope.searchKeyword = '';
 	$scope.tempSearchKeyword = '';
 	$scope.sortOrder = 'creationTime';
+	$scope.donationSortOrder = 'donation_amount';
 	$scope.donationHistory = [].concat($scope.data.donationHistory);
 	$scope.listedItems = [].concat($scope.data.listedItems);
 	var tempItemArray=[];
+	
+	$scope.handleItemRelocate = function(sys_id){
+		console.log(sys_id);
+		$location.search("id=item_details&table=x_1383179_tradenow_item_list&sys_id="+sys_id);
+		///tradenow?id=item_details&table=x_1383179_tradenow_item_list&sys_id={{::item.sys_id}}
+	}
 
 	$scope.handleSort = function(){
-
-		if($scope.sortOrder === 'creationTime') {
-			$scope.sortOrder = '-creationTime';
-			document.getElementById('arrow').style.transform = 'rotate(90deg)';
-		} else { 
-			$scope.sortOrder = 'creationTime'; 
-			document.getElementById('arrow').style.transform = 'rotate(-90deg)';
+		if($scope.currentOption === 2){
+			if($scope.donationSortOrder === 'donation_amount'){
+				$scope.donationSortOrder = '-donation_amount';
+				document.getElementById('arrow').style.transform = 'rotate(90deg)';
+			} else {
+				$scope.donationSortOrder = 'donation_amount';
+				document.getElementById('arrow').style.transform = 'rotate(-90deg)';
+			}
+		} else {
+			if($scope.sortOrder === 'creationTime') {
+				$scope.sortOrder = '-creationTime';
+				document.getElementById('arrow').style.transform = 'rotate(90deg)';
+			} else { 
+				$scope.sortOrder = 'creationTime'; 
+				document.getElementById('arrow').style.transform = 'rotate(-90deg)';
+			}
 		}
 	}
 
@@ -31,7 +47,7 @@
 	// Debounce the handleItemClick function using Lodash
 	$scope.handleItemClick = function(value) {
 		$scope.currentOption = value;
-		$scope.optionsMenu = [].concat($scope.data.options[value]);
+		$scope.optionsMenu = [].concat($scope.data.options[value+1]);
 		$scope.selectedOption = $scope.optionsMenu[0];
 		$scope.currentSubOption = 0;
 		$scope.availability = $scope.data.options[value][0];
@@ -57,7 +73,9 @@
 			return true;
 		}
 		var keyword = $scope.searchKeyword.toLowerCase();
-		if ($scope.currentOption === 0) {
+		if($scope.currentOption === -1){
+			return item && item.item_name && item.item_name.toLowerCase().includes(keyword);
+		}else if ($scope.currentOption === 0) {
 			return item && item.item_name && item.item_name.toLowerCase().includes(keyword);
 		} else if ($scope.currentOption === 1) {
 			return item && item.item_name && item.item_name.toLowerCase().includes(keyword);
@@ -132,7 +150,7 @@
 			c.server.update().then(function(){
 				params = [
 					'sysparm_query=claimerLIKE'+$scope.data.name,
-					'sysparm_fields=number,item_name,image,lister_name,claimer,status,sys_updated_on',
+					'sysparm_fields=sys_id,number,item_name,image,lister_name,claimer,status,sys_updated_on',
 					'sysparm_offset=' + 0,
 				].join('&');
 				console.log(params);
@@ -172,7 +190,7 @@
 			c.server.update().then(function(){
 				params = [
 					'sysparm_query=claimerLIKE'+$scope.data.name,
-					'sysparm_fields=number,item_name,image,lister_name,claimer,status,sys_updated_on',
+					'sysparm_fields=sys_id,number,item_name,image,lister_name,claimer,status,sys_updated_on',
 					'sysparm_offset=' + 0,
 				].join('&');
 				console.log(params);
@@ -212,7 +230,7 @@
 			c.server.update().then(function(){
 				params = [
 					'sysparm_query=claimerLIKE'+$scope.data.name,
-					'sysparm_fields=number,item_name,image,lister_name,claimer,status,sys_updated_on',
+					'sysparm_fields=sys_id,number,item_name,image,lister_name,claimer,status,sys_updated_on',
 					'sysparm_offset=' + 0,
 				].join('&');
 				console.log(params);
@@ -246,12 +264,12 @@
 			});
 		}
 	};
-	
+
 	//Mobile Specific Functions
 	$scope.handleSortMobile = function(){
 		document.getElementById("sort-dropdown").classList.toggle("show");
 	}
-	
+
 	$scope.handleFilterMobile = function(){
 		console.log(document.getElementById("filter-dropdown").classList);
 		document.getElementById("filter-dropdown").classList.toggle("show");
@@ -573,6 +591,14 @@ hr{
   height: 20%;
 }
 
+.ordered-items-card &gt; .order-logo &gt; .order-image-container &gt; .reservation-timer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #004242;
+  color: white;
+} 
+
 .ordered-items-card:hover{
   transform: translateY(-2px);
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, .5)
@@ -595,6 +621,7 @@ hr{
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .1)
 }
 
@@ -809,7 +836,7 @@ hr{
     height: 50%;
   }
   .dropdown-container .filter-container{
-  	width: 100%;
+    width: 100%;
     height: 50%;
   }
 
@@ -846,7 +873,7 @@ hr{
     border: none;
   }
 
-  
+
 }	</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -865,14 +892,6 @@ hr{
 	/* populate the 'data' object */
 	/* e.g., data.table = $sp.getValue('table'); */
 
-
-	/*Testing*/
-	var currentTime = new Date();
-	var current_Time = currentTime;
-	console.log(current_Time.toString());
-	updatedTime = new Date(currentTime.setTime(currentTime.getTime() + (1*60*1000)));
-	console.log(updatedTime.toString());
-	/**/
 	data.sysUserId = $sp.getParameter("sys_id");
 	data.table = 'x_1383179_tradenow_item_list';
 	data.donationTable = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr';
@@ -880,17 +899,19 @@ hr{
 	data.listedItems = [];
 	data.orderedItems = [];
 	data.donationHistory = [];
+	data.donationHistory1 = [];
 	data.reservedItems = [];
 	data.action = "";
 	data.product = "";
-	data.options= [['All','Available','Claimed','Ready to Pickup'],
+	data.options= [['All'],
+								 ['All','Available','Claimed','Ready to Pickup'],
 								 ['All','Claimed','Ready to Pickup'],
-								 ['All'],
 								 ['All']];
 	var sysUserGR = new GlideRecord('sys_user');
 	var listedItems = new GlideRecord(data.table);
 	var orderedItems = new GlideRecord(data.table);
 	var donationHistory = new GlideRecord(data.donationTable);
+	var donationHistory1 = new GlideAggregate(data.donationTable);
 	if(sysUserGR.get(data.sysUserId)){
 
 		data.name = sysUserGR.getValue('name');
@@ -913,6 +934,7 @@ hr{
 		while(listedItems.next()){
 			if(listedItems.getValue('status') !== 'reserved'){
 				obj = {
+					sys_id: listedItems.getValue('sys_id'),
 					id: listedItems.getValue('number'),
 					item_name: listedItems.getValue('item_name'),
 					item_image: listedItems.getDisplayValue('image'),
@@ -937,6 +959,7 @@ hr{
 		}
 		while(orderedItems.next()){
 			obj = {
+				sys_id: orderedItems.getValue('sys_id'),
 				number: orderedItems.getValue('number'),
 				item_name: orderedItems.getValue('item_name'),
 				image: orderedItems.getValue('image'),
@@ -956,20 +979,26 @@ hr{
 				data.orderedItems.push(obj);
 			} else if(obj.status === 'reserved'){
 				obj.availability = "Reserved";
-				var updated_time = obj.creationTime.split(' ')[1];
-				obj.time = {
-					mm: parseInt(updated_time.split(':')[1]),
-					ss: parseInt(updated_time.split(':')[2])
-				};
-				obj.end_time = {
-					mm: obj.time.mm + 1,
-					ss: obj.time.ss
-				};
+				console.log(obj);
+
+				var currentDate = new Date();
+				currentDate.setHours(currentDate.getHours()+7);
+
+				var [datePart, timePart] = obj.reservationTime.split(' ')
+				var [year, month, day] = datePart.split('-').map(Number);
+				var [hours, minutes, seconds] = timePart.split(':').map(Number);
+				obj.reservationTime = new Date(year,month-1,day,hours,minutes,seconds);
+				obj.currentTime = currentDate;
+				obj.timeDifference = (obj.reservationTime.getTime() - currentDate.getTime())/1000;
+
+
 				obj.button = ["Claim Item","Cancel Reservation"];
+				console.log(obj);
 				data.reservedItems.push(obj);
 			}
 		}
 		count = 1;
+		console.log(data.orderedItems);
 		while(donationHistory.next()){
 			var charity_code = donationHistory.getDisplayValue('x_1383179_tradenow_charity_list');
 			var charityList = new GlideRecord(data.charityTable);
@@ -981,19 +1010,28 @@ hr{
 				charityName = charityList.getValue('charity_name');
 				charityImage = charityList.getDisplayValue('image');
 			}
+
+			var flag=false;
+			for(var i=0; i<data.donationHistory.length; i++) {
+				if(charityName === data.donationHistory[i].donation_charity_name){
+					data.donationHistory[i].donation_amount += parseFloat(donationHistory.getValue('donation_amount'));
+					flag=true;
+					break;
+				}
+			}
+			if(flag) continue;
 			obj = {
 				//donation_transaction_id: donationHistory.getValue('number'),
 				donation_id: donationHistory.getDisplayValue('number'),
 				donation_charity_name: charityName,
 				donation_person: donationHistory.getDisplayValue('sys_user'),
-				donation_amount: donationHistory.getDisplayValue('donation_amount'),
+				donation_amount: parseFloat(donationHistory.getValue('donation_amount')),
 				creationTime: donationHistory.getValue('sys_created_on'),
 				donation_charity_image: charityImage
 			}
 			data.donationHistory.push(obj);
 			count += 1;
 		}
-		console.log(data.reservedItems);
 	}
 
 	if(input){
@@ -1006,7 +1044,7 @@ hr{
 				orderedProducts.update();
 			}
 		}
-		
+
 		else if(input.action === 'Cancel Reservation'){
 			var orderedProducts = new GlideRecord(data.table);
 			orderedProducts.addQuery('number',input.product);
@@ -1016,7 +1054,7 @@ hr{
 				orderedProducts.update();
 			}
 		}
-		
+
 		else if(input.action === 'Claim Item'){
 			var orderedProducts = new GlideRecord(data.table);
 			orderedProducts.addQuery('number',input.product);
@@ -1034,14 +1072,14 @@ hr{
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-24 06:00:04</sys_created_on>
         <sys_id>653d3d2883cb0210edb56060ceaad32e</sys_id>
-        <sys_mod_count>299</sys_mod_count>
+        <sys_mod_count>377</sys_mod_count>
         <sys_name>My_activity</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_653d3d2883cb0210edb56060ceaad32e</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-16 17:57:28</sys_updated_on>
+        <sys_updated_on>2024-07-23 18:41:08</sys_updated_on>
         <template><![CDATA[<div class="profile-page">
   <div class="user-profile poppins">
     <div class="header" >
@@ -1051,10 +1089,10 @@ hr{
   </div>
   <div class="items-container poppins">
     <div class="buttons-container">
+      <button ng-click="debouncedHandleItemClick(-1)" id='reserved-item-button' ng-class="{'active-button':currentOption === -1}">Reserved Items</button>
       <button ng-click="debouncedHandleItemClick(0)" id='listed-item-button' ng-class="{'active-button': currentOption === 0}">Listed Items</button>
       <button ng-click="debouncedHandleItemClick(1)" id='ordered-item-button'ng-class="{'active-button': currentOption === 1}">My Orders</button>
       <button ng-click="debouncedHandleItemClick(2)" id='donation-history-button' ng-class="{'active-button': currentOption === 2}">Donation History</button>
-      <button ng-click="debouncedHandleItemClick(3)" id='reserved-item-button' ng-class="{'active-button':currentOption === 3}">Reserved Items</button>
     </div>
     <div class="buttons-container-mobile poppins">
       <button ng-click="debouncedHandleItemClick(0)" id='listed-item-button'><div class="svg-container">
@@ -1088,12 +1126,16 @@ hr{
       </div>
     </div>
     <div class="card-item-container">
-      <div class="listeditems" ng-show="currentOption === 3">
-        <div class="ordered-items" id="orderedItems" ng-show="currentOption === 3">
+      <div class="listeditems" ng-show="currentOption === -1">
+        <div class="ordered-items" id="orderedItems" ng-show="currentOption === -1">
           <div class="ordered-items-card" ng-repeat='order in data.reservedItems| filter:searchFilter | orderBy:sortOrder track by order.number' ng-show='currentSubOption === 0 || order.availability === availability'>
-            <div class="order-logo"><div class="order-image-container"><img ng-src="sys_attachment.do?sys_id={{order.image}}" lazy-load></div></div>
+            <div class="order-logo">
+              <div class="order-image-container" ng-click='handleItemRelocate(order.sys_id)'>
+                <img ng-src="sys_attachment.do?sys_id={{order.image}}" lazy-load>
+              </div>
+            </div>
             <div class="order-info">
-              <div class="order-name" ng-bind="order.item_name"></div>
+              <div class="order-name" ng-bind="order.item_name" ng-click='handleItemRelocate(order.sys_id)'></div>
               <div class="order-status">Status: <span ng-bind="order.availability" /></div>
               <div class="time-created"> Reservation ends in: <span ng-bind="order.creationTime" /></div>
             </div>
@@ -1115,9 +1157,13 @@ hr{
       <div class="listeditems" ng-show="currentOption === 0">
         <div class="ordered-items" id="listedItems" ng-show="currentOption === 0">
           <div class="ordered-items-card" ng-repeat='order in data.listedItems | filter:searchFilter | orderBy:sortOrder track by order.id' ng-show='currentSubOption === 0 || order.availability === availability'>
-            <div class="order-logo"><div class="order-image-container"><img ng-src={{order.item_image}} lazy-load></div></div>
+            <div class="order-logo">
+              <div class="order-image-container" ng-click='handleItemRelocate(order.sys_id)'>
+                <img ng-src={{order.item_image}} lazy-load>
+              </div>
+            </div>
             <div class="order-info">
-              <div class="order-name" ng-bind="order.item_name"></div>
+              <div class="order-name" ng-bind="order.item_name" ng-click='handleItemRelocate(order.sys_id)'></div>
               <div class="order-status">Status: <span ng-bind="order.availability" /></div>
               <div class="time-created"> Listed on: <span ng-bind="order.creationTime" /></div>
             </div>
@@ -1132,9 +1178,13 @@ hr{
       <div class="listeditems" ng-show="currentOption === 1">
         <div class="ordered-items" id="orderedItems" ng-show="currentOption === 1">
           <div class="ordered-items-card" ng-repeat='order in data.orderedItems| filter:searchFilter | orderBy:sortOrder track by order.number' ng-show='currentSubOption === 0 || order.availability === availability'>
-            <div class="order-logo"><div class="order-image-container"><img ng-src="sys_attachment.do?sys_id={{order.image}}" lazy-load></div></div>
+            <div class="order-logo">
+              <div class="order-image-container" ng-click='handleItemRelocate(order.sys_id)'>
+                <img ng-src="sys_attachment.do?sys_id={{order.image}}" lazy-load>
+              </div>
+            </div>
             <div class="order-info">
-              <div class="order-name" ng-bind="order.item_name"></div>
+              <div class="order-name" ng-bind="order.item_name" ng-click='handleItemRelocate(order.sys_id)'></div>
               <div class="order-status">Status: <span ng-bind="order.availability" /></div>
               <div class="time-created"> Updated on: <span ng-bind="order.creationTime" /></div>
             </div>
@@ -1151,7 +1201,7 @@ hr{
 
       <div class="listeditems" ng-show="currentOption === 2">
         <div class="donation-history" id="donationHistory" ng-show="currentOption === 2">
-          <div class="donation-history-card" ng-repeat="donation in donationHistory | filter:searchFilter | orderBy:sortOrder track by donation.donation_id">
+          <div class="donation-history-card" ng-repeat="donation in donationHistory | filter:searchFilter | orderBy:donationSortOrder track by donation.donation_id">
             <div class="charity-logo"><img ng-src={{donation.donation_charity_image}} lazy-load></div>
             <div class="charity-info">
               <div class="charity-name" ng-bind="donation.donation_charity_name"></div>

@@ -96,7 +96,9 @@
 
 
 	$scope.searchFilter = function(item) {
+		if(!item.donation_amount) return false;
 		if (!$scope.searchKeyword) {
+			if(item.donation_amount != '0')
 			return true;
 		}
 		var keyword = $scope.searchKeyword.toLowerCase();
@@ -1197,14 +1199,14 @@ hr{
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-24 06:00:04</sys_created_on>
         <sys_id>653d3d2883cb0210edb56060ceaad32e</sys_id>
-        <sys_mod_count>453</sys_mod_count>
+        <sys_mod_count>460</sys_mod_count>
         <sys_name>My_activity</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_653d3d2883cb0210edb56060ceaad32e</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-24 08:59:33</sys_updated_on>
+        <sys_updated_on>2024-07-25 05:51:14</sys_updated_on>
         <template><![CDATA[<div class="profile-page">
   <div class="user-profile poppins">
     <div class="header" >
@@ -1216,7 +1218,7 @@ hr{
     <div class="buttons-container">
       <button ng-click="debouncedHandleItemClick(-1)" id='reserved-item-button' ng-class="{'active-button':currentOption === -1}">Reserved Items</button>
       <button ng-click="debouncedHandleItemClick(0)" id='listed-item-button' ng-class="{'active-button': currentOption === 0}">Listed Items</button>
-      <button ng-click="debouncedHandleItemClick(1)" id='ordered-item-button'ng-class="{'active-button': currentOption === 1}">My Orders</button>
+      <button ng-click="debouncedHandleItemClick(1)" id='ordered-item-button'ng-class="{'active-button': currentOption === 1}">Orders</button>
       <button ng-click="debouncedHandleItemClick(2)" id='donation-history-button' ng-class="{'active-button': currentOption === 2}">Donation History</button>
     </div>
     <div class="buttons-container-mobile poppins">
@@ -1335,7 +1337,7 @@ hr{
               <div class="charity-name" ng-bind="donation.donation_charity_name"></div>
               <div class="time-created"> Donated on: <span ng-bind="donation.creationTime" /></div>
             </div>
-            <div class="donation-amount" ng-bind="donation.donation_amount"></div>
+            <div class="donation-amount">${{donation.donation_amount}}</div>
           </div>
         </div>
         <div class="no-items-found" ng-if='!(donationHistory | filter:customDonationFilter).length'>

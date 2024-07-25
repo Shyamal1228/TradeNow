@@ -9,14 +9,16 @@
 	$scope.charities = [];
 	$scope.inputCharityName="";
 	$scope.tempinputCharityName = "";
+	$scope.selectedOptionName = $scope.data.options[0];
+	$scope.selectedOptionAmount = $scope.data.options[0];
 	$scope.totalCharities ="Search among " + $scope.data.itemCount+ " charities";
 	var totalItems = 0;
+	var sortIndex = 0;
 	var index = 0;
 	var itemsLoaded = 8;
-	console.log("Rohan");
 	var offset=0;
 
-	
+
 	$scope.getTotalItems = function(){
 		//var params ='sysparm_fields=charity_name,description,email,image,number,total_amount_raised';
 		var param = "";
@@ -27,21 +29,35 @@
 				'sysparm_offset=' + offset,
 				'sysparm_limit='+itemsLoaded
 			].join('&');
-			console.log("Here");
 		} else {
-			//sysparm_query=descriptionLIKEexample^nameLIKEtest
 			params = [
 				'sysparm_fields=sys_id,charity_name,description,email,image,number,total_amount_raised',
 				'sysparm_offset=' + offset,
-				'sysparm_limit='+itemsLoaded
+				'sysparm_limit='+itemsLoaded,
 			].join('&');
-			console.log("Else part");
+			console.log(params);
 		}
 		$http.get('/api/now/table/x_1383179_tradenow_charity_list?'+params)
 			.then(function(response){
-			console.log(response.data);
 			$scope.charities = $scope.charities.concat(response.data.result.slice());
 			console.log($scope.charities);
+			if(sortIndex === 3){
+				$scope.charities.sort(function(a, b) {
+					return parseFloat(a.total_amount_raised) - parseFloat(b.total_amount_raised);
+				});
+			} else if(sortIndex === 4){
+				$scope.charities.sort(function(a, b) {
+					return parseFloat(b.total_amount_raised) - parseFloat(a.total_amount_raised);
+				});
+			} else if(sortIndex === 1){
+				$scope.charities.sort(function(a, b) {
+					return a.charity_name.localeCompare(b.charity_name);
+				});
+			} else if(sortIndex === 2){
+				$scope.charities.sort(function(a, b) {
+					return b.charity_name.localeCompare(a.charity_name);
+				});
+			}
 		})
 	}
 
@@ -78,6 +94,9 @@
 		scrollToTop();
 		offset = 0;
 		itemsLoaded = 8;
+		sortIndex = 0;
+		$scope.selectedOptionAmount = $scope.data.options[0];
+		$scope.selectedOptionName = $scope.data.options[0];
 		$scope.getTotalItems();
 	}
 
@@ -89,6 +108,9 @@
 			scrollToTop();
 			offset=0;
 			itemsLoaded = 8;
+			sortIndex = 0;
+			$scope.selectedOptionAmount = $scope.data.options[0];
+			$scope.selectedOptionName = $scope.data.options[0];
 			$scope.getTotalItems();
 		}
 	};
@@ -104,6 +126,40 @@
 	$scope.handleClick = function(charity_id,sys_id) {
 		$location.search("id=charity_page&charity_id=" + charity_id+"&sys_id="+sys_id);
 		//$location.search("id=charity_page&charity_id=" + charity_id);
+	};
+
+	$scope.onOptionChangeName=function(){
+		var option = $scope.selectedOptionName;
+		$scope.selectedOptionAmount = $scope.data.options[0];
+		if(option === 'None'){
+			sortIndex = 0;
+		} else if(option === 'Ascending') {
+			sortIndex = 1;
+		} else if(option === 'Descending'){
+			sortIndex = 2;
+		}
+		$scope.charities = [];
+		scrollToTop();
+		offset = 0; // Reset offset
+		itemsLoaded = 8;
+		$scope.getTotalItems();
+	};
+
+	$scope.onOptionChangeAmount=function(){
+		var option = $scope.selectedOptionAmount;
+		$scope.selectedOptionName = $scope.data.options[0];
+		if(option === 'None'){
+			sortIndex = 0;
+		} else if(option === 'Ascending') {
+			sortIndex = 3;
+		} else if(option === 'Descending'){
+			sortIndex = 4;
+		}
+		$scope.charities = [];
+		scrollToTop();
+		offset = 0; // Reset offset
+		itemsLoaded = 8;
+		$scope.getTotalItems();
 	};
 };
 ]]></client_script>
@@ -573,6 +629,49 @@ margin-bottom: 20px;
   }
 }
 
+.sorting-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 5%;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.sorting-container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  column-gap: 5px;
+}
+
+.sorting-div &gt; .sorting-container &gt; .sort-filter-name{
+  display: flex;
+  align-items: center;
+  height: 80%;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-inline: 5px;
+}
+
+.sorting-div &gt; .sorting-container &gt; .sort-filter-name &gt; label{
+  margin: 0;
+  padding: 0;
+}
+
+.sorting-div &gt; .sorting-container &gt; .sort-filter-name &gt; select{
+  height: 50%;
+  width: auto;
+  border: none;
+}
+
+.sorting-div &gt; .sorting-container &gt; .sort-filter-name &gt; select:focus{
+	box-shadow: none;
+  outline: none;
+}
+
 @media only screen and (max-width: 600px) {
   .cards {
     display: grid;
@@ -607,7 +706,7 @@ margin-bottom: 20px;
 
   // Set the table name where the charity data is stored
   data.table = 'x_1383179_tradenow_charity_list';
-  
+  data.options = ['None','Ascending','Descending'];
   // Initialize an empty array to hold the charity items
   data.itemCount = 0;
   
@@ -630,27 +729,27 @@ margin-bottom: 20px;
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-16 04:31:59</sys_created_on>
         <sys_id>195c140283fa4a10edb56060ceaad350</sys_id>
-        <sys_mod_count>588</sys_mod_count>
+        <sys_mod_count>650</sys_mod_count>
         <sys_name>charity list 1</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_195c140283fa4a10edb56060ceaad350</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-02 08:01:03</sys_updated_on>
+        <sys_updated_on>2024-07-25 07:09:19</sys_updated_on>
         <template><![CDATA[<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
 <div class="header" >
-    <h2 class="poppins-semibold">Charity Organizations</h2>
-    <hr/>
-  </div>
+  <h2 class="poppins-semibold">Charity Organizations</h2>
+  <hr/>
+</div>
 <!--<div class="heading">
 </div>-->
-  <!--<div class="breadcrumb poppins">
+<!--<div class="breadcrumb poppins">
     <a href="#">Home</a>&nbsp;&nbsp;>&nbsp;&nbsp;Charity Organization
   </div>-->
-  <!-- <div class="page-title poppins">
+<!-- <div class="page-title poppins">
     Charity Organizations
   </div>-->
 
@@ -669,6 +768,18 @@ margin-bottom: 20px;
   </div>
 </div>
 
+<div class='sorting-div'>
+  <div class='sorting-container'>
+    <div class="sort-filter-name">
+      <label >Sort by Name&nbsp;</label>
+      <select ng-model="selectedOptionName" id="selectedOption" ng-options='options for options in data.options' ng-change='onOptionChangeName()'></select>
+    </div>
+    <div class="sort-filter-name">
+      <label >Sort by Raised Amount&nbsp;</label>
+      <select ng-model="selectedOptionAmount" id="selectedOption" ng-options='options for options in data.options' ng-change='onOptionChangeAmount()'></select>
+    </div>
+  </div>
+</div>
 
 <div class="charity_container poppins" id="card-div">
   <ul class="cards" >

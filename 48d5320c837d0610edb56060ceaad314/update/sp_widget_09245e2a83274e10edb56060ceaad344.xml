@@ -20,7 +20,19 @@
 		modal.style.display = "none";
 		successModal.style.display = "none";
 	}
+	/*
+	$scope.handleSubmit = function(){
 
+		var amount = document.getElementById('amount').value;
+		var screenshot = document.getElementById('screenshot').files[0];
+
+		if (amount > 0 && screenshot) {
+			successModal.style.display = "flex";	
+		}
+
+	}
+*/
+	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
 		if (event.target == modal) {
 			modal.style.display = "none";
@@ -35,32 +47,28 @@
 			return;
 		}
 		console.log('Control 1 reached!');
-
-		var screenshot_file = document.getElementById('screenshot');
-
-		$scope.data.amount = c.amount;
-
-		var reader = new FileReader();
-		reader.onloadend = function(){
-			var base64data = reader.result.split(',')[1];
-			//console.log(base64data);
-			
-			$scope.data.screenshot = base64data;
-			console.log($scope.data.screenshot);
-			//$scope.data.screenshot = '';
-			c.server.update().then(function(response){
-				if(response){
-					document.getElementById('amount').value = '';
-					document.getElementById('screenshot').value = '';
-					successModal.style.display="flex";
-				}
-			});
-		}
 		
-		var file = screenshot_file.files[0];
-		c.data.fileSize = file.size;
-		c.data.fileType = file.type;
-		reader.readAsDataURL(file);
+		var screenshot_file = document.getElementById('screenshot');
+		
+		var amountData = {
+			amount: c.amount,
+		}
+		c.server.get({
+			action: 'submitForm', 
+		}).then(function(response) {
+			console.log('Control 2 reached!');
+			if (response.data.success) {
+				c.message = null;
+				c.success = response.message;
+				console.log("Inside the if")
+				successModal.style.display = "flex";//changed
+				amount.value = null;//changed
+			}
+			else if (response.success) {
+				c.message = response.message;
+				console.log('Error');
+			}
+		})
 
 	}
 
@@ -393,10 +401,10 @@ svg{
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>charity_description</id>
+        <id>charity_description_clone</id>
         <internal>false</internal>
         <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
-        <name>charity description</name>
+        <name>charity description clone</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -406,8 +414,6 @@ svg{
 	data.userName = gs.getUserDisplayName();
 	data.table = 'x_1383179_tradenow_charity_list';
 	data.table1 = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr';
-	data.amount = '';
-	data.screenshot = '';
 
 	var gr = new GlideRecord(data.table);
 	var charity_id = $sp.getParameter('charity_id');
@@ -430,19 +436,26 @@ svg{
 			qrImage: gr.getDisplayValue('qr_code')
 		};
 	}
-
+	
 	if(input){
-		console.log("Input: "+input.amount);
-		console.log("Input Screenshot: "+input.screenshot);
-
+		console.log("Input: "+input);
+	}
+	//gs.addInfoMessage(JSON.stringify(input));
+	if(input && input.action === 'submitForm' && input.amountData){
+		console.log("Inputtttttttttttttt="+input.amountData.amount);
 		var currentTime = new GlideDateTime();
+		
+		//if(validateRegistration (input.name)){
+		//gs.addInfoMessage('Hello');
+		
+		console.log(input);
 
 		var grNewRegistration = new GlideRecordSecure('x_1383179_tradenow_m2m_sys_user_x_1383179_tr');
 		grNewRegistration.initialize();
 
 		grNewRegistration.setValue('sys_user', user);
 
-		grNewRegistration.setValue('donation_amount', input.amount);
+		grNewRegistration.setValue('donation_amount', input.amountData.amount);
 		grNewRegistration.setValue('x_1383179_tradenow_charity_list', targetSysId);
 		grNewRegistration.setValue('sys_created_on', currentTime);
 		grNewRegistration.setValue('status', 'unverified');
@@ -450,8 +463,20 @@ svg{
 
 		var userRegSysId = grNewRegistration.insert();
 		console.log("New record sys_id="+userRegSysId);
-
+		//if the record is created successfully, send the success
+		// message to the client, else send the error message
 		
+		if(input.amountData.screenshot) {
+			console.log('Here');
+			var attachment = new GlideSysAttachment();
+			var file = new GlideSysAttachment();
+			file.write(userRegSysId,'x_1383179_tradenow_m2m_sys_user_x_1383179_tr',input.amountData.screenshot.name,input.screenshot.data);
+		}
+		//	}
+		data.success=true;
+	} 
+	else {
+		data.success=false;
 	}
 
 })();
@@ -459,16 +484,16 @@ svg{
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>jagriti</sys_created_by>
-        <sys_created_on>2024-06-11 16:53:22</sys_created_on>
-        <sys_id>a81659ec833ac210edb56060ceaad31e</sys_id>
-        <sys_mod_count>378</sys_mod_count>
-        <sys_name>charity description</sys_name>
+        <sys_created_on>2024-07-25 09:19:29</sys_created_on>
+        <sys_id>09245e2a83274e10edb56060ceaad344</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>charity description clone</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_widget_a81659ec833ac210edb56060ceaad31e</sys_update_name>
+        <sys_update_name>sp_widget_09245e2a83274e10edb56060ceaad344</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-25 11:39:52</sys_updated_on>
+        <sys_updated_on>2024-07-25 09:19:29</sys_updated_on>
         <template><![CDATA[<div class="charity-description poppins">
   <div class="charity-info">
     <div class="info-section poppins">
@@ -530,12 +555,12 @@ svg{
         </div>
         <div class="input-container">
           <label>Amount</label>
-          <input type="number" ng-model="c.amount" id="amount" name="amount" ng-required="true">
+          <input type="number" ng-model="c.amount" id="amount" name="amount" >
         </div>
         <div class="input-container">
           <label>Screenshot</label>
           <!--<input type="file" id="screenshot" accept="image/*" >-->
-          <input type="file" id="screenshot" ng-required="true"/>
+          <input type="file" id="screenshot"/>
         </div>
         <div class="button-container">
           <button id="donate-button" ng-click="handleClick()">

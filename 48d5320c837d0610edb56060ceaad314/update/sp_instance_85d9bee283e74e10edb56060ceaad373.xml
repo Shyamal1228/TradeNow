@@ -10,23 +10,23 @@
         <roles/>
         <short_description/>
         <size>md</size>
-        <sp_column display_value="1">048d615f835a4210edb56060ceaad37e</sp_column>
-        <sp_widget display_value="Item List with Distance">b616cf3583638a10edb56060ceaad363</sp_widget>
+        <sp_column display_value="1">00d9bee283e74e10edb56060ceaad313</sp_column>
+        <sp_widget display_value="charity description">a81659ec833ac210edb56060ceaad31e</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
-        <sys_created_by>shyamal</sys_created_by>
-        <sys_created_on>2024-07-23 05:04:17</sys_created_on>
-        <sys_id>1b8643bd83a38a10edb56060ceaad375</sys_id>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-25 12:04:08</sys_created_on>
+        <sys_id>85d9bee283e74e10edb56060ceaad373</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_instance_1b8643bd83a38a10edb56060ceaad375</sys_update_name>
-        <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-07-23 05:04:17</sys_updated_on>
+        <sys_update_name>sp_instance_85d9bee283e74e10edb56060ceaad373</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-25 12:04:08</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>
     </sp_instance>
-    <sys_translated_text action="delete_multiple" query="documentkey=1b8643bd83a38a10edb56060ceaad375"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=85d9bee283e74e10edb56060ceaad373"/>
 </record_update>

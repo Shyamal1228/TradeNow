@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">0d08ba6283e74e10edb56060ceaad3a8</sp_column>
+        <sp_widget display_value="charity description">a81659ec833ac210edb56060ceaad31e</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-25 11:56:55</sys_created_on>
+        <sys_id>5728be6283e74e10edb56060ceaad3b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_instance_5728be6283e74e10edb56060ceaad3b2</sys_update_name>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-25 11:56:55</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=5728be6283e74e10edb56060ceaad3b2"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TradeNow">48d5320c837d0610edb56060ceaad314</application>
+        <file_path/>
+        <instance_id>9a8db1a11b45c6147d9d2f8dee4bcb7c</instance_id>
+        <instance_name>dev245733</instance_name>
+        <name>sp_instance_5728be6283e74e10edb56060ceaad3b2</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>2</order><roles/><short_description/><size>md</size><sp_column display_value="1">0d08ba6283e74e10edb56060ceaad3a8</sp_column><sp_widget display_value="charity description">a81659ec833ac210edb56060ceaad31e</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>jagriti</sys_created_by><sys_created_on>2024-07-25 11:56:55</sys_created_on><sys_id>5728be6283e74e10edb56060ceaad3b2</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package><sys_policy/><sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope><sys_update_name>sp_instance_5728be6283e74e10edb56060ceaad3b2</sys_update_name><sys_updated_by>jagriti</sys_updated_by><sys_updated_on>2024-07-25 11:56:55</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=5728be6283e74e10edb56060ceaad3b2"/></record_update>]]></payload>
+        <payload_hash>-1342560912</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>1657201683ebca10edb56060ceaad346</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-25 11:56:56</sys_created_on>
+        <sys_id>5b28be6283e74e10edb56060ceaad3b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190e9c05c8e0000001</sys_recorded_at>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-25 11:56:56</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>9f28be629be74e10e9cbed15d4bf75b3</update_guid>
+        <update_guid_history>9f28be629be74e10e9cbed15d4bf75b3:-1342560912</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">aac97ee283e74e10edb56060ceaad361</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>jagriti</sys_created_by>
+        <sys_created_on>2024-07-25 12:03:58</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>03b23c562b0e4726886acb363ebb6ae4</sys_id>
+        <sys_metadata>5728be6283e74e10edb56060ceaad3b2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_scope_delete display_value="">77ea2dd9f12b44de890b0ae2a6285ca4</sys_scope_delete>
+        <sys_update_name>sp_instance_5728be6283e74e10edb56060ceaad3b2</sys_update_name>
+        <sys_update_version display_value="sp_instance_5728be6283e74e10edb56060ceaad3b2">5b28be6283e74e10edb56060ceaad3b4</sys_update_version>
+        <sys_updated_by>jagriti</sys_updated_by>
+        <sys_updated_on>2024-07-25 12:03:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_documentation element="short_name" label="Short name" language="en" table="x_1383179_tradenow_charity_list">
+    <sys_documentation element="image" label="Image" language="en" table="x_1383179_tradenow_m2m_sys_user_x_1383179_tr">
         <sys_documentation action="INSERT_OR_UPDATE">
-            <element>short_name</element>
+            <element>image</element>
             <help/>
             <hint/>
-            <label>Short name</label>
+            <label>Image</label>
             <language>en</language>
-            <name>x_1383179_tradenow_charity_list</name>
-            <plural>Short names</plural>
+            <name>x_1383179_tradenow_m2m_sys_user_x_1383179_tr</name>
+            <plural>Images</plural>
             <sys_class_name>sys_documentation</sys_class_name>
             <sys_created_by>shyamal</sys_created_by>
-            <sys_created_on>2024-07-16 16:55:17</sys_created_on>
-            <sys_mod_count>1</sys_mod_count>
-            <sys_name>Short name</sys_name>
+            <sys_created_on>2024-07-24 06:20:00</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Image</sys_name>
             <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
             <sys_policy/>
             <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-            <sys_update_name>sys_documentation_x_1383179_tradenow_charity_list_short_name_en</sys_update_name>
+            <sys_update_name>sys_documentation_x_1383179_tradenow_m2m_sys_user_x_1383179_tr_image_en</sys_update_name>
             <sys_updated_by>shyamal</sys_updated_by>
-            <sys_updated_on>2024-07-26 01:56:39</sys_updated_on>
+            <sys_updated_on>2024-07-24 06:20:00</sys_updated_on>
             <url/>
             <url_target/>
         </sys_documentation>

@@ -4,6 +4,8 @@
         <client_script><![CDATA[api.controller=function(i18n,spModal,spUtil,$scope,$sce) {
 	/* widget controller */
 	var c = this;
+	var reservationTimer = document.getElementById('reservation-timer');
+	reservationTimer.style.display='none';
 	c.mapVisible = false;
 	console.log(c.data.commentobjects);
 	c.showMap = function() {
@@ -13,19 +15,46 @@
 		//alert(c.data.obj.latitude);
 		c.mapVisible = !c.mapVisible;
 	};
+	
+	var timeleft;
+	startTimer = function(seconds, timeLeft){
+		seconds.textContent = timeLeft;
+		console.log('Timer is called');
+		if(timeleft){
+			clearInterval(timeleft);
+		}
+		timeleft = setInterval(function(){
+			timeLeft=timeLeft-1;
+			seconds.textContent = (timeLeft < 10)? '0'+timeLeft: timeLeft;
+			if(timeLeft < 11){
+				reservationTimer.classList.add('red');
+			}
+			if(timeLeft <= 0){
+				clearInterval(timeleft);
+				reservationTimer.style.display="none";
+				reservationTimer.classList.remove('red');
+			}
+		},1000);
+	};
 
 	c.Itembutton = function(st) {
 		c.data.status=st;
 
 		if(st=='reserved'){
-			spUtil.addInfoMessage("Item will be reserved for "+c.data.timeProperty+ " seconds!")
-		}
-		if(st==='readypickup'){
+			//spUtil.addInfoMessage("Item will be reserved for "+c.data.timeProperty+ " seconds!");
+		} else {
+			console.log('removing timer');
+			reservationTimer.style.display="none";
 		}
 		//c.server.update();
 		c.server.update().then(function(response) {
 			if (response) {
 				c.data.status = null;
+				if(st == 'reserved'){
+					reservationTimer.style.display="block";
+					console.log($scope.data.obj.secondsLeft);
+					startTimer(document.getElementById('seconds'),30);
+				}
 				//alert('Update successful');
 			} else {
 				//alert('Update failed:', response.data.error);
@@ -425,6 +454,7 @@ body {
   overflow: hidden;
   margin: 25px; /* This margin ensures spacing from the edges */
   padding: 25px;
+  position: relative;
 }
 
 .image {
@@ -966,7 +996,7 @@ li&gt;i{
 }
 
 .comment-cards-self{
-	flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .comment-cards &gt; .image-container{
@@ -978,7 +1008,7 @@ li&gt;i{
 }
 
 .comment-cards &gt; .image-container &gt; img{
-	width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -1032,6 +1062,27 @@ li&gt;i{
 .comment-input-container:focus-within &gt; button{
   overflow: none;
   width: 15%;
+}
+
+.popup&gt;h5{
+  font-size:20px;
+  margin-bottom:10px;
+  font-weight:400;
+}
+
+.reservation-timer{
+  display: block;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #004242;
+  color: white;
+  z-index: 999;
+}
+
+.red{
+	background-color: red;
 }</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
@@ -1079,7 +1130,18 @@ li&gt;i{
 	data.listerImage = '';
 	data.claimerImage = '';
 	//console.log(input);
-
+	
+	/*var user=gs.getUserID();
+	var loggedInUserGR = new GlideRecord('sys_user');
+	if(loggedInUserGR.get(user)){
+		data.preffered={
+			preferred_charitysysID:loggedInUserGR.getValue('u_preffered_charity'),
+				preferred_charityID:loggedInUserGR.getDisplayValue('u_preffered_charity'),
+				preferred_charity:loggedInUserGR.getDisplayValue('u_preffered_charity.charity_name'),
+		}
+	}
+	console.log("data.preffered="+data.preffered);*/
+	
 	data.timeProperty = gs.getProperty('x_1383179_tradenow.reservation.duration');
 	//console.log(table_name);
 	//console.log(targetSysId);
@@ -1104,13 +1166,28 @@ li&gt;i{
 				preferred_charityID:itemDetails.getDisplayValue('preferred_charity'),
 				preferred_charity:itemDetails.getDisplayValue('preferred_charity.charity_name'),
 				lister_comment: itemDetails.lister_comment.getJournalEntry(-1),
+				
 				// accessing field label
 				lister_label:itemDetails['lister_name'].getLabel(),
 				listerLocation_label:itemDetails['location'].getLabel(),
 				itemStatus_label:itemDetails['status'].getLabel(),
 				item_condition_label:itemDetails['condition'].getLabel(),
 				item_category_label:itemDetails['category'].getLabel(),
+				
+				
+				/*added*/
+				reservation_ends_at: itemDetails.getValue('reservation_time_ends_at')
+				/*added*/
 			};
+			
+			if(data.obj.reservation_ends_at){
+				var now = new Date();
+				var endSeconds = parseInt(data.obj.reservation_ends_at.slice( data.obj.reservation_ends_at.lastIndexOf(':')+1));
+				var startSeconds = parseInt(now.getUTCSeconds());
+				data.obj.secondsLeft = endSeconds - startSeconds;
+				data.obj.secondsLeft = parseInt((data.obj.secondsLeft > 30)?30:(data.obj.secondsLeft));
+				console.log(data.obj.secondsLeft);
+			}
 
 			console.log(data.obj);
 			console.log("Charity sys_id="+data.obj.preferred_charitysysID);
@@ -1266,6 +1343,15 @@ li&gt;i{
 			//itemStatus.reservation_time_ends_at=updatedOn;
 			itemStatus.update();
 		}
+		
+		if(data.obj.reservation_ends_at){
+				var now = new Date();
+				var endSeconds = parseInt(data.obj.reservation_ends_at.slice( data.obj.reservation_ends_at.lastIndexOf(':')+1));
+				var startSeconds = parseInt(now.getUTCSeconds());
+				data.obj.secondsLeft = endSeconds - startSeconds;
+				data.obj.secondsLeft = parseInt((data.obj.secondsLeft > 30)?30:(data.obj.secondsLeft));
+				console.log(data.obj.secondsLeft);
+			}
 
 		return true;
 	}
@@ -1291,18 +1377,20 @@ li&gt;i{
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-30 08:08:32</sys_created_on>
         <sys_id>3d2455a68343c210edb56060ceaad322</sys_id>
-        <sys_mod_count>253</sys_mod_count>
+        <sys_mod_count>337</sys_mod_count>
         <sys_name>Item details widget</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_3d2455a68343c210edb56060ceaad322</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-07-23 08:40:29</sys_updated_on>
+        <sys_updated_on>2024-07-26 07:40:19</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
 <div class="container">
+  <div class="reservation-timer" id='reservation-timer'>&nbsp;Reservation ends at:&nbsp;00:<span id='seconds'>30</span></div>
+  
   <div class="image">
     <!--<img src="https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt="Nike Shoes">-->
     <img src="{{data.obj.image_url}}" alt="{{ data.obj.name }}">
@@ -1371,7 +1459,7 @@ li&gt;i{
 <!--/*Code for comments*/-->
 
 <div class='comments-div' id='comment-div' ng-show="data.obj.item_status === 'readypickup'">
-  <h1>Comments</h1>
+  <h1>Chats</h1>
   <div class='comments-container'>
     <div class='comment-card-box' id='comment-card-box'>
       <div class='comment-cards-container' ng-repeat="comment in data.commentobjects">
@@ -1425,11 +1513,14 @@ li&gt;i{
 <div class="overlay" id="popupOverlay">
   <div class="popup">
     <span class="close-btn" id="closePopup">&times;</span>
+     <h5>You've earned 50 points! ]]>🎉<![CDATA[ Thanks for claiming!</h5>
     <h2 class="poppins-semibold">Support a Cause: Donate Today!</h2>
     <!--<h4 class="poppins-regular">Do you want to donate to charities?</h4>-->
-    <h4 class="poppins-regular">{{data.obj.lister}}'s preferred charity is {{data.obj.preferred_charity}}.<br>Do you want to donate there or to another charity?</h4>
+   <!-- <h4 class="poppins-regular">{{data.obj.lister}}'s preferred charity is {{data.obj.preferred_charity}}.<br>Do you want to donate there or to another charity?</h4>-->
+    <h4 class="poppins-regular">{{data.obj.lister}}'s preferred charity is Goonj.<br>Do you want to donate there or to another charity?</h4>
     <div class="buttons">
-      <a href="/tradenow?id=charity_page&charity_id={{data.obj.preferred_charityID}}&sys_id={{data.obj.preferred_charitysysID}}"><button class="yes poppins-light" id="donateYes">Donate to {{data.obj.preferred_charity}}</button></a>
+      <!--<a href="/tradenow?id=charity_page&charity_id={{data.obj.preferred_charityID}}&sys_id={{data.obj.preferred_charitysysID}}"><button class="yes poppins-light" id="donateYes">Donate to {{data.obj.preferred_charity}}</button></a>-->
+      <a href="/tradenow?id=charity_page&charity_id=CHA0001102&sys_id=1f0ead8a83428a10edb56060ceaad3e3"><button class="yes poppins-light" id="donateYes">Donate to Goonj</button></a>
       <!-- added -->
       <button class="yes poppins-light" id="donateAll">Donate to Other Charity</button>
       <!-- end -->

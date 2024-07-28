@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {  /* widget controller */  var c = this;};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.form-container {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 570px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.form-group .value {
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 4px;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+.buttons .approve {
+  background-color: #338585;
+  color: #ffffff;
+}
+.buttons .reject {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #858282;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .form-container {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+  }
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .buttons button {
+    width: 100%;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>approvals_popup</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Approvals Popup</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.table = 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr';
+	var donationQuery = new GlideRecord(data.table);
+	donationQuery.orderByDesc('sys_created_on');
+	//donationQuery.setLimit(10);
+	donationQuery.query();
+	
+	if (donationQuery.next()) {
+		data.obj={
+			transaction_id:donationQuery.getValue('number'),
+			donator:donationQuery.getDisplayValue('sys_user'),
+			charity_name:donationQuery.getDisplayValue('x_1383179_tradenow_charity_list'),
+			donation_amount:donationQuery.getDisplayValue('donation_amount'),
+			status:donationQuery.getValue('status'),
+			payment_proof:donationQuery.getValue('payment_proof'),
+			created_on:donationQuery.getValue('sys_created_on'),
+		};
+	}
+	
+	console.log(data.obj);
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-25 13:23:17</sys_created_on>
+        <sys_id>58fb036a832b4e10edb56060ceaad32b</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>Approvals Popup</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_58fb036a832b4e10edb56060ceaad32b</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-25 15:47:38</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Details</title>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-group">
+            <label for="transaction-id">Transaction id</label>
+            <div id="transaction-id" class="value">{{data.obj.transaction_id}}</div>
+        </div>
+        <div class="form-group">
+            <label for="donor-name">Donator name</label>
+            <div id="donor-name" class="value">{{data.obj.donator}}</div>
+        </div>
+        <div class="form-group">
+            <label for="charity-name">Charity name</label>
+            <div id="charity-name" class="value">{{data.obj.charity_name}}</div>
+        </div>
+        <div class="form-group">
+            <label for="donation-amount">Donation amount</label>
+            <div id="donation-amount" class="value">{{data.obj.donation_amount}}</div>
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <div id="status" class="value">{{data.obj.status}}</div>
+        </div>
+        <div class="form-group">
+            <label for="payment-proof">Payment proof</label>
+            <img id="payment-proof" src="{{data.obj.payment_proof}}" alt="Payment Proof" style="width: 30%; height: auto; border-radius: 4px;">
+        </div>
+        <div class="form-group">
+            <label for="donation-time">Donation time</label>
+            <div id="donation-time" class="value">{{data.obj.created_on}}</div>
+        </div>
+        <div class="buttons">
+            <button class="approve">Approve</button>
+            <button class="reject">Reject</button>
+        </div>
+    </div>
+</body>
+</html>
+]]></template>
+    </sp_widget>
+</record_update>

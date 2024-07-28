@@ -25,7 +25,7 @@
 		if($scope.searchKeyword){
 			params = [
 				'sysparm_query=charity_nameLIKE'+$scope.searchKeyword,
-				'sysparm_fields=charity_name,description,email,image,number,total_amount_raised',
+				'sysparm_fields=sys_id,charity_name,description,email,image,number,total_amount_raised',
 				'sysparm_offset=' + offset,
 				'sysparm_limit='+itemsLoaded
 			].join('&');
@@ -729,14 +729,14 @@ margin-bottom: 20px;
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-16 04:31:59</sys_created_on>
         <sys_id>195c140283fa4a10edb56060ceaad350</sys_id>
-        <sys_mod_count>650</sys_mod_count>
+        <sys_mod_count>651</sys_mod_count>
         <sys_name>charity list 1</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_195c140283fa4a10edb56060ceaad350</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-25 07:09:19</sys_updated_on>
+        <sys_updated_on>2024-07-26 08:11:26</sys_updated_on>
         <template><![CDATA[<style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>

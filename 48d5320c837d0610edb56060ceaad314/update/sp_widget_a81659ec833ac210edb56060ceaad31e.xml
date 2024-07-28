@@ -42,10 +42,7 @@
 
 		var reader = new FileReader();
 		reader.onloadend = function(){
-			var base64data = reader.result.split(',')[1];
-			//console.log(base64data);
-			
-			$scope.data.screenshot = base64data;
+			$scope.data.screenshot = reader.result;
 			console.log($scope.data.screenshot);
 			//$scope.data.screenshot = '';
 			c.server.update().then(function(response){
@@ -254,8 +251,39 @@ svg{
   border: 1px solid #006666;
 }
 
+.input-container-amount{
+  width: 100%;
+	display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.input-container-amount &gt; span{
+	display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #006666;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding-inline: 5px;
+}
+
+.input-container-amount &gt; span &gt; input{
+	width: 100%;
+  border-radius: 5px;
+  height: 40px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  border: none;
+}
+
 
 .input-container &gt; input:focus {
+	box-shadow: none;
+}
+
+.input-container-amount &gt; span &gt; input:focus {
 	box-shadow: none;
 }
 
@@ -447,6 +475,7 @@ svg{
 		grNewRegistration.setValue('sys_created_on', currentTime);
 		grNewRegistration.setValue('status', 'unverified');
 		grNewRegistration.setValue('checked', true);
+		grNewRegistration.setValue('payment_proof', input.screenshot);
 
 		var userRegSysId = grNewRegistration.insert();
 		console.log("New record sys_id="+userRegSysId);
@@ -461,14 +490,14 @@ svg{
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-11 16:53:22</sys_created_on>
         <sys_id>a81659ec833ac210edb56060ceaad31e</sys_id>
-        <sys_mod_count>378</sys_mod_count>
+        <sys_mod_count>397</sys_mod_count>
         <sys_name>charity description</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_a81659ec833ac210edb56060ceaad31e</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-25 11:39:52</sys_updated_on>
+        <sys_updated_on>2024-07-26 08:19:25</sys_updated_on>
         <template><![CDATA[<div class="charity-description poppins">
   <div class="charity-info">
     <div class="info-section poppins">
@@ -528,17 +557,17 @@ svg{
           <label>Name</label>
           <input type="text" value={{data.userName}} id="name" name="name" ng-required="true" readonly disabled>
         </div>
-        <div class="input-container">
+        <div class="input-container-amount">
           <label>Amount</label>
-          <input type="number" ng-model="c.amount" id="amount" name="amount" ng-required="true">
+          <span>$<input type="number" ng-model="c.amount" id="amount" name="amount" ng-required="true" min="1"></span>
         </div>
         <div class="input-container">
-          <label>Screenshot</label>
+          <label>Payment Proof</label>
           <!--<input type="file" id="screenshot" accept="image/*" >-->
           <input type="file" id="screenshot" ng-required="true"/>
         </div>
         <div class="button-container">
-          <button id="donate-button" ng-click="handleClick()">
+          <button type="button" id="donate-button" ng-click="handleClick()">
             Donate
           </button>
           <!--<button ng-click="handleSubmit()">-->

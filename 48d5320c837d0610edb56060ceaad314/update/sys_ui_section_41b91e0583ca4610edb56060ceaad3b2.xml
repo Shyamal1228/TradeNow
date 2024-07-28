@@ -126,6 +126,20 @@
             <sys_user/>
             <type/>
         </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>image</element>
+            <position>9</position>
+            <sys_created_by>shyamal</sys_created_by>
+            <sys_created_on>2024-07-24 06:19:59</sys_created_on>
+            <sys_id>0271e85e83abca10edb56060ceaad3f7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1383179_tradenow_m2m_sys_user_x_1383179_tr" sys_domain="global" view="Default view">41b91e0583ca4610edb56060ceaad3b2</sys_ui_section>
+            <sys_updated_by>shyamal</sys_updated_by>
+            <sys_updated_on>2024-07-24 06:19:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
             <header>false</header>

@@ -19,11 +19,11 @@
         </element>
         <element label="Phone" max_length="20" name="phone" type="string"/>
         <element label="QR code" max_length="40" name="qr_code" type="user_image"/>
-        <element label="Short Name" max_length="40" name="short_name" type="string"/>
+        <element label="Short name" max_length="40" name="short_name" type="string"/>
         <element label="Total amount raised" max_length="20" name="total_amount_raised" read_only="true" type="currency"/>
         <element label="UPI number" max_length="40" name="upi_number" type="string"/>
         <element attributes="encode_utf8=false" label="Location" mandatory="true" max_length="32" name="u_reference_1" reference="cmn_location" type="reference"/>
-        <element label="Website" mandatory="true" max_length="40" name="website" type="string"/>
+        <element label="Website" max_length="40" name="website" type="string"/>
         <index name="index">
             <element name="u_reference_1"/>
         </index>

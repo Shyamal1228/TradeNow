@@ -20,7 +20,8 @@
 		//alert(docSysId);
 		spModal.open({
 			title: id+' - Donation to '+charity_name,
-			widget: 'approvals_form',
+			//widget: 'approvals_form',
+			widget: 'approvals_popup',
 			widgetInput: {sys_id:docSysId, table: 'x_1383179_tradenow_m2m_sys_user_x_1383179_tr', view:'portal'}
 		}).then(function(){
 			//alert('Dismissed');
@@ -228,7 +229,9 @@
 			Requestor:z.getDisplayValue('document_id.sys_user'),
 			amount:z.getDisplayValue('document_id.donation_amount'),
 		}
+		if(obj.amount!="$0.00"){
 		data.approvals.push(obj);
+		}
 	}
 console.log(data.approvals);
 	if (input && input.reqStatus) {
@@ -248,14 +251,14 @@ console.log(data.approvals);
         <sys_created_by>shyamal</sys_created_by>
         <sys_created_on>2024-06-22 07:23:24</sys_created_on>
         <sys_id>b61db3338372c210edb56060ceaad30f</sys_id>
-        <sys_mod_count>77</sys_mod_count>
+        <sys_mod_count>82</sys_mod_count>
         <sys_name>Approvals</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_b61db3338372c210edb56060ceaad30f</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-06-28 17:06:30</sys_updated_on>
+        <sys_updated_on>2024-07-25 15:36:33</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>

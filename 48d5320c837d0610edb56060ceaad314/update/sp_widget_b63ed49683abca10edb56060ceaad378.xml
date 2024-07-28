@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, spUtil, $http, $location) {
+  var c = this;
+  c.imageData = null;
+  c.userProfileName = null;
+
+  c.imageSelected = function(event) {
+    var input = event.target;
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $scope.$apply(function() {
+          compressImage(e.target.result, 0.7, function(compressedDataUrl) {
+            c.imageData = compressedDataUrl;
+            console.log("Compressed image data:", compressedDataUrl);
+            
+            var imgId = input.id === 'standardImageCapture' ? 'standardImagePreview' : 'frontImagePreview';
+            var imgElement = document.getElementById(imgId);
+            imgElement.src = compressedDataUrl;
+            imgElement.style.display = 'block';
+          });
+        });
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  };
+
+  c.uploadStandardImage = function() {
+    if (c.imageData) {
+      createPostWithImage(c.imageData);
+    } else {
+      spUtil.addErrorMessage('No image selected.');
+    }
+  };
+
+  c.uploadFrontImage = function() {
+    if (c.imageData) {
+      createPostWithImage(c.imageData);
+    } else {
+      spUtil.addErrorMessage('No image selected.');
+    }
+  };
+
+  c.startFrontCamera = function() {
+    stop();
+    gum('user');
+  };
+
+  c.startRearCamera = function() {
+    stop();
+    gum('environment');
+  };
+
+  c.captureAndUpload = function() {
+    var video = document.getElementById('video');
+    var canvas = document.createElement('canvas');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    var context = canvas.getContext('2d');
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    var imageData = canvas.toDataURL('image/jpeg');
+
+    compressImage(imageData, 0.8, function(compressedDataUrl) {
+      createPostWithImage(compressedDataUrl);
+    });
+  };
+
+  function gum(mode) {
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: mode } } })
+      .then(function (stream){video.srcObject = stream})
+      .catch(function(e){log(e)});
+  }
+
+  function stop() {
+    var video = document.getElementById('video');
+    if (video.srcObject) {
+      video.srcObject.getTracks().forEach(function(t){ t.stop()});
+    }
+  }
+
+  function log(msg) {
+    var logDiv = document.getElementById('log');
+    logDiv.innerHTML += msg + "<br>";
+  }
+
+  function createPostWithImage(imageData) {
+    c.data.action = "upload_Action";
+    c.data.imageData = imageData;
+    c.server.update().then(function(response) {
+      console.log("data picked : ", response);
+      c.data.action = undefined;
+      c.imageData = null; // Clear imageData to hide the button
+      alert('Image has been successfully uploaded!'); // Alert popup on successful upload
+    });
+  }
+
+  function compressImage(dataUrl, quality, callback) {
+    var img = new Image();
+    img.onload = function() {
+      var canvas = document.createElement('canvas');
+      var ctx = canvas.getContext('2d');
+      var width = img.width;
+      var height = img.height;
+
+      // Set canvas dimensions to the image dimensions
+      canvas.width = width;
+      canvas.height = height;
+
+      // Draw the image onto the canvas
+      ctx.drawImage(img, 0, 0, width, height);
+
+      // Convert the canvas to a compressed data URL
+      var compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+      callback(compressedDataUrl);
+    };
+    img.src = dataUrl;
+  }
+
+ 	c.gallery = function() {
+		$location.search({id: 'cnsp_post_creation'})
+	
+};
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.camera-widget {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.image-upload-container {
+  text-align: center;
+}
+
+.image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  background-color: #f0f0f0;
+  border: 2px dashed #d3d3d3;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.image-placeholder i {
+  font-size: 3rem;
+  color: #d3d3d3;
+  margin-bottom: 1rem;
+}
+
+.upload-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#standardImageCapture {
+  display: none;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.custom-file-upload:active {
+  background-color: #004080;
+  border-color: #004080;
+}
+
+.custom-design-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #007bff;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-design-button:hover {
+  background-color: #e6f2ff;
+  border-color: #0056b3;
+}
+
+.custom-design-button:active {
+  background-color: #cce0ff;
+  border-color: #004080;
+}
+
+.image-preview {
+  max-width: 100%;
+  display: none;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1em;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #218838;
+}
+
+.btn:active {
+  background-color: #1e7e34;
+}
+
+@media (max-width: 768px) {
+  .camera-widget {
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 0.9em;
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>camera_photo</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Camera Photo</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    if (input && input.action === "upload_Action") {
+        var base64Data = input.imageData;
+
+        // Generate random numbers for width and height
+        var randomWidth = Math.floor(Math.random() * (1000 - 300 + 1)) + 300; // Width between 300 and 1000
+        var randomHeight = Math.floor(Math.random() * (1000 - 300 + 1)) + 300; // Height between 300 and 1000
+        
+        // Generate a random number for the attachment ID
+        var randomAttachmentId = Math.floor(Math.random() * 10000000000000000000000000000); // Adjust the range as needed
+
+        var gr = new GlideRecord('x_1383179_tradenow_m2m_sys_user_x_1383179_tr');
+        gr.initialize();
+        //gr.title = base64Data;
+        gr.image = '<p><img src="/sys_attachment.do?' + randomAttachmentId + '" alt="" width="' + randomWidth + '" height="' + randomHeight + '"/></p>';
+        var sys_id = gr.insert();
+
+        data.sys_id = sys_id;
+    }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-24 06:05:51</sys_created_on>
+        <sys_id>b63ed49683abca10edb56060ceaad378</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Camera Photo</sys_name>
+        <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
+        <sys_update_name>sp_widget_b63ed49683abca10edb56060ceaad378</sys_update_name>
+        <sys_updated_by>shyamal</sys_updated_by>
+        <sys_updated_on>2024-07-24 06:36:52</sys_updated_on>
+        <template><![CDATA[<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<div class="camera-widget">
+  <form method="post" class="row">
+    <div class="col-md-12">
+      <div class="image-upload-container">
+        <div class="image-placeholder">
+          <i class="fas fa-image"></i>
+          <p>We recommend images of size 1920x1080 pixels</p>
+        </div>
+        <div class="upload-buttons">
+          <input id="standardImageCapture" type="file" accept="image/*" capture="camera" onchange="angular.element(this).scope().c.imageSelected(event)">
+          <label for="standardImageCapture" class="custom-file-upload">
+            <i class="fas fa-camera"></i> Take a picture!
+          </label>
+          <button type="button" class="custom-design-button" ng-click="c.gallery()">
+            <i class="fas fa-upload"></i> Upload from gallery
+          </button>
+        </div>
+        <img id="standardImagePreview" style="max-width: 100%; display: none;" />
+        <button class="btn btn-success" ng-if="c.imageData" ng-click="c.uploadStandardImage()">Upload Image</button>
+      </div>
+    </div>
+  </form>
+</div>]]></template>
+    </sp_widget>
+</record_update>

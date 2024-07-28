@@ -109,7 +109,7 @@
   });
 
   $scope.triggerUIAction = function(action) {
-		if ($scope.data.disableUIActions && !action.primary) {
+    if ($scope.data.disableUIActions && !action.primary) {
       return;
     }
 
@@ -121,11 +121,15 @@
     $scope.$evalAsync(function() {
       if (g_form) {
         $scope.submitting = true;
-        if (!g_form.submit(action.action_name || action.sys_id))
+        if (!g_form.submit(action.action_name || action.sys_id)) {
           $scope.submitting = false;
+        } else {
+          // Show the popup after form submission
+          showPointsPopup();
+        }
       }
     });
-  }
+  };
 
   $scope.$on("spModel.uiActionComplete", function(evt, response, savedFormSysId) {
     if (!response.isInsert &&  ($scope.data.sys_id !== savedFormSysId))
@@ -160,13 +164,6 @@
       spUtil.addTrivialMessage(message);
       spUtil.simulateFakeFormSubmitForAutoComplete('widget-form', $scope.data.f._fields);
       $timeout(clearStatus, 2000);
-			
-			if (response.isInsert) {
-      // Navigate to a specific page for new records
-      	$location.search("id=charity_organization");
-    	} else {
-      	// Navigate to a different page for updates
-    	}
     }
   }
 
@@ -303,191 +300,24 @@
   if ($scope.data.f.title) {
 	  $scope.$emit('sp.widget-modal.set-aria-label', $scope.data.f.title);
   }
+	
+	// Popup functionality
+	 function showPointsPopup() {
+    var popup = document.getElementById("pointsPopup");
+    popup.classList.add("show");
+    setTimeout(function() {
+      popup.classList.remove("show");
+    }, 10000);
+  }
+
+  document.querySelector("#pointsPopup .close").addEventListener("click", function() {
+    var popup = document.getElementById("pointsPopup");
+    popup.classList.remove("show");
+  });
+
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css>/*.btn-form-menu {
-	vertical-align: inherit;
-  padding: inherit;
-  background: none;
-}
-
-.panel-title {
-  word-wrap: break-word;
-}
-
-.panel-heading {
-  .dropdown-menu {
-    a {
-      white-space: normal;
-      display: flex;
-      justify-content: space-between;
-      .badge {
-        align-self: baseline;
-        min-width: auto;
-      }
-    }
-  }
-}
-
-.sc-field-error-label {
-  margin-right: .5em;
-  display: inline-block;
-  background-color: $sc-field-error-color;
-}
-
-.comment {
-	font-weight: bold;
-	margin-top: 2px;
-	margin-bottom: 2px;
-}
-
-.action-btn {
-  margin-right: 5px;
-}
-
-.timeline-container {
-   max-height: 50vh;
-   height: 100%;
-   overflow-y: auto;
-}
-
-.panel .panel {
-    height: auto !important;
-}
-
-.attachment-button {
-  .glyphicon-paperclip {
-    font-size: 18px;
-  }
-}
-
-.empty-state-wrapper {
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: 10vh 20px 20px;
-
-  .empty-state {
-    border: 1px solid #e7e9eb;
-    border-radius: 10px;
-    max-width: 700px;
-    padding: 30px 40px 20px;
-    position: relative;
-
-    .empty-state-badge {
-      top: -36px;
-      left: 50%;
-      position: absolute;
-      height: 72px;
-      width: 72px;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      border-radius: 100%;
-      color: #ffffff;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      font-size: 40px;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      margin-left: -36px;
-      text-align: center;
-    }
-
-    .empty-state-header {
-      font-size: 30px;
-      text-align: center;
-      color: #343d47;
-    }
-
-    .empty-state-content {
-      ul {
-        list-style: disc outside;
-        margin: 0 0 10px 0;
-        padding: 0 0 0 30px;
-      }
-    }
-  }
-}
-
-.text-success-alt {
-	background-color: $state-success-text;
-}
-
-.text-info-alt {
-	background-color: $state-info-text;
-}
-
-.sp-cross-scope-msg {
-  margin-bottom: 10px;
-}
-
-.asterisk-div{
-	margin: 2rem 0 1.5rem;
-}
-
-.asterisk{
-	padding-right: .25rem;
-}
-
-.related-lists-vertical-bar{
-	padding: 0 .5em;
-}
-.tox {
-  .tox-statusbar {
-    border-color : $input-border;
-  }
-  .tox-toolbar__primary {
-    background: none;
-    border-bottom: 1px solid $input-border;
-  }
-}
-.tox.tox-tinymce {
-  border-color: $input-border;
-}
-
-// My style
-.panel.panel.ng-scope{
-		padding: 30px;
-    background-color: #DAFFFB;
-  	margin:60px;
-  
-    border-radius: 15px;
-}
-.panel-heading{
-  background-color: #64CCC5;
-}
-.panel-footer{
-  background-color: #DAFFFB;
-  border-top: 0rem;
-}
-.c4275701283aa0210edb56060ceaad357{
-background-size: initial;
-  background-position: center;
-  background-image: url("https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?q=80&amp;w=1770&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-}
-
-.action-btn{
-  float:right;
-  background-color: #176B87;
-}
-
-.btn-primary{
-  background-color: #176B87;
-}
-
-#s2id_sp_formfield_lister_name{
-  background-color: #ffffff;
-}*/
-
-
-/* General styling for the form container */
-
-.poppins-extralight {
+        <css>.poppins-extralight {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-style: normal;
@@ -542,7 +372,11 @@ div#select2-drop{
   border-top: none;
 }
 
-.btn-default{
+/*.btn-default{
+  display:none;
+}*/
+
+.add-on.ng-scope{
   display:none;
 }
 
@@ -654,21 +488,70 @@ button:hover {
         font-size: 12px;
     }
 }
-</css>
+
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  //right: -150px;
+  transform: translateX(-50%) translateY(-100%);
+  width: 80%;
+  max-width: 300px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  text-align: center;
+  //transition: transform 0.5s ease-in-out;
+  color: #000;
+  border-radius: 8px;
+  transition: top 0.5s ease, opacity 0.5s ease;
+}
+
+.popup.show {
+  display: block;
+  transform: translateX(-50%) translateY(0);
+}
+
+.popup-content {
+ // padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+.popup-content&gt;h4{
+  margin-top:5px;
+  margin-bottom:5px;
+}
+.popup-content&gt;img{
+	width: 150px;
+  height: 150px;
+  margin-bottom:10px;
+}
+
+.popup-content .close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
         <has_preview>true</has_preview>
-        <id>charity_form</id>
+        <id>tradenow_form_alert</id>
         <internal>false</internal>
         <link><![CDATA[function link(){
 	setTimeout(function(){
 	$('#adminMenu, #platformLink').tooltip();
 });
 }]]></link>
-        <name>Charity Form</name>
+        <name>Tradenow form alert</name>
         <option_schema>[{"name":"disableUIActions","section":"Behavior","label":"Disable UI Actions on Form","type":"boolean"},{"name":"showFormView","section":"Behavior","label":"Display current form view","type":"boolean"},{"name":"omitHeaderOptions","section":"Behavior","label":"Omit header options icon","type":"boolean"}]</option_schema>
         <public>false</public>
         <roles/>
@@ -690,7 +573,7 @@ button:hover {
   var isPopup = false;
  
   if (input) {
-    data.table = input.table || 'x_1383179_tradenow_charity_list'; // Set your table
+    data.table = input.table || 'x_1383179_tradenow_item_list'; // Set your table
     data.sys_id = input.sys_id;
     data.view = input.view;
     var result = {};
@@ -704,7 +587,7 @@ button:hover {
     if (input.isPopup === true)
       isPopup = true;
   } else {
-    data.table = options.table || $sp.getParameter("t") || 'x_1383179_tradenow_charity_list'; // Set your table
+    data.table = options.table || $sp.getParameter("t") || 'x_1383179_tradenow_item_list'; // Set your table
     data.sys_id = options.sys_id || $sp.getParameter("sys_id");
     if (!data.sys_id && options.sys_id_required != "true")
       data.sys_id = "-1";
@@ -777,17 +660,17 @@ button:hover {
 })($sp, input, data, options, gs);]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-06-06 04:59:24</sys_created_on>
-        <sys_id>6db2497a83220210edb56060ceaad3e8</sys_id>
-        <sys_mod_count>41</sys_mod_count>
-        <sys_name>Charity Form</sys_name>
+        <sys_created_by>shyamal</sys_created_by>
+        <sys_created_on>2024-07-24 07:08:37</sys_created_on>
+        <sys_id>529c28da83ebca10edb56060ceaad3fe</sys_id>
+        <sys_mod_count>39</sys_mod_count>
+        <sys_name>Tradenow form alert</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
-        <sys_update_name>sp_widget_6db2497a83220210edb56060ceaad3e8</sys_update_name>
+        <sys_update_name>sp_widget_529c28da83ebca10edb56060ceaad3fe</sys_update_name>
         <sys_updated_by>shyamal</sys_updated_by>
-        <sys_updated_on>2024-07-26 06:56:14</sys_updated_on>
+        <sys_updated_on>2024-07-24 15:14:47</sys_updated_on>
         <template><![CDATA[<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 </style>
@@ -826,7 +709,7 @@ button:hover {
   <div ng-show="isPageReady" class="panel panel-default" ng-if="data.f._view.length || !data.hideRelatedLists" >
     <div class="icon">
       <img  src="icon.png">
-      <h3 class="poppins-semibold">Add Charity Organization</h3>
+      <h3 class="poppins-semibold">Add New Item</h3>
     </div>
    <!-- <div class="panel-heading" ng-if="data.f.title.length" sp-context-menu="getUIActionContextMenu(event)">
       
@@ -917,7 +800,7 @@ button:hover {
     <div class="panel-footer">
      <button ng-click="triggerUIAction(action)" ng-disabled="submitting" ng-repeat="action in getUIActions('button') | filter: hideDuplicateSaveAction" class="btn action-btn" ng-class="::getButtonClass(action)" gsft_id="{{::action.sys_id}}">{{action.name}}</button>
       <span>{{status}}</span>
-      <button ng-if="getPrimaryAction()" type="submit" ng-click="triggerUIAction(getPrimaryAction())" ng-disabled="submitting" class="btn btn-primary action-btn pull-right" gsft_id="{{::getPrimaryAction().sys_id ? getPrimaryAction().sys_id : ''}}">${Add Charity Organization}</button>
+      <!--<button ng-if="getPrimaryAction()" type="submit" ng-click="triggerUIAction(getPrimaryAction())" ng-disabled="submitting" class="btn btn-primary action-btn pull-right" gsft_id="{{::getPrimaryAction().sys_id ? getPrimaryAction().sys_id : ''}}">${Save} <span ng-if="saveButtonSuffix">(${{{saveButtonSuffix}}})</span></button>-->
       <div style="clear: both;"></div>
       <div ng-if="mandatory.length" class="alert alert-info" style="margin-top: .5em" aria-live="polite" aria-atomic="true">
         <span ng-if="mandatory.length > 0">${Required information} </span>
@@ -925,6 +808,16 @@ button:hover {
       </div>
     </div>
   </div>
-</div>]]></template>
+</div>
+
+<div id="pointsPopup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <h4>Thank you for listing an item.<br/>You've earned 100 points!</h4>
+    <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/svg/1f389.svg">
+  </div>
+</div>
+<!--No edit-->
+<!-- No edit -->]]></template>
     </sp_widget>
 </record_update>

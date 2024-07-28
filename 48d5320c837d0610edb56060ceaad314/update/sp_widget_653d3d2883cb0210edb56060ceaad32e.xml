@@ -16,12 +16,22 @@
 	$scope.donationHistory = [].concat($scope.data.donationHistory);
 	$scope.listedItems = [].concat($scope.data.listedItems);
 	var tempItemArray=[];
+	var modal = document.getElementById('successModal');
+	modal.style.display='none';
 	var popup = document.getElementById('popup');
 	var close = document.getElementById('close');
 
 	$scope.handleItemRelocate = function(sys_id){
 		console.log(sys_id);
 		$location.search("id=item_details&table=x_1383179_tradenow_item_list&sys_id="+sys_id);
+		///tradenow?id=item_details&table=x_1383179_tradenow_item_list&sys_id={{::item.sys_id}}
+	}
+	
+	$scope.handleCharityRelocate = function(number,sys_id){
+		console.log(sys_id);
+		console.log(number);
+		$location.search("id=charity_page&charity_id=" + number+"&sys_id="+sys_id);
+		//$location.search("id=item_details&table=x_1383179_tradenow_item_list&sys_id="+sys_id);
 		///tradenow?id=item_details&table=x_1383179_tradenow_item_list&sys_id={{::item.sys_id}}
 	}
 
@@ -37,16 +47,24 @@
 
 	$scope.handleClose = function(){
 		popup.style.display = "none";
+		modal.style.display = "none";
 	}
 
 	window.onclick = function(event) {
 		console.log(event.target);
 		if (event.target != popup) {
 			popup.style.display = "none";
+			modal.style.display = "none";
 		}
 	}
 	
 	popup.onclick = function(event) {
+		console.log('triggering this');
+		event.stopPropagation();
+	};
+	
+	modal.onclick = function(event) {
+		console.log('triggering this');
 		event.stopPropagation();
 	};
 
@@ -73,6 +91,7 @@
 
 	// Debounce the handleItemClick function using Lodash
 	$scope.handleItemClick = function(value) {
+		console.log(value);
 		$scope.currentOption = value;
 		$scope.optionsMenu = [].concat($scope.data.options[value+1]);
 		$scope.selectedOption = $scope.optionsMenu[0];
@@ -88,15 +107,20 @@
 	$scope.debouncedHandleItemClick = _.debounce($scope.handleItemClick, 10);
 
 	$scope.onOptionChange = function() {
+		console.log($scope.selectedOption);
 		var index = $scope.optionsMenu.indexOf($scope.selectedOption);
+		console.log(index);
 		$scope.currentSubOption = index;
-		$scope.availability = $scope.data.options[$scope.currentOption][index];
+		$scope.availability = $scope.data.options[$scope.currentOption+1][index];
 		console.log($scope.availability);
 	};
 
 
 	$scope.searchFilter = function(item) {
-		if(!item.donation_amount) return false;
+		if(!item.donation_amount && $scope.currentOption === 2) {
+			console.log('triggering this');
+			return false
+		}
 		if (!$scope.searchKeyword) {
 			if(item.donation_amount != '0')
 			return true;
@@ -169,6 +193,12 @@
 		$scope.searchKeyword = $scope.tempSearchKeyword;
 		document.getElementById('search-bar').value = '';
 	};
+	
+	spUtil.recordWatch($scope, 'x_1383179_tradenow_item_list', "statusINavailable,readypickup,reserved,claimed", function(response) {
+		//console.log(response.data);
+		// statusINavailable,readypickup,reserved,claimed
+		c.server.update();
+	});
 
 	$scope.handleItemOperation = function(event_name, order_id){
 		console.log(event_name);
@@ -209,6 +239,7 @@
 						$scope.data.reservedItems[i].button = ["Claim Item","Cancel Reservation"];
 						$scope.data.reservedItems[i].creationTime = $scope.data.reservedItems[i].sys_updated_on;
 					}
+					modal.style.display='block';
 				});
 			});
 		}
@@ -596,7 +627,7 @@ hr{
 
 .category-filter{
   height: 100%;
-  width: 50%;
+  width: max-content;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -611,7 +642,8 @@ hr{
 
 .category-filter &gt; select{
   height: 100%;
-  width: 50%;
+  width: max-content;
+  background: transparent;
   border: none;
 }
 
@@ -843,6 +875,7 @@ hr{
   height: 90%;
   border-radius: 50%;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 .donation-history-card .charity-info{
@@ -871,6 +904,81 @@ hr{
   justify-content: center;
   font-size: 3rem;
 }
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 10px;
+  width: max-content; /* Full width */
+  height: max-content; /* Full height */
+  overflow: auto; /* Enable scroll if needed */ /* Black w/ opacity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #888;
+ 	width: 400px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation-name: slideIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+.close-div{
+	width: 100%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 5px;
+}
+
+.content-div{
+	width: 100%;
+  height: 95%;
+}
+
+.content-div &gt; img{
+	width: 300px;
+  height: 300px;
+}
+
+.content-div1{
+	width: 100%;
+  height: 95%;
+}
+
+.content-div1 &gt; img{
+	width: 150px;
+  height: 150px;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 @media only screen and (max-width: 600px){
   .items-container hr{
@@ -1111,15 +1219,19 @@ hr{
 			charityList.query();
 			var charityName = "";
 			var charityImage = "";
+			var charitySysId = "";
+			var charityNumber = "";
 			while(charityList.next()){
+				charitySysId = charityList.getValue('sys_id');
 				charityName = charityList.getValue('charity_name');
 				charityImage = charityList.getDisplayValue('image');
+				charityNumber = charityList.getValue('number');
 			}
 
 			var flag=false;
 			for(var i=0; i<data.donationHistory.length; i++) {
 				if(charityName === data.donationHistory[i].donation_charity_name){
-					data.donationHistory[i].donation_amount += parseFloat(donationHistory.getValue('donation_amount'));
+					data.donationHistory[i].donation_amount += parseInt(donationHistory.getValue('donation_amount'));
 					flag=true;
 					break;
 				}
@@ -1127,11 +1239,13 @@ hr{
 			if(flag) continue;
 			obj = {
 				//donation_transaction_id: donationHistory.getValue('number'),
+				donation_charity_number: charityNumber,
+				donation_charity_sysId: charitySysId,
 				donation_id: donationHistory.getDisplayValue('number'),
 				donation_charity_name: charityName,
 				donation_charity_code: charity_code,
 				donation_person: donationHistory.getDisplayValue('sys_user'),
-				donation_amount: parseFloat(donationHistory.getValue('donation_amount')),
+				donation_amount: parseInt(donationHistory.getValue('donation_amount')),
 				creationTime: donationHistory.getValue('sys_created_on'),
 				donation_charity_image: charityImage
 			}
@@ -1199,14 +1313,14 @@ hr{
         <sys_created_by>jagriti</sys_created_by>
         <sys_created_on>2024-06-24 06:00:04</sys_created_on>
         <sys_id>653d3d2883cb0210edb56060ceaad32e</sys_id>
-        <sys_mod_count>460</sys_mod_count>
+        <sys_mod_count>494</sys_mod_count>
         <sys_name>My_activity</sys_name>
         <sys_package display_value="TradeNow" source="x_1383179_tradenow">48d5320c837d0610edb56060ceaad314</sys_package>
         <sys_policy/>
         <sys_scope display_value="TradeNow">48d5320c837d0610edb56060ceaad314</sys_scope>
         <sys_update_name>sp_widget_653d3d2883cb0210edb56060ceaad32e</sys_update_name>
         <sys_updated_by>jagriti</sys_updated_by>
-        <sys_updated_on>2024-07-25 05:51:14</sys_updated_on>
+        <sys_updated_on>2024-07-26 08:18:08</sys_updated_on>
         <template><![CDATA[<div class="profile-page">
   <div class="user-profile poppins">
     <div class="header" >
@@ -1331,10 +1445,10 @@ hr{
           <div class="donation-history-card" ng-repeat="donation in donationHistory | filter:searchFilter | orderBy:donationSortOrder track by donation.donation_id">
             <div class="charity-logo">
               <div class='donation-dropdown' ng-click="donationHistoryPopUp(donation.donation_charity_code, donation.donation_charity_name)">V</div>
-              <img ng-src={{donation.donation_charity_image}} lazy-load>
+              <img ng-src={{donation.donation_charity_image}} ng-click="handleCharityRelocate(donation.donation_charity_number, donation.donation_charity_sysId)" lazy-load>
             </div>
             <div class="charity-info">
-              <div class="charity-name" ng-bind="donation.donation_charity_name"></div>
+              <div class="charity-name" ng-click="handleCharityRelocate(donation.donation_charity_number, donation.donation_charity_sysId)" ng-bind="donation.donation_charity_name"></div>
               <div class="time-created"> Donated on: <span ng-bind="donation.creationTime" /></div>
             </div>
             <div class="donation-amount">${{donation.donation_amount}}</div>
@@ -1349,6 +1463,18 @@ hr{
     </div>
   </div>
 
+</div>
+
+<div id="successModal" class="modal poppins">
+  <div class="modal-content">
+    <div class="close-div">
+      <span class="close-button" ng-click="handleClose()">&times;</span>
+    </div>
+    <div class="content-div1">
+      <p>Item Claimed!</p>
+      <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15.1/color/svg/1f389.svg">
+    </div>
+  </div>
 </div>
 
 <div class="donation-history-popup" id="popup">
